@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { SubmissionRoutingModule } from './submission-routing.module';
-import { HomeComponent } from './home/home.component';
 import { AppMaterialModule } from 'src/app/core/app-material/app-material.module';
 import { AppAgGridModule } from 'src/app/base/components/app-ag-grid/app-ag-grid.module';
 import { BaseModule } from 'src/app/base/base.module';
@@ -20,32 +19,37 @@ import { CounterPartyBankAccountComponent } from './counter-party-bank-account/c
 import { CounterPartyExpandedNoteComponent } from './counter-party-expanded-note/counter-party-expanded-note.component';
 import { CounterPartyBankAccountHistoryComponent } from './counter-party-bank-account-history/counter-party-bank-account-history.component';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
+import { LandingComponent } from './landing/landing.component';
+import { ProfileComponent } from './landing/profile/profile.component';
+import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 
 @NgModule({
-    declarations: [
-        HomeComponent,
-        QueryComponent,
-        SubmisGridComponent,
-        SubmissionDetailComponent,
-        CounterPartySearchComponent,
-        CounterPartyDetailComponent,
-        CounterPartyInformationComponent,
-        CounterPartyBankAccountComponent,
-        CounterPartyExpandedNoteComponent,
-        CounterPartyBankAccountHistoryComponent,
-    ],
-    imports: [
-        CommonModule,
-        SharedModule,
-        SubmissionRoutingModule,
-        TrcAutoCompleteModule,
-        AppMaterialModule,
-        LayoutModule,
-        AppAgGridModule,
-        BaseModule,
-        HttpModule,
-        SharedModule,
-        PerfectScrollbarModule,
-    ],
+  declarations: [
+    LandingComponent,
+    ProfileComponent,
+    QuickLinksComponent,
+    QueryComponent,
+    SubmisGridComponent,
+    SubmissionDetailComponent,
+    CounterPartySearchComponent,
+    CounterPartyDetailComponent,
+    CounterPartyInformationComponent,
+    CounterPartyBankAccountComponent,
+    CounterPartyExpandedNoteComponent,
+    CounterPartyBankAccountHistoryComponent,
+  ],
+  imports: [
+    CommonModule,
+    SharedModule,
+    SubmissionRoutingModule,
+    TrcAutoCompleteModule,
+    AppMaterialModule,
+    LayoutModule,
+    AppAgGridModule,
+    BaseModule,
+    HttpModule,
+    SharedModule,
+    PerfectScrollbarModule,
+  ],
 })
 export class SubmissionModule {}
