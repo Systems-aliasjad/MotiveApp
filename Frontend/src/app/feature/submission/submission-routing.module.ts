@@ -12,7 +12,7 @@ const routes: Routes = [
     component: DefaultLayoutComponent,
     children: [
       {
-        path: 'home',
+        path: 'landing',
         component: LandingComponent,
       },
       {
@@ -26,6 +26,10 @@ const routes: Routes = [
       {
         path: 'history',
         component: CounterPartyBankAccountHistoryComponent,
+      },
+      {
+        path: '**',
+        redirectTo: '/landing',
       },
     ],
   },
