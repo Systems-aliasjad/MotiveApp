@@ -1,0 +1,17 @@
+
+<ng-container *ngIf="formLoaded; else loaderDiv">
+  <perfect-scrollbar style="max-width: 800px; max-height: 400px">
+    <p class="counter-party-info">
+        <trc-form #trcForm [fields]="fields" (submit)="submit($event)" [data]="formData"></trc-form>
+    </p>
+    </perfect-scrollbar>
+</ng-container>
+
+<ng-template #loaderDiv>
+  <div style="height: calc(100vh - 350px)">
+    <div class="loader" >
+      <mat-spinner ></mat-spinner>
+  </div>
+  </div>
+
+</ng-template>

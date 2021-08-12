@@ -1,0 +1,17 @@
+// .multi-col-select.mat-option-text{
+//     // display: flex;
+//     // justify-content: space-between
+// }
+
+.select-option {
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.flex-1 {
+    flex: 1!important;
+}
+.w-100 {
+    width: 100%!important;
+}

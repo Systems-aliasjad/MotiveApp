@@ -1,0 +1,14 @@
+<mat-form-field>
+    <mat-label>{{label}}</mat-label>
+    <mat-select class="multi-col-select" [multiple]="multiSelect" [(value)]="selected" (selectionChange)="onSelectionChange($event)">
+        <mat-option class="multi-col-select" disabled>
+            <div class="select-option" [style.width]="col.width" *ngFor="let col of columns"><b>{{col.fieldName}}</b></div>
+        </mat-option>
+
+        <mat-option class="multi-col-select" *ngFor="let item of data" [value]="(displayCol && displayCol!= '' ? item[displayCol]: item[0])">
+            <div class="select-option" [style.width]="col.width" *ngFor="let col of columns">{{ item[col.fieldId]
+                }}</div>
+        </mat-option>
+
+    </mat-select>
+</mat-form-field>

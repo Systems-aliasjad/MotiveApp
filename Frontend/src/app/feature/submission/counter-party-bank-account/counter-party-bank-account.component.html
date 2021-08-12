@@ -1,0 +1,31 @@
+<ng-container *ngIf="formData; else loaderDiv">
+    <mat-accordion *ngIf="!showHistory">
+        <perfect-scrollbar style="max-width: 600px; max-height: 400px">
+            <ng-container *ngIf="formData.data && formData.data.length > 0; else noDataDiv">
+                <ng-container *ngFor="let accnt of formData.data; let i = index">
+                    <mat-expansion-panel [expanded]="i == 0" (opened)="onAccountOpen(accnt)">
+                        <!-- <div class="bank-account-panel"> -->
+                        <mat-expansion-panel-header class="bank-account-panel">
+                            <mat-panel-title> Bank Account {{ i + 1 }} </mat-panel-title>
+                        </mat-expansion-panel-header>
+                        <!-- </div> -->
+                        <p>
+                            <trc-form #trcForm [fields]="fields" (submit)="submit($event)" [data]="{ data: accnt }"></trc-form>
+                        </p>
+                    </mat-expansion-panel>
+                </ng-container>
+            </ng-container>
+            <ng-template #noDataDiv> <div style="min-height: 400px">No Bank details found</div> </ng-template>
+        </perfect-scrollbar>
+    </mat-accordion>
+
+    <!-- <button class="fRight" mat-raised-button color="primary" (click)="openBankHistory()">History</button> -->
+</ng-container>
+<ng-template #loaderDiv>
+    <div class="loader">
+        <mat-spinner></mat-spinner>
+    </div>
+</ng-template>
+<ng-container *ngIf="showHistory">
+    <app-counter-party-bank-account-history [accountNumber]="currentAccountNumber" [accountKey]="currentAccountKey"> </app-counter-party-bank-account-history>
+</ng-container>

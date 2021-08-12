@@ -1,0 +1,78 @@
+@import './variables';
+.employee-info-wrapper {
+    display: flex;
+    width: 100%;
+    padding: 15px 10px;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    .info-cell {
+        margin: 15px;
+        &.user-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .material-icons {
+                border: 1px solid $silver-chalice;
+                border-radius: 50%;
+                background: $silver-chalice;
+                color: $white;
+                font-size: 28px;
+                &:hover {
+                    background: $bay-of-many;
+                }
+            }
+        }
+    }
+    .info-label {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 700;
+        color: $tundora;
+        text-transform: capitalize;
+        display: block;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+    .info {
+        font-size: 12px;
+        line-height: 14px;
+        color: $tundora;
+        display: block;
+        text-align: center;
+        .signature-img {
+            max-width: 200px;
+            margin: 0 auto;
+            max-height: 118px;
+        }
+        .no-signature-icon {
+            font-size: 30px;
+            line-height: 30px;
+            color: $bay-of-many;
+            display: block;
+        }
+    }
+}
+
+.priviliges-wrapper {
+    display: flex;
+    min-height: calc(100vh - 100px) ;
+    .grid-wrapper {
+        flex: 0 0 70%;
+    }
+    .selected-user-wrapper {
+        flex: 0 0 30%;
+        background-color: $gallery;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.select-user-heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: $bay-of-many;
+    margin: 0;
+    height: 33px;
+    line-height: 33px;
+}

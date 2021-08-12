@@ -1,0 +1,51 @@
+::ng-deep .mat-dialog-container{
+    overflow:hidden;
+}
+
+.common-popup {
+    width:100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+.common-popup > .common-popup-header-class {
+    background: #445370;
+    color:#ffffff;
+    font-size: 16px; 
+    height:20px;
+    line-height: 20px;
+    padding:10px;
+}
+.common-popup > .common-popup-body-class{
+    padding:20px 10px;
+    height: calc(100% - 50px);
+    overflow-y: auto;   
+    position: absolute;
+    width:100%;
+    box-sizing: border-box;
+   
+
+}
+.common-popup  .close-icon{
+    float:right !important;
+    line-height: 20px !important; 
+    background:#445370 !important;
+   cursor: pointer !important;
+}
+
+.common-popup > .common-popup-footer-class {
+    background: #445370;
+    color:#ffffff;
+    font-size: 16px; 
+    height: 50px;
+    position: absolute;
+    bottom:0px;
+    
+}
+.common-popup > .common-popup-action-button{
+    background:#445370;
+    color:white;
+    margin-right:5px;
+    float:right;
+
+}

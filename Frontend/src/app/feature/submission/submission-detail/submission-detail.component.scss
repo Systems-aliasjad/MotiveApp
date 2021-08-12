@@ -1,0 +1,17 @@
+.longText {
+  width: 300px;
+}
+.link {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.mat-form-field {
+  .mat-input-element {
+    .link {
+      text-decoration: underline;
+      cursor: pointer !important;
+    }
+
+  }
+}

@@ -1,0 +1,4 @@
+<trc-grid-toolbar *ngIf="showQueryMode()" #querytoolbar [toolbar]="queryModeToolbar" [hideSearch]="true"></trc-grid-toolbar>
+<trc-grid-toolbar *ngIf="!showQueryMode()" #resultToolbar [toolbar]="resultModeToolbar" [hideSearch]="true"></trc-grid-toolbar>
+<app-query #query *ngIf="showQueryMode()" (afterGridReady)="afterGridReady($event)" [queryModeData]="queryModeData"></app-query>
+<app-submis-grid *ngIf="!showQueryMode()" [submissionFilter]="submissionFilter"></app-submis-grid>

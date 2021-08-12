@@ -1,0 +1,25 @@
+[
+    {
+        "keyField": "module"
+    },
+    {
+        "field": "module",
+        "headerName": "Module",
+        "editable": true,
+        "width": 400,
+        "checkboxSelection": true,
+        "validationRules": {
+            "required": true,
+            "maxLength": 25,
+            "customValidators": [
+                {
+                    "validatorName": "duplicateValidator",
+                    "params": {
+                        "field": "module",
+                        "message": "Module name must be unique."
+                    }
+                }
+            ]
+        }
+    }
+]

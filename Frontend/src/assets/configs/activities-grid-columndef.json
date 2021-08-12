@@ -1,0 +1,47 @@
+[
+  {
+    "field": "fullName",
+    "width":300,
+    "headerName": "\r\nWho's Here",
+    "editable": false,
+    "sortable": true
+  },
+  {
+    "field": "appName",
+    "width":300,
+    "headerName": "\r\nWhat App?",
+    "editable": false,
+    "sortable": true
+  },
+  {
+    "field": "appLogin",
+    "headerName": "\r\nWhen did they login",
+    "editable": false,
+    "sortable": true,
+    "width":350,
+    "valueFormatters": [
+      {
+        "name": "dateFormatter",
+        "params": {
+          "from": "YYYY-MM-DD",
+          "to": "MM/dd/yy hh:mm:ss a"
+        }
+      }
+    ]
+  },
+  {
+    "field": "loginTime",
+    "headerName": "\r\nLogin for",
+    "editable": false,
+    "sortable": true,
+    "width":400,
+    "valueFormatters": [
+      {
+          "name": "dayFormatter",
+          "params": {
+              "to": "MM/dd/yy hh:mm:ss a"
+          }
+      }
+  ]
+  }
+]

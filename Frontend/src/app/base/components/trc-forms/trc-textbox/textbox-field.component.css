@@ -1,0 +1,10 @@
+:host{
+    width:100%;
+    display: block;
+    left:0;
+    margin:5px;
+}
+
+.trc-textbox{
+  width: 100% !important;
+}

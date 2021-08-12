@@ -1,0 +1,342 @@
+[
+    {
+        "keyField": "submis_Key"
+    },
+    {
+        "field": "rpt_ofc_nm",
+        "headerName": "Reporting Office",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "rpt_ofc_group_nm",
+        "headerName": "Reporting Office Group",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "submis_Key",
+        "headerName": "Submis Num",
+        "editable": false,
+        "minWidth": 150,
+        "sortable": true
+    },
+    {
+        "field": "trty_Or_Fac_Flg",
+        "headerName": "Treaty/Cert/Policy",
+        "editable": false,
+        "sortable": true,
+        "cellEditor": "LookupListEditorComponent",
+        "nameValue": {
+            "name": "name",
+            "value": "value"
+        },
+        "cellEditorParams": {
+            "values": [
+                {
+                    "value": "T",
+                    "name": "Treaty"
+                },
+                {
+                    "value": "F",
+                    "name": "Cert/Fac"
+                },
+                {
+                    "value": "P",
+                    "name": "Policy"
+                }
+            ]
+        },
+        "valueFormatters": [
+            {
+                "name": "lookupKeyValueFormatter"
+            }
+        ]
+    },
+    {
+        "field": "eff_Dt",
+        "headerName": "Effective Date",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "final_disposition",
+        "headerName": "Final Disposition",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "contract_Nm_Upper",
+        "headerName": "Name",
+        "editable": false,
+        "minWidth":300,
+        "sortable": true
+    },
+    {
+        "field": "sub_dept_nm",
+        "headerName": "Subdepartment",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "brkr_Full_Nm",
+        "headerName": "Broker",
+        "editable": false,
+        "minWidth":300,
+        "sortable": true
+    },
+    {
+        "field": "ceding_Co_Full_Nm",
+        "headerName": "Ceding Company",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "underwriter",
+        "headerName": "Underwriter",
+        "editable": false,
+        "sortable": true
+    },
+    {
+        "field": "trty_type",
+        "headerName": "Treaty Type",
+        "editable": false,
+        "sortable": true
+    },
+    {
+        "field": "layer",
+        "headerName": "Layer",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "lob",
+        "headerName": "Line Of Business",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "curr_iso_cd",
+        "headerName": "Base Currency",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "contract_analyst",
+        "headerName": "Contract Analyst",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "sub_status",
+        "headerName": "Status",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "status_Dt",
+        "headerName": "Status Date",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "action_Dt",
+        "headerName": "Final Disposition Date",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "recvd_Dt",
+        "headerName": "Received Date",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "quote_Dt",
+        "headerName": "Quote Date",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "quote_Expir_Dt",
+        "headerName": "Quote Expiry Date",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "last_modified_by",
+        "headerName": "Last Modified By",
+        "editable": false,
+        "sortable": true
+    },
+    {
+        "field": "touch_Dt",
+        "headerName": "Last Modified On",
+        "editable": false,
+        "sortable": true,
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ]
+    },
+    {
+        "field": "pro_Xol_Flg",
+        "headerName": "Pro XOL Flag",
+        "editable": false,
+        "sortable": true,
+        "cellEditor": "LookupListEditorComponent",
+        "nameValue": {
+            "name": "name",
+            "value": "value"
+        },
+        "cellEditorParams": {
+            "values": [
+                {
+                    "value": "P",
+                    "name": "Pro Rata"
+                },
+                {
+                    "value": "X",
+                    "name": "XOL"
+                }
+            ]
+        },
+        "valueFormatters": [
+            {
+                "name": "lookupKeyValueFormatter"
+            }
+        ]
+    },
+    {
+        "field": "folder_No",
+        "headerName": "Folder No",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "company_domicile",
+        "headerName": "Company Domicile",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "dms",
+        "headerName": "DMS",
+        "editable": false,
+        "sortable": true,
+        "cellEditor": "LookupListEditorComponent",
+        "nameValue": {
+            "name": "name",
+            "value": "value"
+        },
+        "cellEditorParams": {
+            "values": [
+                {
+                    "value": "Y",
+                    "name": "Yes"
+                },
+                {
+                    "value": "N",
+                    "name": "No"
+                }
+            ]
+        },
+        "valueFormatters": [
+            {
+                "name": "lookupKeyValueFormatter"
+            }
+        ]
+    },
+    {
+        "field": "technical_assistant",
+        "headerName": "Technical Assistant",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "assign_Trty_No",
+        "headerName": "Treaty Number",
+        "editable": false,
+
+        "sortable": true
+    },
+    {
+        "field": "output_Email_Address",
+        "headerName": "Broker Email",
+        "editable": false,
+
+        "sortable": true
+    }
+]

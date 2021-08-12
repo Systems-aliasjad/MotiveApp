@@ -1,0 +1,53 @@
+.dropDownList {
+  max-height:300px;
+  // min-width:145px;
+  width:95%;
+  min-height:200px;
+  overflow-y: auto;
+  .mat-select-panel {
+      min-width: inherit;
+  }
+}
+.dropDownListItem {
+  padding: 8px 10px;
+}
+.dropDownListItem:hover {
+  cursor:pointer;
+  background-color: rgba(33, 150, 243, 0.9);
+}
+.dropDownListSelectedItem {
+  /* Whichever is our selected item, highlight it, and KEEP IT highlighted ! */
+  background-color: rgba(33, 150, 243, 0.3) !important;
+}
+.mood {
+  border-radius: 15px;
+  border: 1px solid grey;
+  background: #e6e6e6;
+  padding: 15px;
+  text-align: center;
+  display: inline-block;
+  outline: none;
+}
+
+.default {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid transparent;
+  padding: 4px;
+}
+
+.listoptions {
+
+  padding: 5px 5px;
+  float: left;
+  clear: both;
+  background-color: transparent;
+}
+
+.selected {
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 1px solid lightgreen;
+  padding: 4px;
+}
+

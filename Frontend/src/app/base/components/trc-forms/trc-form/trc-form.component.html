@@ -1,0 +1,11 @@
+<!-- <form class="trc-form" [formGroup]="form" (submit)="onSubmit($event)">
+    <ng-container *ngFor="let field of fields;" trcFormFieldDirective [field]="field" [group]="form"></ng-container>
+</form> -->
+
+<form class="trc-form" [formGroup]="form" (submit)="onSubmit($event)" style="height:100%!important">
+    <mat-grid-list class="list-grid" cols="12" rowHeight="55px">
+        <mat-grid-tile *ngFor="let field of fields" [colspan]="field.colSpan || 1" [rowspan]="field.rowSpan || 1">
+            <ng-container style="width:100% !important" trcFormFieldDirective [field]="field" [group]="form"></ng-container>
+        </mat-grid-tile>
+    </mat-grid-list>
+</form>

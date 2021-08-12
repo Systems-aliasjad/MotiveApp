@@ -1,0 +1,348 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$webapp-primary: mat-palette($mat-indigo);
+$webapp-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$webapp-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$webapp-theme: mat-light-theme($webapp-primary, $webapp-accent, $webapp-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($webapp-theme);
+
+@charset "utf-8";
+@import '~@angular/material/theming';
+@include mat-core();
+
+$TransRe-primary: mat-palette($mat-indigo);
+$TransRe-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// // The warn palette is optional (defaults to red).
+$TransRe-warn: mat-palette($mat-red);
+$TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn);
+@include angular-material-theme($TransRe-theme);
+@import '~ag-grid-community/dist/styles/ag-theme-balham.css';
+@import '~ag-grid-community/dist/styles/ag-theme-material.css';
+@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
+@import "../node_modules/ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham-mixin.scss";
+
+@import './assets/scss/base/variables';
+@import './assets/scss/base/mixins';
+@import './assets/scss/base/common';
+@import'./assets/scss/base/breadcrumbs';
+@import'./assets/scss/base/tabs';
+@import'./assets/scss/base/toolbar';
+@import'./assets/scss/base/grid';
+@import'./assets/scss/base/privilliges';
+@import'./assets/scss/base/popups';
+@import'./assets/scss/base/footer';
+@import'./assets/scss/base/style-icomoon';
+// @import'../src/assets/fonts/'
+
+// .success{
+//     background-color: green;
+// }
+// .info{
+//     background-color: blue;
+// }
+
+// .ag-cell-not-inline-editing {
+//     background-color: #F5F7F7;
+// }
+// .chk-margin {
+//     border: 1px solid #719ECE !important;
+// }
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.trc-notify-success {
+  background: #3ca322;
+  color: white;
+  padding: 5px 10px;
+}
+
+.trc-notify-info {
+  background: #1f7cff;
+  color: white;
+  padding: 5px 10px;
+}
+
+.trc-notify-error {
+  background: #db0000;
+  color: white;
+  padding: 5px 10px;
+}
+
+.trc-notify-warning {
+  background: orange;
+  color: white;
+}
+
+#myGrid .mat-form-field-appearance-fill .mat-form-field-flex {
+  padding: 0px !important
+}
+
+#myGrid .mat-form-field-appearance-fill .mat-form-field-infix {
+  padding: 0px 0px 1px 11px;
+  top: -6px !important;
+}
+
+#myGrid .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 2px;
+  top: -5px;
+  line-height: 16px;
+  left: 6px;
+}
+
+.ag-theme-balham .ag-row-selected {
+  background-color: #dddddd;
+}
+
+#myGrid .mat-form-field-suffix .mat-icon-button {
+  height: 2.0em !important;
+}
+
+.ag-theme-balham .ag-cell-inline-editing {
+  height: 30px !important;
+}
+
+.ag-theme-balham .ag-cell-data-changed {
+  background: #223C7F;
+  color: white;
+}
+
+.ag-theme-balham .ag-cell-data-changed-animation {
+  background: #223C7F;
+  color: white;
+}
+
+.mat-tab-group {
+  display: initial !important;
+}
+
+.mat-tab-body-wrapper {
+  height: 100%;
+  padding: 0px 22px;
+}
+
+.tab-custom-wrapper .mat-tab-body-wrapper {
+  border: 0 !important;
+  background: none !important;
+}
+
+.ag-theme-balham {
+  font-size: 14px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.multi-col-select .mat-option-text {
+  display: block;
+  height: 40px;
+  width: 100%;
+}
+
+.maxWidth {
+  min-width: 660px !important;
+  margin-top: 35px !important;
+  margin-left: 5px !important;
+}
+
+.extraLongWidth {
+  min-width: 760px !important;
+  margin-top: 35px !important;
+  margin-left: 5px !important;
+}
+
+.mg-lt-5 {
+  margin-left: 5px !important;
+}
+
+
+// ------------OPEN DIALOG SECTION START-------------------
+.open-modal {
+  .mat-dialog-title {
+    // font-size: 18px;
+    // line-height: 20px;
+    font-weight: 700;
+    background: #243c98;
+    border: 1px solid #E7E7E7;
+    padding: 8px 12px;
+    border-bottom: 2px solid #243C98;
+    color: #fff;
+    margin: -24px -24px 20px;
+    font-size: 18px;
+    border-radius: 4px;
+    line-height: 21px;
+
+    .close-btn-icon {
+      background: rgba(255, 255, 255, 0.38);
+      font-size: 10px;
+      float: right;
+      outline: none;
+      border: none;
+      border-radius: 2px;
+      padding: 5px;
+      cursor: pointer;
+      .icon-reset_toolar {
+        &::before {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.mat-tab-list {
+  .mat-ink-bar {
+    display: none;
+  }
+
+  .mat-tab-labels {
+    padding-bottom: 25px;
+
+    .mat-tab-label {
+      color: #243C98;
+      opacity: 1;
+
+      &.mat-tab-label-active {
+        background: rgba(225, 225, 225, 0.76);
+        border-radius: 3px;
+        border-bottom: 3px solid #243C98
+
+      }
+    }
+  }
+}
+
+.mat-tab-header {
+  border: 0;
+}
+
+.mat-form-field {
+  &.open-dialog-form-field {
+    display: block;
+  }
+}
+
+.mat-dialog-actions {
+  .mat-raised-button {
+    &.open-dialog-btn {
+      font-weight: normal;
+      font-size: 11px;
+      line-height: 13px;
+      text-align: center;
+      text-transform: uppercase;
+      padding: 10px 16px;
+      box-shadow: none;
+      border: 1px solid #243C98;
+      border-radius: 2px;
+    }
+  }
+}
+
+.mat-dialog-content {
+  &.open-modal-content {
+    padding-bottom: 38px;
+  }
+}
+
+.open-dialog-btn-wrapper {
+  display: block;
+  border-top: 1px solid #C4C4C4;
+  margin: 0px -23px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 20px 0px 20px;
+}
+
+// ------------OPEN DIALOG SECTION END-------------------
+
+.counter-party-info {
+  font-size: 14px;
+  margin: 0px;
+}
+
+// counter party end
+.submission-tab-group {
+  .mat-tab-header {
+    background: rgba(232, 232, 232, 0.37);
+    margin-bottom: 25px;
+    padding-left: 22px;
+  }
+
+  .mat-tab-labels {
+    padding-bottom: 0px;
+
+    .mat-tab-label {
+      &.mat-tab-label-active {
+        border-bottom: 3px solid #243C98;
+      }
+    }
+  }
+}
+
+.body-wrapper {
+  .header-text {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 15px;
+    color: #fff;
+    background-color: #243c98;
+    margin: 0;
+    padding: 14px 22px;
+  }
+}
+.loader {
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  z-index: 1;
+}
+// body header and sub header end
+
+.bank-account-panel {
+  &.mat-expansion-panel-header {
+    background-color: #eaeaea;
+    margin-bottom: 20px;
+    height: 44px;
+  }
+}
+// bank account accordian bg end
+
+// .mat-grid-list {
+//   &.list-grid {
+//     //height: 559px !important;
+//   }
+// }
+
+.counter-party-expanded {
+  min-height: 349px;
+  .mat-input-element {
+    &.mat-form-field-autofill-control {
+      overflow: hidden;
+    }
+  }
+}

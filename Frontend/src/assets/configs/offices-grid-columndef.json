@@ -1,0 +1,84 @@
+[
+    {
+        "keyField": "employeeKey"
+    },
+    {
+        "field": "employeeKey",
+        "headerName": "employeeKey",
+        "hide": true
+    },
+    {
+        "field": "processingOffice",
+        "headerName": "Office",
+        "editable": true,
+        "checkboxSelection": true,
+        "cellEditor": "LookupListEditorComponent",
+        "refDataKey": "processingOffice",
+        "validationRules": {
+            "required": true
+        },
+        "valueFormatters": [
+            {
+                "name": "lookupKeyValueFormatter"
+            }
+        ]
+    },
+    {
+        "field": "activeFlag",
+        "headerName": "Active (P/C/B/N/Y)",
+        "editable": true,
+        "validationRules": {
+            "required": true
+        },
+        "cellEditor": "LookupListEditorComponent",
+        "cellEditorParams": {
+            "values": [
+                {
+                    "key": "P",
+                    "value": "P"
+                },
+                {
+                    "key": "C",
+                    "value": "C"
+                },
+                {
+                    "key": "B",
+                    "value": "B"
+                },
+                {
+                    "key": "N",
+                    "value": "N"
+                },
+                {
+                    "key": "Y",
+                    "value": "Y"
+                }
+            ]
+        },
+        "valueFormatters": [
+            {
+                "name": "lookupKeyValueFormatter"
+            }
+        ]
+    },
+    {
+        "field": "stamp",
+        "headerName": "stamp",
+        "editable": true,
+        "controlConfig": {
+            "controlName": "DatepickerEditorComponent"
+        },
+        "valueFormatters": [
+            {
+                "name": "dateFormatter",
+                "params": {
+                    "from": "YYYY-MM-DD",
+                    "to": "MM/DD/YYYY"
+                }
+            }
+        ],
+        "validationRules": {
+            "required": true
+        }
+    }
+]

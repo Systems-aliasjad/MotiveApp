@@ -1,0 +1,3 @@
+<!-- <input class="trc-grid-textbox-editor" (keypress)="keyHandler($event)" [(ngModel)]="cellValue" type="textbox" /> -->
+<input class="trc-textbox-editor" focus matInput [(ngModel)]="cellValue" autocomplete="off"
+  (blur)="onTextboxEditorBlur($event)" style="padding-left: 0px 10px; border-bottom: 1px solid;">

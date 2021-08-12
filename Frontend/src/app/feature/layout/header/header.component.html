@@ -1,0 +1,100 @@
+<header class="header">
+    <div class="header-wrapper">
+        <div class="menu-icon-wrapper">
+            <span mat-button (click)="menuOpener = !menuOpener" class="material-icons"> menu </span>
+        </div>
+        <div class="logo">
+            <a>
+                <span class="material-icons"> policy </span>
+                <span class="name"
+                    >TIRS
+                    <!-- <span></span> -->
+                </span>
+            </a>
+            <!-- <div class="title-wrapper">
+        <h1 class="page-title">{{ pageTitle }}</h1>
+      </div> -->
+        </div>
+        <div>
+            <button mat-button [matMenuTriggerFor]="activities">Activities</button>
+            <mat-menu #activities="matMenu">
+                <button mat-menu-item>Accounting DMS Inbox</button>
+                <button mat-menu-item>Claims DMS Inbox</button>
+                <button mat-menu-item>Collection Inbox</button>
+                <button mat-menu-item>Underwriting DMS Inbox</button>
+                <button mat-menu-item>Underwriting FAC Inbox</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="utilities">Utilities</button>
+            <mat-menu #utilities="matMenu">
+                <button mat-menu-item>Casuality Accumulation Sub Groups</button>
+                <button mat-menu-item>Counterparty Maintainance</button>
+                <button mat-menu-item>DMS Principal Buyer</button>
+                <button mat-menu-item>Business to Business (B2B)</button>
+                <button mat-menu-item [matMenuTriggerFor]="glInterface">GL Interface</button>
+                <button mat-menu-item>Table Untility</button>
+                <button mat-menu-item>User Sub-Departments</button>
+                <!-- <mat-divider></mat-divider> -->
+                <button mat-menu-item>Problem/Suggestion Log</button>
+                <button mat-menu-item>Who's in What System</button>
+            </mat-menu>
+
+            <mat-menu #glInterface="matMenu">
+                <button mat-menu-item>Export Accounting Payments to GL</button>
+                <button mat-menu-item>Export Claims cash Loss Advance Payments to GL</button>
+                <button mat-menu-item>Export Claims Payments to GL</button>
+                <button mat-menu-item>Export Financial Data to GL</button>
+                <!-- <mat-divider></mat-divider> -->
+                <button mat-menu-item>Import from GL to Cash Module</button>
+            </mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="reports">Reports</button>
+            <mat-menu #reports="matMenu"></mat-menu>
+
+            <button mat-button [matMenuTriggerFor]="help">Help</button>
+            <mat-menu #help="matMenu"></mat-menu>
+
+        </div>
+        <div class="user-settings">
+            <div class="profile-info">
+                <div class="notification-wrapper">
+                    <span class="material-icons" matTooltip="Environments" (click)="showEnv = !showEnv"> settings </span>
+
+                    <span class="material-icons" [class.hide]="!showEnv">
+                        <ul>
+                            <ng-container *ngFor="let env of app_environments">
+                                <li *ngIf="!env.active">
+                                    <a [href]="env.url">
+                                        {{ env.name }}
+                                    </a>
+                                </li>
+                            </ng-container>
+                        </ul>
+                    </span>
+                    <span class="material-icons" matTooltip="About" (click)="onAboutClick()"> error_outline </span>
+                    <span class="material-icons" matTooltip="Help" (click)="onHelpClick()"> help_outline </span>
+                </div>
+
+                <div class="profile-img">
+                    <a class="img-btn" mat-button [matMenuTriggerFor]="menu" matTooltip="Current User" matTooltipPosition="left" matTooltipClass="tooltip-blue-left">
+                        <span class="material-icons"> person </span>
+
+                        <span class="user-name">{{ userName }}</span></a
+                    >
+                    <mat-menu #menu="matMenu" class="info-detail" xPosition="before">
+                        <div class="arc">
+                            <a class="img-btn inner" mat-menu-item (click)="logout()">
+                                <div class="info-wrap">
+                                    <span class="material-icons"> exit_to_app </span>
+                                    <span class="profile">Sign Out</span>
+                                </div>
+                            </a>
+                        </div>
+                    </mat-menu>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<app-aside [opener]="menuOpener"></app-aside>

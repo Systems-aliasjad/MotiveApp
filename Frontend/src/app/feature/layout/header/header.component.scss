@@ -1,0 +1,214 @@
+@import '../../../../assets/scss/base/variables';
+
+.hide {
+  display: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: black;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+ // background-color: #333333;
+}
+
+li {
+  float: left;
+ 
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+ // padding: 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+ // background-color: #111111;
+}
+
+.header {
+  margin-bottom: 10px;
+  background: $white;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 202;
+  box-shadow: 0px 0px 11px 1px rgba(0, 0, 0, 0.2);
+  min-width: 1024px;
+
+  .header-wrapper{
+    display: flex;
+    align-items: center;
+    padding: 1px 10px;
+    .menu-icon-wrapper{
+      flex: 0 0 24px;
+      color: #464646;
+      display: flex;
+      cursor: pointer;
+      .material-icons{
+        font-size: 29px;
+      }
+    }
+    .logo{
+      flex: 0 0 50%;
+      display: flex;
+      padding: 0 10px;
+      align-items: center;
+      a {
+        display: flex;
+        text-decoration: none;
+        align-items: center;
+        .name{
+          font-size: 16px;
+          line-height: 16px;
+          font-weight: 700;
+          text-transform: uppercase;
+          color: #464646;
+            > span{
+            display: block;
+          }
+        }
+        .material-icons{
+          font-size: 28px;
+          color: #223C7F;
+        }
+      }
+      .title-wrapper{
+        .page-title{
+          font-size: 16px;
+          line-height: 24px;
+          color: #464646;
+          margin: 0;
+          padding-left: 30px;
+          font-weight: 600;
+          position: relative;
+          &:before{
+            content: " ";
+            width: 1px;
+            height: 20px;
+            background-color: #464646;
+            position: absolute;
+            left: 15px;
+            top: 2px;
+          }
+        }
+      }
+    }
+    .user-settings{
+      flex: 0 0 auto;
+      flex-grow: 1;
+      .settings-icon-wrapper {
+        padding: 5px 0;
+        button{
+          &:hover{
+            background-color: transparent;
+            .mat-button-focus-overlay{opacity: 0 !important;}
+          }
+        }
+      }
+      .notification-wrapper{
+        display: inline-block;
+        vertical-align: middle;
+        line-height: 14px;
+        color: #AAAAAA;
+        padding-top: 5px;
+        .material-icons{
+          padding: 0 5px;
+          color:#464646 !important;
+          &:hover {
+            color: #223C7F !important;
+          }
+        }
+      }
+    }
+  }
+
+
+  
+  .profile-info {
+    color: $gray;
+    text-align: right;
+
+    a {
+      display: inline-block;
+      padding: 5px 10px;
+      vertical-align: middle;
+      font-size: 14px;
+
+      color:#464646;
+      &:hover {
+        color: #223C7F;
+      }
+      .user-name{
+        font-size: 14px;
+        line-height: 19px;
+        color: #464646;
+        font-weight: 600;
+        vertical-align: middle;
+      }
+      .material-icons{
+        border: 1px solid #aaa;
+        border-radius: 50%;
+        background: #464646;
+        color: #fff;
+        margin-right: 10px;
+        &:hover {
+          background: #223C7F;
+        }
+      }
+    }
+
+    i {
+      margin-right: 5px;
+      font-size: 18px;
+    }
+
+    .profile-img {
+      display: inline-block;
+      .img-btn {
+        img {
+          max-width: 33px;
+          display: inline-block;
+          border-radius: 50%;
+          border: 1px solid $line;
+          overflow: hidden;
+          vertical-align: middle;
+          margin: 0;
+          margin-right: 5px;
+        }
+      }
+
+      .dropdown-toggle::after {
+        display: none;
+      }
+
+      i {
+        font-size: 14px;
+        margin-left: 5px;
+      }
+
+      .notification {
+        position: relative;
+
+        .notification-count {
+          position: absolute;
+          top: 5px;
+          right: 6px;
+          font-size: 11px;
+          color: $white;
+          border-radius: 2px;
+          padding: 2px;
+          line-height: 10px;
+          min-width: 14px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+

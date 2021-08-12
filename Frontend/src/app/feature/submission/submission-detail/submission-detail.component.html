@@ -1,0 +1,327 @@
+<mat-tab-group class="submission-tab-group" [(selectedIndex)]="currentTab">
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="material-icons">info</mat-icon>
+            General Information
+        </ng-template>
+        <div>
+            Name*
+            <mat-form-field>
+                <input matInput type="text" value="New York - FAC TRC" />
+            </mat-form-field>
+            Received Date*
+            <mat-form-field>
+                <input matInput type="text" value="05/12/2020" />
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">New</mat-radio-button>
+                <mat-radio-button value="2">Renew</mat-radio-button>
+            </mat-radio-group>
+            Gen Re - US Submission
+            <mat-form-field>
+                <input matInput type="text" />
+            </mat-form-field>
+        </div>
+        <div>
+            Group Name*
+            <mat-form-field>
+                <input matInput type="text" value="New York - FAC TRC" />
+            </mat-form-field>
+            Effective Date*
+            <mat-form-field>
+                <input matInput type="text" value="05/12/2020" />
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Pro Rata</mat-radio-button>
+                <mat-radio-button value="2">XOL</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            Division
+            <mat-form-field>
+                <input matInput type="text" value="New York - FAC TRC" />
+            </mat-form-field>
+            Quote Date*
+            <mat-form-field>
+                <input matInput type="text" value="05/12/2020" />
+            </mat-form-field>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Treaty</mat-radio-button>
+                <mat-radio-button value="2">Fac</mat-radio-button>
+                <mat-radio-button value="3">Primary</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div>
+            Departmnent
+            <mat-form-field>
+                <input matInput type="text" value="New York - FAC TRC" />
+            </mat-form-field>
+            Quote Expiration Date*
+            <mat-form-field>
+                <input matInput type="text" value="05/12/2020" />
+            </mat-form-field>
+        </div>
+        <div>
+            Sub Department*
+            <mat-form-field>
+                <input matInput type="text" value="New York - FAC TRC" />
+            </mat-form-field>
+            <section>
+                <mat-checkbox class="example-margin">Confidentiality Agreement</mat-checkbox>
+                <mat-checkbox class="example-margin">Bouquet</mat-checkbox>
+            </section>
+        </div>
+        <div>
+            Submission Group
+            <mat-form-field>
+                <input matInput type="text" value="New York - FAC TRC" />
+            </mat-form-field>
+        </div>
+        <div>
+            Ceding Company*
+            <mat-form-field class="longText">
+                <mat-label>Ceding Company</mat-label>
+                <input
+                    matInput
+                    [class.link]="isCedingCompanyValid"
+                    [(ngModel)]="cedingCompany"
+                    maxlength="255"
+                    type="text"
+                    (change)="isCedingCompanyValid = false"
+                    (click)="openDetail(isCedingCompanyValid, cedingProducerBranchKey, detailCedingTitle)"
+                    (ngModelChange)="cedingCompany = $event.toUpperCase()"
+                />
+                <button mat-button matSuffix mat-icon-button (click)="openSearchDialog(counterPartySearchType.CedingCompany, cedingCompany, 'Ceding Company')">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+            </mat-form-field>
+            <mat-radio-group aria-label="Rate Per limit of">
+                <mat-label>Rate Per limit of</mat-label>
+                <mat-radio-button value="1">Prem</mat-radio-button>
+                <mat-radio-button value="2">SA</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div>
+            Broker*
+            <mat-form-field class="longText">
+                <input
+                    matInput
+                    [class.link]="isBrokerValid"
+                    [(ngModel)]="broker"
+                    maxlength="255"
+                    type="text"
+                    (change)="isBrokerValid = false"
+                    (click)="openDetail(isBrokerValid, brokerProducerBranchKey, detailBrokerTitle)"
+                    (ngModelChange)="broker = $event.toUpperCase()"
+                />
+                <button mat-button matSuffix mat-icon-button (click)="openSearchDialog(counterPartySearchType.Broker, broker, 'Broker')">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+            </mat-form-field>
+            Contact
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Underwriter
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Broker Email*
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Technical Assistant
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            100% Treaty Limit
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Reviewing Actuary
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Retention Amount
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Contract Analyst
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            100% Subject Premium
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Treaty Type Analyst
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            100% Subject SA
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Line Of Business*
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            TRC Financing Amount
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Company Domicile
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Rate
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Exposure Territory
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Estimated Premium
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Layer
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Authorized Line%
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            MGA
+            <mat-form-field class="longText">
+                <input
+                    matInput
+                    [class.link]="isMgaValid"
+                    [(ngModel)]="mga"
+                    maxlength="255"
+                    type="text"
+                    (change)="isMgaValid = false"
+                    (click)="openDetail(isMgaValid, mgaProducerBranchKey, detailMGATitle)"
+                    (ngModelChange)="mga = $event.toUpperCase()"
+                />
+                <button mat-button matSuffix mat-icon-button (click)="openSearchDialog(counterPartySearchType.MGA, mga, 'MGA')">
+                    <mat-icon>open_in_new</mat-icon>
+                </button>
+            </mat-form-field>
+            Estimated Signed Line%*
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Base Currency
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Co-Insurace Factor%
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Branch Office
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Margin PCT
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Team#
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Authorized TRC Limit
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Status *
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Signed TRC Limit
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Final Disposition
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Authorized TRC Prem
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Assigned Treaty No
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Signed TRC Prem
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Renewing Treaty No
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Created
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+        <div>
+            Last Update
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+            Multi Year
+            <mat-form-field>
+                <input matInput type="text" value="" />
+            </mat-form-field>
+        </div>
+    </mat-tab>
+    <mat-tab disabled="true">
+        <ng-template mat-tab-label>
+            <mat-icon class="material-icons">folder</mat-icon>
+            Electronic Folder DMS
+        </ng-template>
+        Nothing here
+    </mat-tab>
+</mat-tab-group>

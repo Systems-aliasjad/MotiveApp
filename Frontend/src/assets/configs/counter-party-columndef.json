@@ -1,0 +1,126 @@
+[
+    {
+        "keyField": "prod_br_key"
+    },
+    {
+        "field": "full_nm",
+        "headerName": "Name",
+        "editable": false,
+        "minWidth": 250,
+        "sortable": true
+    },
+    {
+        "field": "city",
+        "headerName": "City",
+        "editable": false,
+        "minWidth":150,
+        "sortable": true
+    },
+    {
+        "field": "state",
+        "headerName": "State",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "countryName",
+        "headerName": "Country",
+        "editable": false,
+        "minWidth":150,
+        "sortable": true
+    },
+    {
+        "field": "addr_1",
+        "headerName": "Address",
+        "editable": false,
+        "minWidth": 250,
+        "sortable": true
+    },
+    {
+        "field": "prod_key",
+        "headerName": "Prod #",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "prod_br_key",
+        "headerName": "Branch",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "naic_no",
+        "headerName": "NAIC #",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "stopPayment",
+        "headerName": "Producer Warning",
+        "editable": false,
+        "minWidth":150,
+        "sortable": true
+    },
+    {
+        "field": "status_flg",
+        "headerName": "Status",
+        "editable": false,
+        "sortable": true,
+        "minWidth":150,
+        "resizable": true,
+        "cellEditor": "LookupListEditorComponent",
+        "nameValue": {
+            "name": "name",
+            "value": "value"
+        },
+        "cellEditorParams": {
+            "values": [
+                {
+                    "value": "A",
+                    "name": "Active"
+                },
+                {
+                    "value": "I",
+                    "name": "In Active"
+                }
+            ]
+        },
+        "valueFormatters": [
+            {
+                "name": "lookupKeyValueFormatter"
+            }
+        ]
+    },
+    {
+        "field": "macola_vendor_no",
+        "headerName": "Sun Vendor Check #",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "sun_vend_no_wire",
+        "headerName": "Sun Vendor Wire #",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "account_no",
+        "headerName": "Bank Account No",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    },
+    {
+        "field": "curr_iso_cd",
+        "headerName": "Currency",
+        "editable": false,
+        "minWidth":100,
+        "sortable": true
+    }
+]

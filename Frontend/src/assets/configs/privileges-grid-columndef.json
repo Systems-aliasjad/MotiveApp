@@ -1,0 +1,50 @@
+[
+    {
+        "keyField": "employeekey"
+    },
+    {
+        "field": "employeekey",
+        "hide": true
+    },
+    {
+        "field": "module",
+        "headerName": "Module",
+        "editable": true,
+        "checkboxSelection": true,
+        "validationRules": {
+            "required": true
+        },
+        "cellEditor": "LookupListEditorComponent",
+        "isParent": true,
+        "refDataKey": "module",
+        "nameValue": {
+            "name": "module",
+            "value": "module"
+        }
+    },
+    {
+        "field": "action",
+        "headerName": "Action",
+        "editable": true,
+        "validationRules": {
+            "required": true
+        },
+        "cellEditor": "LookupListEditorComponent",
+        "refDataKey": "action",
+        "nameValue": {
+            "name": "action",
+            "value": "action"
+        },
+        "parentField": "module",
+        "isChild": true
+    },
+    {
+        "field": "amount",
+        "headerName": "Amount",
+        "editable": true,
+        "validationRules": {
+            "decimal": true,
+            "required": true
+        }
+    }
+]

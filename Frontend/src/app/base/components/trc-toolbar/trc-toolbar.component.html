@@ -1,0 +1,26 @@
+<!-- <mat-toolbar class="trc-toolbar">
+    <button
+        *ngFor="let tool of toolbar"
+        [title]="tool.label"
+        (click)="tool.listener($event)"
+        mat-icon-button
+
+        aria-label="tool.label"
+    >
+        <mat-icon>{{ tool.icon }}</mat-icon>
+    </button>
+</mat-toolbar> -->
+
+<div class="tab-action-wrapper mw-90" *ngIf="enabledToolbar">
+    <a
+        *ngFor="let tool of toolbar; let i = index"
+        [class]="!tool.cssClass ? 'action-btn-wrapper' : tool.cssClass"
+        [class.hide]="tool.hide ? true : false"
+        (click)="tool.listener({ event: $event, toolbar: toolbar })"
+    >
+        <span [class]="tool.icon" class="toolbar-icons">
+            <ng-container *ngIf="tool.iconText" >{{ tool.iconText }}</ng-container>
+            </span
+        ><span class="action-label">{{ tool.label }}</span>
+    </a>
+</div>

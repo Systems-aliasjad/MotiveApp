@@ -1,0 +1,16 @@
+<div class="grid-layout-wrapper">
+    <trc-grid
+        #TRCSubmisGrid
+        [rowData]="submissionData"
+        [columnDefs]="colDef"
+        [editable]="true"
+        [pagination]="false"
+        [scrollBarDataSource]="scrollBarDataSource"
+        [enabledInfiniteScrolling]="true"
+        [isReady]="true"
+        [pageSize]="pageSize"
+        [suppressColumnVirtualisation]="false"
+        (rowDoubleClicked)="onRowDoubleClicked($event)"
+        (onGridReady)="gridReady($event)"
+    ></trc-grid>
+</div>
