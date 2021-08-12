@@ -8,29 +8,29 @@ export const environment = {
     baseHref: '',
     appRoot: 'https://services.transre.com/',
     disableConsoleLogs: false,
-    disableOkta: true,
-    okta: {
-        Issuer: 'https://transre.oktapreview.com/oauth2/ausn3e7n0lnnz5TUQ0h7',
-        RedirectUri: 'https://dev-secutil-app.azurewebsites.net/implicit/callback',
-        ClientId: '0oawacsq3d9cBkH5D0h7',
-        Pkce: true,
-        CurrentUser: 'https://dev-456789.oktapreview.com/api/v1/users/me',
-        logoutRedirectUri: 'https://dev-secutil-app.azurewebsites.net'
-    },
+    // disableOkta: true,
+    // okta: {
+    //     Issuer: 'https://transre.oktapreview.com/oauth2/ausn3e7n0lnnz5TUQ0h7',
+    //     RedirectUri: 'https://dev-secutil-app.azurewebsites.net/implicit/callback',
+    //     ClientId: '0oawacsq3d9cBkH5D0h7',
+    //     Pkce: true,
+    //     CurrentUser: 'https://dev-456789.oktapreview.com/api/v1/users/me',
+    //     logoutRedirectUri: 'https://dev-secutil-app.azurewebsites.net'
+    // },
     About: {
         version: '1.2.3',
         database: 'Dev',
         serverName: 'Dev Server',
-        publishDate: '1/25/2021'
+        publishDate: '1/25/2021',
     },
     app_environments: [
         { name: 'dev', url: 'http://localhost:4200', active: false },
         { name: 'qa', url: 'https://qa-secutil-app.azurewebsites.net', active: false },
-        { name: 'prod', url: 'https://dev-secutil-app.azurewebsites.net', active: true }
+        { name: 'prod', url: 'https://dev-secutil-app.azurewebsites.net', active: true },
     ],
     API_URL: 'https://poc-secutil-apim.azure-api.net/secutilapi/api/',
     maxFileSize: 3000000,
     agGridLicenseKey: '',
     impersonateUser: 'mbarua',
-    enableLog: false
+    enableLog: false,
 };

@@ -48,8 +48,7 @@ export class HomeComponent implements OnInit {
                 iconUrl: '',
                 icon: 'icon-new',
                 cssClass: '',
-                cssStyle: {
-                },
+                cssStyle: {},
                 listener: ($params) => {
                     this.Add();
                 },
@@ -77,8 +76,7 @@ export class HomeComponent implements OnInit {
                 label: 'Reset',
                 iconUrl: '',
                 icon: 'icon-reset_toolar',
-                cssStyle: {
-                },
+                cssStyle: {},
                 listener: ($params) => {
                     this.resetQueryMode();
                 },

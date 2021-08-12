@@ -1,18 +1,16 @@
 {
-    "baseHref":"",
-    "basePath":"http://localhost:4200",
+    "baseHref": "",
+    "basePath": "http://localhost:4200",
     "Auth": {
-      "issuer": "https://dev-226228.okta.com/oauth2/default",
-      "redirectUri": "http://localhost:4200/implicit/callback",
-      "logoutRedirect":"http://localhost:4200/",
-      "clientId": "0oas2m87tOTQ2sR7r4x6"
+        "redirectUri": "http://localhost:4200/implicit/callback",
+        "logoutRedirect": "http://localhost:4200/",
+        "clientId": "0oas2m87tOTQ2sR7r4x6"
     },
     "About": {
-      "version": "1.0",
-      "database": "Dev",
-      "serverName": "Test Server"
+        "version": "1.0",
+        "database": "Dev",
+        "serverName": "Test Server"
     },
     "API_URL": "https://localhost:44386/api/",
     "maxFileSize": 3000000
-  }
- 
+}

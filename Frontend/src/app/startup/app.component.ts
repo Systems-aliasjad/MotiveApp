@@ -3,7 +3,6 @@ import { CacheService } from '../cache/cache.service';
 import { StorageType } from '../cache/storages/storage-type.enum';
 import { SwUpdate } from '@angular/service-worker';
 import { Router } from '@angular/router';
-import { OktaAuthService } from '@okta/okta-angular';
 import { environment } from '../../environments/environment';
 
 @Component({
@@ -19,7 +18,7 @@ export class AppComponent implements OnInit {
     }
     ngOnInit(): void {
         if (environment.production) {
-            window.console.log = function () { };   // disable any console.log debugging statements in production mode
+            window.console.log = function () {}; // disable any console.log debugging statements in production mode
         }
 
         //  this.loadRoutes();
@@ -27,11 +26,7 @@ export class AppComponent implements OnInit {
         // if (this.authService.isAuthenticated()) {
         //     this.router.navigateByUrl('/secUser');
         // }
-
-
     }
-
-
 
     checkForNewVersion() {
         if (this.swUpdate.isEnabled) {
@@ -43,8 +38,6 @@ export class AppComponent implements OnInit {
         }
     }
 }
-
-
 
 // class AppRouterLink {
 //     constructor(link: string, name: string, hide: boolean=false) {
