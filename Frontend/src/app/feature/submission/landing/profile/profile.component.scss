@@ -10,11 +10,14 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    @media screen and (max-width: 375px) {
+    @media screen and (max-width: 376px) {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
       flex-direction: column;
+      -webkit-box-align: start;
+      -ms-flex-align: start;
+      align-items: flex-start;
     }
     .user-profile-inner-container{
       -webkit-box-flex: 0;
@@ -27,11 +30,12 @@
         flex: 0 0 70%;
         max-width: 70%;
       }
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 376px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
+        width: 100%;
       }
       .user-profile{
         display: -webkit-box;
@@ -54,6 +58,9 @@
             -ms-flex: 0 0 30%;
             flex: 0 0 30%;
             max-width: 30%;
+          }
+          @media screen and (max-width: 376px) { 
+
           }
           .user-profile-rounded {
             overflow: hidden;
@@ -97,8 +104,11 @@
             flex: 0 0 65%;
             max-width: 65%;
           }
-          @media screen and (max-width: 375px) {
-
+          @media screen and (max-width: 376px) {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 70%;
+            flex: 0 0 70%;
+            max-width: 70%;
           }
           .user-profile-content{
               display: -webkit-box;
@@ -154,15 +164,16 @@
         flex: 0 0 32%;
         max-width: 32%;
       }
-      @media screen and (max-width: 375px) {
+      @media screen and (max-width: 376px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
         max-width: 100%;
+        width: 100%;
+        margin-top: 1rem;
       }
       .btn{
-        @media screen and (max-width: 375px) {
-          font-size: 0.8rem;
+        @media screen and (max-width: 376px) {
           width: 100%;
         }
       }
