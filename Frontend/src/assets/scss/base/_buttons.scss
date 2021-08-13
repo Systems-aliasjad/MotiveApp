@@ -1,0 +1,47 @@
+@import '../../../assets/scss/base/mixins';
+.primary-btn{
+  text-transform:$text-uppercase;
+  /* -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: transition; */
+  @include transition(all 0.3s ease-in-out);
+  color: #333333;
+  border: 2px #000000 solid;
+  background-color: $white;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14285714em;
+  padding: .48rem 1rem;
+  min-height: 2.2rem;
+  width: auto;
+  &:hover{
+    color: #f1f1eb;
+    background-color: #719e19;
+    border: 2px solid #719e19;
+    
+  }
+}
+
+.secondary-btn{
+  text-transform: $text-uppercase;
+  /* -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; */
+  @include transition(all 0.3s ease-in-out);
+  color: #333333;
+  border: 2px $black solid;
+  background-color: $white;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.14285714em;
+  padding: .48rem 1rem;
+  min-height: 2.2rem;
+  width: auto;
+  &:hover{
+    color: $white;
+    background-color: #719e19;
+    border: 2px solid #719e19;
+    
+  }
+}
+

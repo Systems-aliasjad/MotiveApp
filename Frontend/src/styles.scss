@@ -52,6 +52,7 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 @import'./assets/scss/base/popups';
 @import'./assets/scss/base/footer';
 @import'./assets/scss/base/style-icomoon';
+@import'./assets/scss/base/buttons';
 @import'./assets/scss/base/layout';
 // @import'../src/assets/fonts/'
 
@@ -87,22 +88,22 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 /*------------------- Neotech Fonts End -------------------*/
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
-  font-family: Lato-Black;
+  font-family: Lato;
   font-weight: 900;
   src: url('/assets/fonts/Lato-Black.ttf') format('ttf');
 }
 @font-face {
-  font-family: Lato-Bold;
+  font-family: Lato;
   font-weight: 700;
   src: url('/assets/fonts/Lato-Bold.ttf') format('ttf');
 }
 @font-face {
-  font-family: Lato-Light;
+  font-family: Lato;
   font-weight: 300;
   src: url('/assets/fonts/Lato-Light.ttf') format('ttf');
 }
 @font-face {
-  font-family: Lato-Regular;
+  font-family: Lato;
   font-weight: 400;
   src: url('/assets/fonts/Lato-Regular.ttf') format('ttf');
 }
@@ -121,7 +122,7 @@ body {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: $base-font;
 }
 
 .trc-notify-success {
