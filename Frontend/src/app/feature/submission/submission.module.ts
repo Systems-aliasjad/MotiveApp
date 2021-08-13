@@ -48,7 +48,6 @@ import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
     AppAgGridModule,
     BaseModule,
     HttpModule,
-    SharedModule,
     PerfectScrollbarModule,
   ],
 })
