@@ -12,6 +12,6 @@ import { QueryComponent } from '../query/query.component';
 })
 export class LandingComponent implements OnInit {
   constructor(private headerService: HeaderService) {}
-
+  pageTitle = 'Technical Support';
   ngOnInit(): void {}
 }
