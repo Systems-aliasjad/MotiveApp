@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>D8D05D32-1C05-4EC6-8D63-6756E92D98F8</title>
+    <g id="📄-Asset-Sheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="App.MotiveH&amp;S.A.1" transform="translate(-120.000000, -1481.000000)">
+            <g id="icon_issue" transform="translate(120.000000, 1481.000000)">
+                <rect id="Rectangle" fill="#FF7500" fill-rule="nonzero" opacity="0.200000003" x="0" y="0" width="24" height="24" rx="4"></rect>
+                <g id="icon_info" transform="translate(3.000000, 4.000000)">
+                    <rect id="bound" x="0" y="0" width="17" height="17"></rect>
+                    <g id="icon" transform="translate(2.389044, 1.388811)" stroke="#FF7500" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="6.6003" y1="2.97916667" x2="6.6003" y2="6.70472222" id="Stroke-1"></line>
+                        <line x1="6.6003" y1="8.48631111" x2="6.6003" y2="9.42353333" id="Stroke-2"></line>
+                        <path d="M9.71444444,12.4133333 C11.7833333,11.3088889 13.1911111,9.11555556 13.1911111,6.59633333 C13.1911111,2.95555556 10.2433333,0 6.59555556,0 C2.94777778,0 0,2.95555556 0,6.59633333 C0,10.2433333 2.94777778,13.1988889 6.59555556,13.1988889 L6.60333333,13.1988889" id="Stroke-3"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

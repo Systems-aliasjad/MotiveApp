@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>989D11FB-8DBB-4D69-BF69-DDC3CBC3C8C2</title>
+    <g id="📄-Asset-Sheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="App.MotiveH&amp;S.A.1" transform="translate(-127.000000, -526.000000)" stroke="#719E19">
+            <g id="Icon-/-Outline-/-Current-location-/-x.-Consumer" transform="translate(127.000000, 526.000000)">
+                <path d="M13.9633058,8.00223146 C13.9633058,11.2903887 11.2943365,13.9557556 8.00231405,13.9557556 C4.71029157,13.9557556 2.04132231,11.2903887 2.04132231,8.00223146 C2.04132231,4.71407418 4.71029157,2.04870729 8.00231405,2.04870729 C11.2943365,2.04870729 13.9633058,4.71407418 13.9633058,8.00223146 L13.9633058,8.00223146 Z" id="Line"></path>
+                <path d="M10.8532231,8.00223146 C10.8532231,9.57473838 9.57679339,10.8495691 8.00231405,10.8495691 C6.42757554,10.8495691 5.15140496,9.57473838 5.15140496,8.00223146 C5.15140496,6.42946568 6.42757554,5.15489381 8.00231405,5.15489381 C9.57679339,5.15489381 10.8532231,6.42946568 10.8532231,8.00223146 L10.8532231,8.00223146 Z" id="Line"></path>
+                <line x1="8" y1="1" x2="8" y2="15" id="Line"></line>
+                <line x1="15" y1="8" x2="1" y2="8" id="Line"></line>
+            </g>
+        </g>
+    </g>
+</svg>
