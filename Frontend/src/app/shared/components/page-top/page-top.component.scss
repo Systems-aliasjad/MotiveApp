@@ -1,0 +1,13 @@
+.page-top-wrapper {
+  min-height: 138px;
+  display: flex;
+  flex-direction: column;
+  .back-to-page {
+      display: inline-block;
+      padding-top: 4rem;
+      padding-right: 1rem;
+      img{
+        display: block;
+      }
+  }
+}
