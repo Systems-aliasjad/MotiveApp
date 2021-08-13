@@ -70,17 +70,17 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 // }
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
-  font-family: Neotech;
+  font-family: Neotech-light;
   font-weight: 300;
   src: url('/assets/fonts/neotech-light.woff') format('woff');
 }
 @font-face {
-  font-family: Neotech;
+  font-family: Neotech-regular;
   font-weight: 400;
   src: url('/assets/fonts/neotech-regular.woff') format('woff');
 }
 @font-face {
-  font-family: Neotech;
+  font-family: Neotech-medium;
   font-weight: 900;
   src: url('/assets/fonts/neotech-medium.woff') format('woff');
 }
