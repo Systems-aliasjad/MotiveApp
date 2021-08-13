@@ -81,7 +81,7 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 }
 @font-face {
   font-family: Neotech-medium;
-  font-weight: 900;
+  font-weight: 700;
   src: url('/assets/fonts/neotech-medium.woff') format('woff');
 }
 /*------------------- Neotech Fonts End -------------------*/
@@ -394,9 +394,7 @@ body {
   }
 }
 // ------------Title Styling Start-------------------
-.page-top-title{
 
-}
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   font-family: Neotech-medium,GE SS Two,Roboto,Arial,sans-serif;
   font-weight: 400;
