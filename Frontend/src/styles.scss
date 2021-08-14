@@ -411,11 +411,23 @@ h1{
 // ------------Title Styling End-------------------
 /* .body-wrapper */
 body{
-  background: rgb(255,255,255);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat:no-repeat;
+  /* background: $white;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(244,247,235,1)));
   background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%);
-  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%);
-
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%); */
+background-color: #ffffff; /* Old browsers */
+background-image: -moz-linear-gradient(top,  #ffffff 0%, #f4f7eb 100%); /* FF3.6-15 */
+background-image: -webkit-linear-gradient(top,  #ffffff 0%,#f4f7eb 100%); /* Chrome10-25,Safari5.1-6 */
+background-image: linear-gradient(to bottom,  #ffffff 0%,#f4f7eb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ); /* IE6-9 */
+/* background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(#fafdff), color-stop(#f3fcfd), color-stop(#f0fbf5), to(#f4f7eb));
+background-image: -o-linear-gradient(top, #ffffff, #fafdff, #f3fcfd, #f0fbf5, #f4f7eb);
+background-image: linear-gradient(to bottom, #ffffff, #fafdff, #f3fcfd, #f0fbf5, #f4f7eb); */
 }
 .body-wrapper{
   background-color:transparent;

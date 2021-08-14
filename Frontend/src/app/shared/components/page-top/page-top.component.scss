@@ -1,4 +1,6 @@
+@import '../../../../assets/scss/base/mixins';
 @import '../../../../assets/scss/base/variables';
+
 .page-top-container {
   min-height: 138px;
   display: -webkit-box;
@@ -9,12 +11,33 @@
       -ms-flex-direction: column;
           flex-direction: column;
   .back-to-page {
-      display: inline-block;
-      padding-top: 2rem;
-      padding-right: 1rem;
-      img{
-        display: block;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      margin-top: 2rem;
+      @include transition(all 0.3s ease-in-out);
+      &:hover{
+        text-decoration: none;
+        span{
+          color:$etisalat-color;
+        }
       }
+      img,
+      span{
+        display: inline-block;
+      }
+      span{
+        color:$primary-color;
+        margin-left: 1rem;
+        @media screen and (max-width: 768px) {
+          display: none;
+        }
+      }
+
   }
   .page-top_title{
     h2{

@@ -11,8 +11,7 @@
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    @media screen and (max-width: 376px) {}
-    @media screen and (max-width: 322px) {
+    @media screen and (max-width: 352px) {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -30,6 +29,12 @@
       -ms-flex: 0 0 615px;
       flex: 0 0 615px;
       max-width: 615px;
+      @media screen and (max-width: 767px) {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+      }
       @media screen and (max-width: 567px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 70%;
@@ -43,7 +48,7 @@
         max-width: 100%;
         width: 100%; */
       }
-      @media screen and (max-width: 322px) {
+      @media screen and (max-width: 352px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
@@ -99,7 +104,7 @@
                 width: 3.5rem;
                 height: 3.5rem;
               }
-              @media screen and (max-width: 376px) {
+              @media screen and (max-width: 352px) {
                 width: 3.8rem;
                 height: 3.8rem;
               }
@@ -153,6 +158,9 @@
                 font-weight: 900;
                 color: $primary-color;
                 line-height: 1;
+                @-moz-document url-prefix() {
+                  font-weight: 500 !important;
+                }
               }
             .user-number_package{
               display: -webkit-box;
@@ -207,7 +215,7 @@
         flex: 0 0 30%;
         max-width: 30%;
       }
-      @media screen and (max-width: 320px) {
+      @media screen and (max-width: 352px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
         flex: 0 0 100%;
