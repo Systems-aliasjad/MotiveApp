@@ -1,4 +1,5 @@
 @import '../../../../../assets/scss/base/variables';
+
 .user-profile-main-container{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -19,11 +20,15 @@
       -ms-flex-align: start;
       align-items: flex-start;
     }
-    .user-profile-inner-container{
-      -webkit-box-flex: 0;
+    .user-profile-inner_container{
+      /* -webkit-box-flex: 0;
       -ms-flex: 0 0 66.666667%;
       flex: 0 0 66.666667%;
-      max-width: 66.666667%;
+      max-width: 66.666667%; */
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 615px;
+      flex: 0 0 615px;
+      max-width: 615px;
       @media screen and (max-width: 567px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 70%;
@@ -48,7 +53,7 @@
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
-        .user-profile-image {
+        .user-profile_image {
           -webkit-box-flex: 0;
           -ms-flex: 0 0 25%;
           flex: 0 0 25%;
@@ -59,10 +64,8 @@
             flex: 0 0 30%;
             max-width: 30%;
           }
-          @media screen and (max-width: 376px) { 
-
-          }
-          .user-profile-rounded {
+          @media screen and (max-width: 376px) { }
+          .user-profile_rounded {
             overflow: hidden;
             border-radius: 50%;
             width: 5rem;
@@ -110,7 +113,7 @@
             flex: 0 0 70%;
             max-width: 70%;
           }
-          .user-profile-content{
+          .user-profile_content{
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex;
@@ -118,13 +121,13 @@
               -webkit-box-direction: normal;
               -ms-flex-direction: column;
               flex-direction: column;
-              .user-profile-name{
+              .user-profile_name{
                 font-family: $base-font;
                 font-weight: 900;
                 color: $primary-color;
                 line-height: 1;
               }
-            .user-number-package{
+            .user-number_package{
               display: -webkit-box;
               display: -ms-flexbox;
               display: flex;
@@ -142,6 +145,7 @@
               .user-package{
                 display: block;
                 line-height: 1.4;
+                word-break: break-word;
               }
               .user-package{
                 @media screen and (min-width: 768px) {
@@ -154,10 +158,14 @@
       }
     }
     .switch-btn-container {
-      -webkit-box-flex: 0;
+     /*  -webkit-box-flex: 0;
       -ms-flex: 0 0 33.333333%;
       flex: 0 0 33.333333%;
-      max-width: 33.333333%;
+      max-width: 33.333333%; */
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+       max-width: 100%;
       @media screen and (max-width: 567px) {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 32%;

@@ -1,4 +1,6 @@
 @import '../../../assets/scss/base/mixins';
+
+
 .primary-btn{
   text-transform:$text-uppercase;
   /* -webkit-transition: all 0.3s ease-in-out;
@@ -16,8 +18,8 @@
   width: auto;
   &:hover{
     color: #f1f1eb;
-    background-color: #719e19;
-    border: 2px solid #719e19;
+    background-color: $etisalat-color;
+    border: 2px solid $etisalat-color;
     
   }
 }
@@ -39,8 +41,8 @@
   width: auto;
   &:hover{
     color: $white;
-    background-color: #719e19;
-    border: 2px solid #719e19;
+    background-color: $etisalat-color;
+    border: 2px solid $etisalat-color;
     
   }
 }
