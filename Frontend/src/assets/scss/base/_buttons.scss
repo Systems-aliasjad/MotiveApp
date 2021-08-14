@@ -3,9 +3,6 @@
 
 .primary-btn{
   text-transform:$text-uppercase;
-  /* -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: transition; */
   @include transition(all 0.3s ease-in-out);
   color: #333333;
   border: 2px #000000 solid;
@@ -16,19 +13,18 @@
   padding: .48rem 1rem;
   min-height: 2.2rem;
   width: auto;
-  &:hover{
-    color: #f1f1eb;
-    background-color: $etisalat-color;
-    border: 2px solid $etisalat-color;
+  &:hover,
+  &:active,
+  &:focus{
+    color: #333333;
+    background-color: transparent;
+    border: 2px solid $black;
     
   }
 }
 
 .secondary-btn{
   text-transform: $text-uppercase;
-  /* -webkit-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out; */
   @include transition(all 0.3s ease-in-out);
   color: #333333;
   border: 2px $black solid;
@@ -39,7 +35,9 @@
   padding: .48rem 1rem;
   min-height: 2.2rem;
   width: auto;
-  &:hover{
+  &:hover,
+  &:active,
+  &:focus{
     color: $white;
     background-color: $etisalat-color;
     border: 2px solid $etisalat-color;
