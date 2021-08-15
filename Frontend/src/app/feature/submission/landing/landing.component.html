@@ -3,11 +3,20 @@
     <div class="col-sm-12">
       
       <!-- Page Top Title Start -->  
-      <app-page-top [pageTitle]="pageTitle"></app-page-top>
+      <div class="row">
+        <div class="col-sm-12">
+          <app-page-top [pageTitle]="pageTitle"></app-page-top>
+        </div>
+      </div>
+      
       <!-- Page Top Title End -->
       
-      <!-- User Profile Start -->  
-      <app-profile></app-profile>
+      <!-- User Profile Start -->
+      <div class="row">
+        <div class="col-sm-12">  
+          <app-profile></app-profile>
+        </div>
+      </div>
       <!-- User Profile End -->  
 
       <!-- Technical Support List Start -->  
@@ -79,9 +88,8 @@
         </div>
       </div>
       <!-- Technical Support List End -->  
-
-
-      <!-- Quick Links Start -->  
+      
+      <!-- Quick Links Start --> 
       <app-quick-links></app-quick-links>
       <!-- Quick Links End --> 
     
