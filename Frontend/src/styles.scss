@@ -38,36 +38,38 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 @include angular-material-theme($TransRe-theme);
 @import '~ag-grid-community/dist/styles/ag-theme-balham.css';
 @import '~ag-grid-community/dist/styles/ag-theme-material.css';
-@import "../node_modules/ag-grid-community/src/styles/ag-grid.scss";
-@import "../node_modules/ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham-mixin.scss";
+@import '../node_modules/ag-grid-community/src/styles/ag-grid.scss';
+@import '../node_modules/ag-grid-community/src/styles/ag-theme-balham/sass/ag-theme-balham-mixin.scss';
 
 @import './assets/scss/base/variables';
 @import './assets/scss/base/mixins';
 @import './assets/scss/base/common';
-@import'./assets/scss/base/breadcrumbs';
-@import'./assets/scss/base/tabs';
-@import'./assets/scss/base/toolbar';
-@import'./assets/scss/base/grid';
-@import'./assets/scss/base/privilliges';
-@import'./assets/scss/base/popups';
-@import'./assets/scss/base/footer';
-@import'./assets/scss/base/style-icomoon';
-@import'./assets/scss/base/layout';
+@import './assets/scss/base/breadcrumbs';
+@import './assets/scss/base/tabs';
+@import './assets/scss/base/toolbar';
+@import './assets/scss/base/grid';
+@import './assets/scss/base/privilliges';
+@import './assets/scss/base/popups';
+@import './assets/scss/base/footer';
+@import './assets/scss/base/style-icomoon';
+@import './assets/scss/base/layout';
 // @import'../src/assets/fonts/'
 
-// .success{
-//     background-color: green;
-// }
-// .info{
-//     background-color: blue;
-// }
+/* Core CSS required for Ionic components to work properly */
+@import '~@ionic/angular/css/core.css';
 
-// .ag-cell-not-inline-editing {
-//     background-color: #F5F7F7;
-// }
-// .chk-margin {
-//     border: 1px solid #719ECE !important;
-// }
+/* Basic CSS for apps built with Ionic */
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
   font-family: Neotech-light;
@@ -108,9 +110,9 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 }
 /*------------------- Neotech Fonts End -------------------*/
 * {
-   font-smoothing: antialiased;
+  font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale
+  -moz-osx-font-smoothing: grayscale;
 }
 html,
 body {
@@ -121,7 +123,7 @@ body {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .trc-notify-success {
@@ -148,7 +150,7 @@ body {
 }
 
 #myGrid .mat-form-field-appearance-fill .mat-form-field-flex {
-  padding: 0px !important
+  padding: 0px !important;
 }
 
 #myGrid .mat-form-field-appearance-fill .mat-form-field-infix {
@@ -168,7 +170,7 @@ body {
 }
 
 #myGrid .mat-form-field-suffix .mat-icon-button {
-  height: 2.0em !important;
+  height: 2em !important;
 }
 
 .ag-theme-balham .ag-cell-inline-editing {
@@ -176,12 +178,12 @@ body {
 }
 
 .ag-theme-balham .ag-cell-data-changed {
-  background: #223C7F;
+  background: #223c7f;
   color: white;
 }
 
 .ag-theme-balham .ag-cell-data-changed-animation {
-  background: #223C7F;
+  background: #223c7f;
   color: white;
 }
 
@@ -227,7 +229,6 @@ body {
   margin-left: 5px !important;
 }
 
-
 // ------------OPEN DIALOG SECTION START-------------------
 .open-modal {
   .mat-dialog-title {
@@ -235,9 +236,9 @@ body {
     // line-height: 20px;
     font-weight: 700;
     background: #243c98;
-    border: 1px solid #E7E7E7;
+    border: 1px solid #e7e7e7;
     padding: 8px 12px;
-    border-bottom: 2px solid #243C98;
+    border-bottom: 2px solid #243c98;
     color: #fff;
     margin: -24px -24px 20px;
     font-size: 18px;
@@ -271,14 +272,13 @@ body {
     padding-bottom: 25px;
 
     .mat-tab-label {
-      color: #243C98;
+      color: #243c98;
       opacity: 1;
 
       &.mat-tab-label-active {
         background: rgba(225, 225, 225, 0.76);
         border-radius: 3px;
-        border-bottom: 3px solid #243C98
-
+        border-bottom: 3px solid #243c98;
       }
     }
   }
@@ -304,7 +304,7 @@ body {
       text-transform: uppercase;
       padding: 10px 16px;
       box-shadow: none;
-      border: 1px solid #243C98;
+      border: 1px solid #243c98;
       border-radius: 2px;
     }
   }
@@ -318,7 +318,7 @@ body {
 
 .open-dialog-btn-wrapper {
   display: block;
-  border-top: 1px solid #C4C4C4;
+  border-top: 1px solid #c4c4c4;
   margin: 0px -23px;
   display: flex;
   justify-content: flex-end;
@@ -345,7 +345,7 @@ body {
 
     .mat-tab-label {
       &.mat-tab-label-active {
-        border-bottom: 3px solid #243C98;
+        border-bottom: 3px solid #243c98;
       }
     }
   }
@@ -395,12 +395,23 @@ body {
 }
 // ------------Title Styling Start-------------------
 
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-  font-family: Neotech-medium,GE SS Two,Roboto,Arial,sans-serif;
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Neotech-medium, GE SS Two, Roboto, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.3;
 }
-h1{
+h1 {
   color: $primary-color;
 }
 // ------------Title Styling End-------------------
