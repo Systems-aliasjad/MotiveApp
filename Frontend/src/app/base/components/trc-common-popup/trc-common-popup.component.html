@@ -1,14 +1,21 @@
 <div class="common-popup">
-    <div [ngClass]="data.popupHeaderClasses" *ngIf="!data.hideHeader">
-        <span>{{data.title}}</span>
-        <mat-icon class="close-icon" title="close" mat-dialog-close>cancel</mat-icon>
-    </div>
-    <div [ngClass]="data.popupBodyClasses">
-        <ng-template #appPopupContent *ngIf="data.contentComponent"></ng-template>
-        <div *ngIf="!data.contentComponent && data.bodyText">{{data.bodyText}}</div>
-    </div>
-    <div [ngClass]="data.popupFooterClasses" *ngIf="!data.hideFooter">
-        <button *ngFor="let button of data.actionButtons" [ngClass]="(button.cssClasses && button.cssClasses.length > 0 ? [button.cssClasses] : ['common-popup-action-button'])"
-            [ngStyle]="button.cssStyles" mat-button (click)="button.onAction($event, data)"> {{button.text}}</button>
-    </div>
+  <div *ngIf="!data.hideHeader">
+    <span>{{ data.title }}</span>
+    <mat-icon class="close-icon" title="close" mat-dialog-close>cancel</mat-icon>
+  </div>
+  <div>
+    <ng-template #appPopupContent *ngIf="data.contentComponent"></ng-template>
+    <div *ngIf="!data.contentComponent && data.bodyText">{{ data.bodyText }}</div>
+  </div>
+  <div *ngIf="!data.hideFooter">
+    <button
+      *ngFor="let button of data.actionButtons"
+      [ngClass]="button.cssClasses && button.cssClasses.length > 0 ? [button.cssClasses] : ['common-popup-action-button']"
+      [ngStyle]="button.cssStyles"
+      mat-button
+      (click)="button.onAction($event, data)"
+    >
+      {{ button.text }}
+    </button>
+  </div>
 </div>
