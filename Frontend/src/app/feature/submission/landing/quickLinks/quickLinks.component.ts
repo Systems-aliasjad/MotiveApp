@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { HelperService } from '../../../../shared/helper/helper.service';
 
 @Component({
   selector: 'app-quick-links',
@@ -6,5 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quickLinks.component.scss'],
 })
 export class QuickLinksComponent implements OnInit {
-  ngOnInit(): void {}
+  @Input() codeType: string = '3P';
+  quickLinks;
+  constructor(private helperService: HelperService) {}
+
+  ngOnInit(): void {
+    this.quickLinks = this.helperService.filterCard(this.codeType, 'quickLinkCards');
+  }
 }

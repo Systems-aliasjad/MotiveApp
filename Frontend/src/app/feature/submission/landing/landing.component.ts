@@ -1,9 +1,6 @@
-import { Input } from '@angular/core';
-import { Output } from '@angular/core';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import EventEmitter from 'events';
-import { HeaderService } from '../../layout/services/header.service';
-import { QueryComponent } from '../query/query.component';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HelperService } from '../../../shared/helper/helper.service';
 
 @Component({
   selector: 'app-landing',
@@ -11,7 +8,14 @@ import { QueryComponent } from '../query/query.component';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
-  constructor(private headerService: HeaderService) {}
+  landingPageCards;
+  codeType;
   pageTitle = 'Technical Support';
-  ngOnInit(): void {}
+  constructor(private activatedRoute: ActivatedRoute, private helperService: HelperService) {}
+  ngOnInit(): void {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.codeType = params['code'] || '3P';
+      this.landingPageCards = this.helperService.filterCard(this.codeType, 'landingPageCards');
+    });
+  }
 }

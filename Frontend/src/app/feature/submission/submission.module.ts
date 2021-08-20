@@ -22,6 +22,7 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
     BaseModule,
     HttpModule,
     PerfectScrollbarModule,
+    IonicModule.forRoot(),
   ],
 })
 export class SubmissionModule {}
