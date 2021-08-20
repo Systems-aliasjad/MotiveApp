@@ -1,5 +1,4 @@
 import { Component, OnInit, OnChanges, SimpleChanges, AfterViewInit, ChangeDetectorRef } from '@angular/core';
-// import { MatDialog } from '@angular/material/dialog';
 import { HeaderService } from '../services/header.service';
 import { environment } from '../../../../environments/environment';
 
