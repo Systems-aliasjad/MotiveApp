@@ -76,7 +76,8 @@
 }
 html,
 body,
-.body-wrapper {
+.body-wrapper,
+ion-content{
   height: 100%;
   height: 100vh;
 }
@@ -380,7 +381,8 @@ h1 {
 }
 // ------------Title Styling End-------------------
 /* .body-wrapper */
-body {
+ion-content,
+.body-wrapper {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
