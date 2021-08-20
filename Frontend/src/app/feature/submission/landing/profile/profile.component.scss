@@ -1,5 +1,15 @@
 @import '../../../../../assets/scss/base/variables';
 
+ion-button{
+  --background: transparent;
+  --border-radius: 0;
+  --box-shadow: none;
+	--padding-start:0 !important;
+  --padding-inline-end:0 !important;
+  --padding-top:0;
+  --padding-bottom:0;
+    padding-right: 0;
+	}
 .user-profile-main-container{
     display: -webkit-box;
     display: -ms-flexbox;
@@ -160,6 +170,7 @@
                 font-weight: 900;
                 color: $primary-color;
                 line-height: 1;
+                margin-top: 0;
                 @-moz-document url-prefix() {
                   font-weight: 500 !important;
                 }
