@@ -52,6 +52,7 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 @import './assets/scss/base/popups';
 @import './assets/scss/base/footer';
 @import './assets/scss/base/style-icomoon';
+@import './assets/scss/base/buttons';
 @import './assets/scss/base/layout';
 // @import'../src/assets/fonts/'
 
@@ -89,22 +90,22 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
 /*------------------- Neotech Fonts End -------------------*/
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
-  font-family: Lato-Black;
+  font-family: Lato;
   font-weight: 900;
   src: url('/assets/fonts/Lato-Black.ttf') format('ttf');
 }
 @font-face {
-  font-family: Lato-Bold;
+  font-family: Lato;
   font-weight: 700;
   src: url('/assets/fonts/Lato-Bold.ttf') format('ttf');
 }
 @font-face {
-  font-family: Lato-Light;
+  font-family: Lato;
   font-weight: 300;
   src: url('/assets/fonts/Lato-Light.ttf') format('ttf');
 }
 @font-face {
-  font-family: Lato-Regular;
+  font-family: Lato;
   font-weight: 400;
   src: url('/assets/fonts/Lato-Regular.ttf') format('ttf');
 }
@@ -115,15 +116,18 @@ $TransRe-theme: mat-light-theme($TransRe-primary, $TransRe-accent, $TransRe-warn
   -moz-osx-font-smoothing: grayscale;
 }
 html,
-body {
+body,
+.body-wrapper {
   height: 100%;
+  height: 100vh;
 }
 
 body {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: $base-font;
+  color: $secondary-color;
 }
 
 .trc-notify-success {
@@ -410,8 +414,35 @@ h6 {
   font-family: Neotech-medium, GE SS Two, Roboto, Arial, sans-serif;
   font-weight: 400;
   line-height: 1.3;
+  color: $primary-color;
 }
 h1 {
   color: $primary-color;
 }
 // ------------Title Styling End-------------------
+/* .body-wrapper */
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #f4f7eb; /* Old browsers */
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f4f7eb 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f4f7eb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ); /* IE6-9 */
+
+  /* background: $white;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(244,247,235,1)));
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%);
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%); */
+  /* background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(#fafdff), color-stop(#f3fcfd), color-stop(#f0fbf5), to(#f4f7eb));
+background-image: -o-linear-gradient(top, #ffffff, #fafdff, #f3fcfd, #f0fbf5, #f4f7eb);
+background-image: linear-gradient(to bottom, #ffffff, #fafdff, #f3fcfd, #f0fbf5, #f4f7eb); */
+}
+.body-wrapper {
+  background-color: transparent;
+  padding-top: 0;
+  padding-left: 0;
+}
