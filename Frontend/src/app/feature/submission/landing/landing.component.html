@@ -1,17 +1,26 @@
 <ion-content>
   <ion-grid>
+
+    <!-- Page Top Title Start -->
     <ion-row>
       <ion-col size="12">
-        <!-- Page Top Title Start -->
-        <ion-row>
-          <ion-col size="12">
-            <app-page-top [pageTitle]="pageTitle"></app-page-top>
-          </ion-col>
-        </ion-row>
-        <!-- Page Top Title End -->
+        <app-page-top [pageTitle]="pageTitle"></app-page-top>
       </ion-col>
     </ion-row>
+    <!-- Page Top Title End -->
+
+    <!-- User Profile Start -->
+    <ion-row>
+      <ion-col size="12">
+        <app-profile></app-profile>
+      </ion-col>
+    </ion-row>
+    <!-- User Profile End -->
+
   </ion-grid>
+</ion-content>
+
+
 
   <div class="container-fluid">
     <ion-content class="container-fluid">
@@ -116,4 +125,4 @@
   </ion-card-header>
 </ion-card> -->
   </div>
-</ion-content>
+

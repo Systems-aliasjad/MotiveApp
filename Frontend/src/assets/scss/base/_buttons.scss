@@ -1,18 +1,31 @@
 @import '../../../assets/scss/base/mixins';
 
 
-.primary-btn{
-  text-transform:$text-uppercase;
+.primary-btn,
+.secondary-btn{
   @include transition(all 0.3s ease-in-out);
-  color: #333333;
-  border: 2px #000000 solid;
-  background-color: $white;
+  text-transform: $text-uppercase;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.14285714em;
   padding: .48rem 1rem;
   min-height: 2.2rem;
   width: auto;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+
+}
+.primary-btn{
+  color: #f1f1eb;
+  border: 2px solid $etisalat-color;
+  background-color:$etisalat-color;
   &:hover,
   &:active,
   &:focus{
@@ -22,26 +35,27 @@
     
   }
 }
-
 .secondary-btn{
-  text-transform: $text-uppercase;
-  @include transition(all 0.3s ease-in-out);
   color: #333333;
   border: 2px $black solid;
-  background-color: $white;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 0.14285714em;
-  padding: .48rem 1rem;
-  min-height: 2.2rem;
-  width: auto;
+  background-color: transparent;
   &:hover,
   &:active,
   &:focus{
-    color: $white;
+    color: #f1f1eb;
     background-color: $etisalat-color;
     border: 2px solid $etisalat-color;
-    
   }
 }
-
+/* .ghost-btn{
+  color: #333333;
+  border: 2px #000000 solid;
+  background-color: $white;
+  &:hover,
+  &:active,
+  &:focus{
+    color: #f1f1eb;
+    background-color: $etisalat-color;
+    border: 2px solid $etisalat-color;
+  }
+} */
