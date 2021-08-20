@@ -1,6 +1,6 @@
 import { NgModule, Injector } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RoutingModule } from './routing/routing.module';
+import { RoutingModule } from './app.routing.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CacheModule } from './cache/cache.module';
 import { HttpModule } from './http/http.module';

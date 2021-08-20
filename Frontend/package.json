@@ -1,12 +1,12 @@
 {
-  "name": "tirs-submission",
+  "name": "motive",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "start:ssl": "ng serve --ssl true",
     "restart": "npm restart",
-    "test-pwa": "http-server -c-1 --proxy https://localhost:3000 .\\dist\\TIRS-Submission",
+    "test-pwa": "http-server -c-1 --proxy https://localhost:3000 .\\dist\\motive",
     "prod-build": "ng build --prod --aot --output-path \".\\dist\\prod\" --base-href=/",
     "onPrem-build": "ng build --prod --configuration=onPrem --base-href=/secutil/",
     "qa-build": "ng build --configuration=qa --output-path \".\\dist\\qa\" --base-href=/virtual-path/",
