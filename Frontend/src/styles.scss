@@ -1,3 +1,24 @@
+:root {
+  --ion-background-color: transparent;
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+
+/* Core CSS required for Ionic components to work properly */
+@import '~@ionic/angular/css/core.css';
+
+/* Basic CSS for apps built with Ionic */
+@import '~@ionic/angular/css/normalize.css';
+@import '~@ionic/angular/css/structure.css';
+@import '~@ionic/angular/css/typography.css';
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import '~@ionic/angular/css/padding.css';
+@import '~@ionic/angular/css/float-elements.css';
+@import '~@ionic/angular/css/text-alignment.css';
+@import '~@ionic/angular/css/text-transformation.css';
+@import '~@ionic/angular/css/flex-utils.css';
+
 @charset "utf-8";
 
 @import './assets/scss/base/variables';
@@ -15,21 +36,7 @@
 @import './assets/scss/base/layout';
 // @import'../src/assets/fonts/'
 
-/* Core CSS required for Ionic components to work properly */
-@import '~@ionic/angular/css/core.css';
 
-/* Basic CSS for apps built with Ionic */
-@import '~@ionic/angular/css/normalize.css';
-@import '~@ionic/angular/css/structure.css';
-@import '~@ionic/angular/css/typography.css';
-@import '~@ionic/angular/css/display.css';
-
-/* Optional CSS utils that can be commented out */
-@import '~@ionic/angular/css/padding.css';
-@import '~@ionic/angular/css/float-elements.css';
-@import '~@ionic/angular/css/text-alignment.css';
-@import '~@ionic/angular/css/text-transformation.css';
-@import '~@ionic/angular/css/flex-utils.css';
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
   font-family: Neotech-light;
@@ -380,19 +387,23 @@ h1 {
   color: $primary-color;
 }
 // ------------Title Styling End-------------------
-/* .body-wrapper */
+/* .body-wrapper
 ion-content,
-.body-wrapper {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+.body-wrapper  */
+.body-wrapper{
+  background-color: #f4f7eb ; /* Old browsers */
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f4f7eb 100%)  ; /* Chrome10-25,Safari5.1-6 */
+  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f4f7eb 100%) ; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ) ; /* IE6-9 */
+  -webkit-background-size: cover ;
+  -moz-background-size: cover ;
+  -o-background-size: cover ;
+  background-size: cover ;
   background-repeat: no-repeat;
-  background-color: #f4f7eb; /* Old browsers */
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%); /* FF3.6-15 */
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f4f7eb 100%); /* Chrome10-25,Safari5.1-6 */
-  background-image: linear-gradient(to bottom, #ffffff 0%, #f4f7eb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ); /* IE6-9 */
 
   /* background: $white;
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(244,247,235,1)));

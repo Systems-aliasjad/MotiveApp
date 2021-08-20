@@ -1,6 +1,6 @@
 @import '../../../../assets/scss/base/variables';
 
-header {
+
   .header-wrapper {
     position: $relative;
     .header-wrapper-wave {
@@ -14,5 +14,7 @@ header {
       right: 0;
       z-index: 0;
     }
+    &:after{
+      display: none;
+    }
   }
-}
