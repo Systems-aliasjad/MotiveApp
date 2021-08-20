@@ -48,7 +48,7 @@ export class ApplicableCodes {
     {
       title: 'Internet issues',
       body: 'My Wi-Fi is slow or causing problems',
-      img: '',
+      img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
       applicableCodes: INTERNET_ISSUES,
       linkTo: '',
     },
