@@ -1,15 +1,21 @@
 @import '../../../../../assets/scss/base/variables';
 
+//
 ion-button{
   --background: transparent;
   --border-radius: 0;
-  --box-shadow: none;
-	--padding-start:0 ;
-  --padding-inline-end:0 ;
+  --box-shadow: none;;
   --padding-top:0;
   --padding-bottom:0;
-    padding-right: 0;
 	}
+  ion-button::part(native){
+    background-color: transparent;
+    margin: 0;
+    padding-right: 0;
+    padding-left: 0;
+    
+  }
+
 .user-profile-main-container{
     display: -webkit-box;
     display: -ms-flexbox;
