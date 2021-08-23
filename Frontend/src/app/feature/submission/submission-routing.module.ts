@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MessageBuilderComponent } from 'src/app/message-builder/message-builder.component';
 import { DefaultLayoutComponent } from '../layout/default-layout/default-layout.component';
 import { LandingComponent } from './landing/landing.component';
 
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: 'landing',
         component: LandingComponent,
+      },
+      {
+        path: 'info',
+        component: MessageBuilderComponent,
       },
       {
         path: '**',

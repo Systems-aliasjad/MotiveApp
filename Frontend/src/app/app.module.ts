@@ -13,6 +13,8 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { IonicModule } from '@ionic/angular';
+import { MessageBuilderComponent } from './message-builder/message-builder.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -21,6 +23,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    SharedModule,
     RoutingModule,
     FlexLayoutModule,
     CacheModule,

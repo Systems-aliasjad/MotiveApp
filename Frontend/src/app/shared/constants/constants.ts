@@ -6,6 +6,12 @@ export interface ICard {
   linkTo: String;
 }
 
+export interface ISection2Template {
+  title: String;
+  type: String;
+  objKeyName: String;
+}
+
 const P3: String = '3P';
 const P2: String = '2P';
 const P1: String = '1P';
@@ -149,6 +155,29 @@ export class ApplicableCodes {
       body: 'I want to upgrade my eLife package',
       applicableCodes: UPGRADE_PACKAGE,
       linkTo: '',
+    },
+  ];
+
+  public static openServiceRequestTemplate: ISection2Template[] = [
+    {
+      title: 'Request No.',
+      type: 'number',
+      objKeyName: 'reqNo',
+    },
+    {
+      title: 'Request Type',
+      type: 'text',
+      objKeyName: 'reqType',
+    },
+    {
+      title: 'Date of visit',
+      type: 'date',
+      objKeyName: 'dateVisit',
+    },
+    {
+      title: 'status',
+      type: 'text',
+      objKeyName: 'status',
     },
   ];
 }

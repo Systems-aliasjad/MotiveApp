@@ -1,9 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ISection2Template } from '../../constants/constants';
 
 export interface IMessageSection1 {
   header: String;
   paragraphs: String[];
 }
+
 @Component({
   selector: 'app-message-screen',
   templateUrl: './message-screen.component.html',
@@ -19,6 +21,8 @@ export class MessageScreenComponent implements OnInit {
   };
   @Input()
   Section2Data: any;
+  @Input()
+  Section2Template: ISection2Template[];
   @Input()
   followUpButton: Boolean = false;
   @Input()

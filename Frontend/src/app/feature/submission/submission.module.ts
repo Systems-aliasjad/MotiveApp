@@ -10,9 +10,10 @@ import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { IonicModule } from '@ionic/angular';
+import { MessageBuilderComponent } from '../../message-builder/message-builder.component';
 
 @NgModule({
-  declarations: [LandingComponent, ProfileComponent, QuickLinksComponent],
+  declarations: [LandingComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent],
   imports: [CommonModule, SharedModule, SubmissionRoutingModule, LayoutModule, HttpModule, PerfectScrollbarModule, IonicModule.forRoot()],
 })
 export class SubmissionModule {}
