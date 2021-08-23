@@ -9,6 +9,11 @@ import { HelperService } from '../../../../shared/helper/helper.service';
 export class QuickLinksComponent implements OnInit {
   @Input() codeType: string = '3P';
   quickLinks;
+  slideOpts = {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    centeredSlides: true,
+  };
   constructor(private helperService: HelperService) {}
 
   ngOnInit(): void {

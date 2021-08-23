@@ -6,7 +6,7 @@
         <h5 class="quick-links_title">Quick links</h5>
         <a href="javascript:void(0)" class="quick-links_all">
           <span>See All</span>
-          <img src="../../../../../assets/images/action-icons/icon_arrow_right.svg" alt="See All Icon">
+          <img src="assets/images/action-icons/icon_arrow_right.svg" alt="See All Icon" />
         </a>
       </div>
     </ion-col>
@@ -16,7 +16,19 @@
   <!-- Quick Links Slider Start -->
   <ion-row class="quick-links-card">
     <ion-col size="12">
-      <ion-slides >
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let link of quickLinks">
+          <ion-col sizeLg="2" sizeMd="2" sizeXs="6" size="6">
+            <a href="javascript:void(0)">
+              <ion-card>
+                <ion-card-content>
+                  <p>{{ link.body }}</p>
+                </ion-card-content>
+              </ion-card>
+            </a>
+          </ion-col>
+        </ion-slide>
+        <!--   
         <ion-slide>
           <ion-col  sizeLg="2" sizeMd="2" sizeXs="6" size="6">
             <a href="javascript:void(0)">
@@ -113,29 +125,9 @@
               </ion-card>
             </a>
           </ion-col>
-        </ion-slide>
-  
-        <ion-slide>
-          <ion-col  sizeLg="2" sizeMd="2" sizeXs="6" size="6">
-            <a href="javascript:void(0)">
-              <ion-card>
-                <ion-card-content>
-                  <p>
-                    I want to install my new router
-                  </p>
-                </ion-card-content>
-              </ion-card>
-            </a>
-          </ion-col>
-        </ion-slide>
-  
-  
+        </ion-slide> -->
       </ion-slides>
     </ion-col>
   </ion-row>
   <!-- Quick Links Slider End -->
-
 </div>
-
-
-  
