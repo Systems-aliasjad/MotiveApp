@@ -1,8 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 export interface IMessageSection1 {
-  header: string;
-  paragraphg: string;
+  header: String;
+  paragraphs: String[];
 }
 @Component({
   selector: 'app-message-screen',
@@ -11,17 +11,20 @@ export interface IMessageSection1 {
 })
 export class MessageScreenComponent implements OnInit {
   @Input()
-  imgSrc: string;
+  imgSrc: String = '';
   @Input()
-  Section1Data: IMessageSection1;
+  Section1Data: IMessageSection1 = {
+    header: '',
+    paragraphs: null,
+  };
   @Input()
   Section2Data: any;
   @Input()
-  followUpButton: boolean;
+  followUpButton: Boolean = false;
   @Input()
-  exitTroubleshootLink: boolean;
+  exitTroubleshootLink: Boolean = false;
   @Input()
-  closeButton: boolean;
+  closeButton: Boolean = false;
   constructor() {}
   ngOnInit(): void {}
 }

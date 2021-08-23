@@ -1,2 +1,28 @@
-<p>message-screen works!</p>
 <img [src]="imgSrc" />
+
+<!-- Header -->
+<div *ngIf="Section1Data?.header">
+  <!--  -->
+</div>
+
+<div *ngIf="Section1Data?.paragraphs">
+  <div *ngFor="let txt of Section1Data?.paragraphs">
+    {{ txt }}
+  </div>
+</div>
+
+<div *ngIf="Section2Data">
+  <!-- dotted lines and the data-->
+</div>
+
+<div *ngIf="followUpButton">
+  <!--  -->
+</div>
+
+<div *ngIf="exitTroubleshootLink">
+  <!--  -->
+</div>
+
+<div *ngIf="closeButton">
+  <!--  -->
+</div>

@@ -9,7 +9,7 @@ import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-s
 @NgModule({
   declarations: [PageTopComponent, MessageScreenComponent, ThankyouScreenComponent],
   imports: [CommonModule, NgxDropzoneModule, IonicModule.forRoot()],
-  exports: [PageTopComponent],
+  exports: [PageTopComponent, MessageScreenComponent, ThankyouScreenComponent],
 
   entryComponents: [],
 })
