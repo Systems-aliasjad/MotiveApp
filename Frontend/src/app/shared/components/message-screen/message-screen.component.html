@@ -2,7 +2,7 @@
 
 <!-- Header -->
 <div *ngIf="Section1Data?.header">
-  <!--  -->
+  {{ Section1Data.header }}
 </div>
 
 <div *ngIf="Section1Data?.paragraphs">
@@ -12,15 +12,14 @@
 </div>
 
 <div *ngIf="Section2Data">
-  <!-- dotted lines and the data-->
+  <div *ngFor="let template of Section2Template">{{ template.title }} {{ Section2Data[template.objKeyName] }}</div>
 </div>
 
-<div *ngIf="followUpButton">
-  <!--  -->
-</div>
+<div *ngIf="followUpButton">follow Up text link and button</div>
 
 <div *ngIf="exitTroubleshootLink">
   <!--  -->
+  exitTroubleshootLink
 </div>
 
 <div *ngIf="closeButton">

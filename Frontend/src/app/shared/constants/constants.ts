@@ -9,7 +9,7 @@ export interface ICard {
 export interface ISection2Template {
   title: String;
   type: String;
-  objKeyName: String;
+  objKeyName: string;
 }
 
 const P3: String = '3P';
