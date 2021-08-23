@@ -10,9 +10,10 @@ export class QuickLinksComponent implements OnInit {
   @Input() codeType: string = '3P';
   quickLinks;
   slideOpts = {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    centeredSlides: true,
+    width: 950,
+    slidesPerView: 4,
+    spaceBetween:5
+    /* centeredSlides: true, */
   };
   constructor(private helperService: HelperService) {}
 
