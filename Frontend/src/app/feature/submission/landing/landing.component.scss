@@ -2,13 +2,17 @@
 @import '../../../../assets/scss/base/variables';
 
 .technical-support{
-  @media screen and (max-width: 1024px) {
-    -webkit-box-flex: 0;
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+  /*   -webkit-box-flex: 0;
     -ms-flex: 0 0 33.333333%;
-    flex: 0 0 33.333333%;
-    max-width: 33.333333%;
+    flex: 0 0 33.333333%; 
+    max-width: 33.333333%;*/
+    -webkit-box-flex: 0 !important;
+    -ms-flex: 0 0 50% !important;
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
   }
-  @media screen and (max-width: 768px) {
+/*   @media screen and (max-width: 768px) {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 50%;
     flex: 0 0 50%;
@@ -20,7 +24,7 @@
     flex: 0 0 100%;
     max-width: 100%;
     width: 100%;
-  }
+  } */
   
 }
 .technical-support_card{
@@ -28,7 +32,7 @@
   -webkit-box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
   box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
   background-color: $white;
-  margin-top: 1rem;
+  margin-bottom: .5rem;
   padding: 1rem;
   border-radius: 0.5rem;
   overflow: hidden;
@@ -42,8 +46,10 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  
+  text-decoration: none;
+ 
   @include transition(all 0.3s ease-in-out);
+
   @media screen and (max-width: 281px) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -56,12 +62,10 @@
   &:hover{
     text-decoration: none;
     background-color:$alabaster;
-    .technical-support_icon{
-      img{
-        -webkit-box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-        box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-        border-radius: 0.5rem;
-      }
+    img{
+      -webkit-box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+      box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+      border-radius: 0.5rem;
     }
   }
   .technical-support_icon{
@@ -86,6 +90,8 @@
     .technical-support_title{
       font-family: $base-font;
       font-weight: 900;
+      margin-top: 0;
+      margin-bottom: 0;
       @-moz-document url-prefix() {
         font-weight: 500 !important;
       }

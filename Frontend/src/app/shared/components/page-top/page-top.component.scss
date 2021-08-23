@@ -34,6 +34,8 @@
       span{
         color:$primary-color;
         margin-left: 1rem;
+        text-transform: $text-uppercase;
+        letter-spacing: 0.14285714em;
         @media screen and (max-width: 768px) {
           display: none;
         }
