@@ -1,18 +1,23 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { IPageHeader } from './constants/types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
-  @Output() agGridSelectEditorValueChange: EventEmitter<any> = new EventEmitter<any>();
-  globalFileId: string;
-
+  headerConfig: IPageHeader = {
+    pageTitle: '',
+    singleLine: false,
+  };
   constructor() {}
 
-  getSubscriberForAgGridSelectEditorValueChange(): EventEmitter<any> {
-    if (this.agGridSelectEditorValueChange.observers == null) {
-      this.agGridSelectEditorValueChange = new EventEmitter();
-    }
-    return this.agGridSelectEditorValueChange;
+  setHeaderConfig(pageTitle: string, oneLine: boolean) {
+    this.headerConfig = {
+      pageTitle: pageTitle,
+      singleLine: oneLine,
+    };
+  }
+  getHeaderConfig(): IPageHeader {
+    return this.headerConfig;
   }
 }

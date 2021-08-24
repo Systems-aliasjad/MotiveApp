@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HelperService } from '../../../../shared/helper/helper.service';
+import { HelperService } from '../../shared/helper/helper.service';
 
 @Component({
   selector: 'app-quick-links',

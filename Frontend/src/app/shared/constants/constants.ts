@@ -89,7 +89,7 @@ export class ApplicableCodes {
     {
       title: 'Reset PIN',
       body: 'I want to reset my PIN',
-      img: '',
+      img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
       applicableCodes: RESET_PIN,
       linkTo: '',
     },

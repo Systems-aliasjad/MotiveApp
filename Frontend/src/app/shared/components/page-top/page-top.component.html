@@ -1,25 +1,26 @@
-<div class="page-top-container">
-
+<!-- Header 1 -->
+<div class="page-top-container" *ngIf="headerConfig.pageTitle">
   <!--Page Top Back Arrow Start -->
   <ion-row class="page-top_back">
     <ion-col size="12">
       <a href="javascript:void(0)" class="back-to-page">
-        <img src="../../../../assets/images/action-icons/icon_back.svg" width="24px" height="24px" alt="back to page">
+        <img src="assets/images/action-icons/icon_back.svg" width="24px" height="24px" alt="back to page" />
         <span>Back</span>
-        </a>
+      </a>
     </ion-col>
   </ion-row>
   <!--Page Top Back Arrow End -->
-  
+
   <!--Page Top Title Start -->
   <ion-row class="page-top_title">
     <ion-col size="12">
       <h2>
-        Technical support
+        {{ headerConfig.pageTitle }}
       </h2>
     </ion-col>
   </ion-row>
-   <!--Page Top Title End -->
-  
+  <!--Page Top Title End -->
 </div>
 
+<!-- Header 2 -->
+<div class="page-top-container" *ngIf="headerConfig.singleLine">single Line Header</div>

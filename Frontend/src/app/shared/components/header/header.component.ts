@@ -1,18 +1,17 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IPageHeader } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
-  selector: 'app-page-top',
-  templateUrl: './page-top.component.html',
-  styleUrls: ['./page-top.component.scss'],
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
-export class PageTopComponent implements OnInit {
+export class HeaderComponent implements OnInit {
   headerConfig: IPageHeader;
 
   constructor(private sharedService: SharedService) {
     this.headerConfig = this.sharedService.getHeaderConfig();
   }
-
-  ngOnInit(): void {}
+  async ngOnInit() {}
 }

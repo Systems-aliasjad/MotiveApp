@@ -1,5 +1,5 @@
-@import '../../../../assets/scss/base/mixins';
-@import '../../../../assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
 
 .page-top-container {
   /* min-height: 138px; */
@@ -8,31 +8,30 @@
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   .back-to-page {
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      margin-top: 2rem;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 2rem;
+    text-decoration: none;
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
       text-decoration: none;
-      @include transition(all 0.3s ease-in-out);
-      &:hover{
-        text-decoration: none;
-        span{
-          color:$etisalat-color;
-        }
+      span {
+        color: $etisalat-color;
       }
       img,
-      span{
+      span {
         display: inline-block;
       }
-      span{
-        color:$primary-color;
+      span {
+        color: $primary-color;
         margin-left: 1rem;
         text-transform: $text-uppercase;
         letter-spacing: 0.14285714em;
@@ -40,10 +39,11 @@
           display: none;
         }
       }
+    }
   }
-  .page-top_title{
-    h2{
-      font-family: Neotech-regular,GE SS Two,Roboto,Arial,sans-serif;
+  .page-top_title {
+    h2 {
+      font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
       font-size: 1.8rem;
       margin-top: 0;
       margin-bottom: 0;
@@ -51,4 +51,3 @@
     }
   }
 }
-

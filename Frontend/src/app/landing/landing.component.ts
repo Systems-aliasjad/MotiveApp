@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HelperService } from '../../../shared/helper/helper.service';
+import { HelperService } from '../shared/helper/helper.service';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-landing',
@@ -11,7 +12,9 @@ export class LandingComponent implements OnInit {
   landingPageCards;
   codeType;
   pageTitle = 'Technical Support';
-  constructor(private activatedRoute: ActivatedRoute, private helperService: HelperService) {}
+  constructor(private activatedRoute: ActivatedRoute, private helperService: HelperService, private sharedService: SharedService) {
+    this.sharedService.setHeaderConfig('Technical Support', false);
+  }
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
       this.codeType = params['code'] || '3P';

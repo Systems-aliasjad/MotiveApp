@@ -1,0 +1,19 @@
+@import 'src/assets/scss/base/variables';
+
+.header-wrapper {
+  position: $relative;
+  .header-wrapper-wave {
+    background: transparent url(/assets/images/wave_graphic_bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 134px;
+    height: 138px;
+    position: $absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  &:after {
+    display: none;
+  }
+}

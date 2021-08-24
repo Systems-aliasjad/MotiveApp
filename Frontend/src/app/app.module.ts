@@ -1,6 +1,6 @@
 import { NgModule, Injector } from '@angular/core';
 import { AppComponent } from './app.component';
-import { RoutingModule } from './app.routing.module';
+import { RoutingModule } from './app.routing';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { CacheModule } from './cache/cache.module';
 import { HttpModule } from './http/http.module';
@@ -13,6 +13,11 @@ import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { IonicModule } from '@ionic/angular';
+import { LandingComponent } from './landing/landing.component';
+import { ProfileComponent } from './landing/profile/profile.component';
+import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
+// import { PageTopComponent } from './shared/components/page-top/page-top.component';
+// import { HeaderComponent } from './shared/components/header/header.component';
 import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
@@ -21,7 +26,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, LandingComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent],
   imports: [
     SharedModule,
     RoutingModule,

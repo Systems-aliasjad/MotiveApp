@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NgxDropzoneModule } from 'ngx-dropzone';
 import { PageTopComponent } from './components/page-top/page-top.component';
+import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { MessageScreenComponent } from './components/message-screen/message-screen.component';
-import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-screen.component';
+import { ThankyouScreenComponent } from '../thankyou-screen/thankyou-screen.component';
 
 @NgModule({
-  declarations: [PageTopComponent, MessageScreenComponent, ThankyouScreenComponent],
-  imports: [CommonModule, NgxDropzoneModule, IonicModule.forRoot()],
-  exports: [PageTopComponent, MessageScreenComponent, ThankyouScreenComponent],
+  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent],
+  imports: [CommonModule, IonicModule.forRoot()],
+  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent],
 
   entryComponents: [],
 })
