@@ -66,6 +66,10 @@
       -webkit-box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
       box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
       border-radius: 0.5rem;
+      @media screen and (max-width: 1024px) {
+        box-shadow:none;
+        border-radius: 0;
+      }
     }
   }
   .technical-support_icon{
@@ -89,7 +93,7 @@
     }
     .technical-support_title{
       font-family: $base-font;
-      font-weight: 900;
+      font-weight: 600;
       margin-top: 0;
       margin-bottom: 0;
       @-moz-document url-prefix() {

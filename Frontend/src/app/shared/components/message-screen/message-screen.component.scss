@@ -1,0 +1,75 @@
+@import '../../../../assets/scss/base/mixins';
+@import '../../../../assets/scss/base/variables';
+
+// ------------Removed Ionic Button Styling start-------------------
+/* :host {} */
+
+ion-item::part(native){
+  padding-inline-end: 0 !important;
+  --inner-padding-end:0 !important;
+}
+// ------------Removed Ionic Button Styling start-------------------
+
+.info-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 100%;
+  h4{
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    text-align: center;
+  }
+  .content {
+    p{
+      line-height: 1.2;
+      margin-bottom: 0;
+      color: #848789;
+      font-size: 0.9rem;
+      text-align: center; 
+    }
+    
+  }
+  .info-container_detail_list {
+    margin-top: 1.5rem;
+    margin-right: auto;
+    margin-bottom: 1.5rem;
+    margin-left: auto;
+    border-top: 2px dashed #d0d6da;
+    border-bottom: 2px dashed #d0d6da;
+    width: 350px;
+    @media screen and (max-width: 361px) {
+      width: 310px;
+    }
+    @media screen and (max-width: 281px) {
+      width: 268px;
+    }
+    ion-list{
+      padding-top: 0;
+      padding-bottom: 0;
+      ion-item{
+        @media screen and (max-width: 281px) {}
+        ion-label{
+          font-size: 0.9rem;
+        }
+        .detail_list_title{
+          color: #848789;
+        }
+        .detail_list_value{
+          color: $primary-color;
+          font-weight:600;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
