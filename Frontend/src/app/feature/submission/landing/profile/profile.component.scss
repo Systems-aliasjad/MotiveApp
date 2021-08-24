@@ -1,21 +1,6 @@
 @import '../../../../../assets/scss/base/variables';
 
-// ------------Removed Ionic Button Styling start-------------------
-ion-button{
-  --background: transparent;
-  --border-radius: 0;
-  --box-shadow: none;;
-  --padding-top:0;
-  --padding-bottom:0;
-}
-ion-button::part(native){
-  background-color: transparent;
-  margin: 0;
-  padding-right: 0;
-  padding-left: 0;
-  --background-hover-opacity:0;
-}
-// ------------Removed Ionic Button Styling End-------------------
+
 
 .user-profile-main-container{
     display: -webkit-box;
@@ -148,7 +133,7 @@ ion-button::part(native){
           flex: 1;
           max-width: 100%;
           padding-left: 1rem;
-          font-family: $base-font;
+          font-family:Lato,Roboto,Arial,sans-serif;
           color:$secondary-color;
           @media screen and (max-width: 567px) {
             -webkit-box-flex: 0;
@@ -173,7 +158,7 @@ ion-button::part(native){
               -ms-flex-direction: column;
               flex-direction: column;
               .user-profile_name{
-                font-family: $base-font;
+                font-family:Lato,Roboto,Arial,sans-serif;
                 font-weight: 600;
                 color: $primary-color;
                 line-height: 1;
@@ -244,6 +229,7 @@ ion-button::part(native){
         margin-top: 1rem;
       }
       .btn{
+        min-height: 2.5rem;
         @media screen and (max-width: 567px) {
           font-size: .9rem;
         }

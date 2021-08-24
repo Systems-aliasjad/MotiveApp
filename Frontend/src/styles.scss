@@ -1,4 +1,4 @@
-:root {
+:host {
   --ion-background-color: transparent;
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
@@ -93,7 +93,7 @@ body {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   margin: 0;
-  font-family: $base-font;
+  font-family:Lato,Roboto,Arial,sans-serif;
   color: $secondary-color;
 }
 
@@ -364,6 +364,23 @@ body {
     }
   }
 }
+// ------------Removed Ionic Button Styling start-------------------
+ion-button{
+  --background: transparent;
+  --border-radius: 0;
+  --box-shadow: none;;
+  --padding-top:0;
+  --padding-bottom:0;
+}
+ion-button::part(native){
+  background-color: transparent;
+  margin: 0;
+  padding-right: 0;
+  padding-left: 0;
+  --background-hover-opacity:0;
+}
+// ------------Removed Ionic Button Styling End-------------------
+
 // ------------Title Styling Start-------------------
 
 .h1,
@@ -409,6 +426,10 @@ h6{
 }
 .pb-0{
   padding-bottom: 0;
+}
+.green-box-shadow{
+  -webkit-box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
+  box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
 }
 // ------------Help classes Styling End-------------------
 
