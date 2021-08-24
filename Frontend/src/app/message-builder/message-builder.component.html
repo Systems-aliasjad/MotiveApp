@@ -1,5 +1,5 @@
 <app-message-screen
-  imgSrc=""
+  imgSrc="../../../../assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg"
   [Section1Data]="Section1Data"
   [Section2Data]="openServiceRequestData"
   [Section2Template]="openServiceRequestTemplate"
@@ -7,3 +7,5 @@
   [exitTroubleshootLink]="true"
 >
 </app-message-screen>
+
+<app-loader *ngIf="showLoader"></app-loader>

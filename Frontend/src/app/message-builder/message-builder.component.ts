@@ -19,6 +19,7 @@ export class MessageBuilderComponent implements OnInit {
     paragraphs: ['The service will be discontinued while the transfer is under process.', 'Try using it once your eLife connection has been moved successfully.'],
   };
   openServiceRequestTemplate;
+  showLoader: boolean = false;
   constructor() {
     this.openServiceRequestTemplate = ApplicableCodes.openServiceRequestTemplate;
   }

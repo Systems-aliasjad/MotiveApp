@@ -5,11 +5,13 @@ import { HeaderComponent } from './components/header/header.component';
 import { IonicModule } from '@ionic/angular';
 import { MessageScreenComponent } from './components/message-screen/message-screen.component';
 import { ThankyouScreenComponent } from '../thankyou-screen/thankyou-screen.component';
+import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
-  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent],
+  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, TermsConditionsComponent, LoaderComponent],
   imports: [CommonModule, IonicModule.forRoot()],
-  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent],
+  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent],
 
   entryComponents: [],
 })
