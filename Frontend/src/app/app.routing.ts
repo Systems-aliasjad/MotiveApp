@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { ThankyouScreenComponent } from './thankyou-screen/thankyou-screen.component';
+import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'thanks',
     component: ThankyouScreenComponent,
+  },
+  {
+    path: 'terms',
+    component: TermsConditionsComponent,
   },
   {
     path: '**',
