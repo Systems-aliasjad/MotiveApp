@@ -1,0 +1,76 @@
+@import '../../assets/scss/base/mixins';
+@import '../../assets/scss/base/variables';
+
+// ------------Removed Ionic ion-item Styling start-------------------
+/* :host {} */
+
+// ------------Removed Ionic ion-item Styling End-------------------
+
+.info-container {
+  font-family:Lato,Roboto,Arial,sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 4rem;
+  height: 100%;
+  .info-container_icon{
+    img{
+      @media screen and (max-width: 476px) {
+        height: 90px;
+        width: 90px;
+      }
+    }
+  }
+  h4{
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    text-align: center;
+  }
+  .content {
+    p{
+      line-height: 1.2;
+      margin-bottom: 0;
+      color: #848789;
+      font-size: 0.9rem;
+      text-align: center; 
+    }
+  }
+  .info-container_detail_followup{
+    width: 350px;
+    margin: 0 auto;
+    @media screen and (max-width: 361px) {
+      width: 310px;
+    }
+    @media screen and (max-width: 281px) {
+      width: 268px;
+    }
+  }
+  .info-container_follow{
+    margin-top: 4rem;
+    @media screen and (max-width: 376px) {
+      margin-top: 2rem;
+    }
+    ion-col{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+}
+.success-container{
+  margin-top: 0;
+}
