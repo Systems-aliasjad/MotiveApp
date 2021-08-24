@@ -1,15 +1,89 @@
-<img [src]="imgSrc" />
+<ion-content >
+  <ion-grid class="info-container">
+
+    <!-- Action Icon Start -->
+    <ion-row class="info-container_icon">
+      <ion-col size="12">
+        <img src="../../../../assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg" width="120px" height="120px" alt="warning">
+      </ion-col>
+     </ion-row>
+     <!-- Action Icon End -->
+
+     <!-- Action Title Content Start -->
+     <ion-row class="info-container_title_content">
+      <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
+      <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12">
+        <h4 *ngIf="Section1Data?.header">
+          {{ Section1Data.header }}
+        </h4>
+        <div class="content" *ngIf="Section1Data?.paragraphs">
+          <p *ngFor="let txt of Section1Data?.paragraphs">
+            {{ txt }}
+          </p>
+        </div>
+      </ion-col>
+     </ion-row>
+     <!-- Action Title Content End -->
+
+     <!-- Detail List and Follow up Start -->
+     <div class="info-container_detail_followup">
+      <ion-row class="info-container_detail">
+        <ion-col size="12" class="pt-0 pb-0">
+          <div class="info-container_detail_list">
+            <ion-list>
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label class="detail_list_title">
+                  No Lines Item
+                </ion-label>
+                <ion-label class="detail_list_value">
+                  No Lines Item
+                </ion-label>
+              </ion-item>
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label class="detail_list_title">
+                  No Lines Item
+                </ion-label>
+                <ion-label class="detail_list_value">
+                  No Lines Item
+                </ion-label>
+              </ion-item>
+              <ion-item lines="none" class="ion-no-padding">
+                <ion-label class="detail_list_title">
+                  No Lines Item
+                </ion-label>
+                <ion-label class="detail_list_value">
+                  No Lines Item
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="info-container_follow">
+        <ion-col size="12" class="pt-0 pb-0">
+          <p>Do you want to follow-up the request?</p>
+          <ion-button class="btn primary-btn follow-up green-box-shadow">follow-up</ion-button>
+          <ion-button class="btn secondary-btn close">Close</ion-button>
+          <div class="no-exit-troubleshooting" *ngIf="exitTroubleshootLink">
+            <a href="javascript:void(0)"> exitTroubleshootLink</a>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+    <!-- Detail List and Follow up and Close End -->
+  </ion-grid>
+</ion-content>
+
+<!-- <img [src]="imgSrc" /> -->
 
 <!-- Header -->
-<div *ngIf="Section1Data?.header">
-  {{ Section1Data.header }}
-</div>
 
-<div *ngIf="Section1Data?.paragraphs">
+
+<!-- <div *ngIf="Section1Data?.paragraphs">
   <div *ngFor="let txt of Section1Data?.paragraphs">
-    {{ txt }}
+    
   </div>
-</div>
+</div> -->
 
 <div *ngIf="Section2Data">
   <div *ngFor="let template of Section2Template">{{ template.title }} {{ Section2Data[template.objKeyName] }}</div>

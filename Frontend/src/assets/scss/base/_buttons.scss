@@ -9,7 +9,7 @@
   font-weight: 600;
   letter-spacing: 0.14285714em;
   padding: .48rem 1rem;
-  min-height: 2.2rem;
+  min-height: 3rem;
   width: auto;
   display: inline-block;
   text-align: center;
@@ -48,15 +48,5 @@
     border: 2px solid $etisalat-color;
   }
 }
-/* .ghost-btn{
-  color: #333333;
-  border: 2px #000000 solid;
-  background-color: $white;
-  &:hover,
-  &:active,
-  &:focus{
-    color: #f1f1eb;
-    background-color: $etisalat-color;
-    border: 2px solid $etisalat-color;
-  }
-} */
+
+
