@@ -2,11 +2,15 @@
 @import '../../../../assets/scss/base/variables';
 
 // ------------Removed Ionic ion-item Styling start-------------------
-/* :host {} */
-
+:host {
+  ion-list{
+    --ion-background-color:transparent;
+  }
+} 
 ion-item::part(native){
   padding-inline-end: 0 !important;
   --inner-padding-end:0 !important;
+ 
 }
 // ------------Removed Ionic ion-item Styling End-------------------
 
