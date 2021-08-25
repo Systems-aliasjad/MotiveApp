@@ -1,5 +1,13 @@
 <app-page-top></app-page-top>
-<div *ngFor="let term of TC">
-  <h4>{{ term.head }}</h4>
-  <p *ngFor="let text of term.body">{{ text }}</p>
-</div>
+<ion-content>
+  <ion-grid class="terms-condition-container">
+    <ion-row>
+      <ion-col size="12">
+        <div *ngFor="let term of TC">
+          <h4>{{ term.head }}</h4>
+          <p *ngFor="let text of term.body">{{ text }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

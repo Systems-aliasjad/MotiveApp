@@ -11,7 +11,7 @@ export class QuickLinksComponent implements OnInit {
   quickLinks;
   slideOpts = {
     width: 950,
-    slidesPerView: 4,
+    slidesPerView: 5,
     spaceBetween:5
     /* centeredSlides: true, */
   };
