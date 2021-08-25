@@ -13,34 +13,24 @@ export interface ITermsAndConditions {
 export class TermsConditionsComponent implements OnInit {
   TC: ITermsAndConditions[] = [
     {
-      head: 'Terms & conditions',
-      body: [
-        'By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      ],
+      head: 'HEADER.TERMS_AND_CONDITIONS',
+      body: ['TERMS_AND_CONDITIONS.PARA1', 'TERMS_AND_CONDITIONS.PARA2'],
     },
     {
-      head: 'Lorem Ipsum',
-      body: [
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      ],
+      head: 'TERMS_AND_CONDITIONS.HEADER1',
+      body: ['TERMS_AND_CONDITIONS.PARA2'],
     },
     {
-      head: 'Lorem Ipsum',
-      body: [
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      ],
+      head: 'TERMS_AND_CONDITIONS.HEADER1',
+      body: ['TERMS_AND_CONDITIONS.PARA2', 'TERMS_AND_CONDITIONS.PARA2'],
     },
     {
-      head: 'Lorem terms & conditions',
-      body: [
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-        'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      ],
+      head: 'TERMS_AND_CONDITIONS.HEADER1',
+      body: ['TERMS_AND_CONDITIONS.PARA2', 'TERMS_AND_CONDITIONS.PARA2'],
     },
   ];
   constructor(private sharedService: SharedService) {
+    //HEADER.TERMS_AND_CONDITIONS
     this.sharedService.setHeaderConfig('', true);
   }
 

@@ -42,7 +42,7 @@
         <ion-col size="12" class="pt-0 pb-0">
           <p *ngIf="followUpButton">{{ 'TEXT.FOLLOW_UP_QUESTION' | translate }}</p>
           <ion-button class="btn primary-btn follow-up green-box-shadow" *ngIf="followUpButton">{{ 'BUTTONS.FOLLOW_UP' | translate }}</ion-button>
-          <ion-button class="btn secondary-btn close" *ngIf="closeButton">Close</ion-button>
+          <ion-button class="btn secondary-btn close" *ngIf="closeButton">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
           <div class="no-exit-troubleshooting" *ngIf="exitTroubleshootLink">
             <a href="javascript:void(0)"> {{ 'LINKS.EXIT_TROUBLESHOOTING' | translate }}</a>
           </div>

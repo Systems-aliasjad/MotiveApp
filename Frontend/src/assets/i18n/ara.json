@@ -1,7 +1,8 @@
 {
   "HEADER": {
     "TECHNICAL_SUPPORT": "Technical Support",
-    "QUICK_LINKS": "Quick links"
+    "QUICK_LINKS": "Quick links",
+    "TERMS_AND_CONDITIONS": "Terms & Conditions"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -40,7 +41,8 @@
     "STATUS": "Status"
   },
   "BUTTONS": {
-    "FOLLOW_UP": "YES, FOLLOW-UP"
+    "FOLLOW_UP": "YES, FOLLOW-UP",
+    "CLOSE": "CLOSE"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -52,5 +54,10 @@
     "MOVING_ELIFE_CONNECTION": "We are moving your eLife connection",
     "MOVING_ELIFE_CONNECTION_BODY_1": "The service will be discontinued while the transfer is under process.",
     "MOVING_ELIFE_CONNECTION_BODY_2": "Try using it once your eLife connection has been moved successfully."
+  },
+  "TERMS_AND_CONDITIONS": {
+    "HEADER1": "Lorem Ipsum",
+    "PARA1": "By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.",
+    "PARA2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 }
