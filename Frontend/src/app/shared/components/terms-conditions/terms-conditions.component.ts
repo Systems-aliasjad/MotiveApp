@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../../shared.service';
 
 export interface ITermsAndConditions {
   head: string;
@@ -39,7 +40,9 @@ export class TermsConditionsComponent implements OnInit {
       ],
     },
   ];
-  constructor() {}
+  constructor(private sharedService: SharedService) {
+    this.sharedService.setHeaderConfig('', true);
+  }
 
   ngOnInit(): void {}
 }

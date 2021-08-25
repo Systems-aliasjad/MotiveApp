@@ -15,7 +15,6 @@ export class LandingComponent implements OnInit {
 
   constructor(private activatedRoute: ActivatedRoute, private helperService: HelperService, private sharedService: SharedService) {
     this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false);
-    this.sharedService.setDefaultLanguage('ara');
   }
   ngOnInit(): void {
     this.activatedRoute.queryParams.subscribe((params) => {
