@@ -5,8 +5,17 @@
   ion-content{
    --background-color: transparent !important;
   }
+   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
 
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+.page-top_title {
+  h2 {
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 50px;
+  }
 }
 .technical-support {
   @media screen and (min-width: 768px) and (max-width: 1024px) {

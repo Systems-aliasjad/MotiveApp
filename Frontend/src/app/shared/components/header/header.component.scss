@@ -1,4 +1,5 @@
 @import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
 
 .header-wrapper {
   position: $relative;
@@ -17,3 +18,54 @@
     display: none;
   }
 }
+
+
+.page-top-container {
+  /* min-height: 138px; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  .back-to-page {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 2rem;
+    text-decoration: none;
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
+      text-decoration: none;
+      span {
+        color: $etisalat-color;
+      }
+      img,
+      span {
+        display: inline-block;
+      }
+      span {
+        color: $etisalat-color;
+      }
+    }
+    span {
+      color: $primary-color;
+      margin-left: 1rem;
+      text-transform: $text-uppercase;
+      letter-spacing: 0.14285714em;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+  }
+  
+}
+
