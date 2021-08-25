@@ -13,11 +13,11 @@
       <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
       <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12">
         <h4 *ngIf="Section1Data?.header">
-          {{ Section1Data.header }}
+          {{ Section1Data.header | translate }}
         </h4>
         <div class="content" *ngIf="Section1Data?.paragraphs">
           <p *ngFor="let txt of Section1Data?.paragraphs">
-            {{ txt }}
+            {{ txt | translate }}
           </p>
         </div>
       </ion-col>
@@ -31,8 +31,8 @@
           <div class="info-container_detail_list">
             <ion-list>
               <ion-item lines="none" class="ion-no-padding" *ngFor="let template of Section2Template">
-                <ion-label class="detail_list_title"> {{ template.title }} </ion-label>
-                <ion-label class="detail_list_value"> {{ Section2Data[template.objKeyName] }} </ion-label>
+                <ion-label class="detail_list_title"> {{ template.title | translate }} </ion-label>
+                <ion-label class="detail_list_value"> {{ Section2Data[template.objKeyNameEN] }} </ion-label>
               </ion-item>
             </ion-list>
           </div>
@@ -40,11 +40,11 @@
       </ion-row>
       <ion-row class="info-container_follow">
         <ion-col size="12" class="pt-0 pb-0">
-          <p *ngIf="followUpButton">Do you want to follow-up the request?</p>
-          <ion-button class="btn primary-btn follow-up green-box-shadow" *ngIf="followUpButton">follow-up</ion-button>
-          <ion-button class="btn secondary-btn close" *ngIf="closeButton">Close</ion-button>
+          <p *ngIf="followUpButton">{{ 'TEXT.FOLLOW_UP_QUESTION' | translate }}</p>
+          <ion-button class="btn primary-btn follow-up green-box-shadow" *ngIf="followUpButton">{{ 'BUTTONS.FOLLOW_UP' | translate }}</ion-button>
+          <ion-button class="btn secondary-btn close" *ngIf="closeButton">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
           <div class="no-exit-troubleshooting" *ngIf="exitTroubleshootLink">
-            <a href="javascript:void(0)"> NO, exit TroubleshootLink</a>
+            <a href="javascript:void(0)"> {{ 'LINKS.EXIT_TROUBLESHOOTING' | translate }}</a>
           </div>
         </ion-col>
       </ion-row>

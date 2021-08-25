@@ -1,6 +1,8 @@
 {
   "HEADER": {
-    "TECHNICAL_SUPPORT": "Technical Support"
+    "TECHNICAL_SUPPORT": "Technical Support",
+    "QUICK_LINKS": "Quick links",
+    "TERMS_AND_CONDITIONS": "Terms & Conditions"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -16,5 +18,46 @@
     "PASSWORD_ISSUES_DESCRIPTION": "I want to change or reset my password",
     "RESET_PIN_TITLE": "Reset PIN",
     "RESET_PIN_DESCRIPTION": "I want to reset my PIN"
+  },
+  "QUICK_LINKS": {
+    "SEE_ALL": "See All",
+    "INSTALL_NEW_ROUTER": "I want to install my new router",
+    "FACTORY_RESET_ROUTER": "I want to factory reset my router",
+    "FACTORY_RESET_TV": "I want to factory reset my TV box",
+    "FORGOT_PASSWORD_INTERNET": "I forgot my internet password",
+    "CONNECTION_ISSUE_ROUTER": "I am unable to connect device(s) to my router’s Wi-Fi",
+    "FORGOT_PASSWORD_TV": "I forgot my TV box PIN",
+    "TRANSFER_PACKAGE_TV": "I want to transfer eLife TV package to another TV box",
+    "CONNECT_HOME_ZONE": "I am unable to connect to Home Zone",
+    "TRACK_COMPLAINT": "I want to track a recent complaint",
+    "TRACK_REQUEST": "I want to track my request",
+    "UPGRADE_ROUTER": "I want to upgrade my router",
+    "UPGRADE_PACKAGE": "I want to upgrade my eLife package"
+  },
+  "OPEN_SERVICE_REQUEST": {
+    "REQUEST_NO": "Request No",
+    "REQUEST_TYPE": "Request Type",
+    "DATE_VISIT": "Date of visit",
+    "STATUS": "Status"
+  },
+  "BUTTONS": {
+    "FOLLOW_UP": "YES, FOLLOW-UP",
+    "CLOSE": "CLOSE"
+  },
+  "TEXT": {
+    "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
+  },
+  "LINKS": {
+    "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING"
+  },
+  "MESSAGES": {
+    "MOVING_ELIFE_CONNECTION": "We are moving your eLife connection",
+    "MOVING_ELIFE_CONNECTION_BODY_1": "The service will be discontinued while the transfer is under process.",
+    "MOVING_ELIFE_CONNECTION_BODY_2": "Try using it once your eLife connection has been moved successfully."
+  },
+  "TERMS_AND_CONDITIONS": {
+    "HEADER1": "Lorem Ipsum",
+    "PARA1": "By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.",
+    "PARA2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   }
 }

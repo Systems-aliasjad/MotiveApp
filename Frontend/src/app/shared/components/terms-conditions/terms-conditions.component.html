@@ -4,8 +4,8 @@
     <ion-row>
       <ion-col size="12">
         <div *ngFor="let term of TC">
-          <h4>{{ term.head }}</h4>
-          <p *ngFor="let text of term.body">{{ text }}</p>
+          <h4>{{ term.head | translate }}</h4>
+          <p *ngFor="let text of term.body">{{ text | translate }}</p>
         </div>
       </ion-col>
     </ion-row>
