@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ISection2Template } from '../../constants/constants';
 
 export interface IMessageSection1 {
-  header: String;
-  paragraphs: String[];
+  header: string;
+  paragraphs: string[];
 }
 
 @Component({

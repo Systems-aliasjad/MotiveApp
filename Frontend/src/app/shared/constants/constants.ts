@@ -1,53 +1,54 @@
 export interface ICard {
-  title?: String;
-  body: String;
-  img?: String;
-  applicableCodes: String[];
-  linkTo: String;
+  title?: string;
+  body: string;
+  img?: string;
+  applicableCodes: string[];
+  linkTo: string;
 }
 
 export interface ISection2Template {
-  title: String;
-  type: String;
-  objKeyName: string;
+  title: string;
+  type: string;
+  objKeyNameEN?: string;
+  objKeyNameAR?: string;
 }
 
-const P3: String = '3P';
-const P2: String = '2P';
-const P1: String = '1P';
-const P0: String = '0P';
-const VO: String = 'VO';
-const HI: String = 'HI';
-const B1: String = 'B1';
-const FD: String = 'FD';
-const FH: String = 'FH';
-const FT: String = 'FT';
-const FV: String = 'FV';
-const BSP: String = 'BSP';
-const BTP: String = 'BTP';
-const BDP: String = 'BDP';
-const BFXI: String = 'BFXI';
-const ALL_PRODUCT_CODES: String[] = [P3, P2, P1, P0, VO, HI, B1, FD, FH, FT, FV, BSP, BTP, BDP, BFXI];
+const P3: string = '3P';
+const P2: string = '2P';
+const P1: string = '1P';
+const P0: string = '0P';
+const VO: string = 'VO';
+const HI: string = 'HI';
+const B1: string = 'B1';
+const FD: string = 'FD';
+const FH: string = 'FH';
+const FT: string = 'FT';
+const FV: string = 'FV';
+const BSP: string = 'BSP';
+const BTP: string = 'BTP';
+const BDP: string = 'BDP';
+const BFXI: string = 'BFXI';
+const ALL_PRODUCT_CODES: string[] = [P3, P2, P1, P0, VO, HI, B1, FD, FH, FT, FV, BSP, BTP, BDP, BFXI];
 //lANDING PAGE
-const TV_ISSUES: String[] = [P3, BTP, FT, P1, P0, BSP];
-const RESET_PIN: String[] = [P1, P0, BSP, VO, FV];
-const PHONE_ISSUES: String[] = [P3, BTP, FT, P2, BDP, BFXI, FD, VO, FV];
-const OTHER_ISSUES: String[] = [P3, BTP, FT, P2, BDP, BFXI, FD];
-const INTERNET_ISSUES: String[] = [P3, BTP, FT, P2, BDP, BFXI, FD, HI, B1, FH];
-const PASSWORD_ISSUES: String[] = [P3, BTP, FT, P2, BDP, BFXI, FD, HI, B1, FH];
+const TV_ISSUES: string[] = [P3, BTP, FT, P1, P0, BSP];
+const RESET_PIN: string[] = [P1, P0, BSP, VO, FV];
+const PHONE_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD, VO, FV];
+const OTHER_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD];
+const INTERNET_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD, HI, B1, FH];
+const PASSWORD_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD, HI, B1, FH];
 //QUICK LINKS
-const INSTALL_NEW_ROUTER: String[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-const FACTORY_RESET_ROUTER: String[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-const FACTORY_RESET_TV: String[] = [P3, P1, BSP, BTP, FT];
-const FORGOT_PASSWORD_INTERNET: String[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-const CONNECTION_ISSUE_ROUTER: String[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-const FORGOT_PASSWORD_TV: String[] = [P3, P1, BSP, BTP, FT];
-const TRANSFER_PACKAGE_TV: String[] = [P3, P1, BSP, BTP, FT];
-const CONNECT_HOME_ZONE: String[] = ALL_PRODUCT_CODES; // TODO: need to change with all applicable rates
-const TRACK_COMPLAINT: String[] = ALL_PRODUCT_CODES;
-const TRACK_REQUEST: String[] = ALL_PRODUCT_CODES;
-const UPGRADE_ROUTER: String[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-const UPGRADE_PACKAGE: String[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+const INSTALL_NEW_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+const FACTORY_RESET_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+const FACTORY_RESET_TV: string[] = [P3, P1, BSP, BTP, FT];
+const FORGOT_PASSWORD_INTERNET: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+const CONNECTION_ISSUE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+const FORGOT_PASSWORD_TV: string[] = [P3, P1, BSP, BTP, FT];
+const TRANSFER_PACKAGE_TV: string[] = [P3, P1, BSP, BTP, FT];
+const CONNECT_HOME_ZONE: string[] = ALL_PRODUCT_CODES; // TODO: need to change with all applicable rates
+const TRACK_COMPLAINT: string[] = ALL_PRODUCT_CODES;
+const TRACK_REQUEST: string[] = ALL_PRODUCT_CODES;
+const UPGRADE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+const UPGRADE_PACKAGE: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 
 export class ApplicableCodes {
   public static landingPageCards: ICard[] = [
@@ -97,62 +98,62 @@ export class ApplicableCodes {
 
   public static quickLinkCards: ICard[] = [
     {
-      body: 'I want to install my new router',
+      body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
       applicableCodes: INSTALL_NEW_ROUTER,
       linkTo: '',
     },
     {
-      body: 'I want to factory reset my router',
+      body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
       applicableCodes: FACTORY_RESET_ROUTER,
       linkTo: '',
     },
     {
-      body: 'I want to factory reset my TV box',
+      body: 'QUICK_LINKS.FACTORY_RESET_TV',
       applicableCodes: FACTORY_RESET_TV,
       linkTo: '',
     },
     {
-      body: 'I forgot my internet password',
+      body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
       applicableCodes: FORGOT_PASSWORD_INTERNET,
       linkTo: '',
     },
     {
-      body: 'I am unable to connect device(s) to my router’s Wi-Fi',
+      body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
       applicableCodes: CONNECTION_ISSUE_ROUTER,
       linkTo: '',
     },
     {
-      body: 'I forgot my TV box PIN',
+      body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
       applicableCodes: FORGOT_PASSWORD_TV,
       linkTo: '',
     },
     {
-      body: 'I want to transfer eLife TV package to another TV box',
+      body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
       applicableCodes: TRANSFER_PACKAGE_TV,
       linkTo: '',
     },
     {
-      body: 'I am unable to connect to Home Zone',
+      body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
       applicableCodes: CONNECT_HOME_ZONE,
       linkTo: '',
     },
     {
-      body: 'I want to track a recent complaint',
+      body: 'QUICK_LINKS.TRACK_COMPLAINT',
       applicableCodes: TRACK_COMPLAINT,
       linkTo: '',
     },
     {
-      body: 'I want to track my request',
+      body: 'QUICK_LINKS.TRACK_REQUEST',
       applicableCodes: TRACK_REQUEST,
       linkTo: '',
     },
     {
-      body: 'I want to upgrade my router',
+      body: 'QUICK_LINKS.UPGRADE_ROUTER',
       applicableCodes: UPGRADE_ROUTER,
       linkTo: '',
     },
     {
-      body: 'I want to upgrade my eLife package',
+      body: 'QUICK_LINKS.UPGRADE_PACKAGE',
       applicableCodes: UPGRADE_PACKAGE,
       linkTo: '',
     },
@@ -160,24 +161,24 @@ export class ApplicableCodes {
 
   public static openServiceRequestTemplate: ISection2Template[] = [
     {
-      title: 'Request No.',
+      title: 'OPEN_SERVICE_REQUEST.REQUEST_NO',
       type: 'number',
-      objKeyName: 'reqNo',
+      objKeyNameEN: 'reqNo',
     },
     {
-      title: 'Request Type',
+      title: 'OPEN_SERVICE_REQUEST.REQUEST_TYPE',
       type: 'text',
-      objKeyName: 'reqType',
+      objKeyNameEN: 'reqType',
     },
     {
-      title: 'Date of visit',
+      title: 'OPEN_SERVICE_REQUEST.DATE_VISIT',
       type: 'date',
-      objKeyName: 'dateVisit',
+      objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'status',
+      title: 'OPEN_SERVICE_REQUEST.STATUS',
       type: 'text',
-      objKeyName: 'status',
+      objKeyNameEN: 'status',
     },
   ];
 }

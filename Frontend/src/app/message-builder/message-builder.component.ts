@@ -15,8 +15,8 @@ export class MessageBuilderComponent implements OnInit {
     status: 'Xxxxx xxxxx xxxx',
   };
   Section1Data = {
-    header: 'We are moving your eLife connection',
-    paragraphs: ['The service will be discontinued while the transfer is under process.', 'Try using it once your eLife connection has been moved successfully.'],
+    header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
+    paragraphs: ['MESSAGES.MOVING_ELIFE_CONNECTION_BODY_1', 'MESSAGES.MOVING_ELIFE_CONNECTION_BODY_2'],
   };
   openServiceRequestTemplate;
   showLoader: boolean = false;
