@@ -1,0 +1,17 @@
+{
+  "LANDING_PAGE": {
+    "SWITCH": "Switch",
+    "INTERNET_ISSUES_TITLE": "Internet issues",
+    "INTERNET_ISSUES_DESCRIPTION": "My Wi-Fi is slow or causing problems",
+    "TV_ISSUES_TITLE": "TV issues",
+    "TV_ISSUES_DESCRIPTION": "My TV isn't working properly",
+    "PHONE_ISSUES_TITLE": "Phone issue",
+    "PHONE_ISSUES_DESCRIPTION": "I can't make any calls",
+    "OTHER_ISSUES_TITLE": "Other issues",
+    "OTHER_ISSUES_DESCRIPTION": "I am facing issues will all service",
+    "PASSWORD_ISSUES_TITLE": "Password issues",
+    "PASSWORD_ISSUES_DESCRIPTION": "I want to change or reset my password",
+    "RESET_PIN_TITLE": "Reset PIN",
+    "RESET_PIN_DESCRIPTION": "I want to reset my PIN"
+  }
+}

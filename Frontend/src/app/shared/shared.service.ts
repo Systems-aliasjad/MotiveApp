@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { IPageHeader } from './constants/types';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ export class SharedService {
     pageTitle: '',
     singleLine: false,
   };
-  constructor() {}
+  constructor(public translate: TranslateService) {}
 
   setHeaderConfig(pageTitle: string, oneLine: boolean) {
     this.headerConfig = {
@@ -17,7 +18,17 @@ export class SharedService {
       singleLine: oneLine,
     };
   }
+
   getHeaderConfig(): IPageHeader {
     return this.headerConfig;
+  }
+
+  setDefaultLanguage(language: string): void {
+    localStorage.setItem('lang', language);
+    this.translate.use(language);
+  }
+
+  getDefaultLanguage(): string {
+    return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
   }
 }
