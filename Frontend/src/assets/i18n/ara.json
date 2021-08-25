@@ -1,6 +1,10 @@
 {
+  "HEADER": {
+    "TECHNICAL_SUPPORT": "Technical Support"
+  },
+
   "LANDING_PAGE": {
-    "SWITCH": "switch",
+    "SWITCH": "Switch",
     "INTERNET_ISSUES_TITLE": "Internet issues",
     "INTERNET_ISSUES_DESCRIPTION": "My Wi-Fi is slow or causing problems",
     "TV_ISSUES_TITLE": "TV issues",

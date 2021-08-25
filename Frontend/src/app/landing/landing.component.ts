@@ -11,11 +11,10 @@ import { SharedService } from '../shared/shared.service';
 export class LandingComponent implements OnInit {
   landingPageCards;
   codeType;
-  pageTitle = 'Technical Support';
   showLoader: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private helperService: HelperService, private sharedService: SharedService) {
-    this.sharedService.setHeaderConfig('Technical Support', false);
+    this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false);
     this.sharedService.setDefaultLanguage('ara');
   }
   ngOnInit(): void {
