@@ -25,8 +25,8 @@
     <!-- Action Title Content End -->
 
     <!-- Detail List and Follow up Start -->
-    <div class="info-container_detail_followup" *ngIf="Section2Data">
-      <ion-row class="info-container_detail">
+    <div class="info-container_detail_followup">
+      <ion-row class="info-container_detail" *ngIf="Section2Data">
         <ion-col size="12" class="pt-0 pb-0">
           <div class="info-container_detail_list">
             <ion-list>
@@ -38,20 +38,28 @@
           </div>
         </ion-col>
       </ion-row>
+      <!-- Detail List and Follow up and Close End -->
+      <!-- FOLLOW UP CASE -->
+      <ion-row class="info-container_follow" *ngIf="followUpButton">
+        <ion-col size="12" class="pt-0 pb-0">
+          <p>{{ 'TEXT.FOLLOW_UP_QUESTION' | translate }}</p>
+          <ion-button class="btn primary-btn follow-up green-box-shadow">{{ 'BUTTONS.FOLLOW_UP' | translate }}</ion-button>
+        </ion-col>
+      </ion-row>
+      <!-- CLOSE BUTTON -->
+      <ion-row class="info-container_follow" *ngIf="closeButton">
+        <ion-col size="12" class="pt-0 pb-0">
+          <ion-button class="btn secondary-btn close">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
+        </ion-col>
+      </ion-row>
+      <!-- EXIT TROUBLESHOOTING -->
+      <ion-row class="info-container_follow" *ngIf="exitTroubleshootLink">
+        <ion-col size="12" class="pt-0 pb-0">
+          <div class="no-exit-troubleshooting">
+            <a href="javascript:void(0)"> {{ 'LINKS.EXIT_TROUBLESHOOTING' | translate }}</a>
+          </div>
+        </ion-col>
+      </ion-row>
     </div>
-    <!-- Detail List and Follow up and Close End -->
-    <ion-row class="info-container_follow">
-      <ion-col size="12" class="pt-0 pb-0">
-        <!-- FOLLOW UP CASE -->
-        <p *ngIf="followUpButton">{{ 'TEXT.FOLLOW_UP_QUESTION' | translate }}</p>
-        <ion-button class="btn primary-btn follow-up green-box-shadow" *ngIf="followUpButton">{{ 'BUTTONS.FOLLOW_UP' | translate }}</ion-button>
-        <!-- CLOSE BUTTON -->
-        <ion-button class="btn secondary-btn close" *ngIf="closeButton">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-        <!-- EXIT TROUBLESHOOTING -->
-        <div class="no-exit-troubleshooting" *ngIf="exitTroubleshootLink">
-          <a href="javascript:void(0)"> {{ 'LINKS.EXIT_TROUBLESHOOTING' | translate }}</a>
-        </div>
-      </ion-col>
-    </ion-row>
   </ion-grid>
 </ion-content>
