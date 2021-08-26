@@ -1,16 +1,16 @@
 <ion-content>
   <ion-grid class="info-container">
+
     <!-- Action Icon Start -->
     <ion-row class="info-container_icon">
       <ion-col size="12">
-        <img [src]="imgSrc" width="120px" height="120px" alt="warning" />
+        <img [src]="imgSrc" alt="warning" />
       </ion-col>
     </ion-row>
     <!-- Action Icon End -->
 
     <!-- Action Title Content Start -->
     <ion-row class="info-container_title_content">
-      <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
       <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12">
         <h4 *ngIf="Section1Data?.header">
           {{ Section1Data.header | translate }}
@@ -39,20 +39,25 @@
         </ion-col>
       </ion-row>
       <!-- Detail List and Follow up and Close End -->
-      <!-- FOLLOW UP CASE -->
+
+      <!-- Follow up cases Start -->
       <ion-row class="info-container_follow_request " *ngIf="followUpButton">
         <ion-col size="12" class="pt-0 pb-0 ion-text-center">
           <p>{{ 'TEXT.FOLLOW_UP_QUESTION' | translate }}</p>
           <ion-button class="btn primary-btn follow-up green-box-shadow full-width">{{ 'BUTTONS.FOLLOW_UP' | translate }}</ion-button>
         </ion-col>
       </ion-row>
-      <!-- CLOSE BUTTON -->
+      <!-- Follow up cases End-->
+
+      <!-- Close Button Start -->
       <ion-row *ngIf="closeButton">
         <ion-col size="12" class="pt-0 pb-0 ion-text-center">
           <ion-button class="btn secondary-btn close full-width">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
         </ion-col>
       </ion-row>
-      <!-- EXIT TROUBLESHOOTING -->
+      <!-- Close Button End -->
+
+      <!-- Exit Troubleshooting Start -->
       <ion-row *ngIf="exitTroubleshootLink">
         <ion-col size="12" class="pt-0 pb-0 ion-text-center">
           <div class="no-exit-troubleshooting">
@@ -60,6 +65,8 @@
           </div>
         </ion-col>
       </ion-row>
+      <!-- Exit Troubleshooting End -->
+
     </div>
   </ion-grid>
 </ion-content>
