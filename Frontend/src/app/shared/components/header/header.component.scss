@@ -1,6 +1,12 @@
 @import 'src/assets/scss/base/variables';
 @import 'src/assets/scss/base/mixins';
 
+:host {
+  ion-header{
+    --ion-background-color:  transparent;
+  }
+}
+
 .header-wrapper {
   position: $relative;
   .header-wrapper-wave {
@@ -19,9 +25,36 @@
   }
 }
 
-
+ion-toolbar{
+  background-color: $white;
+  -webkit-box-shadow: rgb(2 8 20 / 6%) 0px 1px 3px, rgb(2 8 20 / 4%) 0px 1px 2px;
+  box-shadow: rgb(2 8 20 / 6%) 0px 1px 3px, rgb(2 8 20 / 4%) 0px 1px 2px;
+  .header-inner{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    .back-to-page{
+      margin-top: 0;
+      text-decoration: none;
+    }
+    div{
+      text-align: center;
+      width: 100%;
+      ion-title{
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
 .page-top-container {
-  /* min-height: 138px; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -38,24 +71,12 @@
     -ms-flex-direction: row;
     flex-direction: row;
     -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
     margin-top: 2rem;
     text-decoration: none;
-    @include transition(all 0.3s ease-in-out);
-    &:hover {
-      text-decoration: none;
-      span {
-        color: $etisalat-color;
-      }
-      img,
-      span {
-        display: inline-block;
-      }
-      span {
-        color: $etisalat-color;
-      }
-    }
+    padding-left: .5rem;
+    @include transition(all 0.3s ease-in-out); 
     span {
       color: $primary-color;
       margin-left: 1rem;
@@ -65,7 +86,18 @@
         display: none;
       }
     }
+    &:hover {
+      text-decoration: none;
+     img,
+      span {
+        display: inline-block;
+      }
+      span {
+        color: $etisalat-color;
+      }
+    }
+   
   }
-  
 }
+
 
