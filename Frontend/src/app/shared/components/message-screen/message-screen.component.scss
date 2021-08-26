@@ -10,13 +10,9 @@
     --min-height: 30px;
   }
 } 
-
-
-
 ion-item::part(native){
   padding-inline-end: 0 !important;
   --inner-padding-end:0 !important;
- 
 }
 // ------------Removed Ionic ion-item Styling End-------------------
 
@@ -36,16 +32,15 @@ ion-item::part(native){
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 4rem;
-  
-  .info-container_icon{
+  margin-top: 1rem;
+  /* .info-container_icon{
     img{
       @media screen and (max-width: 476px) {
         height: 90px;
         width: 90px;
       }
     }
-  }
+  } */
   h4{
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
@@ -60,6 +55,7 @@ ion-item::part(native){
     }
   }
   .info-container_detail_followup{
+    font-family:Lato,Roboto,Arial,sans-serif;
     width: 350px;
     margin: 0 auto;
     @media screen and (max-width: 361px) {
@@ -70,12 +66,16 @@ ion-item::part(native){
     }
     .info-container_detail_list {
       margin-top: 1.5rem;
+      margin-bottom: 4rem;
       border-top: 2px dashed #d0d6da;
       border-bottom: 2px dashed #d0d6da;
       width: 100%;
+      @media screen and (max-width: 376px) {
+        margin-bottom: 2rem;
+      }
       ion-list{
-        padding-top: 0;
-        padding-bottom: 0;
+        /* padding-top: 0;
+        padding-bottom: 0; */
         ion-item{
           @media screen and (max-width: 281px) {}
           ion-label{
@@ -91,6 +91,7 @@ ion-item::part(native){
             color: $primary-color;
             font-weight:600;
             text-align: right;
+            margin-right: 0;
           }
         }
       }
@@ -117,23 +118,23 @@ ion-item::part(native){
       .follow-up{
         margin-bottom: 1rem;
       }
-      .no-exit-troubleshooting{
-        a{
-          display: block;
-          text-decoration: none;
-          color:$etisalat-color;
-          text-transform: $text-uppercase;
-          letter-spacing: 0.14285714em;
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-          @include transition(all 0.3s ease-in-out);
-          &:hover,
-          &:focus,
-          &:active{
-            text-decoration: none;
-            color:$primary-color;
-          }
-        }
+    }
+  }
+  .no-exit-troubleshooting{
+    a{
+      display: block;
+      text-decoration: none;
+      color:$etisalat-color;
+      text-transform: $text-uppercase;
+      letter-spacing: 0.14285714em;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      @include transition(all 0.3s ease-in-out);
+      &:hover,
+      &:focus,
+      &:active{
+        text-decoration: none;
+        color:$primary-color;
       }
     }
   }

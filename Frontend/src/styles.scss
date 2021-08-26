@@ -387,7 +387,6 @@ ion-button::part(native){
 // ------------Removed Ionic Button Styling End-------------------
 
 // ------------Title Styling Start-------------------
-
 .h1,
 .h2,
 .h3,
@@ -426,6 +425,9 @@ h6{
 // ------------Title Styling End-------------------
 
 // ------------Help classes Styling Start-------------------
+.full-width{
+  width: 100%;
+}
 .pt-0{
   padding-top: 0;
 }
@@ -435,6 +437,9 @@ h6{
 .green-box-shadow{
   -webkit-box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
   box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
+}
+.mt-10{
+  margin-top: 1rem;
 }
 // ------------Help classes Styling End-------------------
 
