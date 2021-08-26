@@ -51,9 +51,15 @@
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING"
   },
   "MESSAGES": {
+    "THANKYOU": "Thank you!",
+    "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",
     "MOVING_ELIFE_CONNECTION": "We are moving your eLife connection",
     "MOVING_ELIFE_CONNECTION_BODY_1": "The service will be discontinued while the transfer is under process.",
-    "MOVING_ELIFE_CONNECTION_BODY_2": "Try using it once your eLife connection has been moved successfully."
+    "MOVING_ELIFE_CONNECTION_BODY_2": "Try using it once your eLife connection has been moved successfully.",
+    "ACCOUNT_TEMPORARILY_DISCONNECTED": "Account temporarily disconnected",
+    "ACCOUNT_TEMPORARILY_DISCONNECTED_BODY": "The service won’t work as your account has been disconnected temporarily based upon your request. The service will be back on <XXX>. Click here if you want to reconnect your service.",
+    "ELIFE_CANCELLATION_REQUEST_PROGRESS": "You eLife service cancellation request is in progress",
+    "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

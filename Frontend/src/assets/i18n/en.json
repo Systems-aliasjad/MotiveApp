@@ -51,6 +51,8 @@
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING"
   },
   "MESSAGES": {
+    "THANKYOU": "Thank you!",
+    "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",
     "MOVING_ELIFE_CONNECTION": "We are moving your eLife connection",
     "MOVING_ELIFE_CONNECTION_BODY_1": "The service will be discontinued while the transfer is under process.",
     "MOVING_ELIFE_CONNECTION_BODY_2": "Try using it once your eLife connection has been moved successfully.",
