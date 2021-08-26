@@ -30,8 +30,7 @@ export class TermsConditionsComponent implements OnInit {
     },
   ];
   constructor(private sharedService: SharedService) {
-    //HEADER.TERMS_AND_CONDITIONS
-    this.sharedService.setHeaderConfig('', true);
+    this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', true);
   }
 
   ngOnInit(): void {}
