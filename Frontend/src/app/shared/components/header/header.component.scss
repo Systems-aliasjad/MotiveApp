@@ -1,4 +1,11 @@
 @import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+
+:host {
+  ion-header{
+    --ion-background-color:  transparent;
+  }
+}
 
 .header-wrapper {
   position: $relative;
@@ -17,3 +24,80 @@
     display: none;
   }
 }
+
+ion-toolbar{
+  background-color: $white;
+  -webkit-box-shadow: rgb(2 8 20 / 6%) 0px 1px 3px, rgb(2 8 20 / 4%) 0px 1px 2px;
+  box-shadow: rgb(2 8 20 / 6%) 0px 1px 3px, rgb(2 8 20 / 4%) 0px 1px 2px;
+  .header-inner{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    .back-to-page{
+      margin-top: 0;
+      text-decoration: none;
+    }
+    div{
+      text-align: center;
+      width: 100%;
+      ion-title{
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}
+.page-top-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  .back-to-page {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: 2rem;
+    text-decoration: none;
+    padding-left: .5rem;
+    @include transition(all 0.3s ease-in-out); 
+    span {
+      color: $primary-color;
+      margin-left: 1rem;
+      text-transform: $text-uppercase;
+      letter-spacing: 0.14285714em;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+     img,
+      span {
+        display: inline-block;
+      }
+      span {
+        color: $etisalat-color;
+      }
+    }
+   
+  }
+}
+
+
