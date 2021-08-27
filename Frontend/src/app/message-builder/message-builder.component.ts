@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
 import { ApplicableCodes } from '../shared/constants/constants';
+import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 
 @Component({
   selector: 'app-message-builder',
@@ -10,31 +10,44 @@ import { ApplicableCodes } from '../shared/constants/constants';
 export class MessageBuilderComponent implements OnInit {
   warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
   successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
-  openServiceRequestData = {
-    reqNo: '436529873',
-    reqType: 'Xxxxx xxxxx xxxx',
-    dateVisit: 'Jul 10 2019, 10:30 AM',
-    status: 'Xxxxx xxxxx xxxx',
-  };
-  openServiceRequestCase1 = {
-    header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
-    paragraphs: ['MESSAGES.MOVING_ELIFE_CONNECTION_BODY_1', 'MESSAGES.MOVING_ELIFE_CONNECTION_BODY_2'],
-  };
-  openServiceRequestCase2 = {
-    header: 'MESSAGES.ACCOUNT_TEMPORARILY_DISCONNECTED',
-    paragraphs: ['MESSAGES.ACCOUNT_TEMPORARILY_DISCONNECTED_BODY'],
-  };
-  openServiceRequestCase3 = {
-    header: 'MESSAGES.ELIFE_CANCELLATION_REQUEST_PROGRESS',
-    paragraphs: ['MESSAGES.ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY'],
-  };
-  imgSrc: string = this.warningImgSrc;
-  Section1Data = this.openServiceRequestCase3;
-  openServiceRequestTemplate;
-  showLoader: boolean = false;
-  constructor() {
-    this.openServiceRequestTemplate = ApplicableCodes.openServiceRequestTemplate;
-  }
 
-  ngOnInit(): void {}
+  codeType;
+  Section1Data: any;
+  Section2Data: any;
+  followUpButton: boolean = false;
+  followupComplain: boolean = false;
+  exitTroubleshootLink: boolean = false;
+  anotherComplainLink: boolean = false;
+
+  imgSrc: string = this.warningImgSrc;
+
+  Section2Template;
+  showLoader: boolean = false;
+  constructor() {}
+
+  ngOnInit(): void {
+    if (this.codeType === 1) {
+      this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
+      this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
+      this.Section2Data = {
+        complaintNo: '436529873',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        status: 'Xxxxx xxxxx xxxx',
+      };
+      this.followupComplain = true;
+      this.anotherComplainLink = true;
+    } else {
+      this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
+      this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
+      this.Section2Data = {
+        reqNo: '436529873',
+        reqType: 'Xxxxx xxxxx xxxx',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        status: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.followUpButton = true;
+      this.exitTroubleshootLink = true;
+    }
+  }
 }
