@@ -9,6 +9,7 @@ import { SharedService } from '../shared/shared.service';
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit {
+  selectedLang: string;
   landingPageCards;
   codeType;
   showLoader: boolean = false;
@@ -17,6 +18,7 @@ export class LandingComponent implements OnInit {
     this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false);
   }
   ngOnInit(): void {
+    this.selectedLang = this.sharedService.getDefaultLanguage();
     this.activatedRoute.queryParams.subscribe((params) => {
       this.codeType = params['code'] || '3P';
       this.landingPageCards = this.helperService.filterCard(this.codeType, 'landingPageCards');

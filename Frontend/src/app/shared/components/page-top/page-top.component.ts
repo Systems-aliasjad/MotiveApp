@@ -11,7 +11,9 @@ export class PageTopComponent implements OnInit {
   headerConfig: IPageHeader;
 
   constructor(private sharedService: SharedService) {
-    this.headerConfig = this.sharedService.getHeaderConfig();
+    this.sharedService.getHeaderConfig().subscribe((config) => {
+      this.headerConfig = config;
+    });
   }
 
   ngOnInit(): void {}
