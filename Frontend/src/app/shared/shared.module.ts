@@ -11,15 +11,19 @@ import { TermsConditionsComponent } from './components/terms-conditions/terms-co
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
+import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
 @NgModule({
-  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, TermsConditionsComponent, LoaderComponent],
+  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, TermsConditionsComponent, LoaderComponent, BookComplaintComponent],
   imports: [
     CommonModule,
     IonicModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -29,7 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent],
+  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent, BookComplaintComponent],
 
   entryComponents: [],
 })

@@ -1,0 +1,37 @@
+<app-page-top></app-page-top>
+<ion-content>
+  <ion-grid class="info-container success-container">
+    
+    <!-- Action Title Content Start -->
+    <ion-row class="info-container_title_content">
+      <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
+      <ion-col  size="12">
+        <div class="content">
+          <h4>
+            <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
+              <ion-item>
+                <ion-label position="stacked" >{{'BOOKING_COMPLAINT.MOBILE_NUMBER1' | translate}}</ion-label>
+                <ion-input type="text"  formControlName="MobileNo"></ion-input>
+                <!-- <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('required', 'MobileNo') && formGroup.controls.MobileNo.touched ">
+                  Mobile No is required
+                </div> -->
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked">{{'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate}}</ion-label>
+                <ion-input type="text" formControlName="AlternateContactNo"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked">{{'BOOKING_COMPLAINT.REMARKS' | translate}}</ion-label>
+                <ion-input type="text" formControlName="Remarks"></ion-input>
+              </ion-item>
+              <button ion-button type="submit"  class="btn secondary-btn close" [disabled]="!formGroup.valid">Submit</button>
+            </form>
+          
+          </h4>
+         
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
