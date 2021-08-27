@@ -3,7 +3,7 @@
     <!-- Action Icon Start -->
     <ion-row class="info-container_icon">
       <ion-col size="12">
-        <img src="../../assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" width="120px" height="120px" alt="Success" />
+        <img src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" width="120px" height="120px" alt="Success" />
       </ion-col>
     </ion-row>
     <!-- Action Icon End -->
@@ -11,37 +11,32 @@
     <!-- Action Title Content Start -->
     <ion-row class="info-container_title_content">
       <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
-      <ion-col  size="12">
+      <ion-col size="12">
         <div class="content">
-          <h4>
-            Thank you
-          </h4>
-          <p>
-            Thank you
-          </p>
+          <h4>{{ 'MESSAGES.THANKYOU' | translate }}</h4>
+          <p>{{ 'MESSAGES.THANKYOU_BODY' | translate }}</p>
         </div>
       </ion-col>
     </ion-row>
     <!-- Action Title Content End -->
 
-    <!-- Detail List and Follow up Start -->
-    <!-- <div class="info-container_detail_followup btn-bottom">
-      <ion-row class="info-container_follow">
-        <ion-col size="12" class="pt-0 pb-0">
-          <ion-button class="btn secondary-btn close">Close</ion-button>
+    <!-- CLOSE BUTTON -->
+    <div class="info-container_btn mt-5">
+      <ion-row>
+        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
+          <ion-button class="btn secondary-btn close full-width">Done</ion-button>
         </ion-col>
       </ion-row>
-    </div> -->
-    <!-- Detail List and Follow up and Close End -->
+    </div>
   </ion-grid>
 </ion-content>
 
-<ion-footer class="ion-no-border footer">
+<!-- <ion-footer class="ion-no-border footer">
   <ion-row>
-    <ion-col  size="12">
+    <ion-col size="12">
       <div class="btn-bottom">
-        <ion-button class="btn secondary-btn close">Close</ion-button>
+        <ion-button class="btn secondary-btn close">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
       </div>
     </ion-col>
   </ion-row>
-</ion-footer>
+</ion-footer> -->

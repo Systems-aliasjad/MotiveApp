@@ -2,6 +2,10 @@
   --background-color:  transparent;
   --ion-item-background:transparent;
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-content{
+    --background: var(--ion-background-color, transparent);
+  }
+  
 }
 
 /* Core CSS required for Ionic components to work properly */
@@ -383,7 +387,6 @@ ion-button::part(native){
 // ------------Removed Ionic Button Styling End-------------------
 
 // ------------Title Styling Start-------------------
-
 .h1,
 .h2,
 .h3,
@@ -422,6 +425,9 @@ h6{
 // ------------Title Styling End-------------------
 
 // ------------Help classes Styling Start-------------------
+.full-width{
+  width: 100%;
+}
 .pt-0{
   padding-top: 0;
 }
@@ -432,9 +438,15 @@ h6{
   -webkit-box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
   box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
 }
+.mt-1{
+  margin-top: 1rem;
+}
+.mt-5{
+  margin-top: 5rem;
+}
 // ------------Help classes Styling End-------------------
 
-.body-wrapper{
+html{
   --background: var(--ion-background-color, #f4f7eb);
   background-color: #f4f7eb ; /* Old browsers */
   background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
@@ -455,8 +467,6 @@ h6{
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,1)), to(rgba(244,247,235,1)));
   background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%);
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(244,247,235,1) 100%);  */
-   
-
   ion-content{
     position: relative;
     z-index: 10;
@@ -465,5 +475,19 @@ h6{
   .list-ios,
   .list-md{
     --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
+  }
+  .body-wrapper{
+    background-color: transparent;
+  }
+  .header-wrapper-wave {
+    background: transparent url(/assets/images/wave_graphic_bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 134px;
+    height: 138px;
+    position: $absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
   }
 }

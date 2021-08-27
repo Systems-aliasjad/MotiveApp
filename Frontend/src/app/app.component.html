@@ -1,4 +1,6 @@
-<app-header></app-header>
-<div class="body-wrapper export-wrapper" [dir]="appDirection">
-  <ion-router-outlet></ion-router-outlet>
+<div [dir]="appDirection">
+  <app-header></app-header>
+  <ion-content class="body-wrapper export-wrapper" [dir]="appDirection">
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
 </div>
