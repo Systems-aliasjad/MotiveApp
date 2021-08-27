@@ -40,15 +40,23 @@
     "DATE_VISIT": "Date of visit",
     "STATUS": "Status"
   },
+
+  "COMPLAIN_REQUEST": {
+    "DATE_VISIT": "Date of visit",
+    "STATUS": "Status",
+    "COMPLAINT_NO": "Complain No"
+  },
   "BUTTONS": {
     "FOLLOW_UP": "YES, FOLLOW-UP",
-    "CLOSE": "CLOSE"
+    "CLOSE": "CLOSE",
+    "YES": "YES"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
   },
   "LINKS": {
-    "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING"
+    "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
+    "COMPLAINT_ANOTHER": "No, I want to report another issue"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -59,14 +67,16 @@
     "ACCOUNT_TEMPORARILY_DISCONNECTED": "Account temporarily disconnected",
     "ACCOUNT_TEMPORARILY_DISCONNECTED_BODY": "The service won’t work as your account has been disconnected temporarily based upon your request. The service will be back on <XXX>. Click here if you want to reconnect your service.",
     "ELIFE_CANCELLATION_REQUEST_PROGRESS": "You eLife service cancellation request is in progress",
-    "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request."
+    "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request.",
+    "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
+    "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
     "PARA1": "By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.",
     "PARA2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   },
-  "BOOKING_COMPLAINT":{
+  "BOOKING_COMPLAINT": {
     "MOBILE_NUMBER1": "Mobile No*",
     "MOBILE_NUMBER2": "Alternate Contact No*",
     "REMARKS": "Remarks"

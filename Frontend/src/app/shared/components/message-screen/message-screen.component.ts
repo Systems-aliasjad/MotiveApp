@@ -29,6 +29,11 @@ export class MessageScreenComponent implements OnInit {
   exitTroubleshootLink: Boolean = false;
   @Input()
   closeButton: Boolean = false;
+  @Input()
+  followupComplain: Boolean = false;
+  @Input()
+  anotherComplainLink: Boolean = false;
+
   constructor() {}
   ngOnInit(): void {}
 }
