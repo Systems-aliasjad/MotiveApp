@@ -77,6 +77,10 @@ ion-toolbar{
     text-decoration: none;
     padding-left: .5rem;
     @include transition(all 0.3s ease-in-out); 
+    img,
+    span {
+      display: inline-block;
+    }
     span {
       color: $primary-color;
       margin-left: 1rem;
@@ -88,15 +92,10 @@ ion-toolbar{
     }
     &:hover {
       text-decoration: none;
-     img,
-      span {
-        display: inline-block;
-      }
-      span {
+      span{
         color: $etisalat-color;
       }
     }
-   
   }
 }
 
