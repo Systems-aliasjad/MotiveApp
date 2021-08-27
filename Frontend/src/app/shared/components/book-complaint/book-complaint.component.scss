@@ -1,0 +1,34 @@
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
+ion-item::part(native){
+  --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
+  padding-inline-start:0; 
+  --inner-padding-end:0;
+
+}
+.form-main-container{
+  font-family:Lato,Roboto,Arial,sans-serif;
+  .form-inner_container{
+    @media screen and (max-width: 992px)  {
+      ion-item{
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  form{
+    ion-item{
+      ion-label{
+        color: $secondary-color;
+        font-size: 1rem;
+        -webkit-transform: scale(0.90);
+        -ms-transform: scale(0.90);
+        transform: scale(0.90);
+      }
+    }
+  }
+}
+.sub-title{
+  color:$primary-color;
+  font-weight: 600;
+}
