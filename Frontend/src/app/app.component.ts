@@ -12,10 +12,12 @@ import { SharedService } from './shared/shared.service';
 export class AppComponent implements OnInit {
   appDirection: string = 'rtl';
   constructor(private cacheService: CacheService, public sharedService: SharedService) {
-    this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
-    this.appDirection = this.sharedService.getDefaultLanguage() === 'en' ? 'ltr' : 'rtl';
+    // this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
   }
   ngOnInit(): void {
+    const selectedLang = this.sharedService.getDefaultLanguage();
+    this.appDirection = selectedLang === 'en' ? 'ltr' : 'rtl';
+    this.sharedService.setDefaultLanguage(selectedLang);
     if (environment.production) {
       window.console.log = function () {}; // disable any console.log debugging statements in production mode
     }
