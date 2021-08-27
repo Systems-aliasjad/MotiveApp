@@ -1,4 +1,5 @@
-import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IPageHeader } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
@@ -7,20 +8,17 @@ import { SharedService } from '../../shared.service';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements OnInit, OnChanges {
+export class HeaderComponent implements OnInit {
   headerConfig: IPageHeader;
 
-  constructor(private sharedService: SharedService, private cd: ChangeDetectorRef) {
+  constructor(private sharedService: SharedService, public router: Router) {
     this.sharedService.getHeaderConfig().subscribe((config) => {
       this.headerConfig = config;
     });
   }
   ngOnInit() {}
-  ngOnChanges(changes: SimpleChanges): void {
-    // console.log('====================================');
-    // console.log('asdasd', changes);
-    // console.log('====================================');
-    //Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
-    //Add '${implements OnChanges}' to the class.
+
+  back(): void {
+    this.router.navigate('..' as any);
   }
 }
