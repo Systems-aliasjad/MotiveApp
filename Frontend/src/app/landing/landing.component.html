@@ -10,9 +10,11 @@
     <!-- Page Top Title End -->
 
     <!--Page Top Title Start -->
-    <ion-row [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+    <ion-row>
       <ion-col size="12">
-        <h2>{{ 'HEADER.TECHNICAL_SUPPORT' | translate }}</h2>
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h2>{{ 'HEADER.TECHNICAL_SUPPORT' | translate }}</h2>
+        </div>
       </ion-col>
     </ion-row>
     <!--Page Top Title End -->
@@ -29,7 +31,7 @@
     <ion-row>
       <ion-col size="12">
         <ion-row class="technical-support-container">
-          <ion-col sizeLg="3" sizeMd="4" size="12" class="technical-support" *ngFor="let card of landingPageCards">
+          <ion-col sizeLg="3" sizeMd="4" size="12" class="technical-support" *ngFor="let card of landingPageCards" (click)="handleClick(card.linkTo)">
             <a href="javascript:void(0)" class="technical-support_card">
               <img [src]="card.img" alt="" class="internet-issue-icon" />
               <div class="technical-support_content">

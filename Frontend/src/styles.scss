@@ -431,8 +431,14 @@ h6{
 .pt-0{
   padding-top: 0;
 }
+.pr-0{
+  padding-right: 0;
+}
 .pb-0{
   padding-bottom: 0;
+}
+.pl-0{
+  padding-left: 0;
 }
 .green-box-shadow{
   -webkit-box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
@@ -445,7 +451,15 @@ h6{
   margin-top: 5rem;
 }
 // ------------Help classes Styling End-------------------
-
+.page-top_title {
+  h2 {
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 50px;
+  }
+}
 html{
   --background: var(--ion-background-color, #f4f7eb);
   background-color: #f4f7eb ; /* Old browsers */
