@@ -1,26 +1,32 @@
 import { Injectable } from '@angular/core';
-import { IPageHeader } from './constants/types';
+import { observable, BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+
+import { IPageHeader } from './constants/types';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
-  headerConfig: IPageHeader = {
-    pageTitle: '',
-    singleLine: false,
-  };
-  constructor(public translate: TranslateService) {}
-
-  setHeaderConfig(pageTitle: string, oneLine: boolean) {
-    this.headerConfig = {
-      pageTitle: pageTitle,
-      singleLine: oneLine,
-    };
+  headerConfigSubject: BehaviorSubject<IPageHeader>;
+  headerConfig$: Observable<IPageHeader>;
+  constructor(public translate: TranslateService) {
+    this.headerConfigSubject = new BehaviorSubject({
+      pageTitle: '',
+      singleLine: false,
+    });
+    this.headerConfig$ = this.headerConfigSubject.asObservable();
   }
 
-  getHeaderConfig(): IPageHeader {
-    return this.headerConfig;
+  setHeaderConfig(pageTitle: string, oneLine: boolean) {
+    this.headerConfigSubject.next({
+      pageTitle: pageTitle,
+      singleLine: oneLine,
+    });
+  }
+
+  getHeaderConfig(): Observable<IPageHeader> {
+    return this.headerConfig$;
   }
 
   setDefaultLanguage(language: string): void {
