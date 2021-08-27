@@ -181,4 +181,22 @@ export class ApplicableCodes {
       objKeyNameEN: 'status',
     },
   ];
+
+  public static openServiceRequestTemplateCompliant: ISection2Template[] = [
+    {
+      title: 'COMPLAIN_REQUEST.COMPLAINT_NO',
+      type: 'number',
+      objKeyNameEN: 'complaintNo',
+    },
+    {
+      title: 'COMPLAIN_REQUEST.DATE_VISIT',
+      type: 'date',
+      objKeyNameEN: 'dateVisit',
+    },
+    {
+      title: 'COMPLAIN_REQUEST.STATUS',
+      type: 'text',
+      objKeyNameEN: 'status',
+    },
+  ];
 }
