@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tab-tile',
@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tab-tile.component.scss'],
 })
 export class TabTileComponent implements OnInit {
+  @Input()
+  imageSrc: string = '';
+  @Input()
+  case: string = ''; // Success-green | Error-red | Default-grey
+  @Input()
+  title: string = '';
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {}
-
 }
