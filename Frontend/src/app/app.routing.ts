@@ -7,6 +7,7 @@ import { ThankyouScreenComponent } from './thankyou-screen/thankyou-screen.compo
 import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
+import { ServiceIssueComponent } from './service-issue/service-issue.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'bookComplaint',
     component: BookComplaintComponent,
+  },
+  {
+    path: 'issue',
+    component: ServiceIssueComponent,
   },
   {
     path: '**',
