@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ITabTile } from '../../constants/types';
 
 @Component({
   selector: 'app-issue-tabs',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./issue-tabs.component.scss'],
 })
 export class IssueTabsComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  tabTiles: ITabTile[];
+  constructor() {}
 
   ngOnInit() {}
-
 }
