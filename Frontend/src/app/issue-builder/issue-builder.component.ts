@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedService } from '../shared/shared.service';
 
 @Component({
   selector: 'app-issue-builder',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./issue-builder.component.scss'],
 })
 export class IssueBuilderComponent implements OnInit {
-
-  constructor() { }
+  constructor(private sharedService: SharedService) {
+    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+  }
 
   ngOnInit() {}
-
 }
