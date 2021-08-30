@@ -58,12 +58,12 @@ ion-item::part(native){
     font-family:Lato,Roboto,Arial,sans-serif;
     width: 350px;
     margin: 0 auto;
-    @media screen and (max-width: 361px) {
-      width: 310px;
+    @media screen and (max-width: 767px) {
+      width: 100%;
     }
-    @media screen and (max-width: 281px) {
+    /* @media screen and (max-width: 281px) {
       width: 268px;
-    }
+    } */
     .info-container_detail_list {
       margin-top: 1.5rem;
       margin-bottom: 4rem;
