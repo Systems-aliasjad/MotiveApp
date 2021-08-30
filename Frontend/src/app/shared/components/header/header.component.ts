@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IPageHeader } from '../../constants/types';
 import { SharedService } from '../../shared.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +12,7 @@ import { SharedService } from '../../shared.service';
 export class HeaderComponent implements OnInit {
   headerConfig: IPageHeader;
 
-  constructor(private sharedService: SharedService, public router: Router) {
+  constructor(private sharedService: SharedService, public router: Router, private location: Location) {
     this.sharedService.getHeaderConfig().subscribe((config) => {
       this.headerConfig = config;
     });
@@ -19,6 +20,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {}
 
   back(): void {
-    this.router.navigate('..' as any);
+    this.location.back();
   }
 }
