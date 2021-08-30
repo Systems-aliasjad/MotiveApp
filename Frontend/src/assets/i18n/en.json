@@ -49,7 +49,8 @@
   "BUTTONS": {
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "CLOSE": "CLOSE",
-    "YES": "YES"
+    "YES": "YES",
+    "VIEW_DEVICE_CARE": "VIEW DEVICE CARE"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -80,5 +81,14 @@
     "MOBILE_NUMBER1": "Mobile No*",
     "MOBILE_NUMBER2": "Alternate Contact No*",
     "REMARKS": "Remarks"
+  },
+  "ROUTER_RESTART": {
+    "RESTART_ROUTER_H1": "Restart router",
+    "RESTART_ROUTER_H2": "You can follow these steps to reboot your router",
+    "RESTART_ROUTER_H3": "Consult device care for specific device guides",
+    "ROUTER_DIDNOT_RESTART_H1": "Your router didn't restart",
+    "ROUTER_DIDNOT_RESTART_H2": "Follow these steps to restart your router",
+    "ROUTER_DIDNOT_RESTART_H3": "Visit 'Device Care'",
+    "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   }
 }

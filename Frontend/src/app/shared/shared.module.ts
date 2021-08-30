@@ -13,12 +13,22 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterRestartComponent } from './components/router-restart/router-restart.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
 @NgModule({
-  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, TermsConditionsComponent, LoaderComponent, BookComplaintComponent],
+  declarations: [
+    PageTopComponent,
+    HeaderComponent,
+    MessageScreenComponent,
+    ThankyouScreenComponent,
+    TermsConditionsComponent,
+    LoaderComponent,
+    BookComplaintComponent,
+    RouterRestartComponent,
+  ],
   imports: [
     CommonModule,
     IonicModule.forRoot(),
