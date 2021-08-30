@@ -11,7 +11,7 @@
   </ion-toolbar>
   <ng-template #multiLine>
     <div class="page-top-container">
-      <ion-row class="page-top_back">
+      <ion-row class="page-top_back" *ngIf="headerConfig.pageTitle; else emptyHeader">
         <ion-col size="12">
           <a href="javascript:void(0)" class="back-to-page" (click)="back()">
             <img src="assets/images/action-icons/icon_back.svg" width="24px" height="24px" alt="back to page" />
@@ -19,6 +19,7 @@
           </a>
         </ion-col>
       </ion-row>
+      <ng-template #emptyHeader> <ion-row> Empty Header</ion-row> </ng-template>
     </div>
   </ng-template>
 </ion-header>
