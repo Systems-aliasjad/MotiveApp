@@ -13,12 +13,28 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
+import { TabTileComponent } from './components/tab-tile/tab-tile.component';
+import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
+import { RouterRestartComponent } from './components/router-restart/router-restart.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
 @NgModule({
-  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, TermsConditionsComponent, LoaderComponent, BookComplaintComponent],
+  declarations: [
+    PageTopComponent,
+    HeaderComponent,
+    MessageScreenComponent,
+    ThankyouScreenComponent,
+    TermsConditionsComponent,
+    LoaderComponent,
+    BookComplaintComponent,
+    IssueTabsComponent,
+    TabTileComponent,
+    ServiceIssueComponent,
+    RouterRestartComponent,
+  ],
   imports: [
     CommonModule,
     IonicModule.forRoot(),
@@ -33,7 +49,7 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent, BookComplaintComponent],
+  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent, BookComplaintComponent, ServiceIssueComponent],
 
   entryComponents: [],
 })
