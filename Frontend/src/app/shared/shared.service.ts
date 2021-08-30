@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { observable, BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IPageHeader } from './constants/types';
