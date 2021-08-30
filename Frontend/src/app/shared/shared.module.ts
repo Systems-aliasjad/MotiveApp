@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
 import { TabTileComponent } from './components/tab-tile/tab-tile.component';
 import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
+import { RouterRestartComponent } from './components/router-restart/router-restart.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -32,6 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
     IssueTabsComponent,
     TabTileComponent,
     ServiceIssueComponent,
+    RouterRestartComponent,
   ],
   imports: [
     CommonModule,
