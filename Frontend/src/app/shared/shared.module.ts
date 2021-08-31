@@ -13,17 +13,29 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { NumberOnlyDirective } from './directives/number-only.directive';
+import { BrMaskerModule } from 'br-mask';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
+
 @NgModule({
-  declarations: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, TermsConditionsComponent, LoaderComponent, BookComplaintComponent],
+  declarations: [
+    PageTopComponent,
+    HeaderComponent,
+    MessageScreenComponent,
+    ThankyouScreenComponent,
+    TermsConditionsComponent,
+    LoaderComponent,
+    BookComplaintComponent,
+    NumberOnlyDirective,
+  ],
   imports: [
     CommonModule,
     IonicModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    BrMaskerModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
