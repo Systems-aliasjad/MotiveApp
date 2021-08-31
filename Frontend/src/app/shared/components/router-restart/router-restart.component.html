@@ -1,0 +1,64 @@
+<ion-content>
+  <ion-grid class="form-main-container">
+    <!-- Page Heading -->
+    <ion-row>
+      <ion-col size="12">
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h2>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H1' | translate }}</h2>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Router Icon -->
+    <ion-row class="info-container_icon">
+      <ion-col size="12">
+        <img alt="Router" src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" width="120px" height="120px" alt="Success" />
+      </ion-col>
+    </ion-row>
+
+    <!-- Page Instruction Heading -->
+    <ion-row>
+      <ion-col size="12">
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h6>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H2' | translate }} :</h6>
+        </div>
+        <div class="content">
+          <p *ngFor="let ins of instructionList; let i = index">{{ i + 1 }}. {{ ins | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Divider -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-item-divider>
+          <div style="width: 100%; text-align: center">OR</div>
+        </ion-item-divider>
+      </ion-col>
+    </ion-row>
+
+    <!-- Page Instruction Heading -->
+    <ion-row>
+      <ion-col size="12">
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h6>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H3' | translate }} :</h6>
+        </div>
+        <div class="content">
+          <p>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H3_MSG' | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <div class="btn-bottom">
+          <ion-button style="width: 100%" class="btn secondary-btn close">{{ 'BUTTONS.VIEW_DEVICE_CARE' | translate }}</ion-button>
+        </div>
+        <br />
+        <div style="text-align: center">
+          <a style="color: #719e19" class="close">{{ 'BUTTONS.CLOSE' | translate }}</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
