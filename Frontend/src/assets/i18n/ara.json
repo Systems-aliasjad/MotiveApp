@@ -2,7 +2,8 @@
   "HEADER": {
     "TECHNICAL_SUPPORT": "Technical Support",
     "QUICK_LINKS": "Quick links",
-    "TERMS_AND_CONDITIONS": "Terms & Conditions"
+    "TERMS_AND_CONDITIONS": "Terms & Conditions",
+    "DEVICE_CARE": "Device care"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -51,7 +52,9 @@
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "YES": "YES",
     "CLOSE": "CLOSE",
-    "VIEW_DEVICE_CARE": "VIEW DEVICE CARE"
+    "VIEW_DEVICE_CARE": "VIEW DEVICE CARE",
+    "ISSUE_FIXED": "ISSUE FIXED",
+    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -96,5 +99,8 @@
     "MOBILE_NUMBER": "Mobile Number*",
     "NEW_PASSWORD": "New Password*",
     "CONFIRM_PASSWORD": "Confirm Password*"
+  },
+  "DEVICE_CARE": {
+    "PAGE_HEADING": "How to configure your router"
   }
 }
