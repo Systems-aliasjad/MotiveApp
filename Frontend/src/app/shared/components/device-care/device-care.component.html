@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-grid class="form-main-container">
+    <!-- Page Heading -->
+    <ion-row>
+      <ion-col size="12">
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h5>{{ 'DEVICE_CARE.PAGE_HEADING' | translate }}</h5>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- Page Content  -->
+    <ion-row>
+      <ion-col size="12">
+        <div>
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+        <div style="text-align: center; height: 300px; background-color: lightgray">
+          <img alt="Picture placeholder" width="300px" height="300px" />
+        </div>
+        <div>
+          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-footer>
+    <ion-row>
+      <ion-col size="12">
+        <div class="btn-bottom">
+          <ion-button style="width: 100%" class="btn primary-btn close">{{ 'BUTTONS.ISSUE_FIXED' | translate }}</ion-button>
+        </div>
+        <br />
+        <div style="text-align: center">
+          <a style="color: #719e19" class="close">{{ 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING' | translate }}</a>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-footer>
+</ion-content>
