@@ -15,6 +15,11 @@ import { BookComplaintComponent } from './components/book-complaint/book-complai
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NumberOnlyDirective } from './directives/number-only.directive';
 import { BrMaskerModule } from 'br-mask';
+import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
+import { TabTileComponent } from './components/tab-tile/tab-tile.component';
+import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
+import { RouterRestartComponent } from './components/router-restart/router-restart.component';
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
@@ -29,6 +34,10 @@ export function createTranslateLoader(http: HttpClient) {
     LoaderComponent,
     BookComplaintComponent,
     NumberOnlyDirective,
+    IssueTabsComponent,
+    TabTileComponent,
+    ServiceIssueComponent,
+    RouterRestartComponent,
   ],
   imports: [
     CommonModule,
@@ -45,7 +54,7 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent, BookComplaintComponent],
+  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent, BookComplaintComponent, ServiceIssueComponent],
 
   entryComponents: [],
 })
