@@ -19,7 +19,7 @@ import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component
 import { TabTileComponent } from './components/tab-tile/tab-tile.component';
 import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
 import { RouterRestartComponent } from './components/router-restart/router-restart.component';
-
+import { ResetInternetPasswordComponent } from './components/reset-internet-password/reset-internet-password.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
@@ -38,6 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
     TabTileComponent,
     ServiceIssueComponent,
     RouterRestartComponent,
+    ResetInternetPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -54,7 +55,16 @@ export function createTranslateLoader(http: HttpClient) {
       defaultLanguage: 'en',
     }),
   ],
-  exports: [PageTopComponent, HeaderComponent, MessageScreenComponent, ThankyouScreenComponent, LoaderComponent, BookComplaintComponent, ServiceIssueComponent],
+  exports: [
+    PageTopComponent,
+    HeaderComponent,
+    MessageScreenComponent,
+    ThankyouScreenComponent,
+    LoaderComponent,
+    BookComplaintComponent,
+    ServiceIssueComponent,
+    ResetInternetPasswordComponent,
+  ],
 
   entryComponents: [],
 })

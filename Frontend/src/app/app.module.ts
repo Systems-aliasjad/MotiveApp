@@ -23,7 +23,6 @@ import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
-
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
