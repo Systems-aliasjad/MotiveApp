@@ -13,6 +13,8 @@ import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NumberOnlyDirective } from './directives/number-only.directive';
+import { BrMaskerModule } from 'br-mask';
 import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
 import { TabTileComponent } from './components/tab-tile/tab-tile.component';
 import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
@@ -21,6 +23,7 @@ import { RouterRestartComponent } from './components/router-restart/router-resta
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
 }
+
 @NgModule({
   declarations: [
     PageTopComponent,
@@ -30,6 +33,7 @@ export function createTranslateLoader(http: HttpClient) {
     TermsConditionsComponent,
     LoaderComponent,
     BookComplaintComponent,
+    NumberOnlyDirective,
     IssueTabsComponent,
     TabTileComponent,
     ServiceIssueComponent,
@@ -40,6 +44,7 @@ export function createTranslateLoader(http: HttpClient) {
     IonicModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
+    BrMaskerModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
