@@ -95,6 +95,11 @@
     "ROUTER_DIDNOT_RESTART_H3": "Visit 'Device Care'",
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
+  "RESET_INTERNET_PASSWORD": {
+    "MOBILE_NUMBER": "Mobile Number*",
+    "NEW_PASSWORD": "New Password*",
+    "CONFIRM_PASSWORD": "Confirm Password*"
+  },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router"
   }
