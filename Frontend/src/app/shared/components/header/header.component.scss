@@ -75,7 +75,7 @@ ion-toolbar{
     align-items: center;
     margin-top: 2rem;
     text-decoration: none;
-    padding-left: .5rem;
+    margin-left: .5rem;
     @include transition(all 0.3s ease-in-out); 
     span {
       display: inline-block;

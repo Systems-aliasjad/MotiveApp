@@ -1,7 +1,16 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 
+:host {
+   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+
 .quick-links-container {
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+  }
   .quick-links_title_all {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -18,8 +27,6 @@
     align-items: center;
     font-family: Lato, Roboto, Arial, sans-serif;
     margin-bottom: 0.8rem;
-    
-    
   }
   .quick-links-card {
     ion-col {
@@ -48,7 +55,7 @@
           -ms-flex-align: center;
           align-items: center;
           p {
-            line-height: 1.2;
+            /* line-height: 1.2; */
             margin-bottom: 0;
             color: $primary-color;
             font-size: 0.9rem;
