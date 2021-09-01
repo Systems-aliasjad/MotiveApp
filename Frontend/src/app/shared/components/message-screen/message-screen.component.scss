@@ -77,7 +77,6 @@ ion-item::part(native){
         /* padding-top: 0;
         padding-bottom: 0; */
         ion-item{
-          @media screen and (max-width: 281px) {}
           ion-label{
             font-size: 0.9rem;
             font-family:Lato,Roboto,Arial,sans-serif;

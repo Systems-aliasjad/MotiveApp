@@ -6,6 +6,11 @@
 }
 
 .quick-links-container {
+  margin-top: .8rem;
+  margin-bottom: 1rem;
+  @media screen and (max-width: 992px) {
+    margin-top: 0;
+  }
   .quick-links_title_all {
     display: -webkit-box;
     display: -ms-flexbox;
