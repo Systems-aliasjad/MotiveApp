@@ -4,6 +4,7 @@
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-content{
     --background: var(--ion-background-color, transparent);
+    margin-bottom:2rem;
   }
   
 }
@@ -570,4 +571,7 @@ html{
       color:$primary-color;
     }
   }
+}
+.body-wrapper{
+  margin-bottom:2rem;
 }
