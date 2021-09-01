@@ -18,8 +18,9 @@ import { TabTileComponent } from './components/tab-tile/tab-tile.component';
 import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
 import { RouterRestartComponent } from './components/router-restart/router-restart.component';
 import { DeviceCareComponent } from './components/device-care/device-care.component';
-import { ModalComponent } from './models/modal-component/modal-component.component';
-import { DialogComponent } from './models/dialogs/dialog/dialog.component';
+import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
+import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-issues-dialog.component';
+import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -38,8 +39,9 @@ export function createTranslateLoader(http: HttpClient) {
     ServiceIssueComponent,
     RouterRestartComponent,
     DeviceCareComponent,
-    ModalComponent,
-    DialogComponent,
+    PasswordResetDialog,
+    InternetIssuesDialog,
+    RestartRouterDialog,
   ],
   imports: [
     CommonModule,

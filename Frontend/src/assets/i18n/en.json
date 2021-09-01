@@ -52,6 +52,7 @@
     "YES": "YES",
     "CLOSE": "CLOSE",
     "BACK": "BACK",
+    "CONTINUE": "CONTINUE",
     "VIEW_DEVICE_CARE": "VIEW DEVICE CARE",
     "ISSUE_FIXED": "ISSUE FIXED",
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
@@ -98,5 +99,19 @@
   },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router"
+  },
+  "DIALOG": {
+    "PASSWORD_WASNOT_RESET_HEADING": "Your password wasn't reset",
+    "PASSWORD_WASNOT_RESET_DESCRIPTION": "Please note that the issue won't be fixed until the password is changed and the router is configured with the new password",
+
+    "INTERNET_ISSUE_TITLE": "Internet issues",
+    "INTERNET_ISSUE_HEADING": "Router is not accessible",
+    "INTERNET_ISSUE_CONTINUE": "Once you complete these steps, tap 'Continue'.",
+    "INTERNET_ISSUE_EXIST_TROUBLESHOOTING": "If you want to complete these steps later, tap 'Exist troubleshooting'.",
+
+    "RESTART_ROUTER_HEADING": "Restart router",
+    "RESTART_ROUTER_INS1": "Please note that the issue won't be fixed until you restart your router.",
+    "RESTART_ROUTER_INS2": "You can also restart your router manually.",
+    "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again."
   }
 }
