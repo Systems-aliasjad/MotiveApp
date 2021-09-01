@@ -18,7 +18,8 @@
   p{
     line-height: 1.2;
     color: #848789;
-    margin-left: 0.5rem;
+    margin-bottom: .5rem;
+    margin-left: .5rem;
   }
 }
 
@@ -124,6 +125,7 @@
       overflow: hidden;
       text-overflow: ellipsis; */
       line-height: 1.2;
+      margin-top: .5rem;
       margin-bottom: 0;
       color: $secondary-color;
       font-size: 0.9rem;
