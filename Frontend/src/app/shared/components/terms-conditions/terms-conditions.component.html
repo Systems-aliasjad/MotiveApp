@@ -3,7 +3,7 @@
     <ion-row>
       <ion-col size="12">
         <div class="terms-condition_latest">
-          <img src="../../../../assets/images/indicators-icons/icon_calendar.svg" alt="calendar">
+          <img src="../../../../assets/images/indicators-icons/icon_calendar.svg" alt="calendar" />
           <ion-label>Last updated on August 08, 2021</ion-label>
         </div>
       </ion-col>
@@ -14,6 +14,10 @@
           <h4>{{ term.head | translate }}</h4>
           <p *ngFor="let text of term.body">{{ text | translate }}</p>
         </div>
+      </ion-col>
+
+      <ion-col sizeLg="2" sizeMd="2" sizeSm="12" size="12">
+        <ion-button class="btn secondary-btn close full-width" (click)="AcceptContinue($event)">Accept & Continue</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>

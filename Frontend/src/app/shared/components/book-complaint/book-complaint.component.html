@@ -22,16 +22,33 @@
               <ion-col sizeLg="4" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER1' | translate }}</ion-label>
-                  <ion-input type="text" formControlName="MobileNo"></ion-input>
-                  <!-- <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('required', 'MobileNo') && formGroup.controls.MobileNo.touched ">
-                    Mobile No is required
-                  </div> -->
+
+                  <ion-input
+                    type="text"
+                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                    placeholder="+971xxxxxxxxx"
+                    formControlName="MobileNo"
+                    [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
+                  ></ion-input>
+
+                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                    {{ error.phoneNumber }}
+                  </div>
                 </ion-item>
               </ion-col>
               <ion-col sizeLg="4" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate }}</ion-label>
-                  <ion-input type="text" formControlName="AlternateContactNo"></ion-input>
+                  <ion-input
+                    type="text"
+                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                    placeholder="+971xxxxxxxxx"
+                    formControlName="AlternateContactNo"
+                    [ngClass]="{ 'is-invalid': f.AlternateContactNo.errors && f.AlternateContactNo.errors.pattern }"
+                  ></ion-input>
+                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'AlternateContactNo') && f.AlternateContactNo.touched">
+                    {{ error.phoneNumber }}
+                  </div>
                 </ion-item>
               </ion-col>
               <ion-col sizeLg="4" sizeMd="12" sizeSm="12" size="12">
@@ -43,7 +60,7 @@
             </ion-row>
             <ion-row>
               <ion-col sizeLg="2" sizeMd="2" sizeSm="12" size="12">
-                <ion-button class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">Submit</ion-button>
+                <ion-button class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">BOOK A COMPLAINT</ion-button>
               </ion-col>
             </ion-row>
           </ion-grid>
