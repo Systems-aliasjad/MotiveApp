@@ -57,9 +57,11 @@
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "YES": "YES",
     "CLOSE": "CLOSE",
+    "BACK": "BACK",
     "VIEW_DEVICE_CARE": "VIEW DEVICE CARE",
     "ISSUE_FIXED": "ISSUE FIXED",
-    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING"
+    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
+    "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -108,5 +110,11 @@
   },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router"
+  },
+  "LOADER": {
+    "HEADER": "Almost there",
+    "SUCCESS_BODY_1": "Please wait while our automated system is diagnosing the service.",
+    "SUCCESS_BODY_2": "This will take up to 1 minute",
+    "FALIURE_BODY": "It is taking longer than expected. Kindly wait"
   }
 }

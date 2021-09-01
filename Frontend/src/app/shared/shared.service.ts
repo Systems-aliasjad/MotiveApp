@@ -14,17 +14,20 @@ export class SharedService {
   termsConditionCheck: BehaviorSubject<boolean>;
   termsConditionCheck$: Observable<boolean>;
 
+  loaderSubject: BehaviorSubject<boolean>;
+  loader$: Observable<boolean>;
+
   constructor(public translate: TranslateService) {
     this.headerConfigSubject = new BehaviorSubject({
       pageTitle: '',
       singleLine: false,
     });
-    this.headerConfig$ = this.headerConfigSubject.asObservable();
-
-    ///For Terms and Condition
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
+    this.loaderSubject = new BehaviorSubject(false);
+
+    this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
-    ///For Terms and Condition
+    this.loader$ = this.loaderSubject.asObservable();
   }
 
   setHeaderConfig(pageTitle: string, oneLine: boolean) {
@@ -53,5 +56,12 @@ export class SharedService {
 
   getDefaultLanguage(): string {
     return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
+  }
+
+  setLoader(loaderState: boolean): void {
+    this.loaderSubject.next(loaderState);
+  }
+  getLoader(): Observable<boolean> {
+    return this.loader$;
   }
 }
