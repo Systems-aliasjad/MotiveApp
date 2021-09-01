@@ -4,7 +4,7 @@ export interface IPageHeader {
 }
 
 export interface ITermsAndConditions {
-  termsCheck: string;
+  termsCheck: boolean;
 }
 
 export interface ITabTile {

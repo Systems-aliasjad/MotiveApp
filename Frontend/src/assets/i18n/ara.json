@@ -4,7 +4,13 @@
     "QUICK_LINKS": "Quick links",
     "TERMS_AND_CONDITIONS": "Terms & Conditions",
     "DEVICE_CARE": "Device care",
-    "BOOK_COMPLAINT": "Book a Complaint"
+    "BOOK_COMPLAINT": "Book a Complaint",
+    "RESET_INTERNET_PASSWORD": "Reset internet password"
+  },
+
+  "SUBHEADER": {
+    "RESET_INTERNET_PASSWORD": "",
+    "BOOK_COMPLAINT": "Please fill your complete details"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",

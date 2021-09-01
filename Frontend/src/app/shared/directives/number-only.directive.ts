@@ -9,7 +9,6 @@ export class NumberOnlyDirective {
 
   @HostListener('keypress', ['$event'])
   onInput(event: any) {
-    debugger;
     const pattern = /[0-9]/; // without ., for integer only
     let inputChar = String.fromCharCode(event.which ? event.which : event.keyCode);
 
