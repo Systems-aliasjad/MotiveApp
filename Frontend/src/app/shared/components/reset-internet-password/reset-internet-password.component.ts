@@ -15,7 +15,7 @@ export class ResetInternetPasswordComponent implements OnInit {
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
 
-  termsCheck: any;
+  termsCheck: boolean = false;
 
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
@@ -23,30 +23,32 @@ export class ResetInternetPasswordComponent implements OnInit {
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService) {
+    this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
+
+    this.sharedService.getTermsConditions().subscribe((config) => {
+      this.termsCheck = config;
+    });
+  }
+
+  ngOnInit() {
     this.formGroup = this.formBuilder.group(
       {
         MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-        NewPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
-        ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
+        NewPassword: ['', [Validators.required]],
+        ConfirmPassword: ['', [Validators.required]],
       },
       {
         validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
       }
     );
-
-    this.sharedService.getTermsConditions().subscribe((config) => {
-      this.termsCheck = config.termsCheck;
-    });
   }
-
-  ngOnInit() {}
 
   get f() {
     return this.formGroup.controls;
   }
 
   SubmitForm() {
-    console.log(this.formGroup.value);
+    console.log(this.formGroup.valid);
     this.router.navigate(['thanks']);
   }
 
@@ -56,16 +58,16 @@ export class ResetInternetPasswordComponent implements OnInit {
 }
 export function ConfirmedValidator(controlName: string, matchingControlName: string) {
   return (formGroup: FormGroup) => {
-    debugger;
     const control = formGroup.controls[controlName];
     const matchingControl = formGroup.controls[matchingControlName];
-    // if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
-    //   return;
-    // }
+    if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+      return;
+    }
     if (control.value !== matchingControl.value) {
       matchingControl.setErrors({ confirmedValidator: true });
     } else {
       matchingControl.setErrors({ confirmedValidator: null });
+      matchingControl.updateValueAndValidity();
     }
   };
 }
