@@ -10,6 +10,7 @@ import { BookComplaintComponent } from './shared/components/book-complaint/book-
 import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
 import { RouterRestartComponent } from './shared/components/router-restart/router-restart.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
+import { ModalComponent } from './shared/models/modal-component/modal-component.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'device-care',
     component: DeviceCareComponent,
+  },
+  {
+    path: 'modal',
+    component: ModalComponent,
   },
   {
     path: '**',
