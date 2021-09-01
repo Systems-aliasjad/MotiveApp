@@ -1,5 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-restart-router-dialog',
@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./restart-router-dialog.component.css'],
 })
 export class RestartRouterDialog implements OnInit {
-  constructor(private location: Location) {}
+  constructor(private modalCtrl: ModalController) {}
 
   ngOnInit() {}
 
-  back(): void {
-    this.location.back();
+  dismiss() {
+    this.modalCtrl.dismiss();
   }
 }
