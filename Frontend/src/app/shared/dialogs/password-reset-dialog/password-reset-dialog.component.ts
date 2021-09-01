@@ -2,12 +2,11 @@ import { Location } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.scss'],
+  selector: 'password-reset-dialog',
+  templateUrl: './password-reset-dialog.component.html',
+  styleUrls: ['./password-reset-dialog.component.css'],
 })
-export class DialogComponent implements OnInit {
-  @Input() data: any;
+export class PasswordResetDialog implements OnInit {
   constructor(private location: Location) {}
 
   ngOnInit() {}

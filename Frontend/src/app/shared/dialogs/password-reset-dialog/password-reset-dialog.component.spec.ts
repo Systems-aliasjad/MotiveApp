@@ -3,21 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { DialogComponent } from './dialog.component';
+import { PasswordResetDialog } from './password-reset-dialog.component';
 
-describe('DialogComponent', () => {
-  let component: DialogComponent;
-  let fixture: ComponentFixture<DialogComponent>;
+describe('PasswordResetDialog', () => {
+  let component: PasswordResetDialog;
+  let fixture: ComponentFixture<PasswordResetDialog>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DialogComponent ]
-    })
-    .compileComponents();
+      declarations: [PasswordResetDialog],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DialogComponent);
+    fixture = TestBed.createComponent(PasswordResetDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
