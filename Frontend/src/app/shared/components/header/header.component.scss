@@ -75,15 +75,12 @@ ion-toolbar{
     align-items: center;
     margin-top: 2rem;
     text-decoration: none;
-    padding-left: .5rem;
+    margin-left: .5rem;
     @include transition(all 0.3s ease-in-out); 
-    img,
     span {
       display: inline-block;
-    }
-    span {
-      color: $primary-color;
-      margin-left: 1rem;
+      color: $etisalat-color;
+      margin-left: .5rem;
       text-transform: $text-uppercase;
       letter-spacing: 0.14285714em;
       @media screen and (max-width: 768px) {
@@ -93,7 +90,21 @@ ion-toolbar{
     &:hover {
       text-decoration: none;
       span{
-        color: $etisalat-color;
+        color: $primary-color;
+      }
+    }
+    .icon-left-arrow{
+      width: 0.8rem;
+      height: 0.8rem;
+      display:block;
+      @media screen and (max-width: 767px) {
+        display:none;
+      }
+    }
+    .icon-back-arrow{
+      display:block;
+      @media screen and (min-width: 768px) {
+        display:none;
       }
     }
   }

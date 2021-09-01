@@ -3,20 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { ModalComponent } from './modal-component.component';
+import { RestartRouterDialog } from './restart-router-dialog.component';
 
-describe('ModalComponent', () => {
-  let component: ModalComponent;
-  let fixture: ComponentFixture<ModalComponent>;
+describe('RestartRouterDialog', () => {
+  let component: RestartRouterDialog;
+  let fixture: ComponentFixture<RestartRouterDialog>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ModalComponent],
+      declarations: [RestartRouterDialog],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ModalComponent);
+    fixture = TestBed.createComponent(RestartRouterDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
