@@ -4,6 +4,7 @@
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-content{
     --background: var(--ion-background-color, transparent);
+    margin-bottom:2rem;
   }
   
 }
@@ -552,4 +553,25 @@ html{
     right: 0;
     z-index: 0;
   }
+}
+.transparent-btn{
+  a{
+    display: block;
+    text-decoration: none;
+    color:$etisalat-color;
+    text-transform: $text-uppercase;
+    letter-spacing: 0.14285714em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    @include transition(all 0.3s ease-in-out);
+    &:hover,
+    &:focus,
+    &:active{
+      text-decoration: none;
+      color:$primary-color;
+    }
+  }
+}
+.body-wrapper{
+  margin-bottom:2rem;
 }
