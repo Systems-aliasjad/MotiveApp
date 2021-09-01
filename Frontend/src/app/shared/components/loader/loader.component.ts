@@ -10,12 +10,13 @@ export class LoaderComponent implements OnInit {
   lateResponse: boolean = false;
   oneMinute: number = 60000;
   oneMinutePart100 = this.oneMinute / 100;
-  almostThere: string = 'Almost there';
-  message1: string[] = ['Please wait while our automated system is diagnosing the service.', 'This will take up to 1 minute'];
-  message2: string = 'It is taking longer than expected. Kindly wait';
+  successMessages: string[] = ['LOADER.SUCCESS_BODY_1', 'LOADER.SUCCESS_BODY_2'];
+  faliureMessages: string[] = ['LOADER.FALIURE_BODY'];
+  messages: string[] = [];
   constructor() {}
 
   ngOnInit(): void {
+    this.messages = this.successMessages;
     setInterval(() => {
       this.percentageLoaded++;
     }, this.oneMinutePart100);
@@ -23,6 +24,7 @@ export class LoaderComponent implements OnInit {
     setInterval(() => {
       this.percentageLoaded = 0;
       this.lateResponse = true;
+      this.messages = this.faliureMessages;
     }, this.oneMinute);
   }
 }
