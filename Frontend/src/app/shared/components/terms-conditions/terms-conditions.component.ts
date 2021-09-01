@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
-
+import { Location } from '@angular/common';
 export interface ITermsAndConditions {
   head: string;
   body: string[];
@@ -11,6 +11,8 @@ export interface ITermsAndConditions {
   styleUrls: ['./terms-conditions.component.scss'],
 })
 export class TermsConditionsComponent implements OnInit {
+  termsCheck: string = '';
+
   TC: ITermsAndConditions[] = [
     {
       head: 'HEADER.TERMS_AND_CONDITIONS',
@@ -29,9 +31,14 @@ export class TermsConditionsComponent implements OnInit {
       body: ['TERMS_AND_CONDITIONS.PARA2', 'TERMS_AND_CONDITIONS.PARA2'],
     },
   ];
-  constructor(private sharedService: SharedService) {
+  constructor(private sharedService: SharedService, private location: Location) {
     this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', true);
   }
 
   ngOnInit(): void {}
+
+  AcceptContinue = (event: any) => {
+    this.sharedService.setTermsConditions(true);
+    this.location.back();
+  };
 }

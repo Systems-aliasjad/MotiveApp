@@ -9,6 +9,7 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
 import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
 import { RouterRestartComponent } from './shared/components/router-restart/router-restart.component';
+import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
 
 const routes: Routes = [
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path: 'router-restart',
     component: RouterRestartComponent,
+  },
+  {
+    path: 'reset-internet-password',
+    component: ResetInternetPasswordComponent,
   },
   {
     path: 'device-care',

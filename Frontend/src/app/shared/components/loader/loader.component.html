@@ -1,1 +1,5 @@
 <p>loader works! {{ percentageLoaded }}</p>
+
+<P>{{ 'LOADER.HEADER' | translate }}</P>
+
+<P *ngFor="let message of messages"> {{ message | translate }}</P>

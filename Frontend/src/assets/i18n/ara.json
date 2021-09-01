@@ -3,7 +3,14 @@
     "TECHNICAL_SUPPORT": "Technical Support",
     "QUICK_LINKS": "Quick links",
     "TERMS_AND_CONDITIONS": "Terms & Conditions",
-    "DEVICE_CARE": "Device care"
+    "DEVICE_CARE": "Device care",
+    "BOOK_COMPLAINT": "Book a Complaint",
+    "RESET_INTERNET_PASSWORD": "Reset internet password"
+  },
+
+  "SUBHEADER": {
+    "RESET_INTERNET_PASSWORD": "",
+    "BOOK_COMPLAINT": "Please fill your complete details"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -98,6 +105,11 @@
     "ROUTER_DIDNOT_RESTART_H3": "Visit 'Device Care'",
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
+  "RESET_INTERNET_PASSWORD": {
+    "MOBILE_NUMBER": "Mobile Number*",
+    "NEW_PASSWORD": "New Password*",
+    "CONFIRM_PASSWORD": "Confirm Password*"
+  },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router"
   },
@@ -114,5 +126,11 @@
     "RESTART_ROUTER_INS1": "Please note that the issue won't be fixed until you restart your router.",
     "RESTART_ROUTER_INS2": "You can also restart your router manually.",
     "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again."
+  },
+  "LOADER": {
+    "HEADER": "Almost there",
+    "SUCCESS_BODY_1": "Please wait while our automated system is diagnosing the service.",
+    "SUCCESS_BODY_2": "This will take up to 1 minute",
+    "FALIURE_BODY": "It is taking longer than expected. Kindly wait"
   }
 }

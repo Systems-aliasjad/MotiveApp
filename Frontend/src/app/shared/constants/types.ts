@@ -3,6 +3,10 @@ export interface IPageHeader {
   singleLine: boolean;
 }
 
+export interface ITermsAndConditions {
+  termsCheck: boolean;
+}
+
 export interface ITabTile {
   imageSrc: string;
   case: string; // Success-green | Error-red | Default-grey
