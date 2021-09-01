@@ -69,7 +69,6 @@
   align-items: center;
   text-decoration: none;
   @include transition(all 0.3s ease-in-out);
-
   @media screen and (max-width: 281px) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -119,6 +118,9 @@
       @-moz-document url-prefix() {
         font-weight: 500 !important;
       }
+      @media screen and (max-width: 281px) {
+        margin-top:.8rem;
+      }
     }
     p {
       /* white-space: nowrap;
@@ -129,6 +131,7 @@
       margin-bottom: 0;
       color: $secondary-color;
       font-size: 0.9rem;
+     
     }
   }
 }
