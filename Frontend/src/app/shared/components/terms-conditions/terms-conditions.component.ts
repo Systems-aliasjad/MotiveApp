@@ -38,7 +38,7 @@ export class TermsConditionsComponent implements OnInit {
   ngOnInit(): void {}
 
   AcceptContinue = (event: any) => {
-    this.sharedService.setTermsConditions('1');
+    this.sharedService.setTermsConditions(true);
     this.location.back();
   };
 }

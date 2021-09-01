@@ -11,8 +11,8 @@ export class SharedService {
   headerConfigSubject: BehaviorSubject<IPageHeader>;
   headerConfig$: Observable<IPageHeader>;
 
-  termsConditionCheck: BehaviorSubject<ITermsAndConditions>;
-  termsConditionCheck$: Observable<ITermsAndConditions>;
+  termsConditionCheck: BehaviorSubject<boolean>;
+  termsConditionCheck$: Observable<boolean>;
 
   loaderSubject: BehaviorSubject<boolean>;
   loader$: Observable<boolean>;
@@ -22,9 +22,7 @@ export class SharedService {
       pageTitle: '',
       singleLine: false,
     });
-    this.termsConditionCheck = new BehaviorSubject({
-      termsCheck: '',
-    });
+    this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.loaderSubject = new BehaviorSubject(false);
 
     this.headerConfig$ = this.headerConfigSubject.asObservable();
@@ -43,13 +41,11 @@ export class SharedService {
     return this.headerConfig$;
   }
 
-  setTermsConditions(terms: string) {
-    this.termsConditionCheck.next({
-      termsCheck: terms,
-    });
+  setTermsConditions(terms: boolean) {
+    this.termsConditionCheck.next(terms);
   }
 
-  getTermsConditions(): Observable<ITermsAndConditions> {
+  getTermsConditions(): Observable<boolean> {
     return this.termsConditionCheck$;
   }
 
