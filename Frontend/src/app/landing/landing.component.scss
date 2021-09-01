@@ -7,7 +7,20 @@
   }
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
-
+.technical-support-title{
+  @media screen and (max-width: 1024px){
+    display:none;
+  }
+  h3{
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    margin-left: 0.5rem;
+  }
+  p{
+    line-height: 1.2;
+    color: #848789;
+    margin-left: 0.5rem;
+  }
+}
 
 .technical-support {
   @media screen and (min-width: 768px) and (max-width: 1024px) {
