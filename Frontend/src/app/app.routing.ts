@@ -48,6 +48,8 @@ const routes: Routes = [
   {
     path: 'reset-internet-password',
     component: ResetInternetPasswordComponent,
+  },
+  {
     path: 'device-care',
     component: DeviceCareComponent,
   },
