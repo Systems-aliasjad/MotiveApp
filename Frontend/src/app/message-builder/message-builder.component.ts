@@ -75,6 +75,7 @@ export class MessageBuilderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    //Open Complaint
     if (this.codeType === 1) {
       this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
       this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
@@ -83,9 +84,9 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons);
     }
-    ///For OSRP
+    //Open service request present
     else if (this.codeType === 2) {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
@@ -95,9 +96,7 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-
-      this.followUpButton = true;
-      this.exitTroubleshootLink = true;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
     } else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;

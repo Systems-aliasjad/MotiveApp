@@ -33,4 +33,18 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+  public static openComplaintButtons: IButton[] = [
+    {
+      title: 'BUTTONS.YES',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.COMPLAINT_ANOTHER',
+      clickListener: () => {},
+      behaviour: 'link',
+      linkTo: '/bookComplaint',
+    },
+  ];
 }

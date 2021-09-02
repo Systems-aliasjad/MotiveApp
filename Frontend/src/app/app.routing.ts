@@ -60,7 +60,7 @@ const routes: Routes = [
   { path: 'osrp', component: MessageBuilderComponent, data: { id: 2 } },
 
   //Open Complaint
-  { path: 'open-complain', component: MessageBuilderComponent, data: { id: 1 } },
+  { path: 'open-complaint', component: MessageBuilderComponent, data: { id: 1 } },
 
   /////End of Perform Cases
 
