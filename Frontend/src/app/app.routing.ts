@@ -62,6 +62,9 @@ const routes: Routes = [
   //Open Complaint
   { path: 'open-complaint', component: MessageBuilderComponent, data: { id: 1 } },
 
+  //Router Reboot Required
+  { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: 1 } },
+
   /////End of Perform Cases
 
   {

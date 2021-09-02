@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IButton } from '../../constants/types';
 
 @Component({
   selector: 'app-service-issue',
@@ -6,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-issue.component.scss'],
 })
 export class ServiceIssueComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  buttonsConfig: IButton[] = [];
+  constructor() {}
 
   ngOnInit() {}
-
 }

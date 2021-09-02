@@ -47,4 +47,19 @@ export class CustomerJourneyConstants {
       linkTo: '/bookComplaint',
     },
   ];
+
+  public static routerRebootRequiredButtons: IButton[] = [
+    {
+      title: 'BUTTONS.RESTART_NOW',
+      clickListener: () => {},
+      linkTo: '/router-restart',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IPageHeader } from '../../constants/types';
+import { Router } from '@angular/router';
+import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -10,8 +11,25 @@ import { SharedService } from '../../shared.service';
 export class RouterRestartComponent implements OnInit {
   selectedLang: string;
   instructionList: string[] = ['Unplug the router', 'Wait for 30 seconds', 'Plug the router back in', 'Wait for 5 mins', 'Try to use the internet again'];
-
-  constructor(private sharedService: SharedService) {
+  buttonsConfig: IButton[] = [
+    {
+      title: 'BUTTONS.VIEW_DEVICE_CARE',
+      clickListener: () => {
+        this.router.navigate(['/device-care']);
+      },
+      linkTo: '/device-care',
+      behaviour: 'secondary',
+    },
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {
+        this.router.navigate(['/thanks']);
+      },
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
+  constructor(private sharedService: SharedService, public router: Router) {
     this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
   }
 
