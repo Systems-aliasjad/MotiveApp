@@ -11,6 +11,9 @@ import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
 import { RouterRestartComponent } from './shared/components/router-restart/router-restart.component';
 import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
+import { InternetIssueListDialog } from './shared/dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { BrowserStepperComponent } from './shared/components/browser-stepper/browser-stepper.component';
+import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 
 const routes: Routes = [
   {
@@ -53,6 +56,18 @@ const routes: Routes = [
     path: 'device-care',
     component: DeviceCareComponent,
   },
+  {
+    path: 'browser-stapper',
+    component: BrowserStepperComponent,
+  },
+  {
+    path: 'unable-video-call',
+    component: UnableVideoCallsComponent,
+  },
+  // {
+  //   path: 'dialog-demo',
+  //   component: InternetIssueListDialog,
+  // },
   {
     path: '**',
     redirectTo: '',
