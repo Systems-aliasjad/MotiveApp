@@ -53,6 +53,17 @@ const routes: Routes = [
     path: 'device-care',
     component: DeviceCareComponent,
   },
+
+  /////Perform Cases
+
+  //Open service request present
+  { path: 'osrp', component: MessageBuilderComponent, data: { id: 2 } },
+
+  //Open Complaint
+  { path: 'open-complain', component: MessageBuilderComponent, data: { id: 1 } },
+
+  /////End of Perform Cases
+
   {
     path: '**',
     redirectTo: '',

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
-
 @Component({
   selector: 'app-message-builder',
   templateUrl: './message-builder.component.html',
@@ -23,7 +23,11 @@ export class MessageBuilderComponent implements OnInit {
 
   Section2Template;
   showLoader: boolean = false;
-  constructor() {}
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.data.subscribe((data) => {
+      this.codeType = data.id;
+    });
+  }
 
   ngOnInit(): void {
     if (this.codeType === 1) {
@@ -36,6 +40,20 @@ export class MessageBuilderComponent implements OnInit {
       };
       this.followupComplain = true;
       this.anotherComplainLink = true;
+    }
+    ///For OSRP
+    else if (this.codeType === 2) {
+      this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
+      this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
+      this.Section2Data = {
+        reqNo: '436529873',
+        reqType: 'Xxxxx xxxxx xxxx',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        status: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.followUpButton = true;
+      this.exitTroubleshootLink = true;
     } else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
