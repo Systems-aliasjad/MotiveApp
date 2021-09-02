@@ -13,18 +13,6 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-footer>
-      <ion-row>
-        <ion-col size="12">
-          <div class="btn-bottom">
-            <ion-button style="width: 100%" class="btn primary-btn close">{{ 'BUTTONS.EXIT_TROUBLESHOOTING' | translate }}</ion-button>
-          </div>
-          <br />
-          <div style="text-align: center">
-            <a style="color: #719e19" class="close" (click)="dismiss()">{{ 'BUTTONS.BACK' | translate }}</a>
-          </div>
-        </ion-col>
-      </ion-row>
-    </ion-footer>
+    <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>
   </ion-grid>
 </ion-content>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { IButton } from '../../constants/types';
 import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
 import { SharedService } from '../../shared.service';
 
@@ -10,8 +12,25 @@ import { SharedService } from '../../shared.service';
 })
 export class DeviceCareComponent implements OnInit {
   selectedLang: string;
-
-  constructor(private sharedService: SharedService, private modalCtrl: ModalController) {
+  buttonsConfig: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      clickListener: () => {
+        this.router.navigate(['/thanks']);
+      },
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {
+        this.continueTroubleShoot();
+      },
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+  constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router) {
     this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
   }
 
