@@ -39,50 +39,7 @@
       </ion-row>
       <!-- Detail List and Follow up and Close End -->
 
-      <!-- Follow up cases Start -->
-      <ion-row class="info-container_follow_request" *ngIf="followUpButton">
-        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
-          <p>{{ 'TEXT.FOLLOW_UP_QUESTION' | translate }}</p>
-          <ion-button class="btn primary-btn follow-up green-box-shadow full-width">{{ 'BUTTONS.FOLLOW_UP' | translate }}</ion-button>
-        </ion-col>
-      </ion-row>
-      <!-- Follow up cases End-->
-
-      <!-- Follow up cases Start -->
-      <ion-row class="info-container_follow_request" *ngIf="followupComplain">
-        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
-          <ion-button class="btn primary-btn follow-up green-box-shadow full-width">{{ 'BUTTONS.YES' | translate }}</ion-button>
-        </ion-col>
-      </ion-row>
-      <!-- Follow up cases End-->
-
-      <!-- Close Button Start -->
-      <ion-row *ngIf="closeButton">
-        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
-          <ion-button class="btn secondary-btn close full-width">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-        </ion-col>
-      </ion-row>
-      <!-- Close Button End -->
-
-      <!-- Exit Troubleshooting Start -->
-      <ion-row *ngIf="exitTroubleshootLink">
-        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
-          <div class="transparent-btn">
-            <a href="/thanks"> {{ 'LINKS.EXIT_TROUBLESHOOTING' | translate }}</a>
-          </div>
-        </ion-col>
-      </ion-row>
-      <!-- Exit Troubleshooting End -->
-
-      <!-- Exit Troubleshooting Start -->
-      <ion-row *ngIf="anotherComplainLink">
-        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
-          <div class="transparent-btn">
-            <a href="/bookComplaint"> {{ 'LINKS.COMPLAINT_ANOTHER' | translate }}</a>
-          </div>
-        </ion-col>
-      </ion-row>
-      <!-- Exit Troubleshooting End -->
+      <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>
     </div>
   </ion-grid>
 </ion-content>
