@@ -40,5 +40,10 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('LANDING_PAGE.ISSUES_NOT_FIEXED_TITLE', false);
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons);
     }
+
+    /// //Issue Not Fixed
+    else if (this.codeType === 3) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons);
+    }
   }
 }

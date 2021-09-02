@@ -74,7 +74,8 @@
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "RESTART_NOW": "RESTART NOW",
     "DONE": "Done",
-    "TRACK_COMPLAINT_STATUS": "Track Complaint Status"
+    "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
+    "RESET_NOW": "RESET NOW"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -82,7 +83,8 @@
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
     "COMPLAINT_ANOTHER": "No, I want to report another issue",
-    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
+    "CLOSE": "CLOSE"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",

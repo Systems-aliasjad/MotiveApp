@@ -68,6 +68,9 @@ const routes: Routes = [
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: 2 } },
 
+  //Internet Reset Password
+  { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: 3 } },
+
   //Appointment Successfully
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
 
