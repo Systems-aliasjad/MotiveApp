@@ -6,7 +6,9 @@
     "DEVICE_CARE": "Device care",
     "BOOK_COMPLAINT": "Book a Complaint",
     "RESET_INTERNET_PASSWORD": "Reset internet password",
-    "NO_INTERNET_ISSUE": "No Internet Issue"
+    "NO_INTERNET_ISSUE": "No Internet Issue",
+    "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
+    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi"
   },
 
   "SUBHEADER": {
@@ -77,7 +79,8 @@
     "RESTART_NOW": "RESTART NOW",
     "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
     "DONE": "Done",
-    "RESET_NOW": "RESET NOW"
+    "RESET_NOW": "RESET NOW",
+    "VIEW_GUIDLINES": "VIEW GUIDLINES"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -143,12 +146,31 @@
     "RESTART_ROUTER_HEADING": "Restart router",
     "RESTART_ROUTER_INS1": "Please note that the issue won't be fixed until you restart your router.",
     "RESTART_ROUTER_INS2": "You can also restart your router manually.",
-    "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again."
+    "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
+
+    "INTERNET_ISSUE_LIST_TITLE": "Please select your issue",
+    "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues."
   },
   "LOADER": {
     "HEADER": "Almost there",
     "SUCCESS_BODY_1": "Please wait while our automated system is diagnosing the service.",
     "SUCCESS_BODY_2": "This will take up to 1 minute",
     "FALIURE_BODY": "It is taking longer than expected. Kindly wait"
+  },
+  "BROWSERSTEPPER": {
+    "HEADING_STEP1": "Check your browser setting",
+    "DESCRIPTION1_STEP1": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
+    "DESCRIPTION2_STEP1": "Please make sure that your PC/laptop browser is configured with the correct proxy settings.",
+    "IMG_TEXT_STEP1": "Picture or animated GIF of how to reach proxy configuration setting in a browser",
+
+    "HEADING_STEP2": "Check your internet setting",
+    "DESCRIPTION1_STEP2": "Select the operating system and type of connectivity (Wi-Fi or LAN cable) from the drop-down menu in order to learn more about DNS configuration.",
+    "DESCRIPTION2_STEP2": "Please make sure that your PC/laptop browser is configured with the correct DNS settings.",
+    "IMG_TEXT_STEP2": "Picture correct network settings",
+
+    "HEADING_STEP3": "Check your firewall setting",
+    "DESCRIPTION1_STEP3": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
+    "DESCRIPTION2_STEP3": "",
+    "IMG_TEXT_STEP3": "Video"
   }
 }
