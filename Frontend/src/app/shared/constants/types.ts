@@ -18,4 +18,5 @@ export interface IButton {
   clickListener: () => void;
   behaviour: string; // primary | secondary | link
   explanatoryNote?: string;
+  linkTo?: string;
 }

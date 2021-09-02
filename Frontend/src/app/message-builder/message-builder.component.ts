@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
@@ -26,36 +26,49 @@ export class MessageBuilderComponent implements OnInit {
   Section2Template;
   showLoader: boolean = false;
 
-  buttonsConfig: IButton[] = [
-    {
-      title: 'BUTTONS.FOLLOW_UP',
-      explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
-      clickListener: () => {},
-      behaviour: 'primary',
-    },
-    // {
-    //   title: 'BUTTONS.YES',
-    //   clickListener: () => {},
-    //   behaviour: 'primary',
-    // },
-    // {
-    //   title: 'BUTTONS.CLOSE',
-    //   clickListener: () => {},
-    //   behaviour: 'secondary',
-    // },
-    {
-      title: 'LINKS.EXIT_TROUBLESHOOTING',
-      clickListener: () => {},
-      behaviour: 'link',
-    },
-    // {
-    //   title: 'LINKS.COMPLAINT_ANOTHER',
-    //   clickListener: () => {},
-    //   behaviour: 'link',
-    // },
-  ];
+  buttonsConfig: IButton[] = [];
+  // [
+  //   {
+  //     title: 'BUTTONS.FOLLOW_UP',
+  //     explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+  //     clickListener: () => {},
+  //     behaviour: 'primary',
+  //   },
+  //   {
+  //     title: 'BUTTONS.YES',
+  //     clickListener: () => {},
+  //     behaviour: 'primary',
+  //   },
+  //   {
+  //     title: 'BUTTONS.CLOSE',
+  //     clickListener: () => {},
+  //     behaviour: 'secondary',
+  //   },
+  //   {
+  //     title: 'LINKS.EXIT_TROUBLESHOOTING',
+  //     clickListener: () => {
+  //       this.router.navigate(['thanks']);
+  //     },
+  //     behaviour: 'link',
+  //   },
+  //   {
+  //     title: 'LINKS.COMPLAINT_ANOTHER',
+  //     clickListener: () => {},
+  //     behaviour: 'link',
+  //   },
+  // ];
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  routeLinkHelper(arr) {
+    return arr.map((obj) => {
+      return {
+        ...obj,
+        clickListener: () => {
+          this.router.navigate([obj.linkTo]);
+        },
+      };
+    });
+  }
+  constructor(private activatedRoute: ActivatedRoute, public router: Router) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
     });
@@ -70,8 +83,7 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-      this.followupComplain = true;
-      this.anotherComplainLink = true;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
     }
     ///For OSRP
     else if (this.codeType === 2) {

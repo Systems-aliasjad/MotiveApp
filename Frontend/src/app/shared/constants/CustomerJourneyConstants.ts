@@ -1,3 +1,5 @@
+import { IButton } from './types';
+
 export class CustomerJourneyConstants {
   public static openServiceRequestCase1 = {
     header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
@@ -16,4 +18,19 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.COMPLAINT_ALREADY_EXISTS',
     paragraphs: ['MESSAGES.COMPLAINT_ALREADY_EXISTS_BODY'],
   };
+  public static openServiceRequestCaseButtons: IButton[] = [
+    {
+      title: 'BUTTONS.FOLLOW_UP',
+      explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.EXIT_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
 }
