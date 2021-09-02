@@ -5,7 +5,8 @@
     "TERMS_AND_CONDITIONS": "Terms & Conditions",
     "DEVICE_CARE": "Device care",
     "BOOK_COMPLAINT": "Book a Complaint",
-    "RESET_INTERNET_PASSWORD": "Reset internet password"
+    "RESET_INTERNET_PASSWORD": "Reset internet password",
+    "NO_INTERNET_ISSUE": "No Internet Issue"
   },
 
   "SUBHEADER": {

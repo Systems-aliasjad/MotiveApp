@@ -2,22 +2,11 @@
 <p>VIEW DETAILS ></p> -->
 <ion-content>
   <ion-grid>
-    
     <ion-row>
-      <!-- Page Title Start -->
-      <ion-col size="12">
-        <div class="page-top_title">
-          <h2>Internet Issues</h2>
-        </div>
-      </ion-col>
-      <!-- Page Title End -->
+      <app-page-top></app-page-top>
     </ion-row>
-
-    <div class=""></div>
-    
     <ion-row>
-      <ion-col size="12">
-      </ion-col>
+      <ion-col size="12"> </ion-col>
     </ion-row>
 
     <ion-row>
@@ -32,13 +21,15 @@
     <div class="content-contianer">
       <ion-row>
         <ion-col size="12">
-            <h4 class="sub-title">No Internet Issue</h4>
-            <p>On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.</p>
+          <h4 class="sub-title">{{ 'HEADER.NO_INTERNET_ISSUE' | translate }}</h4>
+          <p>
+            On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page
+            elle-même. L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.
+          </p>
         </ion-col>
       </ion-row>
-      
-      <ion-row>
 
+      <ion-row>
         <!-- Button Start -->
         <ion-col size="12" class="pt-0 pb-0 ion-text-center">
           <ion-button class="btn primary-btn follow-up green-box-shadow full-width">Try again later</ion-button>
@@ -52,11 +43,7 @@
           </div>
         </ion-col>
         <!--  Book a Complaint End -->
-
       </ion-row>
-  
     </div>
-    
-
   </ion-grid>
 </ion-content>
