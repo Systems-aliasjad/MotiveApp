@@ -6,7 +6,8 @@
     "DEVICE_CARE": "Device care",
     "BOOK_COMPLAINT": "Book a Complaint",
     "RESET_INTERNET_PASSWORD": "Reset internet password",
-    "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls"
+    "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
+    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi"
   },
 
   "SUBHEADER": {

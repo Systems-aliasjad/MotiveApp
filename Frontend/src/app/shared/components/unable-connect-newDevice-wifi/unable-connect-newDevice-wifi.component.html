@@ -8,12 +8,7 @@
         </div>
         <div class="content">
           <div *ngFor="let ins of instructionList; let i = index">
-            <p>{{ i + 1 }}. {{ ins.text }}</p>
-            <div style="padding-inline: 10px">
-              <div *ngFor="let text of ins.child; let j = index">
-                <p>{{ i }}.{{ j + 1 }}. {{ text }}</p>
-              </div>
-            </div>
+            <p>{{ i + 1 }}. {{ ins }}</p>
           </div>
         </div>
       </ion-col>

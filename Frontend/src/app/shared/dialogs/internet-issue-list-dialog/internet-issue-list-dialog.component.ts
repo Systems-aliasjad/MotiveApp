@@ -31,7 +31,7 @@ export class InternetIssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to connect new device to Wi-Fi',
-      route: '',
+      route: 'unable-connect-newDevice',
     },
   ];
   constructor(private modalCtrl: ModalController, private router: Router) {}
