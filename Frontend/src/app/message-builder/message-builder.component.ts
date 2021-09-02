@@ -97,7 +97,22 @@ export class MessageBuilderComponent implements OnInit {
         status: 'Xxxxx xxxxx xxxx',
       };
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
-    } else {
+    } //end of OSRP //Open service request present
+
+    ///For Appointment book successfully IssuesNotFixed
+    else if (this.codeType === 3) {
+      this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
+      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        location: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
+    } //For Appointment book successfully IssuesNotFixed
+    else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {

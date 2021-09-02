@@ -18,12 +18,18 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.COMPLAINT_ALREADY_EXISTS',
     paragraphs: ['MESSAGES.COMPLAINT_ALREADY_EXISTS_BODY'],
   };
+
+  public static appointmentbookssuccessfullyCase = {
+    header: 'MESSAGES.APPOINTMENT_BOOK_SUCCFULLY',
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCFULLY_Body'],
+  };
+
   public static openServiceRequestCaseButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',
       explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
       clickListener: () => {},
-      linkTo: '/thanks',
+      linkTo: '',
       behaviour: 'primary',
     },
     {
@@ -33,6 +39,7 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
   public static openComplaintButtons: IButton[] = [
     {
       title: 'BUTTONS.YES',
@@ -57,6 +64,22 @@ export class CustomerJourneyConstants {
     },
     {
       title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
+
+  public static appointmentbookssuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.DONE',
       clickListener: () => {},
       linkTo: '/thanks',
       behaviour: 'link',
