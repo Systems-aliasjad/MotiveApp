@@ -111,8 +111,21 @@ export class MessageBuilderComponent implements OnInit {
 
       this.imgSrc = this.successImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
-    } //For Appointment book successfully IssuesNotFixed
-    else {
+    }
+    //Open technical S/R
+    else if (this.codeType === 4) {
+      this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
+      this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
+      this.Section2Data = {
+        reqNo: '436529873',
+        reqType: 'Xxxxx xxxxx xxxx',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        status: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.imgSrc = this.warningImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
+    } else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {

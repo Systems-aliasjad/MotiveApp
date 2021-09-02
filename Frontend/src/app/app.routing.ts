@@ -56,23 +56,21 @@ const routes: Routes = [
 
   /////Perform Cases
 
-  //Open service request present
-  { path: 'osrp', component: MessageBuilderComponent, data: { id: 2 } },
-
   //Open Complaint
   { path: 'open-complaint', component: MessageBuilderComponent, data: { id: 1 } },
+  //Open service request present
+  { path: 'osrp', component: MessageBuilderComponent, data: { id: 2 } },
+  //Appointment Successfully
+  { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
+  //Open technical S/R
+  { path: 'open-sr', component: MessageBuilderComponent, data: { id: 4 } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: 1 } },
-
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: 2 } },
-
   //3rd party router requires configuration
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: 4 } },
-
-  //Appointment Successfully
-  { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
 
   /////End of Perform Cases
 

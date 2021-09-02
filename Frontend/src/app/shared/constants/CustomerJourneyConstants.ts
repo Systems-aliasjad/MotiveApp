@@ -24,6 +24,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCFULLY_Body'],
   };
 
+  public static OpenTechnicalSR = {
+    header: 'MESSAGES.OPEN_SERVICE_REQUEST',
+    paragraphs: ['MESSAGES.OPEN_SERVICE_REQUEST_BODY'],
+  };
+
   public static openServiceRequestCaseButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',
@@ -121,6 +126,21 @@ export class CustomerJourneyConstants {
       clickListener: () => {},
       linkTo: '/bookComplaint',
       behaviour: 'secondary',
+    },
+  ];
+  public static openTechnicalSrButtons: IButton[] = [
+    {
+      title: 'BUTTONS.FOLLOW_UP',
+      explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
     },
   ];
 }
