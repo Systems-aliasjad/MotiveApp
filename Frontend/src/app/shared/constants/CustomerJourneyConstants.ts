@@ -101,4 +101,26 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
+  public static RouterReset3rdParty: IButton[] = [
+    {
+      title: 'LINKS.DEVICE_CARE',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/device-care',
+      behaviour: 'link',
+    },
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'HEADER.BOOK_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'secondary',
+    },
+  ];
 }

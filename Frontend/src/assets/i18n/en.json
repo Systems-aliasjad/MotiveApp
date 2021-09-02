@@ -8,6 +8,7 @@
     "RESET_INTERNET_PASSWORD": "Reset internet password",
     "NO_INTERNET_ISSUE": "No Internet Issue"
   },
+
   "SUBHEADER": {
     "RESET_INTERNET_PASSWORD": "",
     "BOOK_COMPLAINT": "Please fill your complete details"
@@ -61,6 +62,7 @@
     "DATE_VISIT": "Date of visit",
     "LOCATION": "Location"
   },
+
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
@@ -73,8 +75,8 @@
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "RESTART_NOW": "RESTART NOW",
-    "DONE": "Done",
-    "TRACK_COMPLAINT_STATUS": "Track Complaint Status"
+    "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
+    "DONE": "Done"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -82,7 +84,8 @@
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
     "COMPLAINT_ANOTHER": "No, I want to report another issue",
-    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
+    "DEVICE_CARE": "Device Care"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -118,7 +121,6 @@
     "ROUTER_DIDNOT_RESTART_H3": "Visit 'Device Care'",
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
-
   "RESET_INTERNET_PASSWORD": {
     "MOBILE_NUMBER": "Mobile Number*",
     "NEW_PASSWORD": "New Password*",

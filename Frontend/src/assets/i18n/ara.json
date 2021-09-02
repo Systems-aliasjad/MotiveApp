@@ -84,7 +84,8 @@
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
     "COMPLAINT_ANOTHER": "No, I want to report another issue",
-    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
+    "DEVICE_CARE": "Device Care"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",

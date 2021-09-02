@@ -68,6 +68,9 @@ const routes: Routes = [
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: 2 } },
 
+  //3rd party router requires configuration
+  { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: 4 } },
+
   //Appointment Successfully
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
 
