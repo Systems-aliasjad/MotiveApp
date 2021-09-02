@@ -199,4 +199,22 @@ export class ApplicableCodes {
       objKeyNameEN: 'status',
     },
   ];
+
+  public static appointBookSuccessfullyTemplate: ISection2Template[] = [
+    {
+      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+    {
+      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.DATE_VISIT',
+      type: 'date',
+      objKeyNameEN: 'dateVisit',
+    },
+    {
+      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.LOCATION',
+      type: 'text',
+      objKeyNameEN: 'location',
+    },
+  ];
 }

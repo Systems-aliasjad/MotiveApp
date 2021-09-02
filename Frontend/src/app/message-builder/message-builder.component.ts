@@ -85,7 +85,7 @@ export class MessageBuilderComponent implements OnInit {
       };
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
     }
-    ///For OSRP
+    ///For OSRP //Open service request present
     else if (this.codeType === 2) {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
@@ -95,10 +95,23 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
+    } //end of OSRP //Open service request present
 
-      this.followUpButton = true;
-      this.exitTroubleshootLink = true;
-    } else {
+    ///For Appointment book successfully IssuesNotFixed
+    else if (this.codeType === 3) {
+      this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
+      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        location: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
+    } //For Appointment book successfully IssuesNotFixed
+    else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {

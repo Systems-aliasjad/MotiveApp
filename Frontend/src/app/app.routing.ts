@@ -62,6 +62,9 @@ const routes: Routes = [
   //Open Complaint
   { path: 'open-complain', component: MessageBuilderComponent, data: { id: 1 } },
 
+  //Appointment Successfully
+  { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
+
   /////End of Perform Cases
 
   {

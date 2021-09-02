@@ -23,11 +23,32 @@ export class CustomerJourneyConstants {
       title: 'BUTTONS.FOLLOW_UP',
       explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
       clickListener: () => {},
-      linkTo: '/thanks',
+      linkTo: '',
       behaviour: 'primary',
     },
     {
       title: 'LINKS.EXIT_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
+
+  public static appointmentbookssuccessfullyCase = {
+    header: 'MESSAGES.APPOINTMENT_BOOK_SUCCFULLY',
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCFULLY_Body'],
+  };
+
+  public static appointmentbookssuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.DONE',
       clickListener: () => {},
       linkTo: '/thanks',
       behaviour: 'link',

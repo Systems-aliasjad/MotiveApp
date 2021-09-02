@@ -56,6 +56,12 @@
     "COMPLAINT_NO": "Complain No"
   },
 
+  "APPOINTMENT_BOOKED_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No",
+    "DATE_VISIT": "Date of visit",
+    "LOCATION": "Location"
+  },
+
   "BUTTONS": {
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "YES": "YES",
@@ -65,7 +71,9 @@
     "VIEW_DEVICE_CARE": "VIEW DEVICE CARE",
     "ISSUE_FIXED": "ISSUE FIXED",
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
-    "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING"
+    "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
+    "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
+    "DONE": "Done"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -85,7 +93,9 @@
     "ELIFE_CANCELLATION_REQUEST_PROGRESS": "You eLife service cancellation request is in progress",
     "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
-    "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?"
+    "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
+    "APPOINTMENT_BOOK_SUCCFULLY": "Appointment booked successfully!",
+    "APPOINTMENT_BOOK_SUCCFULLY_Body": "We have received your complain and booked an appointment. Our technician will contact you soon"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
