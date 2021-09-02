@@ -30,6 +30,6 @@ export class BookComplaintComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.value);
-    this.router.navigate(['thanks']);
+    this.router.navigate(['appoinment-successfully']);
   }
 }

@@ -12,3 +12,11 @@ export interface ITabTile {
   case: string; // Success-green | Error-red | Default-grey
   title: string;
 }
+
+export interface IButton {
+  title: string;
+  clickListener: () => void;
+  behaviour: string; // primary | secondary | link
+  explanatoryNote?: string;
+  linkTo?: string;
+}

@@ -24,6 +24,11 @@ import { DeviceCareComponent } from './components/device-care/device-care.compon
 import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
 import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
+import { InternetIssueListDialog } from './dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { BrowserStepperComponent } from './components/browser-stepper/browser-stepper.component';
+import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
+import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -48,6 +53,11 @@ export function createTranslateLoader(http: HttpClient) {
     PasswordResetDialog,
     InternetIssuesDialog,
     RestartRouterDialog,
+    ButtonsComponent,
+    InternetIssueListDialog,
+    BrowserStepperComponent,
+    UnableVideoCallsComponent,
+    UnableConnectNewDeviceWifiComponent,
   ],
   imports: [
     CommonModule,
@@ -66,6 +76,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   exports: [
     PageTopComponent,
+    ButtonsComponent,
     HeaderComponent,
     MessageScreenComponent,
     ThankyouScreenComponent,

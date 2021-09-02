@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IButton } from '../../constants/types';
 
 @Component({
-  selector: 'app-service-issue',
-  templateUrl: './service-issue.component.html',
-  styleUrls: ['./service-issue.component.scss'],
+  selector: 'app-buttons',
+  templateUrl: './buttons.component.html',
+  styleUrls: ['./buttons.component.scss'],
 })
-export class ServiceIssueComponent implements OnInit {
+export class ButtonsComponent implements OnInit {
   @Input()
   buttonsConfig: IButton[] = [];
   constructor() {}
