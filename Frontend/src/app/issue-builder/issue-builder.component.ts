@@ -39,6 +39,10 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === 2) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons);
     }
+    /// //Issue Not Fixed
+    else if (this.codeType === 3) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons);
+    }
     //3rd party router requires configuration
     else if (this.codeType === 4) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty);

@@ -69,6 +69,8 @@ const routes: Routes = [
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: 1 } },
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: 2 } },
+  //Internet Reset Password
+  { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: 3 } },
   //3rd party router requires configuration
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: 4 } },
 

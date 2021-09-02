@@ -143,4 +143,19 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+  public static internetPasswordResetButtons: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_NOW',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/reset-internet-password',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CLOSE',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
 }
