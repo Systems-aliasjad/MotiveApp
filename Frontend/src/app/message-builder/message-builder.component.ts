@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
+import { IButton } from '../shared/constants/types';
 
 @Component({
   selector: 'app-message-builder',
@@ -23,6 +24,34 @@ export class MessageBuilderComponent implements OnInit {
 
   Section2Template;
   showLoader: boolean = false;
+  buttonsConfig: IButton[] = [
+    {
+      title: 'BUTTONS.FOLLOW_UP',
+      explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+      clickListener: () => {},
+      behaviour: 'primary',
+    },
+    // {
+    //   title: 'BUTTONS.YES',
+    //   clickListener: () => {},
+    //   behaviour: 'primary',
+    // },
+    // {
+    //   title: 'BUTTONS.CLOSE',
+    //   clickListener: () => {},
+    //   behaviour: 'secondary',
+    // },
+    {
+      title: 'LINKS.EXIT_TROUBLESHOOTING',
+      clickListener: () => {},
+      behaviour: 'link',
+    },
+    // {
+    //   title: 'LINKS.COMPLAINT_ANOTHER',
+    //   clickListener: () => {},
+    //   behaviour: 'link',
+    // },
+  ];
   constructor() {}
 
   ngOnInit(): void {
