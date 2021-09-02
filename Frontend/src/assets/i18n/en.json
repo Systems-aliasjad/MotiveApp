@@ -15,6 +15,7 @@
   "LANDING_PAGE": {
     "SWITCH": "Switch",
     "INTERNET_ISSUES_TITLE": "Internet issues",
+    "ISSUES_NOT_FIEXED_TITLE": "Internet issues",
     "INTERNET_ISSUES_DESCRIPTION": "My Wi-Fi is slow or causing problems",
     "TV_ISSUES_TITLE": "TV issues",
     "TV_ISSUES_DESCRIPTION": "My TV isn't working properly",
@@ -61,6 +62,7 @@
     "LOCATION": "Location"
   },
   "BUTTONS": {
+    "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "YES": "YES",
     "CLOSE": "CLOSE",
@@ -79,7 +81,8 @@
   },
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
-    "COMPLAINT_ANOTHER": "No, I want to report another issue"
+    "COMPLAINT_ANOTHER": "No, I want to report another issue",
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",

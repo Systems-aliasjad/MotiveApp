@@ -24,7 +24,6 @@ export class IssueBuilderComponent implements OnInit {
     });
   }
   constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router) {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
     });
@@ -33,7 +32,13 @@ export class IssueBuilderComponent implements OnInit {
   ngOnInit() {
     //Router Reboot Required
     if (this.codeType === 1) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons);
+    }
+    /// //Issue Not Fixed
+    else if (this.codeType === 2) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.ISSUES_NOT_FIEXED_TITLE', false);
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons);
     }
   }
 }

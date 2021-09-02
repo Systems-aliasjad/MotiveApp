@@ -85,4 +85,20 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
+  public static issuesNotFixedButtons: IButton[] = [
+    {
+      title: 'BUTTONS.TRY_AGAIN_LATER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
 }

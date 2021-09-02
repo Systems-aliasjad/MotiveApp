@@ -65,6 +65,9 @@ const routes: Routes = [
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: 1 } },
 
+  //Issue Not Fixed
+  { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: 2 } },
+
   //Appointment Successfully
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
 
