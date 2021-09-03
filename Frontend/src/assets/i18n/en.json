@@ -9,7 +9,9 @@
     "RESET_INTERNET_PASSWORD": "Reset internet password",
     "NO_INTERNET_ISSUE": "No Internet Issue",
     "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
-    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi"
+    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi",
+    "ROUTER_UPGRADE": "Router Upgrade",
+    "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade"
   },
 
   "SUBHEADER": {
@@ -66,11 +68,18 @@
     "LOCATION": "Location"
   },
   "PACKAGE_UPGRADE_SUCCESSFULLY": {
-    "REFERENCE_NO": "Reference No"
+    "REFERENCE_NO": "Reference No:"
+  },
+  "ROUTER_UPGRADE_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
+  },
+  "ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
   },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
+    "OK": "OK",
     "YES": "YES",
     "CLOSE": "CLOSE",
     "BACK": "BACK",
@@ -85,7 +94,11 @@
     "RESET_NOW": "RESET NOW",
     "VIEW_GUIDLINES": "VIEW GUIDLINES",
     "UPGRADE_PACKAGE": "UPGRADE PACKAGE",
-    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
+    "RESET_ROUTER": "RESET ROUTER",
+    "CANCEL": "CANCEL",
+    "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
+    "UPGRADE_ROUTER": "UPGRADE ROUTER"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -116,7 +129,14 @@
     "OPEN_SERVICE_REQUEST": "Open Service Request",
     "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
     "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
+    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "ROUTER_UPGRADE_REQUEST_SUCCFULLY": "Router upgrade request was raised successfully",
+    "ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN": "Click here",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Router & Package upgrade request was raised successfully",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -160,7 +180,11 @@
     "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
 
     "INTERNET_ISSUE_LIST_TITLE": "Please select your issue",
-    "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues."
+    "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues.",
+
+    "RESET_FACTORY_DEFAULT_TITLE": "Reset to factory default",
+    "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
+    "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset."
   },
   "LOADER": {
     "HEADER": "Almost there",

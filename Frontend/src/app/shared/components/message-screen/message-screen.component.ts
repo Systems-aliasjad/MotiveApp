@@ -5,6 +5,8 @@ import { IButton } from '../../constants/types';
 export interface IMessageSection1 {
   header: string;
   paragraphs: string[];
+  span?: string;
+  spanListener?: () => void;
 }
 
 @Component({
@@ -19,6 +21,8 @@ export class MessageScreenComponent implements OnInit {
   Section1Data: IMessageSection1 = {
     header: '',
     paragraphs: null,
+    span: '',
+    spanListener: () => {},
   };
   @Input()
   Section2Data: any;
@@ -26,6 +30,11 @@ export class MessageScreenComponent implements OnInit {
   Section2Template: ISection2Template[];
   @Input()
   buttonsConfig: IButton[] = [];
+  @Input()
+  subHeaderSectionData: any;
+  @Input()
+  subHeaderSectionTemplate: ISection2Template[];
+
   constructor() {}
   ngOnInit(): void {}
 }

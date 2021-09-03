@@ -15,11 +15,13 @@ export class MessageBuilderComponent implements OnInit {
 
   codeType;
   Section1Data: any;
+  Section2Template;
   Section2Data: any;
+  subHeaderSectionTemplate: any;
+  subHeaderSectionData: any;
 
   imgSrc: string = this.warningImgSrc;
 
-  Section2Template;
   showLoader: boolean = false;
 
   buttonsConfig: IButton[] = [];
@@ -91,16 +93,47 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.warningImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
     }
-    ///For package upgrade Successfully
+    //package upgrade Successfully
     else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
-      this.Section2Template = ApplicableCodes.packageUpgradeTemplate;
-      this.Section2Data = {
+      this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
+      this.subHeaderSectionData = {
         referenceNo: '436529873',
       };
-
       this.imgSrc = this.successImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
+    }
+
+    ///For router upgrade Successfully
+    else if (this.codeType === ERoutingIds.routerUpgradeRequestSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
+      this.subHeaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
+      this.subHeaderSectionData = {
+        referenceNo: '436529873',
+      };
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons);
+    }
+
+    ///For router Package upgrade Successfully
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
+      this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
+      this.subHeaderSectionData = {
+        referenceNo: '436529873',
+      };
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons);
+    }
+
+    //Account not active
+    else if (this.codeType === ERoutingIds.accountNotActive) {
+      this.Section1Data = CustomerJourneyConstants.accountNotActive;
+      this.Section1Data.spanListener = () => {
+        console.log('Span Click Listener');
+      };
+      this.imgSrc = this.warningImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.accountNotActiveButtons);
     }
     //TODO: dummy need to remove this case at the end
     else {

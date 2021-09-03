@@ -9,6 +9,12 @@ import { IButton } from '../../constants/types';
 export class ButtonsComponent implements OnInit {
   @Input()
   buttonsConfig: IButton[] = [];
+  @Input()
+  SM: string = '12'; //size
+  @Input()
+  MD: string = ''; //sizeMd
+  @Input()
+  LG: string = ''; //sizeLg
   constructor() {}
 
   ngOnInit() {}

@@ -29,6 +29,7 @@ import { InternetIssueListDialog } from './dialogs/internet-issue-list-dialog/in
 import { BrowserStepperComponent } from './components/browser-stepper/browser-stepper.component';
 import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
+import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -58,6 +59,7 @@ export function createTranslateLoader(http: HttpClient) {
     BrowserStepperComponent,
     UnableVideoCallsComponent,
     UnableConnectNewDeviceWifiComponent,
+    ResetFactoryDefaultDialog,
   ],
   imports: [
     CommonModule,

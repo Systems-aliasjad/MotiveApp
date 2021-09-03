@@ -5,10 +5,12 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
     paragraphs: ['MESSAGES.MOVING_ELIFE_CONNECTION_BODY_1', 'MESSAGES.MOVING_ELIFE_CONNECTION_BODY_2'],
   };
+
   public static openServiceRequestCase2 = {
     header: 'MESSAGES.ACCOUNT_TEMPORARILY_DISCONNECTED',
     paragraphs: ['MESSAGES.ACCOUNT_TEMPORARILY_DISCONNECTED_BODY'],
   };
+
   public static openServiceRequestCase3 = {
     header: 'MESSAGES.ELIFE_CANCELLATION_REQUEST_PROGRESS',
     paragraphs: ['MESSAGES.ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY'],
@@ -28,9 +30,27 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.OPEN_SERVICE_REQUEST',
     paragraphs: ['MESSAGES.OPEN_SERVICE_REQUEST_BODY'],
   };
+
   public static packageUpgradesuccessfullyCase = {
     header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
+
+  public static routerUpgradesuccessfullyCase = {
+    header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY',
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
+
+  public static routerPackageUpgradesuccessfullyCase = {
+    header: 'MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
+    paragraphs: ['MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
+
+  public static accountNotActive = {
+    header: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY',
+    span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
+    spanListener: () => {},
+    paragraphs: ['MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_BODY'],
   };
 
   public static openServiceRequestCaseButtons: IButton[] = [
@@ -45,6 +65,21 @@ export class CustomerJourneyConstants {
       title: 'LINKS.EXIT_TROUBLESHOOTING',
       clickListener: () => {},
       linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
+
+  public static outageButtons: IButton[] = [
+    {
+      title: 'BUTTONS.OK',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
       behaviour: 'link',
     },
   ];
@@ -104,6 +139,24 @@ export class CustomerJourneyConstants {
     },
   ];
 
+  public static routerUpdateRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
+  public static routerPackageUpdateRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
   public static issuesNotFixedButtons: IButton[] = [
     {
       title: 'BUTTONS.TRY_AGAIN_LATER',
@@ -141,6 +194,7 @@ export class CustomerJourneyConstants {
       behaviour: 'secondary',
     },
   ];
+
   public static openTechnicalSrButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',
@@ -156,6 +210,7 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
   public static internetPasswordResetButtons: IButton[] = [
     {
       title: 'BUTTONS.RESET_NOW',
@@ -191,6 +246,147 @@ export class CustomerJourneyConstants {
       title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
       clickListener: () => {},
       linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static routerUpgradeRecommendedButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.UPGRADE_ROUTER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/router-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static routerPackageUpgradeRecommendedButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.UPGRADE_ROUTER_PACKAGE',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/router-package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static browserStapperCase1Buttons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/browser-stapper',
+      behaviour: 'link',
+    },
+  ];
+
+  public static browserStapperCase2Buttons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
+
+  public static wiFiAlarmButtons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+    {
+      title: 'BUTTONS.UPGRADE_PACKAGE',
+      clickListener: () => {},
+      linkTo: '/package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/', //TODO: linkTo 1.10.2
+      behaviour: 'link',
+    },
+  ];
+
+  public static accountNotActiveButtons: IButton[] = [
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'secondary',
+    },
+  ];
+
+  public static issueFixed_BookAComplaint: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
+
+  public static resetFactoryDefault: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_ROUTER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'secondary',
+    },
+    {
+      title: 'BUTTONS.CANCEL',
+      clickListener: () => {},
+      linkTo: '/',
       behaviour: 'link',
     },
   ];

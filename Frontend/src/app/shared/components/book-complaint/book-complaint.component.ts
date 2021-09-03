@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ERoutingIds } from '../../constants/constants';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
 
@@ -13,16 +14,12 @@ export class BookComplaintComponent implements OnInit {
   public formGroup: FormGroup;
   error = errorMessages;
   codeType;
+  buttonText;
   constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private formBuilder: FormBuilder, public router: Router) {
     this.codeType = this.router.url;
-
-    ///IF IS FOR PACKAGE UPGRADE RECOMMENDED
-    if (this.router.url.indexOf('package-upgrade-recommended-form') !== -1) {
-      this.codeType = 2;
-      this.sharedService.setHeaderConfig('HEADER.PACKAGE_UPGRADE', false);
-    } else {
-      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
-    }
+    this.activatedRoute.data.subscribe((data) => {
+      this.codeType = data.id;
+    });
 
     this.formGroup = this.formBuilder.group({
       MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
@@ -31,7 +28,30 @@ export class BookComplaintComponent implements OnInit {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    //IF IS FOR PACKAGE UPGRADE RECOMMENDED
+    if (this.codeType === ERoutingIds.packageUpgradeRecommendedForm) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.PACKAGE_UPGRADE', false);
+    }
+    //book complain
+    else if (this.codeType === ERoutingIds.bookComplaint) {
+      this.buttonText = 'BUTTONS.BOOK_A_COMPLAINT';
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    }
+
+    //Router Upgrade
+    else if (this.codeType === ERoutingIds.routerUpgradeRecommendedForm) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.ROUTER_UPGRADE', false);
+    }
+
+    //Router Package Upgrade
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommendedForm) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.ROUTER_PACKAGE_UPGRADE', false);
+    }
+  }
 
   get f() {
     return this.formGroup.controls;
@@ -39,11 +59,10 @@ export class BookComplaintComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.value);
-    this.router.navigate(['appoinment-successfully']);
-  }
-
-  SubmitFormPackageUpgrade() {
-    console.log(this.formGroup.value);
-    this.router.navigate(['package-upgrade-request-successfully']);
+    //TODO: update Checks
+    if (this.codeType == ERoutingIds.packageUpgradeRecommendedForm) this.router.navigate(['package-upgrade-request-successfully']);
+    else if (this.codeType == ERoutingIds.bookComplaint) this.router.navigate(['appoinment-successfully']);
+    else if (this.codeType == ERoutingIds.routerUpgradeRecommendedForm) this.router.navigate(['router-upgrade-request-successfully']);
+    else if (this.codeType == ERoutingIds.routerPackageUpgradeRecommendedForm) this.router.navigate(['router-package-upgrade-request-successfully']);
   }
 }

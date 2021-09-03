@@ -14,8 +14,19 @@
         <h4 *ngIf="Section1Data?.header">
           {{ Section1Data.header | translate }}
         </h4>
+
+        <!-- for subHeader -->
+        <h4 *ngIf="subHeaderSectionTemplate">
+          <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
+            <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
+            <ion-label class="detail_list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
+          </ion-item>
+        </h4>
+
         <div class="content" *ngIf="Section1Data?.paragraphs">
           <p *ngFor="let txt of Section1Data?.paragraphs">
+            <!-- for CLICK HERE see screen 1.17.2 -->
+            <span *ngIf="Section1Data?.span" (click)="Section1Data.spanListener()">{{ Section1Data.span | translate }}</span>
             {{ txt | translate }}
           </p>
         </div>
@@ -23,9 +34,7 @@
     </ion-row>
     <!-- Action Title Content End -->
 
-    
     <div class="info-container_detail_followup">
-
       <!-- Detail List and Follow up Start -->
       <ion-row class="info-container_detail" *ngIf="Section2Data">
         <ion-col size="12" class="pt-0 pb-0">

@@ -39,10 +39,6 @@ const routes: Routes = [
     component: LoaderComponent,
   },
   {
-    path: 'bookComplaint',
-    component: BookComplaintComponent,
-  },
-  {
     path: 'issue',
     component: IssueBuilderComponent,
   },
@@ -69,6 +65,8 @@ const routes: Routes = [
   { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
   //package upgrade Successfully
   { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.packageUpgradeRequestSuccessfully } },
+  //Account not active
+  { path: 'account-not-active', component: MessageBuilderComponent, data: { id: ERoutingIds.accountNotActive } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
@@ -80,9 +78,33 @@ const routes: Routes = [
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },
   //Package Upgrade Recommended
   { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.packageUpgradeRecommended } },
+  //Wi-Fi Alarm
+  { path: 'wifi-alarm', component: IssueBuilderComponent, data: { id: ERoutingIds.WiFiAlarm } },
+  //Outage
+  { path: 'outage', component: IssueBuilderComponent, data: { id: ERoutingIds.outage } },
 
   //package-upgrade-recommended-form
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
+  // Book A Complaint
+  { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
+
+  //#region  router Upgrade Recommended
+  //Router Upgrade Recommended
+  { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
+  //Router Upgrade Recommended form
+  { path: 'router-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerUpgradeRecommendedForm } },
+  //Router upgrade Successfully
+  { path: 'router-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerUpgradeRequestSuccessfully } },
+  // #endregion router Upgrade Recommended
+
+  //#region  router and package Upgrade Recommended
+  //router and package Upgrade Recommended
+  { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
+  //router and package Upgrade Recommended form
+  { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
+  //router and package upgrade Successfully
+  { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
+  // #endregion router Upgrade Recommended
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
