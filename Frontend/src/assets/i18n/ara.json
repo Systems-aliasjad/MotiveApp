@@ -87,7 +87,10 @@
     "UPGRADE_PACKAGE": "UPGRADE PACKAGE",
     "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
     "RESET_ROUTER": "RESET ROUTER",
-    "CANCEL": "CANCEL"
+    "CANCEL": "CANCEL",
+    "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
+    "UPGRADE_ROUTER": "UPGRADE ROUTER",
+    "REBOOT_MY_DEVICES": "REBOOT MY DEVICES"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -169,7 +172,9 @@
 
     "RESET_FACTORY_DEFAULT_TITLE": "Reset to factory default",
     "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
-    "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset."
+    "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset.",
+
+    "DEVICE_LIST_TITLE": "Select the device"
   },
   "LOADER": {
     "HEADER": "Almost there",

@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { ERoutingIds } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
+import { DeviceListDialog } from '../shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { SharedService } from '../shared/shared.service';
 import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 
@@ -15,6 +16,7 @@ import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-defau
 export class IssueBuilderComponent implements OnInit {
   codeType;
   buttonsConfig: IButton[] = [];
+  modal: any;
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
@@ -25,6 +27,13 @@ export class IssueBuilderComponent implements OnInit {
         },
       };
     });
+  }
+
+  async openDeviceListDialog() {
+    this.modal = await this.modalCtrl.create({
+      component: DeviceListDialog,
+    });
+    return await this.modal.present();
   }
 
   constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router, private modalCtrl: ModalController) {
@@ -80,6 +89,10 @@ export class IssueBuilderComponent implements OnInit {
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons);
+    }
+    // Router no-issue
+    else if (this.codeType === ERoutingIds.noIssue) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.noIssue);
     }
   }
 }

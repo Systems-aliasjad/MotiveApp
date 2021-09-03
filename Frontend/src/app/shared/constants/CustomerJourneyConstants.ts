@@ -406,4 +406,20 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
+  public static noIssue: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.REBOOT_MY_DEVICES',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'secondary',
+    },
+  ];
 }

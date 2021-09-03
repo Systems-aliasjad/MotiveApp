@@ -108,6 +108,10 @@ const routes: Routes = [
   { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
   // #endregion router Upgrade Recommended
 
+  //#region No Issue
+  { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
+  // #endregion router Upgrade Recommended
+
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },

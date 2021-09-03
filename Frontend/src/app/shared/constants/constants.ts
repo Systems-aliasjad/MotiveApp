@@ -36,6 +36,7 @@ export enum ERoutingIds {
   routerPackageUpgradeRecommended,
   routerPackageUpgradeRecommendedForm,
   routerPackageUpgradeRequestSuccessfully,
+  noIssue,
 }
 
 const P3: string = '3P';
