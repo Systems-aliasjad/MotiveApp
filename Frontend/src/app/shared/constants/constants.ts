@@ -27,6 +27,7 @@ export enum ERoutingIds {
   packageUpgradeRecommendedForm,
   WiFiAlarm,
   bookComplaint,
+  accountNotActive,
 }
 
 const P3: string = '3P';

@@ -116,7 +116,10 @@
     "OPEN_SERVICE_REQUEST": "Open Service Request",
     "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
     "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
+    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN": "Click here",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

@@ -93,7 +93,7 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.warningImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
     }
-    ///For package upgrade Successfully
+    //package upgrade Successfully
     else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
       this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
@@ -102,6 +102,15 @@ export class MessageBuilderComponent implements OnInit {
       };
       this.imgSrc = this.successImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
+    }
+    //Account not active
+    else if (this.codeType === ERoutingIds.accountNotActive) {
+      this.Section1Data = CustomerJourneyConstants.accountNotActive;
+      this.Section1Data.spanListener = () => {
+        console.log('Span Click Listener');
+      };
+      this.imgSrc = this.warningImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.accountNotActiveButtons);
     }
     //TODO: dummy need to remove this case at the end
     else {

@@ -33,6 +33,13 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
   };
 
+  public static accountNotActive = {
+    header: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY',
+    span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
+    spanListener: () => {},
+    paragraphs: ['MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_BODY'],
+  };
+
   public static openServiceRequestCaseButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',
@@ -244,6 +251,14 @@ export class CustomerJourneyConstants {
       clickListener: () => {},
       linkTo: '/', //TODO: linkTo 1.10.2
       behaviour: 'link',
+    },
+  ];
+  public static accountNotActiveButtons: IButton[] = [
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'secondary',
     },
   ];
 }

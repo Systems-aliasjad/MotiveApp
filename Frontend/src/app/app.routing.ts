@@ -70,6 +70,8 @@ const routes: Routes = [
   { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
   //package upgrade Successfully
   { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.packageUpgradeRequestSuccessfully } },
+  //Account not active
+  { path: 'account-not-active', component: MessageBuilderComponent, data: { id: ERoutingIds.accountNotActive } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
