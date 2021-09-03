@@ -241,4 +241,20 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
+  public static resetFactoryDefault: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_ROUTER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'secondary',
+    },
+    {
+      title: 'BUTTONS.CANCEL',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'link',
+    },
+  ];
 }
