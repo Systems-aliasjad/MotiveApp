@@ -94,5 +94,9 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.noIssue) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.noIssue);
     }
+    ///third party router
+    else if (this.codeType === ERoutingIds.thirdPartyRouter) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons);
+    }
   }
 }

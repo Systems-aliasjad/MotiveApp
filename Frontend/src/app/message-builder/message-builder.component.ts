@@ -43,6 +43,7 @@ export class MessageBuilderComponent implements OnInit {
 
   ngOnInit(): void {
     //Open Complaint
+
     if (this.codeType === ERoutingIds.openComplaint) {
       this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
       this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
@@ -135,6 +136,18 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.warningImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.accountNotActiveButtons);
     }
+
+    ///For third party router Successfully
+    else if (this.codeType === ERoutingIds.thirdPartyRouterSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.thirdPartyRoutersuccessfullyCase;
+      this.subHeaderSectionTemplate = ApplicableCodes.thirdPartyRouterUpgradeTemplate;
+      this.subHeaderSectionData = {
+        referenceNo: '436529873',
+      };
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.thirdPartyRoutersuccessfullyButtons);
+    }
+
     //TODO: dummy need to remove this case at the end
     else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;

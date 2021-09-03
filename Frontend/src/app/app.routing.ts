@@ -67,6 +67,12 @@ const routes: Routes = [
   { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.packageUpgradeRequestSuccessfully } },
   //Account not active
   { path: 'account-not-active', component: MessageBuilderComponent, data: { id: ERoutingIds.accountNotActive } },
+  //Router upgrade Successfully
+  { path: 'router-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerUpgradeRequestSuccessfully } },
+  //router and package upgrade Successfully
+  { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
+  // third party  router Successfully
+  { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
 
   //Router Reset Required
   { path: 'router-reset-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
@@ -84,33 +90,26 @@ const routes: Routes = [
   { path: 'wifi-alarm', component: IssueBuilderComponent, data: { id: ERoutingIds.WiFiAlarm } },
   //Outage
   { path: 'outage', component: IssueBuilderComponent, data: { id: ERoutingIds.outage } },
+  //Router Upgrade Recommended
+  { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
+  //router and package Upgrade Recommended
+  { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
+  //region No Issue
+  { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
+  // third party  router Recommended
+  { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
 
+  //router and package Upgrade Recommended form
+  { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
+  //Router Upgrade Recommended form
+  { path: 'router-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerUpgradeRecommendedForm } },
   //package-upgrade-recommended-form
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
   // Book A Complaint
   { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
-
-  //#region  router Upgrade Recommended
-  //Router Upgrade Recommended
-  { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
-  //Router Upgrade Recommended form
-  { path: 'router-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerUpgradeRecommendedForm } },
-  //Router upgrade Successfully
-  { path: 'router-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerUpgradeRequestSuccessfully } },
-  // #endregion router Upgrade Recommended
-
-  //#region  router and package Upgrade Recommended
-  //router and package Upgrade Recommended
-  { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
-  //router and package Upgrade Recommended form
-  { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
-  //router and package upgrade Successfully
-  { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
-  // #endregion router Upgrade Recommended
-
-  //#region No Issue
-  { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
-  // #endregion router Upgrade Recommended
+  // third party  router Recommended form
+  { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
+  // #endregion  third party  router
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
