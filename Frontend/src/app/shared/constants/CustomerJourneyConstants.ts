@@ -22,8 +22,8 @@ export class CustomerJourneyConstants {
   };
 
   public static appointmentbookssuccessfullyCase = {
-    header: 'MESSAGES.APPOINTMENT_BOOK_SUCCFULLY',
-    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCFULLY_Body'],
+    header: 'MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_Body'],
   };
 
   public static OpenTechnicalSR = {
@@ -32,18 +32,18 @@ export class CustomerJourneyConstants {
   };
 
   public static packageUpgradesuccessfullyCase = {
-    header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
-    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+    header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_Body'],
   };
 
   public static routerUpgradesuccessfullyCase = {
-    header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY',
-    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body'],
+    header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLYY_BODY'],
   };
 
   public static routerPackageUpgradesuccessfullyCase = {
-    header: 'MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
-    paragraphs: ['MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+    header: 'MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
   public static accountNotActive = {
@@ -51,6 +51,11 @@ export class CustomerJourneyConstants {
     span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
     spanListener: () => {},
     paragraphs: ['MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_BODY'],
+  };
+
+  public static thirdPartyRoutersuccessfullyCase = {
+    header: 'MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY'],
   };
 
   public static openServiceRequestCaseButtons: IButton[] = [
@@ -149,6 +154,15 @@ export class CustomerJourneyConstants {
   ];
 
   public static routerPackageUpdateRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
+  public static thirdPartyRoutersuccessfullyButtons: IButton[] = [
     {
       title: 'BUTTONS.DONE',
       clickListener: () => {},
@@ -286,6 +300,29 @@ export class CustomerJourneyConstants {
       explanatoryNote: '',
       clickListener: () => {},
       linkTo: '/router-package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static thirdPartyMainButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.BUY_NEW_ROUTER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/third-party-router-form',
       behaviour: 'primary',
     },
     {

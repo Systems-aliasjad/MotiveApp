@@ -11,7 +11,8 @@
     "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
     "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi",
     "ROUTER_UPGRADE": "Router Upgrade",
-    "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade"
+    "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade",
+    "THIRD_PARTY_ROUTER": "BUY NEW ROUTER"
   },
 
   "SUBHEADER": {
@@ -76,6 +77,9 @@
   "ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY": {
     "REFERENCE_NO": "Reference No:"
   },
+  "THIRD_PARTY_ROUTER_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
+  },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
@@ -98,7 +102,8 @@
     "RESET_ROUTER": "RESET ROUTER",
     "CANCEL": "CANCEL",
     "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
-    "UPGRADE_ROUTER": "UPGRADE ROUTER"
+    "UPGRADE_ROUTER": "UPGRADE ROUTER",
+    "BUY_NEW_ROUTER": "BUY NEW ROUTER"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -124,19 +129,21 @@
     "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
     "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
-    "APPOINTMENT_BOOK_SUCCFULLY": "Appointment booked successfully!",
-    "APPOINTMENT_BOOK_SUCCFULLY_Body": "We have received your complain and booked an appointment. Our technician will contact you soon",
+    "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
+    "APPOINTMENT_BOOK_SUCCESSFULLY_BODY": "We have received your complain and booked an appointment. Our technician will contact you soon",
     "OPEN_SERVICE_REQUEST": "Open Service Request",
     "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
-    "ROUTER_UPGRADE_REQUEST_SUCCFULLY": "Router upgrade request was raised successfully",
-    "ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY": "Package upgrade request was raised successfully",
+    "PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "ROUTER_UPGRADE_REQUEST_SUCCESSFULLY": "Router upgrade request was raised successfully",
+    "ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
     "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
     "ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN": "Click here",
     "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment",
-    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Router & Package upgrade request was raised successfully",
-    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY": "Router & Package upgrade request was raised successfully",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY": "New router request was raised successfully",
+    "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

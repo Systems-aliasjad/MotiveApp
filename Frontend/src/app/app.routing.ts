@@ -106,6 +106,15 @@ const routes: Routes = [
   { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
   // #endregion router Upgrade Recommended
 
+  //#region third party  router
+  // third party  router Recommended
+  { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
+  // third party  router Recommended form
+  { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
+  // third party  router Successfully
+  { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
+  // #endregion  third party  router
+
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
