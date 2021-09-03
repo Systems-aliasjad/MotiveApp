@@ -1,38 +1,33 @@
 <ion-content>
   <ion-grid class="device-detail-container">
-
     <!-- Page Heading -->
     <ion-row class="device-title">
-      <ion-col size="12" >
+      <ion-col size="12">
         <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
           <h2>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H1' | translate }}</h2>
         </div>
       </ion-col>
-    </ion-row> 
+    </ion-row>
 
     <ion-row class="device-detail-inner_container">
-
       <!-- Router Image Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="device">
         <!-- <img alt="Router" src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" width="120px" height="120px" /> -->
         <picture>
-          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 414px)">
-          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 768px)">
-          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1024px)">
-          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1366px)">
-          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1440px)">
-          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1920px)">
-          <img src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" class="cover lazyloaded" alt="">
-      </picture>
-
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 414px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 768px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1024px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1366px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1440px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1920px)" />
+          <img src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" class="cover lazyloaded" alt="" />
+        </picture>
       </ion-col>
       <!-- Router Image End -->
 
       <!-- Router Instruction Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="instruction-container">
-
         <div class="instruction">
-
           <ion-row class="instruction_title">
             <ion-col size="12">
               <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
@@ -64,57 +59,9 @@
             </ion-col>
           </ion-row>
 
-          <ion-row>
-            <ion-col sizeLg="6" sizeMd="6" size="12">
-              <div class="btn-bottom">
-                <ion-button class="btn secondary-btn close full-width">{{ 'BUTTONS.VIEW_DEVICE_CARE' | translate }}</ion-button>
-              </div>
-            </ion-col>
-          </ion-row>
-
-          <ion-row>
-            <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0 ion-text-center">
-              <div class="transparent-btn">
-                <a href="javascript:void(0)">{{ 'BUTTONS.CLOSE' | translate }}</a>
-              </div>
-            </ion-col>
-          </ion-row>
-
-        </div>
-      </ion-col>
-          <!-- <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-            <h6>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H2' | translate }} :</h6>
-          </div> -->
-          <!-- <div class="content">
-            <p *ngFor="let ins of instructionList; let i = index">{{ i + 1 }}. {{ ins | translate }}</p>
-          </div> -->
-        
-        <!-- Router Instruction End -->
-
-      </ion-row>
-
-   
-
-    <!-- Divider -->
-    <!-- <ion-row>
-      <ion-col size="12">
-        <ion-item-divider>
-          <div style="width: 100%; text-align: center">OR</div>
-        </ion-item-divider>
-      </ion-col>
-    </ion-row> -->
-
-    <!-- Page Instruction Heading -->
-    <!-- <ion-row>
-      <ion-col size="12">
-        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-          <h6>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H3' | translate }} :</h6>
-        </div>
-        <div class="content">
-          <p>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H3_MSG' | translate }}</p>
+          <app-buttons [buttonsConfig]="buttonsConfig" [SM]="'12'" [MD]="'6'" [LG]="'6'"></app-buttons>
         </div>
       </ion-col>
     </ion-row>
-    <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>
   </ion-grid>
 </ion-content>
