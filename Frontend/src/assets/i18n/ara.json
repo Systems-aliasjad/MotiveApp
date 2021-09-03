@@ -5,6 +5,7 @@
     "TERMS_AND_CONDITIONS": "Terms & Conditions",
     "DEVICE_CARE": "Device care",
     "BOOK_COMPLAINT": "Book a Complaint",
+    "PACKAGE_UPGRADE": "Package Upgrade",
     "RESET_INTERNET_PASSWORD": "Reset internet password",
     "NO_INTERNET_ISSUE": "No Internet Issue",
     "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
@@ -64,7 +65,9 @@
     "DATE_VISIT": "Date of visit",
     "LOCATION": "Location"
   },
-
+  "PACKAGE_UPGRADE_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No"
+  },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
@@ -77,10 +80,12 @@
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "RESTART_NOW": "RESTART NOW",
-    "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
     "DONE": "Done",
+    "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
     "RESET_NOW": "RESET NOW",
-    "VIEW_GUIDLINES": "VIEW GUIDLINES"
+    "VIEW_GUIDLINES": "VIEW GUIDLINES",
+    "UPGRADE_PACKAGE": "UPGRADE PACKAGE",
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -90,7 +95,9 @@
     "COMPLAINT_ANOTHER": "No, I want to report another issue",
     "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
     "DEVICE_CARE": "Device Care",
-    "CLOSE": "CLOSE"
+    "CLOSE": "CLOSE",
+    "ISSUES_FIXED": "Issue Fixed",
+    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -105,7 +112,11 @@
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
     "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
     "APPOINTMENT_BOOK_SUCCFULLY": "Appointment booked successfully!",
-    "APPOINTMENT_BOOK_SUCCFULLY_Body": "We have received your complain and booked an appointment. Our technician will contact you soon"
+    "APPOINTMENT_BOOK_SUCCFULLY_Body": "We have received your complain and booked an appointment. Our technician will contact you soon",
+    "OPEN_SERVICE_REQUEST": "Open Service Request",
+    "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
+    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
+    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

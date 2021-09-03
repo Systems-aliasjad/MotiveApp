@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
 
@@ -12,9 +12,18 @@ import { regExps, errorMessages } from '../../validators/validations';
 export class BookComplaintComponent implements OnInit {
   public formGroup: FormGroup;
   error = errorMessages;
+  codeType;
+  constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private formBuilder: FormBuilder, public router: Router) {
+    this.codeType = this.router.url;
 
-  constructor(private sharedService: SharedService, private formBuilder: FormBuilder, public router: Router) {
-    this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    ///IF IS FOR PACKAGE UPGRADE RECOMMENDED
+    if (this.router.url.indexOf('package-upgrade-recommended-form') !== -1) {
+      this.codeType = 2;
+      this.sharedService.setHeaderConfig('HEADER.PACKAGE_UPGRADE', false);
+    } else {
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    }
+
     this.formGroup = this.formBuilder.group({
       MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
       AlternateContactNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
@@ -31,5 +40,10 @@ export class BookComplaintComponent implements OnInit {
   SubmitForm() {
     console.log(this.formGroup.value);
     this.router.navigate(['appoinment-successfully']);
+  }
+
+  SubmitFormPackageUpgrade() {
+    console.log(this.formGroup.value);
+    this.router.navigate(['package-upgrade-request-successfully']);
   }
 }

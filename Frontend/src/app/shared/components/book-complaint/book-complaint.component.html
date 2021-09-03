@@ -56,7 +56,13 @@
             </ion-row>
             <ion-row>
               <ion-col sizeLg="2" sizeMd="2" sizeSm="12" size="12">
-                <ion-button class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">BOOK A COMPLAINT</ion-button>
+                <ion-button *ngIf="codeType == 2" class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitFormPackageUpgrade()">{{
+                  'BUTTONS.CONTINUE' | translate
+                }}</ion-button>
+
+                <!-- <ion-button *ngIf="codeType != 2" class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{
+                  'BUTTONS.BOOK_A_COMPLAINT' | translate
+                }}</ion-button> -->
               </ion-col>
             </ion-row>
           </ion-grid>
