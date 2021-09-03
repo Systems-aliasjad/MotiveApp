@@ -52,6 +52,10 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons);
     }
+    ///router Upgrade Recommended
+    else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons);
+    }
     //Wi-Fi Alarm
     else if (this.codeType === ERoutingIds.WiFiAlarm) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons);
@@ -59,6 +63,10 @@ export class IssueBuilderComponent implements OnInit {
     //Outage
     else if (this.codeType === ERoutingIds.outage) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.outageButtons);
+    }
+    ///router Upgrade Recommended
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons);
     }
   }
 }

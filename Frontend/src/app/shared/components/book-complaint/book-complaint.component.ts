@@ -34,10 +34,22 @@ export class BookComplaintComponent implements OnInit {
       this.buttonText = 'BUTTONS.CONTINUE';
       this.sharedService.setHeaderConfig('HEADER.PACKAGE_UPGRADE', false);
     }
-    //
+    //book complain
     else if (this.codeType === ERoutingIds.bookComplaint) {
       this.buttonText = 'BUTTONS.BOOK_A_COMPLAINT';
       this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    }
+
+    //Router Upgrade
+    else if (this.codeType === ERoutingIds.routerUpgradeRecommendedForm) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.ROUTER_UPGRADE', false);
+    }
+
+    //Router Package Upgrade
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommendedForm) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.ROUTER_PACKAGE_UPGRADE', false);
     }
   }
 
@@ -48,7 +60,9 @@ export class BookComplaintComponent implements OnInit {
   SubmitForm() {
     console.log(this.formGroup.value);
     //TODO: update Checks
-    if (this.codeType == 2) this.router.navigate(['package-upgrade-request-successfully']);
-    else this.router.navigate(['appoinment-successfully']);
+    if (this.codeType == ERoutingIds.packageUpgradeRecommendedForm) this.router.navigate(['package-upgrade-request-successfully']);
+    else if (this.codeType == ERoutingIds.bookComplaint) this.router.navigate(['appoinment-successfully']);
+    else if (this.codeType == ERoutingIds.routerUpgradeRecommendedForm) this.router.navigate(['router-upgrade-request-successfully']);
+    else if (this.codeType == ERoutingIds.routerPackageUpgradeRecommendedForm) this.router.navigate(['router-package-upgrade-request-successfully']);
   }
 }

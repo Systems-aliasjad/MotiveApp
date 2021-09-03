@@ -27,8 +27,14 @@ export enum ERoutingIds {
   packageUpgradeRecommendedForm,
   WiFiAlarm,
   bookComplaint,
+  routerUpgradeRecommended,
+  routerUpgradeRecommendedForm,
+  routerUpgradeRequestSuccessfully,
   accountNotActive,
   outage,
+  routerPackageUpgradeRecommended,
+  routerPackageUpgradeRecommendedForm,
+  routerPackageUpgradeRequestSuccessfully,
 }
 
 const P3: string = '3P';
@@ -253,10 +259,26 @@ export class ApplicableCodes {
       objKeyNameEN: 'location',
     },
   ];
-  // needs to be removed
+
   public static packageUpgradeTemplate: ISection2Template[] = [
     {
       title: 'PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+  ];
+
+  public static routerUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'ROUTER_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+  ];
+
+  public static routerPackageUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },

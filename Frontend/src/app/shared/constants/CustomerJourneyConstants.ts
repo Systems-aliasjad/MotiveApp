@@ -36,6 +36,16 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
   };
 
+  public static routerUpgradesuccessfullyCase = {
+    header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY',
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
+
+  public static routerPackageUpgradesuccessfullyCase = {
+    header: 'MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
+    paragraphs: ['MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
+
   public static accountNotActive = {
     header: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY',
     span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
@@ -129,6 +139,24 @@ export class CustomerJourneyConstants {
     },
   ];
 
+  public static routerUpdateRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
+  public static routerPackageUpdateRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
   public static issuesNotFixedButtons: IButton[] = [
     {
       title: 'BUTTONS.TRY_AGAIN_LATER',
@@ -212,6 +240,52 @@ export class CustomerJourneyConstants {
       explanatoryNote: '',
       clickListener: () => {},
       linkTo: '/package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static routerUpgradeRecommendedButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.UPGRADE_ROUTER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/router-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static routerPackageUpgradeRecommendedButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.UPGRADE_ROUTER_PACKAGE',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/router-package-upgrade-recommended-form',
       behaviour: 'primary',
     },
     {
