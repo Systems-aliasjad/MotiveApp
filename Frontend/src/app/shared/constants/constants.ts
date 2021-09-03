@@ -217,4 +217,12 @@ export class ApplicableCodes {
       objKeyNameEN: 'location',
     },
   ];
+  // needs to be removed
+  public static packageUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+  ];
 }

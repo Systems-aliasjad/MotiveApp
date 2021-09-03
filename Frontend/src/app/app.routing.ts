@@ -71,8 +71,17 @@ const routes: Routes = [
   //Internet Reset Password
   { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: 3 } },
 
+  //Package Upgrade Recommended
+  { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: 5 } },
+
+  //package-upgrade-recommended-form
+  { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: 2 } },
+
   //Appointment Successfully
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
+
+  //package upgrade Successfully
+  { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: 5 } },
 
   /////End of Perform Cases
 

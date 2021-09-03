@@ -45,5 +45,10 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === 3) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons);
     }
+
+    ///Package Upgrade Recommended
+    else if (this.codeType === 5) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons);
+    }
   }
 }

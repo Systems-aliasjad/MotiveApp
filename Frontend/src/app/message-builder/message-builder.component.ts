@@ -112,6 +112,18 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
     } //For Appointment book successfully IssuesNotFixed
+
+    ///For package upgrade Successfully
+    else if (this.codeType === 5) {
+      this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
+      this.Section2Template = ApplicableCodes.packageUpgradeTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
+    } //For package upgrade Successfully
     else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
