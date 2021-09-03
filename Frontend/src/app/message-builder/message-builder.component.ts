@@ -15,11 +15,13 @@ export class MessageBuilderComponent implements OnInit {
 
   codeType;
   Section1Data: any;
+  Section2Template;
   Section2Data: any;
+  subHeaderSectionTemplate: any;
+  subHeaderSectionData: any;
 
   imgSrc: string = this.warningImgSrc;
 
-  Section2Template;
   showLoader: boolean = false;
 
   buttonsConfig: IButton[] = [];
@@ -94,11 +96,10 @@ export class MessageBuilderComponent implements OnInit {
     ///For package upgrade Successfully
     else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
-      this.Section2Template = ApplicableCodes.packageUpgradeTemplate;
-      this.Section2Data = {
+      this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
+      this.subHeaderSectionData = {
         referenceNo: '436529873',
       };
-
       this.imgSrc = this.successImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
     }
