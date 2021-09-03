@@ -5,7 +5,7 @@
 .secondary-btn{
   @include transition(all 0.3s ease-in-out);
   text-transform: $text-uppercase;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: 600;
   letter-spacing: 0.14285714em;
   padding: .48rem .6rem;
@@ -33,7 +33,6 @@
     color: #333333;
     background-color: transparent;
     border: 2px solid $black;
-    
   }
 }
 .secondary-btn{
