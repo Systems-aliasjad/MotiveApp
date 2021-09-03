@@ -225,4 +225,25 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+  public static wiFiAlarmButtons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+    {
+      title: 'BUTTONS.UPGRADE_PACKAGE',
+      clickListener: () => {},
+      linkTo: '/package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/', //TODO: linkTo 1.10.2
+      behaviour: 'link',
+    },
+  ];
 }

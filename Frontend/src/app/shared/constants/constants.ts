@@ -25,6 +25,7 @@ export enum ERoutingIds {
   RouterReset3rdParty,
   packageUpgradeRecommended,
   packageUpgradeRecommendedForm,
+  WiFiAlarm,
 }
 
 const P3: string = '3P';
