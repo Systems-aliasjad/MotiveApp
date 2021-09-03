@@ -420,6 +420,7 @@ export class CustomerJourneyConstants {
       clickListener: () => {},
       linkTo: '/',
       behaviour: 'secondary',
+      customListner: 'openDeviceListDialog',
     },
   ];
 }
