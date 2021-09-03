@@ -37,6 +37,12 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY',
     paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body'],
   };
+  public static accountNotActive = {
+    header: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY',
+    span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
+    spanListener: () => {},
+    paragraphs: ['MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_BODY'],
+  };
 
   public static openServiceRequestCaseButtons: IButton[] = [
     {
@@ -229,6 +235,67 @@ export class CustomerJourneyConstants {
       clickListener: () => {},
       linkTo: '',
       behaviour: 'link',
+    },
+  ];
+
+  public static browserStapperCase1Buttons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/browser-stapper',
+      behaviour: 'link',
+    },
+  ];
+  public static browserStapperCase2Buttons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
+  public static wiFiAlarmButtons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+    {
+      title: 'BUTTONS.UPGRADE_PACKAGE',
+      clickListener: () => {},
+      linkTo: '/package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/', //TODO: linkTo 1.10.2
+      behaviour: 'link',
+    },
+  ];
+
+  public static accountNotActiveButtons: IButton[] = [
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'secondary',
     },
   ];
 }

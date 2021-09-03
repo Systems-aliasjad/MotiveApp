@@ -40,7 +40,7 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.issueNotFixed) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons);
     }
-    /// //Internet Password Reset
+    //Internet Password Reset
     else if (this.codeType === ERoutingIds.internetPasswordReset) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons);
     }
@@ -48,13 +48,17 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty);
     }
-    ///Package Upgrade Recommended
+    //Package Upgrade Recommended
     else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons);
     }
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons);
+    }
+    //Wi-Fi Alarm
+    else if (this.codeType === ERoutingIds.WiFiAlarm) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons);
     }
   }
 }

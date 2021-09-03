@@ -70,6 +70,8 @@ const routes: Routes = [
   { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
   //package upgrade Successfully
   { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.packageUpgradeRequestSuccessfully } },
+  //Account not active
+  { path: 'account-not-active', component: MessageBuilderComponent, data: { id: ERoutingIds.accountNotActive } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
@@ -81,6 +83,8 @@ const routes: Routes = [
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },
   //Package Upgrade Recommended
   { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.packageUpgradeRecommended } },
+  //Wi-Fi Alarm
+  { path: 'wifi-alarm', component: IssueBuilderComponent, data: { id: ERoutingIds.WiFiAlarm } },
 
   //package-upgrade-recommended-form
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },

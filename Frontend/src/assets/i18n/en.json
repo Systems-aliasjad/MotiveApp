@@ -122,7 +122,10 @@
     "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
     "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
     "ROUTER_UPGRADE_REQUEST_SUCCFULLY": "Router upgrade request was raised successfully",
-    "ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
+    "ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN": "Click here",
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

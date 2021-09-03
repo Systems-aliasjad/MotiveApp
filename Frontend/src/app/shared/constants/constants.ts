@@ -25,10 +25,12 @@ export enum ERoutingIds {
   RouterReset3rdParty,
   packageUpgradeRecommended,
   packageUpgradeRecommendedForm,
+  WiFiAlarm,
   bookComplaint,
   routerUpgradeRecommended,
   routerUpgradeRecommendedForm,
   routerUpgradeRequestSuccessfully,
+  accountNotActive,
 }
 
 const P3: string = '3P';
