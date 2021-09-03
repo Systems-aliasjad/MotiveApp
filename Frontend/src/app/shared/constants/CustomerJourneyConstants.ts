@@ -194,4 +194,35 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
+  public static browserStapperCase1Buttons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/browser-stapper',
+      behaviour: 'link',
+    },
+  ];
+  public static browserStapperCase2Buttons: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
 }
