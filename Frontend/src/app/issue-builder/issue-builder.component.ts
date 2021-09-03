@@ -56,5 +56,9 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.WiFiAlarm) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons);
     }
+    //Outage
+    else if (this.codeType === ERoutingIds.outage) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.outageButtons);
+    }
   }
 }

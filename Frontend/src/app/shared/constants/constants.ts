@@ -28,6 +28,7 @@ export enum ERoutingIds {
   WiFiAlarm,
   bookComplaint,
   accountNotActive,
+  outage,
 }
 
 const P3: string = '3P';

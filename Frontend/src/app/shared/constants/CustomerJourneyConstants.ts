@@ -59,6 +59,21 @@ export class CustomerJourneyConstants {
     },
   ];
 
+  public static outageButtons: IButton[] = [
+    {
+      title: 'BUTTONS.OK',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
+
   public static openComplaintButtons: IButton[] = [
     {
       title: 'BUTTONS.YES',

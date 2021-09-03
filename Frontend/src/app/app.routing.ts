@@ -39,11 +39,6 @@ const routes: Routes = [
     component: LoaderComponent,
   },
   {
-    path: 'bookComplaint',
-    component: BookComplaintComponent,
-    data: { id: ERoutingIds.bookComplaint },
-  },
-  {
     path: 'issue',
     component: IssueBuilderComponent,
   },
@@ -85,9 +80,13 @@ const routes: Routes = [
   { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.packageUpgradeRecommended } },
   //Wi-Fi Alarm
   { path: 'wifi-alarm', component: IssueBuilderComponent, data: { id: ERoutingIds.WiFiAlarm } },
+  //Outage
+  { path: 'outage', component: IssueBuilderComponent, data: { id: ERoutingIds.outage } },
 
   //package-upgrade-recommended-form
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
+  // Book A Complaint
+  { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
