@@ -58,8 +58,6 @@ const routes: Routes = [
     component: DeviceCareComponent,
   },
 
-  /////Perform Cases
-
   //Open Complaint
   { path: 'open-complaint', component: MessageBuilderComponent, data: { id: 1 } },
   //Open service request present
@@ -68,6 +66,8 @@ const routes: Routes = [
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
   //Open technical S/R
   { path: 'open-sr', component: MessageBuilderComponent, data: { id: 4 } },
+  //package upgrade Successfully
+  { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: 5 } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: 1 } },
@@ -77,29 +77,17 @@ const routes: Routes = [
   { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: 3 } },
   //3rd party router requires configuration
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: 4 } },
+  //Package Upgrade Recommended
+  { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: 5 } },
 
-  /////End of Perform Cases
+  //package-upgrade-recommended-form
+  { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: 2 } },
 
-  {
-    path: 'browser-stapper',
-    component: BrowserStepperComponent,
-  },
-  {
-    path: 'unable-video-call',
-    component: UnableVideoCallsComponent,
-  },
-  {
-    path: 'unable-connect-newDevice',
-    component: UnableConnectNewDeviceWifiComponent,
-  },
-  {
-    path: 'dialog-demo',
-    component: InternetIssueListDialog,
-  },
-  {
-    path: '**',
-    redirectTo: '',
-  },
+  { path: 'browser-stapper', component: BrowserStepperComponent },
+  { path: 'unable-video-call', component: UnableVideoCallsComponent },
+  { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
+  { path: 'dialog-demo', component: InternetIssueListDialog },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

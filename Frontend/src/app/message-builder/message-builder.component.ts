@@ -16,10 +16,6 @@ export class MessageBuilderComponent implements OnInit {
   codeType;
   Section1Data: any;
   Section2Data: any;
-  followUpButton: boolean = false;
-  followupComplain: boolean = false;
-  exitTroubleshootLink: boolean = false;
-  anotherComplainLink: boolean = false;
 
   imgSrc: string = this.warningImgSrc;
 
@@ -27,37 +23,6 @@ export class MessageBuilderComponent implements OnInit {
   showLoader: boolean = false;
 
   buttonsConfig: IButton[] = [];
-  // [
-  //   {
-  //     title: 'BUTTONS.FOLLOW_UP',
-  //     explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
-  //     clickListener: () => {},
-  //     behaviour: 'primary',
-  //   },
-  //   {
-  //     title: 'BUTTONS.YES',
-  //     clickListener: () => {},
-  //     behaviour: 'primary',
-  //   },
-  //   {
-  //     title: 'BUTTONS.CLOSE',
-  //     clickListener: () => {},
-  //     behaviour: 'secondary',
-  //   },
-  //   {
-  //     title: 'LINKS.EXIT_TROUBLESHOOTING',
-  //     clickListener: () => {
-  //       this.router.navigate(['thanks']);
-  //     },
-  //     behaviour: 'link',
-  //   },
-  //   {
-  //     title: 'LINKS.COMPLAINT_ANOTHER',
-  //     clickListener: () => {},
-  //     behaviour: 'link',
-  //   },
-  // ];
-
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -125,7 +90,20 @@ export class MessageBuilderComponent implements OnInit {
 
       this.imgSrc = this.warningImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
-    } else {
+    }
+    ///For package upgrade Successfully
+    else if (this.codeType === 5) {
+      this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
+      this.Section2Template = ApplicableCodes.packageUpgradeTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
+    }
+    //TODO: dummy need to remove this case at the end
+    else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {
@@ -134,9 +112,6 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-
-      this.followUpButton = true;
-      this.exitTroubleshootLink = true;
     }
   }
 }
