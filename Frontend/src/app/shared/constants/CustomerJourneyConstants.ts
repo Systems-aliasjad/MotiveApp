@@ -5,10 +5,12 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
     paragraphs: ['MESSAGES.MOVING_ELIFE_CONNECTION_BODY_1', 'MESSAGES.MOVING_ELIFE_CONNECTION_BODY_2'],
   };
+
   public static openServiceRequestCase2 = {
     header: 'MESSAGES.ACCOUNT_TEMPORARILY_DISCONNECTED',
     paragraphs: ['MESSAGES.ACCOUNT_TEMPORARILY_DISCONNECTED_BODY'],
   };
+
   public static openServiceRequestCase3 = {
     header: 'MESSAGES.ELIFE_CANCELLATION_REQUEST_PROGRESS',
     paragraphs: ['MESSAGES.ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY'],
@@ -28,6 +30,7 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.OPEN_SERVICE_REQUEST',
     paragraphs: ['MESSAGES.OPEN_SERVICE_REQUEST_BODY'],
   };
+
   public static packageUpgradesuccessfullyCase = {
     header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
@@ -148,6 +151,7 @@ export class CustomerJourneyConstants {
       behaviour: 'secondary',
     },
   ];
+
   public static openTechnicalSrButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',
@@ -163,6 +167,7 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
   public static internetPasswordResetButtons: IButton[] = [
     {
       title: 'BUTTONS.RESET_NOW',
@@ -217,6 +222,7 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
   public static browserStapperCase2Buttons: IButton[] = [
     {
       title: 'BUTTONS.ISSUE_FIXED',
@@ -254,6 +260,7 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
   public static accountNotActiveButtons: IButton[] = [
     {
       title: 'BUTTONS.CLOSE',
@@ -262,6 +269,7 @@ export class CustomerJourneyConstants {
       behaviour: 'secondary',
     },
   ];
+
   public static issueFixed_BookAComplaint: IButton[] = [
     {
       title: 'BUTTONS.ISSUE_FIXED',
