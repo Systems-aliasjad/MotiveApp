@@ -232,6 +232,7 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
   public static wiFiAlarmButtons: IButton[] = [
     {
       title: 'BUTTONS.ISSUE_FIXED',
@@ -259,6 +260,37 @@ export class CustomerJourneyConstants {
       clickListener: () => {},
       linkTo: '/thanks',
       behaviour: 'secondary',
+    },
+  ];
+  public static issueFixed_BookAComplaint: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+    {
+      title: 'BUTTONS.BOOK_A_COMPLAINT',
+      clickListener: () => {},
+      linkTo: '/bookComplaint',
+      behaviour: 'link',
+    },
+  ];
+
+  public static resetFactoryDefault: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_ROUTER',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'secondary',
+    },
+    {
+      title: 'BUTTONS.CANCEL',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'link',
     },
   ];
 }

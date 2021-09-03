@@ -85,7 +85,9 @@
     "RESET_NOW": "RESET NOW",
     "VIEW_GUIDLINES": "VIEW GUIDLINES",
     "UPGRADE_PACKAGE": "UPGRADE PACKAGE",
-    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT"
+    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
+    "RESET_ROUTER": "RESET ROUTER",
+    "CANCEL": "CANCEL"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -163,7 +165,11 @@
     "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
 
     "INTERNET_ISSUE_LIST_TITLE": "Please select your issue",
-    "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues."
+    "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues.",
+
+    "RESET_FACTORY_DEFAULT_TITLE": "Reset to factory default",
+    "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
+    "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset."
   },
   "LOADER": {
     "HEADER": "Almost there",
