@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
+import { promise } from 'selenium-webdriver';
 import { ERoutingIds } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
+import { DeviceListDialog } from '../shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { SharedService } from '../shared/shared.service';
 
 @Component({
@@ -13,18 +16,33 @@ import { SharedService } from '../shared/shared.service';
 export class IssueBuilderComponent implements OnInit {
   codeType;
   buttonsConfig: IButton[] = [];
+  modal: any;
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
         ...obj,
         clickListener: () => {
-          this.router.navigate([obj.linkTo]);
+          if (obj.title === 'BUTTONS.REBOOT_MY_DEVICES') {
+            this.loadModal('DeviceListDialog');
+          } else {
+            this.router.navigate([obj.linkTo]);
+          }
         },
       };
     });
   }
-  constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router) {
+
+  async loadModal(name) {
+    if (name == 'DeviceListDialog') {
+      this.modal = await this.modalCtrl.create({
+        component: DeviceListDialog,
+      });
+      return await this.modal.present();
+    }
+  }
+
+  constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router, private modalCtrl: ModalController) {
     this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
@@ -67,6 +85,10 @@ export class IssueBuilderComponent implements OnInit {
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons);
+    }
+    // Router no-issue
+    else if (this.codeType === ERoutingIds.noIssue) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.noIssue);
     }
   }
 }
