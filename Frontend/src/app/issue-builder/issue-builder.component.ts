@@ -52,5 +52,9 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons);
     }
+    ///router Upgrade Recommended
+    else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons);
+    }
   }
 }

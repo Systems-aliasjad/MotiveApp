@@ -9,7 +9,8 @@
     "RESET_INTERNET_PASSWORD": "Reset internet password",
     "NO_INTERNET_ISSUE": "No Internet Issue",
     "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
-    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi"
+    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi",
+    "ROUTER_UPGRADE": "Router Upgrade"
   },
 
   "SUBHEADER": {
@@ -68,6 +69,9 @@
   "PACKAGE_UPGRADE_SUCCESSFULLY": {
     "REFERENCE_NO": "Reference No:"
   },
+  "ROUTER_UPGRADE_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
+  },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
@@ -116,7 +120,9 @@
     "OPEN_SERVICE_REQUEST": "Open Service Request",
     "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
     "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
+    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "ROUTER_UPGRADE_REQUEST_SUCCFULLY": "Router upgrade request was raised successfully",
+    "ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

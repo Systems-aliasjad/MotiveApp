@@ -26,6 +26,9 @@ export enum ERoutingIds {
   packageUpgradeRecommended,
   packageUpgradeRecommendedForm,
   bookComplaint,
+  routerUpgradeRecommended,
+  routerUpgradeRecommendedForm,
+  routerUpgradeRequestSuccessfully,
 }
 
 const P3: string = '3P';
@@ -250,10 +253,18 @@ export class ApplicableCodes {
       objKeyNameEN: 'location',
     },
   ];
-  // needs to be removed
+
   public static packageUpgradeTemplate: ISection2Template[] = [
     {
       title: 'PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+  ];
+
+  public static routerUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'ROUTER_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },

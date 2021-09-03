@@ -103,6 +103,18 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
     }
+
+    ///For router upgrade Successfully
+    else if (this.codeType === ERoutingIds.routerUpgradeRequestSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
+      this.subHeaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
+      this.subHeaderSectionData = {
+        referenceNo: '436529873',
+      };
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpdareRequestsuccessfullyButtons);
+    }
+
     //TODO: dummy need to remove this case at the end
     else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
