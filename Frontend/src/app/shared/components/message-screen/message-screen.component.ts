@@ -26,6 +26,11 @@ export class MessageScreenComponent implements OnInit {
   Section2Template: ISection2Template[];
   @Input()
   buttonsConfig: IButton[] = [];
+  @Input()
+  subHeaderSectionData: any;
+  @Input()
+  subHeaderSectionTemplate: ISection2Template[];
+
   constructor() {}
   ngOnInit(): void {}
 }

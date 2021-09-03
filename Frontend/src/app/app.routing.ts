@@ -41,6 +41,7 @@ const routes: Routes = [
   {
     path: 'bookComplaint',
     component: BookComplaintComponent,
+    data: { id: ERoutingIds.bookComplaint },
   },
   {
     path: 'issue',
