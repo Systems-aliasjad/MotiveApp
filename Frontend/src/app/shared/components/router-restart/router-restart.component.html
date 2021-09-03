@@ -64,21 +64,23 @@
             </ion-col>
           </ion-row>
 
-          <ion-row>
+          <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>
+
+         <!--  <ion-row>
             <ion-col sizeLg="6" sizeMd="6" size="12">
               <div class="btn-bottom">
                 <ion-button class="btn secondary-btn close full-width">{{ 'BUTTONS.VIEW_DEVICE_CARE' | translate }}</ion-button>
               </div>
             </ion-col>
-          </ion-row>
+          </ion-row> -->
 
-          <ion-row>
+         <!--  <ion-row>
             <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0 ion-text-center">
               <div class="transparent-btn">
                 <a href="javascript:void(0)">{{ 'BUTTONS.CLOSE' | translate }}</a>
               </div>
             </ion-col>
-          </ion-row>
+          </ion-row> -->
 
         </div>
       </ion-col>
@@ -115,6 +117,17 @@
         </div>
       </ion-col>
     </ion-row>
-    <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>
+    <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>-->
+   
   </ion-grid>
 </ion-content>
+
+<ion-footer>
+  
+  <ion-row>
+    <ion-col size="12">
+      <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons>
+    </ion-col>
+  </ion-row>
+  
+</ion-footer>
