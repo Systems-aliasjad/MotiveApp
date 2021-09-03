@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { ERoutingIds } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
+import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 
 @Component({
   selector: 'app-issue-builder',
@@ -19,22 +21,33 @@ export class IssueBuilderComponent implements OnInit {
       return {
         ...obj,
         clickListener: () => {
-          this.router.navigate([obj.linkTo]);
+          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
         },
       };
     });
   }
-  constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router) {
+
+  constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router, private modalCtrl: ModalController) {
     this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
     });
+  }
+  async openPasswordResetDialog() {
+    const modal = await this.modalCtrl.create({
+      component: ResetFactoryDefaultDialog,
+    });
+    return await modal.present();
   }
 
   ngOnInit() {
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons);
+    }
+    //Router Reset Required
+    else if (this.codeType === ERoutingIds.routerResetRequired) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons);
     }
     //Issue Not Fixed
     else if (this.codeType === ERoutingIds.issueNotFixed) {

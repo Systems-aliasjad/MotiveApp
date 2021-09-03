@@ -53,6 +53,22 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_BODY'],
   };
 
+  public static routerResetRequiredButtons: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_NOW',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+      customListner: 'openPasswordResetDialog',
+    },
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'link',
+    },
+  ];
+
   public static openServiceRequestCaseButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',

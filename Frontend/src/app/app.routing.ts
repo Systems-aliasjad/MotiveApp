@@ -68,6 +68,8 @@ const routes: Routes = [
   //Account not active
   { path: 'account-not-active', component: MessageBuilderComponent, data: { id: ERoutingIds.accountNotActive } },
 
+  //Router Reset Required
+  { path: 'router-reset-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed

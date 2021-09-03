@@ -14,6 +14,7 @@ export interface ISection2Template {
 }
 
 export enum ERoutingIds {
+  routerResetRequired,
   openComplaint,
   osrp,
   appoinmentSuccessfully,

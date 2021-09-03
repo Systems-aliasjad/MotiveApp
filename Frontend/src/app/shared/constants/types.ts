@@ -19,4 +19,5 @@ export interface IButton {
   behaviour: string; // primary | secondary | link
   explanatoryNote?: string;
   linkTo?: string;
+  customListner?: string;
 }
