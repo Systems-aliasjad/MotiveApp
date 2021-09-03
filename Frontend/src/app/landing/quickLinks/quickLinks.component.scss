@@ -59,12 +59,13 @@
             color: $primary-color;
             font-size: .9rem;
             text-align: left;
-            /* @media screen and (min-width: 1024px) {} */
-            @media screen and (min-width: 281px) and (max-width: 1023px) {
+            /* @media screen and (min-width: 1024px) {}
+            @media screen and (min-width: 281px) and (max-width: 1023px) {} */
+            @media screen and (max-width: 768px) {
               white-space: nowrap;
               overflow: hidden;
               text-overflow: ellipsis;
-              width: 7rem;
+              width: 7.2rem;
             }
             @media screen and (max-width: 281px) {
               font-size: .8rem;

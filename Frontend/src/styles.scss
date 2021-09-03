@@ -300,3 +300,14 @@ html{
     }
   }
 }
+ion-footer{
+  bottom: 4.5rem;
+  background-color: #f6f8ef;
+  &::before{
+    background-image: none !important;
+  }
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+
