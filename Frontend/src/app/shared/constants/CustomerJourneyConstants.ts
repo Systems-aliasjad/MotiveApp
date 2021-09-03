@@ -28,6 +28,10 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.OPEN_SERVICE_REQUEST',
     paragraphs: ['MESSAGES.OPEN_SERVICE_REQUEST_BODY'],
   };
+  public static packageUpgradesuccessfullyCase = {
+    header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
+    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
 
   public static openServiceRequestCaseButtons: IButton[] = [
     {
@@ -88,6 +92,15 @@ export class CustomerJourneyConstants {
       clickListener: () => {},
       linkTo: '/thanks',
       behaviour: 'link',
+    },
+  ];
+
+  public static packageUpdareRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
     },
   ];
 
@@ -153,6 +166,29 @@ export class CustomerJourneyConstants {
     },
     {
       title: 'LINKS.CLOSE',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static packageUpgradeRecommendedButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.UPGRADE_PACKAGE',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/package-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
       clickListener: () => {},
       linkTo: '',
       behaviour: 'link',

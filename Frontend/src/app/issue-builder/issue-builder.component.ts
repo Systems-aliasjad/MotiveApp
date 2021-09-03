@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ERoutingIds } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
@@ -32,20 +33,24 @@ export class IssueBuilderComponent implements OnInit {
 
   ngOnInit() {
     //Router Reboot Required
-    if (this.codeType === 1) {
+    if (this.codeType === ERoutingIds.routerRebootRequired) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons);
     }
     //Issue Not Fixed
-    else if (this.codeType === 2) {
+    else if (this.codeType === ERoutingIds.issueNotFixed) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons);
     }
-    /// //Issue Not Fixed
-    else if (this.codeType === 3) {
+    /// //Internet Password Reset
+    else if (this.codeType === ERoutingIds.internetPasswordReset) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons);
     }
     //3rd party router requires configuration
-    else if (this.codeType === 4) {
+    else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty);
+    }
+    ///Package Upgrade Recommended
+    else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons);
     }
   }
 }

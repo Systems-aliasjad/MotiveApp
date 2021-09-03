@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
-
+import { ERoutingIds } from '../shared/constants/constants';
 @Component({
   selector: 'app-message-builder',
   templateUrl: './message-builder.component.html',
@@ -16,10 +16,6 @@ export class MessageBuilderComponent implements OnInit {
   codeType;
   Section1Data: any;
   Section2Data: any;
-  followUpButton: boolean = false;
-  followupComplain: boolean = false;
-  exitTroubleshootLink: boolean = false;
-  anotherComplainLink: boolean = false;
 
   imgSrc: string = this.warningImgSrc;
 
@@ -27,37 +23,6 @@ export class MessageBuilderComponent implements OnInit {
   showLoader: boolean = false;
 
   buttonsConfig: IButton[] = [];
-  // [
-  //   {
-  //     title: 'BUTTONS.FOLLOW_UP',
-  //     explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
-  //     clickListener: () => {},
-  //     behaviour: 'primary',
-  //   },
-  //   {
-  //     title: 'BUTTONS.YES',
-  //     clickListener: () => {},
-  //     behaviour: 'primary',
-  //   },
-  //   {
-  //     title: 'BUTTONS.CLOSE',
-  //     clickListener: () => {},
-  //     behaviour: 'secondary',
-  //   },
-  //   {
-  //     title: 'LINKS.EXIT_TROUBLESHOOTING',
-  //     clickListener: () => {
-  //       this.router.navigate(['thanks']);
-  //     },
-  //     behaviour: 'link',
-  //   },
-  //   {
-  //     title: 'LINKS.COMPLAINT_ANOTHER',
-  //     clickListener: () => {},
-  //     behaviour: 'link',
-  //   },
-  // ];
-
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -76,7 +41,7 @@ export class MessageBuilderComponent implements OnInit {
 
   ngOnInit(): void {
     //Open Complaint
-    if (this.codeType === 1) {
+    if (this.codeType === ERoutingIds.openComplaint) {
       this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
       this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
       this.Section2Data = {
@@ -87,7 +52,7 @@ export class MessageBuilderComponent implements OnInit {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons);
     }
     //Open service request present
-    else if (this.codeType === 2) {
+    else if (this.codeType === ERoutingIds.osrp) {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {
@@ -100,7 +65,7 @@ export class MessageBuilderComponent implements OnInit {
     } //end of OSRP //Open service request present
 
     ///For Appointment book successfully IssuesNotFixed
-    else if (this.codeType === 3) {
+    else if (this.codeType === ERoutingIds.appoinmentSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
       this.Section2Data = {
@@ -113,7 +78,7 @@ export class MessageBuilderComponent implements OnInit {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
     }
     //Open technical S/R
-    else if (this.codeType === 4) {
+    else if (this.codeType === ERoutingIds.openSr) {
       this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {
@@ -125,7 +90,20 @@ export class MessageBuilderComponent implements OnInit {
 
       this.imgSrc = this.warningImgSrc;
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
-    } else {
+    }
+    ///For package upgrade Successfully
+    else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
+      this.Section2Template = ApplicableCodes.packageUpgradeTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
+    }
+    //TODO: dummy need to remove this case at the end
+    else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {
@@ -134,9 +112,6 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-
-      this.followUpButton = true;
-      this.exitTroubleshootLink = true;
     }
   }
 }

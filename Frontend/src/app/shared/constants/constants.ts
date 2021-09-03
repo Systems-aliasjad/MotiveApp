@@ -13,6 +13,20 @@ export interface ISection2Template {
   objKeyNameAR?: string;
 }
 
+export enum ERoutingIds {
+  openComplaint,
+  osrp,
+  appoinmentSuccessfully,
+  openSr,
+  packageUpgradeRequestSuccessfully,
+  routerRebootRequired,
+  issueNotFixed,
+  internetPasswordReset,
+  RouterReset3rdParty,
+  packageUpgradeRecommended,
+  packageUpgradeRecommendedForm,
+}
+
 const P3: string = '3P';
 const P2: string = '2P';
 const P1: string = '1P';
@@ -233,6 +247,14 @@ export class ApplicableCodes {
       title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.LOCATION',
       type: 'text',
       objKeyNameEN: 'location',
+    },
+  ];
+  // needs to be removed
+  public static packageUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
     },
   ];
 }

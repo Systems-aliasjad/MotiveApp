@@ -15,6 +15,7 @@ import { InternetIssueListDialog } from './shared/dialogs/internet-issue-list-di
 import { BrowserStepperComponent } from './shared/components/browser-stepper/browser-stepper.component';
 import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
+import { ERoutingIds } from './shared/constants/constants';
 
 const routes: Routes = [
   {
@@ -58,48 +59,36 @@ const routes: Routes = [
     component: DeviceCareComponent,
   },
 
-  /////Perform Cases
-
   //Open Complaint
-  { path: 'open-complaint', component: MessageBuilderComponent, data: { id: 1 } },
+  { path: 'open-complaint', component: MessageBuilderComponent, data: { id: ERoutingIds.openComplaint } },
   //Open service request present
-  { path: 'osrp', component: MessageBuilderComponent, data: { id: 2 } },
+  { path: 'osrp', component: MessageBuilderComponent, data: { id: ERoutingIds.osrp } },
   //Appointment Successfully
-  { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: 3 } },
+  { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.appoinmentSuccessfully } },
   //Open technical S/R
-  { path: 'open-sr', component: MessageBuilderComponent, data: { id: 4 } },
+  { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
+  //package upgrade Successfully
+  { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.packageUpgradeRequestSuccessfully } },
 
   //Router Reboot Required
-  { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: 1 } },
+  { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
-  { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: 2 } },
+  { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixed } },
   //Internet Reset Password
-  { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: 3 } },
+  { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.internetPasswordReset } },
   //3rd party router requires configuration
-  { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: 4 } },
+  { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },
+  //Package Upgrade Recommended
+  { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.packageUpgradeRecommended } },
 
-  /////End of Perform Cases
+  //package-upgrade-recommended-form
+  { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
 
-  {
-    path: 'browser-stapper',
-    component: BrowserStepperComponent,
-  },
-  {
-    path: 'unable-video-call',
-    component: UnableVideoCallsComponent,
-  },
-  {
-    path: 'unable-connect-newDevice',
-    component: UnableConnectNewDeviceWifiComponent,
-  },
-  {
-    path: 'dialog-demo',
-    component: InternetIssueListDialog,
-  },
-  {
-    path: '**',
-    redirectTo: '',
-  },
+  { path: 'browser-stapper', component: BrowserStepperComponent },
+  { path: 'unable-video-call', component: UnableVideoCallsComponent },
+  { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
+  { path: 'dialog-demo', component: InternetIssueListDialog },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
