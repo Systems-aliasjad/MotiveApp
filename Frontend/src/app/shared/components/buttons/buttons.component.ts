@@ -12,9 +12,9 @@ export class ButtonsComponent implements OnInit {
   @Input()
   SM: string = '12'; //size
   @Input()
-  MD: string = '6'; //sizeMd
+  MD: string = ''; //sizeMd
   @Input()
-  LG: string = '6'; //sizeLg
+  LG: string = ''; //sizeLg
   constructor() {}
 
   ngOnInit() {}

@@ -37,6 +37,12 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY',
     paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCFULLY_Body'],
   };
+
+  public static routerPackageUpgradesuccessfullyCase = {
+    header: 'MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY',
+    paragraphs: ['MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body'],
+  };
+
   public static accountNotActive = {
     header: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY',
     span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
@@ -115,7 +121,16 @@ export class CustomerJourneyConstants {
     },
   ];
 
-  public static routerUpdareRequestsuccessfullyButtons: IButton[] = [
+  public static routerUpdateRequestsuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
+  public static routerPackageUpdateRequestsuccessfullyButtons: IButton[] = [
     {
       title: 'BUTTONS.DONE',
       clickListener: () => {},
@@ -224,10 +239,33 @@ export class CustomerJourneyConstants {
     },
 
     {
-      title: 'BUTTONS.UPGRADE_PACKAGE',
+      title: 'BUTTONS.UPGRADE_ROUTER',
       explanatoryNote: '',
       clickListener: () => {},
       linkTo: '/router-upgrade-recommended-form',
+      behaviour: 'primary',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
+  public static routerPackageUpgradeRecommendedButtons: IButton[] = [
+    {
+      title: 'LINKS.ISSUES_FIXED',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+
+    {
+      title: 'BUTTONS.UPGRADE_ROUTER_PACKAGE',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/router-package-upgrade-recommended-form',
       behaviour: 'primary',
     },
     {

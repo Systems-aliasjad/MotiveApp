@@ -90,15 +90,21 @@ const routes: Routes = [
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
 
   //#region  router Upgrade Recommended
-
   //Router Upgrade Recommended
   { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
-
   //Router Upgrade Recommended form
   { path: 'router-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerUpgradeRecommendedForm } },
-
   //Router upgrade Successfully
   { path: 'router-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerUpgradeRequestSuccessfully } },
+  // #endregion router Upgrade Recommended
+
+  //#region  router and package Upgrade Recommended
+  //router and package Upgrade Recommended
+  { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
+  //router and package Upgrade Recommended form
+  { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
+  //router and package upgrade Successfully
+  { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
   // #endregion router Upgrade Recommended
 
   { path: 'browser-stapper', component: BrowserStepperComponent },

@@ -60,5 +60,10 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.WiFiAlarm) {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons);
     }
+
+    ///router Upgrade Recommended
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons);
+    }
   }
 }

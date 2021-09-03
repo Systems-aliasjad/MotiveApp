@@ -31,6 +31,9 @@ export enum ERoutingIds {
   routerUpgradeRecommendedForm,
   routerUpgradeRequestSuccessfully,
   accountNotActive,
+  routerPackageUpgradeRecommended,
+  routerPackageUpgradeRecommendedForm,
+  routerPackageUpgradeRequestSuccessfully,
 }
 
 const P3: string = '3P';
@@ -267,6 +270,14 @@ export class ApplicableCodes {
   public static routerUpgradeTemplate: ISection2Template[] = [
     {
       title: 'ROUTER_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+  ];
+
+  public static routerPackageUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },

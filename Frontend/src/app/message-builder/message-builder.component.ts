@@ -112,7 +112,18 @@ export class MessageBuilderComponent implements OnInit {
         referenceNo: '436529873',
       };
       this.imgSrc = this.successImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpdareRequestsuccessfullyButtons);
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons);
+    }
+
+    ///For router Package upgrade Successfully
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
+      this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
+      this.subHeaderSectionData = {
+        referenceNo: '436529873',
+      };
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons);
     }
 
     //Account not active
