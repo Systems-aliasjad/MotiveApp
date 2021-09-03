@@ -9,8 +9,9 @@
   ion-item {
     --min-height: 30px;
   }
-}
-ion-item::part(native) {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+} 
+ion-item::part(native){
   padding-inline-end: 0 !important;
   --inner-padding-end: 0 !important;
 }

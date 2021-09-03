@@ -7,7 +7,7 @@
 
 .quick-links-container {
   margin-top: .8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   @media screen and (max-width: 992px) {
     margin-top: 0;
   }
@@ -55,11 +55,20 @@
           -ms-flex-align: center;
           align-items: center;
           p {
-            /* line-height: 1.2; */
             margin-bottom: 0;
             color: $primary-color;
-            font-size: 0.9rem;
+            font-size: .9rem;
             text-align: left;
+            /* @media screen and (min-width: 1024px) {} */
+            @media screen and (min-width: 281px) and (max-width: 1023px) {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              width: 7rem;
+            }
+            @media screen and (max-width: 281px) {
+              font-size: .8rem;
+            }
           }
           &:hover {
             background-color: $alabaster;
@@ -70,5 +79,10 @@
         }
       }
     }
+  }
+}
+.sub-title {
+  @media screen and (max-width: 281px) {
+    font-size: 1rem;
   }
 }
