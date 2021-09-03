@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ISection2Template } from '../../constants/constants';
+import { IButton } from '../../constants/types';
 
 export interface IMessageSection1 {
   header: string;
@@ -24,16 +25,7 @@ export class MessageScreenComponent implements OnInit {
   @Input()
   Section2Template: ISection2Template[];
   @Input()
-  followUpButton: Boolean = false;
-  @Input()
-  exitTroubleshootLink: Boolean = false;
-  @Input()
-  closeButton: Boolean = false;
-  @Input()
-  followupComplain: Boolean = false;
-  @Input()
-  anotherComplainLink: Boolean = false;
-
+  buttonsConfig: IButton[] = [];
   constructor() {}
   ngOnInit(): void {}
 }
