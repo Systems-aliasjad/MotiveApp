@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
-
+import { ERoutingIds } from '../shared/constants/constants';
 @Component({
   selector: 'app-message-builder',
   templateUrl: './message-builder.component.html',
@@ -41,7 +41,7 @@ export class MessageBuilderComponent implements OnInit {
 
   ngOnInit(): void {
     //Open Complaint
-    if (this.codeType === 1) {
+    if (this.codeType === ERoutingIds.openComplaint) {
       this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
       this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
       this.Section2Data = {
@@ -52,7 +52,7 @@ export class MessageBuilderComponent implements OnInit {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons);
     }
     //Open service request present
-    else if (this.codeType === 2) {
+    else if (this.codeType === ERoutingIds.osrp) {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {
@@ -65,7 +65,7 @@ export class MessageBuilderComponent implements OnInit {
     } //end of OSRP //Open service request present
 
     ///For Appointment book successfully IssuesNotFixed
-    else if (this.codeType === 3) {
+    else if (this.codeType === ERoutingIds.appoinmentSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
       this.Section2Data = {
@@ -78,7 +78,7 @@ export class MessageBuilderComponent implements OnInit {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
     }
     //Open technical S/R
-    else if (this.codeType === 4) {
+    else if (this.codeType === ERoutingIds.openSr) {
       this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {
@@ -92,7 +92,7 @@ export class MessageBuilderComponent implements OnInit {
       this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
     }
     ///For package upgrade Successfully
-    else if (this.codeType === 5) {
+    else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
       this.Section2Template = ApplicableCodes.packageUpgradeTemplate;
       this.Section2Data = {

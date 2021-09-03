@@ -13,6 +13,20 @@ export interface ISection2Template {
   objKeyNameAR?: string;
 }
 
+export enum ERoutingIds {
+  openComplaint,
+  osrp,
+  appoinmentSuccessfully,
+  openSr,
+  packageUpgradeRequestSuccessfully,
+  routerRebootRequired,
+  issueNotFixed,
+  internetPasswordReset,
+  RouterReset3rdParty,
+  packageUpgradeRecommended,
+  packageUpgradeRecommendedForm,
+}
+
 const P3: string = '3P';
 const P2: string = '2P';
 const P1: string = '1P';
