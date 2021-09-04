@@ -62,6 +62,10 @@ ion-toolbar{
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  min-height: 60px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   .back-to-page {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
@@ -73,7 +77,7 @@ ion-toolbar{
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     text-decoration: none;
     margin-left: .5rem;
     @include transition(all 0.3s ease-in-out); 
@@ -109,6 +113,6 @@ ion-toolbar{
     }
   }
 }
-.empty-header {
+/* .empty-header {
   min-height: 80px;
-}
+} */
