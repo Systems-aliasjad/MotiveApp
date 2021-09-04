@@ -1,12 +1,15 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 
+// --------------------------------------------------------------
 :host {
   ion-content{
    --background-color: transparent !important;
   }
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
+// --------------------------------------------------------------
+
 .technical-support-title{
   @media screen and (max-width: 992px){
     display:none;

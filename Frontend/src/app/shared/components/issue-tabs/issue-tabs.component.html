@@ -1,29 +1,37 @@
 <!-- <app-tab-tile imageSrc="" case="" title=""></app-tab-tile>
 <p>VIEW DETAILS ></p> -->
-<ion-row>
-  <app-page-top></app-page-top>
-</ion-row>
-<ion-row>
-  <ion-col size="12"> </ion-col>
-</ion-row>
+<div class="issue-tabs-contanier">
 
-<ion-row>
-  <ion-col size="12" class="">
-    <a href="javascript:void(0)" class="arrow-link ion-justify-content-center">
-      <span>View Details</span>
-      <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
-    </a>
-  </ion-col>
-</ion-row>
+  <ion-row class="issue-tabs_title">
+    <app-page-top></app-page-top>
+  </ion-row>
 
-<div class="content-contianer">
-  <ion-row>
-    <ion-col size="12">
-      <h4 class="sub-title">{{ 'HEADER.NO_INTERNET_ISSUE' | translate }}</h4>
-      <p>
-        On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
-        L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.
-      </p>
+  <ion-row class="issue-tabs-inner_contanier">
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tabs_wizard ion-text-center">
+      <div class="tabs-wizard">
+
+
+      </div>
+      <a href="javascript:void(0)" class="arrow-link ion-justify-content-center">
+        <span>View Details</span>
+        <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+      </a>  
+    </ion-col>
+
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tabs_content">
+      <div class="content">
+        <!-- <h4 class="sub-title">{{ 'HEADER.NO_INTERNET_ISSUE' | translate }}</h4>  -->
+        <app-page-top></app-page-top>
+        <p>
+          On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
+          L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.
+        </p>
+      </div>
+      <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
+      
     </ion-col>
   </ion-row>
+
 </div>
+
+

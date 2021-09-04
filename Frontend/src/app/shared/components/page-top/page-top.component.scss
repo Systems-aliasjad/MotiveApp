@@ -1,6 +1,12 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 
+// --------------------------------------------------------------
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+// --------------------------------------------------------------
+
 .page-top-container {
   /* min-height: 138px; */
   display: -webkit-box;

@@ -1,0 +1,15 @@
+@import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+
+// --------------------------------------------------------------
+:host {
+   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+// --------------------------------------------------------------
+
+.tabs-contanier{
+  height:100%;
+  @media screen and (max-width: 992px) {
+    height:auto;
+  }
+}
