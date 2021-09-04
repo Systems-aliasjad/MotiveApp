@@ -15,7 +15,7 @@
         <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
           <ion-grid class="pr-0 pl-0">
             <ion-row>
-              <ion-col sizeLg="4" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER1' | translate }}</ion-label>
 
@@ -32,7 +32,7 @@
                   </div>
                 </ion-item>
               </ion-col>
-              <ion-col sizeLg="4" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate }}</ion-label>
                   <ion-input
@@ -47,7 +47,7 @@
                   </div>
                 </ion-item>
               </ion-col>
-              <ion-col sizeLg="4" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.REMARKS' | translate }}</ion-label>
                   <ion-input type="text" formControlName="Remarks"></ion-input>
@@ -55,7 +55,7 @@
               </ion-col>
             </ion-row>
             <ion-row>
-              <ion-col sizeLg="2" sizeMd="2" sizeSm="12" size="12">
+              <ion-col sizeLg="2" sizeMd="4" sizeSm="12" size="12">
                 <ion-button class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{ buttonText | translate }}</ion-button>
               </ion-col>
             </ion-row>

@@ -12,11 +12,14 @@ ion-item::part(native){
 .form-main-container{
   font-family:Lato,Roboto,Arial,sans-serif;
   .form-inner_container{
-    @media screen and (max-width: 992px)  {
+    ion-item{
+      margin-bottom: 1rem;
+    }
+   /*  @media screen and (max-width: 992px)  {
       ion-item{
         margin-bottom: 1rem;
       }
-    }
+    } */
   }
   form{
     ion-item{
