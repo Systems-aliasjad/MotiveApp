@@ -3,7 +3,10 @@
 <div class="issue-tabs-contanier">
 
   <ion-row class="issue-tabs_title">
-    <app-page-top></app-page-top>
+    <ion-col size="12">
+      <app-page-top></app-page-top>
+    </ion-col>
+    
   </ion-row>
 
   <ion-row class="issue-tabs-inner_contanier">
@@ -30,6 +33,21 @@
       </div>
       <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
       
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row class="issue-tabs-footer">
+
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="">
+      <div class="transparent-btn">
+        <a> Continue to Troubleshooting</a>
+      </div>
+    </ion-col>
+
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="">
+      <ion-button class="btn secondary-btn close">Reboot my  devices</ion-button>
+      <ion-button class="btn primary-btn follow-up">Issue fixed</ion-button>
     </ion-col>
     
   </ion-row>

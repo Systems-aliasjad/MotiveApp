@@ -244,12 +244,12 @@ h6{
 html{
   --background: var(--ion-background-color, #f4f7eb);
   background-color: #f4f7eb ; /* Old browsers */
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: -webkit-linear-gradient(top, #ffffff 0%, #f4f7eb 100%)  ; /* Chrome10-25,Safari5.1-6 */
-  background-image: -moz-linear-gradient(top, #ffffff 0%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: linear-gradient(to bottom, #ffffff 0%, #f4f7eb 100%) ; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background-image: -moz-linear-gradient(top, #ffffff 18%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: -moz-linear-gradient(top, #ffffff 18%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: -moz-linear-gradient(top, #ffffff 18%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, #ffffff 18%, #f4f7eb 100%)  ; /* Chrome10-25,Safari5.1-6 */
+  background-image: -moz-linear-gradient(top, #ffffff 18%, #f4f7eb 100%) ; /* FF3.6-15 */
+  background-image: linear-gradient(to bottom, #ffffff 18%, #f4f7eb 100%) ; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ) ; /* IE6-9 */
   -webkit-background-size: cover ;
   -moz-background-size: cover ;
@@ -284,7 +284,7 @@ html{
 }
 .transparent-btn{
   a{
-    display: block;
+    display: inline-block;
     text-decoration: none;
     color:$etisalat-color;
     text-transform: $text-uppercase;

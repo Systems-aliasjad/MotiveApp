@@ -10,9 +10,9 @@
 
 .issue-tabs-contanier,
 .issue-tabs-inner_contanier{
-  height:100%;
+  height: calc(100% - 60px);
   @media screen and (max-width: 992px) {
-    height:auto;
+    height:100%;
   }
 }
 .issue-tabs_title{
@@ -56,4 +56,24 @@
     }
   }
 }
-
+.issue-tabs-footer{
+  background-color: $white;
+  -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
+  box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
+  position: $relative;
+  @media screen and (max-width: 992px) {
+    background-color: transparent;
+    box-shadow: none;
+  }
+  a{
+    margin-left: .5rem;
+  }
+  .btn{
+    margin-right: 1rem;
+    min-width: 250px;
+    &:last-child{
+      margin-right: 0;
+    }
+  }
+  
+}
