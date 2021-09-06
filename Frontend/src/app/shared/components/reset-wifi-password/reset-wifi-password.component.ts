@@ -10,6 +10,7 @@ import { ConfirmedValidator } from '../../constants/constants';
   styleUrls: ['./reset-wifi-password.component.scss'],
 })
 export class ResetWifiPasswordComponent implements OnInit {
+  public segment: string = 'SSID 2.5 GHZ';
   public formGroup: FormGroup;
   error = errorMessages;
   @ViewChild('staticTabs', { static: false }) staticTabs: ResetWifiPasswordComponent;
@@ -52,7 +53,7 @@ export class ResetWifiPasswordComponent implements OnInit {
   }
 
   SubmitForm() {
-    console.log(this.formGroup.valid);
+    //console.log(this.formGroup.valid);
     this.router.navigate(['reset-wifi-password-form_successfully']);
   }
 
@@ -61,7 +62,10 @@ export class ResetWifiPasswordComponent implements OnInit {
   }
 
   PanelButton(tabId: number) {
-    console.log(tabId);
     this.tabCheck = tabId;
+  }
+
+  segmentChanged(ev: any) {
+    this.segment = ev.detail.value;
   }
 }
