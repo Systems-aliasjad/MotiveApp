@@ -12,12 +12,15 @@
     "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi",
     "ROUTER_UPGRADE": "Router Upgrade",
     "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade",
-    "THIRD_PARTY_ROUTER": "BUY NEW ROUTER"
+    "THIRD_PARTY_ROUTER": "BUY NEW ROUTER",
+    "RESET_WIFI_PASSWORD": "Reset wifi password"
   },
 
   "SUBHEADER": {
     "RESET_INTERNET_PASSWORD": "",
-    "BOOK_COMPLAINT": "Please fill your complete details"
+    "BOOK_COMPLAINT": "Please fill your complete details",
+    "RESET_WIFI_PASSWORD_TAB1": "SSID 2.5 Ghz",
+    "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -166,6 +169,13 @@
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
   "RESET_INTERNET_PASSWORD": {
+    "MOBILE_NUMBER": "Mobile Number*",
+    "NEW_PASSWORD": "New Password*",
+    "CONFIRM_PASSWORD": "Confirm Password*"
+  },
+
+  "RESET_WIFI_PASSWORD": {
+    "WIFI_NAME": "Wi-fi name",
     "MOBILE_NUMBER": "Mobile Number*",
     "NEW_PASSWORD": "New Password*",
     "CONFIRM_PASSWORD": "Confirm Password*"
