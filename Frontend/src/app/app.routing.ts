@@ -17,6 +17,7 @@ import { UnableVideoCallsComponent } from './shared/components/unable-video-call
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
 import { ServiceDetailComponent } from './shared/components/service-detail/service-detail.component';
+import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
 
 const routes: Routes = [
   {
@@ -117,6 +118,7 @@ const routes: Routes = [
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
   { path: 'dialog-demo', component: InternetIssueListDialog },
   { path: 'service-detail', component: ServiceDetailComponent },
+  { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
   { path: '**', redirectTo: '' },
 ];
 
