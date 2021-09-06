@@ -7,8 +7,6 @@ import { IButton } from '../../constants/types';
   styleUrls: ['./service-issue.component.scss'],
 })
 export class ServiceIssueComponent implements OnInit {
-  @Input()
-  buttonsConfig: IButton[] = [];
   constructor() {}
 
   ngOnInit() {}

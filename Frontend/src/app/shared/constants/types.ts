@@ -21,3 +21,9 @@ export interface IButton {
   linkTo?: string;
   customListner?: string;
 }
+
+export interface IButtonSize {
+  SM: string;
+  MD: string;
+  LG: string;
+}

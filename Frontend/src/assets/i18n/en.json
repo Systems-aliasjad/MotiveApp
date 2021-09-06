@@ -12,12 +12,15 @@
     "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi",
     "ROUTER_UPGRADE": "Router Upgrade",
     "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade",
-    "THIRD_PARTY_ROUTER": "BUY NEW ROUTER"
+    "THIRD_PARTY_ROUTER": "BUY NEW ROUTER",
+    "RESET_WIFI_PASSWORD": "Reset wifi password"
   },
 
   "SUBHEADER": {
     "RESET_INTERNET_PASSWORD": "",
-    "BOOK_COMPLAINT": "Please fill your complete details"
+    "BOOK_COMPLAINT": "Please fill your complete details",
+    "RESET_WIFI_PASSWORD_TAB1": "SSID 2.5 Ghz",
+    "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -104,7 +107,8 @@
     "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
     "UPGRADE_ROUTER": "UPGRADE ROUTER",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
-    "BUY_NEW_ROUTER": "BUY NEW ROUTER"
+    "BUY_NEW_ROUTER": "BUY NEW ROUTER",
+    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -116,7 +120,8 @@
     "DEVICE_CARE": "Device Care",
     "CLOSE": "CLOSE",
     "ISSUES_FIXED": "Issue Fixed",
-    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING"
+    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
+    "VIEW_DETAILS": "VIEW DETAILS"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -170,6 +175,13 @@
     "NEW_PASSWORD": "New Password*",
     "CONFIRM_PASSWORD": "Confirm Password*"
   },
+
+  "RESET_WIFI_PASSWORD": {
+    "WIFI_NAME": "Wi-fi name",
+    "MOBILE_NUMBER": "Mobile Number*",
+    "NEW_PASSWORD": "New Password*",
+    "CONFIRM_PASSWORD": "Confirm Password*"
+  },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router"
   },
@@ -217,5 +229,18 @@
     "DESCRIPTION1_STEP3": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
     "DESCRIPTION2_STEP3": "",
     "IMG_TEXT_STEP3": "Video"
+  },
+  "SERVICE_DEATAIL": {
+    "HEADING": "Service details",
+    "DATA_TRAFFIC": "Data traffic (last 1 hour)",
+    "PARENTAL_CONTROL": "Parental control",
+    "PARENTAL_CONTROL_WEB_THREAT_PROTECTION": "Web threat protection",
+    "PARENTAL_CONTROL_CHILD_LOCK": "Child lock"
+  },
+  "DEVICE_CONNECTED_HOMEZONE": {
+    "HEADING": "Device connected to Home Zone",
+    "SUB_HEADING": "Unable to connect to Home Zone",
+    "PARAGRAPH1": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
+    "PARAGRAPH2": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password"
   }
 }

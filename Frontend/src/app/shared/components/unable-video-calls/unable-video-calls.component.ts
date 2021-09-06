@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -29,11 +28,10 @@ export class UnableVideoCallsComponent implements OnInit {
       child: [],
     },
   ];
-  buttonConfig: IButton[] = [];
 
   constructor(private sharedService: SharedService, private router: Router) {
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    this.buttonConfig = this.routeLinkHelper(CustomerJourneyConstants.issueFixed_BookAComplaint);
+    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issueFixed_BookAComplaint));
   }
   ngOnInit(): void {
     this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_VIDEO_CALLS', true);

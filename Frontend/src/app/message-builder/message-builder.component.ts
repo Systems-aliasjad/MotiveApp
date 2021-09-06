@@ -4,6 +4,8 @@ import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
 import { ERoutingIds } from '../shared/constants/constants';
+import { SharedService } from '../shared/shared.service';
+
 @Component({
   selector: 'app-message-builder',
   templateUrl: './message-builder.component.html',
@@ -24,7 +26,6 @@ export class MessageBuilderComponent implements OnInit {
 
   showLoader: boolean = false;
 
-  buttonsConfig: IButton[] = [];
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -35,7 +36,7 @@ export class MessageBuilderComponent implements OnInit {
       };
     });
   }
-  constructor(private activatedRoute: ActivatedRoute, public router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, public router: Router, private sharedService: SharedService) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
     });
@@ -52,7 +53,7 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons));
     }
     //Open service request present
     else if (this.codeType === ERoutingIds.osrp) {
@@ -64,7 +65,7 @@ export class MessageBuilderComponent implements OnInit {
         dateVisit: 'Jul 10 2019, 10:30 AM',
         status: 'Xxxxx xxxxx xxxx',
       };
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons));
     } //end of OSRP //Open service request present
 
     ///For Appointment book successfully IssuesNotFixed
@@ -78,7 +79,7 @@ export class MessageBuilderComponent implements OnInit {
       };
 
       this.imgSrc = this.successImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
     }
     //Open technical S/R
     else if (this.codeType === ERoutingIds.openSr) {
@@ -92,7 +93,7 @@ export class MessageBuilderComponent implements OnInit {
       };
 
       this.imgSrc = this.warningImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons));
     }
     //package upgrade Successfully
     else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
@@ -102,7 +103,7 @@ export class MessageBuilderComponent implements OnInit {
         referenceNo: '436529873',
       };
       this.imgSrc = this.successImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
     }
 
     ///For router upgrade Successfully
@@ -113,7 +114,7 @@ export class MessageBuilderComponent implements OnInit {
         referenceNo: '436529873',
       };
       this.imgSrc = this.successImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons));
     }
 
     ///For router Package upgrade Successfully
@@ -124,7 +125,7 @@ export class MessageBuilderComponent implements OnInit {
         referenceNo: '436529873',
       };
       this.imgSrc = this.successImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons));
     }
 
     //Account not active
@@ -134,7 +135,7 @@ export class MessageBuilderComponent implements OnInit {
         console.log('Span Click Listener');
       };
       this.imgSrc = this.warningImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.accountNotActiveButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.accountNotActiveButtons));
     }
 
     ///For third party router Successfully
@@ -145,7 +146,7 @@ export class MessageBuilderComponent implements OnInit {
         referenceNo: '436529873',
       };
       this.imgSrc = this.successImgSrc;
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.thirdPartyRoutersuccessfullyButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyRoutersuccessfullyButtons));
     }
 
     //TODO: dummy need to remove this case at the end

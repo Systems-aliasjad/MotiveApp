@@ -459,4 +459,40 @@ export class CustomerJourneyConstants {
       customListner: 'openDeviceListDialog',
     },
   ];
+
+  public static serviceDetailsButtonConfig: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+      customListner: '',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'link',
+      customListner: '',
+    },
+  ];
+
+  public static deviceConnectedHomezoneButtonConfig: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_WIFI_PASSWORD',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'primary',
+      customListner: '',
+    },
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'link',
+      customListner: '',
+    },
+  ];
 }

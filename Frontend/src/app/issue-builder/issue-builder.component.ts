@@ -15,7 +15,6 @@ import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-defau
 })
 export class IssueBuilderComponent implements OnInit {
   codeType;
-  buttonsConfig: IButton[] = [];
   modal: any;
 
   routeLinkHelper(arr) {
@@ -52,51 +51,51 @@ export class IssueBuilderComponent implements OnInit {
   ngOnInit() {
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons));
     }
     //Router Reset Required
     else if (this.codeType === ERoutingIds.routerResetRequired) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons));
     }
     //Issue Not Fixed
     else if (this.codeType === ERoutingIds.issueNotFixed) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
     }
     //Internet Password Reset
     else if (this.codeType === ERoutingIds.internetPasswordReset) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons));
     }
     //3rd party router requires configuration
     else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty));
     }
     //Package Upgrade Recommended
     else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons));
     }
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons));
     }
     //Wi-Fi Alarm
     else if (this.codeType === ERoutingIds.WiFiAlarm) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons));
     }
     //Outage
     else if (this.codeType === ERoutingIds.outage) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.outageButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
     }
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
     }
     // Router no-issue
     else if (this.codeType === ERoutingIds.noIssue) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.noIssue);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssue));
     }
     ///third party router
     else if (this.codeType === ERoutingIds.thirdPartyRouter) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }
   }
 }

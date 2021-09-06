@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { IButton } from '../../constants/types';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-reset-factory-default-dialog',
@@ -10,10 +11,9 @@ import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstan
   styleUrls: ['./reset-factory-default-dialog.component.css'],
 })
 export class ResetFactoryDefaultDialog implements OnInit {
-  buttonsConfig: IButton[] = [];
   terms: boolean = true;
-  constructor(private modalCtrl: ModalController, private router: Router) {
-    this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.resetFactoryDefault);
+  constructor(private modalCtrl: ModalController, private router: Router, private sharedService: SharedService) {
+    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resetFactoryDefault));
   }
 
   ngOnInit() {}

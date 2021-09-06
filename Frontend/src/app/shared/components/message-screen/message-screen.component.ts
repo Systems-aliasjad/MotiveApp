@@ -29,8 +29,6 @@ export class MessageScreenComponent implements OnInit {
   @Input()
   Section2Template: ISection2Template[];
   @Input()
-  buttonsConfig: IButton[] = [];
-  @Input()
   subHeaderSectionData: any;
   @Input()
   subHeaderSectionTemplate: ISection2Template[];
