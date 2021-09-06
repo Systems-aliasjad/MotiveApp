@@ -2,7 +2,7 @@ import { IButton } from './types';
 
 export class CustomerJourneyConstants {
   public static openServiceRequestCase1 = {
-    header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
+    header: 'MESSAGES.MOCustomerJourneyConstantsVING_ELIFE_CONNECTION',
     paragraphs: ['MESSAGES.MOVING_ELIFE_CONNECTION_BODY_1', 'MESSAGES.MOVING_ELIFE_CONNECTION_BODY_2'],
   };
 
@@ -53,21 +53,6 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_BODY'],
   };
 
-  public static routerResetRequiredButtons: IButton[] = [
-    {
-      title: 'BUTTONS.RESET_NOW',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-      customListner: 'openPasswordResetDialog',
-    },
-    {
-      title: 'BUTTONS.CLOSE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'link',
-    },
-  ];
   public static thirdPartyRoutersuccessfullyCase = {
     header: 'MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY',
     paragraphs: ['MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY'],
@@ -83,455 +68,314 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY'],
   };
 
-  public static openServiceRequestCaseButtons: IButton[] = [
-    {
-      title: 'BUTTONS.FOLLOW_UP',
-      explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.EXIT_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'link',
-    },
-  ];
+  public static resetNowButton1: IButton = {
+    title: 'BUTTONS.RESET_NOW',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'openPasswordResetDialog',
+  };
 
-  public static outageButtons: IButton[] = [
-    {
-      title: 'BUTTONS.OK',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.BOOK_A_COMPLAINT',
-      clickListener: () => {},
-      linkTo: '/bookComplaint',
-      behaviour: 'link',
-    },
-  ];
+  public static resetNowButton2: IButton = {
+    title: 'BUTTONS.RESET_NOW',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/reset-internet-password',
+    behaviour: 'primary',
+  };
 
-  public static openComplaintButtons: IButton[] = [
-    {
-      title: 'BUTTONS.YES',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.COMPLAINT_ANOTHER',
-      clickListener: () => {},
-      behaviour: 'link',
-      linkTo: '/bookComplaint',
-    },
-  ];
+  public static closeButton: IButton = {
+    title: 'BUTTONS.CLOSE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'link',
+  };
 
-  public static routerRebootRequiredButtons: IButton[] = [
-    {
-      title: 'BUTTONS.RESTART_NOW',
-      clickListener: () => {},
-      linkTo: '/router-restart',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.CLOSE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'link',
-    },
-  ];
+  public static closeButtonSecondary: IButton = {
+    title: 'BUTTONS.CLOSE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'secondary',
+  };
 
-  public static appointmentbookssuccessfullyButtons: IButton[] = [
-    {
-      title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.DONE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'link',
-    },
-  ];
+  public static followUpButton: IButton = {
+    title: 'BUTTONS.FOLLOW_UP',
+    explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+  };
 
-  public static packageUpdareRequestsuccessfullyButtons: IButton[] = [
-    {
-      title: 'BUTTONS.DONE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-  ];
+  public static exitTroubleShootingButton: IButton = {
+    title: 'LINKS.EXIT_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'link',
+  };
 
-  public static routerUpdateRequestsuccessfullyButtons: IButton[] = [
-    {
-      title: 'BUTTONS.DONE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-  ];
+  public static okButton: IButton = {
+    title: 'BUTTONS.OK',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+  };
+  public static bookAComplaintButton: IButton = {
+    title: 'BUTTONS.BOOK_A_COMPLAINT',
+    clickListener: () => {},
+    linkTo: '/bookComplaint',
+    behaviour: 'link',
+  };
 
-  public static routerPackageUpdateRequestsuccessfullyButtons: IButton[] = [
-    {
-      title: 'BUTTONS.DONE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-  ];
+  public static bookCompalintButton: IButton = {
+    title: 'HEADER.BOOK_COMPLAINT',
+    clickListener: () => {},
+    linkTo: '/bookComplaint',
+    behaviour: 'secondary',
+  };
 
-  public static thirdPartyRoutersuccessfullyButtons: IButton[] = [
-    {
-      title: 'BUTTONS.DONE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-  ];
+  public static bookAnotherComplaintButton: IButton = {
+    title: 'LINKS.COMPLAINT_ANOTHER',
+    clickListener: () => {},
+    behaviour: 'link',
+    linkTo: '/bookComplaint',
+  };
 
-  public static resestWifiPasswordSuccessFirstCaseButtons: IButton[] = [
-    {
-      title: 'BUTTONS.CONTINUE_TO_WIFI_SETTINGS',
-      clickListener: () => {},
-      linkTo: '/reset-wifi-password-form',
-      behaviour: 'primary',
-    },
-  ];
+  public static yesButton: IButton = {
+    title: 'BUTTONS.YES',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+  };
 
-  public static resestWifiPasswordSuccessSecondCasesuccessfullyButtons: IButton[] = [
-    {
-      title: 'BUTTONS.DONE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-  ];
+  public static restartNowButton: IButton = {
+    title: 'BUTTONS.RESTART_NOW',
+    clickListener: () => {},
+    linkTo: '/router-restart',
+    behaviour: 'primary',
+  };
 
-  public static issuesNotFixedButtons: IButton[] = [
-    {
-      title: 'BUTTONS.TRY_AGAIN_LATER',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.BOOK_A_COMPLAINT',
-      clickListener: () => {},
-      linkTo: '/bookComplaint',
-      behaviour: 'link',
-    },
-  ];
+  public static trackComplaintStatusButton: IButton = {
+    title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+  };
+
+  public static doneButtonSecondary: IButton = {
+    title: 'BUTTONS.DONE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'secondary',
+  };
+
+  public static doneButtonPrimary: IButton = {
+    title: 'BUTTONS.DONE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
+  public static continueToWIfiSettingButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_WIFI_SETTINGS',
+    clickListener: () => {},
+    linkTo: '/reset-wifi-password-form',
+    behaviour: 'primary',
+  };
+
+  public static tryAgainLaterButton: IButton = {
+    title: 'BUTTONS.TRY_AGAIN_LATER',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+  };
+
+  public static deviceCareButton: IButton = {
+    title: 'LINKS.DEVICE_CARE',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/device-care',
+    behaviour: 'link',
+  };
+
+  public static issueFixedButton: IButton = {
+    title: 'BUTTONS.ISSUE_FIXED',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
+  public static issueFixedButtonLink: IButton = {
+    title: 'BUTTONS.ISSUE_FIXED',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'link',
+  };
+
+  public static continueToTroubleshootButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
+  public static continueToBrowserStepperButton: IButton = {
+    title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '/browser-stapper',
+    behaviour: 'link',
+  };
+
+  public static upgradePackageButton: IButton = {
+    title: 'BUTTONS.UPGRADE_PACKAGE',
+    clickListener: () => {},
+    linkTo: '/package-upgrade-recommended-form',
+    behaviour: 'primary',
+  };
+
+  public static upgradeRouterButton: IButton = {
+    title: 'BUTTONS.UPGRADE_ROUTER',
+    clickListener: () => {},
+    linkTo: '/router-upgrade-recommended-form',
+    behaviour: 'primary',
+  };
+
+  public static upgradeRouterPackageButton: IButton = {
+    title: 'BUTTONS.UPGRADE_ROUTER_PACKAGE',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/router-package-upgrade-recommended-form',
+    behaviour: 'primary',
+  };
+
+  public static buyNewRouterButton: IButton = {
+    title: 'BUTTONS.BUY_NEW_ROUTER',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/third-party-router-form',
+    behaviour: 'primary',
+  };
+
+  public static resetWifiPasswordSuccessButton: IButton = {
+    title: 'BUTTONS.RESET_WIFI_PASSWORD_SUCCESS',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/reset-wifi-password-form',
+    behaviour: 'primary',
+  };
+
+  public static cancelButton: IButton = {
+    title: 'BUTTONS.CANCEL',
+    clickListener: () => {},
+    linkTo: '/',
+    behaviour: 'link',
+  };
+
+  public static resetRouterButton: IButton = {
+    title: 'BUTTONS.RESET_ROUTER',
+    clickListener: () => {},
+    linkTo: '',
+    customListner: 'CloseMOdal',
+    behaviour: 'secondary',
+  };
+
+  public static rebootMyDeviceButton: IButton = {
+    title: 'BUTTONS.REBOOT_MY_DEVICES',
+    clickListener: () => {},
+    linkTo: '/',
+    behaviour: 'secondary',
+    customListner: 'openDeviceListDialog',
+  };
+
+  public static resetWifiButton = {
+    title: 'BUTTONS.RESET_WIFI_PASSWORD',
+    clickListener: () => {},
+    linkTo: '/',
+    behaviour: 'primary',
+  };
+
+  public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
+
+  public static openServiceRequestCaseButtons: IButton[] = [CustomerJourneyConstants.followUpButton, CustomerJourneyConstants.exitTroubleShootingButton];
+
+  public static outageButtons: IButton[] = [CustomerJourneyConstants.okButton, CustomerJourneyConstants.bookAComplaintButton];
+
+  public static openComplaintButtons: IButton[] = [CustomerJourneyConstants.yesButton, CustomerJourneyConstants.bookAnotherComplaintButton];
+
+  public static routerRebootRequiredButtons: IButton[] = [CustomerJourneyConstants.restartNowButton, CustomerJourneyConstants.closeButton];
+
+  public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusButton, CustomerJourneyConstants.doneButtonSecondary];
+
+  public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static routerUpdateRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static routerPackageUpdateRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static thirdPartyRoutersuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static resestWifiPasswordSuccessFirstCaseButtons: IButton[] = [CustomerJourneyConstants.continueToWIfiSettingButton];
+
+  public static resestWifiPasswordSuccessSecondCasesuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static issuesNotFixedButtons: IButton[] = [CustomerJourneyConstants.tryAgainLaterButton, CustomerJourneyConstants.bookAComplaintButton];
+
+  public static openTechnicalSrButtons: IButton[] = [CustomerJourneyConstants.followUpButton, CustomerJourneyConstants.continueToTroubleshootButton];
+
+  public static internetPasswordResetButtons: IButton[] = [CustomerJourneyConstants.resetNowButton2, CustomerJourneyConstants.closeButton];
+
+  public static resetWifiPasswordFistSuccessButtons: IButton[] = [CustomerJourneyConstants.resetWifiPasswordSuccessButton];
+
+  public static browserStapperCase1Buttons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToBrowserStepperButton];
+
+  public static browserStapperCase2Buttons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.bookAComplaintButton];
+
+  public static accountNotActiveButtons: IButton[] = [CustomerJourneyConstants.closeButtonSecondary];
+
+  public static issueFixed_BookAComplaint: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.bookAComplaintButton];
+
+  public static resetFactoryDefault: IButton[] = [CustomerJourneyConstants.resetRouterButton, CustomerJourneyConstants.cancelButton];
+
+  public static noIssue: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.rebootMyDeviceButton];
+
+  public static serviceDetailsButtonConfig: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
+
+  public static deviceConnectedHomezoneButtonConfig: IButton[] = [CustomerJourneyConstants.resetWifiButton, CustomerJourneyConstants.closeButton];
 
   public static RouterReset3rdParty: IButton[] = [
-    {
-      title: 'LINKS.DEVICE_CARE',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/device-care',
-      behaviour: 'link',
-    },
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'HEADER.BOOK_COMPLAINT',
-      clickListener: () => {},
-      linkTo: '/bookComplaint',
-      behaviour: 'secondary',
-    },
-  ];
-
-  public static openTechnicalSrButtons: IButton[] = [
-    {
-      title: 'BUTTONS.FOLLOW_UP',
-      explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-
-  public static internetPasswordResetButtons: IButton[] = [
-    {
-      title: 'BUTTONS.RESET_NOW',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/reset-internet-password',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CLOSE',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-
-  public static packageUpgradeRecommendedButtons: IButton[] = [
-    {
-      title: 'LINKS.ISSUES_FIXED',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-
-    {
-      title: 'BUTTONS.UPGRADE_PACKAGE',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/package-upgrade-recommended-form',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-
-  public static routerUpgradeRecommendedButtons: IButton[] = [
-    {
-      title: 'LINKS.ISSUES_FIXED',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-
-    {
-      title: 'BUTTONS.UPGRADE_ROUTER',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/router-upgrade-recommended-form',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-
-  public static routerPackageUpgradeRecommendedButtons: IButton[] = [
-    {
-      title: 'LINKS.ISSUES_FIXED',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-
-    {
-      title: 'BUTTONS.UPGRADE_ROUTER_PACKAGE',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/router-package-upgrade-recommended-form',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-
-  public static thirdPartyMainButtons: IButton[] = [
-    {
-      title: 'LINKS.ISSUES_FIXED',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-
-    {
-      title: 'BUTTONS.BUY_NEW_ROUTER',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/third-party-router-form',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-
-  public static resetWifiPasswordFistSuccessButtons: IButton[] = [
-    {
-      title: 'BUTTONS.RESET_WIFI_PASSWORD_SUCCESS',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/reset-wifi-password-form',
-      behaviour: 'primary',
-    },
-  ];
-
-  public static browserStapperCase1Buttons: IButton[] = [
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '/browser-stapper',
-      behaviour: 'link',
-    },
-  ];
-
-  public static browserStapperCase2Buttons: IButton[] = [
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.BOOK_A_COMPLAINT',
-      clickListener: () => {},
-      linkTo: '/bookComplaint',
-      behaviour: 'link',
-    },
+    CustomerJourneyConstants.deviceCareButton,
+    CustomerJourneyConstants.issueFixedButton,
+    CustomerJourneyConstants.bookCompalintButton,
   ];
 
   public static wiFiAlarmButtons: IButton[] = [
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'link',
-    },
-    {
-      title: 'BUTTONS.UPGRADE_PACKAGE',
-      clickListener: () => {},
-      linkTo: '/package-upgrade-recommended-form',
-      behaviour: 'primary',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '/', //TODO: linkTo 1.10.2
-      behaviour: 'link',
-    },
+    CustomerJourneyConstants.issueFixedButtonLink,
+    CustomerJourneyConstants.upgradePackageButton,
+    CustomerJourneyConstants.continueToTroubleshootButton,
   ];
 
-  public static accountNotActiveButtons: IButton[] = [
-    {
-      title: 'BUTTONS.CLOSE',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'secondary',
-    },
+  public static packageUpgradeRecommendedButtons: IButton[] = [
+    CustomerJourneyConstants.issueFixedButtonLink,
+    CustomerJourneyConstants.upgradePackageButton,
+    CustomerJourneyConstants.continueToTroubleshootButton,
   ];
 
-  public static issueFixed_BookAComplaint: IButton[] = [
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.BOOK_A_COMPLAINT',
-      clickListener: () => {},
-      linkTo: '/bookComplaint',
-      behaviour: 'link',
-    },
+  public static routerUpgradeRecommendedButtons: IButton[] = [
+    CustomerJourneyConstants.issueFixedButtonLink,
+    CustomerJourneyConstants.upgradeRouterButton,
+    CustomerJourneyConstants.continueToTroubleshootButton,
   ];
 
-  public static resetFactoryDefault: IButton[] = [
-    {
-      title: 'BUTTONS.RESET_ROUTER',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '',
-      customListner: 'CloseMOdal',
-      behaviour: 'secondary',
-    },
-    {
-      title: 'BUTTONS.CANCEL',
-      clickListener: () => {},
-      linkTo: '/',
-      behaviour: 'link',
-    },
+  public static routerPackageUpgradeRecommendedButtons: IButton[] = [
+    CustomerJourneyConstants.issueFixedButtonLink,
+    CustomerJourneyConstants.upgradeRouterPackageButton,
+    CustomerJourneyConstants.continueToTroubleshootButton,
   ];
 
-  public static noIssue: IButton[] = [
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.REBOOT_MY_DEVICES',
-      clickListener: () => {},
-      linkTo: '/',
-      behaviour: 'secondary',
-      customListner: 'openDeviceListDialog',
-    },
-  ];
-
-  public static serviceDetailsButtonConfig: IButton[] = [
-    {
-      title: 'BUTTONS.ISSUE_FIXED',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/thanks',
-      behaviour: 'primary',
-      customListner: '',
-    },
-    {
-      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-      clickListener: () => {},
-      linkTo: '/',
-      behaviour: 'link',
-      customListner: '',
-    },
-  ];
-
-  public static deviceConnectedHomezoneButtonConfig: IButton[] = [
-    {
-      title: 'BUTTONS.RESET_WIFI_PASSWORD',
-      explanatoryNote: '',
-      clickListener: () => {},
-      linkTo: '/',
-      behaviour: 'primary',
-      customListner: '',
-    },
-    {
-      title: 'BUTTONS.CLOSE',
-      clickListener: () => {},
-      linkTo: '/',
-      behaviour: 'link',
-      customListner: '',
-    },
+  public static thirdPartyMainButtons: IButton[] = [
+    CustomerJourneyConstants.issueFixedButtonLink,
+    CustomerJourneyConstants.buyNewRouterButton,
+    CustomerJourneyConstants.continueToTroubleshootButton,
   ];
 }
