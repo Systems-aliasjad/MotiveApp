@@ -40,7 +40,9 @@ export enum ERoutingIds {
   thirdPartyRouter,
   thirdPartyRouterForm,
   thirdPartyRouterSuccessfully,
+  resetWifiPasswordSuccess,
   resetWifiPasswordForm,
+  resetWifiPasswordFormSuccessfully,
 }
 
 const P3: string = '3P';

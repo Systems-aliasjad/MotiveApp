@@ -149,6 +149,20 @@ export class MessageBuilderComponent implements OnInit {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyRoutersuccessfullyButtons));
     }
 
+    ///For Reset Wifi password first  Successfull
+    else if (this.codeType === ERoutingIds.resetWifiPasswordSuccess) {
+      this.Section1Data = CustomerJourneyConstants.resetWifiResetFirstsuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessFirstCaseButtons);
+    }
+
+    ///For Reset Wifi password Second/Final  Successfull
+    else if (this.codeType === ERoutingIds.resetWifiPasswordFormSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.resetWifiResetSecondsuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessSecondCasesuccessfullyButtons);
+    }
+
     //TODO: dummy need to remove this case at the end
     else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;

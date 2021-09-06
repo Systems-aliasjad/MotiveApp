@@ -73,6 +73,16 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY'],
   };
 
+  public static resetWifiResetFirstsuccessfullyCase = {
+    header: 'MESSAGES.RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY_BODY'],
+  };
+
+  public static resetWifiResetSecondsuccessfullyCase = {
+    header: 'MESSAGES.RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY'],
+  };
+
   public static openServiceRequestCaseButtons: IButton[] = [
     {
       title: 'BUTTONS.FOLLOW_UP',
@@ -178,6 +188,24 @@ export class CustomerJourneyConstants {
   ];
 
   public static thirdPartyRoutersuccessfullyButtons: IButton[] = [
+    {
+      title: 'BUTTONS.DONE',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+    },
+  ];
+
+  public static resestWifiPasswordSuccessFirstCaseButtons: IButton[] = [
+    {
+      title: 'BUTTONS.CONTINUE_TO_WIFI_SETTINGS',
+      clickListener: () => {},
+      linkTo: '/reset-wifi-password-form',
+      behaviour: 'primary',
+    },
+  ];
+
+  public static resestWifiPasswordSuccessSecondCasesuccessfullyButtons: IButton[] = [
     {
       title: 'BUTTONS.DONE',
       clickListener: () => {},
@@ -348,6 +376,16 @@ export class CustomerJourneyConstants {
     },
   ];
 
+  public static resetWifiPasswordFistSuccessButtons: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_WIFI_PASSWORD_SUCCESS',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/reset-wifi-password-form',
+      behaviour: 'primary',
+    },
+  ];
+
   public static browserStapperCase1Buttons: IButton[] = [
     {
       title: 'BUTTONS.ISSUE_FIXED',
@@ -432,7 +470,8 @@ export class CustomerJourneyConstants {
       title: 'BUTTONS.RESET_ROUTER',
       explanatoryNote: '',
       clickListener: () => {},
-      linkTo: '/',
+      linkTo: '',
+      customListner: 'CloseMOdal',
       behaviour: 'secondary',
     },
     {
