@@ -459,4 +459,22 @@ export class CustomerJourneyConstants {
       customListner: 'openDeviceListDialog',
     },
   ];
+
+  public static serviceDetailsButtonConfig: IButton[] = [
+    {
+      title: 'BUTTONS.ISSUE_FIXED',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/thanks',
+      behaviour: 'primary',
+      customListner: '',
+    },
+    {
+      title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'link',
+      customListner: '',
+    },
+  ];
 }
