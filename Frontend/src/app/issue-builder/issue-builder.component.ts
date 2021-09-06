@@ -100,7 +100,7 @@ export class IssueBuilderComponent implements OnInit {
 
     ///Reset Wifi Password First Success
     else if (this.codeType === ERoutingIds.resetWifiPasswordSuccess) {
-      this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }
   }
 }
