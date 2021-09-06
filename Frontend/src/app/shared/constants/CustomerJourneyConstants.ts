@@ -116,9 +116,17 @@ export class CustomerJourneyConstants {
   public static okButton: IButton = {
     title: 'BUTTONS.OK',
     clickListener: () => {},
-    linkTo: '',
+    linkTo: '/thanks',
     behaviour: 'primary',
   };
+
+  public static okButtonSecondary: IButton = {
+    title: 'BUTTONS.OK',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'secondary',
+  };
+
   public static bookAComplaintButton: IButton = {
     title: 'BUTTONS.BOOK_A_COMPLAINT',
     clickListener: () => {},
@@ -291,7 +299,7 @@ export class CustomerJourneyConstants {
   public static resetWifiButton = {
     title: 'BUTTONS.RESET_WIFI_PASSWORD',
     clickListener: () => {},
-    linkTo: '/',
+    linkTo: '/reset-wifi-password-form',
     behaviour: 'primary',
   };
 
@@ -317,7 +325,7 @@ export class CustomerJourneyConstants {
 
   public static resestWifiPasswordSuccessFirstCaseButtons: IButton[] = [CustomerJourneyConstants.continueToWIfiSettingButton];
 
-  public static resestWifiPasswordSuccessSecondCasesuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+  public static resestWifiPasswordSuccessSecondCasesuccessfullyButtons: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 
   public static issuesNotFixedButtons: IButton[] = [CustomerJourneyConstants.tryAgainLaterButton, CustomerJourneyConstants.bookAComplaintButton];
 

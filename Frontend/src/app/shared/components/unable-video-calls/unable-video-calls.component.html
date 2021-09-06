@@ -1,23 +1,21 @@
-<ion-content>
-  <ion-grid class="form-main-container">
-    <!-- Page Content  -->
-    <ion-row>
-      <ion-col size="12">
-        <div style="text-align: center; height: 250px; background-color: lightgray">
-          <img alt="Content" width="250px" height="250px" />
-        </div>
-        <div class="content">
-          <div *ngFor="let ins of instructionList; let i = index">
-            <p>{{ i + 1 }}. {{ ins.text }}</p>
-            <div style="padding-inline: 10px">
-              <div *ngFor="let text of ins.child; let j = index">
-                <p>{{ i }}.{{ j + 1 }}. {{ text }}</p>
-              </div>
+<ion-grid class="form-main-container">
+  <!-- Page Content  -->
+  <ion-row>
+    <ion-col size="12">
+      <div style="text-align: center; height: 250px; background-color: lightgray">
+        <img alt="Content" width="250px" height="250px" />
+      </div>
+      <div class="content">
+        <div *ngFor="let ins of instructionList; let i = index">
+          <p>{{ i + 1 }}. {{ ins.text }}</p>
+          <div style="padding-inline: 10px">
+            <div *ngFor="let text of ins.child; let j = index">
+              <p>{{ i }}.{{ j + 1 }}. {{ text }}</p>
             </div>
           </div>
         </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </div>
+    </ion-col>
+  </ion-row>
   <app-buttons></app-buttons>
-</ion-content>
+</ion-grid>
