@@ -43,6 +43,9 @@ export enum ERoutingIds {
   resetWifiPasswordSuccess,
   resetWifiPasswordForm,
   resetWifiPasswordFormSuccessfully,
+  routerNotReachable,
+  routerNotReachableForm,
+  routerNotReachableFormSuccessfully,
 }
 
 const P3: string = '3P';
@@ -229,6 +232,19 @@ export class ApplicableCodes {
       title: 'COMPLAIN_REQUEST.STATUS',
       type: 'text',
       objKeyNameEN: 'status',
+    },
+  ];
+
+  public static routerNotReachableTemplate: ISection2Template[] = [
+    {
+      title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_NAME',
+      type: 'text',
+      objKeyNameEN: 'routerName',
+    },
+    {
+      title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_MODEL',
+      type: 'text',
+      objKeyNameEN: 'routerModel',
     },
   ];
 

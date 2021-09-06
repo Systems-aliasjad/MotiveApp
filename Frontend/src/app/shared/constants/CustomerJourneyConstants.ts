@@ -68,6 +68,24 @@ export class CustomerJourneyConstants {
       behaviour: 'link',
     },
   ];
+
+  public static routerNotReachableButtons: IButton[] = [
+    {
+      title: 'BUTTONS.USING_THE_SAME_ROUTER',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'primary',
+      customListner: 'AppInternetIssuesDialog',
+      explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+    },
+    {
+      title: 'LINKS.USING_OWN_ROUTER',
+      clickListener: () => {},
+      linkTo: '',
+      behaviour: 'link',
+    },
+  ];
+
   public static thirdPartyRoutersuccessfullyCase = {
     header: 'MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY',
     paragraphs: ['MESSAGES.THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY'],

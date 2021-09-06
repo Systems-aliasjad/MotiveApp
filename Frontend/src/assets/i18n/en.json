@@ -66,6 +66,11 @@
     "COMPLAINT_NO": "Complain No"
   },
 
+  "ROUTER_NOT_REACHABLE_TEMPLATE": {
+    "ROUTER_NAME": "Router Name",
+    "ROUTER_MODEL": "Router Model"
+  },
+
   "APPOINTMENT_BOOKED_SUCCESSFULLY": {
     "REFERENCE_NO": "Reference No",
     "DATE_VISIT": "Date of visit",
@@ -110,10 +115,12 @@
     "BUY_NEW_ROUTER": "BUY NEW ROUTER",
     "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
     "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
-    "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings"
+    "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
+    "USING_THE_SAME_ROUTER": "YES I AM"
   },
   "TEXT": {
-    "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
+    "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
+    "USING_THE_SAME_ROUTER": "Are you using the same router?"
   },
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
@@ -123,7 +130,8 @@
     "CLOSE": "CLOSE",
     "ISSUES_FIXED": "Issue Fixed",
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
-    "VIEW_DETAILS": "VIEW DETAILS"
+    "VIEW_DETAILS": "VIEW DETAILS",
+    "USING_OWN_ROUTER": "No, I'm using my own router"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -212,7 +220,9 @@
     "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
     "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset.",
 
-    "DEVICE_LIST_TITLE": "Select the device"
+    "DEVICE_LIST_TITLE": "Select the device",
+    "ROUTER_NOT_REACHABLE_TITLIE": "Router is not accessible",
+    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'."
   },
   "LOADER": {
     "HEADER": "Almost there",

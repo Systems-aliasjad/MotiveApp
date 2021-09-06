@@ -15,11 +15,7 @@ export class ResetWifiPasswordComponent implements OnInit {
   @ViewChild('staticTabs', { static: false }) staticTabs: ResetWifiPasswordComponent;
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
-
   termsCheck: boolean = false;
-
-  tabCheck = 1;
-
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
@@ -60,8 +56,5 @@ export class ResetWifiPasswordComponent implements OnInit {
     this.router.navigate(['terms']);
   }
 
-  PanelButton(tabId: number) {
-    console.log(tabId);
-    this.tabCheck = tabId;
-  }
+  segmentChanged(ev: any) {}
 }

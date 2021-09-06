@@ -7,6 +7,7 @@ import { IButton } from '../shared/constants/types';
 import { DeviceListDialog } from '../shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { SharedService } from '../shared/shared.service';
 import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
+import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/internet-issues-dialog.component';
 
 @Component({
   selector: 'app-issue-builder',
@@ -44,6 +45,13 @@ export class IssueBuilderComponent implements OnInit {
   async openPasswordResetDialog() {
     const modal = await this.modalCtrl.create({
       component: ResetFactoryDefaultDialog,
+    });
+    return await modal.present();
+  }
+
+  async AppInternetIssuesDialog() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
     });
     return await modal.present();
   }
@@ -101,6 +109,11 @@ export class IssueBuilderComponent implements OnInit {
     ///Reset Wifi Password First Success
     else if (this.codeType === ERoutingIds.resetWifiPasswordSuccess) {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
+    }
+
+    //Router Reset Required
+    else if (this.codeType === ERoutingIds.routerNotReachable) {
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
     }
   }
 }
