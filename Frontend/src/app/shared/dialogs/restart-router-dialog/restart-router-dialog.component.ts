@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { IButton } from '../../constants/types';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-restart-router-dialog',
@@ -9,12 +10,12 @@ import { IButton } from '../../constants/types';
   styleUrls: ['./restart-router-dialog.component.css'],
 })
 export class RestartRouterDialog implements OnInit {
-  constructor(private modalCtrl: ModalController, public router: Router) {}
+  constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
   buttonsConfig: IButton[] = [
     {
       title: 'BUTTONS.EXIT_TROUBLESHOOTING',
       clickListener: () => {
-        this.modalCtrl.dismiss();
+        this.dismiss();
         this.router.navigate(['/thanks']);
       },
       linkTo: '/thanks',
@@ -29,7 +30,9 @@ export class RestartRouterDialog implements OnInit {
       behaviour: 'link',
     },
   ];
-  ngOnInit() {}
+  ngOnInit() {
+    this.sharedService.setButtonConfig(this.buttonsConfig);
+  }
 
   dismiss() {
     this.modalCtrl.dismiss();

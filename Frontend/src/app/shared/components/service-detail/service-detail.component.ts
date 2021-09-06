@@ -35,7 +35,7 @@ export class ServiceDetailComponent implements OnInit {
   ];
   constructor(private sharedService: SharedService, private router: Router) {
     this.sharedService.setHeaderConfig('', true);
-    this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.serviceDetailsButtonConfig);
+    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.serviceDetailsButtonConfig));
   }
 
   ngOnInit() {}

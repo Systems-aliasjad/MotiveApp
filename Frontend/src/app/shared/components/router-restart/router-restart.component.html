@@ -28,7 +28,6 @@
       <!-- Router Instruction Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="instruction-container pt-0 pb-0">
         <div class="instruction">
-          
           <ion-row class="instruction_title">
             <ion-col size="12" class="pt-0">
               <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
@@ -59,16 +58,13 @@
               <p>Etisalat device care gives you.....</p>
             </ion-col>
           </ion-row>
-          <app-buttons class="buttons" [buttonsConfig]="buttonsConfig" [SM]="'12'" [MD]="'6'" [LG]="'6'"></app-buttons>
+          <app-buttons class=""></app-buttons>
         </div>
       </ion-col>
-      
     </ion-row>
   </ion-grid>
 </ion-content>
 
 <!-- <ion-footer>
-  <ion-toolbar>
-    <app-buttons [buttonsConfig]="buttonsConfig" [SM]="'12'" [MD]="'6'" [LG]="'6'"></app-buttons>
-  </ion-toolbar>
+  <app-buttons></app-buttons>
 </ion-footer> -->

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -18,11 +17,10 @@ export class UnableConnectNewDeviceWifiComponent implements OnInit {
     'Connect to your Wi-Fi network by verifying the name and entering the correct password',
     'Select the device type and operating system to learn how to connect your device to the Wifi network',
   ];
-  buttonConfig: IButton[] = [];
 
   constructor(private sharedService: SharedService, private router: Router) {
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    this.buttonConfig = this.routeLinkHelper(CustomerJourneyConstants.issueFixed_BookAComplaint);
+    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issueFixed_BookAComplaint));
   }
 
   ngOnInit(): void {

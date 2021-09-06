@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IPageHeader, ITermsAndConditions } from './constants/types';
+import { IButton, IButtonSize, IPageHeader } from './constants/types';
 
 @Injectable({
   providedIn: 'root',
@@ -17,17 +17,31 @@ export class SharedService {
   loaderSubject: BehaviorSubject<boolean>;
   loader$: Observable<boolean>;
 
+  buttonsConfigSubject: BehaviorSubject<IButton[]>;
+  buttonsConfig$: Observable<IButton[]>;
+
+  buttonSizeSubject: BehaviorSubject<IButtonSize>;
+  buttonSize$: Observable<IButtonSize>;
+
   constructor(public translate: TranslateService) {
+    this.loaderSubject = new BehaviorSubject(false);
+    this.buttonsConfigSubject = new BehaviorSubject(null);
+    this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject({
       pageTitle: '',
       singleLine: false,
     });
-    this.termsConditionCheck = new BehaviorSubject<boolean>(false);
-    this.loaderSubject = new BehaviorSubject(false);
+    this.buttonSizeSubject = new BehaviorSubject({
+      SM: '',
+      MD: '',
+      LG: '',
+    });
 
-    this.headerConfig$ = this.headerConfigSubject.asObservable();
-    this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
     this.loader$ = this.loaderSubject.asObservable();
+    this.buttonSize$ = this.buttonSizeSubject.asObservable();
+    this.headerConfig$ = this.headerConfigSubject.asObservable();
+    this.buttonsConfig$ = this.buttonsConfigSubject.asObservable();
+    this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
   setHeaderConfig(pageTitle: string, oneLine: boolean) {
@@ -63,5 +77,21 @@ export class SharedService {
   }
   getLoader(): Observable<boolean> {
     return this.loader$;
+  }
+
+  setButtonConfig(config: IButton[]) {
+    this.buttonsConfigSubject.next(config);
+  }
+
+  getButtonConfig(): Observable<IButton[]> {
+    return this.buttonsConfig$;
+  }
+
+  setButtonSize(config: IButtonSize) {
+    this.buttonSizeSubject.next(config);
+  }
+
+  getButtonSize(): Observable<IButtonSize> {
+    return this.buttonSize$;
   }
 }
