@@ -102,7 +102,8 @@
     "DEVICE_CARE": "Device Care",
     "CLOSE": "CLOSE",
     "ISSUES_FIXED": "Issue Fixed",
-    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING"
+    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
+    "VIEW_DETAILS": "VIEW DETAILS"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -197,5 +198,12 @@
     "DESCRIPTION1_STEP3": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
     "DESCRIPTION2_STEP3": "",
     "IMG_TEXT_STEP3": "Video"
+  },
+  "SERVICE_DEATAIL": {
+    "HEADING": "Service details",
+    "DATA_TRAFFIC": "Data traffic (last 1 hour)",
+    "PARENTAL_CONTROL": "Parental control",
+    "PARENTAL_CONTROL_WEB_THREAT_PROTECTION": "Web threat protection",
+    "PARENTAL_CONTROL_CHILD_LOCK": "Child lock"
   }
 }

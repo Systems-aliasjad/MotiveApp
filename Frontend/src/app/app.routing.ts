@@ -16,6 +16,7 @@ import { BrowserStepperComponent } from './shared/components/browser-stepper/bro
 import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
+import { ServiceDetailComponent } from './shared/components/service-detail/service-detail.component';
 
 const routes: Routes = [
   {
@@ -115,6 +116,7 @@ const routes: Routes = [
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
   { path: 'dialog-demo', component: InternetIssueListDialog },
+  { path: 'service-detail', component: ServiceDetailComponent },
   { path: '**', redirectTo: '' },
 ];
 
