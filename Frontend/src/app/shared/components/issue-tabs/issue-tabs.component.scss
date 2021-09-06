@@ -9,7 +9,7 @@
 // --------------------------------------------------------------
 
 .issue-tabs-contanier,
-.issue-tabs-inner_contanier{
+.issue-tabs_content{
   height: calc(100% - 60px);
   @media screen and (max-width: 992px) {
     height:100%;
@@ -28,7 +28,7 @@
     background-color: transparent;
   }
 }
-.issue-tabs_content{
+.issue-tab_content{
   .content {
     width: 450px;
     margin: 0 auto;
