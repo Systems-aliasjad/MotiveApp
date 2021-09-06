@@ -20,10 +20,17 @@
       <div class="content">
         <!-- <h4 class="sub-title">{{ 'HEADER.NO_INTERNET_ISSUE' | translate }}</h4>  -->
         <app-page-top></app-page-top>
-        <p>
+        <p *ngIf="!section1Template">
           On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
           L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.
         </p>
+
+        <h4 *ngIf="section1Template">
+          <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
+            <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
+            <ion-label class="detail_list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
+          </ion-item>
+        </h4>
       </div>
       <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
     </ion-col>

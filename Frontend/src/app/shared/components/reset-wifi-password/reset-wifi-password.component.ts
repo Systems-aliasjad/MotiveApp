@@ -10,17 +10,13 @@ import { ConfirmedValidator } from '../../constants/constants';
   styleUrls: ['./reset-wifi-password.component.scss'],
 })
 export class ResetWifiPasswordComponent implements OnInit {
-  public segment: string = 'SSID 2.5 GHZ';
+  public segment: string = '1';
   public formGroup: FormGroup;
   error = errorMessages;
   @ViewChild('staticTabs', { static: false }) staticTabs: ResetWifiPasswordComponent;
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
-
   termsCheck: boolean = false;
-
-  tabCheck = 1;
-
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
@@ -59,10 +55,6 @@ export class ResetWifiPasswordComponent implements OnInit {
 
   PopupTermsConditions() {
     this.router.navigate(['terms']);
-  }
-
-  PanelButton(tabId: number) {
-    this.tabCheck = tabId;
   }
 
   segmentChanged(ev: any) {

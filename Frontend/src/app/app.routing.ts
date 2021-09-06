@@ -114,11 +114,17 @@ const routes: Routes = [
 
   //#region  Reset Wifi Password
   //Router Reset Required
-  { path: 'router-wifi-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
+  { path: 'reset-wifi-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
   { path: 'reset-wifi-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordSuccess } },
   { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
   { path: 'reset-wifi-password-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordFormSuccessfully } },
   //#endregion Reset Wifi Password
+
+  //#region Router Not Reachable
+  { path: 'router-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.routerNotReachable } },
+  { path: 'router-not-reachable-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.routerNotReachableForm } },
+  { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
+  //#endregion Router Not Reachable
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },

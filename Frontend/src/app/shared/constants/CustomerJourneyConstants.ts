@@ -303,6 +303,24 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static usingSameRouterButton = {
+    title: 'BUTTONS.USING_THE_SAME_ROUTER',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'AppInternetIssuesDialog',
+    explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+  };
+
+  public static usingOwnRouterButton = {
+    title: 'LINKS.USING_OWN_ROUTER',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
+  public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
+
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
 
   public static openServiceRequestCaseButtons: IButton[] = [CustomerJourneyConstants.followUpButton, CustomerJourneyConstants.exitTroubleShootingButton];
