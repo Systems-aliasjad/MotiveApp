@@ -1,8 +1,11 @@
 @import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
 
+// --------------------------------------------------------------
 :host {
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
+// --------------------------------------------------------------
 
 .user-profile-main-container {
   display: -webkit-box;
