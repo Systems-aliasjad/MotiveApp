@@ -77,8 +77,6 @@ const routes: Routes = [
   // third party  router Successfully
   { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
 
-  //Router Reset Required
-  { path: 'router-reset-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
@@ -115,7 +113,11 @@ const routes: Routes = [
   // #endregion  third party  router
 
   //#region  Reset Wifi Password
+  //Router Reset Required
+  { path: 'router-wifi-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
+  { path: 'reset-wifi-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordSuccess } },
   { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
+  { path: 'reset-wifi-password-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordFormSuccessfully } },
   //#endregion Reset Wifi Password
 
   { path: 'browser-stapper', component: BrowserStepperComponent },

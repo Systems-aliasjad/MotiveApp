@@ -53,7 +53,7 @@ export class ResetWifiPasswordComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.valid);
-    // this.router.navigate(['thanks']);
+    this.router.navigate(['reset-wifi-password-form_successfully']);
   }
 
   PopupTermsConditions() {

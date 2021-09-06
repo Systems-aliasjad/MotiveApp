@@ -16,6 +16,11 @@ export class ResetFactoryDefaultDialog implements OnInit {
     this.buttonsConfig = this.routeLinkHelper(CustomerJourneyConstants.resetFactoryDefault);
   }
 
+  CloseMOdal() {
+    this.dismiss();
+    this.router.navigate(['/reset-wifi-password-success']);
+  }
+
   ngOnInit() {}
 
   routeLinkHelper(arr) {
@@ -23,7 +28,7 @@ export class ResetFactoryDefaultDialog implements OnInit {
       return {
         ...obj,
         clickListener: () => {
-          this.router.navigate([obj.linkTo]);
+          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
         },
       };
     });
