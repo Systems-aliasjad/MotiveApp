@@ -51,8 +51,9 @@ ion-item::part(native){
       line-height: 1.2;
       margin-bottom: 0;
       color: #848789;
-      font-size: 0.9rem;
+      /* font-size: 0.9rem; */
       text-align: center;
+      word-break: break-word;
     }
   }
   .info-container_detail_followup {

@@ -1,4 +1,4 @@
-<ion-content>
+
   <ion-grid class="form-main-container">
     <!-- Page Title and Sub Title Start -->
     <ion-row>
@@ -56,7 +56,7 @@
             </ion-row>
             <ion-row>
               <ion-col sizeLg="2" sizeMd="4" sizeSm="12" size="12">
-                <ion-button class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{ buttonText | translate }}</ion-button>
+                <ion-button class="btn secondary-btn" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{ buttonText | translate }}</ion-button>
               </ion-col>
             </ion-row>
           </ion-grid>
@@ -65,4 +65,4 @@
     </ion-row>
     <!-- Form End -->
   </ion-grid>
-</ion-content>
+
