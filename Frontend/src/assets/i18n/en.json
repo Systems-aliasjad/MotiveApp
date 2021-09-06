@@ -9,11 +9,11 @@
     "RESET_INTERNET_PASSWORD": "Reset internet password",
     "NO_INTERNET_ISSUE": "No Internet Issue",
     "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
-    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to wifi",
+    "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to WiFi",
     "ROUTER_UPGRADE": "Router Upgrade",
     "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade",
     "THIRD_PARTY_ROUTER": "BUY NEW ROUTER",
-    "RESET_WIFI_PASSWORD": "Reset wifi password"
+    "RESET_WIFI_PASSWORD": "Reset WiFi password"
   },
 
   "SUBHEADER": {
