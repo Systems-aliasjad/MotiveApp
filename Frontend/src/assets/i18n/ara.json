@@ -90,7 +90,8 @@
     "CANCEL": "CANCEL",
     "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
     "UPGRADE_ROUTER": "UPGRADE ROUTER",
-    "REBOOT_MY_DEVICES": "REBOOT MY DEVICES"
+    "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
+    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -205,5 +206,11 @@
     "PARENTAL_CONTROL": "Parental control",
     "PARENTAL_CONTROL_WEB_THREAT_PROTECTION": "Web threat protection",
     "PARENTAL_CONTROL_CHILD_LOCK": "Child lock"
+  },
+  "DEVICE_CONNECTED_HOMEZONE": {
+    "HEADING": "Device connected to Home Zone",
+    "SUB_HEADING": "Unable to connect to Home Zone",
+    "PARAGRAPH1": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
+    "PARAGRAPH2": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password"
   }
 }

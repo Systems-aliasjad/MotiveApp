@@ -477,4 +477,22 @@ export class CustomerJourneyConstants {
       customListner: '',
     },
   ];
+
+  public static deviceConnectedHomezoneButtonConfig: IButton[] = [
+    {
+      title: 'BUTTONS.RESET_WIFI_PASSWORD',
+      explanatoryNote: '',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'primary',
+      customListner: '',
+    },
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {},
+      linkTo: '/',
+      behaviour: 'link',
+      customListner: '',
+    },
+  ];
 }
