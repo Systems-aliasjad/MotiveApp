@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IButton } from '../../constants/types';
+
 import { SharedService } from '../../shared.service';
+import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 
 @Component({
   selector: 'app-browser-stepper',
@@ -15,7 +15,6 @@ export class BrowserStepperComponent implements OnInit {
   headerString: string = '';
   isBookComp: boolean = true;
   isContTroubleShoot: boolean = false;
-  buttonConfig: IButton[] = [];
 
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.selectedLang = this.sharedService.getDefaultLanguage();
@@ -29,9 +28,9 @@ export class BrowserStepperComponent implements OnInit {
     this.headerString = 'Step ' + this.step + '/3';
     this.sharedService.setHeaderConfig(this.headerString, true);
     if (this.step < 3) {
-      this.buttonConfig = this.routeLinkHelper(CustomerJourneyConstants.browserStapperCase1Buttons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.browserStapperCase1Buttons));
     } else {
-      this.buttonConfig = this.routeLinkHelper(CustomerJourneyConstants.browserStapperCase2Buttons);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.browserStapperCase2Buttons));
     }
   }
 
@@ -54,21 +53,4 @@ export class BrowserStepperComponent implements OnInit {
       };
     });
   }
-
-  // issueFixed() {
-  //   this.router.navigate(['thanks']);
-  // }
-
-  // continueTroubleShoot() {
-  //   this.step = +this.step + 1;
-  //   this.router.navigate([], {
-  //     relativeTo: this.activatedRoute,
-  //     queryParams: { step: this.step },
-  //     queryParamsHandling: 'merge',
-  //   });
-  // }
-
-  // bookComplaint() {
-  //   this.router.navigate(['bookComplaint']);
-  // }
 }

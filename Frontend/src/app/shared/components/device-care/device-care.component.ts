@@ -34,7 +34,9 @@ export class DeviceCareComponent implements OnInit {
     this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.sharedService.setButtonConfig(this.buttonsConfig);
+  }
 
   async continueTroubleShoot() {
     const modal = await this.modalCtrl.create({

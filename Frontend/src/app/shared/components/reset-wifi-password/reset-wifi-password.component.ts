@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator } from '../../constants/constants';
 @Component({
-  selector: 'app-reset-internet-password',
-  templateUrl: './reset-internet-password.component.html',
-  styleUrls: ['./reset-internet-password.component.scss'],
+  selector: 'app-reset-wifi-password',
+  templateUrl: './reset-wifi-password.component.html',
+  styleUrls: ['./reset-wifi-password.component.scss'],
 })
-export class ResetInternetPasswordComponent implements OnInit {
+export class ResetWifiPasswordComponent implements OnInit {
   public formGroup: FormGroup;
   error = errorMessages;
-
+  @ViewChild('staticTabs', { static: false }) staticTabs: ResetWifiPasswordComponent;
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
 
   termsCheck: boolean = false;
+
+  tabCheck = 1;
 
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
@@ -24,7 +26,7 @@ export class ResetInternetPasswordComponent implements OnInit {
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService) {
-    this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
+    this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true);
 
     this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;
@@ -34,9 +36,10 @@ export class ResetInternetPasswordComponent implements OnInit {
   ngOnInit() {
     this.formGroup = this.formBuilder.group(
       {
-        MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+        WifiName: [''],
         NewPassword: ['', [Validators.required]],
         ConfirmPassword: ['', [Validators.required]],
+        MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
       },
       {
         validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
@@ -50,10 +53,15 @@ export class ResetInternetPasswordComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.valid);
-    this.router.navigate(['thanks']);
+    // this.router.navigate(['thanks']);
   }
 
   PopupTermsConditions() {
     this.router.navigate(['terms']);
+  }
+
+  PanelButton(tabId: number) {
+    console.log(tabId);
+    this.tabCheck = tabId;
   }
 }

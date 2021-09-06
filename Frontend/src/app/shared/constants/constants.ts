@@ -40,6 +40,7 @@ export enum ERoutingIds {
   thirdPartyRouter,
   thirdPartyRouterForm,
   thirdPartyRouterSuccessfully,
+  resetWifiPasswordForm,
 }
 
 const P3: string = '3P';
@@ -296,4 +297,22 @@ export class ApplicableCodes {
       objKeyNameEN: 'referenceNo',
     },
   ];
+}
+
+////////For Password Matching with Confirm Passwords
+import { FormGroup } from '@angular/forms';
+export function ConfirmedValidator(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+    const matchingControl = formGroup.controls[matchingControlName];
+    if (matchingControl.errors && !matchingControl.errors.confirmedValidator) {
+      return;
+    }
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ confirmedValidator: true });
+    } else {
+      matchingControl.setErrors({ confirmedValidator: null });
+      matchingControl.updateValueAndValidity();
+    }
+  };
 }

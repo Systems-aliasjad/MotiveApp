@@ -35,5 +35,7 @@ export class RouterRestartComponent implements OnInit {
 
   ngOnInit() {
     this.selectedLang = this.sharedService.getDefaultLanguage();
+    this.sharedService.setButtonConfig(this.buttonsConfig);
+    this.sharedService.setButtonSize({ SM: '12', MD: '6', LG: '6' });
   }
 }

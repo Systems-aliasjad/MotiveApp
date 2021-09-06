@@ -16,6 +16,7 @@ import { BrowserStepperComponent } from './shared/components/browser-stepper/bro
 import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
+import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 import { ServiceDetailComponent } from './shared/components/service-detail/service-detail.component';
 import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
 
@@ -112,6 +113,10 @@ const routes: Routes = [
   // third party  router Recommended form
   { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
   // #endregion  third party  router
+
+  //#region  Reset Wifi Password
+  { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
+  //#endregion Reset Wifi Password
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
