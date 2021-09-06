@@ -32,6 +32,8 @@ import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
 import { ResetWifiPasswordComponent } from './components/reset-wifi-password/reset-wifi-password.component';
+import { ServiceDetailComponent } from './components/service-detail/service-detail.component';
+import { DeviceConnectedHomezoneComponent } from './components/device-connected-homezone/device-connected-homezone.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -64,6 +66,8 @@ export function createTranslateLoader(http: HttpClient) {
     ResetFactoryDefaultDialog,
     DeviceListDialog,
     ResetWifiPasswordComponent,
+    ServiceDetailComponent,
+    DeviceConnectedHomezoneComponent,
   ],
   imports: [
     CommonModule,
