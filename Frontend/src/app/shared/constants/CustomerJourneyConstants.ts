@@ -354,6 +354,22 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static backButton = {
+    title: 'BUTTONS.BACK',
+    clickListener: () => {},
+    linkTo: '/tv-details',
+    behaviour: 'secondary',
+  };
+
+  public static confirmButton = {
+    title: 'BUTTONS.CONFIRM',
+    clickListener: () => {},
+    linkTo: '/tv-pin-reset-successfull',
+    behaviour: 'primary',
+  };
+
+  public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
+
   public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
 
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];

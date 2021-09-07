@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { ResetTvPinDialog } from '../reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 
 export enum EIssueFlow {
   internetIssue,
@@ -14,6 +15,7 @@ export enum EIssueFlow {
 export class InternetIssueListDialog implements OnInit {
   @Input()
   flow: number;
+  modal;
   internetIssuesList: any[] = [
     {
       issue: 'Unable to connect Wi-Fi',
@@ -44,6 +46,7 @@ export class InternetIssueListDialog implements OnInit {
     {
       issue: 'Forgot my TV admin PIN',
       route: '',
+      customEvent: 'openResetTvDialog',
     },
     {
       issue: 'Unable to log in to eLifeON',
@@ -77,10 +80,19 @@ export class InternetIssueListDialog implements OnInit {
     }
   }
 
+  async openResetTvDialog() {
+    this.modal = await this.modalCtrl.create({
+      component: ResetTvPinDialog,
+    });
+    return await this.modal.present();
+  }
+
   onIssueClick(item) {
     if (item.route != '') {
       this.dismiss();
       this.router.navigate([item.route]);
+    } else if (item.customEvent) {
+      this[item.customEvent]();
     }
   }
 

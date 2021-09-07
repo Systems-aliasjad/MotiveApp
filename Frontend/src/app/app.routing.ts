@@ -78,6 +78,8 @@ const routes: Routes = [
   { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
   // third party  router Successfully
   { path: 'troubleshoot-complete', component: MessageBuilderComponent, data: { id: ERoutingIds.troubleshootComplete } },
+  //tv-pin-reset-successfull
+  // { path: 'tv-pin-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.troubleshootComplete } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
