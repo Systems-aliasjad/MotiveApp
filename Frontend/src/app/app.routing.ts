@@ -101,6 +101,8 @@ const routes: Routes = [
   { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
   // third party  router Recommended
   { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
+  // no Issue  - TV
+  { path: 'no-issue-tv', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssueTv } },
 
   //router and package Upgrade Recommended form
   { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },

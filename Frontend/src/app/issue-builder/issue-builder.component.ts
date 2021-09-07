@@ -70,6 +70,12 @@ export class IssueBuilderComponent implements OnInit {
     else if (this.codeType === ERoutingIds.issueNotFixed) {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
     }
+
+    //Router Reset Required
+    else if (this.codeType === ERoutingIds.noIssueTv) {
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
+    }
+
     //Internet Password Reset
     else if (this.codeType === ERoutingIds.internetPasswordReset) {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons));

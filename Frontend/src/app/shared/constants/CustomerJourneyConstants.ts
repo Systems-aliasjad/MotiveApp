@@ -219,6 +219,20 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static issueFixedTvButton: IButton = {
+    title: 'BUTTONS.ISSUE_FIXED',
+    clickListener: () => {},
+    linkTo: '/tv-details',
+    behaviour: 'primary',
+  };
+
+  public static continueToTroubleshootTvIssueButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
   public static issueFixedButtonLink: IButton = {
     title: 'BUTTONS.ISSUE_FIXED',
     clickListener: () => {},
@@ -381,6 +395,12 @@ export class CustomerJourneyConstants {
   public static serviceDetailsButtonConfig: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
 
   public static deviceConnectedHomezoneButtonConfig: IButton[] = [CustomerJourneyConstants.resetWifiButton, CustomerJourneyConstants.closeButton];
+
+  public static noIssueTvButton: IButton[] = [
+    CustomerJourneyConstants.issueFixedTvButton,
+    CustomerJourneyConstants.rebootMyDeviceButton,
+    CustomerJourneyConstants.continueToTroubleshootTvIssueButton,
+  ];
 
   public static RouterReset3rdParty: IButton[] = [
     CustomerJourneyConstants.deviceCareButton,
