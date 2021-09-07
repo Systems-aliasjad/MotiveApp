@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
 
@@ -9,12 +9,16 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./device-connected-homezone.component.css'],
 })
 export class DeviceConnectedHomezoneComponent implements OnInit {
-  constructor(private router: Router, public sharedService: SharedService) {
+  constructor(private router: Router, public sharedService: SharedService, private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
+  }
+
+  ngOnInit() {
     this.sharedService.setHeaderConfig('', true);
     this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.deviceConnectedHomezoneButtonConfig));
   }
-
-  ngOnInit() {}
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {

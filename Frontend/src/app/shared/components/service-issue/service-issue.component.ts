@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IButton } from '../../constants/types';
 
 @Component({
@@ -7,7 +8,11 @@ import { IButton } from '../../constants/types';
   styleUrls: ['./service-issue.component.scss'],
 })
 export class ServiceIssueComponent implements OnInit {
-  constructor() {}
+  constructor(private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
+  }
 
   ngOnInit() {}
 }

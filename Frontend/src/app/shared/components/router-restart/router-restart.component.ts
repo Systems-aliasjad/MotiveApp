@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
@@ -29,12 +29,15 @@ export class RouterRestartComponent implements OnInit {
       behaviour: 'link',
     },
   ];
-  constructor(private sharedService: SharedService, public router: Router) {
-    this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
+  constructor(private sharedService: SharedService, public router: Router, private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
   }
 
   ngOnInit() {
     this.selectedLang = this.sharedService.getDefaultLanguage();
+    this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
     this.sharedService.setButtonConfig(this.buttonsConfig);
     this.sharedService.setButtonSize({ SM: '12', MD: '6', LG: '6' });
   }

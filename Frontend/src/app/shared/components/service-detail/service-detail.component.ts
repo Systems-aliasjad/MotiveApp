@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
@@ -36,7 +36,13 @@ export class ServiceDetailComponent implements OnInit {
     //   IP: '192.168.1.125',
     // },
   ];
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController) {
+  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
+  }
+
+  ngOnInit() {
     this.sharedService.setHeaderConfig('Service detail', false);
     this.buttonsConfig = CustomerJourneyConstants.serviceDetailsButtonConfig;
     //debugger;
@@ -52,8 +58,6 @@ export class ServiceDetailComponent implements OnInit {
     });
     this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonsConfig));
   }
-
-  ngOnInit() {}
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {

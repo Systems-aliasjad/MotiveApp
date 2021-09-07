@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator } from '../../constants/constants';
@@ -22,15 +22,19 @@ export class ResetWifiPasswordComponent implements OnInit {
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
-  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService) {
+  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
+  }
+
+  ngOnInit() {
     this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true);
     this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;
     });
     this.createForm();
   }
-
-  ngOnInit() {}
 
   createForm() {
     this.routerSettingsForm = this.fb.group({

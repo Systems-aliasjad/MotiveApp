@@ -39,6 +39,7 @@ export class MessageBuilderComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, public router: Router, private sharedService: SharedService) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
+      this.ngOnInit();
     });
   }
 
