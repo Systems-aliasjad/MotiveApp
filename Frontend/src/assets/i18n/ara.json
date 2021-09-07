@@ -20,7 +20,9 @@
     "RESET_INTERNET_PASSWORD": "",
     "BOOK_COMPLAINT": "Please fill your complete details",
     "RESET_WIFI_PASSWORD_TAB1": "SSID 2.5 Ghz",
-    "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz"
+    "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz",
+    "MY_TV_BOXES": "MY TV BOXES",
+    "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -117,7 +119,10 @@
     "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
     "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
     "USING_THE_SAME_ROUTER": "YES I AM",
-    "REQUEST_PAID_TECHNICIAN_VISIT": "REQUEST PAID TECHNICIAN VISIT"
+    "REQUEST_PAID_TECHNICIAN_VISIT": "REQUEST PAID TECHNICIAN VISIT",
+    "ISSUE_RESLOVED": "Issue resolved",
+    "TRANSFER_PACKAGE": "Transfer package",
+    "CANCEL_GAME_SESSION": "Cancel game sessions"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",

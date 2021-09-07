@@ -230,6 +230,7 @@ export class CustomerJourneyConstants {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     clickListener: () => {},
     linkTo: '',
+    customListner: 'openInternetIssueDialog',
     behaviour: 'link',
   };
 
@@ -346,6 +347,13 @@ export class CustomerJourneyConstants {
     customListner: '',
   };
 
+  public static issueResolvedButton = {
+    title: 'BUTTONS.ISSUE_RESLOVED',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
   public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
 
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
@@ -395,6 +403,8 @@ export class CustomerJourneyConstants {
   public static serviceDetailsButtonConfig: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
 
   public static deviceConnectedHomezoneButtonConfig: IButton[] = [CustomerJourneyConstants.resetWifiButton, CustomerJourneyConstants.closeButton];
+
+  public static tvDetailsButton: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.continueToTroubleshootTvIssueButton];
 
   public static noIssueTvButton: IButton[] = [
     CustomerJourneyConstants.issueFixedTvButton,
