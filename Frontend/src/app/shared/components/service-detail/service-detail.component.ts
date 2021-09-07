@@ -23,23 +23,23 @@ export class ServiceDetailComponent implements OnInit {
       heading: 'UNNAMED COMPUTER',
       IP: '192.168.1.125',
     },
-    {
-      heading: 'UNNAMED SMART WATCH',
-      IP: '192.168.1.125',
-    },
-    {
-      heading: 'UNNAMED TABLET',
-      IP: '192.168.1.125',
-    },
-    {
-      heading: 'UNNAMED PHONE',
-      IP: '192.168.1.125',
-    },
+    // {
+    //   heading: 'UNNAMED SMART WATCH',
+    //   IP: '192.168.1.125',
+    // },
+    // {
+    //   heading: 'UNNAMED TABLET',
+    //   IP: '192.168.1.125',
+    // },
+    // {
+    //   heading: 'UNNAMED PHONE',
+    //   IP: '192.168.1.125',
+    // },
   ];
   constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController) {
-    this.sharedService.setHeaderConfig('', true);
+    this.sharedService.setHeaderConfig('Service detail', false);
     this.buttonsConfig = CustomerJourneyConstants.serviceDetailsButtonConfig;
-    debugger;
+    //debugger;
     this.buttonsConfig.forEach((elem) => {
       if (elem.title === 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING') {
         elem.linkTo = '/';
