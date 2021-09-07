@@ -169,7 +169,13 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
     }
-
+    // Troubleshoot Complete
+    else if (this.codeType === ERoutingIds.tvPinUpdateSuccessfull) {
+      this.sharedService.setHeaderConfig('', false);
+      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvAdminPinResetSuccessfullyButton));
+    }
     //TODO: dummy need to remove this case at the end
     else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;

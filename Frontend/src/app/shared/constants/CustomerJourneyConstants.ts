@@ -46,6 +46,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
+  public static tvAdminPinResetSuccessfully = {
+    header: 'MESSAGES.TV_AMDIN_PIN_RESET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY1', 'MESSAGES.TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY2', 'MESSAGES.TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY3'],
+  };
+
   public static accountNotActive = {
     header: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY',
     span: 'MESSAGES.ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN',
@@ -367,6 +372,8 @@ export class CustomerJourneyConstants {
     linkTo: '/tv-pin-reset-successfull',
     behaviour: 'primary',
   };
+
+  public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 
   public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
 
