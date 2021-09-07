@@ -66,6 +66,11 @@
     "COMPLAINT_NO": "Complain No"
   },
 
+  "ROUTER_NOT_REACHABLE_TEMPLATE": {
+    "ROUTER_NAME": "Router Name",
+    "ROUTER_MODEL": "Router Model"
+  },
+
   "APPOINTMENT_BOOKED_SUCCESSFULLY": {
     "REFERENCE_NO": "Reference No",
     "DATE_VISIT": "Date of visit",
@@ -74,9 +79,19 @@
   "PACKAGE_UPGRADE_SUCCESSFULLY": {
     "REFERENCE_NO": "Reference No:"
   },
+  "ROUTER_UPGRADE_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
+  },
+  "ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
+  },
+  "THIRD_PARTY_ROUTER_SUCCESSFULLY": {
+    "REFERENCE_NO": "Reference No:"
+  },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
+    "OK": "OK",
     "YES": "YES",
     "CLOSE": "CLOSE",
     "BACK": "BACK",
@@ -97,10 +112,15 @@
     "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
     "UPGRADE_ROUTER": "UPGRADE ROUTER",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
-    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD"
+    "BUY_NEW_ROUTER": "BUY NEW ROUTER",
+    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
+    "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
+    "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
+    "USING_THE_SAME_ROUTER": "YES I AM"
   },
   "TEXT": {
-    "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
+    "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
+    "USING_THE_SAME_ROUTER": "Are you using the same router?"
   },
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
@@ -110,7 +130,8 @@
     "CLOSE": "CLOSE",
     "ISSUES_FIXED": "Issue Fixed",
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
-    "VIEW_DETAILS": "VIEW DETAILS"
+    "VIEW_DETAILS": "VIEW DETAILS",
+    "USING_OWN_ROUTER": "No, I'm using my own router"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -124,15 +145,25 @@
     "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
     "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
-    "APPOINTMENT_BOOK_SUCCFULLY": "Appointment booked successfully!",
-    "APPOINTMENT_BOOK_SUCCFULLY_Body": "We have received your complain and booked an appointment. Our technician will contact you soon",
+    "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
+    "APPOINTMENT_BOOK_SUCCESSFULLY_BODY": "We have received your complain and booked an appointment. Our technician will contact you soon",
     "OPEN_SERVICE_REQUEST": "Open Service Request",
     "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY": "Package upgrade request was raised successfully",
-    "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
+    "PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY": "Package upgrade request was raised successfully",
+    "PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "ROUTER_UPGRADE_REQUEST_SUCCESSFULLY": "Router upgrade request was raised successfully",
+    "ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
     "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
     "ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN": "Click here",
-    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment"
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY": "Router & Package upgrade request was raised successfully",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY": "New router request was raised successfully",
+    "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY": "Router reset successful",
+    "RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY_BODY": "Please wait for 5 minutes before using the internet again.  Continue to configure your Wi-Fi settings.",
+    "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
+    "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -154,6 +185,13 @@
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
   "RESET_INTERNET_PASSWORD": {
+    "MOBILE_NUMBER": "Mobile Number*",
+    "NEW_PASSWORD": "New Password*",
+    "CONFIRM_PASSWORD": "Confirm Password*"
+  },
+
+  "RESET_WIFI_PASSWORD": {
+    "WIFI_NAME": "Wi-fi name",
     "MOBILE_NUMBER": "Mobile Number*",
     "NEW_PASSWORD": "New Password*",
     "CONFIRM_PASSWORD": "Confirm Password*"
@@ -182,7 +220,9 @@
     "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
     "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset.",
 
-    "DEVICE_LIST_TITLE": "Select the device"
+    "DEVICE_LIST_TITLE": "Select the device",
+    "ROUTER_NOT_REACHABLE_TITLIE": "Router is not accessible",
+    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'."
   },
   "LOADER": {
     "HEADER": "Almost there",
