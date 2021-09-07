@@ -9,7 +9,7 @@ import { SharedService } from '../shared/shared.service';
 })
 export class ThankyouScreenComponent implements OnInit {
   constructor(public router: Router, private sharedService: SharedService) {
-    this.sharedService.setHeaderConfig('Thanks', false);
+    this.sharedService.setHeaderConfig('', false);
   }
 
   ngOnInit(): void {}

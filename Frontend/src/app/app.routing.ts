@@ -76,6 +76,8 @@ const routes: Routes = [
   { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
   // third party  router Successfully
   { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
+  // third party  router Successfully
+  { path: 'troubleshoot-complete', component: MessageBuilderComponent, data: { id: ERoutingIds.troubleshootComplete } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
@@ -129,7 +131,6 @@ const routes: Routes = [
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
-  { path: 'dialog-demo', component: InternetIssueListDialog },
   { path: 'service-detail', component: ServiceDetailComponent },
   { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
   { path: '**', redirectTo: '' },

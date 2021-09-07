@@ -162,6 +162,13 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessSecondCasesuccessfullyButtons));
     }
+    // Troubleshoot Complete
+    else if (this.codeType === ERoutingIds.troubleshootComplete) {
+      this.sharedService.setHeaderConfig('', false);
+      this.Section1Data = CustomerJourneyConstants.troubleshootComplete;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
+    }
 
     //TODO: dummy need to remove this case at the end
     else {

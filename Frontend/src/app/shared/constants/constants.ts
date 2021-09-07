@@ -46,6 +46,7 @@ export enum ERoutingIds {
   routerNotReachable,
   routerNotReachableForm,
   routerNotReachableFormSuccessfully,
+  troubleshootComplete,
 }
 
 const P3: string = '3P';

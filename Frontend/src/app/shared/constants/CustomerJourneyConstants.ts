@@ -68,6 +68,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY'],
   };
 
+  public static troubleshootComplete = {
+    header: 'MESSAGES.TROUBLESHOOT_COMPLETE_HEADING',
+    paragraphs: ['MESSAGES.TROUBLESHOOT_COMPLETE_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
@@ -319,6 +324,14 @@ export class CustomerJourneyConstants {
     behaviour: 'link',
   };
 
+  public static requestPaidTechnicianVisitButton = {
+    title: 'BUTTONS.REQUEST_PAID_TECHNICIAN_VISIT',
+    clickListener: () => {},
+    linkTo: '/bookComplaint',
+    behaviour: 'primary',
+    customListner: '',
+  };
+
   public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
 
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
@@ -404,4 +417,6 @@ export class CustomerJourneyConstants {
     CustomerJourneyConstants.buyNewRouterButton,
     CustomerJourneyConstants.continueToTroubleshootButton,
   ];
+
+  public static troubleshootCompleteButtons: IButton[] = [CustomerJourneyConstants.requestPaidTechnicianVisitButton, CustomerJourneyConstants.cancelButton];
 }

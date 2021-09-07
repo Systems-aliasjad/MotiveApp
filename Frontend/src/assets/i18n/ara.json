@@ -97,7 +97,11 @@
     "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
     "UPGRADE_ROUTER": "UPGRADE ROUTER",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
-    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD"
+    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
+    "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
+    "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
+    "USING_THE_SAME_ROUTER": "YES I AM",
+    "REQUEST_PAID_TECHNICIAN_VISIT": "REQUEST PAID TECHNICIAN VISIT"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?"
@@ -132,7 +136,17 @@
     "PACKAGE_UPGRADE_REQUEST_SUCCFULLY_Body": "Thank you for your request. We will call you back within 24 hrs.",
     "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
     "ACCOUNT_DISCONNECTED_TEMPORARILY_SPAN": "Click here",
-    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment"
+    "ACCOUNT_DISCONNECTED_TEMPORARILY_BODY": "if you wish to get bill details / make payment",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY": "Router & Package upgrade request was raised successfully",
+    "ROUTER_PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY": "New router request was raised successfully",
+    "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY": "Router reset successful",
+    "RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY_BODY": "Please wait for 5 minutes before using the internet again.  Continue to configure your Wi-Fi settings.",
+    "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
+    "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router.",
+    "TROUBLESHOOT_COMPLETE_HEADING": "Troubleshooting Complete",
+    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

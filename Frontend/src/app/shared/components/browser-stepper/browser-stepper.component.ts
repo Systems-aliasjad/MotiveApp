@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { SharedService } from '../../shared.service';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
+import { IButton } from '../../constants/types';
 
 @Component({
   selector: 'app-browser-stepper',
@@ -15,6 +16,7 @@ export class BrowserStepperComponent implements OnInit {
   headerString: string = '';
   isBookComp: boolean = true;
   isContTroubleShoot: boolean = false;
+  buttonConfig: IButton[] = [];
 
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.selectedLang = this.sharedService.getDefaultLanguage();
@@ -28,9 +30,21 @@ export class BrowserStepperComponent implements OnInit {
     this.headerString = 'Step ' + this.step + '/3';
     this.sharedService.setHeaderConfig(this.headerString, true);
     if (this.step < 3) {
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.browserStapperCase1Buttons));
+      this.buttonConfig = CustomerJourneyConstants.browserStapperCase1Buttons;
+      this.buttonConfig.forEach((elem) => {
+        if (elem.title === 'BUTTONS.ISSUE_FIXED') {
+          elem.linkTo = '/troubleshoot-complete';
+        }
+      });
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
     } else {
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.browserStapperCase2Buttons));
+      this.buttonConfig = CustomerJourneyConstants.browserStapperCase2Buttons;
+      this.buttonConfig.forEach((elem) => {
+        if (elem.title === 'BUTTONS.ISSUE_FIXED') {
+          elem.linkTo = '/troubleshoot-complete';
+        }
+      });
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
     }
   }
 
