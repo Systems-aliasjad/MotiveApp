@@ -7,7 +7,16 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./device-list-dialog.component.scss'],
 })
 export class DeviceListDialog implements OnInit {
-  devicesList: any[] = ['Device 1', 'Device 2', 'Device 3', 'Device 4', 'Device 5'];
+  devicesList: any[] = [
+    {
+      device: 'Reboot all devices',
+      route: '/',
+    },
+    {
+      device: 'Reboot internet device',
+      route: '/',
+    },
+  ];
 
   constructor(private modalCtrl: ModalController) {}
 

@@ -40,6 +40,7 @@ export class InternetIssueListDialog implements OnInit {
 
   onIssueClick(item) {
     if (item.route != '') {
+      this.dismiss();
       this.router.navigate([item.route]);
     }
   }
