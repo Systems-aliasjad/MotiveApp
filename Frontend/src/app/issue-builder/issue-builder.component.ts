@@ -17,6 +17,7 @@ import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/i
 export class IssueBuilderComponent implements OnInit {
   codeType;
   modal: any;
+  btnConfig: IButton[] = [];
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
@@ -99,7 +100,13 @@ export class IssueBuilderComponent implements OnInit {
     }
     // Router no-issue
     else if (this.codeType === ERoutingIds.noIssue) {
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssue));
+      this.btnConfig = CustomerJourneyConstants.noIssue;
+      this.btnConfig.forEach((elem) => {
+        if (elem.title === 'BUTTONS.ISSUE_FIXED') {
+          elem.linkTo = 'service-detail';
+        }
+      });
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.btnConfig));
     }
     ///third party router
     else if (this.codeType === ERoutingIds.thirdPartyRouter) {
