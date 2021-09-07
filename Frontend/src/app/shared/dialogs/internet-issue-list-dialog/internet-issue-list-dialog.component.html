@@ -1,36 +1,45 @@
-<ion-content padding>
-  <ion-grid class="form-main-container">
-    <ion-header>
-      <ion-toolbar style="display: flex">
-        <div>
-          <h5>{{ 'DIALOG.INTERNET_ISSUE_LIST_TITLE' | translate }}</h5>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h5>{{ 'DIALOG.INTERNET_ISSUE_LIST_TITLE' | translate }}</h5>
+    </ion-title>
+    <ion-buttons  slot="end">
+      <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Dialog Internet Issues List -->
+  <ion-row>
+    <ion-col size="12">
+      <ion-list *ngFor="let item of issuesList; let i = index">
+        <ion-item detail="true" (click)="onIssueClick(item)">
+          <ion-label class="ion-text-wrap">
+            <ion-text>{{ item.issue }}</ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+
+  <!-- Dialog footer  -->
+  <ion-row>
+    <ion-col size="12">
+      <div class="check-guidlines">
+        <div class="check-guidlines_icon">
+          <img  src="assets/images/indicators-icons/icon_info.svg"alt="" />
         </div>
-        <ion-buttons fill="outline" slot="end">
-          <ion-button style="color: yellowgreen" (click)="dismiss()"> Close </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <!-- Dialog Internet Issues List -->
-    <ion-list *ngFor="let item of issuesList; let i = index">
-      <ion-item detail="true" (click)="onIssueClick(item)">
-        <ion-label class="ion-text-wrap">
-          <ion-text>{{ item.issue }}</ion-text>
-        </ion-label>
-      </ion-item>
-    </ion-list>
-    <!-- Dialog footer  -->
-    <ion-row>
-      <ion-col size="12">
-        <div>
-          <img alt="svg icon" src="" /> &nbsp;
-          <span>{{ 'DIALOG.INTERNET_ISSUE_LIST_MESSAGE' | translate }}</span>
+        <div class="check-guidlines_content">
+          <p>{{ 'DIALOG.INTERNET_ISSUE_LIST_MESSAGE' | translate }}</p>
+          <a class="arrow-btn">
+            <span>{{ 'BUTTONS.VIEW_GUIDLINES' | translate }}</span>
+            <img  src="assets/images/action-icons/icon_arrow_right.svg" alt="See All Icon">
+          </a>
         </div>
-      </ion-col>
-      <ion-col size="12">
-        <div class="btn-bottom">
-          <a style="width: 100%" style="color: yellowgreen">{{ 'BUTTONS.VIEW_GUIDLINES' | translate }} ></a>
-        </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      </div>
+     </ion-col>
+  </ion-row>
 </ion-content>

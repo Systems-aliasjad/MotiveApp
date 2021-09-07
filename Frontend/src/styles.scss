@@ -88,8 +88,7 @@
 }
 html,
 body,
-.body-wrapper,
-ion-content{
+ion-content.body-wrapper{
   height: 100%;
   height: 100vh;
 }
@@ -205,7 +204,8 @@ h6{
   }
 }
 .quick-links_all,
-.arrow-link {
+.arrow-link,
+.arrow-btn {
   color: $etisalat-color;
   text-transform: $text-uppercase;
   display: -webkit-box;
@@ -282,6 +282,7 @@ html{
     z-index: 0;
   }
 }
+
 .transparent-btn{
   a{
     display: inline-block;
