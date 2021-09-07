@@ -325,6 +325,13 @@
     }
   }
 }
+/* app-service-detail{
+  app-buttons {
+    background: red;
+    display: flex;
+    flex-direction: row;
+  }
+}  */
 .issue-tabs_footer{
   background-color: $white;
   -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
