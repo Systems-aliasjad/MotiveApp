@@ -3,8 +3,9 @@
 .body-wrapper {
   background-color: $alabaster;
   padding: 49px 0 0 66px;
-  height: calc(100vh - 100px);
+  /* height: calc(100vh - 120px); */
   //height:87.7%;
+  height:100vh;
 }
 
 .nav-opened {
