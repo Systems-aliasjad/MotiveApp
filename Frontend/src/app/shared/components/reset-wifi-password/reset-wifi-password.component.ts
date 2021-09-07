@@ -11,7 +11,7 @@ import { ConfirmedValidator } from '../../constants/constants';
 })
 export class ResetWifiPasswordComponent implements OnInit {
   public segment: string = '1';
-  public formGroup: FormGroup;
+  public routerSettingsForm: FormGroup;
   error = errorMessages;
   @ViewChild('staticTabs', { static: false }) staticTabs: ResetWifiPasswordComponent;
   passwordType: string = 'password';
@@ -22,34 +22,50 @@ export class ResetWifiPasswordComponent implements OnInit {
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
-  constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService) {
+  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService) {
     this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true);
-
     this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;
     });
+    this.createForm();
   }
 
-  ngOnInit() {
-    this.formGroup = this.formBuilder.group(
-      {
-        WifiName: [''],
-        NewPassword: ['', [Validators.required]],
-        ConfirmPassword: ['', [Validators.required]],
-        MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-      },
-      {
-        validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
-      }
-    );
+  ngOnInit() {}
+
+  createForm() {
+    this.routerSettingsForm = this.fb.group({
+      terms: [true, Validators.required],
+      tab1: this.fb.group(
+        {
+          WifiName: ['', Validators.required],
+          NewPassword: ['', Validators.required],
+          ConfirmPassword: ['', Validators.required],
+          MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+        },
+        {
+          validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
+        }
+      ),
+      tab2: this.fb.group(
+        {
+          WifiName: ['', Validators.required],
+          NewPassword: ['', Validators.required],
+          ConfirmPassword: ['', Validators.required],
+          MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+        },
+        {
+          validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
+        }
+      ),
+    });
   }
 
   get f() {
-    return this.formGroup.controls;
+    return this.routerSettingsForm.controls;
   }
 
   SubmitForm() {
-    //console.log(this.formGroup.valid);
+    //console.log(this.routerSettingsForm.valid);
     this.router.navigate(['reset-wifi-password-form_successfully']);
   }
 
