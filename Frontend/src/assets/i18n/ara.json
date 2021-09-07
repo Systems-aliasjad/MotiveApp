@@ -20,7 +20,9 @@
     "RESET_INTERNET_PASSWORD": "",
     "BOOK_COMPLAINT": "Please fill your complete details",
     "RESET_WIFI_PASSWORD_TAB1": "SSID 2.5 Ghz",
-    "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz"
+    "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz",
+    "MY_TV_BOXES": "MY TV BOXES",
+    "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -117,7 +119,11 @@
     "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
     "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
     "USING_THE_SAME_ROUTER": "YES I AM",
-    "REQUEST_PAID_TECHNICIAN_VISIT": "REQUEST PAID TECHNICIAN VISIT"
+    "REQUEST_PAID_TECHNICIAN_VISIT": "REQUEST PAID TECHNICIAN VISIT",
+    "ISSUE_RESLOVED": "Issue resolved",
+    "TRANSFER_PACKAGE": "Transfer package",
+    "CANCEL_GAME_SESSION": "Cancel game sessions",
+    "CONFIRM": "CONFIRM"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -205,17 +211,16 @@
   "DIALOG": {
     "PASSWORD_WASNOT_RESET_HEADING": "Your password wasn't reset",
     "PASSWORD_WASNOT_RESET_DESCRIPTION": "Please note that the issue won't be fixed until the password is changed and the router is configured with the new password",
-
     "INTERNET_ISSUE_TITLE": "Internet issues",
     "INTERNET_ISSUE_HEADING": "Router is not accessible",
     "INTERNET_ISSUE_CONTINUE": "Once you complete these steps, tap 'Continue'.",
     "INTERNET_ISSUE_EXIST_TROUBLESHOOTING": "If you want to complete these steps later, tap 'Exist troubleshooting'.",
-
+    "RESET_TV_ADMIN_PIN": "Reset TV admin PIN",
+    "RESET_TV_ADMIN_PIN_BODY": "Your PIN will be reset to the default PIN: 1111.",
     "RESTART_ROUTER_HEADING": "Restart router",
     "RESTART_ROUTER_INS1": "Please note that the issue won't be fixed until you restart your router.",
     "RESTART_ROUTER_INS2": "You can also restart your router manually.",
     "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
-
     "INTERNET_ISSUE_LIST_TITLE": "Please select your issue",
     "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues.",
 

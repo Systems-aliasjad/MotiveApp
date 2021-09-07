@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
-import { Location } from '@angular/common';
+import { ModalController } from '@ionic/angular';
 export interface ITermsAndConditions {
   head: string;
   body: string[];
@@ -31,7 +31,7 @@ export class TermsConditionsComponent implements OnInit {
       body: ['TERMS_AND_CONDITIONS.PARA2', 'TERMS_AND_CONDITIONS.PARA2'],
     },
   ];
-  constructor(private sharedService: SharedService, private location: Location) {
+  constructor(private sharedService: SharedService, private modalCtrl: ModalController) {
     this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', true);
   }
 
@@ -39,6 +39,6 @@ export class TermsConditionsComponent implements OnInit {
 
   AcceptContinue = (event: any) => {
     this.sharedService.setTermsConditions(true);
-    this.location.back();
+    this.modalCtrl.dismiss();
   };
 }

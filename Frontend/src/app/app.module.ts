@@ -23,6 +23,8 @@ import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
+import { TvDetailComponent } from './tv-detail/tv-detail.component';
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
@@ -32,7 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent, IssueBuilderComponent],
+  declarations: [AppComponent, LandingComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent, IssueBuilderComponent, TvDetailComponent],
   imports: [
     SharedModule,
     RoutingModule,
