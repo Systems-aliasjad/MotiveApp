@@ -3,13 +3,13 @@
 
 // ------------Removed Ionic ion-item Styling start-------------------
 :host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-list {
     --ion-background-color: transparent;
   }
   ion-item {
     --min-height: 30px;
   }
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
 } 
 ion-item::part(native){
   padding-inline-end: 0 !important;

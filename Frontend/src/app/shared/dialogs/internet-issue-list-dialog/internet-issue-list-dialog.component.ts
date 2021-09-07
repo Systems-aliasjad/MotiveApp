@@ -5,7 +5,7 @@ import { ModalController } from '@ionic/angular';
 @Component({
   selector: 'internet-issue-list-dialog',
   templateUrl: './internet-issue-list-dialog.component.html',
-  styleUrls: ['./internet-issue-list-dialog.component.css'],
+  styleUrls: ['./internet-issue-list-dialog.component.scss'],
 })
 export class InternetIssueListDialog implements OnInit {
   issuesList: any[] = [
