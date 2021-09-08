@@ -53,6 +53,13 @@ export enum ERoutingIds {
   tvBoxNotReachableTryAgain,
   tvBoxNotReachableForm,
   tvBoxNotReachableFormSuccessfully,
+
+  routerRestart,
+  routerDeviceCare,
+  tvBoxRestartRequired,
+  tvBoxRestartRequiredSuccessfully,
+  tvBoxRestartRequiredManually,
+  tvBoxRestartRequiredDeviceCare,
 }
 
 const P3: string = '3P';

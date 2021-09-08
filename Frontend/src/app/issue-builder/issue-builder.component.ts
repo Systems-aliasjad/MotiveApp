@@ -153,6 +153,12 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableTryAgainButtons));
     }
 
+    //TV box restart required
+    else if (this.codeType === ERoutingIds.tvBoxRestartRequired) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartRequiredButtons));
+    }
+
     //#endregion Module 2
   }
 }

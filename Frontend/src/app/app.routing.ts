@@ -48,6 +48,7 @@ const routes: Routes = [
   {
     path: 'router-restart',
     component: RouterRestartComponent,
+    data: { id: ERoutingIds.routerRestart },
   },
   {
     path: 'reset-internet-password',
@@ -56,6 +57,7 @@ const routes: Routes = [
   {
     path: 'device-care',
     component: DeviceCareComponent,
+    data: { id: ERoutingIds.routerDeviceCare },
   },
 
   //Open Complaint
@@ -132,12 +134,21 @@ const routes: Routes = [
   { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
   //#endregion Router Not Reachable
 
-  //#region TV Box Not Reachable
+  //#region Module 2
+
+  ///Tv Box Not Reachable
   { path: 'tvBox-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachable } },
   { path: 'tvBox-not-reachable_try_again', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableTryAgain } },
   { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
   { path: 'tvBox-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableFormSuccessfully } },
-  //#endregion Router Not Reachable
+
+  ///TV set top box restart required
+  { path: 'tvBox-restart-required', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequired } },
+  { path: 'tvBox-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequiredSuccessfully } },
+  { path: 'tvBox-restart-required-manually', component: RouterRestartComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
+  { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
+
+  //#endregion Module 2
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },

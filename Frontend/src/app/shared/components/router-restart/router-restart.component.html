@@ -4,7 +4,7 @@
     <ion-row class="device-title">
       <ion-col size="12" class="pt-0">
         <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-          <h2>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H1' | translate }}</h2>
+          <h2>{{ headerTitle | translate }}</h2>
         </div>
       </ion-col>
     </ion-row>
@@ -20,7 +20,7 @@
           <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1366px)" />
           <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1440px)" />
           <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1920px)" />
-          <img src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" class="cover lazyloaded" alt="" />
+          <img [src]="ImgPath" class="cover lazyloaded" alt="" />
         </picture>
       </ion-col>
       <!-- Router Image End -->
@@ -31,14 +31,14 @@
           <ion-row class="instruction_title">
             <ion-col size="12" class="pt-0">
               <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-                <h2>{{ 'ROUTER_RESTART.ROUTER_DIDNOT_RESTART_H1' | translate }}</h2>
+                <h2>{{ instructionHeaderTitle | translate }}</h2>
               </div>
             </ion-col>
           </ion-row>
 
           <ion-row class="instruction_steps">
             <ion-col size="12" class="pb-0">
-              <p class="tag-title">Follow these steps</p>
+              <p class="tag-title">{{ instructionStepsTitle | translate }}</p>
               <ion-list *ngFor="let ins of instructionList; let i = index">
                 <ion-item>
                   <ion-label>{{ i + 1 }}. {{ ins | translate }}</ion-label>
@@ -51,14 +51,14 @@
             <ion-col size="12">
               <ion-item-divider>
                 <ion-label>
-                  <span>OR</span>
+                  <span>{{ instructionsOR | translate }}</span>
                 </ion-label>
               </ion-item-divider>
-              <p class="tag-title">Consult Device care for...</p>
-              <p>Etisalat device care gives you.....</p>
+              <p class="tag-title">{{ instructionsORTitle | translate }}</p>
+              <p>{{ instructionsORBody | translate }}</p>
             </ion-col>
           </ion-row>
-          <app-buttons class=""></app-buttons>
+          <app-buttons></app-buttons>
         </div>
       </ion-col>
     </ion-row>

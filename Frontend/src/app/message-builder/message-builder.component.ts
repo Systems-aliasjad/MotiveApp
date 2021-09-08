@@ -178,7 +178,7 @@ export class MessageBuilderComponent implements OnInit {
     }
 
     //#region  Module 2
-    // Troubleshoot Complete
+    // Tv box not reachable
     else if (this.codeType === ERoutingIds.tvBoxNotReachableFormSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
@@ -190,6 +190,12 @@ export class MessageBuilderComponent implements OnInit {
 
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
+    }
+    // Tv box Restart Required
+    else if (this.codeType === ERoutingIds.tvBoxRestartRequiredSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.tvBoxRestartssuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartSuccessfullyButtons));
     }
     //#endregion Module 2
 
