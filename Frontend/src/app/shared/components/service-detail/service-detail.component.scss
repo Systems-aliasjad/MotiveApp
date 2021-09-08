@@ -9,6 +9,16 @@
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
    }
+   
+}
+ion-item::part(native){
+  padding-inline-end: 0 ;
+  --inner-padding-end: 0;
+  padding-left: 0;
+  --background:transparent;
+  --border-radius:0;
+  --border-width: 0;
+  --inner-border-width: 0
 }
 // --------------------------------------------------------------
 
@@ -29,113 +39,138 @@
   @media screen and  (max-width: 992px) {
     background-color: transparent;
   }
-  .service-state {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    width: 75px;
+  .service-states-container{
     text-align: center;
-    ion-label{
-      color:$primary-color;
-      span{
-        display: block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    max-width: 450px;
+    margin: auto;
+    ion-list{
+      padding-top: 0;
+      padding-bottom: 0;
+      ion-item{
+        margin-right:.8rem ;
+        margin-bottom: .8rem;
+        margin-left: .8rem;
+        --min-height: auto; 
+        display: inline-block;
+        @media screen and (max-width: 767px) {
+          margin-right: 0;
+          margin-left: 0;
+        }
+        
       }
-     
     }
-  } 
-  .state {
-    border-radius: 0.6rem;
-     display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    padding: .1rem;
-    width: 46px;
-    height: 46px;
-    text-align: center;
-    margin: 1rem;
-    img{
-      width: 2rem;
-      height: 2rem;
+    .service-state {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 75px;
+      text-align: center;
+      ion-label{
+        color:$primary-color;
+        span{
+          margin-top: .4rem;
+          display: block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+       
+      }
+    } 
+    .state {
+      border-radius: 0.6rem;
+       display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      padding: .1rem;
+      width: 46px;
+      height: 46px;
+      text-align: center;
+      margin: 1rem 1rem .5rem;
+      img{
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+    .default-state{
+        background-color:#f7f8f4;
+        border: 2px solid #f7f8f4;
+    }
+    .okay-state{
+      border: 2px solid $etisalat-color;
+      background-color: $white;
+      position: relative;
+      box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+      &:after{
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background: url('/assets/images/network-map-icons/all-okay-state.svg');
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        display: inline-block;
+        position:absolute; 
+        right: -6px;
+        bottom: -6px; 
+      }
+    }
+    .error-state{
+      border: 2px solid #be1218;
+      background-color:#F9E0DF;
+      position: relative;
+      box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+      &:after{
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background: url('/assets/images/network-map-icons/issue-error-state.svg');
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        display: inline-block;
+        position:absolute; 
+        right: -6px;
+        bottom: -6px;
+      }
+    }
+    .pending-state{
+      border: 2px solid #ff6631;
+      background-color:#FFE0D6;
+      position: relative;
+      box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+      &:after{
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background: url('/assets/images/network-map-icons/action-pending-state.svg');
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        display: inline-block;
+        position:absolute; 
+        right: -6px;
+        bottom: -6px;
+      }
     }
   }
-  .default-state{
-      background-color:#f7f8f4;
-      border: 2px solid #f7f8f4;
-  }
-  .okay-state{
-    border: 2px solid $etisalat-color;
-    background-color: $white;
-    position: relative;
-    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-    &:after{
-      content: '';
-      width: 1rem;
-      height: 1rem;
-      background: url('/assets/images/network-map-icons/all-okay-state.svg');
-      background-repeat: no-repeat;
-      background-size: 1rem;
-      display: inline-block;
-      position:absolute; 
-      right: -6px;
-      bottom: -6px; 
-    }
-  }
-  .error-state{
-    border: 2px solid #be1218;
-    background-color:#F9E0DF;
-    position: relative;
-    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-    &:after{
-      content: '';
-      width: 1rem;
-      height: 1rem;
-      background: url('/assets/images/network-map-icons/issue-error-state.svg');
-      background-repeat: no-repeat;
-      background-size: 1rem;
-      display: inline-block;
-      position:absolute; 
-      right: -6px;
-      bottom: -6px;
-    }
-  }
-  .pending-state{
-    border: 2px solid #ff6631;
-    background-color:#FFE0D6;
-    position: relative;
-    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-    &:after{
-      content: '';
-      width: 1rem;
-      height: 1rem;
-      background: url('/assets/images/network-map-icons/action-pending-state.svg');
-      background-repeat: no-repeat;
-      background-size: 1rem;
-      display: inline-block;
-      position:absolute; 
-      right: -6px;
-      bottom: -6px;
-    }
-  }
+ 
+  
+  
 }
 .service-detail_content{
   .content {
