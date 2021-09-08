@@ -45,7 +45,6 @@ export class ServiceDetailComponent implements OnInit {
   ngOnInit() {
     this.sharedService.setHeaderConfig('Service detail', false);
     this.buttonsConfig = CustomerJourneyConstants.serviceDetailsButtonConfig;
-    //debugger;
     this.buttonsConfig.forEach((elem) => {
       if (elem.title === 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING') {
         elem.linkTo = '/';
