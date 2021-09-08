@@ -27,6 +27,7 @@
   "LANDING_PAGE": {
     "SWITCH": "Switch",
     "INTERNET_ISSUES_TITLE": "Internet issues",
+    "TV_BOX_TITLE": "TV issues",
     "ISSUES_NOT_FIEXED_TITLE": "Internet issues",
     "INTERNET_ISSUES_DESCRIPTION": "My Wi-Fi is slow or causing problems",
     "TV_ISSUES_TITLE": "TV issues",
@@ -92,6 +93,8 @@
   },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
+    "TRY_AGAIN": "TRY AGAIN",
+
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "OK": "OK",
     "YES": "YES",
@@ -109,6 +112,7 @@
     "VIEW_GUIDLINES": "VIEW GUIDLINES",
     "UPGRADE_PACKAGE": "UPGRADE PACKAGE",
     "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
+    "BOOK_AN_APPOINTMENT": "BOOK AN APPOINTMENT",
     "RESET_ROUTER": "RESET ROUTER",
     "CANCEL": "CANCEL",
     "UPGRADE_ROUTER_PACKAGE": "UPGRADE ROUTER & PACKAGE",
@@ -172,7 +176,11 @@
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router.",
     "TROUBLESHOOT_COMPLETE_HEADING": "Troubleshooting Complete",
-    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side."
+    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side.",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY": "TV admin PIN reset successfully!",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY1": "Your PIN has been successfully reset to the default PIN: 1111.",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY2": "Please restart all your TV boxes to activate the new PIN.",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY3": "Note: You will be required to change the default PIN when you log in to any paid service."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
