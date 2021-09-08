@@ -143,6 +143,14 @@ export class CustomerJourneyConstants {
     behaviour: 'link',
   };
 
+  public static exitTroubleShootingPrimaryButton: IButton = {
+    title: 'BUTTONS.EXIT_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'gotoMainForm',
+  };
+
   public static okButton: IButton = {
     title: 'BUTTONS.OK',
     clickListener: () => {},
@@ -339,6 +347,15 @@ export class CustomerJourneyConstants {
     clickListener: () => {},
     linkTo: '',
     behaviour: 'link',
+    customListner: '',
+  };
+
+  public static continueToTroubleshootTVBoxButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'openRestartTvBoxDialog',
   };
 
   public static continueToBrowserStepperButton: IButton = {
@@ -483,6 +500,7 @@ export class CustomerJourneyConstants {
 
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
+  public static tvBoxRestartDialogButtons: IButton[] = [CustomerJourneyConstants.exitTroubleShootingPrimaryButton, CustomerJourneyConstants.backButton];
 
   public static tvBoxRestartRequiredButtons: IButton[] = [CustomerJourneyConstants.restartStbNowButton, CustomerJourneyConstants.restartManuallyLink];
 
@@ -504,7 +522,7 @@ export class CustomerJourneyConstants {
 
   public static routerRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareButton, CustomerJourneyConstants.closeButton];
 
-  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
+  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedTvButton, CustomerJourneyConstants.continueToTroubleshootTVBoxButton];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 

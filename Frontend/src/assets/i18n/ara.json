@@ -109,6 +109,9 @@
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "RESTART_NOW": "RESTART NOW",
+    "RESTART_STB_NOW": "RESTART NOW STB ",
+    "RESTART_MANUALLY": "I'LL RESTART IT MANYALLY",
+
     "DONE": "Done",
     "TRACK_COMPLAINT_STATUS": "Track Complaint Status",
     "RESET_NOW": "RESET NOW",
@@ -180,11 +183,13 @@
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router.",
     "TROUBLESHOOT_COMPLETE_HEADING": "Troubleshooting Complete",
-    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side.",
+    "TROUBLESHOOT_COMPLETE_BODY": "We couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side.",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY": "TV admin PIN reset successfully!",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY1": "Your PIN has been successfully reset to the default PIN: 1111.",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY2": "Please restart all your TV boxes to activate the new PIN.",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY3": "Note: You will be required to change the default PIN when you log in to any paid service.",
+    "TV_BOX_RESTART_REQUIRED_SUCCESSFULLY": "TV Box restarted successfully ",
+    "TV_BOX_RESTART_REQUIRED_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.",
     "NO_INTERNET_CONNECTION": "No internet connection",
     "NO_INTERNET_CONNECTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
     "RESET_ELIFEON_PIN_HEADING": "Unable to login",
@@ -212,6 +217,22 @@
     "ROUTER_DIDNOT_RESTART_H3": "Visit 'Device Care'",
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
+  "TVBOX_RESTART": {
+    "TVBOX_DIDNOT_RESTART_H1": "Restart TV box manually"
+  },
+
+  "INSTRUCTIONS_STEPS": {
+    "ROUTER_RESTART_TITLE": "Follow these steps",
+    "TVBOX_RESTART_TITLE": "Follow these steps",
+    "OR": "OR"
+  },
+  "INSTRUCTIONS_STEPS_OR": {
+    "ROUTER_RESTART_TITLE": "Consult Device care for...",
+    "ROUTER_RESTART_BODY": "Etisalat device care gives you.....",
+    "TVBOX_RESTART_TITLE": "Visit 'Device Care' ",
+    "TVBOX_RESTART_BODY": "Where you can find more details on how to restart your TV box."
+  },
+
   "RESET_INTERNET_PASSWORD": {
     "MOBILE_NUMBER": "Mobile Number*",
     "NEW_PASSWORD": "New Password*",
@@ -225,8 +246,10 @@
     "CONFIRM_PASSWORD": "Confirm Password*"
   },
   "DEVICE_CARE": {
-    "PAGE_HEADING": "How to configure your router"
+    "PAGE_HEADING": "How to configure your router",
+    "TVBOX_RESTART_HEADING": "Specific device guides"
   },
+
   "DIALOG": {
     "PASSWORD_WASNOT_RESET_HEADING": "Your password wasn't reset",
     "PASSWORD_WASNOT_RESET_DESCRIPTION": "Please note that the issue won't be fixed until the password is changed and the router is configured with the new password",
@@ -249,7 +272,12 @@
 
     "DEVICE_LIST_TITLE": "Select the device",
     "ROUTER_NOT_REACHABLE_TITLIE": "Router is not accessible",
-    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'."
+    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'.",
+
+    "TVBOX_ROUTER_HEADING": "Restart TV box",
+    "TVBOX_ROUTER_INS1": "Please note that the issue won’t be fixed until you restart your TV box.",
+    "TVBOX_ROUTER_INS2": "You can also restart your TV box manually.",
+    "TVBOX_ROUTER_INS3": "Once you restart your TV box, wait for 5 minutes and then try using the internet again."
   },
   "LOADER": {
     "HEADER": "Almost there",

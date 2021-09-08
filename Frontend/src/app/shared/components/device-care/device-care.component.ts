@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { ERoutingIds } from '../../constants/constants';
+import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
 import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
+import { RestartTvboxDialogComponent } from '../../dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -12,6 +15,20 @@ import { SharedService } from '../../shared.service';
 })
 export class DeviceCareComponent implements OnInit {
   selectedLang: string;
+  codeType;
+  pageHeading;
+
+  routeLinkHelper(arr) {
+    return arr.map((obj) => {
+      return {
+        ...obj,
+        clickListener: () => {
+          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
+        },
+      };
+    });
+  }
+
   buttonsConfig: IButton[] = [
     {
       title: 'BUTTONS.ISSUE_FIXED',
@@ -31,19 +48,38 @@ export class DeviceCareComponent implements OnInit {
     },
   ];
   constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {
+    this.actRoute.data.subscribe((data) => {
+      this.codeType = data.id;
+      this.ngOnInit();
+    });
+
     actRoute.params.subscribe((val) => {
       this.ngOnInit();
     });
   }
 
   ngOnInit() {
-    this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
-    this.sharedService.setButtonConfig(this.buttonsConfig);
+    if (this.codeType === ERoutingIds.tvBoxRestartRequiredDeviceCare) {
+      this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.TVBOX_RESTART_HEADING';
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartDeviceCareButtons));
+    } else if (this.codeType === ERoutingIds.routerDeviceCare) {
+      this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.PAGE_HEADING';
+      this.sharedService.setButtonConfig(this.buttonsConfig);
+    }
   }
 
   async continueTroubleShoot() {
     const modal = await this.modalCtrl.create({
       component: RestartRouterDialog,
+    });
+    return await modal.present();
+  }
+
+  async openRestartTvBoxDialog() {
+    const modal = await this.modalCtrl.create({
+      component: RestartTvboxDialogComponent,
     });
     return await modal.present();
   }

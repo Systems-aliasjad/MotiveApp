@@ -109,7 +109,7 @@
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "RESTART_NOW": "RESTART NOW",
-    "RESTART_STB_NOW": "RESTART STB NOW",
+    "RESTART_STB_NOW": "RESTART NOW STB ",
     "RESTART_MANUALLY": "I'LL RESTART IT MANYALLY",
 
     "DONE": "Done",
@@ -272,7 +272,12 @@
 
     "DEVICE_LIST_TITLE": "Select the device",
     "ROUTER_NOT_REACHABLE_TITLIE": "Router is not accessible",
-    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'."
+    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'.",
+
+    "TVBOX_ROUTER_HEADING": "Restart TV box",
+    "TVBOX_ROUTER_INS1": "Please note that the issue won’t be fixed until you restart your TV box.",
+    "TVBOX_ROUTER_INS2": "You can also restart your TV box manually.",
+    "TVBOX_ROUTER_INS3": "Once you restart your TV box, wait for 5 minutes and then try using the internet again."
   },
   "LOADER": {
     "HEADER": "Almost there",
