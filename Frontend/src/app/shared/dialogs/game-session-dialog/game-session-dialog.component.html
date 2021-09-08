@@ -1,3 +1,16 @@
-<p>
-  game-session-dialog works!
-</p>
+<ion-grid class="form-main-container">
+  <!-- Dialog Heading -->
+  <ion-row>
+    <ion-col size="12">
+      <div>
+        <h2>{{ 'DIALOG.GAME_SESSION_HEADING' | translate }}</h2>
+      </div>
+      <div>
+        <p>{{ 'DIALOG.GAME_SESSION_P1' | translate }}</p>
+        <p>{{ 'DIALOG.GAME_SESSION_P2' | translate }}</p>
+        <p>{{ 'DIALOG.GAME_SESSION_P3' | translate }}</p>
+      </div>
+    </ion-col>
+  </ion-row>
+  <app-buttons></app-buttons>
+</ion-grid>

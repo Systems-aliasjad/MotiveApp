@@ -87,6 +87,8 @@ const routes: Routes = [
   { path: 'reset-login-pin', component: MessageBuilderComponent, data: { id: ERoutingIds.restELifeLoginPin } },
   // rest ELife Login Pin Success
   { path: 'reset-login-pin-success', component: MessageBuilderComponent, data: { id: ERoutingIds.restELifeLoginPinResetSuccess } },
+  // Cancel Game Session Confirm
+  { path: 'game-session-cancel', component: MessageBuilderComponent, data: { id: ERoutingIds.gameSessionCancelConfirmed } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
