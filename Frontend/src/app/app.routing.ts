@@ -80,6 +80,10 @@ const routes: Routes = [
   { path: 'troubleshoot-complete', component: MessageBuilderComponent, data: { id: ERoutingIds.troubleshootComplete } },
   // tv-pin-reset-successfull
   { path: 'tv-pin-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvPinUpdateSuccessfull } },
+  // rest ELife Login Pin
+  { path: 'reset-login-pin', component: MessageBuilderComponent, data: { id: ERoutingIds.restELifeLoginPin } },
+  // rest ELife Login Pin Success
+  { path: 'reset-login-pin-success', component: MessageBuilderComponent, data: { id: ERoutingIds.restELifeLoginPinResetSuccess } },
 
   //Router Reboot Required
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },

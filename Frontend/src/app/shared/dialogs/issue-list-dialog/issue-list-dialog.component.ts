@@ -50,7 +50,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to log in to eLifeON',
-      route: '',
+      route: 'reset-login-pin',
     },
     {
       issue: 'Facing problems while playing a game',

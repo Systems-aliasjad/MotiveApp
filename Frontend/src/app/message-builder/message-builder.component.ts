@@ -170,12 +170,32 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
     }
-    // Troubleshoot Complete
+    // TV PIN update Complete
     else if (this.codeType === ERoutingIds.tvPinUpdateSuccessfull) {
       this.sharedService.setHeaderConfig('', false);
       this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvAdminPinResetSuccessfullyButton));
+    }
+
+    // ELife Login PIN Reset Complete
+    else if (this.codeType === ERoutingIds.restELifeLoginPin) {
+      this.sharedService.setHeaderConfig('', false);
+      this.Section1Data = CustomerJourneyConstants.restELifeLoginPin;
+      this.imgSrc = this.warningImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinButton));
+    }
+    // ELife Login PIN Reset Success Complete
+    else if (this.codeType === ERoutingIds.restELifeLoginPinResetSuccess) {
+      this.sharedService.setHeaderConfig('', false);
+      this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
+      this.imgSrc = this.successImgSrc;
+      this.Section2Template = ApplicableCodes.userCredentialsTemplate;
+      this.Section2Data = {
+        userId: '<XXX>',
+        pin: '1111@eLife',
+      };
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinResetSuccessButton));
     }
     //TODO: dummy need to remove this case at the end
     else {
