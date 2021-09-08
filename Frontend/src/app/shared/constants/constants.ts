@@ -49,6 +49,8 @@ export enum ERoutingIds {
   routerNotReachableFormSuccessfully,
   troubleshootComplete,
   tvPinUpdateSuccessfull,
+  restELifeLoginPin,
+  restELifeLoginPinResetSuccess,
 }
 
 const P3: string = '3P';
@@ -316,6 +318,19 @@ export class ApplicableCodes {
       title: 'THIRD_PARTY_ROUTER_SUCCESSFULLY.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
+    },
+  ];
+
+  public static userCredentialsTemplate: ISection2Template[] = [
+    {
+      title: 'USER_CREDENTIALS.USER_ID',
+      type: 'text',
+      objKeyNameEN: 'userId',
+    },
+    {
+      title: 'USER_CREDENTIALS.PIN',
+      type: 'text',
+      objKeyNameEN: 'pin',
     },
   ];
 }

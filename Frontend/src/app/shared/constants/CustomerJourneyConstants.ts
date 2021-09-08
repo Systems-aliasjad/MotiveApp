@@ -83,6 +83,16 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.TROUBLESHOOT_COMPLETE_BODY'],
   };
 
+  public static restELifeLoginPin = {
+    header: 'MESSAGES.RESET_ELIFEON_PIN_HEADING',
+    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_BODY1', 'MESSAGES.RESET_ELIFEON_PIN_BODY2'],
+  };
+
+  public static restELifeLoginPinResetSuccess = {
+    header: 'MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING',
+    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
@@ -378,6 +388,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static resetPINButton = {
+    title: 'BUTTONS.RESET_PIN',
+    clickListener: () => {},
+    linkTo: '/reset-login-pin-success',
+    behaviour: 'primary',
+  };
+
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 
   public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
@@ -477,4 +494,6 @@ export class CustomerJourneyConstants {
   ];
 
   public static troubleshootCompleteButtons: IButton[] = [CustomerJourneyConstants.requestPaidTechnicianVisitButton, CustomerJourneyConstants.cancelButton];
+  public static restELifeLoginPinButton: IButton[] = [CustomerJourneyConstants.resetPINButton, CustomerJourneyConstants.cancelButton];
+  public static restELifeLoginPinResetSuccessButton: IButton[] = [CustomerJourneyConstants.doneButtonSecondary];
 }

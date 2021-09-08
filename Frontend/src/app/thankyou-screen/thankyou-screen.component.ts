@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { SharedService } from '../shared/shared.service';
 
 @Component({
@@ -8,11 +8,15 @@ import { SharedService } from '../shared/shared.service';
   styleUrls: ['./thankyou-screen.component.scss'],
 })
 export class ThankyouScreenComponent implements OnInit {
-  constructor(public router: Router, private sharedService: SharedService) {
-    this.sharedService.setHeaderConfig('', false);
+  constructor(public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe((data) => {
+      this.ngOnInit();
+    });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.sharedService.setHeaderConfig('', false);
+  }
   goToLandingScreen = () => {
     this.router.navigate(['/']);
   };

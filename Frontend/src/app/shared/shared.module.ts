@@ -25,7 +25,7 @@ import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-re
 import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
-import { InternetIssueListDialog } from './dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
 import { BrowserStepperComponent } from './components/browser-stepper/browser-stepper.component';
 import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
@@ -60,7 +60,7 @@ export function createTranslateLoader(http: HttpClient) {
     InternetIssuesDialog,
     RestartRouterDialog,
     ButtonsComponent,
-    InternetIssueListDialog,
+    IssueListDialog,
     BrowserStepperComponent,
     UnableVideoCallsComponent,
     UnableConnectNewDeviceWifiComponent,

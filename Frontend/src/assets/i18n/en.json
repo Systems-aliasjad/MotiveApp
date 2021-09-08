@@ -89,6 +89,10 @@
   "THIRD_PARTY_ROUTER_SUCCESSFULLY": {
     "REFERENCE_NO": "Reference No:"
   },
+  "USER_CREDENTIALS": {
+    "USER_ID": "User ID",
+    "PIN": "PIN"
+  },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "FOLLOW_UP": "YES, FOLLOW-UP",
@@ -122,7 +126,8 @@
     "ISSUE_RESLOVED": "Issue resolved",
     "TRANSFER_PACKAGE": "Transfer package",
     "CANCEL_GAME_SESSION": "Cancel game sessions",
-    "CONFIRM": "CONFIRM"
+    "CONFIRM": "CONFIRM",
+    "RESET_PIN": "RESET PIN"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -171,13 +176,18 @@
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router.",
     "TROUBLESHOOT_COMPLETE_HEADING": "Troubleshooting Complete",
-    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side.",
+    "TROUBLESHOOT_COMPLETE_BODY": "We couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side.",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY": "TV admin PIN reset successfully!",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY1": "Your PIN has been successfully reset to the default PIN: 1111.",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY2": "Please restart all your TV boxes to activate the new PIN.",
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY3": "Note: You will be required to change the default PIN when you log in to any paid service.",
     "NO_INTERNET_CONNECTION": "No internet connection",
-    "NO_INTERNET_CONNECTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored"
+    "NO_INTERNET_CONNECTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
+    "RESET_ELIFEON_PIN_HEADING": "Unable to login",
+    "RESET_ELIFEON_PIN_BODY1": "Please reset your eLifeON PIN to fix the issue.",
+    "RESET_ELIFEON_PIN_BODY2": "It will be reset to the default PIN: 1111@elife",
+    "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING": "eLifeON PIN reset successfully!",
+    "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY": "Your PIN has been successfully reset to the default PIN."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
