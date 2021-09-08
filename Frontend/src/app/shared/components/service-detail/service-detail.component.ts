@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
-import { EIssueFlow, InternetIssueListDialog } from '../../dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { EIssueFlow, IssueListDialog } from '../../dialogs/issue-list-dialog/issue-list-dialog.component';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -72,7 +72,7 @@ export class ServiceDetailComponent implements OnInit {
 
   async openInternetIssueDialog() {
     this.modal = await this.modalCtrl.create({
-      component: InternetIssueListDialog,
+      component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.internetIssue,
       },

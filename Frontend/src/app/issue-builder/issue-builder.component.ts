@@ -3,11 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ERoutingIds } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
-import { IButton } from '../shared/constants/types';
+import { IButton, IMessageIssue } from '../shared/constants/types';
 import { DeviceListDialog } from '../shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { SharedService } from '../shared/shared.service';
 import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/internet-issues-dialog.component';
+import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 
 @Component({
   selector: 'app-issue-builder',
@@ -18,6 +19,7 @@ export class IssueBuilderComponent implements OnInit {
   codeType;
   modal: any;
   btnConfig: IButton[] = [];
+  messageSection: IMessageIssue;
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
@@ -28,6 +30,16 @@ export class IssueBuilderComponent implements OnInit {
         },
       };
     });
+  }
+
+  async openInternetIssueDialog() {
+    this.modal = await this.modalCtrl.create({
+      component: IssueListDialog,
+      componentProps: {
+        flow: EIssueFlow.tvIssue,
+      },
+    });
+    return await this.modal.present();
   }
 
   async openDeviceListDialog() {
@@ -62,52 +74,65 @@ export class IssueBuilderComponent implements OnInit {
 
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons));
     }
     //Router Reset Required
     else if (this.codeType === ERoutingIds.routerResetRequired) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons));
     }
     //Issue Not Fixed
     else if (this.codeType === ERoutingIds.issueNotFixed) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
     }
 
     //Router Reset Required
     else if (this.codeType === ERoutingIds.noIssueTv) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
     }
 
     //Internet Password Reset
     else if (this.codeType === ERoutingIds.internetPasswordReset) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons));
     }
     //3rd party router requires configuration
     else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty));
     }
     //Package Upgrade Recommended
     else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons));
     }
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons));
     }
     //Wi-Fi Alarm
     else if (this.codeType === ERoutingIds.WiFiAlarm) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons));
     }
     //Outage
     else if (this.codeType === ERoutingIds.outage) {
+      this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
     }
     ///router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
     }
     // Router no-issue
     else if (this.codeType === ERoutingIds.noIssue) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.btnConfig = CustomerJourneyConstants.noIssue;
       this.btnConfig.forEach((elem) => {
         if (elem.title === 'BUTTONS.ISSUE_FIXED') {
@@ -118,17 +143,32 @@ export class IssueBuilderComponent implements OnInit {
     }
     ///third party router
     else if (this.codeType === ERoutingIds.thirdPartyRouter) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }
 
     ///Reset Wifi Password First Success
     else if (this.codeType === ERoutingIds.resetWifiPasswordSuccess) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }
 
     //Router Reset Required
     else if (this.codeType === ERoutingIds.routerNotReachable) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
     }
+
+    //#region  MOdule 2
+    //TV Box not reachable
+    else if (this.codeType === ERoutingIds.tvBoxNotReachable) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableButtons));
+    } else if (this.codeType === ERoutingIds.tvBoxNotReachableTryAgain) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableTryAgainButtons));
+    }
+
+    //#endregion Module 2
   }
 }

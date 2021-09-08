@@ -57,6 +57,14 @@ export class BookComplaintComponent implements OnInit {
       this.buttonText = 'BUTTONS.CONTINUE';
       this.sharedService.setHeaderConfig('HEADER.THIRD_PARTY_ROUTER', false);
     }
+
+    //#region  Module 2
+    //Tv box not reachable
+    else if (this.codeType === ERoutingIds.tvBoxNotReachableForm) {
+      this.buttonText = 'BUTTONS.BOOK_AN_APPOINTMENT';
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    }
+    //#endregion Module 2
   }
 
   get f() {
@@ -77,5 +85,11 @@ export class BookComplaintComponent implements OnInit {
     } else if (this.codeType === ERoutingIds.thirdPartyRouterForm) {
       this.router.navigate(['third-party-router-successfully']);
     }
+
+    //#region  Module 2
+    else if (this.codeType === ERoutingIds.tvBoxNotReachableForm) {
+      this.router.navigate(['tvBox-not-reachable-form_successfully']);
+    }
+    //#endregion Module 2
   }
 }

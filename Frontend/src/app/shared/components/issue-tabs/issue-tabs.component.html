@@ -18,12 +18,15 @@
 
     <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tab_content">
       <div class="content">
-        <!-- <h4 class="sub-title">{{ 'HEADER.NO_INTERNET_ISSUE' | translate }}</h4>  -->
-        <app-page-top></app-page-top>
-        <p *ngIf="!section1Template">
-          On sait depuis longtemps que travailler avec du texte lisible et contenant du sens est source de distractions, et empêche de se concentrer sur la mise en page elle-même.
-          L'avantage du Lorem Ipsum sur un texte générique comme 'Du texte.
-        </p>
+        <h5 class="sub-title">{{ messageSection.header | translate }}</h5>
+        <div *ngFor="let message of messageSection.body">
+          <p>{{ message.title | translate }}</p>
+          <ul *ngIf="message.children">
+            <li *ngFor="let item of message.children">
+              <p>{{ item | translate }}</p>
+            </li>
+          </ul>
+        </div>
 
         <h4 *ngIf="section1Template">
           <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">

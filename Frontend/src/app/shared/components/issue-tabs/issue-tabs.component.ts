@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ITabTile } from '../../constants/types';
+import { IMessageIssue, ITabTile } from '../../constants/types';
 import { ActivatedRoute } from '@angular/router';
 import { ApplicableCodes, ERoutingIds } from '../../constants/constants';
 
@@ -11,6 +11,8 @@ import { ApplicableCodes, ERoutingIds } from '../../constants/constants';
 export class IssueTabsComponent implements OnInit {
   @Input()
   tabTiles: ITabTile[];
+  @Input()
+  messageSection: IMessageIssue;
 
   codeType;
   section1Template;
@@ -18,6 +20,7 @@ export class IssueTabsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
+      this.ngOnInit();
     });
   }
 

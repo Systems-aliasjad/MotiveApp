@@ -1,4 +1,4 @@
-import { IButton } from './types';
+import { IButton, IMessageIssue } from './types';
 
 export class CustomerJourneyConstants {
   public static openServiceRequestCase1 = {
@@ -23,7 +23,7 @@ export class CustomerJourneyConstants {
 
   public static appointmentbookssuccessfullyCase = {
     header: 'MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_Body'],
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
   public static OpenTechnicalSR = {
@@ -33,7 +33,12 @@ export class CustomerJourneyConstants {
 
   public static packageUpgradesuccessfullyCase = {
     header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_Body'],
+    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
+  };
+
+  public static outageIssueMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_INTERNET_CONNECTION',
+    body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
   };
 
   public static routerUpgradesuccessfullyCase = {
@@ -76,6 +81,16 @@ export class CustomerJourneyConstants {
   public static troubleshootComplete = {
     header: 'MESSAGES.TROUBLESHOOT_COMPLETE_HEADING',
     paragraphs: ['MESSAGES.TROUBLESHOOT_COMPLETE_BODY'],
+  };
+
+  public static restELifeLoginPin = {
+    header: 'MESSAGES.RESET_ELIFEON_PIN_HEADING',
+    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_BODY1', 'MESSAGES.RESET_ELIFEON_PIN_BODY2'],
+  };
+
+  public static restELifeLoginPinResetSuccess = {
+    header: 'MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING',
+    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY'],
   };
 
   public static resetNowButton1: IButton = {
@@ -144,6 +159,13 @@ export class CustomerJourneyConstants {
     behaviour: 'link',
   };
 
+  public static bookAppointmentButton: IButton = {
+    title: 'BUTTONS.BOOK_AN_APPOINTMENT',
+    clickListener: () => {},
+    linkTo: '/tvBox-not-reachable-form',
+    behaviour: 'primary',
+  };
+
   public static bookCompalintButton: IButton = {
     title: 'HEADER.BOOK_COMPLAINT',
     clickListener: () => {},
@@ -180,6 +202,14 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static trackComplaintStatusLink: IButton = {
+    title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
   public static doneButtonSecondary: IButton = {
     title: 'BUTTONS.DONE',
     clickListener: () => {},
@@ -206,6 +236,22 @@ export class CustomerJourneyConstants {
     explanatoryNote: '',
     clickListener: () => {},
     linkTo: '',
+    behaviour: 'primary',
+  };
+
+  public static tryAgainLaterLink: IButton = {
+    title: 'BUTTONS.TRY_AGAIN_LATER',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
+  public static tryAgainButton: IButton = {
+    title: 'BUTTONS.TRY_AGAIN',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/tvBox-not-reachable_try_again',
     behaviour: 'primary',
   };
 
@@ -359,6 +405,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static issueResolvedLink = {
+    title: 'BUTTONS.ISSUE_RESLOVED',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'link',
+  };
+
   public static backButton = {
     title: 'BUTTONS.BACK',
     clickListener: () => {},
@@ -373,11 +426,21 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static resetPINButton = {
+    title: 'BUTTONS.RESET_PIN',
+    clickListener: () => {},
+    linkTo: '/reset-login-pin-success',
+    behaviour: 'primary',
+  };
+
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 
   public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
 
   public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
+
+  public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
+  public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
 
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
 
@@ -389,7 +452,7 @@ export class CustomerJourneyConstants {
 
   public static routerRebootRequiredButtons: IButton[] = [CustomerJourneyConstants.restartNowButton, CustomerJourneyConstants.closeButton];
 
-  public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusButton, CustomerJourneyConstants.doneButtonSecondary];
+  public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusLink, CustomerJourneyConstants.doneButtonSecondary];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 
@@ -472,4 +535,6 @@ export class CustomerJourneyConstants {
   ];
 
   public static troubleshootCompleteButtons: IButton[] = [CustomerJourneyConstants.requestPaidTechnicianVisitButton, CustomerJourneyConstants.cancelButton];
+  public static restELifeLoginPinButton: IButton[] = [CustomerJourneyConstants.resetPINButton, CustomerJourneyConstants.cancelButton];
+  public static restELifeLoginPinResetSuccessButton: IButton[] = [CustomerJourneyConstants.doneButtonSecondary];
 }

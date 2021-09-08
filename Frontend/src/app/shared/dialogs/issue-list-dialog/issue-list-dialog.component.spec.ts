@@ -3,20 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { InternetIssueListDialog } from './internet-issue-list-dialog.component';
+import { IssueListDialog } from './issue-list-dialog.component';
 
-describe('InternetIssueListDialog', () => {
-  let component: InternetIssueListDialog;
-  let fixture: ComponentFixture<InternetIssueListDialog>;
+describe('IssueListDialog', () => {
+  let component: IssueListDialog;
+  let fixture: ComponentFixture<IssueListDialog>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [InternetIssueListDialog],
+      declarations: [IssueListDialog],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InternetIssueListDialog);
+    fixture = TestBed.createComponent(IssueListDialog);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
