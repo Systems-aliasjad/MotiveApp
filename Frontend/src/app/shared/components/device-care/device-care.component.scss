@@ -1,0 +1,13 @@
+
+@import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+
+// --------------------------------------------------------------
+:host {
+   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+// --------------------------------------------------------------
+
+ion-grid{
+  width: 100%;
+}
