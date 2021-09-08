@@ -70,6 +70,7 @@ export class IssueBuilderComponent implements OnInit {
   }
 
   ngOnInit() {
+    debugger;
     this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
 
     //Router Reboot Required

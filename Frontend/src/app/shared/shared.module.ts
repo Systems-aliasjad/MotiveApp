@@ -35,6 +35,7 @@ import { ResetWifiPasswordComponent } from './components/reset-wifi-password/res
 import { ServiceDetailComponent } from './components/service-detail/service-detail.component';
 import { DeviceConnectedHomezoneComponent } from './components/device-connected-homezone/device-connected-homezone.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
+import { GameSessionComponent } from './components/game-session/game-session.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -70,6 +71,7 @@ export function createTranslateLoader(http: HttpClient) {
     ServiceDetailComponent,
     DeviceConnectedHomezoneComponent,
     ResetTvPinDialog,
+    GameSessionComponent,
   ],
   imports: [
     CommonModule,

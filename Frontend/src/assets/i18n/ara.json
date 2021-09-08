@@ -12,7 +12,9 @@
     "ROUTER_UPGRADE": "Router Upgrade",
     "ROUTER_PACKAGE_UPGRADE": "Router & Package Upgrade",
     "THIRD_PARTY_ROUTER": "BUY NEW ROUTER",
-    "RESET_WIFI_PASSWORD": "Reset WiFi password"
+    "RESET_WIFI_PASSWORD": "Reset WiFi password",
+    "GAME_SESSION": "Game sessions",
+    "ACTIVE_GAME_SESSION": "Active game sessions"
   },
 
   "SUBHEADER": {
@@ -97,7 +99,6 @@
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "TRY_AGAIN": "TRY AGAIN",
-
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "OK": "OK",
     "YES": "YES",
@@ -131,7 +132,8 @@
     "TRANSFER_PACKAGE": "Transfer package",
     "CANCEL_GAME_SESSION": "Cancel game sessions",
     "CONFIRM": "CONFIRM",
-    "RESET_PIN": "RESET PIN"
+    "RESET_PIN": "RESET PIN",
+    "ISSUE_FIXED_CLOSE": "ISSUE FIXED, CLOSE"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -146,7 +148,8 @@
     "ISSUES_FIXED": "Issue Fixed",
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "VIEW_DETAILS": "VIEW DETAILS",
-    "USING_OWN_ROUTER": "No, I'm using my own router"
+    "USING_OWN_ROUTER": "No, I'm using my own router",
+    "CANCEL_GAME_SESSION": "CANCEL GAME SESSION"
   },
   "MESSAGES": {
     "THANKYOU": "Thank you!",
@@ -285,5 +288,11 @@
     "SUB_HEADING": "Unable to connect to Home Zone",
     "PARAGRAPH1": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
     "PARAGRAPH2": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password"
+  },
+  "GAME_SESSION": {
+    "ACTIVE_GAME_SESSION_DESCRIPTION": "You can cancel any game session that isn't working properly.",
+    "CARD_HEADING": "eLife TV game",
+    "CARD_SUB_HEADING1": "STB SR#039838920",
+    "CARD_SUB_HEADING2": "STB SR#039838920"
   }
 }
