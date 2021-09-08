@@ -8,7 +8,7 @@ import { DeviceListDialog } from '../shared/dialogs/device-list-dialog/device-li
 import { SharedService } from '../shared/shared.service';
 import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/internet-issues-dialog.component';
-import { EIssueFlow, InternetIssueListDialog } from '../shared/dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 
 @Component({
   selector: 'app-issue-builder',
@@ -33,7 +33,7 @@ export class IssueBuilderComponent implements OnInit {
 
   async openInternetIssueDialog() {
     this.modal = await this.modalCtrl.create({
-      component: InternetIssueListDialog,
+      component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.tvIssue,
       },

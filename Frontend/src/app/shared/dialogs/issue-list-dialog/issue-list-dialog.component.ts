@@ -8,11 +8,11 @@ export enum EIssueFlow {
   tvIssue,
 }
 @Component({
-  selector: 'internet-issue-list-dialog',
-  templateUrl: './internet-issue-list-dialog.component.html',
-  styleUrls: ['./internet-issue-list-dialog.component.scss'],
+  selector: 'issue-list-dialog',
+  templateUrl: './issue-list-dialog.component.html',
+  styleUrls: ['./issue-list-dialog.component.scss'],
 })
-export class InternetIssueListDialog implements OnInit {
+export class IssueListDialog implements OnInit {
   @Input()
   flow: number;
   modal;

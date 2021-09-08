@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
-import { EIssueFlow, InternetIssueListDialog } from '../shared/dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { SharedService } from '../shared/shared.service';
 
 @Component({
@@ -40,7 +40,7 @@ export class TvDetailComponent implements OnInit {
   ];
   async openInternetIssueDialog() {
     this.modal = await this.modalCtrl.create({
-      component: InternetIssueListDialog,
+      component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.tvIssue,
       },
