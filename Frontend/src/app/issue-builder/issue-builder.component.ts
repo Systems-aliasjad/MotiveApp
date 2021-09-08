@@ -75,16 +75,19 @@ export class IssueBuilderComponent implements OnInit {
 
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
+      this.messageSection = CustomerJourneyConstants.routerRebootRequiredMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons));
     }
     //Router Reset Required
     else if (this.codeType === ERoutingIds.routerResetRequired) {
+      this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons));
     }
     //Issue Not Fixed
     else if (this.codeType === ERoutingIds.issueNotFixed) {
+      this.messageSection = CustomerJourneyConstants.issueNotFixedMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
     }
@@ -95,23 +98,27 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
     }
 
-    //Internet Password Reset
+    //Internet password reset required
     else if (this.codeType === ERoutingIds.internetPasswordReset) {
+      this.messageSection = CustomerJourneyConstants.internetPasswordResetRequiredMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons));
     }
     //3rd party router requires configuration
     else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
+      this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty));
     }
     //Package Upgrade Recommended
     else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
+      this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons));
     }
-    ///router Upgrade Recommended
+    //router Upgrade Recommended
     else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
+      this.messageSection = CustomerJourneyConstants.routerUpdradeRecomendedMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons));
     }
@@ -126,13 +133,15 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
     }
-    ///router Upgrade Recommended
+    //Router & package upgrade recommended
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
+      this.messageSection = CustomerJourneyConstants.packageAndRouterUpdradeRecomendedMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
     }
     // Router no-issue
     else if (this.codeType === ERoutingIds.noIssue) {
+      this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.btnConfig = CustomerJourneyConstants.noIssue;
       this.btnConfig.forEach((elem) => {
@@ -154,13 +163,13 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }
 
-    //Router Reset Required
+    //Router managed, but not reachable
     else if (this.codeType === ERoutingIds.routerNotReachable) {
+      this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
     }
 
-    //#region  MOdule 2
     //TV Box not reachable
     else if (this.codeType === ERoutingIds.tvBoxNotReachable) {
       this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
@@ -169,7 +178,10 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableTryAgainButtons));
     }
-
-    //#endregion Module 2
+    //TV box restart required
+    else if (this.codeType === ERoutingIds.tvBoxRestartRequired) {
+      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartRequiredButtons));
+    }
   }
 }

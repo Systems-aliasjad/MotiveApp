@@ -26,6 +26,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
+  public static tvBoxRestartssuccessfullyCase = {
+    header: 'MESSAGES.TV_BOX_RESTART_REQUIRED_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.TV_BOX_RESTART_REQUIRED_SUCCESSFULLY_BODY'],
+  };
+
   public static OpenTechnicalSR = {
     header: 'MESSAGES.OPEN_SERVICE_REQUEST',
     paragraphs: ['MESSAGES.OPEN_SERVICE_REQUEST_BODY'],
@@ -39,6 +44,85 @@ export class CustomerJourneyConstants {
   public static outageIssueMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_INTERNET_CONNECTION',
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
+  };
+
+  public static issueNotFixedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_INTERNET_CONNECTION',
+    body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY2' }],
+  };
+
+  public static routerRebootRequiredMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [{ title: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY_BODY1' }],
+  };
+
+  public static routerResetRequiredMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [{ title: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY_BODY2' }],
+  };
+
+  public static internetPasswordResetRequiredMessageSection: IMessageIssue = {
+    header: 'MESSAGES.RESET_YOUR_PASSWORD',
+    body: [{ title: 'MESSAGES.RESET_YOUR_PASSWORD_BODY' }],
+  };
+
+  public static routerNotReachableMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ROUTER_NOT_ACCESSIBLE',
+    body: [{ title: 'MESSAGES.ROUTER_NOT_ACCESSIBLE_BODY' }],
+  };
+
+  public static noIssueMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [{ title: 'MESSAGES.NO_ISSUE_FOUND_BODY1' }, { title: 'MESSAGES.NO_ISSUE_FOUND_BODY2' }],
+  };
+
+  public static routerUpdradeRecomendedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY1' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY2' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY3' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY4' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY5' },
+    ],
+  };
+
+  public static packageUpdradeRecomendedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY1' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY2' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY6' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY7' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY5' },
+    ],
+  };
+
+  public static packageAndRouterUpdradeRecomendedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY1' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY2' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY8' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY9' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY5' },
+    ],
+  };
+
+  public static routerConfig3rdPartyMessageSection: IMessageIssue = {
+    header: 'MESSAGES.RECONFIGURE_YOUR_ROUTER',
+    body: [
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1',
+        children: ['MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT1', 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT2', 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT3'],
+      },
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY2',
+      },
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
+    ],
   };
 
   public static routerUpgradesuccessfullyCase = {
@@ -194,6 +278,20 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static restartStbNowButton: IButton = {
+    title: 'BUTTONS.RESTART_STB_NOW',
+    clickListener: () => {},
+    linkTo: '/tvBox-restart-required-successfully',
+    behaviour: 'primary',
+  };
+
+  public static restartManuallyLink: IButton = {
+    title: 'BUTTONS.RESTART_MANUALLY',
+    clickListener: () => {},
+    linkTo: '/tvBox-restart-required-manually',
+    behaviour: 'link',
+  };
+
   public static trackComplaintStatusButton: IButton = {
     title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
     explanatoryNote: '',
@@ -231,6 +329,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static continueButton: IButton = {
+    title: 'BUTTONS.CONTINUE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
   public static tryAgainLaterButton: IButton = {
     title: 'BUTTONS.TRY_AGAIN_LATER',
     explanatoryNote: '',
@@ -255,12 +360,28 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
-  public static deviceCareButton: IButton = {
+  public static deviceCareLink: IButton = {
     title: 'LINKS.DEVICE_CARE',
     explanatoryNote: '',
     clickListener: () => {},
     linkTo: '/device-care',
     behaviour: 'link',
+  };
+
+  public static deviceCareButton: IButton = {
+    title: 'BUTTONS.VIEW_DEVICE_CARE',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/device-care',
+    behaviour: 'primary',
+  };
+
+  public static deviceCareTvBoxManualRestartButton: IButton = {
+    title: 'BUTTONS.VIEW_DEVICE_CARE',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/tvBox-restart-required-device-care',
+    behaviour: 'primary',
   };
 
   public static issueFixedButton: IButton = {
@@ -449,6 +570,8 @@ export class CustomerJourneyConstants {
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
 
+  public static tvBoxRestartRequiredButtons: IButton[] = [CustomerJourneyConstants.restartStbNowButton, CustomerJourneyConstants.restartManuallyLink];
+
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
 
   public static openServiceRequestCaseButtons: IButton[] = [CustomerJourneyConstants.followUpButton, CustomerJourneyConstants.exitTroubleShootingButton];
@@ -460,6 +583,14 @@ export class CustomerJourneyConstants {
   public static routerRebootRequiredButtons: IButton[] = [CustomerJourneyConstants.restartNowButton, CustomerJourneyConstants.closeButton];
 
   public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusLink, CustomerJourneyConstants.doneButtonSecondary];
+
+  public static tvBoxRestartSuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static tvBoxRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareTvBoxManualRestartButton, CustomerJourneyConstants.closeButton];
+
+  public static routerRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareButton, CustomerJourneyConstants.closeButton];
+
+  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 
