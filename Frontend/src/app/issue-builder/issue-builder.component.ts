@@ -93,6 +93,7 @@ export class IssueBuilderComponent implements OnInit {
 
     //Router Reset Required
     else if (this.codeType === ERoutingIds.noIssueTv) {
+      this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
     }
@@ -157,13 +158,6 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }
-
-    ///Reset Wifi Password First Success
-    else if (this.codeType === ERoutingIds.resetWifiPasswordSuccess) {
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
-    }
-
     //Router managed, but not reachable
     else if (this.codeType === ERoutingIds.routerNotReachable) {
       this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;
@@ -171,16 +165,21 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
     }
 
-    //TV Box not reachable
+    //TV set top box not reachable
     else if (this.codeType === ERoutingIds.tvBoxNotReachable) {
+      this.messageSection = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableButtons));
-    } else if (this.codeType === ERoutingIds.tvBoxNotReachableTryAgain) {
+    }
+    //TV set top box not reachable - AGAIN
+    else if (this.codeType === ERoutingIds.tvBoxNotReachableTryAgain) {
+      this.messageSection = CustomerJourneyConstants.tvBoxNotReachableAgainMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableTryAgainButtons));
     }
-    //TV box restart required
+    //TV set top box restart required
     else if (this.codeType === ERoutingIds.tvBoxRestartRequired) {
+      this.messageSection = CustomerJourneyConstants.tvBoxRestartMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartRequiredButtons));
     }

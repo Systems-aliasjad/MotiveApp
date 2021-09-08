@@ -148,6 +148,47 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static tvBoxNotReachableMessageSection: IMessageIssue = {
+    header: 'MESSAGES.TV_BOX_NOT_REACHABLE',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_BODY1',
+      },
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_BODY2',
+        children: ['MESSAGES.TV_BOX_NOT_REACHABLE_BODY2_POINT1', 'MESSAGES.TV_BOX_NOT_REACHABLE_BODY2_POINT2'],
+      },
+    ],
+  };
+
+  public static tvBoxNotReachableAgainMessageSection: IMessageIssue = {
+    header: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1',
+        children: ['MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT1', 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT2', 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT3'],
+      },
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY2',
+      },
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY3',
+      },
+    ],
+  };
+
+  public static tvBoxRestartMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_RESTART_REQUIRED_BODY1',
+      },
+      {
+        title: 'MESSAGES.TV_BOX_RESTART_REQUIRED_BODY2',
+      },
+    ],
+  };
+
   public static routerUpgradesuccessfullyCase = {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
     paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLYY_BODY'],

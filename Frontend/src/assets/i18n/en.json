@@ -237,7 +237,21 @@
     "WIFI_ALARM_BODY2": "Your internet should work normally. ",
     "WIFI_ALARM_BODY3": "We noticed that your Wi-Fi settings are not to the standards. We can help you to get your Wi-Fi configuration to the standards.",
     "WIFI_ALARM_BODY4": "Tap “Configure Wi-Fi” if you wish to set your Wi-Fi configuration.",
-    "WIFI_ALARM_BODY5": "Tap 'Continue to troubleshooting' if there is a specific technical issue or ‘View Details’ to take a closer look at your internet service."
+    "WIFI_ALARM_BODY5": "Tap 'Continue to troubleshooting' if there is a specific technical issue or ‘View Details’ to take a closer look at your internet service.",
+    "TV_BOX_NOT_REACHABLE": "We can’t reach your TV box",
+    "TV_BOX_NOT_REACHABLE_BODY1": "The TV box SR No. 53454534 couldn’t be found.",
+    "TV_BOX_NOT_REACHABLE_BODY2": "Please check if:",
+    "TV_BOX_NOT_REACHABLE_BODY2_POINT1": "The TV box is turned on",
+    "TV_BOX_NOT_REACHABLE_BODY2_POINT2": "The cable from the TV box is connected to the 'X' port of the wall mounted fiber box",
+    "TV_BOX_NOT_REACHABLE_AGAIN": "We can’t reach your TV box",
+    "TV_BOX_NOT_REACHABLE_AGAIN_BODY1": "One of these options could be causing the issue:",
+    "TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT1": "The TV box is not switched on",
+    "TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT2": "The cable isn't connected properly",
+    "TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT3": "The TV box is faulty",
+    "TV_BOX_NOT_REACHABLE_AGAIN_BODY2": "Tap 'Try again later' if you want to check the problem later.",
+    "TV_BOX_NOT_REACHABLE_AGAIN_BODY3": "Tap 'Book an appointment' if you want to book a technician visit.",
+    "TV_BOX_RESTART_REQUIRED_BODY1": "We have fixed all the technical issues.",
+    "TV_BOX_RESTART_REQUIRED_BODY2": "Please restart the TV box and then try using the TV again."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
