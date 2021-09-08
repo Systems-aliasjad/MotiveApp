@@ -41,6 +41,85 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
   };
 
+  public static issueNotFixedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_INTERNET_CONNECTION',
+    body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY2' }],
+  };
+
+  public static routerRebootRequiredMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [{ title: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY_BODY1' }],
+  };
+
+  public static routerResetRequiredMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [{ title: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY_BODY2' }],
+  };
+
+  public static internetPasswordResetRequiredMessageSection: IMessageIssue = {
+    header: 'MESSAGES.RESET_YOUR_PASSWORD',
+    body: [{ title: 'MESSAGES.RESET_YOUR_PASSWORD_BODY' }],
+  };
+
+  public static routerNotReachableMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ROUTER_NOT_ACCESSIBLE',
+    body: [{ title: 'MESSAGES.ROUTER_NOT_ACCESSIBLE_BODY' }],
+  };
+
+  public static noIssueMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [{ title: 'MESSAGES.NO_ISSUE_FOUND_BODY1' }, { title: 'MESSAGES.NO_ISSUE_FOUND_BODY2' }],
+  };
+
+  public static routerUpdradeRecomendedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY1' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY2' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY3' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY4' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY5' },
+    ],
+  };
+
+  public static packageUpdradeRecomendedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY1' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY2' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY6' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY7' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY5' },
+    ],
+  };
+
+  public static packageAndRouterUpdradeRecomendedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY1' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY2' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY8' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY9' },
+      { title: 'MESSAGES.UPGRADE_RECOMENDED_BODY5' },
+    ],
+  };
+
+  public static routerConfig3rdPartyMessageSection: IMessageIssue = {
+    header: 'MESSAGES.RECONFIGURE_YOUR_ROUTER',
+    body: [
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1',
+        children: ['MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT1', 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT2', 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT3'],
+      },
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY2',
+      },
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
+    ],
+  };
+
   public static routerUpgradesuccessfullyCase = {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
     paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLYY_BODY'],

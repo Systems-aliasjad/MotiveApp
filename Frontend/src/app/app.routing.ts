@@ -89,7 +89,7 @@ const routes: Routes = [
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixed } },
-  //Internet Reset Password
+  //Internet password reset required
   { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.internetPasswordReset } },
   //3rd party router requires configuration
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },
@@ -101,9 +101,9 @@ const routes: Routes = [
   { path: 'outage', component: IssueBuilderComponent, data: { id: ERoutingIds.outage } },
   //Router Upgrade Recommended
   { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
-  //router and package Upgrade Recommended
+  //Router & package upgrade recommended
   { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
-  //region No Issue
+  //No Issue
   { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
   // third party  router Recommended
   { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
@@ -122,26 +122,22 @@ const routes: Routes = [
   { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
   // #endregion  third party  router
 
-  //#region  Reset Wifi Password
   //Router Reset Required
   { path: 'reset-wifi-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
   { path: 'reset-wifi-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordSuccess } },
   { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
   { path: 'reset-wifi-password-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordFormSuccessfully } },
-  //#endregion Reset Wifi Password
 
-  //#region Router Not Reachable
+  //Router managed, but not reachable
   { path: 'router-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.routerNotReachable } },
   { path: 'router-not-reachable-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.routerNotReachableForm } },
   { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
-  //#endregion Router Not Reachable
 
-  //#region TV Box Not Reachable
+  //TV Box Not Reachable
   { path: 'tvBox-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachable } },
   { path: 'tvBox-not-reachable_try_again', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableTryAgain } },
   { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
   { path: 'tvBox-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableFormSuccessfully } },
-  //#endregion Router Not Reachable
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
