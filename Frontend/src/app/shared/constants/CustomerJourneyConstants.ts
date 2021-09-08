@@ -594,6 +594,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static issueFixedCloseButton = {
+    title: 'BUTTONS.ISSUE_FIXED_CLOSE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 
   public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
@@ -709,4 +716,5 @@ export class CustomerJourneyConstants {
   public static troubleshootCompleteButtons: IButton[] = [CustomerJourneyConstants.requestPaidTechnicianVisitButton, CustomerJourneyConstants.cancelButton];
   public static restELifeLoginPinButton: IButton[] = [CustomerJourneyConstants.resetPINButton, CustomerJourneyConstants.cancelButton];
   public static restELifeLoginPinResetSuccessButton: IButton[] = [CustomerJourneyConstants.doneButtonSecondary];
+  public static gameSessionButtons: IButton[] = [CustomerJourneyConstants.issueFixedCloseButton, CustomerJourneyConstants.cancelButton];
 }

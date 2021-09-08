@@ -36,6 +36,7 @@ import { ServiceDetailComponent } from './components/service-detail/service-deta
 import { DeviceConnectedHomezoneComponent } from './components/device-connected-homezone/device-connected-homezone.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialogComponent } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
+import { GameSessionComponent } from './components/game-session/game-session.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -72,6 +73,7 @@ export function createTranslateLoader(http: HttpClient) {
     DeviceConnectedHomezoneComponent,
     ResetTvPinDialog,
     RestartTvboxDialogComponent,
+    GameSessionComponent,
   ],
   imports: [
     CommonModule,

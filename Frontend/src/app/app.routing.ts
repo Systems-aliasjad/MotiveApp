@@ -19,6 +19,7 @@ import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-passw
 import { ServiceDetailComponent } from './shared/components/service-detail/service-detail.component';
 import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
 import { TvDetailComponent } from './tv-detail/tv-detail.component';
+import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 
 const routes: Routes = [
   {
@@ -153,6 +154,7 @@ const routes: Routes = [
   { path: 'service-detail', component: ServiceDetailComponent },
   { path: 'tv-details', component: TvDetailComponent },
   { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
+  { path: 'game-session', component: GameSessionComponent },
   { path: '**', redirectTo: '' },
 ];
 
