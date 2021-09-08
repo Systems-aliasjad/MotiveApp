@@ -26,6 +26,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
+  public static tvBoxRestartssuccessfullyCase = {
+    header: 'MESSAGES.TV_BOX_RESTART_REQUIRED_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.TV_BOX_RESTART_REQUIRED_SUCCESSFULLY_BODY'],
+  };
+
   public static OpenTechnicalSR = {
     header: 'MESSAGES.OPEN_SERVICE_REQUEST',
     paragraphs: ['MESSAGES.OPEN_SERVICE_REQUEST_BODY'],
@@ -273,6 +278,20 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static restartStbNowButton: IButton = {
+    title: 'BUTTONS.RESTART_STB_NOW',
+    clickListener: () => {},
+    linkTo: '/tvBox-restart-required-successfully',
+    behaviour: 'primary',
+  };
+
+  public static restartManuallyLink: IButton = {
+    title: 'BUTTONS.RESTART_MANUALLY',
+    clickListener: () => {},
+    linkTo: '/tvBox-restart-required-manually',
+    behaviour: 'link',
+  };
+
   public static trackComplaintStatusButton: IButton = {
     title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
     explanatoryNote: '',
@@ -310,6 +329,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static continueButton: IButton = {
+    title: 'BUTTONS.CONTINUE',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
   public static tryAgainLaterButton: IButton = {
     title: 'BUTTONS.TRY_AGAIN_LATER',
     explanatoryNote: '',
@@ -334,12 +360,28 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
-  public static deviceCareButton: IButton = {
+  public static deviceCareLink: IButton = {
     title: 'LINKS.DEVICE_CARE',
     explanatoryNote: '',
     clickListener: () => {},
     linkTo: '/device-care',
     behaviour: 'link',
+  };
+
+  public static deviceCareButton: IButton = {
+    title: 'BUTTONS.VIEW_DEVICE_CARE',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/device-care',
+    behaviour: 'primary',
+  };
+
+  public static deviceCareTvBoxManualRestartButton: IButton = {
+    title: 'BUTTONS.VIEW_DEVICE_CARE',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/tvBox-restart-required-device-care',
+    behaviour: 'primary',
   };
 
   public static issueFixedButton: IButton = {
@@ -521,6 +563,8 @@ export class CustomerJourneyConstants {
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
 
+  public static tvBoxRestartRequiredButtons: IButton[] = [CustomerJourneyConstants.restartStbNowButton, CustomerJourneyConstants.restartManuallyLink];
+
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
 
   public static openServiceRequestCaseButtons: IButton[] = [CustomerJourneyConstants.followUpButton, CustomerJourneyConstants.exitTroubleShootingButton];
@@ -532,6 +576,14 @@ export class CustomerJourneyConstants {
   public static routerRebootRequiredButtons: IButton[] = [CustomerJourneyConstants.restartNowButton, CustomerJourneyConstants.closeButton];
 
   public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusLink, CustomerJourneyConstants.doneButtonSecondary];
+
+  public static tvBoxRestartSuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static tvBoxRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareTvBoxManualRestartButton, CustomerJourneyConstants.closeButton];
+
+  public static routerRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareButton, CustomerJourneyConstants.closeButton];
+
+  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 
