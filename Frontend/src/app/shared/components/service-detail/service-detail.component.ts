@@ -9,7 +9,7 @@ import { SharedService } from '../../shared.service';
 @Component({
   selector: 'app-service-detail',
   templateUrl: './service-detail.component.html',
-  styleUrls: ['./service-detail.component.css'],
+  styleUrls: ['./service-detail.component.scss'],
 })
 export class ServiceDetailComponent implements OnInit {
   buttonsConfig: IButton[] = [];
