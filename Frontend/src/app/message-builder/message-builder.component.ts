@@ -197,6 +197,22 @@ export class MessageBuilderComponent implements OnInit {
       };
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinResetSuccessButton));
     }
+    //#region  Module 2
+    // Troubleshoot Complete
+    else if (this.codeType === ERoutingIds.tvBoxNotReachableFormSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
+      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        location: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
+    }
+    //#endregion Module 2
+
     //TODO: dummy need to remove this case at the end
     else {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;

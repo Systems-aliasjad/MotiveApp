@@ -23,7 +23,7 @@ export class CustomerJourneyConstants {
 
   public static appointmentbookssuccessfullyCase = {
     header: 'MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_Body'],
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
   public static OpenTechnicalSR = {
@@ -33,7 +33,7 @@ export class CustomerJourneyConstants {
 
   public static packageUpgradesuccessfullyCase = {
     header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_Body'],
+    paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
   public static outageIssueMessageSection: IMessageIssue = {
@@ -159,6 +159,13 @@ export class CustomerJourneyConstants {
     behaviour: 'link',
   };
 
+  public static bookAppointmentButton: IButton = {
+    title: 'BUTTONS.BOOK_AN_APPOINTMENT',
+    clickListener: () => {},
+    linkTo: '/tvBox-not-reachable-form',
+    behaviour: 'primary',
+  };
+
   public static bookCompalintButton: IButton = {
     title: 'HEADER.BOOK_COMPLAINT',
     clickListener: () => {},
@@ -195,6 +202,14 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static trackComplaintStatusLink: IButton = {
+    title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
   public static doneButtonSecondary: IButton = {
     title: 'BUTTONS.DONE',
     clickListener: () => {},
@@ -221,6 +236,22 @@ export class CustomerJourneyConstants {
     explanatoryNote: '',
     clickListener: () => {},
     linkTo: '',
+    behaviour: 'primary',
+  };
+
+  public static tryAgainLaterLink: IButton = {
+    title: 'BUTTONS.TRY_AGAIN_LATER',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
+  public static tryAgainButton: IButton = {
+    title: 'BUTTONS.TRY_AGAIN',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/tvBox-not-reachable_try_again',
     behaviour: 'primary',
   };
 
@@ -374,6 +405,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static issueResolvedLink = {
+    title: 'BUTTONS.ISSUE_RESLOVED',
+    clickListener: () => {},
+    linkTo: '/thanks',
+    behaviour: 'link',
+  };
+
   public static backButton = {
     title: 'BUTTONS.BACK',
     clickListener: () => {},
@@ -401,6 +439,9 @@ export class CustomerJourneyConstants {
 
   public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
 
+  public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
+  public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
+
   public static routerResetRequiredButtons: IButton[] = [CustomerJourneyConstants.resetNowButton1, CustomerJourneyConstants.closeButton];
 
   public static openServiceRequestCaseButtons: IButton[] = [CustomerJourneyConstants.followUpButton, CustomerJourneyConstants.exitTroubleShootingButton];
@@ -411,7 +452,7 @@ export class CustomerJourneyConstants {
 
   public static routerRebootRequiredButtons: IButton[] = [CustomerJourneyConstants.restartNowButton, CustomerJourneyConstants.closeButton];
 
-  public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusButton, CustomerJourneyConstants.doneButtonSecondary];
+  public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusLink, CustomerJourneyConstants.doneButtonSecondary];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 

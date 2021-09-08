@@ -51,6 +51,10 @@ export enum ERoutingIds {
   tvPinUpdateSuccessfull,
   restELifeLoginPin,
   restELifeLoginPinResetSuccess,
+  tvBoxNotReachable,
+  tvBoxNotReachableTryAgain,
+  tvBoxNotReachableForm,
+  tvBoxNotReachableFormSuccessfully,
 }
 
 const P3: string = '3P';

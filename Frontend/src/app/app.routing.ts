@@ -136,6 +136,13 @@ const routes: Routes = [
   { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
   //#endregion Router Not Reachable
 
+  //#region TV Box Not Reachable
+  { path: 'tvBox-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachable } },
+  { path: 'tvBox-not-reachable_try_again', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableTryAgain } },
+  { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
+  { path: 'tvBox-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableFormSuccessfully } },
+  //#endregion Router Not Reachable
+
   { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
