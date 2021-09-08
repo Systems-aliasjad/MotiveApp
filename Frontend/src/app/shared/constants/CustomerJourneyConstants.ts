@@ -1,4 +1,4 @@
-import { IButton } from './types';
+import { IButton, IMessageIssue } from './types';
 
 export class CustomerJourneyConstants {
   public static openServiceRequestCase1 = {
@@ -34,6 +34,11 @@ export class CustomerJourneyConstants {
   public static packageUpgradesuccessfullyCase = {
     header: 'MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY',
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_Body'],
+  };
+
+  public static outageIssueMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_INTERNET_CONNECTION',
+    body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
   };
 
   public static routerUpgradesuccessfullyCase = {

@@ -7,7 +7,6 @@
     "BOOK_COMPLAINT": "Book a Complaint",
     "PACKAGE_UPGRADE": "Package Upgrade",
     "RESET_INTERNET_PASSWORD": "Reset internet password",
-    "NO_INTERNET_ISSUE": "No Internet Issue",
     "UNABLE_TO_VIDEO_CALLS": "Unable to make video calls",
     "UNABLE_TO_CONNECT_NEW_DEVICE_WIFI": "Unable to connect new device to WiFi",
     "ROUTER_UPGRADE": "Router Upgrade",
@@ -172,7 +171,13 @@
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router.",
     "TROUBLESHOOT_COMPLETE_HEADING": "Troubleshooting Complete",
-    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side."
+    "TROUBLESHOOT_COMPLETE_BODY": "we couldn't find any technical problem with the service. You can book an appointment with a technician if you're still facing an issue. Please note that you might get charged AED 150 for the technician visit if the issue isn't from our side.",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY": "TV admin PIN reset successfully!",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY1": "Your PIN has been successfully reset to the default PIN: 1111.",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY2": "Please restart all your TV boxes to activate the new PIN.",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY3": "Note: You will be required to change the default PIN when you log in to any paid service.",
+    "NO_INTERNET_CONNECTION": "No internet connection",
+    "NO_INTERNET_CONNECTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
