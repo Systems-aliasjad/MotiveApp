@@ -28,25 +28,29 @@
 .primary-btn,
 .primary-btn.button-solid{
   color: #f1f1eb ;
+  --color:#f1f1eb;
   border: 2px solid $etisalat-color;
   background-color:$etisalat-color;
   &:hover,
   &:active,
   &:focus{
     color: #333333 ;
-    --color: #333333 ;
+    --color: #333333;
     background-color: transparent;
     border: 2px solid $black;
   }
 }
-.secondary-btn{
+.secondary-btn,
+.secondary-btn.button-solid{
   color: #333333;
+  --color: #333333;
   border: 2px $black solid;
   background-color: transparent;
   &:hover,
   &:active,
   &:focus{
     color: #f1f1eb;
+    --color:#f1f1eb;
     background-color: $etisalat-color;
     border: 2px solid $etisalat-color;
   }

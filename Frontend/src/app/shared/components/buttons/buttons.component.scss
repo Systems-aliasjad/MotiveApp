@@ -7,4 +7,12 @@ ion-button,
   @media screen and (max-width: 992px) {
     width: 100%;
   }
+  .transparent-btn{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    @media screen and (max-width: 767px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
 }
