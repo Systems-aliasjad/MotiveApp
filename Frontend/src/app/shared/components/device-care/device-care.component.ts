@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { IButton } from '../../constants/types';
 import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
@@ -30,11 +30,14 @@ export class DeviceCareComponent implements OnInit {
       behaviour: 'link',
     },
   ];
-  constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router) {
-    this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+  constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
   }
 
   ngOnInit() {
+    this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
     this.sharedService.setButtonConfig(this.buttonsConfig);
   }
 

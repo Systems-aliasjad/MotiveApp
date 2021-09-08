@@ -82,5 +82,9 @@ export class RouterRestartComponent implements OnInit {
       this.instructionList = ['Unplug the router', 'Wait for 30 seconds', 'Plug the router back in', 'Wait for 5 mins', 'Try to use the internet again'];
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRestartManuallyButtons));
     }
+    this.selectedLang = this.sharedService.getDefaultLanguage();
+    this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
+    this.sharedService.setButtonConfig(this.buttonsConfig);
+    this.sharedService.setButtonSize({ SM: '12', MD: '6', LG: '6' });
   }
 }

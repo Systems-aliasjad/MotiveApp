@@ -1,4 +1,4 @@
-import { IButton } from './types';
+import { IButton, IMessageIssue } from './types';
 
 export class CustomerJourneyConstants {
   public static openServiceRequestCase1 = {
@@ -41,6 +41,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
+  public static outageIssueMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_INTERNET_CONNECTION',
+    body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
+  };
+
   public static routerUpgradesuccessfullyCase = {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
     paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLYY_BODY'],
@@ -81,6 +86,16 @@ export class CustomerJourneyConstants {
   public static troubleshootComplete = {
     header: 'MESSAGES.TROUBLESHOOT_COMPLETE_HEADING',
     paragraphs: ['MESSAGES.TROUBLESHOOT_COMPLETE_BODY'],
+  };
+
+  public static restELifeLoginPin = {
+    header: 'MESSAGES.RESET_ELIFEON_PIN_HEADING',
+    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_BODY1', 'MESSAGES.RESET_ELIFEON_PIN_BODY2'],
+  };
+
+  public static restELifeLoginPinResetSuccess = {
+    header: 'MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING',
+    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY'],
   };
 
   public static resetNowButton1: IButton = {
@@ -453,6 +468,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static resetPINButton = {
+    title: 'BUTTONS.RESET_PIN',
+    clickListener: () => {},
+    linkTo: '/reset-login-pin-success',
+    behaviour: 'primary',
+  };
+
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 
   public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
@@ -565,4 +587,6 @@ export class CustomerJourneyConstants {
   ];
 
   public static troubleshootCompleteButtons: IButton[] = [CustomerJourneyConstants.requestPaidTechnicianVisitButton, CustomerJourneyConstants.cancelButton];
+  public static restELifeLoginPinButton: IButton[] = [CustomerJourneyConstants.resetPINButton, CustomerJourneyConstants.cancelButton];
+  public static restELifeLoginPinResetSuccessButton: IButton[] = [CustomerJourneyConstants.doneButtonSecondary];
 }

@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
-import { EIssueFlow, InternetIssueListDialog } from '../../dialogs/internet-issue-list-dialog/internet-issue-list-dialog.component';
+import { EIssueFlow, IssueListDialog } from '../../dialogs/issue-list-dialog/issue-list-dialog.component';
 import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-service-detail',
   templateUrl: './service-detail.component.html',
-  styleUrls: ['./service-detail.component.css'],
+  styleUrls: ['./service-detail.component.scss'],
 })
 export class ServiceDetailComponent implements OnInit {
   buttonsConfig: IButton[] = [];
@@ -36,7 +36,13 @@ export class ServiceDetailComponent implements OnInit {
     //   IP: '192.168.1.125',
     // },
   ];
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController) {
+  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private actRoute: ActivatedRoute) {
+    actRoute.params.subscribe((val) => {
+      this.ngOnInit();
+    });
+  }
+
+  ngOnInit() {
     this.sharedService.setHeaderConfig('Service detail', false);
     this.buttonsConfig = CustomerJourneyConstants.serviceDetailsButtonConfig;
     //debugger;
@@ -53,8 +59,6 @@ export class ServiceDetailComponent implements OnInit {
     this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonsConfig));
   }
 
-  ngOnInit() {}
-
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -68,7 +72,7 @@ export class ServiceDetailComponent implements OnInit {
 
   async openInternetIssueDialog() {
     this.modal = await this.modalCtrl.create({
-      component: InternetIssueListDialog,
+      component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.internetIssue,
       },

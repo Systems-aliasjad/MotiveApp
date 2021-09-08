@@ -3,11 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ERoutingIds } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
-import { IButton } from '../shared/constants/types';
+import { IButton, IMessageIssue } from '../shared/constants/types';
 import { DeviceListDialog } from '../shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { SharedService } from '../shared/shared.service';
 import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/internet-issues-dialog.component';
+import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 
 @Component({
   selector: 'app-issue-builder',
@@ -18,6 +19,7 @@ export class IssueBuilderComponent implements OnInit {
   codeType;
   modal: any;
   btnConfig: IButton[] = [];
+  messageSection: IMessageIssue;
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
@@ -30,6 +32,16 @@ export class IssueBuilderComponent implements OnInit {
     });
   }
 
+  async openInternetIssueDialog() {
+    this.modal = await this.modalCtrl.create({
+      component: IssueListDialog,
+      componentProps: {
+        flow: EIssueFlow.tvIssue,
+      },
+    });
+    return await this.modal.present();
+  }
+
   async openDeviceListDialog() {
     this.modal = await this.modalCtrl.create({
       component: DeviceListDialog,
@@ -40,6 +52,7 @@ export class IssueBuilderComponent implements OnInit {
   constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router, private modalCtrl: ModalController) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
+      this.ngOnInit();
     });
   }
   async openPasswordResetDialog() {
@@ -57,6 +70,8 @@ export class IssueBuilderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
@@ -106,6 +121,7 @@ export class IssueBuilderComponent implements OnInit {
     }
     //Outage
     else if (this.codeType === ERoutingIds.outage) {
+      this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
     }

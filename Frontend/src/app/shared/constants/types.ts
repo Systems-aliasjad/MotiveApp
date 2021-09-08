@@ -27,3 +27,12 @@ export interface IButtonSize {
   MD: string;
   LG: string;
 }
+
+interface IMessageIssueBody {
+  title: string;
+  children?: string[];
+}
+export interface IMessageIssue {
+  header: string;
+  body: IMessageIssueBody[];
+}

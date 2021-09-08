@@ -15,10 +15,13 @@ export class LandingComponent implements OnInit {
   showLoader: boolean = false;
 
   constructor(private activatedRoute: ActivatedRoute, private helperService: HelperService, private sharedService: SharedService, public router: Router) {
-    this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false);
+    activatedRoute.params.subscribe((params) => {
+      this.ngOnInit();
+    });
   }
 
   ngOnInit(): void {
+    this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false);
     this.selectedLang = this.sharedService.getDefaultLanguage();
     this.activatedRoute.queryParams.subscribe((params) => {
       this.codeType = params['code'] || '3P';
