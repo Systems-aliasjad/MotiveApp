@@ -24,10 +24,11 @@ ion-item::part(native){
 
 .service-detail-contanier,
 .service-detail-inner_container{
-  height: calc(100vh - 132px);
-  /* @media screen and (max-width: 992px) {
-    height:100%;
-  } */
+  height:100%;
+  /* height: calc(100vh - 132px); */
+   @media screen and (max-width: 992px) {
+    height:auto;
+  } 
 }
 .service-detail_title{
   @media screen and (min-width: 992px) {
