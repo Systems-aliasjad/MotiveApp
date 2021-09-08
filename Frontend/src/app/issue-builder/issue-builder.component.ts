@@ -123,6 +123,7 @@ export class IssueBuilderComponent implements OnInit {
     }
     //Wi-Fi Alarm
     else if (this.codeType === ERoutingIds.WiFiAlarm) {
+      this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons));
     }
@@ -150,8 +151,9 @@ export class IssueBuilderComponent implements OnInit {
       });
       this.sharedService.setButtonConfig(this.routeLinkHelper(this.btnConfig));
     }
-    ///third party router
+    ///3rd party router
     else if (this.codeType === ERoutingIds.thirdPartyRouter) {
+      this.messageSection = CustomerJourneyConstants.router3rdPartyMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
     }

@@ -109,6 +109,29 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static router3rdPartyMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY1' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY2' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY3' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY4' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY5' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY6' },
+    ],
+  };
+
+  public static wifiAlarmMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.WIFI_ALARM_BODY1' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY2' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY3' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY4' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY5' },
+    ],
+  };
+
   public static routerConfig3rdPartyMessageSection: IMessageIssue = {
     header: 'MESSAGES.RECONFIGURE_YOUR_ROUTER',
     body: [
