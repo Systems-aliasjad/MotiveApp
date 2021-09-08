@@ -49,7 +49,7 @@
     margin-top: 0;
   }
   .content{
-    width: 550px;
+    max-width: 550px;
     margin-top: 4rem;
     margin-right: auto;
     margin-bottom: 0;
@@ -68,7 +68,7 @@
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
-  width: 472px;
+  max-width: 472px;
   height: auto;
   margin: 2rem auto 0;
   img{

@@ -1,3 +1,10 @@
+ion-button,
 .btn {
   width: 100%;
+}
+.footer-btns-container{
+  min-width: 300px;
+  @media screen and (max-width: 992px) {
+    width: 100%;
+  }
 }
