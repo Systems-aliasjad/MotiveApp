@@ -173,10 +173,13 @@ const routes: Routes = [
 
   // Package Transfer
   { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
-  { path: 'package-transfer', component: TransferPackageComponent },
+  { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
   { path: 'package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.packageTransferSuccess } },
   //Unable to watch specific channel
   { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
+  { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
+  { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
+  { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
   { path: '**', redirectTo: '' },
 ];

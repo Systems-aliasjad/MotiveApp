@@ -19,7 +19,9 @@
     "TV_ISSUES": "TV issues",
     "AVAILABLE_PACKAGE": "Available packages",
     "SERVICE_DEATAIL": "Service detail",
-    "TRANSFER_PACKAGE": "Transfer package"
+    "TRANSFER_PACKAGE": "Transfer package",
+    "CHANNEL_DETAILS": "Channel details",
+    "UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE": "Transfer package"
   },
 
   "SUBHEADER": {
@@ -289,7 +291,9 @@
     "UNPLANNED_INTERRUPTION": "Unplanned Interruption",
     "UNPLANNED_INTERRUPTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
     "PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transfer was successful!",
-    "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service."
+    "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service.",
+    "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transferred successfully",
+    "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY": "You can now watch all the channels in <package name> on TV box <SL no.>. "
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -424,7 +428,8 @@
     "CARD_SUB_HEADING2": "Living Room TV, Kids Room TV"
   },
   "AVAILABLE_PACKAGE": {
-    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box."
+    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box.",
+    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
   },
   "TRANSFER_PACKAGE": {
     "DESCRIPTION": "Choose the TV box you'd like to transfer the package to."
@@ -433,6 +438,8 @@
     "TITLE": "TV Issues",
     "SUB_HEADING": "TV service is down",
     "TEXT1": "Sorry, the service is not working properly.",
-    "TEXT2": "Please try again later or book an appointment instead."
+    "TEXT2": "Please try again later or book an appointment instead.",
+    "DESCRIPTION": "Choose the TV box you'd like to transfer the package to.",
+    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
   }
 }
