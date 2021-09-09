@@ -12,26 +12,33 @@
 .device-care_inner_container {
   height: 100%;
 }
-.lg-screen{
+.device-care-lg{
   @media screen and (max-width: 992px) {
     display:none;
   }
-  .device-care_image_lg{
-    /* display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column; */
+  /* .device-care_image_lg{
     @media screen and (max-width: 992px) {
       display:none;
     }
+  } */
+}
+.device-care-sm{
+  @media screen and (min-width: 992px) {
+    display:none;
   }
-  
+  .content{
+    max-width: 100%;
+    margin:0;
+  }
+  .image{
+    max-width: 100%;
+    margin-bottom:2rem;
+  }
+  p{
+    margin:0;
+  }
 }
 
-.device-care_image_sm,
 .device-care_title{
   @media screen and (min-width: 992px) {
     display:none;
@@ -48,16 +55,7 @@
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     margin-top: 0;
   }
-  .content{
-    max-width: 550px;
-    margin-top: 4rem;
-    margin-right: auto;
-    margin-bottom: 0;
-    p{
-      color: $secondary-color;
-      line-height: 1.5;
-    }
-  }
+  
 }
 .image {
   display: -webkit-box;
@@ -74,4 +72,14 @@
   img{
     width: 100%;
   }
+}
+.content{
+  max-width: 550px;
+  margin-top: 4rem;
+  margin-right: auto;
+  margin-bottom: 0;
+}
+p{
+  color: $secondary-color;
+  line-height: 1.5;
 }
