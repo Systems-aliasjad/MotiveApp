@@ -335,6 +335,7 @@
     "GAME_SESSION_P1": "Are you sure you want to quit <eLife TV game name>? Any unsaved changes will be lost.",
     "GAME_SESSION_P2": "You can launch a new game session from the main menu of eLife TV Gaming.",
     "GAME_SESSION_P3": "This action cannot be undone.",
+
     "TVBOX_ROUTER_HEADING": "Restart TV box",
     "TVBOX_ROUTER_INS1": "Please note that the issue won’t be fixed until you restart your TV box.",
     "TVBOX_ROUTER_INS2": "You can also restart your TV box manually.",
