@@ -24,11 +24,13 @@ export class ResetWifiPasswordComponent implements OnInit {
 
   constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute) {
     actRoute.params.subscribe((val) => {
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true);
     this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;

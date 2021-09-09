@@ -22,11 +22,13 @@ export class BrowserStepperComponent implements OnInit {
     this.selectedLang = this.sharedService.getDefaultLanguage();
     this.activatedRoute.queryParams.subscribe((params) => {
       this.step = params['step'] || 1;
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  initialization() {
     this.headerString = 'Step ' + this.step + '/3';
     this.sharedService.setHeaderConfig(this.headerString, true);
     if (this.step < 3) {

@@ -3,6 +3,7 @@ import { CacheService } from './cache/cache.service';
 import { StorageType } from './cache/storages/storage-type.enum';
 import { environment } from '../environments/environment';
 import { SharedService } from './shared/shared.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,10 +13,15 @@ import { SharedService } from './shared/shared.service';
 export class AppComponent implements OnInit {
   appDirection: string = 'rtl';
   showLoader: boolean = false;
-  constructor(private cacheService: CacheService, public sharedService: SharedService) {
+  constructor(private cacheService: CacheService, public sharedService: SharedService, private actRoute: ActivatedRoute) {
     // this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
+    actRoute.params.subscribe((params) => {
+      this.Initialization();
+    });
   }
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  Initialization() {
     const selectedLang = this.sharedService.getDefaultLanguage();
     this.appDirection = selectedLang === 'en' ? 'ltr' : 'rtl';
     this.sharedService.setDefaultLanguage(selectedLang);

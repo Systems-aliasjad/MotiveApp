@@ -20,11 +20,13 @@ export class UnableConnectNewDeviceWifiComponent implements OnInit {
 
   constructor(private sharedService: SharedService, private router: Router, private actRoute: ActivatedRoute) {
     actRoute.params.subscribe((val) => {
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  initialization() {
     this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_CONNECT_NEW_DEVICE_WIFI', true);
     this.selectedLang = this.sharedService.getDefaultLanguage();
     this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issueFixed_BookAComplaint));

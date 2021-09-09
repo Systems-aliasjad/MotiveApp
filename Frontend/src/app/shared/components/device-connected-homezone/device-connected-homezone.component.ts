@@ -11,11 +11,13 @@ import { SharedService } from '../../shared.service';
 export class DeviceConnectedHomezoneComponent implements OnInit {
   constructor(private router: Router, public sharedService: SharedService, private actRoute: ActivatedRoute) {
     actRoute.params.subscribe((val) => {
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     this.sharedService.setHeaderConfig('', true);
     this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.deviceConnectedHomezoneButtonConfig));
   }

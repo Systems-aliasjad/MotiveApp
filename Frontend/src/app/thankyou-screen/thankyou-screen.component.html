@@ -1,3 +1,4 @@
+<ion-content>
   <ion-grid class="info-container success-container">
     <!-- Action Icon Start -->
     <ion-row class="info-container_icon">
@@ -6,10 +7,8 @@
       </ion-col>
     </ion-row>
     <!-- Action Icon End -->
-
     <!-- Action Title Content Start -->
     <ion-row class="info-container_title_content">
-      <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
       <ion-col size="12">
         <div class="content">
           <h4>{{ 'MESSAGES.THANKYOU' | translate }}</h4>
@@ -18,23 +17,5 @@
       </ion-col>
     </ion-row>
     <!-- Action Title Content End -->
-
-    <!-- CLOSE BUTTON -->
-    <div class="info-container_btn mt-5">
-      <ion-row>
-        <ion-col size="12" class="pt-0 pb-0 ion-text-center">
-          <ion-button (click)="goToLandingScreen()" class="btn secondary-btn close full-width">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-        </ion-col>
-      </ion-row>
-    </div>
   </ion-grid>
-
-<!-- <ion-footer class="ion-no-border footer">
-  <ion-row>
-    <ion-col size="12">
-      <div class="btn-bottom">
-        <ion-button class="btn secondary-btn close">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-footer> -->
+</ion-content>

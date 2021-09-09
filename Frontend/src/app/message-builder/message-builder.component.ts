@@ -39,11 +39,13 @@ export class MessageBuilderComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, public router: Router, private sharedService: SharedService) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  initialization() {
     //Open Complaint
 
     if (this.codeType === ERoutingIds.openComplaint) {
@@ -165,14 +167,14 @@ export class MessageBuilderComponent implements OnInit {
     }
     // Troubleshoot Complete
     else if (this.codeType === ERoutingIds.troubleshootComplete) {
-      this.sharedService.setHeaderConfig('', false);
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.troubleshootComplete;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
     }
     // TV PIN update Complete
     else if (this.codeType === ERoutingIds.tvPinUpdateSuccessfull) {
-      this.sharedService.setHeaderConfig('', false);
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvAdminPinResetSuccessfullyButton));
@@ -180,14 +182,14 @@ export class MessageBuilderComponent implements OnInit {
 
     // ELife Login PIN Reset Complete
     else if (this.codeType === ERoutingIds.restELifeLoginPin) {
-      this.sharedService.setHeaderConfig('', false);
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.restELifeLoginPin;
       this.imgSrc = this.warningImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinButton));
     }
     // ELife Login PIN Reset Success Complete
     else if (this.codeType === ERoutingIds.restELifeLoginPinResetSuccess) {
-      this.sharedService.setHeaderConfig('', false);
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
       this.imgSrc = this.successImgSrc;
       this.Section2Template = ApplicableCodes.userCredentialsTemplate;

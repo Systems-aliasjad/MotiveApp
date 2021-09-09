@@ -20,11 +20,13 @@ export class IssueTabsComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     if (this.codeType === ERoutingIds.routerNotReachable) {
       this.section1Template = ApplicableCodes.routerNotReachableTemplate;
       this.section1Data = {
