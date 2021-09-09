@@ -145,8 +145,6 @@
           -ms-flex: 0 0 75%;
           flex: 0 0 75%;
           max-width: 75%; */
-
-
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -217,7 +215,10 @@
               &:before{
                 content: "";
                 position: $absolute;
-                top: 8px;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                  transform: translateY(-50%);
+                top: 50%;
                 left: 0;
                 width: .5rem;
                 height: .5rem;
