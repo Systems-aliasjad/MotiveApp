@@ -281,6 +281,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.PACKAGE_TRANSFER_SUCCESS_BODY'],
   };
 
+  public static unableWatchSpecificChannelPackageTransferSuccess = {
+    header: 'MESSAGES.UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_HEADING',
+    paragraphs: ['MESSAGES.UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
@@ -735,6 +740,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static unableWatchSpecificChannelconfirmTransferButton = {
+    title: 'BUTTONS.CONFIRM_TRANSFER',
+    clickListener: () => {},
+    linkTo: '/unable-to-watch-package-transfer-success',
+    behaviour: 'primary',
+  };
+
   public static unableToWatchButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.continueToTroubleshootEnableToWatchButton];
 
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
@@ -769,7 +781,7 @@ export class CustomerJourneyConstants {
 
   public static routerRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareButton, CustomerJourneyConstants.closeButton];
 
-  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedTvButton, CustomerJourneyConstants.continueToTroubleshootTVBoxButton];
+  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootTVBoxButton];
 
   public static unableWatchChannelsDeviceCareButtons: IButton[] = [CustomerJourneyConstants.resetTVBoxButton, CustomerJourneyConstants.issueResolvedLink];
 
@@ -861,4 +873,10 @@ export class CustomerJourneyConstants {
   public static gameSessionButtons: IButton[] = [CustomerJourneyConstants.issueFixedCloseButton, CustomerJourneyConstants.cancelButton];
   public static packageAvailableButtons: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelButton];
   public static transferPackageButtons: IButton[] = [CustomerJourneyConstants.confirmTransferButton, CustomerJourneyConstants.closeButton];
+
+  public static packageAvailableButtonsUnableWatchSpecific: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelButton];
+  public static unableWatchSpecificTransferPackageButtons: IButton[] = [
+    CustomerJourneyConstants.unableWatchSpecificChannelconfirmTransferButton,
+    CustomerJourneyConstants.closeButton,
+  ];
 }

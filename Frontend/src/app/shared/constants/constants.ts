@@ -68,9 +68,14 @@ export enum ERoutingIds {
 
   //Enable to watch specifc channel
   enableWatchSpecificChannel,
+  enableWatchSpecificChannelpackageavailable,
+  enableWatchSpecificChannelpackageTransfer,
+  enableWatchSpecificChannelpackageTransferSuccess,
+
   gameSessionCancelConfirmed,
   packageTransferSuccess,
   packageavailable,
+  packagetransfer,
 }
 
 const P3: string = '3P';

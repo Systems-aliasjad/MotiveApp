@@ -11,23 +11,9 @@ import { SharedService } from '../../shared.service';
 })
 export class PackageAvailableComponent implements OnInit {
   codeType: any;
-  PageTitle: string = 'HEADER.AVAILABLE_PACKAGE';
-  PageContent: string = 'AVAILABLE_PACKAGE.DESCRIPTION';
-  cardList: any[] = [
-    {
-      title: 'Movies Unlimited Premium',
-      description: 'STB SR#039838920',
-    },
-    {
-      title: 'Bein Sports',
-      description: 'STB SR#039838920',
-      checked: false,
-    },
-    {
-      title: 'Pehla Plus',
-      description: 'STB SR#039838920',
-    },
-  ];
+  PageTitle: string;
+  PageContent: string;
+  cardList: any;
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
@@ -39,11 +25,49 @@ export class PackageAvailableComponent implements OnInit {
 
   initialization() {
     this.sharedService.setDefaultValues();
+
     if (this.codeType === ERoutingIds.packageavailable) {
       this.PageTitle = 'HEADER.AVAILABLE_PACKAGE';
       this.PageContent = 'AVAILABLE_PACKAGE.DESCRIPTION';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
+      this.cardList = [
+        {
+          title: 'Movies Unlimited Premium',
+          description: 'STB SR#039838920',
+        },
+        {
+          title: 'Bein Sports',
+          description: 'STB SR#039838920',
+          checked: false,
+        },
+        {
+          title: 'Pehla Plus',
+          description: 'STB SR#039838920',
+        },
+      ];
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtons));
+    }
+    /// Unable to watch specific channel package available
+    else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
+      this.PageTitle = 'HEADER.CHANNEL_DETAILS';
+      this.PageContent = 'AVAILABLE_PACKAGE.DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL';
+      this.sharedService.setHeaderConfig(this.PageTitle, false, true);
+      this.cardList = [
+        {
+          title: 'Movies Unlimited Premium',
+          description: 'STB SR#039838920',
+        },
+        {
+          title: 'Bein Sports',
+          description: 'STB SR#039838920',
+          checked: false,
+        },
+        {
+          title: 'Pehla Plus',
+          description: 'STB SR#039838920',
+        },
+      ];
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtonsUnableWatchSpecific));
     }
   }
 
@@ -59,6 +83,10 @@ export class PackageAvailableComponent implements OnInit {
   }
 
   goToTransferPackage(item) {
-    this.router.navigate(['/package-transfer']);
+    if (this.codeType === ERoutingIds.packageavailable) {
+      this.router.navigate(['/package-transfer']);
+    } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
+      this.router.navigate(['/unable-to-watch-package-transfer']);
+    }
   }
 }

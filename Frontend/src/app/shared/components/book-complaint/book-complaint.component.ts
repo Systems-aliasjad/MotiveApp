@@ -64,6 +64,8 @@ export class BookComplaintComponent implements OnInit {
       this.buttonText = 'BUTTONS.BOOK_AN_APPOINTMENT';
       this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
     }
+
+    this.sharedService.setDefaultValues();
     //#endregion Module 2
   }
 

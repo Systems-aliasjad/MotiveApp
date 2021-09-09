@@ -237,6 +237,13 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
     }
+
+    // Unable to watch specific channles package transfer success
+    else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess) {
+      this.Section1Data = CustomerJourneyConstants.unableWatchSpecificChannelPackageTransferSuccess;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    }
     //#endregion Module 2
 
     //TODO: dummy need to remove this case at the end
