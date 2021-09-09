@@ -21,7 +21,6 @@
       display:none;
     }
   } */
-  
 }
 .device-care-sm{
   @media screen and (min-width: 992px) {
@@ -29,10 +28,14 @@
   }
   .content{
     max-width: 100%;
-    margin: 0;
+    margin:0;
   }
   .image{
     max-width: 100%;
+    margin-bottom:2rem;
+  }
+  p{
+    margin:0;
   }
 }
 
@@ -75,8 +78,8 @@
   margin-top: 4rem;
   margin-right: auto;
   margin-bottom: 0;
-  p{
-    color: $secondary-color;
-    line-height: 1.5;
-  }
+}
+p{
+  color: $secondary-color;
+  line-height: 1.5;
 }
