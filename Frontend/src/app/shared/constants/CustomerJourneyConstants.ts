@@ -2,7 +2,7 @@ import { IButton, IMessageIssue } from './types';
 
 export class CustomerJourneyConstants {
   public static openServiceRequestCase1 = {
-    header: 'MESSAGES.MOCustomerJourneyConstantsVING_ELIFE_CONNECTION',
+    header: 'MESSAGES.MOVING_ELIFE_CONNECTION',
     paragraphs: ['MESSAGES.MOVING_ELIFE_CONNECTION_BODY_1', 'MESSAGES.MOVING_ELIFE_CONNECTION_BODY_2'],
   };
 
