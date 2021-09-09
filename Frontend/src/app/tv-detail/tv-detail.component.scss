@@ -23,3 +23,11 @@ ion-item::part(native){
   --inner-border-width: 0
 }
 // --------------------------------------------------------------
+
+.tv-detail-contanier,
+.tv-detail-inner_container{
+  height:100%;
+   @media screen and (max-width: 992px) {
+    height:auto;
+  } 
+}
