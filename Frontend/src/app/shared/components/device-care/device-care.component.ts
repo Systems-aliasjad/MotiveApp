@@ -52,15 +52,16 @@ export class DeviceCareComponent implements OnInit {
   constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {
     this.actRoute.data.subscribe((data) => {
       this.codeType = data.id;
-      this.ngOnInit();
     });
 
-    actRoute.params.subscribe((val) => {
-      this.ngOnInit();
+    actRoute.params.subscribe((params) => {
+      this.initialization();
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     if (this.codeType === ERoutingIds.tvBoxRestartRequiredDeviceCare) {
       this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
       this.pageHeading = 'DEVICE_CARE.TVBOX_RESTART_HEADING';

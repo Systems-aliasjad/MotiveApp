@@ -13,9 +13,11 @@ export class ServiceIssueComponent implements OnInit {
 
   constructor(private actRoute: ActivatedRoute) {
     actRoute.params.subscribe((val) => {
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
   ngOnInit() {}
+
+  initialization() {}
 }

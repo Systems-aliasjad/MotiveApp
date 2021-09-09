@@ -55,11 +55,13 @@ export class RouterRestartComponent implements OnInit {
 
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     if (this.codeType === ERoutingIds.tvBoxRestartRequiredManually) {
       this.ImgPath = this.ImgSrc;
       this.instructionHeaderTitle = 'TVBOX_RESTART.TVBOX_DIDNOT_RESTART_H1';

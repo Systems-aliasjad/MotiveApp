@@ -1,6 +1,7 @@
 export interface IPageHeader {
   pageTitle: string;
   singleLine: boolean;
+  showBackBtn?: boolean;
 }
 
 export interface ITermsAndConditions {

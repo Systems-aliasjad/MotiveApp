@@ -104,6 +104,9 @@ const routes: Routes = [
   { path: 'wifi-alarm', component: IssueBuilderComponent, data: { id: ERoutingIds.WiFiAlarm } },
   //Outage
   { path: 'outage', component: IssueBuilderComponent, data: { id: ERoutingIds.outage } },
+
+  //TV Outage
+  { path: 'tv-outage', component: IssueBuilderComponent, data: { id: ERoutingIds.tvOutage } },
   //Router Upgrade Recommended
   { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
   //Router & package upgrade recommended

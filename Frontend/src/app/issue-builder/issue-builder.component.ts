@@ -52,7 +52,7 @@ export class IssueBuilderComponent implements OnInit {
   constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router, private modalCtrl: ModalController) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
-      this.ngOnInit();
+      this.initialization();
     });
   }
   async openPasswordResetDialog() {
@@ -69,8 +69,10 @@ export class IssueBuilderComponent implements OnInit {
     return await modal.present();
   }
 
-  ngOnInit() {
-    //this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+  ngOnInit() {}
+
+  initialization() {
+    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
 
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
@@ -133,6 +135,12 @@ export class IssueBuilderComponent implements OnInit {
       this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
+    }
+    //Router & package upgrade recommended
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
+      this.messageSection = CustomerJourneyConstants.packageAndRouterUpdradeRecomendedMessageSection;
+      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
     }
     //Router & package upgrade recommended
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
