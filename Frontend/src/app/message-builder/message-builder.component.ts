@@ -217,6 +217,12 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartSuccessfullyButtons));
     }
+    // Game session cancel Confirm
+    else if (this.codeType === ERoutingIds.gameSessionCancelConfirmed) {
+      this.Section1Data = CustomerJourneyConstants.gameSessionCancelConfirmed;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    }
     //#endregion Module 2
 
     //TODO: dummy need to remove this case at the end

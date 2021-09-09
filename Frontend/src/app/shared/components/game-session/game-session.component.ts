@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
+import { GameSessionDialog } from '../../dialogs/game-session-dialog/game-session-dialog.component';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -29,7 +30,7 @@ export class GameSessionComponent implements OnInit {
 
   ngOnInit() {
     this.sharedService.setHeaderConfig('HEADER.ACTIVE_GAME_SESSION', false);
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issueFixedCloseButton));
+    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.gameSessionButtons));
   }
 
   routeLinkHelper(arr) {
@@ -44,10 +45,10 @@ export class GameSessionComponent implements OnInit {
   }
 
   async cancelGameSessionDialog() {
-    // const modal = await this.modalCtrl.create({
-    //   component: RestartRouterDialog,
-    // });
-    // return await modal.present();
+    const modal = await this.modalCtrl.create({
+      component: GameSessionDialog,
+    });
+    return await modal.present();
   }
 
   dismiss() {
