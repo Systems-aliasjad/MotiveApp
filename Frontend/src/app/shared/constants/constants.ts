@@ -68,6 +68,8 @@ export enum ERoutingIds {
   enableWatchChannelContinueTroubleshoot,
   tvBoxResetSuccessfully,
 
+  //Enable to watch specifc channel
+  enableWatchSpecificChannel,
   gameSessionCancelConfirmed,
 }
 

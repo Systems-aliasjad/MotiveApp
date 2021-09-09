@@ -38,6 +38,8 @@ import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dia
 import { RestartTvboxDialogComponent } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionComponent } from './components/game-session/game-session.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
+import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -76,6 +78,8 @@ export function createTranslateLoader(http: HttpClient) {
     RestartTvboxDialogComponent,
     GameSessionComponent,
     GameSessionDialog,
+    UnableWatchSpecificChannelComponent,
+    ChannelNotListDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -103,6 +107,7 @@ export function createTranslateLoader(http: HttpClient) {
     ServiceIssueComponent,
     ResetInternetPasswordComponent,
     ResetWifiPasswordComponent,
+    UnableWatchSpecificChannelComponent,
   ],
 
   entryComponents: [],

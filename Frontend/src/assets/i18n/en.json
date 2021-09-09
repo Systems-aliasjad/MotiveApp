@@ -140,7 +140,8 @@
     "RESET_PIN": "RESET PIN",
     "ISSUE_FIXED_CLOSE": "ISSUE FIXED, CLOSE",
     "RESET_TV_BOX": "RESET TV BOX",
-    "STILL_FACING_ISSUE": "STILL FACING AN ISSUE"
+    "STILL_FACING_ISSUE": "STILL FACING AN ISSUE",
+    "END_TROUBLESHOOTING": "END TROUBLESHOOTING"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -158,6 +159,18 @@
     "USING_OWN_ROUTER": "No, I'm using my own router",
     "CANCEL_GAME_SESSION": "CANCEL GAME SESSION"
   },
+
+  "CHANNEL_LIST": {
+    "TITLE": "Channel List",
+    "CONTENT": "Please select the channel you are not able to watch from the list below:"
+  },
+
+  "CHANNEL_LIST_DIALOG": {
+    "TITLE": "Channel is not on the list",
+    "CONTENT1": "The channel is not available as part of the TV package you have subscribed.",
+    "CONTENT2": "If you wish to subscribe more channels, please click here."
+  },
+
   "MESSAGES": {
     "THANKYOU": "Thank you!",
     "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",
