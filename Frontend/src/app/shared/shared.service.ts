@@ -23,19 +23,24 @@ export class SharedService {
   buttonSizeSubject: BehaviorSubject<IButtonSize>;
   buttonSize$: Observable<IButtonSize>;
 
+  defaultHeaderConfig: IPageHeader = {
+    pageTitle: '',
+    singleLine: false,
+    showBackBtn: true,
+  };
+
+  defaultBtnSize: IButtonSize = {
+    SM: '',
+    MD: '',
+    LG: '',
+  };
+
   constructor(public translate: TranslateService) {
     this.loaderSubject = new BehaviorSubject(false);
     this.buttonsConfigSubject = new BehaviorSubject(null);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
-    this.headerConfigSubject = new BehaviorSubject({
-      pageTitle: '',
-      singleLine: false,
-    });
-    this.buttonSizeSubject = new BehaviorSubject({
-      SM: '',
-      MD: '',
-      LG: '',
-    });
+    this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
+    this.buttonSizeSubject = new BehaviorSubject(this.defaultBtnSize);
 
     this.loader$ = this.loaderSubject.asObservable();
     this.buttonSize$ = this.buttonSizeSubject.asObservable();
@@ -44,10 +49,11 @@ export class SharedService {
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
-  setHeaderConfig(pageTitle: string, oneLine: boolean) {
+  setHeaderConfig(pageTitle: string, oneLine: boolean, _showBackBtn: boolean = true) {
     this.headerConfigSubject.next({
       pageTitle: pageTitle,
       singleLine: oneLine,
+      showBackBtn: _showBackBtn,
     });
   }
 
@@ -93,5 +99,12 @@ export class SharedService {
 
   getButtonSize(): Observable<IButtonSize> {
     return this.buttonSize$;
+  }
+
+  setDefaultValues() {
+    this.setHeaderConfig('', false, true);
+    this.setButtonSize(this.defaultBtnSize);
+    this.setButtonConfig([]);
+    this.setTermsConditions(false);
   }
 }

@@ -231,6 +231,8 @@
     "UPGRADE_RECOMENDED_BODY7": "Tap “Upgrade Package” if you wish to upgrade the router",
     "UPGRADE_RECOMENDED_BODY8": "We noticed that your router is not capable to handle high internet speed. Beside this you have an Internet speed that is incapable of handling your usage. You may be facing issue of slow browsing due to this. It is highly recommended to upgrade both your Router and your package for better experience and elimination of repeated internet issues.",
     "UPGRADE_RECOMENDED_BODY9": "Tap “Upgrade Router &  Package” if you wish to upgrade the router",
+    "GAME_SESSION_CANCEL_CONFIRMED_HEADING": "Game session",
+    "GAME_SESSION_CANCEL_CONFIRMED_BODY": "<eLife TV game name> has been restarted successfully. You can now launch a new game session from the main menu of eLife TV Gaming.",
     "ROUTER_3RD_PARTY_BODY1": "We didn't find any technical issues.",
     "ROUTER_3RD_PARTY_BODY2": "Your internet should work normally.",
     "ROUTER_3RD_PARTY_BODY3": "We noticed that you are facing a continue issues with the internet while using a non-etisalat router.",
@@ -256,8 +258,6 @@
     "TV_BOX_NOT_REACHABLE_AGAIN_BODY3": "Tap 'Book an appointment' if you want to book a technician visit.",
     "TV_BOX_RESTART_REQUIRED_BODY1": "We have fixed all the technical issues.",
     "TV_BOX_RESTART_REQUIRED_BODY2": "Please restart the TV box and then try using the TV again.",
-    "GAME_SESSION_CANCEL_CONFIRMED_HEADING": "Game session",
-    "GAME_SESSION_CANCEL_CONFIRMED_BODY": "<eLife TV game name> has been restarted successfully. You can now launch a new game session from the main menu of eLife TV Gaming.",
     "UNABLE_TO_WATCH_CHNANNEL": "Unable to watch channels",
     "UNABLE_TO_WATCH_CHNANNEL_BODY1": "TV box troubleshooting guidelines:",
     "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT1": "Plug the TV box to turn it on and wait for the LED to turn red",
@@ -348,14 +348,15 @@
     "ROUTER_NOT_REACHABLE_TITLIE": "Router is not accessible",
     "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'.",
 
-    "TVBOX_ROUTER_HEADING": "Restart TV box",
-    "TVBOX_ROUTER_INS1": "Please note that the issue won’t be fixed until you restart your TV box.",
-    "TVBOX_ROUTER_INS2": "You can also restart your TV box manually.",
-    "TVBOX_ROUTER_INS3": "Once you restart your TV box, wait for 5 minutes and then try using the internet again.",
     "GAME_SESSION_HEADING": "Cancel game session",
     "GAME_SESSION_P1": "Are you sure you want to quit <eLife TV game name>? Any unsaved changes will be lost.",
     "GAME_SESSION_P2": "You can launch a new game session from the main menu of eLife TV Gaming.",
-    "GAME_SESSION_P3": "This action cannot be undone."
+    "GAME_SESSION_P3": "This action cannot be undone.",
+
+    "TVBOX_ROUTER_HEADING": "Restart TV box",
+    "TVBOX_ROUTER_INS1": "Please note that the issue won’t be fixed until you restart your TV box.",
+    "TVBOX_ROUTER_INS2": "You can also restart your TV box manually.",
+    "TVBOX_ROUTER_INS3": "Once you restart your TV box, wait for 5 minutes and then try using the internet again."
   },
   "LOADER": {
     "HEADER": "Almost there",

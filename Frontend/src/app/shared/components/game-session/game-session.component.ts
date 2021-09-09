@@ -24,11 +24,13 @@ export class GameSessionComponent implements OnInit {
 
   constructor(private router: Router, private sharedService: SharedService, public activatedRoute: ActivatedRoute, private modalCtrl: ModalController) {
     this.activatedRoute.params.subscribe((params) => {
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     this.sharedService.setHeaderConfig('HEADER.ACTIVE_GAME_SESSION', false);
     this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.gameSessionButtons));
   }

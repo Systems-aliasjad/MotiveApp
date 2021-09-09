@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
+import { IButton } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
 
 @Component({
@@ -8,15 +10,30 @@ import { SharedService } from '../shared/shared.service';
   styleUrls: ['./thankyou-screen.component.scss'],
 })
 export class ThankyouScreenComponent implements OnInit {
+  buttonConfig: IButton[] = [
+    {
+      title: 'BUTTONS.CLOSE',
+      clickListener: () => {
+        this.goToLandingScreen();
+      },
+      linkTo: '/',
+      behaviour: 'secondary',
+    },
+  ];
+
   constructor(public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe((data) => {
-      this.ngOnInit();
+      this.initialization();
     });
   }
 
-  ngOnInit(): void {
-    this.sharedService.setHeaderConfig('', false);
+  ngOnInit(): void {}
+
+  initialization() {
+    this.sharedService.setHeaderConfig('', false, false);
+    this.sharedService.setButtonConfig(this.buttonConfig);
   }
+
   goToLandingScreen = () => {
     this.router.navigate(['/']);
   };
