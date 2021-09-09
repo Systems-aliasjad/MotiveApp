@@ -46,6 +46,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.TVBOX_RESET_SUCCESSFULLY_BODY'],
   };
 
+  public static troubeShootCompleteChannelNotListSuccessfullyCase = {
+    header: 'MESSAGES.TVBOX_RESET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.TVBOX_RESET_SUCCESSFULLY_BODY'],
+  };
+
   public static outageIssueMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_INTERNET_CONNECTION',
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
@@ -271,6 +276,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.GAME_SESSION_CANCEL_CONFIRMED_BODY'],
   };
 
+  public static packageTransferSuccess = {
+    header: 'MESSAGES.PACKAGE_TRANSFER_SUCCESS_HEADING',
+    paragraphs: ['MESSAGES.PACKAGE_TRANSFER_SUCCESS_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
@@ -322,6 +332,14 @@ export class CustomerJourneyConstants {
     linkTo: '',
     behaviour: 'primary',
     customListner: 'gotoMainForm',
+  };
+
+  public static endTrobleShootingPrimaryButton: IButton = {
+    title: 'BUTTONS.END_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'endTroubleshootChannelNotListDialog',
   };
 
   public static okButton: IButton = {
@@ -587,8 +605,17 @@ export class CustomerJourneyConstants {
   public static cancelButton: IButton = {
     title: 'BUTTONS.CANCEL',
     clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'CloseMOdal',
+  };
+
+  public static channelNotListDialogCancelButton: IButton = {
+    title: 'BUTTONS.CANCEL',
+    clickListener: () => {},
     linkTo: '/',
     behaviour: 'link',
+    customListner: 'closePopup',
   };
 
   public static resetRouterButton: IButton = {
@@ -694,6 +721,20 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static skipToNextStep: IButton = {
+    title: 'BUTTONS.SKIP_TO_NEXT_STEP',
+    clickListener: () => {},
+    linkTo: '/',
+    behaviour: 'primary',
+  };
+
+  public static confirmTransferButton = {
+    title: 'BUTTONS.CONFIRM_TRANSFER',
+    clickListener: () => {},
+    linkTo: '/package-transfer-success',
+    behaviour: 'primary',
+  };
+
   public static unableToWatchButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.continueToTroubleshootEnableToWatchButton];
 
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
@@ -705,6 +746,8 @@ export class CustomerJourneyConstants {
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
   public static tvBoxRestartDialogButtons: IButton[] = [CustomerJourneyConstants.exitTroubleShootingPrimaryButton, CustomerJourneyConstants.backButton];
+
+  public static channelNotListDialogButtons: IButton[] = [CustomerJourneyConstants.endTrobleShootingPrimaryButton, CustomerJourneyConstants.channelNotListDialogCancelButton];
 
   public static tvBoxRestartRequiredButtons: IButton[] = [CustomerJourneyConstants.restartStbNowButton, CustomerJourneyConstants.restartManuallyLink];
 
@@ -816,4 +859,6 @@ export class CustomerJourneyConstants {
   public static restELifeLoginPinButton: IButton[] = [CustomerJourneyConstants.resetPINButton, CustomerJourneyConstants.cancelButton];
   public static restELifeLoginPinResetSuccessButton: IButton[] = [CustomerJourneyConstants.doneButtonSecondary];
   public static gameSessionButtons: IButton[] = [CustomerJourneyConstants.issueFixedCloseButton, CustomerJourneyConstants.cancelButton];
+  public static packageAvailableButtons: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelButton];
+  public static transferPackageButtons: IButton[] = [CustomerJourneyConstants.confirmTransferButton, CustomerJourneyConstants.closeButton];
 }

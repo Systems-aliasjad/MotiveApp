@@ -231,7 +231,12 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
     }
-
+    // package transfer success
+    else if (this.codeType === ERoutingIds.packageTransferSuccess) {
+      this.Section1Data = CustomerJourneyConstants.packageTransferSuccess;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    }
     //#endregion Module 2
 
     //TODO: dummy need to remove this case at the end

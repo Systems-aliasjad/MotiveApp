@@ -56,19 +56,21 @@ export enum ERoutingIds {
   tvBoxNotReachableTryAgain,
   tvBoxNotReachableForm,
   tvBoxNotReachableFormSuccessfully,
-
   routerRestart,
   routerDeviceCare,
   tvBoxRestartRequired,
   tvBoxRestartRequiredSuccessfully,
   tvBoxRestartRequiredManually,
   tvBoxRestartRequiredDeviceCare,
-
   enableWatchChannel,
   enableWatchChannelContinueTroubleshoot,
   tvBoxResetSuccessfully,
 
+  //Enable to watch specifc channel
+  enableWatchSpecificChannel,
   gameSessionCancelConfirmed,
+  packageTransferSuccess,
+  packageavailable,
 }
 
 const P3: string = '3P';
