@@ -305,10 +305,14 @@ html{
       text-decoration: none;
       color:$primary-color;
     }
+    @media screen and (max-width: 320px) {
+      font-size: .9rem;
+    }
   }
 }
 ion-grid{
   width: 100%;
+  padding-bottom: 0;
 }
 ion-footer{
   

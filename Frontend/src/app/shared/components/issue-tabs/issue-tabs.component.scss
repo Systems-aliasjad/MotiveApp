@@ -4,15 +4,35 @@
 // --------------------------------------------------------------
 :host {
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
+   ion-list{
+    --ion-background-color:transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  ion-item{
+    --min-height: auto; 
+    ion-label{
+      margin-bottom:0;
+      color:$secondary-color;
+    }
+  }
+}
+ion-item::part(native){
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-width: 0;
+  --inner-border-width: 0
 }
 // --------------------------------------------------------------
 
 .issue-tabs-contanier,
 .issue-tabs_content{
-  height: calc(100vh - 132px);
+  height:100%;
+  /* height: calc(100vh - 132px);
   @media screen and (max-width: 992px) {
     height:100%;
-  }
+  } */
 }
 .issue-tabs_title{
   @media screen and (min-width: 992px) {
@@ -23,14 +43,20 @@
 .issue-tabs_wizard {
   background-color:$white;
   @media screen and  (max-width: 992px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     background-color: transparent;
   }
 }
 .issue-tab_content{
+  @media screen and (max-width: 992px) {
+    border-top: 1px solid #ededed;
+  }
   .content {
     width: 450px;
     margin: 0 auto;
     @media screen and (max-width: 992px) {
+      margin-top: 1rem;
       width: 100%;
     }
      /*  border-top: 1px solid #f1f1eb;
@@ -47,11 +73,34 @@
       }
     }
     p{
-      margin-top: 0;
-      padding-left: 0.2rem;
+      margin-bottom:0;
       color: $secondary-color;
       line-height: 1.5;
     }
+    .item{
+      ion-label{
+        position:relative;
+        display:block;
+        padding-left:1rem;
+        @media screen and (max-width: 767px) {
+          white-space:normal;
+        }
+        
+        &:before{
+          content: "";
+          position: absolute;
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+           transform: translateY(-50%);
+          top: 50%;
+          left: 0;
+          width: 0.4rem;
+          height: 0.4rem;
+          background-color: #848789;
+          border-radius: 50%;
+        }
+      }
+    } 
   }
 }
 .issue-tabs_footer{

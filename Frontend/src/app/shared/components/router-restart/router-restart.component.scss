@@ -6,6 +6,7 @@
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-list{
     --ion-background-color:transparent;
+    padding-top: 0;
     padding-bottom: 0;
   }
   ion-item{
@@ -13,10 +14,6 @@
     ion-label{
       margin-bottom:0;
       color:$secondary-color;
-      /* font-size: 0.9rem;
-      @media screen and  (max-width: 768px) {
-        font-size: 1rem;
-      } */
     }
   }
 } 
