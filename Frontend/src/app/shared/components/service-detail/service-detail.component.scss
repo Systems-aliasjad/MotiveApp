@@ -9,6 +9,9 @@
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
    }
+   ion-list{
+    background: var(--ion-item-background, var(--ion-background-color, transparent ));
+   }
 }
 ion-item::part(native){
   padding-inline-end: 0 ;
@@ -43,6 +46,9 @@ ion-item::part(native){
     text-align: center;
     max-width: 450px;
     margin: auto;
+    @media screen and (max-width: 281px) {
+      text-align: left
+    }
     ion-list{
       padding-top: 0;
       padding-bottom: 0;
@@ -104,9 +110,17 @@ ion-item::part(native){
       height: 46px;
       text-align: center;
       margin: 1rem 1rem .5rem;
+      @media screen and (max-width: 281px) {
+        width: 42px;
+        height: 42px;
+      }
       img{
         width: 2rem;
         height: 2rem;
+        @media screen and (max-width: 281px) {
+          width: 1.8rem;
+          height: 1.8rem;
+        }
       }
     }
     .default-state{
@@ -174,6 +188,10 @@ ion-item::part(native){
   
 }
 .service-detail_content{
+  @media screen and (max-width: 992px) {
+    border-top: 1px solid #ededed;
+    padding-top: 0;
+  }
   .content {
     width: 450px;
     margin: 0 auto;
@@ -230,7 +248,7 @@ ion-item::part(native){
     }
     .data-traffic{
       @media screen and (max-width: 992px) {
-        border-bottom: 1px solid #f1f1eb;
+        border-bottom: 1px solid #e9e9e9;
         padding-right: 0;
         padding-left: 0;
         padding-bottom: 0;
@@ -271,7 +289,7 @@ ion-item::part(native){
     }
     .parental-control{
       @media screen and (max-width: 992px) {
-        border-bottom: 1px solid #f1f1eb;
+        border-bottom: 1px solid #e9e9e9;
         padding-right: 0;
         padding-left: 0;
         padding-bottom: 0;
@@ -342,12 +360,30 @@ ion-item::part(native){
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
+          @media screen and (max-width: 281px) {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+          -webkit-box-align: start;
+          -ms-flex-align: start;
+          align-items: flex-start;
+          }
           img{
             display: inline-block;
           }
           .sub-title{
             margin-bottom: 0;
             margin-left: 1rem;
+            @media screen and (max-width: 281px) {
+              font-size: 1rem;
+              margin-top: 1rem;
+              margin-left: 0rem;
+            
+            }
           }
         }
         ion-card-content{
