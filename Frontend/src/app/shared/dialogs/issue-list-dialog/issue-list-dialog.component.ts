@@ -62,7 +62,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to watch a specific channel',
-      route: '',
+      route: 'unable-to-watch-specific-channel',
     },
     {
       issue: 'Unable to watch any channel',
