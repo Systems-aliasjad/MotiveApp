@@ -4,6 +4,7 @@ export interface ICard {
   img?: string;
   applicableCodes: string[];
   linkTo: string;
+  customEvent: string;
 }
 
 export interface ISection2Template {
@@ -119,6 +120,7 @@ export class ApplicableCodes {
       img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
       applicableCodes: INTERNET_ISSUES,
       linkTo: 'info',
+      customEvent: '',
     },
     {
       title: 'LANDING_PAGE.TV_ISSUES_TITLE',
@@ -126,6 +128,7 @@ export class ApplicableCodes {
       img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
       applicableCodes: TV_ISSUES,
       linkTo: '#',
+      customEvent: '',
     },
     {
       title: 'LANDING_PAGE.PHONE_ISSUES_TITLE',
@@ -133,6 +136,7 @@ export class ApplicableCodes {
       img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
       applicableCodes: PHONE_ISSUES,
       linkTo: '#',
+      customEvent: '',
     },
     {
       title: 'LANDING_PAGE.OTHER_ISSUES_TITLE',
@@ -140,6 +144,7 @@ export class ApplicableCodes {
       img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
       applicableCodes: OTHER_ISSUES,
       linkTo: '#',
+      customEvent: '',
     },
     {
       title: 'LANDING_PAGE.PASSWORD_ISSUES_TITLE',
@@ -147,6 +152,7 @@ export class ApplicableCodes {
       img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
       applicableCodes: PASSWORD_ISSUES,
       linkTo: '#',
+      customEvent: '',
     },
     {
       title: 'LANDING_PAGE.RESET_PIN_TITLE',
@@ -154,6 +160,7 @@ export class ApplicableCodes {
       img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
       applicableCodes: RESET_PIN,
       linkTo: '#',
+      customEvent: '',
     },
   ];
 
@@ -162,61 +169,73 @@ export class ApplicableCodes {
       body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
       applicableCodes: INSTALL_NEW_ROUTER,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
       applicableCodes: FACTORY_RESET_ROUTER,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.FACTORY_RESET_TV',
       applicableCodes: FACTORY_RESET_TV,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
       applicableCodes: FORGOT_PASSWORD_INTERNET,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
       applicableCodes: CONNECTION_ISSUE_ROUTER,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
       applicableCodes: FORGOT_PASSWORD_TV,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
       applicableCodes: TRANSFER_PACKAGE_TV,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
       applicableCodes: CONNECT_HOME_ZONE,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.TRACK_COMPLAINT',
       applicableCodes: TRACK_COMPLAINT,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.TRACK_REQUEST',
       applicableCodes: TRACK_REQUEST,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.UPGRADE_ROUTER',
       applicableCodes: UPGRADE_ROUTER,
       linkTo: '',
+      customEvent: '',
     },
     {
       body: 'QUICK_LINKS.UPGRADE_PACKAGE',
       applicableCodes: UPGRADE_PACKAGE,
       linkTo: '',
+      customEvent: '',
     },
   ];
 
