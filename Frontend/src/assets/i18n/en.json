@@ -145,7 +145,8 @@
     "RESET_TV_BOX": "RESET TV BOX",
     "STILL_FACING_ISSUE": "STILL FACING AN ISSUE",
     "SKIP_TO_NEXT_STEP": "SKIP TO NEXT STEP",
-    "CONFIRM_TRANSFER": "CONFIRM TRANSFER"
+    "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
+    "END_TROUBLESHOOTING": "END TROUBLESHOOTING"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -164,6 +165,18 @@
     "CANCEL_GAME_SESSION": "CANCEL GAME SESSION",
     "TRANSFER_PACKAGE": "TRANSFER PACKAGE"
   },
+
+  "CHANNEL_LIST": {
+    "TITLE": "Channel List",
+    "CONTENT": "Please select the channel you are not able to watch from the list below:"
+  },
+
+  "CHANNEL_LIST_DIALOG": {
+    "TITLE": "Channel is not on the list",
+    "CONTENT1": "The channel is not available as part of the TV package you have subscribed.",
+    "CONTENT2": "If you wish to subscribe more channels, please click here."
+  },
+
   "MESSAGES": {
     "THANKYOU": "Thank you!",
     "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",

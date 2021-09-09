@@ -46,6 +46,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.TVBOX_RESET_SUCCESSFULLY_BODY'],
   };
 
+  public static troubeShootCompleteChannelNotListSuccessfullyCase = {
+    header: 'MESSAGES.TVBOX_RESET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.TVBOX_RESET_SUCCESSFULLY_BODY'],
+  };
+
   public static outageIssueMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_INTERNET_CONNECTION',
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
@@ -335,6 +340,14 @@ export class CustomerJourneyConstants {
     customListner: 'gotoMainForm',
   };
 
+  public static endTrobleShootingPrimaryButton: IButton = {
+    title: 'BUTTONS.END_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'endTroubleshootChannelNotListDialog',
+  };
+
   public static okButton: IButton = {
     title: 'BUTTONS.OK',
     clickListener: () => {},
@@ -598,8 +611,17 @@ export class CustomerJourneyConstants {
   public static cancelButton: IButton = {
     title: 'BUTTONS.CANCEL',
     clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'CloseMOdal',
+  };
+
+  public static channelNotListDialogCancelButton: IButton = {
+    title: 'BUTTONS.CANCEL',
+    clickListener: () => {},
     linkTo: '/',
     behaviour: 'link',
+    customListner: 'closePopup',
   };
 
   public static resetRouterButton: IButton = {
@@ -730,6 +752,8 @@ export class CustomerJourneyConstants {
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
   public static tvBoxRestartDialogButtons: IButton[] = [CustomerJourneyConstants.exitTroubleShootingPrimaryButton, CustomerJourneyConstants.backButton];
+
+  public static channelNotListDialogButtons: IButton[] = [CustomerJourneyConstants.endTrobleShootingPrimaryButton, CustomerJourneyConstants.channelNotListDialogCancelButton];
 
   public static tvBoxRestartRequiredButtons: IButton[] = [CustomerJourneyConstants.restartStbNowButton, CustomerJourneyConstants.restartManuallyLink];
 

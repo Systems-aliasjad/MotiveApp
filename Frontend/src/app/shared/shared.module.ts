@@ -40,6 +40,8 @@ import { GameSessionComponent } from './components/game-session/game-session.com
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 import { PackageAvailableComponent } from './components/package-available/package-available.component';
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
+import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -80,6 +82,8 @@ export function createTranslateLoader(http: HttpClient) {
     GameSessionDialog,
     PackageAvailableComponent,
     TransferPackageComponent,
+    UnableWatchSpecificChannelComponent,
+    ChannelNotListDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -107,6 +111,7 @@ export function createTranslateLoader(http: HttpClient) {
     ServiceIssueComponent,
     ResetInternetPasswordComponent,
     ResetWifiPasswordComponent,
+    UnableWatchSpecificChannelComponent,
   ],
 
   entryComponents: [],

@@ -22,6 +22,7 @@ import { TvDetailComponent } from './tv-detail/tv-detail.component';
 import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
+import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 
 const routes: Routes = [
   {
@@ -172,6 +173,9 @@ const routes: Routes = [
   { path: 'package-available', component: PackageAvailableComponent },
   { path: 'package-transfer', component: TransferPackageComponent },
   { path: 'package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.packageTransferSuccess } },
+  //Unable to watch specific channel
+  { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
+
   { path: '**', redirectTo: '' },
 ];
 
