@@ -186,7 +186,7 @@ export class IssueBuilderComponent implements OnInit {
 
     //Unable to watch channel
     else if (this.codeType === ERoutingIds.enableWatchChannel) {
-      // this.messageSection = CustomerJourneyConstants.tvBoxRestartMessageSection;
+      this.messageSection = CustomerJourneyConstants.unableWatchChannelsMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableToWatchButtons));
     }

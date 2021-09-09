@@ -22,11 +22,10 @@
       <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_content">
         <div class="content">
           <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-            <h2>{{ 'DEVICE_CARE.PAGE_HEADING' | translate }}</h2>
+            <h2>{{ pageHeading | translate }}</h2>
           </div>
           <p>
-            Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home
-            packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best.
+            {{ PageContent | translate }}
           </p>
         </div>
       </ion-col>

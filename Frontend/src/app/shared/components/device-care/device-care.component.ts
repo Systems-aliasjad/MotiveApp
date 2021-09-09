@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -17,6 +18,7 @@ export class DeviceCareComponent implements OnInit {
   selectedLang: string;
   codeType;
   pageHeading;
+  PageContent;
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
@@ -62,11 +64,18 @@ export class DeviceCareComponent implements OnInit {
     if (this.codeType === ERoutingIds.tvBoxRestartRequiredDeviceCare) {
       this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
       this.pageHeading = 'DEVICE_CARE.TVBOX_RESTART_HEADING';
+      this.PageContent = 'DEVICE_CARE.TVBOX_RESTART_CONTENT';
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartDeviceCareButtons));
     } else if (this.codeType === ERoutingIds.routerDeviceCare) {
       this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
       this.pageHeading = 'DEVICE_CARE.PAGE_HEADING';
+      this.PageContent = 'DEVICE_CARE.PAGE_CONTENT';
       this.sharedService.setButtonConfig(this.buttonsConfig);
+    } else if (this.codeType === ERoutingIds.enableWatchChannelContinueTroubleshoot) {
+      this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_WATCH_DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.UNABLE_TO_WATCH_CHANNELS';
+      this.PageContent = 'DEVICE_CARE.UNABLE_TO_WATCH_CHANNELS_CONTENT';
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchChannelsDeviceCareButtons));
     }
   }
 

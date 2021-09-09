@@ -41,6 +41,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
+  public static tvBoxResetSuccessfullyCase = {
+    header: 'MESSAGES.TVBOX_RESET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.TVBOX_RESET_SUCCESSFULLY_BODY'],
+  };
+
   public static outageIssueMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_INTERNET_CONNECTION',
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
@@ -186,6 +191,27 @@ export class CustomerJourneyConstants {
       {
         title: 'MESSAGES.TV_BOX_RESTART_REQUIRED_BODY2',
       },
+    ],
+  };
+
+  public static unableWatchChannelsMessageSection: IMessageIssue = {
+    header: 'MESSAGES.UNABLE_TO_WATCH_CHNANNEL',
+    body: [
+      {
+        title: 'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1',
+        children: [
+          'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT1',
+          'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT2',
+          'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT3',
+          'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT4',
+        ],
+      },
+      // {
+      //   title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY2',
+      // },
+      // {
+      //   title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      // },
     ],
   };
 
@@ -493,7 +519,7 @@ export class CustomerJourneyConstants {
   public static continueToTroubleshootEnableToWatchButton: IButton = {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     clickListener: () => {},
-    linkTo: '',
+    linkTo: '/unable-to-watch-channel-continue',
     behaviour: 'link',
     customListner: '',
   };
@@ -620,6 +646,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static stillFacingIssueLink = {
+    title: 'BUTTONS.STILL_FACING_ISSUE',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+  };
+
   public static issueResolvedLink = {
     title: 'BUTTONS.ISSUE_RESLOVED',
     clickListener: () => {},
@@ -652,6 +685,13 @@ export class CustomerJourneyConstants {
     title: 'BUTTONS.ISSUE_FIXED_CLOSE',
     clickListener: () => {},
     linkTo: '/thanks',
+    behaviour: 'primary',
+  };
+
+  public static resetTVBoxButton: IButton = {
+    title: 'BUTTONS.RESET_TV_BOX',
+    clickListener: () => {},
+    linkTo: '/tvBox-reset-successfull',
     behaviour: 'primary',
   };
 
@@ -689,7 +729,11 @@ export class CustomerJourneyConstants {
 
   public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedTvButton, CustomerJourneyConstants.continueToTroubleshootTVBoxButton];
 
+  public static unableWatchChannelsDeviceCareButtons: IButton[] = [CustomerJourneyConstants.resetTVBoxButton, CustomerJourneyConstants.issueResolvedLink];
+
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
+
+  public static tvBoxResetSuccessfullyButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.issueResolvedButton];
 
   public static routerUpdateRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 

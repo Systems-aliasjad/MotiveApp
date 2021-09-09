@@ -223,6 +223,13 @@ export class MessageBuilderComponent implements OnInit {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
     }
+    //For Reset TV box successfully
+    else if (this.codeType === ERoutingIds.tvBoxResetSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.tvBoxResetSuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
+    }
+
     //#endregion Module 2
 
     //TODO: dummy need to remove this case at the end

@@ -14,7 +14,8 @@
     "THIRD_PARTY_ROUTER": "BUY NEW ROUTER",
     "RESET_WIFI_PASSWORD": "Reset WiFi password",
     "GAME_SESSION": "Game sessions",
-    "ACTIVE_GAME_SESSION": "Active game sessions"
+    "ACTIVE_GAME_SESSION": "Active game sessions",
+    "UNABLE_TO_WATCH_DEVICE_CARE": "Step 1/1"
   },
 
   "SUBHEADER": {
@@ -137,7 +138,9 @@
     "CANCEL_GAME_SESSION": "Cancel game sessions",
     "CONFIRM": "CONFIRM",
     "RESET_PIN": "RESET PIN",
-    "ISSUE_FIXED_CLOSE": "ISSUE FIXED, CLOSE"
+    "ISSUE_FIXED_CLOSE": "ISSUE FIXED, CLOSE",
+    "RESET_TV_BOX": "RESET TV BOX",
+    "STILL_FACING_ISSUE": "STILL FACING AN ISSUE"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -254,7 +257,15 @@
     "TV_BOX_RESTART_REQUIRED_BODY1": "We have fixed all the technical issues.",
     "TV_BOX_RESTART_REQUIRED_BODY2": "Please restart the TV box and then try using the TV again.",
     "GAME_SESSION_CANCEL_CONFIRMED_HEADING": "Game session",
-    "GAME_SESSION_CANCEL_CONFIRMED_BODY": "<eLife TV game name> has been restarted successfully. You can now launch a new game session from the main menu of eLife TV Gaming."
+    "GAME_SESSION_CANCEL_CONFIRMED_BODY": "<eLife TV game name> has been restarted successfully. You can now launch a new game session from the main menu of eLife TV Gaming.",
+    "UNABLE_TO_WATCH_CHNANNEL": "Unable to watch channels",
+    "UNABLE_TO_WATCH_CHNANNEL_BODY1": "TV box troubleshooting guidelines:",
+    "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT1": "Plug the TV box to turn it on and wait for the LED to turn red",
+    "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT2": "Press the power button on your remote control",
+    "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT3": "If you are unable to turn the TV box on, check the battery of the remote control ",
+    "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT4": "If TV box works but you are unable to watch a channel, check whether the cable from TV box is connected to “X” port of the Optical Network Terminal (ONT)",
+    "TVBOX_RESET_SUCCESSFULLY": "TV box reset successful!",
+    "TVBOX_RESET_SUCCESSFULLY_BODY": "You should be able to watch the channel now. Please confirm whether the issue has been fixed or not."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -305,7 +316,12 @@
   },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router",
-    "TVBOX_RESTART_HEADING": "Specific device guides"
+    "TVBOX_RESTART_HEADING": "Specific device guides",
+    "UNABLE_TO_WATCH_CHANNELS": "Reset TV box",
+
+    "PAGE_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best.",
+    "TVBOX_RESTART_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best.",
+    "UNABLE_TO_WATCH_CHANNELS_CONTENT": "If you are still unable to watch <channel name>, tap 'Reset TV box' so that we can reset it remotely."
   },
 
   "DIALOG": {
