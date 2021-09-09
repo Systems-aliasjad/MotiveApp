@@ -277,6 +277,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.GAME_SESSION_CANCEL_CONFIRMED_BODY'],
   };
 
+  public static packageTransferSuccess = {
+    header: 'MESSAGES.PACKAGE_TRANSFER_SUCCESS_HEADING',
+    paragraphs: ['MESSAGES.PACKAGE_TRANSFER_SUCCESS_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
@@ -700,6 +705,20 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static skipToNextStep: IButton = {
+    title: 'BUTTONS.SKIP_TO_NEXT_STEP',
+    clickListener: () => {},
+    linkTo: '/',
+    behaviour: 'primary',
+  };
+
+  public static confirmTransferButton = {
+    title: 'BUTTONS.CONFIRM_TRANSFER',
+    clickListener: () => {},
+    linkTo: '/package-transfer-success',
+    behaviour: 'primary',
+  };
+
   public static unableToWatchButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.continueToTroubleshootEnableToWatchButton];
 
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
@@ -822,4 +841,6 @@ export class CustomerJourneyConstants {
   public static restELifeLoginPinButton: IButton[] = [CustomerJourneyConstants.resetPINButton, CustomerJourneyConstants.cancelButton];
   public static restELifeLoginPinResetSuccessButton: IButton[] = [CustomerJourneyConstants.doneButtonSecondary];
   public static gameSessionButtons: IButton[] = [CustomerJourneyConstants.issueFixedCloseButton, CustomerJourneyConstants.cancelButton];
+  public static packageAvailableButtons: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelButton];
+  public static transferPackageButtons: IButton[] = [CustomerJourneyConstants.confirmTransferButton, CustomerJourneyConstants.closeButton];
 }

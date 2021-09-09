@@ -1,0 +1,30 @@
+<ion-content>
+  <ion-grid class="service-detail-contanier">
+    <ion-row class="service-detail_title">
+      <ion-col size="12">
+        <app-page-top></app-page-top>
+      </ion-col>
+      <p>{{ PageContent | translate }}</p>
+    </ion-row>
+    <ion-row>
+      <!-- Package list Start -->
+      <ion-col size="12">
+        <ion-card *ngFor="let d of cardList">
+          <ion-card-header>
+            <ion-card-title>
+              <h5 class="sub-title">{{ d.title }}</h5>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ d.description }}</p>
+            <a href="javascript:void(0)" class="arrow-link" (click)="goToTransferPackage(d)">
+              <span>{{ 'LINKS.TRANSFER_PACKAGE' | translate }}</span>
+              <img src="assets/images/action-icons/icon_arrow_right.svg" alt="Transfer Package" />
+            </a>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <!-- Package Card list End -->
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -20,6 +20,8 @@ import { ServiceDetailComponent } from './shared/components/service-detail/servi
 import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
 import { TvDetailComponent } from './tv-detail/tv-detail.component';
 import { GameSessionComponent } from './shared/components/game-session/game-session.component';
+import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
+import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 
 const routes: Routes = [
   {
@@ -166,6 +168,10 @@ const routes: Routes = [
   { path: 'unable-to-watch-channel-continue', component: DeviceCareComponent, data: { id: ERoutingIds.enableWatchChannelContinueTroubleshoot } },
   { path: 'tvBox-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxResetSuccessfully } },
 
+  // Package Transfer
+  { path: 'package-available', component: PackageAvailableComponent },
+  { path: 'package-transfer', component: TransferPackageComponent },
+  { path: 'package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.packageTransferSuccess } },
   { path: '**', redirectTo: '' },
 ];
 

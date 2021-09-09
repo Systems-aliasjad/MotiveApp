@@ -38,6 +38,8 @@ import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dia
 import { RestartTvboxDialogComponent } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionComponent } from './components/game-session/game-session.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
+import { PackageAvailableComponent } from './components/package-available/package-available.component';
+import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -76,6 +78,8 @@ export function createTranslateLoader(http: HttpClient) {
     RestartTvboxDialogComponent,
     GameSessionComponent,
     GameSessionDialog,
+    PackageAvailableComponent,
+    TransferPackageComponent,
   ],
   imports: [
     CommonModule,
