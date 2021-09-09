@@ -70,6 +70,7 @@ export enum ERoutingIds {
   enableWatchSpecificChannel,
   gameSessionCancelConfirmed,
   packageTransferSuccess,
+  packageavailable,
 }
 
 const P3: string = '3P';

@@ -170,7 +170,7 @@ const routes: Routes = [
   { path: 'tvBox-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxResetSuccessfully } },
 
   // Package Transfer
-  { path: 'package-available', component: PackageAvailableComponent },
+  { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
   { path: 'package-transfer', component: TransferPackageComponent },
   { path: 'package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.packageTransferSuccess } },
   //Unable to watch specific channel
