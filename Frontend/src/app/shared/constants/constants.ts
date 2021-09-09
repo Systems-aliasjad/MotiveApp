@@ -62,6 +62,8 @@ export enum ERoutingIds {
   tvBoxRestartRequiredSuccessfully,
   tvBoxRestartRequiredManually,
   tvBoxRestartRequiredDeviceCare,
+
+  enableWatchChannel,
 }
 
 const P3: string = '3P';

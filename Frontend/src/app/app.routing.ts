@@ -155,6 +155,10 @@ const routes: Routes = [
   { path: 'tv-details', component: TvDetailComponent },
   { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
   { path: 'game-session', component: GameSessionComponent },
+
+  //Unable to watch channel
+  { path: 'unable-to-watch-channel', component: IssueBuilderComponent, data: { id: ERoutingIds.enableWatchChannel } },
+
   { path: '**', redirectTo: '' },
 ];
 

@@ -70,7 +70,7 @@ export class IssueBuilderComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
 
     //Router Reboot Required
     if (this.codeType === ERoutingIds.routerRebootRequired) {
@@ -182,6 +182,13 @@ export class IssueBuilderComponent implements OnInit {
       this.messageSection = CustomerJourneyConstants.tvBoxRestartMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartRequiredButtons));
+    }
+
+    //Unable to watch channel
+    else if (this.codeType === ERoutingIds.enableWatchChannel) {
+      // this.messageSection = CustomerJourneyConstants.tvBoxRestartMessageSection;
+      this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableToWatchButtons));
     }
   }
 }

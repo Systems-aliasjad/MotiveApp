@@ -485,6 +485,14 @@ export class CustomerJourneyConstants {
     behaviour: 'link',
   };
 
+  public static continueToTroubleshootEnableToWatchButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: '',
+  };
+
   public static continueToTroubleshootButton: IButton = {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     clickListener: () => {},
@@ -641,6 +649,8 @@ export class CustomerJourneyConstants {
     linkTo: '/thanks',
     behaviour: 'primary',
   };
+
+  public static unableToWatchButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.continueToTroubleshootEnableToWatchButton];
 
   public static tvAdminPinResetSuccessfullyButton: IButton[] = [CustomerJourneyConstants.okButtonSecondary];
 

@@ -40,7 +40,8 @@
     "PASSWORD_ISSUES_TITLE": "Password issues",
     "PASSWORD_ISSUES_DESCRIPTION": "I want to change or reset my password",
     "RESET_PIN_TITLE": "Reset PIN",
-    "RESET_PIN_DESCRIPTION": "I want to reset my PIN"
+    "RESET_PIN_DESCRIPTION": "I want to reset my PIN",
+    "UNALBE_TO_WATCH_CHANNEL": "Unable to watch channels"
   },
   "QUICK_LINKS": {
     "SEE_ALL": "See All",
