@@ -15,7 +15,11 @@
     "RESET_WIFI_PASSWORD": "Reset WiFi password",
     "GAME_SESSION": "Game sessions",
     "ACTIVE_GAME_SESSION": "Active game sessions",
-    "UNABLE_TO_WATCH_DEVICE_CARE": "Step 1/1"
+    "UNABLE_TO_WATCH_DEVICE_CARE": "Step 1/1",
+    "TV_ISSUES": "TV issues",
+    "AVAILABLE_PACKAGE": "Available packages",
+    "SERVICE_DEATAIL": "Service detail",
+    "TRANSFER_PACKAGE": "Transfer package"
   },
 
   "SUBHEADER": {
@@ -140,7 +144,10 @@
     "RESET_PIN": "RESET PIN",
     "ISSUE_FIXED_CLOSE": "ISSUE FIXED, CLOSE",
     "RESET_TV_BOX": "RESET TV BOX",
-    "STILL_FACING_ISSUE": "STILL FACING AN ISSUE"
+    "STILL_FACING_ISSUE": "STILL FACING AN ISSUE",
+    "SKIP_TO_NEXT_STEP": "SKIP TO NEXT STEP",
+    "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
+    "END_TROUBLESHOOTING": "END TROUBLESHOOTING"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -156,8 +163,21 @@
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "VIEW_DETAILS": "VIEW DETAILS",
     "USING_OWN_ROUTER": "No, I'm using my own router",
-    "CANCEL_GAME_SESSION": "CANCEL GAME SESSION"
+    "CANCEL_GAME_SESSION": "CANCEL GAME SESSION",
+    "TRANSFER_PACKAGE": "TRANSFER PACKAGE"
   },
+
+  "CHANNEL_LIST": {
+    "TITLE": "Channel List",
+    "CONTENT": "Please select the channel you are not able to watch from the list below:"
+  },
+
+  "CHANNEL_LIST_DIALOG": {
+    "TITLE": "Channel is not on the list",
+    "CONTENT1": "The channel is not available as part of the TV package you have subscribed.",
+    "CONTENT2": "If you wish to subscribe more channels, please click here."
+  },
+
   "MESSAGES": {
     "THANKYOU": "Thank you!",
     "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",
@@ -267,7 +287,9 @@
     "TVBOX_RESET_SUCCESSFULLY": "TV box reset successful!",
     "TVBOX_RESET_SUCCESSFULLY_BODY": "You should be able to watch the channel now. Please confirm whether the issue has been fixed or not.",
     "UNPLANNED_INTERRUPTION": "Unplanned Interruption",
-    "UNPLANNED_INTERRUPTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored"
+    "UNPLANNED_INTERRUPTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
+    "PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transfer was successful!",
+    "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -400,5 +422,11 @@
     "CARD_HEADING": "eLife TV game",
     "CARD_SUB_HEADING1": "STB SR#039838920",
     "CARD_SUB_HEADING2": "Living Room TV, Kids Room TV"
+  },
+  "AVAILABLE_PACKAGE": {
+    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box."
+  },
+  "TRANSFER_PACKAGE": {
+    "DESCRIPTION": "Choose the TV box you'd like to transfer the package to."
   }
 }

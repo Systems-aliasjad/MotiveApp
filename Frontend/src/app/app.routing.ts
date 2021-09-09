@@ -20,6 +20,9 @@ import { ServiceDetailComponent } from './shared/components/service-detail/servi
 import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
 import { TvDetailComponent } from './tv-detail/tv-detail.component';
 import { GameSessionComponent } from './shared/components/game-session/game-session.component';
+import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
+import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
+import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 
 const routes: Routes = [
   {
@@ -165,6 +168,13 @@ const routes: Routes = [
   { path: 'unable-to-watch-channel', component: IssueBuilderComponent, data: { id: ERoutingIds.enableWatchChannel } },
   { path: 'unable-to-watch-channel-continue', component: DeviceCareComponent, data: { id: ERoutingIds.enableWatchChannelContinueTroubleshoot } },
   { path: 'tvBox-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxResetSuccessfully } },
+
+  // Package Transfer
+  { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
+  { path: 'package-transfer', component: TransferPackageComponent },
+  { path: 'package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.packageTransferSuccess } },
+  //Unable to watch specific channel
+  { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
 
   { path: '**', redirectTo: '' },
 ];
