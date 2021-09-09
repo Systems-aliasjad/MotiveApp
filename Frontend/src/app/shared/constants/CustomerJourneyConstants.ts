@@ -81,6 +81,11 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.NO_ISSUE_FOUND_BODY1' }, { title: 'MESSAGES.NO_ISSUE_FOUND_BODY2' }],
   };
 
+  public static tvOutageMessageSection: IMessageIssue = {
+    header: 'MESSAGES.UNPLANNED_INTERRUPTION',
+    body: [{ title: 'MESSAGES.UNPLANNED_INTERRUPTION_BODY' }],
+  };
+
   public static routerUpdradeRecomendedMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_ISSUE_FOUND',
     body: [

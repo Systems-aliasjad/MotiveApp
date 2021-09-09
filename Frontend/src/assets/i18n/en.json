@@ -265,7 +265,9 @@
     "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT3": "If you are unable to turn the TV box on, check the battery of the remote control ",
     "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT4": "If TV box works but you are unable to watch a channel, check whether the cable from TV box is connected to “X” port of the Optical Network Terminal (ONT)",
     "TVBOX_RESET_SUCCESSFULLY": "TV box reset successful!",
-    "TVBOX_RESET_SUCCESSFULLY_BODY": "You should be able to watch the channel now. Please confirm whether the issue has been fixed or not."
+    "TVBOX_RESET_SUCCESSFULLY_BODY": "You should be able to watch the channel now. Please confirm whether the issue has been fixed or not.",
+    "UNPLANNED_INTERRUPTION": "Unplanned Interruption",
+    "UNPLANNED_INTERRUPTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
