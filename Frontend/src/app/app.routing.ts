@@ -120,6 +120,8 @@ const routes: Routes = [
   { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
   // no Issue  - TV
   { path: 'no-issue-tv', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssueTv } },
+  // no Issue  - TV
+  { path: 'issue-not-fixed-tv', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixedTv } },
 
   //router and package Upgrade Recommended form
   { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },

@@ -71,6 +71,7 @@ export enum ERoutingIds {
   gameSessionCancelConfirmed,
   packageTransferSuccess,
   packageavailable,
+  issueNotFixedTv,
 }
 
 const P3: string = '3P';

@@ -61,6 +61,11 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY2' }],
   };
 
+  public static issueNotFixedTVMessageSection: IMessageIssue = {
+    header: 'TV_ISSUE_NOT_FIXED.SUB_HEADING',
+    body: [{ title: 'TV_ISSUE_NOT_FIXED.TEXT1' }, { title: 'TV_ISSUE_NOT_FIXED.TEXT2' }],
+  };
+
   public static routerRebootRequiredMessageSection: IMessageIssue = {
     header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
     body: [{ title: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY_BODY1' }],
