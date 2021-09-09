@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
@@ -13,7 +14,7 @@ export class ButtonsComponent implements OnInit {
   SM: string; //size
   MD: string; //sizeMd
   LG: string; //sizeLg
-  constructor(private sharedService: SharedService) {}
+  constructor(private sharedService: SharedService, private modalCtrl: ModalController) {}
 
   ngOnInit() {
     this.sharedService.getButtonConfig().subscribe((config: IButton[]) => {
@@ -24,5 +25,9 @@ export class ButtonsComponent implements OnInit {
       this.MD = buttonSizes.MD;
       this.LG = buttonSizes.LG;
     });
+  }
+
+  dismiss() {
+    this.modalCtrl.dismiss();
   }
 }

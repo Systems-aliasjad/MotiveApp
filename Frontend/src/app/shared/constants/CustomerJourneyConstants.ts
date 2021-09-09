@@ -703,6 +703,14 @@ export class CustomerJourneyConstants {
     behaviour: 'secondary',
   };
 
+  public static backCloseModalButton = {
+    title: 'BUTTONS.BACK',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'secondary',
+    customEvent: 'dismiss',
+  };
+
   public static confirmButton = {
     title: 'BUTTONS.CONFIRM',
     clickListener: () => {},
@@ -762,7 +770,7 @@ export class CustomerJourneyConstants {
 
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
-  public static tvBoxRestartDialogButtons: IButton[] = [CustomerJourneyConstants.exitTroubleShootingPrimaryButton, CustomerJourneyConstants.backButton];
+  public static tvBoxRestartDialogButtons: IButton[] = [CustomerJourneyConstants.exitTroubleShootingPrimaryButton, CustomerJourneyConstants.backCloseModalButton];
 
   public static channelNotListDialogButtons: IButton[] = [CustomerJourneyConstants.endTrobleShootingPrimaryButton, CustomerJourneyConstants.channelNotListDialogCancelButton];
 

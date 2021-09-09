@@ -31,6 +31,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
     this.codeType = this.router.url;
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
+      this.initialization();
     });
   }
 
@@ -46,6 +47,10 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtonsUnableWatchSpecific));
+  }
+
+  initialization() {
     this.sharedService.setDefaultValues();
     this.formGroup = this.formBuilder.group({
       ChannelList: ['', [Validators.required]],
@@ -54,8 +59,6 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
     this.channelListTitle = 'CHANNEL_LIST.TITLE';
     this.channelListContent = 'CHANNEL_LIST.CONTENT';
     this.buttonText = 'BUTTONS.CONTINUE';
-
-    // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtonsUnableWatchSpecific));
   }
 
   get f() {
