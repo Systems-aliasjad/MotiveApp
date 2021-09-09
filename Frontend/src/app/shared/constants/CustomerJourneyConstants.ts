@@ -241,6 +241,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY'],
   };
 
+  public static gameSessionCancelConfirmed = {
+    header: 'MESSAGES.GAME_SESSION_CANCEL_CONFIRMED_HEADING',
+    paragraphs: ['MESSAGES.GAME_SESSION_CANCEL_CONFIRMED_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
