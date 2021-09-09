@@ -211,12 +211,6 @@ export class CustomerJourneyConstants {
           'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT4',
         ],
       },
-      // {
-      //   title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY2',
-      // },
-      // {
-      //   title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
-      // },
     ],
   };
 

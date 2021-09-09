@@ -142,11 +142,11 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
     }
-    //Router & package upgrade recommended
-    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
-      this.messageSection = CustomerJourneyConstants.packageAndRouterUpdradeRecomendedMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
+    //TV Outage
+    else if (this.codeType === ERoutingIds.tvOutage) {
+      this.messageSection = CustomerJourneyConstants.tvOutageMessageSection;
+      this.sharedService.setHeaderConfig('HEADER.TV_ISSUES', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
     }
     // Router no-issue
     else if (this.codeType === ERoutingIds.noIssue) {

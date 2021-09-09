@@ -15,7 +15,8 @@
     "RESET_WIFI_PASSWORD": "Reset WiFi password",
     "GAME_SESSION": "Game sessions",
     "ACTIVE_GAME_SESSION": "Active game sessions",
-    "UNABLE_TO_WATCH_DEVICE_CARE": "Step 1/1"
+    "UNABLE_TO_WATCH_DEVICE_CARE": "Step 1/1",
+    "TV_ISSUES": "TV issues"
   },
 
   "SUBHEADER": {
