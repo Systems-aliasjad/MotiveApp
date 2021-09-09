@@ -21,11 +21,11 @@
         <h5 class="sub-title">{{ messageSection.header | translate }}</h5>
         <div *ngFor="let message of messageSection.body">
           <p>{{ message.title | translate }}</p>
-          <ul *ngIf="message.children">
-            <li *ngFor="let item of message.children">
-              <p>{{ item | translate }}</p>
-            </li>
-          </ul>
+          <ion-list *ngIf="message.children">
+            <ion-item *ngFor="let item of message.children">
+              <ion-label> {{ item | translate }}</ion-label>
+            </ion-item>
+          </ion-list>
         </div>
 
         <h4 *ngIf="section1Template">

@@ -109,6 +109,29 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static router3rdPartyMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY1' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY2' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY3' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY4' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY5' },
+      { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY6' },
+    ],
+  };
+
+  public static wifiAlarmMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUE_FOUND',
+    body: [
+      { title: 'MESSAGES.WIFI_ALARM_BODY1' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY2' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY3' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY4' },
+      { title: 'MESSAGES.WIFI_ALARM_BODY5' },
+    ],
+  };
+
   public static routerConfig3rdPartyMessageSection: IMessageIssue = {
     header: 'MESSAGES.RECONFIGURE_YOUR_ROUTER',
     body: [
@@ -121,6 +144,47 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
+    ],
+  };
+
+  public static tvBoxNotReachableMessageSection: IMessageIssue = {
+    header: 'MESSAGES.TV_BOX_NOT_REACHABLE',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_BODY1',
+      },
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_BODY2',
+        children: ['MESSAGES.TV_BOX_NOT_REACHABLE_BODY2_POINT1', 'MESSAGES.TV_BOX_NOT_REACHABLE_BODY2_POINT2'],
+      },
+    ],
+  };
+
+  public static tvBoxNotReachableAgainMessageSection: IMessageIssue = {
+    header: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1',
+        children: ['MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT1', 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT2', 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY1_POINT3'],
+      },
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY2',
+      },
+      {
+        title: 'MESSAGES.TV_BOX_NOT_REACHABLE_AGAIN_BODY3',
+      },
+    ],
+  };
+
+  public static tvBoxRestartMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_RESTART_REQUIRED_BODY1',
+      },
+      {
+        title: 'MESSAGES.TV_BOX_RESTART_REQUIRED_BODY2',
       },
     ],
   };
@@ -225,6 +289,14 @@ export class CustomerJourneyConstants {
     clickListener: () => {},
     linkTo: '/thanks',
     behaviour: 'link',
+  };
+
+  public static exitTroubleShootingPrimaryButton: IButton = {
+    title: 'BUTTONS.EXIT_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'gotoMainForm',
   };
 
   public static okButton: IButton = {
@@ -423,6 +495,15 @@ export class CustomerJourneyConstants {
     clickListener: () => {},
     linkTo: '',
     behaviour: 'link',
+    customListner: '',
+  };
+
+  public static continueToTroubleshootTVBoxButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'openRestartTvBoxDialog',
   };
 
   public static continueToBrowserStepperButton: IButton = {
@@ -574,6 +655,7 @@ export class CustomerJourneyConstants {
 
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
+  public static tvBoxRestartDialogButtons: IButton[] = [CustomerJourneyConstants.exitTroubleShootingPrimaryButton, CustomerJourneyConstants.backButton];
 
   public static tvBoxRestartRequiredButtons: IButton[] = [CustomerJourneyConstants.restartStbNowButton, CustomerJourneyConstants.restartManuallyLink];
 
@@ -595,7 +677,7 @@ export class CustomerJourneyConstants {
 
   public static routerRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareButton, CustomerJourneyConstants.closeButton];
 
-  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootButton];
+  public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedTvButton, CustomerJourneyConstants.continueToTroubleshootTVBoxButton];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 

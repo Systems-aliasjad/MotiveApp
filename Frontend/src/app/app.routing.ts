@@ -77,7 +77,7 @@ const routes: Routes = [
   { path: 'router-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerUpgradeRequestSuccessfully } },
   //router and package upgrade Successfully
   { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
-  // third party  router Successfully
+  // 3rd party router Successfully
   { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
   // third party  router Successfully
   { path: 'troubleshoot-complete', component: MessageBuilderComponent, data: { id: ERoutingIds.troubleshootComplete } },
@@ -110,7 +110,7 @@ const routes: Routes = [
   { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
   //No Issue
   { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
-  // third party  router Recommended
+  // 3rd party router
   { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
   // no Issue  - TV
   { path: 'no-issue-tv', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssueTv } },
@@ -123,7 +123,7 @@ const routes: Routes = [
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
   // Book A Complaint
   { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
-  // third party  router Recommended form
+  // 3rd party router form
   { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
   // #endregion  third party  router
 

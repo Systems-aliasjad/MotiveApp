@@ -1,0 +1,54 @@
+
+@import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+
+// --------------------------------------------------------------
+:host {
+   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+// --------------------------------------------------------------
+
+.device-care-container,
+.device-care_inner_container {
+  height: 100%;
+}
+.device-care_image_lg{
+  height: 100%;
+  @media screen and (max-width: 992px) {
+    display:none;
+  }
+}
+.device-care_image_sm,
+.device-care_title{
+  @media screen and (min-width: 992px) {
+    display:none;
+  }
+}
+.device-care_content{
+  height: 100%;
+  .page-top_title{
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+  }
+  
+}
+.image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 472px;
+  height: auto;
+  margin: auto;
+}

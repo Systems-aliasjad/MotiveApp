@@ -1,30 +1,54 @@
 <ion-content>
-  <ion-grid class="form-main-container">
-    <!-- Page Heading -->
-    <ion-row>
+  <ion-grid class="device-care-container">
+    <!-- Page Title Start -->
+    <ion-row class="device-care_title">
       <ion-col size="12">
+        <!-- <app-page-top></app-page-top> -->
         <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-          <h5>{{ 'DEVICE_CARE.PAGE_HEADING' | translate }}</h5>
+          <h5>{{ pageHeading | translate }}</h5>
         </div>
       </ion-col>
     </ion-row>
+    <!-- Page Title End  -->
 
-    <!-- Page Content  -->
-    <ion-row>
-      <ion-col size="12">
-        <div>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
-        </div>
-        <div style="text-align: center; height: 300px; background-color: lightgray">
-          <img alt="Picture placeholder" width="300px" height="300px" />
-        </div>
-        <div>
-          <p>xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+    <!-- Page Content Start  -->
+    <ion-row class="device-care_inner_container">
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_image_lg">
+        <div class="image">
+          <img src="https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg"
+          alt="Picture placeholder"/>
         </div>
       </ion-col>
+
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_content">
+        <div class="content">
+          <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+            <h5>{{ 'DEVICE_CARE.PAGE_HEADING' | translate }}</h5>
+          </div>
+          <p>
+
+          </p>
+        </div>
+      </ion-col>
+      <ion-col size="12" class="device-care_image_sm">
+        <div class="content">
+          <p>
+            Text
+          </p>
+          <div class="image">
+            <img alt="Picture placeholder" width="300px" height="300px" />
+          </div>
+          <p>
+            Text
+          </p>
+        </div>
+        
+      </ion-col>
+        
     </ion-row>
+     <!-- Page Content End -->
   </ion-grid>
-  <ion-footer>
+  <!-- <ion-footer>
     <app-buttons></app-buttons>
-  </ion-footer>
+  </ion-footer> -->
 </ion-content>
