@@ -31,6 +31,7 @@ export class ResetTvPinDialog implements OnInit {
   }
 
   confirm() {
+    this.modalCtrl.dismiss();
     this.router.navigate(['/tv-pin-reset-successfull']);
   }
 }

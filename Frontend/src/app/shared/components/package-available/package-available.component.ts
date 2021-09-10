@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ERoutingIds } from '../../constants/constants';
@@ -16,7 +17,7 @@ export class PackageAvailableComponent implements OnInit {
   PageContent: string;
   cardList: any;
   buttonConfigs: IButton[] = [];
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
@@ -49,7 +50,7 @@ export class PackageAvailableComponent implements OnInit {
       ];
       this.buttonConfigs = CustomerJourneyConstants.packageAvailableButtons;
       this.buttonConfigs.forEach((elem) => {
-        if ((elem.title = 'BUTTONS.SKIP_TO_NEXT_STEP')) {
+        if (elem.title == 'BUTTONS.SKIP_TO_NEXT_STEP') {
           elem.linkTo = '/package-transfer';
         }
       });
@@ -96,5 +97,9 @@ export class PackageAvailableComponent implements OnInit {
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
       this.router.navigate(['/unable-to-watch-package-transfer']);
     }
+  }
+
+  CloseMOdal() {
+    this.location.back();
   }
 }
