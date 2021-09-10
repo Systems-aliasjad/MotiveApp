@@ -1,27 +1,32 @@
-import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
+import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-package-available',
   templateUrl: './package-available.component.html',
   styleUrls: ['./package-available.component.css'],
 })
-export class PackageAvailableComponent implements OnInit {
+export class PackageAvailableComponent implements OnInit, OnDestroy {
   codeType: any;
   PageTitle: string;
   PageContent: string;
   cardList: any;
+  subscription: Subscription;
   buttonConfigs: IButton[] = [];
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}
@@ -99,7 +104,7 @@ export class PackageAvailableComponent implements OnInit {
     }
   }
 
-  CloseMOdal() {
+  cancelBackLocationLink() {
     this.location.back();
   }
 }

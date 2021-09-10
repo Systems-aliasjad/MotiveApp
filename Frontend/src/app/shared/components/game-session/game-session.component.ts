@@ -1,7 +1,8 @@
 import { Location } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { GameSessionDialog } from '../../dialogs/game-session-dialog/game-session-dialog.component';
 import { SharedService } from '../../shared.service';
@@ -11,7 +12,8 @@ import { SharedService } from '../../shared.service';
   templateUrl: './game-session.component.html',
   styleUrls: ['./game-session.component.scss'],
 })
-export class GameSessionComponent implements OnInit {
+export class GameSessionComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   items: any[] = [
     {
       text: 'Call of Duty: Modern Warfare',
@@ -24,9 +26,12 @@ export class GameSessionComponent implements OnInit {
   ];
 
   constructor(private router: Router, private sharedService: SharedService, public activatedRoute: ActivatedRoute, private modalCtrl: ModalController, private location: Location) {
-    this.activatedRoute.params.subscribe((params) => {
+    this.subscription = this.activatedRoute.params.subscribe((params) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}

@@ -192,6 +192,7 @@
     "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
     "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
+    "COMPLAINT_BOOK_SUCCESSFULLY": "Complaint booked successfully!",
     "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
     "APPOINTMENT_BOOK_SUCCESSFULLY_BODY": "We have received your complain and booked an appointment. Our technician will contact you soon",
     "OPEN_SERVICE_REQUEST": "Open Service Request",

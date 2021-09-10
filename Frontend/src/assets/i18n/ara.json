@@ -15,11 +15,13 @@
     "RESET_WIFI_PASSWORD": "Reset WiFi password",
     "GAME_SESSION": "Game sessions",
     "ACTIVE_GAME_SESSION": "Active game sessions",
-    "TV_ISSUES": "TV issues",
     "UNABLE_TO_WATCH_DEVICE_CARE": "Step 1/1",
+    "TV_ISSUES": "TV issues",
     "AVAILABLE_PACKAGE": "Available packages",
     "SERVICE_DEATAIL": "Service detail",
-    "TRANSFER_PACKAGE": "Transfer package"
+    "TRANSFER_PACKAGE": "Transfer package",
+    "CHANNEL_DETAILS": "Channel details",
+    "UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE": "Transfer package"
   },
 
   "SUBHEADER": {
@@ -143,10 +145,10 @@
     "CONFIRM": "CONFIRM",
     "RESET_PIN": "RESET PIN",
     "ISSUE_FIXED_CLOSE": "ISSUE FIXED, CLOSE",
-    "SKIP_TO_NEXT_STEP": "SKIP TO NEXT STEP",
-    "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
     "RESET_TV_BOX": "RESET TV BOX",
     "STILL_FACING_ISSUE": "STILL FACING AN ISSUE",
+    "SKIP_TO_NEXT_STEP": "SKIP TO NEXT STEP",
+    "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
     "END_TROUBLESHOOTING": "END TROUBLESHOOTING"
   },
   "TEXT": {
@@ -190,6 +192,7 @@
     "ELIFE_CANCELLATION_REQUEST_PROGRESS_BODY": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
     "COMPLAINT_ALREADY_EXISTS_BODY": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
+    "COMPLAINT_BOOK_SUCCESSFULLY": "Complaint booked successfully!",
     "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
     "APPOINTMENT_BOOK_SUCCESSFULLY_BODY": "We have received your complain and booked an appointment. Our technician will contact you soon",
     "OPEN_SERVICE_REQUEST": "Open Service Request",
@@ -278,8 +281,6 @@
     "TV_BOX_NOT_REACHABLE_AGAIN_BODY3": "Tap 'Book an appointment' if you want to book a technician visit.",
     "TV_BOX_RESTART_REQUIRED_BODY1": "We have fixed all the technical issues.",
     "TV_BOX_RESTART_REQUIRED_BODY2": "Please restart the TV box and then try using the TV again.",
-    "PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transfer was successful!",
-    "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service.",
     "UNABLE_TO_WATCH_CHNANNEL": "Unable to watch channels",
     "UNABLE_TO_WATCH_CHNANNEL_BODY1": "TV box troubleshooting guidelines:",
     "UNABLE_TO_WATCH_CHNANNEL_BODY1_POINT1": "Plug the TV box to turn it on and wait for the LED to turn red",
@@ -289,7 +290,11 @@
     "TVBOX_RESET_SUCCESSFULLY": "TV box reset successful!",
     "TVBOX_RESET_SUCCESSFULLY_BODY": "You should be able to watch the channel now. Please confirm whether the issue has been fixed or not.",
     "UNPLANNED_INTERRUPTION": "Unplanned Interruption",
-    "UNPLANNED_INTERRUPTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored"
+    "UNPLANNED_INTERRUPTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
+    "PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transfer was successful!",
+    "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service.",
+    "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transferred successfully",
+    "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY": "You can now watch all the channels in <package name> on TV box <SL no.>. "
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -424,12 +429,18 @@
     "CARD_SUB_HEADING2": "Living Room TV, Kids Room TV"
   },
   "AVAILABLE_PACKAGE": {
-    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box."
+    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box.",
+    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
+  },
+  "TRANSFER_PACKAGE": {
+    "DESCRIPTION": "Choose the TV box you'd like to transfer the package to."
   },
   "TV_ISSUE_NOT_FIXED": {
     "TITLE": "TV Issues",
     "SUB_HEADING": "TV service is down",
     "TEXT1": "Sorry, the service is not working properly.",
-    "TEXT2": "Please try again later or book an appointment instead."
+    "TEXT2": "Please try again later or book an appointment instead.",
+    "DESCRIPTION": "Choose the TV box you'd like to transfer the package to.",
+    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
   }
 }

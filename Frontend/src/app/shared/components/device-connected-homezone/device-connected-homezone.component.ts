@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
 
@@ -8,11 +9,15 @@ import { SharedService } from '../../shared.service';
   templateUrl: './device-connected-homezone.component.html',
   styleUrls: ['./device-connected-homezone.component.css'],
 })
-export class DeviceConnectedHomezoneComponent implements OnInit {
+export class DeviceConnectedHomezoneComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   constructor(private router: Router, public sharedService: SharedService, private actRoute: ActivatedRoute) {
-    actRoute.params.subscribe((val) => {
+    this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}

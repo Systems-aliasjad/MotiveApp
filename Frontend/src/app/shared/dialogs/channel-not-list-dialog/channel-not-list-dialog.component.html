@@ -10,6 +10,15 @@
         <p>{{ 'CHANNEL_LIST_DIALOG.CONTENT2' | translate }}</p>
       </div>
     </ion-col>
+
+    <ion-col [sizeLg]="12" [sizeMd]="12" [size]="12" class="pt-0 pb-0 ion-text-center">
+      <ion-button class="btn primary-btn follow-up green-box-shadow" (click)="endTroubleshoot()">{{ 'BUTTONS.END_TROUBLESHOOTING' | translate }}</ion-button>
+    </ion-col>
+
+    <ion-col [sizeLg]="12" [sizeMd]="12" [size]="12" class="pt-0 pb-0 ion-text-center">
+      <div class="transparent-btn" (click)="closePopup()">
+        <a> {{ 'BUTTONS.CANCEL' | translate }}</a>
+      </div>
+    </ion-col>
   </ion-row>
-  <app-buttons></app-buttons>
 </ion-grid>

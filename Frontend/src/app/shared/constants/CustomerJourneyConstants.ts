@@ -26,6 +26,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
+  public static tvBoxNotReachableFormsuccessfullyCase = {
+    header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
+  };
+
   public static tvBoxRestartssuccessfullyCase = {
     header: 'MESSAGES.TV_BOX_RESTART_REQUIRED_SUCCESSFULLY',
     paragraphs: ['MESSAGES.TV_BOX_RESTART_REQUIRED_SUCCESSFULLY_BODY'],
@@ -210,7 +215,7 @@ export class CustomerJourneyConstants {
   };
 
   public static unableWatchChannelsMessageSection: IMessageIssue = {
-    header: 'MESSAGES.UNABLE_TO_WATCH_CHNANNEL',
+    header: '',
     body: [
       {
         title: 'MESSAGES.UNABLE_TO_WATCH_CHNANNEL_BODY1',
@@ -620,6 +625,22 @@ export class CustomerJourneyConstants {
     customListner: 'CloseMOdal',
   };
 
+  public static cancelBackLocationLink: IButton = {
+    title: 'BUTTONS.CANCEL',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'cancelBackLocationLink',
+  };
+
+  public static BackLocationLink: IButton = {
+    title: 'BUTTONS.BACK',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'cancelBackLocationLink',
+  };
+
   public static channelNotListDialogCancelButton: IButton = {
     title: 'BUTTONS.CANCEL',
     clickListener: () => {},
@@ -686,6 +707,13 @@ export class CustomerJourneyConstants {
     title: 'BUTTONS.STILL_FACING_ISSUE',
     clickListener: () => {},
     linkTo: '',
+    behaviour: 'link',
+  };
+
+  public static stillFacingIssueResetTvBoxLink = {
+    title: 'BUTTONS.STILL_FACING_ISSUE',
+    clickListener: () => {},
+    linkTo: '/troubleshoot-complete',
     behaviour: 'link',
   };
 
@@ -800,7 +828,7 @@ export class CustomerJourneyConstants {
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 
-  public static tvBoxResetSuccessfullyButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.issueResolvedButton];
+  public static tvBoxResetSuccessfullyButtons: IButton[] = [CustomerJourneyConstants.issueResolvedButton, CustomerJourneyConstants.stillFacingIssueResetTvBoxLink];
 
   public static routerUpdateRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 
@@ -887,7 +915,7 @@ export class CustomerJourneyConstants {
   public static packageAvailableButtons: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelButton];
   public static transferPackageButtons: IButton[] = [CustomerJourneyConstants.confirmTransferButton, CustomerJourneyConstants.closeButton];
 
-  public static packageAvailableButtonsUnableWatchSpecific: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelButton];
+  public static packageAvailableButtonsUnableWatchSpecific: IButton[] = [CustomerJourneyConstants.skipToNextStep, CustomerJourneyConstants.cancelBackLocationLink];
   public static unableWatchSpecificTransferPackageButtons: IButton[] = [
     CustomerJourneyConstants.unableWatchSpecificChannelconfirmTransferButton,
     CustomerJourneyConstants.closeButton,

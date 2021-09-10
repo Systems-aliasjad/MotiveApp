@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ISection2Template } from '../../constants/constants';
-import { IButton } from '../../constants/types';
+import { ISection2Template } from '../../constants/types';
 
 export interface IMessageSection1 {
   header: string;

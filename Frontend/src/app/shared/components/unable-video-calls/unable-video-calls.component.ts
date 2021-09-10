@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
 
@@ -8,8 +9,9 @@ import { SharedService } from '../../shared.service';
   templateUrl: './unable-video-calls.component.html',
   styleUrls: ['./unable-video-calls.component.css'],
 })
-export class UnableVideoCallsComponent implements OnInit {
+export class UnableVideoCallsComponent implements OnInit, OnDestroy {
   selectedLang: string = 'en';
+  subscription: Subscription;
   instructionList: any[] = [
     {
       text: 'Make sure your connected with your home internet.',
@@ -30,9 +32,12 @@ export class UnableVideoCallsComponent implements OnInit {
   ];
 
   constructor(private sharedService: SharedService, private router: Router, private actRoute: ActivatedRoute) {
-    actRoute.params.subscribe((val) => {
+    this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {}

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
 
@@ -8,7 +9,7 @@ import { SharedService } from '../../shared.service';
   templateUrl: './unable-connect-newDevice-wifi.component.html',
   styleUrls: ['./unable-connect-newDevice-wifi.component.scss'],
 })
-export class UnableConnectNewDeviceWifiComponent implements OnInit {
+export class UnableConnectNewDeviceWifiComponent implements OnInit, OnDestroy {
   selectedLang: string = 'en';
   instructionList: string[] = [
     'Make sure that you can see your Wi-Fi network (try to stand closer to the router)',
@@ -17,11 +18,14 @@ export class UnableConnectNewDeviceWifiComponent implements OnInit {
     'Connect to your Wi-Fi network by verifying the name and entering the correct password',
     'Select the device type and operating system to learn how to connect your device to the Wifi network',
   ];
-
+  subscription: Subscription;
   constructor(private sharedService: SharedService, private router: Router, private actRoute: ActivatedRoute) {
-    actRoute.params.subscribe((val) => {
+    this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {}

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
@@ -10,18 +11,22 @@ import { SharedService } from '../../shared.service';
   templateUrl: './transfer-package.component.html',
   styleUrls: ['./transfer-package.component.css'],
 })
-export class TransferPackageComponent implements OnInit {
+export class TransferPackageComponent implements OnInit, OnDestroy {
   PageTitle: string = 'HEADER.TRANSFER_PACKAGE';
   PageContent: string = 'TRANSFER_PACKAGE.DESCRIPTION';
   formGroup: FormGroup;
   codeType;
+  subscription: Subscription;
 
   cardList: any;
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}
@@ -53,7 +58,7 @@ export class TransferPackageComponent implements OnInit {
       ];
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
       this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
-      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL';
+      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
       this.cardList = [
