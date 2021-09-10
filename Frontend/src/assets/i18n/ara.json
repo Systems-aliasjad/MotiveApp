@@ -425,5 +425,11 @@
   },
   "AVAILABLE_PACKAGE": {
     "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box."
+  },
+  "TV_ISSUE_NOT_FIXED": {
+    "TITLE": "TV Issues",
+    "SUB_HEADING": "TV service is down",
+    "TEXT1": "Sorry, the service is not working properly.",
+    "TEXT2": "Please try again later or book an appointment instead."
   }
 }

@@ -19,6 +19,7 @@ export class BookComplaintComponent implements OnInit {
     this.codeType = this.router.url;
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
+      this.initialization();
     });
 
     this.formGroup = this.formBuilder.group({
@@ -28,7 +29,9 @@ export class BookComplaintComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  initialization() {
     //IF IS FOR PACKAGE UPGRADE RECOMMENDED
     if (this.codeType === ERoutingIds.packageUpgradeRecommendedForm) {
       this.buttonText = 'BUTTONS.CONTINUE';
@@ -64,6 +67,8 @@ export class BookComplaintComponent implements OnInit {
       this.buttonText = 'BUTTONS.BOOK_AN_APPOINTMENT';
       this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
     }
+
+    this.sharedService.setDefaultValues();
     //#endregion Module 2
   }
 

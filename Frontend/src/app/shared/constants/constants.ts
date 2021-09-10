@@ -55,9 +55,15 @@ export enum ERoutingIds {
   enableWatchChannelContinueTroubleshoot,
   tvBoxResetSuccessfully,
   enableWatchSpecificChannel,
+  enableWatchSpecificChannelpackageavailable,
+  enableWatchSpecificChannelpackageTransfer,
+  enableWatchSpecificChannelpackageTransferSuccess,
+
   gameSessionCancelConfirmed,
   packageTransferSuccess,
   packageavailable,
+  issueNotFixedTv,
+  packagetransfer,
 }
 
 // const P3: string = '3P';

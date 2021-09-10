@@ -1,22 +1,24 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { RestartTvboxDialogComponent } from './restart-tvbox-dialog.component';
+import { RestartTvboxDialog } from './restart-tvbox-dialog.component';
 
-describe('RestartTvboxDialogComponent', () => {
-  let component: RestartTvboxDialogComponent;
-  let fixture: ComponentFixture<RestartTvboxDialogComponent>;
+describe('RestartTvboxDialog', () => {
+  let component: RestartTvboxDialog;
+  let fixture: ComponentFixture<RestartTvboxDialog>;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      declarations: [ RestartTvboxDialogComponent ],
-      imports: [IonicModule.forRoot()]
-    }).compileComponents();
+  beforeEach(
+    waitForAsync(() => {
+      TestBed.configureTestingModule({
+        declarations: [RestartTvboxDialog],
+        imports: [IonicModule.forRoot()],
+      }).compileComponents();
 
-    fixture = TestBed.createComponent(RestartTvboxDialogComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  }));
+      fixture = TestBed.createComponent(RestartTvboxDialog);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    })
+  );
 
   it('should create', () => {
     expect(component).toBeTruthy();

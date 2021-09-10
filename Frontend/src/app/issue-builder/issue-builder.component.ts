@@ -100,6 +100,13 @@ export class IssueBuilderComponent implements OnInit {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
     }
 
+    //Issue Not Fixed - TV
+    else if (this.codeType === ERoutingIds.issueNotFixedTv) {
+      this.messageSection = CustomerJourneyConstants.issueNotFixedTVMessageSection;
+      this.sharedService.setHeaderConfig('TV_ISSUE_NOT_FIXED.TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
+    }
+
     //Internet password reset required
     else if (this.codeType === ERoutingIds.internetPasswordReset) {
       this.messageSection = CustomerJourneyConstants.internetPasswordResetRequiredMessageSection;
