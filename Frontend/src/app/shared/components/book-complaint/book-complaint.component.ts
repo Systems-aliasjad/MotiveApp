@@ -32,6 +32,7 @@ export class BookComplaintComponent implements OnInit {
   ngOnInit() {}
 
   initialization() {
+    this.sharedService.setDefaultValues();
     //IF IS FOR PACKAGE UPGRADE RECOMMENDED
     if (this.codeType === ERoutingIds.packageUpgradeRecommendedForm) {
       this.buttonText = 'BUTTONS.CONTINUE';
