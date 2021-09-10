@@ -26,12 +26,13 @@ export class ResetTvPinDialog implements OnInit {
     return await this.modal.present();
   }
 
-  dismiss() {
-    this.modalCtrl.dismiss();
+  async dismiss() {
+    await this.modalCtrl.dismiss();
   }
 
-  confirm() {
-    this.modalCtrl.dismiss();
+  async confirm() {
+    await this.modalCtrl.dismiss();
+    await this.modalCtrl.dismiss();
     this.router.navigate(['/tv-pin-reset-successfull']);
   }
 }
