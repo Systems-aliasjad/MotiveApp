@@ -1,23 +1,6 @@
-export interface ICard {
-  title?: string;
-  body: string;
-  img?: string;
-  linkTo: string;
-}
+import { FormGroup } from '@angular/forms';
 
-export interface ISection2Template {
-  title: string;
-  type: string;
-  objKeyNameEN?: string;
-  objKeyNameAR?: string;
-}
-
-export interface IMotvieSubscription {
-  [key: string]: {
-    landingPageCards: ICard[];
-    quickLinkCard: ICard[];
-  };
-}
+import { IMotvieSubscription, ISection2Template } from './types';
 
 export enum ERoutingIds {
   noIssueTv,
@@ -622,7 +605,6 @@ export class ApplicableCodes {
 }
 
 ////////For Password Matching with Confirm Passwords
-import { FormGroup } from '@angular/forms';
 export function ConfirmedValidator(controlName: string, matchingControlName: string) {
   return (formGroup: FormGroup) => {
     const control = formGroup.controls[controlName];

@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { ApplicableCodes, ICard } from '../constants/constants';
 
 @Injectable({
   providedIn: 'root',
