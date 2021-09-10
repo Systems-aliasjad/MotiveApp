@@ -23,11 +23,9 @@ export class ChannelNotListDialogComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.channelNotListDialogButtons));
-  }
+  ngOnInit() {}
 
-  endTroubleshootChannelNotListDialog() {
+  endTroubleshoot() {
     this.modalCtrl.dismiss();
     this.router.navigate(['/troubleshoot-complete']);
   }

@@ -4,13 +4,15 @@ import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
+import { Location } from '@angular/common';
+
 @Component({
   selector: 'app-restart-tvbox-dialog',
   templateUrl: './restart-tvbox-dialog.component.html',
   styleUrls: ['./restart-tvbox-dialog.component.scss'],
 })
 export class RestartTvboxDialog implements OnInit {
-  constructor(private actRoute: ActivatedRoute, private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {
+  constructor(private location: Location, private actRoute: ActivatedRoute, private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {
     this.actRoute.data.subscribe((data) => {
       this.initialization();
     });
@@ -27,10 +29,7 @@ export class RestartTvboxDialog implements OnInit {
     });
   }
 
-  initialization() {
-    this.sharedService.setDefaultValues();
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartDialogButtons));
-  }
+  initialization() {}
 
   ngOnInit() {}
 
@@ -40,6 +39,6 @@ export class RestartTvboxDialog implements OnInit {
 
   gotoMainForm() {
     this.dismiss();
-    this.router.navigate(['']);
+    this.router.navigate(['/thanks']);
   }
 }

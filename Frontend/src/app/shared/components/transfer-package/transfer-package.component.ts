@@ -53,7 +53,7 @@ export class TransferPackageComponent implements OnInit {
       ];
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
       this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
-      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL';
+      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
       this.cardList = [

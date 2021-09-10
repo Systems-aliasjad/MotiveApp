@@ -64,6 +64,7 @@ export class RouterRestartComponent implements OnInit {
   initialization() {
     if (this.codeType === ERoutingIds.tvBoxRestartRequiredManually) {
       this.ImgPath = this.ImgSrc;
+      this.headerTitle = 'TVBOX_RESTART.TVBOX_DIDNOT_RESTART_H1';
       this.instructionHeaderTitle = 'TVBOX_RESTART.TVBOX_DIDNOT_RESTART_H1';
       this.instructionStepsTitle = 'INSTRUCTIONS_STEPS.TVBOX_RESTART_TITLE';
       this.instructionsOR = 'INSTRUCTIONS_STEPS.OR';
