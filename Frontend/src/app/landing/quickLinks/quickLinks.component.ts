@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HelperService } from '../../shared/helper/helper.service';
+import { motiveSubscriptions } from 'src/app/shared/constants/constants';
+import { ICard } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-quick-links',
@@ -11,7 +12,7 @@ import { HelperService } from '../../shared/helper/helper.service';
 })
 export class QuickLinksComponent implements OnInit {
   @Input() codeType: string = '3P';
-  quickLinks;
+  quickLinks: ICard[];
   slideOpts = {
     slidesPerView: 5,
     spaceBetween: 5,
@@ -20,12 +21,12 @@ export class QuickLinksComponent implements OnInit {
   width: number = window.innerWidth;
   mobileWidth: number = 760;
 
-  constructor(private helperService: HelperService) {
+  constructor() {
     this.setSlideOpts();
   }
 
   ngOnInit(): void {
-    this.quickLinks = this.helperService.filterCard(this.codeType, 'quickLinkCards');
+    this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
   }
 
   onWindowResize(event) {
