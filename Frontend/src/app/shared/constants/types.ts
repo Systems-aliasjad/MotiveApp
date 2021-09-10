@@ -37,3 +37,24 @@ export interface IMessageIssue {
   header: string;
   body: IMessageIssueBody[];
 }
+
+export interface ICard {
+  title?: string;
+  body: string;
+  img?: string;
+  linkTo: string;
+}
+
+export interface ISection2Template {
+  title: string;
+  type: string;
+  objKeyNameEN?: string;
+  objKeyNameAR?: string;
+}
+
+export interface IMotvieSubscription {
+  [key: string]: {
+    landingPageCards: ICard[];
+    quickLinkCard: ICard[];
+  };
+}
