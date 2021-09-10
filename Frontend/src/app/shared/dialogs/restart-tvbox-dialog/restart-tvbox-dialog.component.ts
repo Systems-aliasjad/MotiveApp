@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
@@ -10,7 +10,11 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./restart-tvbox-dialog.component.scss'],
 })
 export class RestartTvboxDialog implements OnInit {
-  constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
+  constructor(private actRoute: ActivatedRoute, private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {
+    this.actRoute.data.subscribe((data) => {
+      this.initialization();
+    });
+  }
 
   routeLinkHelper(arr) {
     return arr.map((obj) => {
@@ -23,9 +27,12 @@ export class RestartTvboxDialog implements OnInit {
     });
   }
 
-  ngOnInit() {
+  initialization() {
+    this.sharedService.setDefaultValues();
     this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartDialogButtons));
   }
+
+  ngOnInit() {}
 
   dismiss() {
     this.modalCtrl.dismiss();

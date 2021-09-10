@@ -52,9 +52,6 @@ export class DeviceCareComponent implements OnInit {
   constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {
     this.actRoute.data.subscribe((data) => {
       this.codeType = data.id;
-    });
-
-    actRoute.params.subscribe((params) => {
       this.initialization();
     });
   }
@@ -62,6 +59,7 @@ export class DeviceCareComponent implements OnInit {
   ngOnInit() {}
 
   initialization() {
+    this.sharedService.setDefaultValues();
     if (this.codeType === ERoutingIds.tvBoxRestartRequiredDeviceCare) {
       this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
       this.pageHeading = 'DEVICE_CARE.TVBOX_RESTART_HEADING';
@@ -92,5 +90,9 @@ export class DeviceCareComponent implements OnInit {
       component: RestartTvboxDialog,
     });
     return await modal.present();
+  }
+
+  dismiss() {
+    this.modalCtrl.dismiss();
   }
 }

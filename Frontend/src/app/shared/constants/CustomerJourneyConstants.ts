@@ -708,7 +708,7 @@ export class CustomerJourneyConstants {
     clickListener: () => {},
     linkTo: '',
     behaviour: 'secondary',
-    customEvent: 'dismiss',
+    customListner: 'dismiss',
   };
 
   public static confirmButton = {
