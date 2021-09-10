@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
@@ -6,13 +6,14 @@ import { IButton } from '../shared/constants/types';
 import { ERoutingIds } from '../shared/constants/constants';
 import { SharedService } from '../shared/shared.service';
 import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-message-builder',
   templateUrl: './message-builder.component.html',
   styleUrls: ['./message-builder.component.scss'],
 })
-export class MessageBuilderComponent implements OnInit {
+export class MessageBuilderComponent implements OnInit, OnDestroy {
   warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
   successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
 
@@ -22,6 +23,8 @@ export class MessageBuilderComponent implements OnInit {
   Section2Data: any;
   subHeaderSectionTemplate: any;
   subHeaderSectionData: any;
+
+  subscription: Subscription;
 
   imgSrc: string = this.warningImgSrc;
 
@@ -38,10 +41,13 @@ export class MessageBuilderComponent implements OnInit {
     });
   }
   constructor(private location: Location, private activatedRoute: ActivatedRoute, public router: Router, private sharedService: SharedService) {
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {}

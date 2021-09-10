@@ -1,7 +1,8 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
@@ -14,12 +15,12 @@ import { SharedService } from '../../shared.service';
   templateUrl: './device-care.component.html',
   styleUrls: ['./device-care.component.scss'],
 })
-export class DeviceCareComponent implements OnInit {
+export class DeviceCareComponent implements OnInit, OnDestroy {
   selectedLang: string;
   codeType;
   pageHeading;
   PageContent;
-
+  subscription: Subscription;
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -50,10 +51,13 @@ export class DeviceCareComponent implements OnInit {
     },
   ];
   constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {
-    this.actRoute.data.subscribe((data) => {
+    this.subscription = this.actRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}

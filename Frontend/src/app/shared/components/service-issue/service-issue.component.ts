@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { IButton, IMessageIssue } from '../../constants/types';
 
 @Component({
@@ -7,14 +8,18 @@ import { IButton, IMessageIssue } from '../../constants/types';
   templateUrl: './service-issue.component.html',
   styleUrls: ['./service-issue.component.scss'],
 })
-export class ServiceIssueComponent implements OnInit {
+export class ServiceIssueComponent implements OnInit, OnDestroy {
   @Input()
   messageSection: IMessageIssue;
+  subscription: Subscription;
 
   constructor(private actRoute: ActivatedRoute) {
-    actRoute.params.subscribe((val) => {
+    this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}

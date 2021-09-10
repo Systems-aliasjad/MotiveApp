@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
@@ -10,18 +11,22 @@ import { SharedService } from '../../shared.service';
   templateUrl: './transfer-package.component.html',
   styleUrls: ['./transfer-package.component.css'],
 })
-export class TransferPackageComponent implements OnInit {
+export class TransferPackageComponent implements OnInit, OnDestroy {
   PageTitle: string = 'HEADER.TRANSFER_PACKAGE';
   PageContent: string = 'TRANSFER_PACKAGE.DESCRIPTION';
   formGroup: FormGroup;
   codeType;
+  subscription: Subscription;
 
   cardList: any;
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}

@@ -1,29 +1,34 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { SharedService } from '../../shared.service';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-browser-stepper',
   templateUrl: './browser-stepper.component.html',
   styleUrls: ['./browser-stepper.component.css'],
 })
-export class BrowserStepperComponent implements OnInit {
+export class BrowserStepperComponent implements OnInit, OnDestroy {
   selectedLang: string = 'en';
   step: number = 1;
   headerString: string = '';
   isBookComp: boolean = true;
   isContTroubleShoot: boolean = false;
   buttonConfig: IButton[] = [];
+  subscription: Subscription;
 
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    this.activatedRoute.queryParams.subscribe((params) => {
+    this.subscription = this.activatedRoute.queryParams.subscribe((params) => {
       this.step = params['step'] || 1;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit(): void {}

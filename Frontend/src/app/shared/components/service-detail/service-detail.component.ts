@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
 import { EIssueFlow, IssueListDialog } from '../../dialogs/issue-list-dialog/issue-list-dialog.component';
@@ -11,9 +12,10 @@ import { SharedService } from '../../shared.service';
   templateUrl: './service-detail.component.html',
   styleUrls: ['./service-detail.component.scss'],
 })
-export class ServiceDetailComponent implements OnInit {
+export class ServiceDetailComponent implements OnInit, OnDestroy {
   buttonsConfig: IButton[] = [];
   modal: any;
+  subscription: Subscription;
   cardList: any[] = [
     {
       heading: 'UNNAMED PHONE',
@@ -37,9 +39,12 @@ export class ServiceDetailComponent implements OnInit {
     },
   ];
   constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private actRoute: ActivatedRoute) {
-    actRoute.params.subscribe((val) => {
+    this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}
