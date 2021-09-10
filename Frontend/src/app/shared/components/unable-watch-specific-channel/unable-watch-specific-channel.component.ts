@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { ChannelNotListDialogComponent } from '../../dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
@@ -13,12 +14,12 @@ import { regExps, errorMessages } from '../../validators/validations';
   templateUrl: './unable-watch-specific-channel.component.html',
   styleUrls: ['./unable-watch-specific-channel.component.scss'],
 })
-export class UnableWatchSpecificChannelComponent implements OnInit {
+export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup;
   error = errorMessages;
   codeType;
   buttonText;
-
+  subscription: Subscription;
   channelListTitle;
   channelListContent;
   constructor(
@@ -29,10 +30,13 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
     public router: Router
   ) {
     this.codeType = this.router.url;
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   routeLinkHelper(arr) {

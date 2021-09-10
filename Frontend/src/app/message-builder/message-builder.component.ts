@@ -1,17 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
 import { IButton } from '../shared/constants/types';
 import { ERoutingIds } from '../shared/constants/constants';
 import { SharedService } from '../shared/shared.service';
+import { Location } from '@angular/common';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-message-builder',
   templateUrl: './message-builder.component.html',
   styleUrls: ['./message-builder.component.scss'],
 })
-export class MessageBuilderComponent implements OnInit {
+export class MessageBuilderComponent implements OnInit, OnDestroy {
   warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
   successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
 
@@ -22,6 +24,8 @@ export class MessageBuilderComponent implements OnInit {
   subHeaderSectionTemplate: any;
   subHeaderSectionData: any;
 
+  subscription: Subscription;
+
   imgSrc: string = this.warningImgSrc;
 
   showLoader: boolean = false;
@@ -31,19 +35,26 @@ export class MessageBuilderComponent implements OnInit {
       return {
         ...obj,
         clickListener: () => {
-          this.router.navigate([obj.linkTo]);
+          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
         },
       };
     });
   }
-  constructor(private activatedRoute: ActivatedRoute, public router: Router, private sharedService: SharedService) {
-    this.activatedRoute.data.subscribe((data) => {
+  constructor(private location: Location, private activatedRoute: ActivatedRoute, public router: Router, private sharedService: SharedService) {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
   }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit(): void {}
+
+  cancelBackLocationLink() {
+    this.location.back();
+  }
 
   initialization() {
     this.sharedService.setDefaultValues();
@@ -204,7 +215,7 @@ export class MessageBuilderComponent implements OnInit {
     // Tv box not reachable
     else if (this.codeType === ERoutingIds.tvBoxNotReachableFormSuccessfully) {
       this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
+      this.Section1Data = CustomerJourneyConstants.tvBoxNotReachableFormsuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
       this.Section2Data = {
         referenceNo: '436529873',
@@ -234,7 +245,7 @@ export class MessageBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tvBoxResetSuccessfullyCase;
       this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxResetSuccessfullyButtons));
     }
     // package transfer success
     else if (this.codeType === ERoutingIds.packageTransferSuccess) {
@@ -249,7 +260,7 @@ export class MessageBuilderComponent implements OnInit {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.unableWatchSpecificChannelPackageTransferSuccess;
       this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.BackLocationLink]));
     }
     //#endregion Module 2
 

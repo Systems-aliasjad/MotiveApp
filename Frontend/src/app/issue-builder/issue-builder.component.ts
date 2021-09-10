@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ERoutingIds } from '../shared/constants/constants';
@@ -9,18 +9,19 @@ import { SharedService } from '../shared/shared.service';
 import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-issue-builder',
   templateUrl: './issue-builder.component.html',
   styleUrls: ['./issue-builder.component.scss'],
 })
-export class IssueBuilderComponent implements OnInit {
+export class IssueBuilderComponent implements OnInit, OnDestroy {
   codeType;
   modal: any;
   btnConfig: IButton[] = [];
   messageSection: IMessageIssue;
-
+  subscription: Subscription;
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -50,10 +51,13 @@ export class IssueBuilderComponent implements OnInit {
   }
 
   constructor(private sharedService: SharedService, private activatedRoute: ActivatedRoute, public router: Router, private modalCtrl: ModalController) {
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
   async openPasswordResetDialog() {
     const modal = await this.modalCtrl.create({

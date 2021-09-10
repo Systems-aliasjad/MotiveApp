@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
@@ -10,7 +11,7 @@ import { SharedService } from '../../shared.service';
   templateUrl: './router-restart.component.html',
   styleUrls: ['./router-restart.component.scss'],
 })
-export class RouterRestartComponent implements OnInit {
+export class RouterRestartComponent implements OnInit, OnDestroy {
   selectedLang: string;
   ImgSrc = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
   ImgPath;
@@ -22,7 +23,7 @@ export class RouterRestartComponent implements OnInit {
   instructionsOR;
   instructionsORTitle;
   instructionsORBody;
-
+  subscription: Subscription;
   instructionList: string[];
   buttonsConfig: IButton[] = [
     {
@@ -53,10 +54,13 @@ export class RouterRestartComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, public router: Router) {
     this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
 
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}
@@ -64,6 +68,7 @@ export class RouterRestartComponent implements OnInit {
   initialization() {
     if (this.codeType === ERoutingIds.tvBoxRestartRequiredManually) {
       this.ImgPath = this.ImgSrc;
+      this.headerTitle = 'TVBOX_RESTART.TVBOX_DIDNOT_RESTART_H1';
       this.instructionHeaderTitle = 'TVBOX_RESTART.TVBOX_DIDNOT_RESTART_H1';
       this.instructionStepsTitle = 'INSTRUCTIONS_STEPS.TVBOX_RESTART_TITLE';
       this.instructionsOR = 'INSTRUCTIONS_STEPS.OR';

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
@@ -10,14 +11,15 @@ import { regExps, errorMessages } from '../../validators/validations';
   templateUrl: './book-complaint.component.html',
   styleUrls: ['./book-complaint.component.scss'],
 })
-export class BookComplaintComponent implements OnInit {
+export class BookComplaintComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup;
   error = errorMessages;
   codeType;
   buttonText;
+  subscription: Subscription;
   constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private formBuilder: FormBuilder, public router: Router) {
     this.codeType = this.router.url;
-    this.activatedRoute.data.subscribe((data) => {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
     });
@@ -28,10 +30,14 @@ export class BookComplaintComponent implements OnInit {
       Remarks: [''],
     });
   }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
 
   ngOnInit() {}
 
   initialization() {
+    this.sharedService.setDefaultValues();
     //IF IS FOR PACKAGE UPGRADE RECOMMENDED
     if (this.codeType === ERoutingIds.packageUpgradeRecommendedForm) {
       this.buttonText = 'BUTTONS.CONTINUE';
@@ -67,8 +73,6 @@ export class BookComplaintComponent implements OnInit {
       this.buttonText = 'BUTTONS.BOOK_AN_APPOINTMENT';
       this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
     }
-
-    this.sharedService.setDefaultValues();
     //#endregion Module 2
   }
 

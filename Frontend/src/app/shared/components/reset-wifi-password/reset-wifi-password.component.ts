@@ -1,15 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator } from '../../constants/constants';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-reset-wifi-password',
   templateUrl: './reset-wifi-password.component.html',
   styleUrls: ['./reset-wifi-password.component.scss'],
 })
-export class ResetWifiPasswordComponent implements OnInit {
+export class ResetWifiPasswordComponent implements OnInit, OnDestroy {
   public segment: string = '1';
   public routerSettingsForm: FormGroup;
   error = errorMessages;
@@ -17,15 +18,19 @@ export class ResetWifiPasswordComponent implements OnInit {
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
   termsCheck: boolean = false;
+  subscription: Subscription;
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
   constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute) {
-    actRoute.params.subscribe((val) => {
+    this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}

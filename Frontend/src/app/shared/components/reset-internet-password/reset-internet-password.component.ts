@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator } from '../../constants/constants';
+import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-reset-internet-password',
   templateUrl: './reset-internet-password.component.html',
   styleUrls: ['./reset-internet-password.component.scss'],
 })
-export class ResetInternetPasswordComponent implements OnInit {
+export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup;
   error = errorMessages;
 
@@ -17,7 +18,7 @@ export class ResetInternetPasswordComponent implements OnInit {
   passwordIcon: string = 'eye-off';
 
   termsCheck: boolean = false;
-
+  subscription: Subscription;
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
@@ -26,9 +27,12 @@ export class ResetInternetPasswordComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService) {
     this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
 
-    this.sharedService.getTermsConditions().subscribe((config) => {
+    this.subscription = this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;
     });
+  }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   ngOnInit() {
