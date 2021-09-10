@@ -114,270 +114,270 @@ export enum ERoutingIds {
 // const UPGRADE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 // const UPGRADE_PACKAGE: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 
+const INTERNET_ISSUES = {
+  title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
+  body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
+  img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
+  linkTo: 'info',
+};
+
+const TV_ISSUES = {
+  title: 'LANDING_PAGE.TV_ISSUES_TITLE',
+  body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
+  img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
+  linkTo: '#',
+};
+
+const PHONE_ISSUES = {
+  title: 'LANDING_PAGE.PHONE_ISSUES_TITLE',
+  body: 'LANDING_PAGE.PHONE_ISSUES_DESCRIPTION',
+  img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
+  linkTo: '#',
+};
+
+const OTHER_ISSUES = {
+  title: 'LANDING_PAGE.OTHER_ISSUES_TITLE',
+  body: 'LANDING_PAGE.OTHER_ISSUES_DESCRIPTION',
+  img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
+  linkTo: '#',
+};
+
+const PASSWORD_ISSUES = {
+  title: 'LANDING_PAGE.PASSWORD_ISSUES_TITLE',
+  body: 'LANDING_PAGE.PASSWORD_ISSUES_DESCRIPTION',
+  img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
+  linkTo: '#',
+};
+
+const RESET_PIN = {
+  title: 'LANDING_PAGE.RESET_PIN_TITLE',
+  body: 'LANDING_PAGE.RESET_PIN_DESCRIPTION',
+  img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
+  linkTo: '#',
+};
+
+const INSTALL_NEW_ROUTER = {
+  body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
+  linkTo: '',
+};
+const FACTORY_RESET_ROUTER = {
+  body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
+  linkTo: '',
+};
+const FACTORY_RESET_TV = {
+  body: 'QUICK_LINKS.FACTORY_RESET_TV',
+  linkTo: '',
+};
+const FORGOT_PASSWORD_INTERNET = {
+  body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
+  linkTo: '',
+};
+const CONNECTION_ISSUE_ROUTER = {
+  body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
+  linkTo: '',
+};
+const FORGOT_PASSWORD_TV = {
+  body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
+  linkTo: '',
+};
+const TRANSFER_PACKAGE_TV = {
+  body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
+  linkTo: '',
+};
+const CONNECT_HOME_ZONE = {
+  body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
+  linkTo: '',
+};
+const TRACK_COMPLAINT = {
+  body: 'QUICK_LINKS.TRACK_COMPLAINT',
+  linkTo: '',
+};
+const TRACK_REQUEST = {
+  body: 'QUICK_LINKS.TRACK_REQUEST',
+  linkTo: '',
+};
+const UPGRADE_ROUTER = {
+  body: 'QUICK_LINKS.UPGRADE_ROUTER',
+  linkTo: '',
+};
+const UPGRADE_PACKAGE = {
+  body: 'QUICK_LINKS.UPGRADE_PACKAGE',
+  linkTo: '',
+};
+
+export const motiveSubscriptions: IMotvieSubscription = {
+  '3P': {
+    landingPageCards: [TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, INTERNET_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FACTORY_RESET_TV,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      FORGOT_PASSWORD_TV,
+      TRANSFER_PACKAGE_TV,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  '2P': {
+    landingPageCards: [PHONE_ISSUES, OTHER_ISSUES, INTERNET_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  '1P': {
+    landingPageCards: [TV_ISSUES, RESET_PIN],
+    quickLinkCard: [FACTORY_RESET_TV, FORGOT_PASSWORD_TV, TRANSFER_PACKAGE_TV, CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
+  },
+  '0P': {
+    landingPageCards: [TV_ISSUES, RESET_PIN],
+    quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
+  },
+  VO: {
+    landingPageCards: [PHONE_ISSUES, RESET_PIN],
+    quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
+  },
+  H1: {
+    landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  B1: {
+    landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  FD: {
+    landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, PASSWORD_ISSUES, OTHER_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  FH: {
+    landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  FT: {
+    landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FACTORY_RESET_TV,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      FORGOT_PASSWORD_TV,
+      TRANSFER_PACKAGE_TV,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  FV: {
+    landingPageCards: [PHONE_ISSUES, RESET_PIN],
+    quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
+  },
+  BSP: {
+    landingPageCards: [TV_ISSUES, RESET_PIN],
+    quickLinkCard: [FACTORY_RESET_TV, FORGOT_PASSWORD_TV, TRANSFER_PACKAGE_TV, CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
+  },
+  BTP: {
+    landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FACTORY_RESET_TV,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      FORGOT_PASSWORD_TV,
+      TRANSFER_PACKAGE_TV,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  BDP: {
+    landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+  BFXI: {
+    landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
+    quickLinkCard: [
+      INSTALL_NEW_ROUTER,
+      FACTORY_RESET_ROUTER,
+      FORGOT_PASSWORD_INTERNET,
+      CONNECTION_ISSUE_ROUTER,
+      CONNECT_HOME_ZONE,
+      TRACK_COMPLAINT,
+      TRACK_REQUEST,
+      UPGRADE_ROUTER,
+      UPGRADE_PACKAGE,
+    ],
+  },
+};
+
 export class ApplicableCodes {
-  INTERNET_ISSUES = {
-    title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
-    body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
-    img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
-    linkTo: 'info',
-  };
-
-  TV_ISSUES = {
-    title: 'LANDING_PAGE.TV_ISSUES_TITLE',
-    body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
-    img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
-    linkTo: '#',
-  };
-
-  PHONE_ISSUES = {
-    title: 'LANDING_PAGE.PHONE_ISSUES_TITLE',
-    body: 'LANDING_PAGE.PHONE_ISSUES_DESCRIPTION',
-    img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
-    linkTo: '#',
-  };
-
-  OTHER_ISSUES = {
-    title: 'LANDING_PAGE.OTHER_ISSUES_TITLE',
-    body: 'LANDING_PAGE.OTHER_ISSUES_DESCRIPTION',
-    img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
-    linkTo: '#',
-  };
-
-  PASSWORD_ISSUES = {
-    title: 'LANDING_PAGE.PASSWORD_ISSUES_TITLE',
-    body: 'LANDING_PAGE.PASSWORD_ISSUES_DESCRIPTION',
-    img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
-    linkTo: '#',
-  };
-
-  RESET_PIN = {
-    title: 'LANDING_PAGE.RESET_PIN_TITLE',
-    body: 'LANDING_PAGE.RESET_PIN_DESCRIPTION',
-    img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
-    linkTo: '#',
-  };
-
-  INSTALL_NEW_ROUTER = {
-    body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
-    linkTo: '',
-  };
-  FACTORY_RESET_ROUTER = {
-    body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
-    linkTo: '',
-  };
-  FACTORY_RESET_TV = {
-    body: 'QUICK_LINKS.FACTORY_RESET_TV',
-    linkTo: '',
-  };
-  FORGOT_PASSWORD_INTERNET = {
-    body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
-    linkTo: '',
-  };
-  CONNECTION_ISSUE_ROUTER = {
-    body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
-    linkTo: '',
-  };
-  FORGOT_PASSWORD_TV = {
-    body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
-    linkTo: '',
-  };
-  TRANSFER_PACKAGE_TV = {
-    body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
-    linkTo: '',
-  };
-  CONNECT_HOME_ZONE = {
-    body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
-    linkTo: '',
-  };
-  TRACK_COMPLAINT = {
-    body: 'QUICK_LINKS.TRACK_COMPLAINT',
-    linkTo: '',
-  };
-  TRACK_REQUEST = {
-    body: 'QUICK_LINKS.TRACK_REQUEST',
-    linkTo: '',
-  };
-  UPGRADE_ROUTER = {
-    body: 'QUICK_LINKS.UPGRADE_ROUTER',
-    linkTo: '',
-  };
-  UPGRADE_PACKAGE = {
-    body: 'QUICK_LINKS.UPGRADE_PACKAGE',
-    linkTo: '',
-  };
-
-  motiveSubscriptions: IMotvieSubscription = {
-    '3P': {
-      landingPageCards: [this.TV_ISSUES, this.PHONE_ISSUES, this.OTHER_ISSUES, this.INTERNET_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FACTORY_RESET_TV,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.FORGOT_PASSWORD_TV,
-        this.TRANSFER_PACKAGE_TV,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    '2P': {
-      landingPageCards: [this.PHONE_ISSUES, this.OTHER_ISSUES, this.INTERNET_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    '1P': {
-      landingPageCards: [this.TV_ISSUES, this.RESET_PIN],
-      quickLinkCard: [this.FACTORY_RESET_TV, this.FORGOT_PASSWORD_TV, this.TRANSFER_PACKAGE_TV, this.CONNECT_HOME_ZONE, this.TRACK_COMPLAINT, this.TRACK_REQUEST],
-    },
-    '0P': {
-      landingPageCards: [this.TV_ISSUES, this.RESET_PIN],
-      quickLinkCard: [this.CONNECT_HOME_ZONE, this.TRACK_COMPLAINT, this.TRACK_REQUEST],
-    },
-    VO: {
-      landingPageCards: [this.PHONE_ISSUES, this.RESET_PIN],
-      quickLinkCard: [this.CONNECT_HOME_ZONE, this.TRACK_COMPLAINT, this.TRACK_REQUEST],
-    },
-    H1: {
-      landingPageCards: [this.INTERNET_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    B1: {
-      landingPageCards: [this.INTERNET_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    FD: {
-      landingPageCards: [this.INTERNET_ISSUES, this.PHONE_ISSUES, this.PASSWORD_ISSUES, this.OTHER_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    FH: {
-      landingPageCards: [this.INTERNET_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    FT: {
-      landingPageCards: [this.INTERNET_ISSUES, this.TV_ISSUES, this.PHONE_ISSUES, this.OTHER_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FACTORY_RESET_TV,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.FORGOT_PASSWORD_TV,
-        this.TRANSFER_PACKAGE_TV,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    FV: {
-      landingPageCards: [this.PHONE_ISSUES, this.RESET_PIN],
-      quickLinkCard: [this.CONNECT_HOME_ZONE, this.TRACK_COMPLAINT, this.TRACK_REQUEST],
-    },
-    BSP: {
-      landingPageCards: [this.TV_ISSUES, this.RESET_PIN],
-      quickLinkCard: [this.FACTORY_RESET_TV, this.FORGOT_PASSWORD_TV, this.TRANSFER_PACKAGE_TV, this.CONNECT_HOME_ZONE, this.TRACK_COMPLAINT, this.TRACK_REQUEST],
-    },
-    BTP: {
-      landingPageCards: [this.INTERNET_ISSUES, this.TV_ISSUES, this.PHONE_ISSUES, this.OTHER_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FACTORY_RESET_TV,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.FORGOT_PASSWORD_TV,
-        this.TRANSFER_PACKAGE_TV,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    BDP: {
-      landingPageCards: [this.INTERNET_ISSUES, this.PHONE_ISSUES, this.OTHER_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-    BFXI: {
-      landingPageCards: [this.INTERNET_ISSUES, this.PHONE_ISSUES, this.OTHER_ISSUES, this.PASSWORD_ISSUES],
-      quickLinkCard: [
-        this.INSTALL_NEW_ROUTER,
-        this.FACTORY_RESET_ROUTER,
-        this.FORGOT_PASSWORD_INTERNET,
-        this.CONNECTION_ISSUE_ROUTER,
-        this.CONNECT_HOME_ZONE,
-        this.TRACK_COMPLAINT,
-        this.TRACK_REQUEST,
-        this.UPGRADE_ROUTER,
-        this.UPGRADE_PACKAGE,
-      ],
-    },
-  };
-
   // public static landingPageCards: ICard[] = [
   //   {
   //     title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
