@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { motiveSubscriptions } from 'src/app/shared/constants/constants';
+import { ICard } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-quick-links',
@@ -11,7 +12,7 @@ import { motiveSubscriptions } from 'src/app/shared/constants/constants';
 })
 export class QuickLinksComponent implements OnInit {
   @Input() codeType: string = '3P';
-  quickLinks;
+  quickLinks: ICard[];
   slideOpts = {
     slidesPerView: 5,
     spaceBetween: 5,
