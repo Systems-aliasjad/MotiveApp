@@ -25,12 +25,12 @@
         </ion-list>
       </div>
 
-      <h4 *ngIf="section1Template">
+      <!-- <ion-list *ngIf="section1Template" class="inline-ion-list">
         <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
           <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
           <ion-label class="detail_list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
         </ion-item>
-      </h4>
+      </ion-list> -->
     </div>
     <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
   </ion-col>
