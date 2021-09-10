@@ -46,8 +46,9 @@ export class MessageBuilderComponent implements OnInit {
   ngOnInit(): void {}
 
   initialization() {
-    //Open Complaint
+    this.sharedService.setDefaultValues();
 
+    //Open Complaint
     if (this.codeType === ERoutingIds.openComplaint) {
       this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
       this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
@@ -202,6 +203,7 @@ export class MessageBuilderComponent implements OnInit {
     //#region  Module 2
     // Tv box not reachable
     else if (this.codeType === ERoutingIds.tvBoxNotReachableFormSuccessfully) {
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
       this.Section2Data = {
@@ -215,25 +217,37 @@ export class MessageBuilderComponent implements OnInit {
     }
     // Tv box Restart Required
     else if (this.codeType === ERoutingIds.tvBoxRestartRequiredSuccessfully) {
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tvBoxRestartssuccessfullyCase;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartSuccessfullyButtons));
     }
     // Game session cancel Confirm
     else if (this.codeType === ERoutingIds.gameSessionCancelConfirmed) {
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.gameSessionCancelConfirmed;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
     }
     //For Reset TV box successfully
     else if (this.codeType === ERoutingIds.tvBoxResetSuccessfully) {
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tvBoxResetSuccessfullyCase;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
     }
     // package transfer success
     else if (this.codeType === ERoutingIds.packageTransferSuccess) {
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.packageTransferSuccess;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    }
+
+    // Unable to watch specific channles package transfer success
+    else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.unableWatchSpecificChannelPackageTransferSuccess;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
     }
@@ -241,6 +255,7 @@ export class MessageBuilderComponent implements OnInit {
 
     //TODO: dummy need to remove this case at the end
     else {
+      this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
       this.Section2Data = {

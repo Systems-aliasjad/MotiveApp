@@ -3,6 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ERoutingIds } from '../../constants/constants';
+import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { ChannelNotListDialogComponent } from '../../dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
@@ -30,6 +31,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
     this.codeType = this.router.url;
     this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
+      this.initialization();
     });
   }
 
@@ -45,6 +47,11 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtonsUnableWatchSpecific));
+  }
+
+  initialization() {
+    this.sharedService.setDefaultValues();
     this.formGroup = this.formBuilder.group({
       ChannelList: ['', [Validators.required]],
     });
@@ -113,6 +120,8 @@ export class UnableWatchSpecificChannelComponent implements OnInit {
     ////Hard coaded value is set to open dialog
     if (value === '5') {
       this.openChannelNotListDialog();
+    } else {
+      this.router.navigate(['/unable-to-watch-package-available']);
     }
   }
 

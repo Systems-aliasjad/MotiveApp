@@ -6,7 +6,7 @@ import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
 import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
-import { RestartTvboxDialogComponent } from '../../dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
+import { RestartTvboxDialog } from '../../dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -89,7 +89,7 @@ export class DeviceCareComponent implements OnInit {
 
   async openRestartTvBoxDialog() {
     const modal = await this.modalCtrl.create({
-      component: RestartTvboxDialogComponent,
+      component: RestartTvboxDialog,
     });
     return await modal.present();
   }

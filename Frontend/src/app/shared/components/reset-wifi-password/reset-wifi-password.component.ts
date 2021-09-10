@@ -31,6 +31,7 @@ export class ResetWifiPasswordComponent implements OnInit {
   ngOnInit() {}
 
   initialization() {
+    this.sharedService.setDefaultValues();
     this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true);
     this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;

@@ -9,7 +9,7 @@ import { SharedService } from '../../shared.service';
   templateUrl: './restart-tvbox-dialog.component.html',
   styleUrls: ['./restart-tvbox-dialog.component.scss'],
 })
-export class RestartTvboxDialogComponent implements OnInit {
+export class RestartTvboxDialog implements OnInit {
   constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
 
   routeLinkHelper(arr) {
