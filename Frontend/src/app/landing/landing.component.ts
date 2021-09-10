@@ -32,7 +32,7 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   initialization(params: Params) {
     this.sharedService.setDefaultValues();
-    this.codeType = params['code'].toUpperCase() || '3P';
+    this.codeType = params['code']?.toUpperCase() || '3P';
     this.selectedLang = this.sharedService.getDefaultLanguage();
     this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
     this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;

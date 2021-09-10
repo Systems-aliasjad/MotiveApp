@@ -24,7 +24,7 @@ export class ThankyouScreenComponent implements OnInit, OnDestroy {
   subscription: Subscription;
 
   constructor(public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {
-    this.activatedRoute.params.subscribe((data) => {
+    this.subscription = this.activatedRoute.params.subscribe((data) => {
       this.initialization();
     });
   }
