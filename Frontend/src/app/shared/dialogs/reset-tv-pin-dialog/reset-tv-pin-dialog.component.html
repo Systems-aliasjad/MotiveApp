@@ -21,5 +21,13 @@
       </div>
     </ion-col>
   </ion-row>
-  <app-buttons></app-buttons>
+  <ion-row>
+    <ion-col Size="6" class="pt-0 pb-0 ion-text-center">
+      <ion-button class="btn secondary-btn close" (click)="dismiss()">{{ 'BUTTONS.BACK' | translate }}</ion-button>
+    </ion-col>
+    <ion-col Size="6" class="pt-0 pb-0 ion-text-center">
+      <ion-button class="btn primary-btn close" (click)="confirm()">{{ 'BUTTONS.CONFIRM' | translate }}</ion-button>
+    </ion-col>
+  </ion-row>
+  <!-- <app-buttons></app-buttons> -->
 </ion-grid>
