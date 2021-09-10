@@ -1,19 +1,32 @@
+// --------------------------------------------------------------
 :host {
+  font-size: 1rem;
   --background-color:  transparent;
   --ion-item-background:transparent;
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-content{
     --background: var(--ion-background-color, transparent);
-    
   }
-  ion-footer{
-    ion-toolbar{
-      --ion-toolbar-background-color:#f6f8ef;
-      --background: var(--ion-background-color, transparent);
-    
-    }
+  ion-list{
+    background: var(--ion-item-background, var(--ion-background-color, transparent ));
+    --ion-background-color:transparent;
   }
+  ion-card{
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+   }
 }
+ion-item::part(native){
+  padding-inline-end: 0 ;
+  --inner-padding-end: 0;
+  padding-left: 0;
+  --background:transparent;
+  --border-radius:0;
+  --border-width: 0;
+  --inner-border-width: 0
+}
+// --------------------------------------------------------------
 
 /* Core CSS required for Ionic components to work properly */
 @import '~@ionic/angular/css/core.css';
@@ -105,6 +118,7 @@ body {
   margin: 0;
   font-family:Lato,Roboto,Arial,sans-serif;
   color: $secondary-color;
+  font-size: 1rem;
 }
 
 // ------------Removed Ionic Button Styling start-------------------
@@ -227,7 +241,10 @@ h6{
   letter-spacing: 0.14285714em;
   text-decoration: none;
   @include transition(all 0.3s ease-in-out);
-  &:hover,
+  &:hover{
+    text-decoration: underline;
+    color: $primary-color;
+  }
   &:focus,
   &:active {
     text-decoration: none;

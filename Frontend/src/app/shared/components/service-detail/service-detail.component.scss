@@ -27,7 +27,6 @@ ion-item::part(native){
 .service-detail-contanier,
 .service-detail-inner_container{
   height:100%;
-  /* height: calc(100vh - 132px); */
    @media screen and (max-width: 992px) {
     height:auto;
   } 
@@ -62,7 +61,6 @@ ion-item::part(native){
           margin-right: 0;
           margin-left: 0;
         }
-        
       }
     }
     .service-state {
@@ -87,7 +85,6 @@ ion-item::part(native){
           overflow: hidden;
           text-overflow: ellipsis;
         }
-       
       }
     } 
     .state {
@@ -183,9 +180,6 @@ ion-item::part(native){
       }
     }
   }
- 
-  
-  
 }
 .service-detail_content{
   @media screen and (max-width: 992px) {
@@ -360,7 +354,7 @@ ion-item::part(native){
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
-          @media screen and (max-width: 281px) {
+          @media screen and (max-width: 361px) {
           -webkit-box-orient: vertical;
           -webkit-box-direction: normal;
           -ms-flex-direction: column;
@@ -378,8 +372,7 @@ ion-item::part(native){
           .sub-title{
             margin-bottom: 0;
             margin-left: 1rem;
-            @media screen and (max-width: 281px) {
-              font-size: 1rem;
+            @media screen and (max-width: 361px) {
               margin-top: 1rem;
               margin-left: 0rem;
             

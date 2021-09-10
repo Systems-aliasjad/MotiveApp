@@ -8,59 +8,105 @@
     </ion-row>
     <!-- Page Heading End -->
 
-    <!-- FLOW DIAGRAM SECTION START -->
+    
     <ion-row class="tv-detail-inner_container">
-      <ion-col sizeLg="6" sizeMd="12" size="12" class="flow-chart-container">
+      <!-- Flow Chart Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="flow-chart_container">
+        <div class="flow-chart">
 
+        </div>
       </ion-col>
+      <!-- Flow Chart End -->
+
+      <!-- Tv Detail Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="tv-detail_content">
+        <div class="content">
+          <!-- Tv Boxes Start -->
+          <ion-row>
+            <!-- <ion-col size="12" class="title">
+              <app-page-top></app-page-top>
+            </ion-col> -->
+            <ion-col size="12" class="content-sub_title">
+              <h6 class="sub-title">{{ 'SUBHEADER.MY_TV_BOXES' | translate }}</h6>
+            </ion-col>
+            <ion-col size="12" class="tv-boxes">
+              <ion-card *ngFor="let card of cardList">
+                <ion-card-header>
+                  <ion-card-title>
+                    <img src="../../../../assets/images/indicators-icons/icon_all_okay.svg" alt="" />
+                    <h5 class="sub-title">{{ card.header }}</h5>
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <h6 class="sub-title">{{ card.subHeader }}</h6>
+                  <ion-row class="package">
+                    <ion-col sizeLg="5" sizeMd="5" size="12" class="ion-no-padding">
+                      <ion-list>
+                        <ion-item *ngFor="let item of card.list" >
+                          <ion-label> {{ item }}</ion-label>
+                        </ion-item>
+                      </ion-list>
+                    </ion-col>
+                    <ion-col sizeLg="7" sizeMd="7" size="12" class="ion-no-padding">
+                      <a href="javascript:void(0)" class="arrow-link">
+                        <span>{{ 'BUTTONS.TRANSFER_PACKAGE' | translate }}</span>
+                        <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+                      </a>
+                    </ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <!-- Tv Boxes End -->
+
+          <!-- My Subscriptions Start -->
+          <ion-row class="my-subscriptions">
+            <ion-col size="12" class="content-sub_title">
+              <h6 class="sub-title">{{ 'SUBHEADER.MY_SUBSCRIPTIONS' | translate }}</h6>
+            </ion-col>
+            <ion-col size="12" class="subscriptions-box">
+              <ion-card>
+                <ion-card-content>
+                  <ion-label class="subscription"> eLifeON service</ion-label>
+                  <ion-label class="status"> Status</ion-label> 
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <!-- My Subscribtions End -->
+          
+          <!-- Game Sessions Start -->
+          <ion-row class="sessions-container">
+            <ion-col size="12">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title> eLife TV game </ion-card-title>
+                </ion-card-header>
+                <ion-card-content class="sessions_info">
+                  <div *ngFor="let game of eLifegames" class="sessions">
+                    <div class="sessions_img">
+                      <img [src]="game.imgSrc" alt="" />
+                    </div>
+                    <p>{{ game.title }}</p>
+                  </div>
+                  <a href="javascript:void(0)" class="arrow-link">
+                    <span>{{ 'BUTTONS.CANCEL_GAME_SESSION' | translate }}</span>
+                    <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+                  </a>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <!-- Game Sessions End -->
+
+        </div>
+      </ion-col>
+      <!-- Tv Detai End -->
 
     </ion-row>
-    <!-- MY TV BOX SECTION -->
-    <p>{{ 'SUBHEADER.MY_TV_BOXES' | translate }}</p>
-    <ion-card *ngFor="let card of cardList">
-      <ion-card-header>
-        <ion-card-title>
-          <ion-icon name="checkmark-sharp" class="success"></ion-icon> &nbsp;
-          <span>{{ card.header }}</span>
-        </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <p>{{ card.subHeader }}</p>
-        <div *ngFor="let item of card.list">
-          <p>{{ item }}</p>
-        </div>
-        <a href="javascript:void(0)" class="arrow-link">
-          <span>{{ 'BUTTONS.TRANSFER_PACKAGE' | translate }}</span>
-          <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
-        </a>
-      </ion-card-content>
-    </ion-card>
 
-    <!-- MY SUBSCRIPTIONS SECTION-->
-    <p>{{ 'SUBHEADER.MY_SUBSCRIPTIONS' | translate }}</p>
-    <ion-card>
-      <ion-card-content>
-        <div>
-          <p>eLifeON service</p>
-          <P>Status</P>
-        </div>
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-card-header>
-        <ion-card-title> eLife TV game </ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <div *ngFor="let game of eLifegames">
-          <img [src]="game.imgSrc" />
-          <p>{{ game.title }}</p>
-        </div>
-        <a href="javascript:void(0)" class="arrow-link">
-          <span>{{ 'BUTTONS.CANCEL_GAME_SESSION' | translate }}</span>
-          <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
-        </a>
-      </ion-card-content>
-    </ion-card>
+    
 
     <!-- Buttons -->
     <!-- <app-buttons></app-buttons> -->

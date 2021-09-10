@@ -49,9 +49,9 @@
   &:hover,
   &:active,
   &:focus{
-    color: #f1f1eb;
-    --color:#f1f1eb;
-    background-color: $etisalat-color;
+    color: $etisalat-color;
+    --color:$etisalat-color;
+    background-color: $white;
     border: 2px solid $etisalat-color;
   }
 }
