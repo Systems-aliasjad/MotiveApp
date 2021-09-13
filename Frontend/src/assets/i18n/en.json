@@ -438,8 +438,7 @@
   "TV_ISSUE_NOT_FIXED": {
     "TITLE": "TV Issues",
     "SUB_HEADING": "TV service is down",
-    "TEXT1": "Sorry, the service is not working properly.",
-    "TEXT2": "Please try again later or book an appointment instead.",
+    "TEXT1": "Sorry, the service is not working properly. Please try again later or book an appointment instead.",
     "DESCRIPTION": "Choose the TV box you'd like to transfer the package to.",
     "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
   }
