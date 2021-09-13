@@ -18,7 +18,7 @@
 
   <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tab_content">
     <div class="content">
-      <h5 class="sub-title">{{ messageSection.header | translate }}</h5>
+      <h4 class="sub-title letter-space-none">{{ messageSection.header | translate }}</h4>
       <div *ngFor="let message of messageSection.body">
         <p>{{ message.title | translate }}</p>
         <ion-list *ngIf="message.children" class="bullet-list">
