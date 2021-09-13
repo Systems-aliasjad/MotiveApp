@@ -20,12 +20,11 @@
   }
 }
 ion-item::part(native){
-  padding-inline-end: .3rem;
-  --padding-start:.5rem;
-  --inner-padding-end: .5rem;
-  padding-right: .3rem;
-  padding-left: .5rem;
-  --border-color:#ededed;
+    /* padding-inline-end: .8rem;  */
+    --inner-padding-end: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    --padding-start:1rem;
 }
 .header-ios {
 	ion-toolbar {

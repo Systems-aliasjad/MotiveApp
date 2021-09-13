@@ -23,8 +23,8 @@
   }
 }
 ion-item::part(native){
-  padding-inline-end: .5rem; 
-  --inner-padding-end: .5rem;
+  /* padding-inline-end: .8rem;  */
+  --inner-padding-end: 0;
   padding-left: 1rem;
   padding-right: 1rem;
   --padding-start:1rem;
