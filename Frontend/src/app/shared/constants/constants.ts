@@ -107,42 +107,42 @@ const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
   body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
-  linkTo: 'info',
+  linkTo: 'issues/internet',
 };
 
 const TV_ISSUES = {
   title: 'LANDING_PAGE.TV_ISSUES_TITLE',
   body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
-  linkTo: '#',
+  linkTo: 'issues/tv',
 };
 
 const PHONE_ISSUES = {
   title: 'LANDING_PAGE.PHONE_ISSUES_TITLE',
   body: 'LANDING_PAGE.PHONE_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
-  linkTo: '#',
+  linkTo: 'issues/phone',
 };
 
 const OTHER_ISSUES = {
   title: 'LANDING_PAGE.OTHER_ISSUES_TITLE',
   body: 'LANDING_PAGE.OTHER_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
-  linkTo: '#',
+  linkTo: 'issues/other',
 };
 
 const PASSWORD_ISSUES = {
   title: 'LANDING_PAGE.PASSWORD_ISSUES_TITLE',
   body: 'LANDING_PAGE.PASSWORD_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
-  linkTo: '#',
+  linkTo: 'issues/password',
 };
 
 const RESET_PIN = {
   title: 'LANDING_PAGE.RESET_PIN_TITLE',
   body: 'LANDING_PAGE.RESET_PIN_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
-  linkTo: '#',
+  linkTo: 'reset-pin',
 };
 
 const INSTALL_NEW_ROUTER = {

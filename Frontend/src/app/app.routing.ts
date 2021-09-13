@@ -25,6 +25,37 @@ import { TransferPackageComponent } from './shared/components/transfer-package/t
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 
 const routes: Routes = [
+  // REFACTORED LOGIC
+  {
+    path: 'issues/internet',
+    loadChildren: () => import('./issues/internet/internet.module').then((m) => m.InternetModule),
+  },
+
+  {
+    path: 'issues/other',
+    loadChildren: () => import('./issues/other/other.module').then((m) => m.OtherModule),
+  },
+
+  {
+    path: 'issues/password',
+    loadChildren: () => import('./issues/password/password.module').then((m) => m.PasswordModule),
+  },
+
+  {
+    path: 'issues/phone',
+    loadChildren: () => import('./issues/phone/phone.module').then((m) => m.PhoneModule),
+  },
+
+  {
+    path: 'reset-pin',
+    loadChildren: () => import('./issues/reset-pin/reset-pin.module').then((m) => m.ResetPinModule),
+  },
+
+  {
+    path: 'issues/tv',
+    loadChildren: () => import('./issues/tv/tv.module').then((m) => m.TvModule),
+  },
+  // REFACTORED LOGIC
   {
     path: '',
     component: LandingComponent,
