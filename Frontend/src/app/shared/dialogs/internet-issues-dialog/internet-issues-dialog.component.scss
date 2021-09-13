@@ -27,6 +27,15 @@ ion-item::part(native){
   padding-left: .5rem;
   --border-color:#ededed;
 }
+.header-ios {
+	ion-toolbar {
+    ion-title{
+      h5{
+        text-align: left;
+      }
+    }
+	}
+}
 /*-------------------------------------------------*/
 ion-header{
   --ion-background-color:  transparent;

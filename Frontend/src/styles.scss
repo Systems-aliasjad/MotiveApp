@@ -1,56 +1,3 @@
-// --------------------------------------------------------------
-:host {
-  font-size: 1rem;
-  --background-color:  transparent;
-  --ion-item-background:transparent;
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
-  ion-content{
-    --background: var(--ion-background-color, transparent);
-  }
-  ion-list{
-    background: var(--ion-item-background, var(--ion-background-color, transparent ));
-    --ion-background-color:transparent;
-  }
-  ion-card{
-    border-radius: 0.5rem;
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-   }
-   ion-modal{
-    --border-radius: 1rem;
-  }
-}
-/* ion-item::part(native){
-  padding-inline-end: 0 ;
-  --inner-padding-end: 0;
-  padding-left: 0;
-  --background:transparent;
-  --border-radius:0;
-  --border-width: 0;
-  --inner-border-width: 0
-} */
-ion-checkbox{
-  margin-right: 0;
-  margin-left: 0;
-  @media screen and (max-width: 992px) {
-    width: 1.1rem;
-    height: 1.1rem;
-  }
-  --background:$white;
-  --border-radius:50%;
-  --border-color:#719E19;
-  --border-style:solid;
-  --checkmark-color:#ffffff;
-  --background-checked:#719E19;
-  --border-color-checked:#719E19;
-  /*  --size: 26px;
-  width: var(--size);
-  height: var(--size); 
-  --checkmark-width:1px; 
-  box-shadow: 0 5px 10px rgb(25 0 0 / 16%);*/
-}
-// --------------------------------------------------------------
-
 /* Core CSS required for Ionic components to work properly */
 @import '~@ionic/angular/css/core.css';
 
@@ -83,6 +30,72 @@ ion-checkbox{
 @import './assets/scss/base/buttons';
 @import './assets/scss/base/layout';
 // @import'../src/assets/fonts/'
+// --------------------------------------------------------------
+:host {
+  font-size: 1rem;
+  --background-color:  transparent;
+  --ion-item-background:transparent;
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-content{
+    --background: var(--ion-background-color, transparent);
+  }
+  ion-list{
+    background: var(--ion-item-background, var(--ion-background-color, transparent ));
+    --ion-background-color:transparent;
+  }
+  ion-card{
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+   }
+   ion-modal{
+    --border-radius: 1rem;
+  }
+  .inline-list {
+    ion-item {
+      --min-height: 30px;
+    }
+  }
+}
+/* ion-item::part(native){
+  padding-inline-end: 0 ;
+  --inner-padding-end: 0;
+  padding-left: 0;
+  --background:transparent;
+  --border-radius:0;
+  --border-width: 0;
+  --inner-border-width: 0
+} */
+ion-checkbox{
+  margin-right: 0;
+  margin-left: 0;
+  @media screen and (max-width: 992px) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  --background:$white;
+  --border-radius:50%;
+  --border-color:#719E19;
+  --border-style:solid;
+  --checkmark-color:#ffffff;
+  --background-checked:#719E19;
+  --border-color-checked:#719E19;
+  /*  --size: 26px;
+  width: var(--size);
+  height: var(--size); 
+  --checkmark-width:1px; 
+  box-shadow: 0 5px 10px rgb(25 0 0 / 16%);*/
+}
+.header-ios {
+	ion-toolbar {
+		&:last-of-type {
+			--border-width: 0;
+		}
+	}
+}
+// --------------------------------------------------------------
+
+
 
 
 /*------------------- Neotech Fonts Start -------------------*/
@@ -226,7 +239,6 @@ h6{
   margin-top: 5rem;
 }
 // ------------Help classes Styling End-------------------
-
 // ------------Bullet List Start-------------------
 .bullet-list{
   .item{

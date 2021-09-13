@@ -1,5 +1,5 @@
-@import '../../../../assets/scss/base/mixins';
-@import '../../../../assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
 
 // ------------Removed Ionic ion-item Styling start-------------------
 :host {
@@ -12,10 +12,8 @@
   }
 } 
 ion-item::part(native){
-  padding-inline-end: 0 ;
-  --inner-padding-end: 0 ;
-  padding-right: 0;
-  padding-left: 0;
+  padding-inline-end: 0 !important;
+  --inner-padding-end: 0 !important;
 }
 // ------------Removed Ionic ion-item Styling End-------------------
 
