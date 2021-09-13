@@ -2,7 +2,6 @@
 @import '/src/assets/scss/base/mixins';
 
 /*-------------------------------------------------*/
-
 :host {
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-buttons{
@@ -15,16 +14,15 @@
     ion-button{
       margin-inline-start:0;
       margin-inline-end:0;
-    
     }
   }
 }
 ion-item::part(native){
-  padding-inline-end: .8rem;
+  /* padding-inline-end: .8rem;
   --padding-start:.8rem;
   --inner-padding-end: .8rem;
   padding-right: .8rem;
-  padding-left: .8rem;
+  padding-left: .8rem; */
   --border-color:#ededed;
 }
 
@@ -48,7 +46,6 @@ ion-header{
     }
   }
   ion-buttons{
-    /* margin-right: 1rem; */
     padding-right: 0;
     padding-right: 0;
     
@@ -60,7 +57,6 @@ ion-list{
   ion-label{
     color:$primary-color;
     font-weight: 600;
-    padding-left: 1rem;
   }
 }
 .check-guidlines-container {
