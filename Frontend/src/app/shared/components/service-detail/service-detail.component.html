@@ -1,0 +1,146 @@
+<ion-content>
+  <ion-grid class="service-detail-contanier">
+    <ion-row class="service-detail_title">
+      <ion-col size="12">
+        <app-page-top></app-page-top>
+        <!--  <div>
+          <h2>{{ 'SERVICE_DEATAIL.HEADING' | translate }}</h2>
+        </div> -->
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="service-detail-inner_container">
+      <!-- Service List Slider Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_slider">
+        <!-- service-State list Start-->
+        <div class="service-states-container">
+          <ion-list>
+            <!-- Default State Start -->
+            <ion-item>
+              <div class="service-state">
+                <div class="default-state state">
+                  <img src="../../../../assets/images/network-map-icons/icon_smartphone_default.svg" alt="Smart Phone Default State" />
+                </div>
+                <ion-label>
+                  unamed
+                  <span>21212</span>
+                </ion-label>
+              </div>
+            </ion-item>
+            <!-- Default State End-->
+
+            <!-- Okay State Start -->
+            <ion-item>
+              <div class="service-state">
+                <div class="okay-state state">
+                  <img src="../../../../assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State" />
+                </div>
+                <ion-label>
+                  unamed
+                  <span>21212</span>
+                </ion-label>
+              </div>
+            </ion-item>
+            <!-- Okay State End-->
+
+            <!-- Error State Start -->
+            <ion-item>
+              <div class="service-state">
+                <div class="error-state state">
+                  <img src="../../../../assets/images/network-map-icons/icon_smartphone_error.svg" alt="Smart Phone Error State" />
+                </div>
+                <ion-label>
+                  unamed
+                  <span>21212</span>
+                </ion-label>
+              </div>
+            </ion-item>
+            <!-- Error State End -->
+
+            <!-- Pending State Start -->
+            <ion-item>
+              <div class="service-state">
+                <div class="pending-state state">
+                  <img src="../../../../assets/images/network-map-icons/icon_smartphone_action_pending.svg" alt="Smart Phone Pending State" />
+                </div>
+                <ion-label>
+                  unamed
+                  <span>21212</span>
+                </ion-label>
+              </div>
+            </ion-item>
+            <!-- Pending State End -->
+          </ion-list>
+          <!-- service-States list Start-->
+        </div>
+      </ion-col>
+      <!-- Service List Slider End -->
+
+      <!-- Service List Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_content">
+        <div class="content">
+          <ion-row>
+            <!-- Data Traffic Start -->
+            <ion-col size="12" class="shadow-box">
+              <div class="data-traffic ion-text-left">
+                <h5 class="sub-title">{{ 'SERVICE_DEATAIL.DATA_TRAFFIC' | translate }}</h5>
+                <div class="data_upload_download">
+                  <div class="data-icon">
+                    <img src="assets/images/duo-tone-icons/icon_upload.svg" alt="upload" />
+                    <span>50MB</span>
+                  </div>
+                  <div class="data-icon">
+                    <img src="assets/images/duo-tone-icons/icon_download.svg" alt="download" />
+                    <span>80MB</span>
+                  </div>
+                </div>
+              </div>
+            </ion-col>
+            <!-- Data Traffic End -->
+
+            <!-- Parental Control Start -->
+            <ion-col size="12" class="shadow-box">
+              <div class="parental-control ion-text-left">
+                <h5 class="sub-title">{{ 'SERVICE_DEATAIL.PARENTAL_CONTROL' | translate }}</h5>
+                <p>{{ 'SERVICE_DEATAIL.PARENTAL_CONTROL_WEB_THREAT_PROTECTION' | translate }}</p>
+                <p>{{ 'SERVICE_DEATAIL.PARENTAL_CONTROL_CHILD_LOCK' | translate }}</p>
+              </div>
+            </ion-col>
+            <!-- Parental Control End -->
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="devices-network-container">
+              <div class="devices-network">
+                <p>Device on network</p>
+                <span>5 devices</span>
+              </div>
+            </ion-col>
+            <!-- Device Network Card list Start -->
+            <ion-col size="12" class="devices-list-container">
+              <ion-card *ngFor="let d of cardList">
+                <ion-card-header>
+                  <ion-card-title>
+                    <img src="../../../../assets/images/indicators-icons/icon_all_okay.svg" alt="" />
+                    <h5 class="sub-title">{{ d.heading }}</h5>
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <p>{{ d.IP }}</p>
+                  <a href="javascript:void(0)" class="arrow-link">
+                    <span>{{ 'LINKS.VIEW_DETAILS' | translate }}</span>
+                    <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+                  </a>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+            <!-- Device Network Card list End -->
+          </ion-row>
+        </div>
+      </ion-col>
+      <!-- Service List End -->
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<!-- Configured button -->
+<!-- <app-buttons class="footer"></app-buttons> -->

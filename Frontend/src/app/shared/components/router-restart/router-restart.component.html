@@ -1,0 +1,67 @@
+<ion-content>
+  <ion-grid class="device-detail-container">
+    <!-- Page Heading Start -->
+    <ion-row class="device-title">
+      <ion-col size="12" class="pt-0">
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h2>{{ headerTitle | translate }}</h2>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Page Heading End -->
+
+    <ion-row class="device-detail-inner_container">
+      <!-- Router Image Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="device pt-0 pb-0">
+        <!-- <img alt="Router" src="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" width="120px" height="120px" /> -->
+        <picture>
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 414px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 768px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1024px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1366px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1440px)" />
+          <source srcset="assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg" media="(max-width: 1920px)" />
+          <img [src]="ImgPath" class="cover lazyloaded" alt="" />
+        </picture>
+      </ion-col>
+      <!-- Router Image End -->
+
+      <!-- Router Instruction Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="instruction-container pt-0 pb-0">
+        <div class="instruction">
+          <ion-row class="instruction_title">
+            <ion-col size="12" class="pt-0">
+              <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+                <h2>{{ instructionHeaderTitle | translate }}</h2>
+              </div>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="instruction_steps">
+            <ion-col size="12" class="pb-0">
+              <p class="tag-title">{{ instructionStepsTitle | translate }}</p>
+              <ion-list *ngFor="let ins of instructionList; let i = index">
+                <ion-item>
+                  <ion-label>{{ i + 1 }}. {{ ins | translate }}</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="instruction_view">
+            <ion-col size="12">
+              <ion-item-divider>
+                <ion-label>
+                  <span>{{ instructionsOR | translate }}</span>
+                </ion-label>
+              </ion-item-divider>
+              <p class="tag-title">{{ instructionsORTitle | translate }}</p>
+              <p>{{ instructionsORBody | translate }}</p>
+            </ion-col>
+          </ion-row>
+          <!-- <app-buttons></app-buttons> -->
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

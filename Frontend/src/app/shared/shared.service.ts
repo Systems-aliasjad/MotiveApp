@@ -1,26 +1,110 @@
-import { Injectable, Output, EventEmitter } from '@angular/core';
-import { PopupService } from 'ag-grid-community';
-import { CommonPopupService } from '../base/service/common-popup.service';
-import { notificationTypes } from './constants/types';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { TranslateService } from '@ngx-translate/core';
 
+import { IButton, IButtonSize, IPageHeader } from './constants/types';
 
 @Injectable({
-    providedIn: 'root',
+  providedIn: 'root',
 })
 export class SharedService {
-    @Output() agGridSelectEditorValueChange: EventEmitter<any> = new EventEmitter<any>();
-    globalFileId: string;
+  headerConfigSubject: BehaviorSubject<IPageHeader>;
+  headerConfig$: Observable<IPageHeader>;
 
-    constructor(
-        private matSnackBar:MatSnackBar,
-        private popupService:CommonPopupService) {}
+  termsConditionCheck: BehaviorSubject<boolean>;
+  termsConditionCheck$: Observable<boolean>;
 
-    getSubscriberForAgGridSelectEditorValueChange(): EventEmitter<any> {
-        if (this.agGridSelectEditorValueChange.observers == null) {
-            this.agGridSelectEditorValueChange = new EventEmitter();
-        }
-        return this.agGridSelectEditorValueChange;
-    }
-    
+  loaderSubject: BehaviorSubject<boolean>;
+  loader$: Observable<boolean>;
+
+  buttonsConfigSubject: BehaviorSubject<IButton[]>;
+  buttonsConfig$: Observable<IButton[]>;
+
+  buttonSizeSubject: BehaviorSubject<IButtonSize>;
+  buttonSize$: Observable<IButtonSize>;
+
+  defaultHeaderConfig: IPageHeader = {
+    pageTitle: '',
+    singleLine: false,
+    showBackBtn: true,
+  };
+
+  defaultBtnSize: IButtonSize = {
+    SM: '',
+    MD: '',
+    LG: '',
+  };
+
+  constructor(public translate: TranslateService) {
+    this.loaderSubject = new BehaviorSubject(false);
+    this.buttonsConfigSubject = new BehaviorSubject(null);
+    this.termsConditionCheck = new BehaviorSubject<boolean>(false);
+    this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
+    this.buttonSizeSubject = new BehaviorSubject(this.defaultBtnSize);
+
+    this.loader$ = this.loaderSubject.asObservable();
+    this.buttonSize$ = this.buttonSizeSubject.asObservable();
+    this.headerConfig$ = this.headerConfigSubject.asObservable();
+    this.buttonsConfig$ = this.buttonsConfigSubject.asObservable();
+    this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setHeaderConfig(pageTitle: string, oneLine: boolean, _showBackBtn: boolean = true) {
+    this.headerConfigSubject.next({
+      pageTitle: pageTitle,
+      singleLine: oneLine,
+      showBackBtn: _showBackBtn,
+    });
+  }
+
+  getHeaderConfig(): Observable<IPageHeader> {
+    return this.headerConfig$;
+  }
+
+  setTermsConditions(terms: boolean) {
+    this.termsConditionCheck.next(terms);
+  }
+
+  getTermsConditions(): Observable<boolean> {
+    return this.termsConditionCheck$;
+  }
+
+  setDefaultLanguage(language: string): void {
+    localStorage.setItem('lang', language);
+    this.translate.use(language);
+  }
+
+  getDefaultLanguage(): string {
+    return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
+  }
+
+  setLoader(loaderState: boolean): void {
+    this.loaderSubject.next(loaderState);
+  }
+  getLoader(): Observable<boolean> {
+    return this.loader$;
+  }
+
+  setButtonConfig(config: IButton[]) {
+    this.buttonsConfigSubject.next(config);
+  }
+
+  getButtonConfig(): Observable<IButton[]> {
+    return this.buttonsConfig$;
+  }
+
+  setButtonSize(config: IButtonSize) {
+    this.buttonSizeSubject.next(config);
+  }
+
+  getButtonSize(): Observable<IButtonSize> {
+    return this.buttonSize$;
+  }
+
+  setDefaultValues() {
+    this.setHeaderConfig('', false, true);
+    this.setButtonSize(this.defaultBtnSize);
+    this.setButtonConfig([]);
+    this.setTermsConditions(false);
+  }
 }

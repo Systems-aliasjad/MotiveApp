@@ -1,0 +1,7 @@
+{
+  "name": "ionTemplate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

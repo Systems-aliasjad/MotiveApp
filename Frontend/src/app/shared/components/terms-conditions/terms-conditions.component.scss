@@ -1,0 +1,27 @@
+@import '../../../../assets/scss/base/variables';
+
+
+.terms-condition-container{
+  color:$secondary-color;
+  .terms-condition_latest {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    ion-label{
+      margin-left: 1rem;
+      font-size: .8rem;
+      color:$secondary-color;
+    }
+  }
+  h4 {
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-size: 1.3125rem;
+  }
+}

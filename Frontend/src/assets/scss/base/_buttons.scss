@@ -1,0 +1,74 @@
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
+
+.primary-btn,
+.primary-btn.button-solid,
+.secondary-btn{
+  @include transition(all 0.3s ease-in-out);
+  text-transform: $text-uppercase;
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: 0.14285714em;
+  padding: .48rem .6rem;
+  min-height: 3rem;
+  width: auto;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+}
+.primary-btn,
+.primary-btn.button-solid{
+  color: #f1f1eb ;
+  --color:#f1f1eb;
+  border: 2px solid $etisalat-color;
+  background-color:$etisalat-color;
+  &:hover,
+  &:active,
+  &:focus{
+    color: #333333 ;
+    --color: #333333;
+    background-color: transparent;
+    border: 2px solid $black;
+  }
+}
+.secondary-btn,
+.secondary-btn.button-solid{
+  color: #333333;
+  --color: #333333;
+  border: 2px $black solid;
+  background-color: transparent;
+  &:hover,
+  &:active,
+  &:focus{
+    color: $etisalat-color;
+    --color:$etisalat-color;
+    background-color: $white;
+    border: 2px solid $etisalat-color;
+  }
+}
+.transparent-btn{
+  display: inline-block;
+  text-decoration: none;
+  color:$etisalat-color;
+  text-transform: $text-uppercase;
+  letter-spacing: 0.14285714em;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  @include transition(all 0.3s ease-in-out);
+  &:hover,
+  &:focus,
+  &:active{
+    text-decoration: none;
+    color:$primary-color;
+  }
+}
+

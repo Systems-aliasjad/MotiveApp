@@ -1,0 +1,179 @@
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
+// --------------------------------------------------------------
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-list{
+    --ion-background-color:transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  ion-item{
+    --min-height: auto; 
+    ion-label{
+      margin-bottom:0;
+      color:$secondary-color;
+    }
+  }
+} 
+ion-item::part(native){
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-width: 0;
+  --inner-border-width: 0
+}
+// --------------------------------------------------------------
+
+.device-detail-container,
+.device-detail-inner_container{
+  height:100%;
+  @media screen and (max-width: 992px) {
+    height:auto;
+  }
+}
+.device {
+  background-color:$white;
+  @media screen and  (max-width: 992px) {
+    background-color: transparent;
+  }
+}
+.buttons{
+  @media screen and  (max-width: 992px) {
+    display:none;
+  }
+}
+.device-detail-container{
+  .device-title{
+    @media screen and (min-width: 992px) {
+      display:none;
+    }
+  }
+  .device-detail-inner_container{
+    .device{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      @media screen and (max-width: 992px) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+      }
+      picture {
+        display: block;
+        @media screen and (max-width: 992px) {
+            margin-top: 1.2rem;
+        }
+      }
+    }
+    .instruction-container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      flex-direction: column;
+      @media screen and (max-width: 992px) {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+      }
+      .instruction{
+        width: 450px;
+        margin: 0 auto;
+        @media screen and (max-width: 992px) {
+          width: 100%;
+        }
+        .instruction_title{
+          @media screen and (max-width: 992px) {
+            display:none;
+          }
+        }
+        .instruction_view{
+          p{
+            color:$secondary-color;
+            font-size: 1rem;
+            /* @media screen and  (max-width: 768px) {
+              font-size: 1rem;
+            } */
+          }
+          .tag-title{
+            color: $primary-color;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+    ion-item-divider{
+      margin-top: .5rem;
+      margin-bottom: 1rem;
+      border: 0;
+      padding-left: 0;
+      background-color: transparent;
+      @media screen and  (max-width: 768px) {
+        margin-top: 1rem;
+      }
+      ion-label{
+        text-align: center;
+        width: 100%;
+        position: $relative;
+        &::before{
+          content: '';
+          position: $absolute;
+          top:0;
+          right:0;
+          bottom:0;
+          left:0;
+          background-color: #f6f8ef;
+          width: 4rem;
+          margin: auto;
+          z-index: 2;
+        }
+        &::after{
+          content: '';
+            width: 100%;
+            border-bottom: solid 1px #dbdbdb;
+            position: $absolute;
+            left: 0;
+            top: 50%;
+            z-index: 1;
+        }
+        span{
+          display: inline-block;
+          color: $primary-color;
+          font-weight: 600;
+          position: $relative;
+          z-index: 3;
+          text-transform: $text-uppercase;
+        }
+      }
+    }
+  }
+}

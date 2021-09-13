@@ -1,0 +1,23 @@
+<div *ngFor="let button of buttonsConfig" class="footer-btns-container">
+  <!-- Button with Green background -->
+  <ion-row *ngIf="button.behaviour === 'primary'">
+    <ion-col [sizeLg]="12" [sizeMd]="12" [size]="12" class="pt-0 pb-0 ion-text-center">
+      <p *ngIf="button.explanatoryNote">{{ button.explanatoryNote | translate }}</p>
+      <ion-button class="btn primary-btn follow-up green-box-shadow" (click)="button.clickListener()">{{ button.title | translate }}</ion-button>
+    </ion-col>
+  </ion-row>
+  <!-- Button with White background -->
+  <ion-row *ngIf="button.behaviour === 'secondary'">
+    <ion-col [sizeLg]="12" [sizeMd]="12" [size]="12" class="pt-0 pb-0 ion-text-center">
+      <ion-button class="btn secondary-btn close" (click)="button.clickListener()">{{ button.title | translate }}</ion-button>
+    </ion-col>
+  </ion-row>
+  <!-- Link -->
+  <ion-row *ngIf="button.behaviour === 'link'">
+    <ion-col [sizeLg]="12" [sizeMd]="12" [size]="12" class="pt-0 pb-0 ion-text-center">
+      <div class="transparent-btn" (click)="button.clickListener()">
+        <a> {{ button.title | translate }}</a>
+      </div>
+    </ion-col>
+  </ion-row>
+</div>

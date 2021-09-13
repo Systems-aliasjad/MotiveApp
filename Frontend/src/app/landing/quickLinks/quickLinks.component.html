@@ -1,0 +1,35 @@
+<!-- Quick Links Start -->
+<div class="quick-links-container">
+  <ion-row>
+    <ion-col size="12">
+      <div class="quick-links_title_all">
+        <h4 class="sub-title">{{ 'HEADER.QUICK_LINKS' | translate }}</h4>
+        <a href="javascript:void(0)" class="quick-links_all arrow-link">
+          <span>{{ 'QUICK_LINKS.SEE_ALL' | translate }}</span>
+          <img src="assets/images/action-icons/icon_arrow_right.svg" alt="See All Icon" />
+        </a>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- Quick Links End -->
+
+  <!-- Quick Links Slider Start -->
+  <ion-row class="quick-links-card">
+    <ion-col size="12" class="pt-0 pb-0">
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let link of quickLinks">
+          <ion-col size="12">
+            <a href="javascript:void(0)">
+              <ion-card>
+                <ion-card-content>
+                  <p>{{ link.body | translate }}</p>
+                </ion-card-content>
+              </ion-card>
+            </a>
+          </ion-col>
+        </ion-slide>
+      </ion-slides>
+    </ion-col>
+  </ion-row>
+  <!-- Quick Links Slider End -->
+</div>

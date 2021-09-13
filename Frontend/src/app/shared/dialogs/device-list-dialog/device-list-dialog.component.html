@@ -1,0 +1,20 @@
+<ion-grid class="form-main-container">
+  <ion-header>
+    <ion-toolbar style="display: flex">
+      <div>
+        <h5>{{ 'DIALOG.DEVICE_LIST_TITLE' | translate }}</h5>
+      </div>
+      <ion-buttons fill="outline" slot="end">
+        <ion-button style="color: yellowgreen" (click)="dismiss()"> Close </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  <!-- Dialog Internet Issues List -->
+  <ion-list *ngFor="let item of devicesList; let i = index">
+    <ion-item detail="true" (click)="ondeviceClick(item.route)">
+      <ion-label class="ion-text-wrap">
+        <ion-text>{{ item.device }}</ion-text>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-grid>

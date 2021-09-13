@@ -1,3 +1,60 @@
-export declare type notificationTypes = 'success' | 'info' | 'warning' | 'error';
-export declare type FormFieldColSpan = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
-export declare type HttpVerbs = 'GET' | 'POST' | 'PUT' | 'DELETE';
+export interface IPageHeader {
+  pageTitle: string;
+  singleLine: boolean;
+  showBackBtn?: boolean;
+}
+
+export interface ITermsAndConditions {
+  termsCheck: boolean;
+}
+
+export interface ITabTile {
+  imageSrc: string;
+  case: string; // Success-green | Error-red | Default-grey
+  title: string;
+}
+
+export interface IButton {
+  title: string;
+  clickListener: () => void;
+  behaviour: string; // primary | secondary | link
+  explanatoryNote?: string;
+  linkTo?: string;
+  customListner?: string;
+}
+
+export interface IButtonSize {
+  SM: string;
+  MD: string;
+  LG: string;
+}
+
+interface IMessageIssueBody {
+  title: string;
+  children?: string[];
+}
+export interface IMessageIssue {
+  header: string;
+  body: IMessageIssueBody[];
+}
+
+export interface ICard {
+  title?: string;
+  body: string;
+  img?: string;
+  linkTo: string;
+}
+
+export interface ISection2Template {
+  title: string;
+  type: string;
+  objKeyNameEN?: string;
+  objKeyNameAR?: string;
+}
+
+export interface IMotvieSubscription {
+  [key: string]: {
+    landingPageCards: ICard[];
+    quickLinkCard: ICard[];
+  };
+}
