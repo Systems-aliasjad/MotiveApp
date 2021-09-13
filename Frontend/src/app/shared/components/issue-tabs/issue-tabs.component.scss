@@ -1,5 +1,5 @@
-@import 'src/assets/scss/base/variables';
-@import 'src/assets/scss/base/mixins';
+@import '../../../../assets/scss/base/mixins';
+@import '../../../../assets/scss/base/variables';
 
 // --------------------------------------------------------------
 :host {
@@ -12,8 +12,12 @@
   ion-item{
     --min-height: auto; 
     ion-label{
-      margin-bottom:0;
       color:$secondary-color;
+    }
+  }
+  .inline-list {
+    ion-item {
+      --min-height: 30px;
     }
   }
 }
@@ -77,33 +81,24 @@ ion-item::part(native){
       color: $secondary-color;
       line-height: 1.5;
     }
-    .item{
-      ion-label{
-        position:relative;
-        display:block;
-        padding-left:1rem;
-        @media screen and (max-width: 767px) {
-          white-space:normal;
-        }
-        
-        &:before{
-          content: "";
-          position: absolute;
-          -webkit-transform: translateY(-50%);
-          -ms-transform: translateY(-50%);
-           transform: translateY(-50%);
-          top: 50%;
-          left: 0;
-          width: 0.4rem;
-          height: 0.4rem;
-          background-color: #848789;
-          border-radius: 50%;
-        }
+    .inline-list{
+      margin-top: 1.5rem;
+      ion-item{
+        padding-bottom: .5rem;
       }
-    } 
+      padding-top: 1rem;
+      padding-bottom: .8rem;
+      .inline-list_title {
+        color: #848789;
+      }
+      .inline-list_value {
+        color: $primary-color;
+      }
+    }
+    
   }
 }
-.issue-tabs_footer{
+/* .issue-tabs_footer{
   background-color: $white;
   -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
   box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
@@ -141,4 +136,4 @@ ion-item::part(native){
     }
   }
   
-}
+} */

@@ -1,32 +1,29 @@
+
+<!-- Modal Header Start -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h5>{{ 'DIALOG.INTERNET_ISSUE_TITLE' | translate }}</h5>
+    </ion-title>
+    <ion-buttons  slot="end">
+      <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Modal Header End -->
+
 <ion-content padding *ngIf="showDialog1">
-  <ion-grid class="form-main-container">
-    <ion-header>
-      <ion-toolbar style="display: flex">
-        <div>
-          <h2>{{ 'DIALOG.INTERNET_ISSUE_TITLE' | translate }}</h2>
-        </div>
-        <ion-buttons fill="outline" slot="end">
-          <ion-button style="color: yellowgreen" (click)="dismiss()"> Close </ion-button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-    <!-- Dialog Heading -->
+  <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <div>
-          <h5>{{ 'DIALOG.INTERNET_ISSUE_HEADING' | translate }}</h5>
-        </div>
+        <h5 class="sub-title modal-sub-title">{{ 'DIALOG.INTERNET_ISSUE_HEADING' | translate }}</h5>
         <div>
           <p>Please check if:</p>
           <p *ngFor="let ins of instructionList; let i = index"><b>.</b> {{ ins | translate }}</p>
         </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <div>
         <p>{{ 'DIALOG.INTERNET_ISSUE_CONTINUE' | translate }}</p>
         <p>{{ 'DIALOG.INTERNET_ISSUE_EXIST_TROUBLESHOOTING' | translate }}</p>
-      </div>
+      </ion-col>
     </ion-row>
     <ion-footer>
       <ion-row>
@@ -44,6 +41,7 @@
   </ion-grid>
 </ion-content>
 
+<!-- <ion-content padding *ngIf="!showDialog1"></ion-content> -->
 <ion-content padding *ngIf="!showDialog1">
   <ion-grid class="form-main-container">
     <ion-header>

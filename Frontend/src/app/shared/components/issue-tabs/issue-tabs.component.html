@@ -18,19 +18,24 @@
       <h5 class="sub-title">{{ messageSection.header | translate }}</h5>
       <div *ngFor="let message of messageSection.body">
         <p>{{ message.title | translate }}</p>
-        <ion-list *ngIf="message.children">
+        <ion-list *ngIf="message.children" class="bullet-list">
           <ion-item *ngFor="let item of message.children">
             <ion-label> {{ item | translate }}</ion-label>
           </ion-item>
         </ion-list>
       </div>
 
-      <!-- <ion-list *ngIf="section1Template" class="inline-ion-list">
+     
+      <ion-list *ngIf="section1Template" class="inline-list-border inline-list">
         <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
-          <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
-          <ion-label class="detail_list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
+          <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
+          <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
         </ion-item>
-      </ion-list> -->
+      </ion-list>
+      
+
+
+      
     </div>
     <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
   </ion-col>
