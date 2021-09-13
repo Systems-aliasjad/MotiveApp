@@ -254,6 +254,31 @@ h6{
   }
 }
 // ------------Bullet List End------------------- 
+
+// ------------Inline List Start-------------------
+.inline-list-border {
+  border-top: 2px dashed #d0d6da;
+  border-bottom: 2px dashed #d0d6da;
+}
+.inline-list {
+  ion-item {
+    ion-label {
+      font-size: 0.9rem;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    .inline-list_title {
+      color: #848789;
+    }
+    .inline-list_value {
+      color: $primary-color;
+      font-weight: 600;
+      text-align: right;
+      margin-right: 0;
+    }
+  }
+}
+// ------------Inline List End-------------------
 .page-top_title {
   h2 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
