@@ -226,6 +226,34 @@ h6{
   margin-top: 5rem;
 }
 // ------------Help classes Styling End-------------------
+
+// ------------Bullet List Start-------------------
+.bullet-list{
+  .item{
+    ion-label{
+      position:relative;
+      display:block;
+      padding-left:1rem;
+      @media screen and (max-width: 767px) {
+        white-space:normal;
+      }
+      &:before{
+        content: "";
+        position: absolute;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0;
+        width: 0.4rem;
+        height: 0.4rem;
+        background-color: #848789;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+// ------------Bullet List End------------------- 
 .page-top_title {
   h2 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
