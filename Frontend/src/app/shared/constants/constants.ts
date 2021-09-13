@@ -196,7 +196,7 @@ const UPGRADE_PACKAGE = {
 
 export const motiveSubscriptions: IMotvieSubscription = {
   '3P': {
-    landingPageCards: [TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, INTERNET_ISSUES, PASSWORD_ISSUES],
+    landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
@@ -213,7 +213,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
     ],
   },
   '2P': {
-    landingPageCards: [PHONE_ISSUES, OTHER_ISSUES, INTERNET_ISSUES, PASSWORD_ISSUES],
+    landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
@@ -267,7 +267,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
     ],
   },
   FD: {
-    landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, PASSWORD_ISSUES, OTHER_ISSUES],
+    landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
