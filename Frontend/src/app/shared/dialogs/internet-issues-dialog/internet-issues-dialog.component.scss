@@ -1,0 +1,104 @@
+@import '/src/assets/scss/base/variables';
+@import '/src/assets/scss/base/mixins';
+
+/*-------------------------------------------------*/
+
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-buttons{
+    --min-height:auto;
+  }
+  ion-modal{
+    --border-radius: 1rem;
+  }
+  ion-header{
+    ion-button{
+      margin-inline-start:0;
+      margin-inline-end:0;
+    
+    }
+  }
+}
+ion-item::part(native){
+  padding-inline-end: .3rem;
+  --padding-start:.5rem;
+  --inner-padding-end: .5rem;
+  padding-right: .3rem;
+  padding-left: .5rem;
+  --border-color:#ededed;
+}
+/*-------------------------------------------------*/
+ion-header{
+  --ion-background-color:  transparent;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  &:after{
+    background-image: none;
+  }
+  ion-toolbar{
+    border-bottom: 2px dashed #d0d6da;
+    ion-title{
+      padding-right:0;
+      padding-left: 0;
+      h5{
+        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        color:$primary-color;
+      }
+    }
+  }
+  ion-buttons{
+    padding-right: 0;
+    padding-right: 0;
+  }
+}
+ion-list{
+  padding-top: 0;
+  padding-bottom: 0;
+  ion-label{
+    color:$primary-color;
+    font-weight: 600;
+    padding-left: 1rem;
+  }
+}
+.modal-sub-title{
+  letter-spacing: 0;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+} 
+  
+.check-guidlines-container {
+  background-color: #f7f8f4;
+  padding-bottom: 1rem;
+  .check-guidlines{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    margin-left: .9rem;
+    .check-guidlines_icon{
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 55px;
+      flex: 0 0 55px;
+      max-width: 55px;
+      img{
+        display: block;
+      }
+    }
+    .check-guidlines_content{
+      -webkit-box-flex: 1;
+      -ms-flex: 1;
+      flex: 1;
+      max-width: 100%;
+      p{
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+        color:$secondary-color;
+      }
+    }
+  }
+}

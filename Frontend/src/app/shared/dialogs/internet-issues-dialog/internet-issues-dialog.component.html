@@ -16,20 +16,14 @@
   <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <div>
-          <h5>{{ 'DIALOG.INTERNET_ISSUE_HEADING' | translate }}</h5>
-        </div>
+        <h5 class="sub-title modal-sub-title">{{ 'DIALOG.INTERNET_ISSUE_HEADING' | translate }}</h5>
         <div>
           <p>Please check if:</p>
           <p *ngFor="let ins of instructionList; let i = index"><b>.</b> {{ ins | translate }}</p>
         </div>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <div>
         <p>{{ 'DIALOG.INTERNET_ISSUE_CONTINUE' | translate }}</p>
         <p>{{ 'DIALOG.INTERNET_ISSUE_EXIST_TROUBLESHOOTING' | translate }}</p>
-      </div>
+      </ion-col>
     </ion-row>
     <ion-footer>
       <ion-row>
@@ -47,6 +41,7 @@
   </ion-grid>
 </ion-content>
 
+<!-- <ion-content padding *ngIf="!showDialog1"></ion-content> -->
 <ion-content padding *ngIf="!showDialog1">
   <ion-grid class="form-main-container">
     <ion-header>
