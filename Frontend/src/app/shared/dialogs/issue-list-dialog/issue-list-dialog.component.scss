@@ -11,18 +11,24 @@
     --border-radius: 1rem;
   }
   ion-header{
-    ion-button{
-      margin-inline-start:0;
+    ion-buttons{
       margin-inline-end:0;
+      margin-right:0;
+      ion-button{
+        margin-inline-start:0;
+        margin-inline-end:0;
+        height: auto;
+      }
     }
   }
 }
 ion-item::part(native){
-  padding-inline-end: .3rem;
-  --padding-start:.5rem;
+  padding-inline-end: .5rem; 
   --inner-padding-end: .5rem;
-  padding-right: .3rem;
-  padding-left: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --padding-start:1rem;
+ 
   --border-color:#ededed;
 }
 .header-ios {
@@ -81,6 +87,12 @@ ion-list{
     margin-top: 1rem;
     margin-right: 1rem;
     margin-left: .9rem;
+    @media screen and (max-width: 281px) {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
     .check-guidlines_icon{
       -webkit-box-flex: 0;
       -ms-flex: 0 0 55px;
