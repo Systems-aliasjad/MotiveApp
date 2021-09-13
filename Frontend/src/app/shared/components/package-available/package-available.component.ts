@@ -107,4 +107,8 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
   cancelBackLocationLink() {
     this.location.back();
   }
+
+  CloseMOdal() {
+    this.location.back();
+  }
 }
