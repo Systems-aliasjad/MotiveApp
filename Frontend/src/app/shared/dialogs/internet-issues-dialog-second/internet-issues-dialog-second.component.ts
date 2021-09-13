@@ -3,14 +3,16 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
-import { InternetIssuesDialogSecondComponent } from '../internet-issues-dialog-second/internet-issues-dialog-second.component';
 
 @Component({
-  selector: 'app-internet-issues-dialog',
-  templateUrl: './internet-issues-dialog.component.html',
-  styleUrls: ['./internet-issues-dialog.component.css'],
+  selector: 'app-internet-issues-dialog-second',
+  templateUrl: './internet-issues-dialog-second.component.html',
+  styleUrls: ['./internet-issues-dialog-second.component.scss'],
 })
-export class InternetIssuesDialog implements OnInit {
+export class InternetIssuesDialogSecondComponent implements OnInit {
+  showDialog1 = true;
+  subscription: Subscription = new Subscription();
+  codeType;
   @Input()
   id: number;
   instructionList: string[] = ['Router is switched on', "The cable from the router is connected to the 'X' port of the wall mounted fibre works"];
@@ -23,26 +25,26 @@ export class InternetIssuesDialog implements OnInit {
     'Tap Try again later if you want to check the problem later.',
     'Tap Book an appointment if you want to book a technician visit.',
   ];
-
-  showDialog1 = true;
-  subscription: Subscription = new Subscription();
-  codeType;
   constructor(private modalCtrl: ModalController, public router: Router) {}
-
   ngOnInit() {}
 
   dismiss() {
     this.modalCtrl.dismiss();
   }
 
-  async SubmitForm() {
+  SubmitForm() {
+    this.showDialog1 = false;
+  }
+
+  GoToMainFomr() {
     this.modalCtrl.dismiss();
-    const modal = await this.modalCtrl.create({
-      component: InternetIssuesDialogSecondComponent,
-      componentProps: {
-        id: ERoutingIds.routerNotReachable,
-      },
-    });
-    return await modal.present();
+
+    if (this.id === ERoutingIds.routerNotReachable) {
+      this.router.navigate(['/router-not-reachable-form']);
+    } else if (this.id === ERoutingIds.routerNotReachableOwnRouter) {
+      this.router.navigate(['/router-not-reachable-form']);
+    } else {
+      this.router.navigate(['/bookComplaint']);
+    }
   }
 }

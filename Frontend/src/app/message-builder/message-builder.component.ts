@@ -96,6 +96,21 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
     }
+
+    ///For Router Not Reachable Compliant booked successfully
+    else if (this.codeType === ERoutingIds.routerNotReachableFormSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.routerNotReachableFormsuccessfullyCase;
+      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+      this.Section2Data = {
+        referenceNo: '436529873',
+        dateVisit: 'Jul 10 2019, 10:30 AM',
+        location: 'Xxxxx xxxxx xxxx',
+      };
+
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
+    }
+
     //Open technical S/R
     else if (this.codeType === ERoutingIds.openSr) {
       this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;

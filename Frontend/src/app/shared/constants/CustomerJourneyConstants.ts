@@ -26,6 +26,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
+  public static routerNotReachableFormsuccessfullyCase = {
+    header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
+  };
+
   public static tvBoxNotReachableFormsuccessfullyCase = {
     header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
@@ -143,6 +148,19 @@ export class CustomerJourneyConstants {
       { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY4' },
       { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY5' },
       { title: 'MESSAGES.ROUTER_3RD_PARTY_BODY6' },
+    ],
+  };
+
+  public static routerNotReachableOwnRouterMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ROUTER_NOT_ACCESSIBLE',
+    body: [
+      {
+        title: 'MESSAGES.PLEASE_MAKE_SURE_THAT',
+        children: ['MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT1', 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT2', 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT3'],
+      },
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
     ],
   };
 
@@ -526,6 +544,13 @@ export class CustomerJourneyConstants {
     behaviour: 'primary',
   };
 
+  public static DeviceCareLink: IButton = {
+    title: 'LINKS.DEVICE_CARE',
+    clickListener: () => {},
+    linkTo: '/router-not-reachable-own-router-care',
+    behaviour: 'link',
+  };
+
   public static issueFixedTvButton: IButton = {
     title: 'BUTTONS.ISSUE_FIXED',
     clickListener: () => {},
@@ -570,6 +595,30 @@ export class CustomerJourneyConstants {
     linkTo: '',
     behaviour: 'link',
     customListner: 'openRestartTvBoxDialog',
+  };
+
+  public static continueToTroubleshootRouterNotReachableButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'RouterNotReachableAppInternetIssuesDialog',
+  };
+
+  public static continueToTroubleshootRouterNotReachableOwnRouterButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: '',
+  };
+
+  public static continueToTroubleshootRouterNotReachableDeviceCareOwnRouterButton: IButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'link',
+    customListner: 'RouterNotReachableOwnRouterAppInternetIssuesDialog',
   };
 
   public static continueToBrowserStepperButton: IButton = {
@@ -681,10 +730,19 @@ export class CustomerJourneyConstants {
     explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
   };
 
+  public static usingSameRouterRouterNotReachableButton = {
+    title: 'BUTTONS.USING_THE_SAME_ROUTER',
+    clickListener: () => {},
+    linkTo: '',
+    behaviour: 'primary',
+    customListner: 'RouterNotReachableAppInternetIssuesDialog',
+    explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+  };
+
   public static usingOwnRouterButton = {
     title: 'LINKS.USING_OWN_ROUTER',
     clickListener: () => {},
-    linkTo: '',
+    linkTo: '/router-not-reachable-own-router',
     behaviour: 'link',
   };
 
@@ -794,7 +852,7 @@ export class CustomerJourneyConstants {
 
   public static resetTvPinButton: IButton[] = [CustomerJourneyConstants.backButton, CustomerJourneyConstants.confirmButton];
 
-  public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterButton, CustomerJourneyConstants.usingOwnRouterButton];
+  public static routerNotReachableButtons: IButton[] = [CustomerJourneyConstants.usingSameRouterRouterNotReachableButton, CustomerJourneyConstants.usingOwnRouterButton];
 
   public static tvBoxNotReachableButtons: IButton[] = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.issueResolvedLink];
   public static tvBoxNotReachableTryAgainButtons: IButton[] = [CustomerJourneyConstants.bookAppointmentButton, CustomerJourneyConstants.tryAgainLaterLink];
@@ -816,6 +874,8 @@ export class CustomerJourneyConstants {
 
   public static appointmentbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusLink, CustomerJourneyConstants.doneButtonSecondary];
 
+  public static complaintbookssuccessfullyButtons: IButton[] = [CustomerJourneyConstants.trackComplaintStatusLink, CustomerJourneyConstants.doneButtonSecondary];
+
   public static tvBoxRestartSuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 
   public static tvBoxRestartManuallyButtons: IButton[] = [CustomerJourneyConstants.deviceCareTvBoxManualRestartButton, CustomerJourneyConstants.closeButton];
@@ -825,6 +885,17 @@ export class CustomerJourneyConstants {
   public static tvBoxRestartDeviceCareButtons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToTroubleshootTVBoxButton];
 
   public static unableWatchChannelsDeviceCareButtons: IButton[] = [CustomerJourneyConstants.resetTVBoxButton, CustomerJourneyConstants.issueResolvedLink];
+
+  public static routerNotReachableOwnRouterButtons: IButton[] = [
+    CustomerJourneyConstants.DeviceCareLink,
+    CustomerJourneyConstants.issueFixedButton,
+    CustomerJourneyConstants.continueToTroubleshootRouterNotReachableOwnRouterButton,
+  ];
+
+  public static routerNotReachableDeviceCareOwnRouterButtons: IButton[] = [
+    CustomerJourneyConstants.issueFixedButton,
+    CustomerJourneyConstants.continueToTroubleshootRouterNotReachableDeviceCareOwnRouterButton,
+  ];
 
   public static packageUpdareRequestsuccessfullyButtons: IButton[] = [CustomerJourneyConstants.doneButtonPrimary];
 

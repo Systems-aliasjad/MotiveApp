@@ -55,6 +55,12 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.sharedService.setHeaderConfig('HEADER.ROUTER_UPGRADE', false);
     }
 
+    //Router Not reachable from
+    else if (this.codeType === ERoutingIds.routerNotReachableForm) {
+      this.buttonText = 'BUTTONS.BOOK_A_COMPLAINT';
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    }
+
     //Router Package Upgrade
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommendedForm) {
       this.buttonText = 'BUTTONS.CONTINUE';
@@ -65,6 +71,12 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
     else if (this.codeType === ERoutingIds.thirdPartyRouterForm) {
       this.buttonText = 'BUTTONS.CONTINUE';
       this.sharedService.setHeaderConfig('HEADER.THIRD_PARTY_ROUTER', false);
+    }
+
+    //router not reachable
+    else if (this.codeType === ERoutingIds.routerNotReachable) {
+      this.buttonText = 'BUTTONS.BOOK_A_COMPLAINT';
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
     }
 
     //#region  Module 2
@@ -82,6 +94,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
 
   SubmitForm() {
     console.log(this.formGroup.value);
+
     //TODO: update Checks
     if (this.codeType === ERoutingIds.packageUpgradeRecommendedForm) {
       this.router.navigate(['package-upgrade-request-successfully']);
@@ -93,6 +106,10 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.router.navigate(['router-package-upgrade-request-successfully']);
     } else if (this.codeType === ERoutingIds.thirdPartyRouterForm) {
       this.router.navigate(['third-party-router-successfully']);
+    } else if (this.codeType === ERoutingIds.routerNotReachableForm) {
+      this.router.navigate(['router-not-reachable-form_successfully']);
+    } else if (this.codeType === ERoutingIds.routerNotReachableOwnRouter) {
+      this.router.navigate(['router-not-reachable-form_successfully']);
     }
 
     //#region  Module 2

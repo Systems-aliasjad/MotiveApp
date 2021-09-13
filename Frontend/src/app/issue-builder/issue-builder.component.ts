@@ -73,6 +73,26 @@ export class IssueBuilderComponent implements OnInit, OnDestroy {
     return await modal.present();
   }
 
+  async RouterNotReachableAppInternetIssuesDialog() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
+      componentProps: {
+        id: ERoutingIds.routerNotReachable,
+      },
+    });
+    return await modal.present();
+  }
+
+  async RouterNotReachableOwnRouterAppInternetIssuesDialog() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
+      componentProps: {
+        id: ERoutingIds.routerNotReachableOwnRouter,
+      },
+    });
+    return await modal.present();
+  }
+
   ngOnInit() {}
 
   initialization() {
@@ -182,6 +202,13 @@ export class IssueBuilderComponent implements OnInit, OnDestroy {
       this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;
       this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
+    }
+
+    //Router not reachable using own router button
+    else if (this.codeType === ERoutingIds.routerNotReachableOwnRouter) {
+      this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
+      //this.sharedService.setHeaderConfig('', true);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableOwnRouterButtons));
     }
 
     //TV set top box not reachable
