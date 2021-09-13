@@ -4,6 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator } from '../../constants/constants';
+import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
+import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-reset-wifi-password',
@@ -18,13 +20,14 @@ export class ResetWifiPasswordComponent implements OnInit, OnDestroy {
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
   termsCheck: boolean = false;
+  modal: any;
   subscription: Subscription;
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
-  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute) {
+  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute, private modalCtrl: ModalController) {
     this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });
@@ -81,11 +84,18 @@ export class ResetWifiPasswordComponent implements OnInit, OnDestroy {
     this.router.navigate(['reset-wifi-password-form_successfully']);
   }
 
-  PopupTermsConditions() {
-    this.router.navigate(['terms']);
+  async PopupTermsConditions() {
+    this.modal = await this.modalCtrl.create({
+      component: TermsConditionsComponent,
+    });
+    return await this.modal.present();
   }
 
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
+  }
+
+  async dismiss() {
+    await this.modalCtrl.dismiss();
   }
 }

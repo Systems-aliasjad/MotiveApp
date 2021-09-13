@@ -15,28 +15,24 @@ import { ModalController } from '@ionic/angular';
 })
 export class ResetTvPinDialog implements OnInit {
   modal;
-  constructor(public router: Router, public sharedService: SharedService, public modalCtrl: ModalController) {}
+  constructor(public router: Router, public modalCtrl: ModalController) {}
 
-  ngOnInit() {
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resetTvPinButton));
-  }
-
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          this.modalCtrl.dismiss();
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
-  }
+  ngOnInit() {}
 
   async showTermsConditionsModal() {
     this.modal = await this.modalCtrl.create({
       component: TermsConditionsComponent,
     });
     return await this.modal.present();
+  }
+
+  async dismiss() {
+    await this.modalCtrl.dismiss();
+  }
+
+  async confirm() {
+    await this.modalCtrl.dismiss();
+    await this.modalCtrl.dismiss();
+    this.router.navigate(['/tv-pin-reset-successfull']);
   }
 }

@@ -2,9 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
+import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-package-available',
   templateUrl: './package-available.component.html',
@@ -16,6 +18,7 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
   PageContent: string;
   cardList: any;
   subscription: Subscription;
+  buttonConfigs: IButton[] = [];
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
@@ -50,6 +53,12 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
           description: 'STB SR#039838920',
         },
       ];
+      this.buttonConfigs = CustomerJourneyConstants.packageAvailableButtons;
+      this.buttonConfigs.forEach((elem) => {
+        if (elem.title == 'BUTTONS.SKIP_TO_NEXT_STEP') {
+          elem.linkTo = '/package-transfer';
+        }
+      });
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtons));
     }
     /// Unable to watch specific channel package available

@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -24,7 +25,7 @@ export class GameSessionComponent implements OnInit, OnDestroy {
     },
   ];
 
-  constructor(private router: Router, private sharedService: SharedService, public activatedRoute: ActivatedRoute, private modalCtrl: ModalController) {
+  constructor(private router: Router, private sharedService: SharedService, public activatedRoute: ActivatedRoute, private modalCtrl: ModalController, private location: Location) {
     this.subscription = this.activatedRoute.params.subscribe((params) => {
       this.initialization();
     });
@@ -60,5 +61,9 @@ export class GameSessionComponent implements OnInit, OnDestroy {
 
   dismiss() {
     this.modalCtrl.dismiss();
+  }
+
+  CloseMOdal() {
+    this.location.back();
   }
 }
