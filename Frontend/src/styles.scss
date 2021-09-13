@@ -48,10 +48,7 @@
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
    }
-   ion-modal,
-   .sc-ion-modal-md-h{
-    --border-radius: 1rem;
-  }
+   
   .inline-list {
     ion-item {
       --min-height: 30px;
@@ -85,10 +82,20 @@ ion-checkbox{
 		}
 	}
 }
+ion-modal,
+.sc-ion-modal-md-h,
+.sc-ion-modal-ios-h{
+  --border-radius: 1rem ;
+  --width: 100%;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+    align-items: flex-end;
+    @media screen and (max-width: 767px) {
+      --height:70%;
+      --border-radius: 0;
+    }
+}
 // --------------------------------------------------------------
-
-
-
 
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {

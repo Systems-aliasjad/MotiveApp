@@ -48,7 +48,7 @@ export class TabTileComponent implements OnInit {
 
   slideOpts = {
     slidesPerView: 4,
-    spaceBetween: 1,
+    /* spaceBetween: 1, */
     loop: false,
     grid: {
       row: 2,
