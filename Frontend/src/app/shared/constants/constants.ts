@@ -37,6 +37,8 @@ export enum ERoutingIds {
   routerNotReachable,
   routerNotReachableForm,
   routerNotReachableFormSuccessfully,
+  routerNotReachableOwnRouter,
+  routerNotReachableOwnRouterCare,
   troubleshootComplete,
   tvPinUpdateSuccessfull,
   restELifeLoginPin,

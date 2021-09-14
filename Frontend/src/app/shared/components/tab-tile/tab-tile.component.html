@@ -1,1 +1,21 @@
-<p>tab-tile works!</p>
+<ion-row>
+  <ion-col size="12" class="service-detail_slider">
+    <!-- service-State list Start-->
+    <div class="service-states-container">
+      <ion-slides [options]="slideOpts">
+        <ion-slide *ngFor="let item of tilesList">
+          <div class="service-state">
+            <div class="{{ item.className }} state">
+              <img src="{{ item.imgPath }}" alt="{{ item.altText }}" />
+            </div>
+            <ion-label>
+              {{ item.text1 }}
+              <span>{{ item.text2 }}</span>
+            </ion-label>
+          </div>
+        </ion-slide>
+      </ion-slides>
+      <!-- service-States list Start-->
+    </div>
+  </ion-col>
+</ion-row>

@@ -6,7 +6,9 @@
 
 <ion-row class="issue-tabs_content">
   <ion-col sizeLg="6" sizeMd="12" size="12" git class="issue-tabs_wizard ion-text-center">
-    <div class="tabs-wizard"></div>
+    <div class="tabs-wizard">
+      <app-tab-tile></app-tab-tile>
+    </div>
     <!-- <a href="javascript:void(0)" class="arrow-link ion-justify-content-center">
       <span>View Details</span>
       <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
@@ -15,7 +17,7 @@
 
   <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tab_content">
     <div class="content">
-      <h5 class="sub-title">{{ messageSection.header | translate }}</h5>
+      <h4 class="sub-title letter-space-none">{{ messageSection.header | translate }}</h4>
       <div *ngFor="let message of messageSection.body">
         <p>{{ message.title | translate }}</p>
         <ion-list *ngIf="message.children" class="bullet-list">
@@ -25,18 +27,33 @@
         </ion-list>
       </div>
 
-     
-      <ion-list *ngIf="section1Template" class="inline-list-border inline-list">
+      <div class="info-container_detail_followup">
+        <!-- Detail List and Follow up Start -->
+        <ion-row class="info-container_detail" *ngIf="section1Template">
+          <ion-col size="12" class="pt-0 pb-0">
+            <div class="info-container_detail_list">
+              <ion-list>
+                <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
+                  <ion-label class="detail_list_title"> {{ template.title | translate }} </ion-label>
+                  <ion-label class="detail_list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
+                </ion-item>
+              </ion-list>
+            </div>
+          </ion-col>
+        </ion-row>
+        <!-- Detail List and Follow up and Close End -->
+
+        <!-- <app-buttons></app-buttons> -->
+      </div>
+
+      <!-- <ion-list *ngIf="section1Template" class="inline-ion-list">
         <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
           <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
           <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
         </ion-item>
       </ion-list>
-      
-
-
-      
     </div>
-    <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
+     <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
+    </div>
   </ion-col>
 </ion-row>

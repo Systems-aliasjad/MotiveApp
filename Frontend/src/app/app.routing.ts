@@ -23,6 +23,7 @@ import { GameSessionComponent } from './shared/components/game-session/game-sess
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -174,8 +175,10 @@ const routes: Routes = [
 
   //Router managed, but not reachable
   { path: 'router-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.routerNotReachable } },
-  { path: 'router-not-reachable-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.routerNotReachableForm } },
+  { path: 'router-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerNotReachableForm } },
   { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
+  { path: 'router-not-reachable-own-router', component: IssueBuilderComponent, data: { id: ERoutingIds.routerNotReachableOwnRouter } },
+  { path: 'router-not-reachable-own-router-care', component: DeviceCareComponent, data: { id: ERoutingIds.routerNotReachableOwnRouterCare } },
 
   //TV Box Not Reachable
   { path: 'tvBox-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachable } },
@@ -212,6 +215,8 @@ const routes: Routes = [
   { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
   { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
+  // For Demo
+  { path: 'tab-tiles', component: TabTileComponent },
   { path: '**', redirectTo: '' },
 ];
 

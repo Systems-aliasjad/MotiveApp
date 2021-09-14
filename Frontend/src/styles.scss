@@ -48,25 +48,13 @@
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
    }
-   ion-modal,
-   .sc-ion-modal-md-h{
-    --border-radius: 1rem;
-  }
+   
   .inline-list {
     ion-item {
       --min-height: 30px;
     }
   }
 }
-/* ion-item::part(native){
-  padding-inline-end: 0 ;
-  --inner-padding-end: 0;
-  padding-left: 0;
-  --background:transparent;
-  --border-radius:0;
-  --border-width: 0;
-  --inner-border-width: 0
-} */
 ion-checkbox{
   margin-right: 0;
   margin-left: 0;
@@ -94,10 +82,20 @@ ion-checkbox{
 		}
 	}
 }
+ion-modal,
+.sc-ion-modal-md-h,
+.sc-ion-modal-ios-h{
+  --border-radius: 1rem ;
+  --width: 100%;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+    align-items: flex-end;
+    @media screen and (max-width: 767px) {
+      --height:70%;
+      --border-radius: 0;
+    }
+}
 // --------------------------------------------------------------
-
-
-
 
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
@@ -212,7 +210,25 @@ h6{
   font-size: 0.875rem;
 }
 // ------------Title Styling End-------------------
-
+.page-top_title {
+  h2 {
+    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 50px;
+  }
+}
+.sub-title {
+  font-family: Lato, Roboto, Arial, sans-serif;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0;
+  letter-spacing: 0.14285714em;
+  @-moz-document url-prefix() {
+    font-weight: 500;
+  }
+}
 // ------------Help classes Styling Start-------------------
 .full-width{
   width: 100%;
@@ -238,6 +254,9 @@ h6{
 }
 .mt-5{
   margin-top: 5rem;
+}
+.letter-space-none{
+  letter-spacing: 0;
 }
 // ------------Help classes Styling End-------------------
 // ------------Bullet List Start-------------------
@@ -292,26 +311,7 @@ h6{
   }
 }
 // ------------Inline List End-------------------
-.page-top_title {
-  h2 {
-    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 50px;
-  }
-}
-.sub-title {
-  font-family: Lato, Roboto, Arial, sans-serif;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 0;
-  letter-spacing: 0.14285714em;
-  text-transform: $text-uppercase;
-  @-moz-document url-prefix() {
-    font-weight: 500 !important;
-  }
-}
+
 .quick-links_all,
 .arrow-link,
 .arrow-btn {
