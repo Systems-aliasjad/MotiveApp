@@ -20,7 +20,11 @@
       text-align: right;
     }
   }
-  .inline-list {
+  .inline-ion-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
     ion-item {
       --min-height: 30px;
     }

@@ -44,7 +44,7 @@
         
       </div> -->
 
-     <ion-list *ngIf="section1Template" class="inline-ion-list inline-list-border">
+     <ion-list *ngIf="section1Template" class="inline-ion-list inline-ion-list-border">
         <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
           <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
           <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
