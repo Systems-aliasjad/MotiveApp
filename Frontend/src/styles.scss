@@ -94,6 +94,9 @@ ion-modal,
       --height:70%;
       --border-radius: 0;
     }
+    @media screen and (max-width: 281px) {
+      --height:100%;
+    }
 }
 // --------------------------------------------------------------
 
