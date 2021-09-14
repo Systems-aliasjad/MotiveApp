@@ -5,6 +5,9 @@ import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator } from '../../constants/constants';
 import { Subscription } from 'rxjs';
+import { ModalController } from '@ionic/angular';
+import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-reset-internet-password',
   templateUrl: './reset-internet-password.component.html',
@@ -13,7 +16,7 @@ import { Subscription } from 'rxjs';
 export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup;
   error = errorMessages;
-
+  modal: any;
   passwordType: string = 'password';
   passwordIcon: string = 'eye-off';
 
@@ -24,7 +27,7 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
     this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
-  constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService) {
+  constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController, private location: Location) {
     this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
 
     this.subscription = this.sharedService.getTermsConditions().subscribe((config) => {
@@ -41,6 +44,7 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
         MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
         NewPassword: ['', [Validators.required]],
         ConfirmPassword: ['', [Validators.required]],
+        terms: [true, Validators.required],
       },
       {
         validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
@@ -54,10 +58,25 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
 
   SubmitForm() {
     console.log(this.formGroup.valid);
-    this.router.navigate(['thanks']);
+    this.router.navigate(['internet-password-reset-success']);
+    // On Error Navigate to
+    // this.router.navigate(['internet-password-reset-error']);
   }
 
-  PopupTermsConditions() {
-    this.router.navigate(['terms']);
+  async PopupTermsConditions() {
+    this.modal = await this.modalCtrl.create({
+      component: TermsConditionsComponent,
+    });
+    this.modal.onDidDismiss().then((d) => {
+      if (d.data && this.formGroup.valid) {
+        this.SubmitForm();
+      }
+      this.modalCtrl.dismiss();
+    });
+    return await this.modal.present();
+  }
+
+  onBackClick() {
+    this.location.back();
   }
 }

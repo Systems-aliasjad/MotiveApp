@@ -49,6 +49,7 @@ import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues
 import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
 import { ChangeCallForwardComponent } from './components/change-call-forward/change-call-forward.component';
 import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
+import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -98,6 +99,7 @@ export function createTranslateLoader(http: HttpClient) {
     ForgotCcbPinComponent,
     ChangeCallForwardComponent,
     DummyDelComponent,
+    ResetRouterPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -133,6 +135,7 @@ export function createTranslateLoader(http: HttpClient) {
     ForgotCcbPinComponent,
     ChangeCallForwardComponent,
     DummyDelComponent,
+    ResetRouterPasswordComponent,
   ],
 
   entryComponents: [],

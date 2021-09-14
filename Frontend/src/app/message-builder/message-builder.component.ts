@@ -29,7 +29,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
   imgSrc: string = this.warningImgSrc;
 
   showLoader: boolean = false;
-
+  buttonConfig: IButton[] = [];
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -301,6 +301,56 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartSuccessfullyButtons));
     }
     //#endregion Module 3
+    ///For Internet Password Reset
+    else if (this.codeType === ERoutingIds.resetInternetPasswordSuccess) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccess;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    }
+    // For Error Occured First Time
+    else if (this.codeType === ERoutingIds.resetInternetPasswordError) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.errorOccured;
+      this.imgSrc = this.warningImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.closeButton];
+      this.buttonConfig.forEach((elem) => {
+        if (elem.title == 'BUTTONS.TRY_AGAIN') {
+          elem.linkTo = '/internet-password-reset-fail';
+        }
+      });
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
+    // For try Again Error
+    else if (this.codeType === ERoutingIds.tryAgainError) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
+      this.imgSrc = this.warningImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.closeButtonSecondary];
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
+    // For reset Internet Password Success Detail
+    else if (this.codeType === ERoutingIds.resetInternetPasswordSuccessDetail) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccessDetail;
+      this.imgSrc = this.successImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.buyEtisalatRouterButton, CustomerJourneyConstants.doneButtonSecondary];
+      this.buttonConfig.forEach((elem) => {
+        if (elem.title === 'BUTTONS.DONE') {
+          elem.behaviour = 'link';
+        }
+      });
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
+    // For reset Router Wifi Password Success
+    else if (this.codeType === ERoutingIds.resetRouterWifiPasswordSuccess) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.resetRouterWifiPasswordSuccess;
+      this.imgSrc = this.successImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.doneButtonSecondary];
+      this.buttonConfig.forEach((elem) => {});
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
 
     //TODO: dummy need to remove this case at the end
     else {

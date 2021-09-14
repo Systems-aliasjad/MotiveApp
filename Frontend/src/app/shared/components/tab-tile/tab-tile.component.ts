@@ -48,11 +48,13 @@ export class TabTileComponent implements OnInit {
 
   slideOpts = {
     slidesPerView: 4,
-    /* spaceBetween: 1, */
+    spaceBetween: 1,
     loop: false,
+    speed:500,
     grid: {
       row: 2,
     },
+    
   };
   constructor(private sharedService: SharedService, private router: Router) {}
 

@@ -27,8 +27,7 @@
         </ion-list>
       </div>
 
-      <div class="info-container_detail_followup">
-        <!-- Detail List and Follow up Start -->
+      <!-- <div class="info-container_detail_followup">
         <ion-row class="info-container_detail" *ngIf="section1Template">
           <ion-col size="12" class="pt-0 pb-0">
             <div class="info-container_detail_list">
@@ -41,19 +40,17 @@
             </div>
           </ion-col>
         </ion-row>
-        <!-- Detail List and Follow up and Close End -->
+        <app-buttons></app-buttons>
+        
+      </div> -->
 
-        <!-- <app-buttons></app-buttons> -->
-      </div>
-
-      <!-- <ion-list *ngIf="section1Template" class="inline-ion-list">
+     <ion-list *ngIf="section1Template" class="inline-ion-list inline-ion-list-border">
         <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
           <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
           <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
         </ion-item>
       </ion-list>
-    </div>
-     <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
+      <!-- <app-buttons [buttonsConfig]="buttonsConfig"></app-buttons> -->
     </div>
   </ion-col>
 </ion-row>

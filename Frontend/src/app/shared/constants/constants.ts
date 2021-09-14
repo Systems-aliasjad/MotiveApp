@@ -82,6 +82,12 @@ export enum ERoutingIds {
   ontRestartRequiredDeviceCare,
   issueNotFixedPhone,
   phoneOutage,
+  resetInternetPasswordSuccess,
+  resetInternetPasswordError,
+  tryAgainError,
+  resetInternetPasswordSuccessDetail,
+  resetRouterWifiPassword,
+  resetRouterWifiPasswordSuccess,
 }
 
 // const P3: string = '3P';
@@ -125,7 +131,8 @@ const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
   body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
-  linkTo: 'info',
+  linkTo: '#',
+  customEvent: 'openInternetIssueDialog',
 };
 
 const TV_ISSUES = {
@@ -133,6 +140,7 @@ const TV_ISSUES = {
   body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
   linkTo: '#',
+  customEvent: 'openTVIssueDialog',
 };
 
 const PHONE_ISSUES = {
@@ -154,6 +162,7 @@ const PASSWORD_ISSUES = {
   body: 'LANDING_PAGE.PASSWORD_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
   linkTo: '#',
+  customEvent: 'openPasswordIssueDialog',
 };
 
 const RESET_PIN = {
