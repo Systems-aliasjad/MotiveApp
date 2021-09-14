@@ -23,6 +23,7 @@ import { GameSessionComponent } from './shared/components/game-session/game-sess
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 
 const routes: Routes = [
   {
@@ -183,6 +184,8 @@ const routes: Routes = [
   { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
   { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
+  // For Demo
+  { path: 'tab-tiles', component: TabTileComponent },
   { path: '**', redirectTo: '' },
 ];
 

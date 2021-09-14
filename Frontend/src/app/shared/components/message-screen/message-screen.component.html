@@ -38,10 +38,10 @@
     <ion-row class="info-container_detail" *ngIf="Section2Data">
       <ion-col size="12" class="pt-0 pb-0">
         <div class="info-container_detail_list">
-          <ion-list>
+          <ion-list class="inline-list-border inline-list">
             <ion-item lines="none" class="ion-no-padding" *ngFor="let template of Section2Template">
-              <ion-label class="detail_list_title"> {{ template.title | translate }} </ion-label>
-              <ion-label class="detail_list_value"> {{ Section2Data[template.objKeyNameEN] }} </ion-label>
+              <ion-label class="inline-list_title"> {{ template.title | translate }} </ion-label>
+              <ion-label class="inline-list_value"> {{ Section2Data[template.objKeyNameEN] }} </ion-label>
             </ion-item>
           </ion-list>
         </div>

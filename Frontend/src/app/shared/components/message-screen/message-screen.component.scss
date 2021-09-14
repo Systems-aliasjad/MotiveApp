@@ -1,5 +1,5 @@
-@import '../../../../assets/scss/base/mixins';
-@import '../../../../assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
 
 // ------------Removed Ionic ion-item Styling start-------------------
 :host {
@@ -9,11 +9,28 @@
   }
   ion-item {
     --min-height: 30px;
+    @media screen and (max-width: 321px) {
+      padding-top:.5rem;
+      padding-bottom: .5rem;
+
+    }
   }
 } 
 ion-item::part(native){
-  padding-inline-end: 0 !important;
-  --inner-padding-end: 0 !important;
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  @media screen and (max-width: 321px) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
 }
 // ------------Removed Ionic ion-item Styling End-------------------
 
@@ -69,32 +86,9 @@ ion-item::part(native){
     .info-container_detail_list {
       margin-top: 1.5rem;
       margin-bottom: 4rem;
-      border-top: 2px dashed #d0d6da;
-      border-bottom: 2px dashed #d0d6da;
       width: 100%;
       @media screen and (max-width: 376px) {
         margin-bottom: 2rem;
-      }
-      ion-list {
-        /* padding-top: 0;
-        padding-bottom: 0; */
-        ion-item {
-          ion-label {
-            font-size: 0.9rem;
-            font-family: Lato, Roboto, Arial, sans-serif;
-            margin-top: 0;
-            margin-bottom: 0;
-          }
-          .detail_list_title {
-            color: #848789;
-          }
-          .detail_list_value {
-            color: $primary-color;
-            font-weight: 600;
-            text-align: right;
-            margin-right: 0;
-          }
-        }
       }
     }
   }
