@@ -6,6 +6,8 @@ import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { IButton } from '../../constants/types';
+import { InternetIssuesDialogSecondComponent } from '../../dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
+import { InternetIssuesDialog } from '../../dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
 import { RestartTvboxDialog } from '../../dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { SharedService } from '../../shared.service';
@@ -80,6 +82,21 @@ export class DeviceCareComponent implements OnInit, OnDestroy {
       this.PageContent = 'DEVICE_CARE.UNABLE_TO_WATCH_CHANNELS_CONTENT';
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchChannelsDeviceCareButtons));
     }
+    //Router not reachable own router
+    else if (this.codeType === ERoutingIds.routerNotReachableOwnRouter) {
+      this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.PAGE_HEADING';
+      this.PageContent = 'DEVICE_CARE.PAGE_CONTENT';
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableDeviceCareOwnRouterButtons));
+    }
+
+    //Router not reachable own router deivce care
+    else if (this.codeType === ERoutingIds.routerNotReachableOwnRouterCare) {
+      this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.PAGE_HEADING';
+      this.PageContent = 'DEVICE_CARE.PAGE_CONTENT';
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableDeviceCareOwnRouterButtons));
+    }
   }
 
   async continueTroubleShoot() {
@@ -98,5 +115,32 @@ export class DeviceCareComponent implements OnInit, OnDestroy {
 
   dismiss() {
     this.modalCtrl.dismiss();
+  }
+
+  async AppInternetIssuesDialog() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
+    });
+    return await modal.present();
+  }
+
+  async RouterNotReachableAppInternetIssuesDialog() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
+      componentProps: {
+        id: ERoutingIds.routerNotReachable,
+      },
+    });
+    return await modal.present();
+  }
+
+  async RouterNotReachableOwnRouterAppInternetIssuesDialog() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialogSecondComponent,
+      componentProps: {
+        id: ERoutingIds.routerNotReachableOwnRouter,
+      },
+    });
+    return await modal.present();
   }
 }

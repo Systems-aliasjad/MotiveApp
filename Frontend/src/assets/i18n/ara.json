@@ -48,7 +48,8 @@
     "PASSWORD_ISSUES_DESCRIPTION": "I want to change or reset my password",
     "RESET_PIN_TITLE": "Reset PIN",
     "RESET_PIN_DESCRIPTION": "I want to reset my PIN",
-    "UNALBE_TO_WATCH_CHANNEL": "Unable to watch channels"
+    "UNALBE_TO_WATCH_CHANNEL": "Unable to watch channels",
+    "ROUTER_IS_NOT_ACCESSABLE": "Router is not accessable"
   },
   "QUICK_LINKS": {
     "SEE_ALL": "See All",
@@ -234,6 +235,7 @@
     "RESET_YOUR_PASSWORD": "Reset your password",
     "RESET_YOUR_PASSWORD_BODY": "We have fixed all the technical issues. You need to reset your password for the internet to work normally.",
     "ROUTER_NOT_ACCESSIBLE": "Router is not accessible",
+    "PLEASE_MAKE_SURE_THAT": "Please make sure that",
     "ROUTER_NOT_ACCESSIBLE_BODY": "We are unable to reach your device.",
     "RECONFIGURE_YOUR_ROUTER": "Reconfigure your router",
     "RECONFIGURE_YOUR_ROUTER_BODY1": "Since you are using your own router, make sure that:",
