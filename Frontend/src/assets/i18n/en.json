@@ -21,7 +21,8 @@
     "SERVICE_DEATAIL": "Service detail",
     "TRANSFER_PACKAGE": "Transfer package",
     "CHANNEL_DETAILS": "Channel details",
-    "UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE": "Transfer package"
+    "UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE": "Transfer package",
+    "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password"
   },
 
   "SUBHEADER": {
@@ -150,7 +151,8 @@
     "STILL_FACING_ISSUE": "STILL FACING AN ISSUE",
     "SKIP_TO_NEXT_STEP": "SKIP TO NEXT STEP",
     "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
-    "END_TROUBLESHOOTING": "END TROUBLESHOOTING"
+    "END_TROUBLESHOOTING": "END TROUBLESHOOTING",
+    "BUY_ETISALAT_ROUTER": "BUY ETISALAT ROUTER"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -296,7 +298,17 @@
     "PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transfer was successful!",
     "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service.",
     "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transferred successfully",
-    "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY": "You can now watch all the channels in <package name> on TV box <SL no.>. "
+    "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY": "You can now watch all the channels in <package name> on TV box <SL no.>. ",
+    "RESET_INTERNET_PASSWORD_SUCCESS": "Internet password reset successfully!",
+    "RESET_INTERNET_PASSWORD_SUCCESS_BODY": "The router will be configured with the new password automatically.",
+    "RESET_INTERNET_PASSWORD_SUCCESS_BODY2": "Make sure you restart your router after a few minutes and then try using the internet.",
+    "Error_Occured": "An error occurred",
+    "Error_Occured_BODY": "Sorry, the operation has timeout. Please try again.",
+    "Error_Occured_TRY_AGAIN_BODY": "Sorry, the operation has timeout. Please try again after some time.",
+    "RESET_INTERNET_PASSWORD_SUCCESS_DETAIL_BODY": "The router needs to be configured with the new password. Visit 'Device Care' to find more details on how to reconfigure your router.",
+    "RESET_INTERNET_PASSWORD_SUCCESS_DETAIL_BODY2": "We recommend using an Etisalat router so that we can provice remote support.",
+    "RESET_ROUTER_WIFI_PASSWORD_SUCCESS": "Router's Wi-Fi password reset successfully!",
+    "RESET_ROUTER_WIFI_PASSWORD_SUCCESS_BODY": "Please wait for 2 minutes and then try connecting to the Wi-Fi network with the password."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

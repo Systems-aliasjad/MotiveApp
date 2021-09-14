@@ -39,6 +39,6 @@ export class TermsConditionsComponent implements OnInit {
 
   AcceptContinue = (event: any) => {
     this.sharedService.setTermsConditions(true);
-    this.modalCtrl.dismiss();
+    this.modalCtrl.dismiss(true);
   };
 }

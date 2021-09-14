@@ -6,6 +6,7 @@ import { ResetTvPinDialog } from '../reset-tv-pin-dialog/reset-tv-pin-dialog.com
 export enum EIssueFlow {
   internetIssue,
   tvIssue,
+  passwordIssue,
 }
 @Component({
   selector: 'issue-list-dialog',
@@ -15,6 +16,7 @@ export enum EIssueFlow {
 export class IssueListDialog implements OnInit {
   @Input()
   flow: number;
+  showViewGuidline: boolean = true;
   modal;
   internetIssuesList: any[] = [
     {
@@ -69,6 +71,33 @@ export class IssueListDialog implements OnInit {
       route: 'unable-to-watch-channel',
     },
   ];
+  passwordIssueList: any[] = [
+    {
+      issue: 'Reset internet password',
+      description: 'Find our how to change your password',
+      route: 'reset-internet-password',
+    },
+    {
+      issue: "Reset router's Wi-Fi password",
+      description: "Tap here if you forgot your router's Wi-Fi password",
+      route: '',
+    },
+    {
+      issue: 'Reset TV admin PIN',
+      description: 'Find out how to reset your TV box PIN',
+      route: '',
+    },
+    {
+      issue: 'Reset eLifeON PIN',
+      description: "Tap here if you're unable to log in to eLifeON",
+      route: '',
+    },
+    {
+      issue: 'Reset CCB PIN',
+      description: 'Find out how to reset your Code Control Barring PIN',
+      route: '',
+    },
+  ];
   issuesList: any[];
   constructor(private modalCtrl: ModalController, private router: Router) {}
 
@@ -77,6 +106,9 @@ export class IssueListDialog implements OnInit {
       this.issuesList = this.internetIssuesList;
     } else if (this.flow === EIssueFlow.tvIssue) {
       this.issuesList = this.tvIssuesList;
+    } else if (this.flow === EIssueFlow.passwordIssue) {
+      this.issuesList = this.passwordIssueList;
+      this.showViewGuidline = false;
     }
   }
 
