@@ -7,18 +7,35 @@
   ion-buttons{
     --min-height:auto;
   }
-  ion-modal{
-    --border-radius: 1rem;
-  }
   ion-header{
+    ion-toolbar{
+      border-bottom: 2px dashed #d0d6da;
+      ion-title{
+        padding-right:0;
+        padding-left: 0;
+        h5{
+          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+          color:$primary-color;
+          @media screen and (max-width: 281px) {
+            font-size: 1rem;
+          }
+        }
+      }
     ion-buttons{
       margin-inline-end:0;
       margin-right:0;
+      --padding-end: 0;
+      padding-right: 0;
+      padding-right: 0;
       ion-button{
         margin-inline-start:0;
         margin-inline-end:0;
         height: auto;
-      }
+        @media screen and (max-width: 281px) {
+          font-size: .8rem;
+        }
+       }
+     }
     }
   }
 }
@@ -28,7 +45,6 @@ ion-item::part(native){
   padding-left: 1rem;
   padding-right: 1rem;
   --padding-start:1rem;
- 
   --border-color:#ededed;
 }
 .header-ios {
@@ -47,22 +63,6 @@ ion-header{
   padding-right: 1.2rem;
   &:after{
     background-image: none;
-  }
-  ion-toolbar{
-    border-bottom: 2px dashed #d0d6da;
-    ion-title{
-      padding-right:0;
-      padding-left: 0;
-      h5{
-        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-        color:$primary-color;
-      }
-    }
-  }
-  ion-buttons{
-    padding-right: 0;
-    padding-right: 0;
-    
   }
 }
 ion-list{

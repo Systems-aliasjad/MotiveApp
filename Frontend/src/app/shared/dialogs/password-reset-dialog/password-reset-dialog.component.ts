@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'password-reset-dialog',
   templateUrl: './password-reset-dialog.component.html',
-  styleUrls: ['./password-reset-dialog.component.css'],
+  styleUrls: ['./password-reset-dialog.component.scss'],
 })
 export class PasswordResetDialog implements OnInit {
   constructor(private location: Location) {}
