@@ -22,6 +22,8 @@
     "TRANSFER_PACKAGE": "Transfer package",
     "CHANNEL_DETAILS": "Channel details",
     "UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE": "Transfer package",
+    "RESET_CCB_PIN": "Reset CCB PIN",
+    "CALL_FORWARD": "Change call forwarding number",
     "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password"
   },
 
@@ -31,7 +33,8 @@
     "RESET_WIFI_PASSWORD_TAB1": "SSID 2.5 Ghz",
     "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz",
     "MY_TV_BOXES": "MY TV BOXES",
-    "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS"
+    "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS",
+    "RESET_CCB_PIN": "Reset CCB PIN"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -108,6 +111,8 @@
   },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
+    "NEXT": "NEXT",
+    "REQUEST_SUPPORT": "REQUEST SUPPORT",
     "TRY_AGAIN": "TRY AGAIN",
     "FOLLOW_UP": "YES, FOLLOW-UP",
     "OK": "OK",
@@ -121,6 +126,8 @@
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "RESTART_NOW": "RESTART NOW",
     "RESTART_STB_NOW": "RESTART NOW STB ",
+    "RESTART_ONT_NOW": "RESTART ONT STB ",
+
     "RESTART_MANUALLY": "I'LL RESTART IT MANYALLY",
 
     "DONE": "Done",
@@ -185,6 +192,10 @@
 
   "MESSAGES": {
     "THANKYOU": "Thank you!",
+    "PHONE_ISSUE_MAIN_TITLE": "No issues found!",
+    "PHONE_ISSUE_MAIN_TITLE_BODY1": "We couldn’t find any technical problem. Your phone should be working normally. ",
+    "PHONE_ISSUE_MAIN_TITLE_BODY2": "Tap ‘View details’ to take a closer look at your phone service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
+
     "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",
     "MOVING_ELIFE_CONNECTION": "We are moving your eLife connection",
     "MOVING_ELIFE_CONNECTION_BODY_1": "The service will be discontinued while the transfer is under process.",
@@ -202,6 +213,10 @@
     "OPEN_SERVICE_REQUEST_BODY": "We noticed that there is an open Service Request",
     "PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY": "Package upgrade request was raised successfully",
     "PACKAGE_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
+    "RESET_CCB_PIN_SUCCESSFULLY": "CCB PIN reset successfully! ",
+    "RESET_CCB_PIN_SUCCESSFULLY_BODY": "You can now enable Call Barring using the new PIN.",
+    "CHANGE_CALL_FORWARD_SUCCESSFULLY": "Call forwarding number changed successfully ",
+    "CHANGE_CALL_FORWARD_SUCCESSFULLY_BODY": "Your calls will now be forwarded to the new number.",
     "ROUTER_UPGRADE_REQUEST_SUCCESSFULLY": "Router upgrade request was raised successfully",
     "ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
     "ACCOUNT_DISCONNECTED_TEMPORARILY": "Your account is disconnected temporarily",
@@ -223,6 +238,8 @@
     "TV_AMDIN_PIN_RESET_SUCCESSFULLY_BODY3": "Note: You will be required to change the default PIN when you log in to any paid service.",
     "TV_BOX_RESTART_REQUIRED_SUCCESSFULLY": "TV Box restarted successfully ",
     "TV_BOX_RESTART_REQUIRED_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.",
+    "ONT_RESTART_REQUIRED_SUCCESSFULLY": "Fiber box restarted successfully!",
+    "ONT_RESTART_REQUIRED_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the service again.",
     "NO_INTERNET_CONNECTION": "No internet connection",
     "NO_INTERNET_CONNECTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
     "NO_INTERNET_CONNECTION_BODY2": "The internet service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
@@ -299,6 +316,8 @@
     "PACKAGE_TRANSFER_SUCCESS_BODY": "Please reboot your TV box, then you will be able to enjoy the service.",
     "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_HEADING": "Package transferred successfully",
     "UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY": "You can now watch all the channels in <package name> on TV box <SL no.>. ",
+    "ONT_REBOOT_REQUIRED_BODY1": "We have fixed all the technical issues.",
+    "ONT_REBOOT_REQUIRED_BODY2": "Please restart the wall-mounted fiber box and then try using the phone again.",
     "RESET_INTERNET_PASSWORD_SUCCESS": "Internet password reset successfully!",
     "RESET_INTERNET_PASSWORD_SUCCESS_BODY": "The router will be configured with the new password automatically.",
     "RESET_INTERNET_PASSWORD_SUCCESS_BODY2": "Make sure you restart your router after a few minutes and then try using the internet.",
@@ -333,22 +352,40 @@
     "TVBOX_DIDNOT_RESTART_H1": "Restart TV box manually"
   },
 
+  "ONT_REBOOT_MANUALLY": {
+    "ONT_REBOOT_H1": "Restart fiber box manually"
+  },
+
   "INSTRUCTIONS_STEPS": {
     "ROUTER_RESTART_TITLE": "Follow these steps",
     "TVBOX_RESTART_TITLE": "Follow these steps",
+    "ONT_REBOOT_TITLE": "Follow these steps to restart your fiber box:",
     "OR": "OR"
   },
   "INSTRUCTIONS_STEPS_OR": {
     "ROUTER_RESTART_TITLE": "Consult Device care for...",
     "ROUTER_RESTART_BODY": "Etisalat device care gives you.....",
     "TVBOX_RESTART_TITLE": "Visit 'Device Care' ",
-    "TVBOX_RESTART_BODY": "Where you can find more details on how to restart your TV box."
+    "TVBOX_RESTART_BODY": "Where you can find more details on how to restart your TV box.",
+    "ONT_RESTART_TITLE": "Visit 'Device Care' ",
+    "ONT_RESTART_BODY": "Where you can find more details on how to restart your TV box."
   },
 
   "RESET_INTERNET_PASSWORD": {
     "MOBILE_NUMBER": "Mobile Number*",
     "NEW_PASSWORD": "New Password*",
     "CONFIRM_PASSWORD": "Confirm Password*"
+  },
+
+  "CHANGE_CALL_FORWARD": {
+    "NEW_NUMBER": "Enter new number",
+    "NEW_NUMBER_AGAIN": "Enter CCB PIN again",
+    "ROWARDING_NUMBER_RULES": "Rowarding number rules"
+  },
+
+  "RESET_CCB_PIN": {
+    "NEW_CCB_PIN": "New CCB Pin",
+    "NEW_CCB_PIN_AGAIN": "Enter new number again"
   },
 
   "RESET_WIFI_PASSWORD": {
@@ -367,6 +404,24 @@
     "UNABLE_TO_WATCH_CHANNELS_CONTENT": "If you are still unable to watch <channel name>, tap 'Reset TV box' so that we can reset it remotely."
   },
 
+  "PHONE_ISSUES_CARE": {
+    "HEADER": "Unable to make/receive calls",
+    "Heading1": "Phone troubleshooting guidelines",
+    "BODY1Children1": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
+    "BODY1Children2": "Check the battery of the cordless phone",
+
+    "NO_DIAL_TONE": "No dial tone",
+
+    "Heading2": "Call details",
+    "BODY2Children1": "Last incoming/outgoing calls",
+    "BODY2Children2": "Call forwarding enabled or disabled",
+    "BODY2Children3": "Option to enable/disable call forwarding"
+  },
+
+  "PHONE_ISSUES_PROBLEM_VALUE_ADDED": {
+    "HEADER": "Service details"
+  },
+
   "DIALOG": {
     "PASSWORD_WASNOT_RESET_HEADING": "Your password wasn't reset",
     "PASSWORD_WASNOT_RESET_DESCRIPTION": "Please note that the issue won't be fixed until the password is changed and the router is configured with the new password",
@@ -382,6 +437,7 @@
     "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
     "INTERNET_ISSUE_LIST_TITLE": "Please select your issue",
     "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues.",
+    "PHONE_ISSUE_LIST_MESSAGE": "Don’t forget to check the battery level in your phone headset.",
 
     "RESET_FACTORY_DEFAULT_TITLE": "Reset to factory default",
     "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
@@ -430,6 +486,7 @@
     "PARENTAL_CONTROL_WEB_THREAT_PROTECTION": "Web threat protection",
     "PARENTAL_CONTROL_CHILD_LOCK": "Child lock"
   },
+
   "DEVICE_CONNECTED_HOMEZONE": {
     "HEADING": "Device connected to Home Zone",
     "SUB_HEADING": "Unable to connect to Home Zone",
@@ -455,5 +512,11 @@
     "TEXT1": "Sorry, the service is not working properly. Please try again later or book an appointment instead.",
     "DESCRIPTION": "Choose the TV box you'd like to transfer the package to.",
     "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
+  },
+
+  "PHONE_ISSUE_NOT_FIXED": {
+    "TITLE": "Phone Issues",
+    "SUB_HEADING": "Phone service is down",
+    "TEXT1": "Sorry, the service is not working properly. Please try again later or book an appointment instead."
   }
 }

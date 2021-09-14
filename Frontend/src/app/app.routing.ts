@@ -24,6 +24,12 @@ import { PackageAvailableComponent } from './shared/components/package-available
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
+import { PhoneIssuesCareComponent } from './shared/components/phone-issues-care/phone-issues-care.component';
+import { PhoneIssuesProblemValueAddedComponent } from './shared/components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
+import { ForgotCcbPinComponent } from './shared/components/forgot-ccb-pin/forgot-ccb-pin.component';
+import { ChangeCallForwardComponent } from './shared/components/change-call-forward/change-call-forward.component';
+import { DummyDelComponent } from './shared/components/dummy-del/dummy-del.component';
+import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 
 const routes: Routes = [
@@ -195,6 +201,30 @@ const routes: Routes = [
   { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
   { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
+  { path: 'no-issue-phone', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssuePhone } },
+  { path: 'no-issue-phone-unable-calls', component: PhoneIssuesCareComponent, data: { id: ERoutingIds.noIssuePhoneUnablePhoneCalls } },
+  { path: 'no-issue-phone-no-dial-tone', component: PhoneIssuesCareComponent, data: { id: ERoutingIds.noIssuePhoneNoDialTone } },
+
+  { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
+  { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
+  { path: 'no-issue-phone-phone-reset-ccb-pin-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPinSuccessfully } },
+  { path: 'no-issue-phone-phone-reset-ccb-pin-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPinSuccessfully } },
+  { path: 'no-issue-phone-phone-Change-call-forward', component: ChangeCallForwardComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForward } },
+  { path: 'no-issue-phone-phone-Change-call-forward-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForwardSuccessfully } },
+
+  { path: 'DummyDel', component: DummyDelComponent, data: { id: ERoutingIds.noIssuePhone } },
+  { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },
+
+  //Ont reboot required
+  { path: 'ont-restart-required', component: IssueBuilderComponent, data: { id: ERoutingIds.ontRestartRequired } },
+  { path: 'ont-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.ontRestartRequiredSuccessfully } },
+  { path: 'ont-restart-required-manually', component: RouterRestartComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
+  { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
+
+  { path: 'issue-not-fixed-phone', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixedPhone } },
+
+  //pHONE Outage
+  { path: 'phone-outage', component: IssueBuilderComponent, data: { id: ERoutingIds.phoneOutage } },
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },
   { path: '**', redirectTo: '' },

@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-grid class="tv-detail-contanier">
+    <!-- Page Heading Start -->
+    <ion-row class="device-care_title">
+      <ion-col size="12">
+        <!-- <app-page-top></app-page-top> -->
+        <div>
+          <!-- <h2>{{ heading | translate }}</h2> -->
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Page Heading End -->
+    <ion-row class="my-subscriptions" *ngFor="let d of cardList">
+      <ion-col size="12" class="content-sub_title">
+        <h6 class="sub-title">{{ d.header | translate }}</h6>
+      </ion-col>
+      <ion-col size="12" class="subscriptions-box">
+        <ion-card>
+          <h6 class="sub-title">{{ d.subHeader }}</h6>
+          <ion-card-content *ngFor="let item of d.list">
+            <ion-row class="package">
+              <ion-col sizeLg="5" sizeMd="5" size="12" class="ion-no-padding">
+                <ion-label class="subscription">{{ item.title }}</ion-label>
+                <ion-label class="status"> {{ item.description }}</ion-label>
+
+                <ion-label class="subscription">{{ item.title2 }}</ion-label>
+                <ion-label class="status" *ngIf="item.link">
+                  <a href="javascript:void(0)" class="arrow-link">
+                    <span>{{ item.description2 }}</span>
+                  </a>
+                </ion-label>
+                <ion-label class="status" *ngIf="!item.link"> {{ d.list.description2 }}</ion-label>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <!-- Buttons -->
+    <!-- <app-buttons></app-buttons> -->
+  </ion-grid>
+</ion-content>

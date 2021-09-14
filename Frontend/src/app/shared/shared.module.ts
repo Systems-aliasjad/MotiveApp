@@ -43,6 +43,12 @@ import { TransferPackageComponent } from './components/transfer-package/transfer
 import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
+import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
+import { PhoneIssuesCareComponent } from './components/phone-issues-care/phone-issues-care.component';
+import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
+import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
+import { ChangeCallForwardComponent } from './components/change-call-forward/change-call-forward.component';
+import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 
 export function createTranslateLoader(http: HttpClient) {
@@ -87,6 +93,12 @@ export function createTranslateLoader(http: HttpClient) {
     UnableWatchSpecificChannelComponent,
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
+    PhoneIssueListDialogComponent,
+    PhoneIssuesCareComponent,
+    PhoneIssuesProblemValueAddedComponent,
+    ForgotCcbPinComponent,
+    ChangeCallForwardComponent,
+    DummyDelComponent,
     ResetRouterPasswordComponent,
   ],
   imports: [
@@ -117,6 +129,12 @@ export function createTranslateLoader(http: HttpClient) {
     ResetWifiPasswordComponent,
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
+    PhoneIssueListDialogComponent,
+    PhoneIssuesCareComponent,
+    PhoneIssuesProblemValueAddedComponent,
+    ForgotCcbPinComponent,
+    ChangeCallForwardComponent,
+    DummyDelComponent,
     ResetRouterPasswordComponent,
   ],
 

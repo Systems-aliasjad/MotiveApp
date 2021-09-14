@@ -10,6 +10,7 @@ import { ResetFactoryDefaultDialog } from '../shared/dialogs/reset-factory-defau
 import { InternetIssuesDialog } from '../shared/dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { Subscription } from 'rxjs';
+import { PhoneIssueListDialogComponent } from '../shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 
 @Component({
   selector: 'app-issue-builder',
@@ -38,6 +39,16 @@ export class IssueBuilderComponent implements OnInit, OnDestroy {
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.tvIssue,
+      },
+    });
+    return await this.modal.present();
+  }
+
+  async openPhoneIssueDialog() {
+    this.modal = await this.modalCtrl.create({
+      component: PhoneIssueListDialogComponent,
+      componentProps: {
+        flow: ERoutingIds.noIssuePhone,
       },
     });
     return await this.modal.present();
@@ -236,5 +247,35 @@ export class IssueBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableToWatchButtons));
     }
+
+    //#region  Module 3
+    //no issue phone
+    else if (this.codeType === ERoutingIds.noIssuePhone) {
+      this.messageSection = CustomerJourneyConstants.phoneIssuesMainMessageSection;
+      this.sharedService.setHeaderConfig('LANDING_PAGE.PHONE_ISSUES_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssuePhoneButton));
+    }
+
+    //ont restart required
+    else if (this.codeType === ERoutingIds.ontRestartRequired) {
+      this.messageSection = CustomerJourneyConstants.ontRestartMessageSection;
+      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRebootButtons));
+    }
+
+    //no issues fixed phone
+    else if (this.codeType === ERoutingIds.issueNotFixedPhone) {
+      this.messageSection = CustomerJourneyConstants.issueNotFixedPhoneMessageSection;
+      this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
+    }
+    //phone outage
+    else if (this.codeType === ERoutingIds.phoneOutage) {
+      this.messageSection = CustomerJourneyConstants.phoneOutageMessageSection;
+      this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.phoneOutageButtons));
+    }
+
+    //#endregion Module 3
   }
 }
