@@ -20,6 +20,7 @@
           <ion-item detail="true" (click)="onIssueClick(item)">
             <ion-label class="ion-text-wrap">
               <ion-text>{{ item.issue }}</ion-text>
+              <p *ngIf="item?.description">{{ item.description }}</p>
             </ion-label>
           </ion-item>
         </ion-list>
@@ -28,7 +29,7 @@
     <!-- Dialog Internet Issues List End -->
 
     <!-- Check Guidlines Start -->
-    <ion-row class="check-guidlines-container">
+    <ion-row class="check-guidlines-container" *ngIf="showViewGuidline === true">
       <ion-col size="12" class="ion-no-padding">
         <div class="check-guidlines">
           <div class="check-guidlines_icon">

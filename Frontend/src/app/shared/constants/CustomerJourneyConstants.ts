@@ -314,6 +314,31 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.UNABLE_WATCH_SPECIFIC_CHANNEL_PACKAGE_TRANSFER_SUCCESS_BODY'],
   };
 
+  public static resetInternetPasswordSuccess = {
+    header: 'MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS',
+    paragraphs: ['MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS_BODY', 'MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS_BODY2'],
+  };
+
+  public static errorOccured = {
+    header: 'MESSAGES.Error_Occured',
+    paragraphs: ['MESSAGES.Error_Occured_BODY'],
+  };
+
+  public static tryAgainErrorOccured = {
+    header: 'MESSAGES.Error_Occured',
+    paragraphs: ['MESSAGES.Error_Occured_TRY_AGAIN_BODY'],
+  };
+
+  public static resetInternetPasswordSuccessDetail = {
+    header: 'MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS',
+    paragraphs: ['MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS_DETAIL_BODY', 'MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS_DETAIL_BODY2'],
+  };
+
+  public static resetRouterWifiPasswordSuccess = {
+    header: 'MESSAGES.RESET_ROUTER_WIFI_PASSWORD_SUCCESS',
+    paragraphs: ['MESSAGES.RESET_ROUTER_WIFI_PASSWORD_SUCCESS_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},
@@ -655,6 +680,14 @@ export class CustomerJourneyConstants {
     explanatoryNote: '',
     clickListener: () => {},
     linkTo: '/third-party-router-form',
+    behaviour: 'primary',
+  };
+
+  public static buyEtisalatRouterButton: IButton = {
+    title: 'BUTTONS.BUY_ETISALAT_ROUTER',
+    explanatoryNote: '',
+    clickListener: () => {},
+    linkTo: '/thanks',
     behaviour: 'primary',
   };
 

@@ -24,6 +24,7 @@ import { PackageAvailableComponent } from './shared/components/package-available
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
+import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -129,8 +130,18 @@ const routes: Routes = [
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixed } },
-  //Internet password reset required
+  //Internet password reset required - 1122
   { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.internetPasswordReset } },
+  { path: 'internet-password-reset-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccess } },
+  { path: 'internet-password-reset-error', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordError } },
+  { path: 'internet-password-reset-fail', component: MessageBuilderComponent, data: { id: ERoutingIds.tryAgainError } },
+  { path: 'internet-password-reset-detail', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccessDetail } },
+
+  // Reset Router Wi-Fi Password
+  { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
+  { path: 'reset-router-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetRouterWifiPasswordSuccess } },
+  //Internet password reset required - 1122 END
+
   //3rd party router requires configuration
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },
   //Package Upgrade Recommended

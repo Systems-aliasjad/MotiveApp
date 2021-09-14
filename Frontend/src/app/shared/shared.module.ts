@@ -44,6 +44,7 @@ import { UnableWatchSpecificChannelComponent } from './components/unable-watch-s
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
+import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -88,6 +89,7 @@ export function createTranslateLoader(http: HttpClient) {
     UnableWatchSpecificChannelComponent,
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
+    ResetRouterPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -118,6 +120,7 @@ export function createTranslateLoader(http: HttpClient) {
     ResetWifiPasswordComponent,
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
+    ResetRouterPasswordComponent,
   ],
 
   entryComponents: [],
