@@ -303,7 +303,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     else if (this.codeType === ERoutingIds.tryAgainError) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
-      this.imgSrc = this.successImgSrc;
+      this.imgSrc = this.warningImgSrc;
       this.buttonConfig = [CustomerJourneyConstants.closeButtonSecondary];
       this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
     }
