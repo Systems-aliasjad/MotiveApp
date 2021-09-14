@@ -1,0 +1,34 @@
+<ion-grid class="tabs-contanier">
+  <app-issue-tabs [messageSection]="messageSection"></app-issue-tabs>
+
+  <motive-button
+    *ngIf="button1"
+    [type]="button1.type"
+    [title]="button1.title"
+    [explanatoryNote]="button1.explanatoryNote"
+    [SM]="button1.SM"
+    [MD]="button1.MD"
+    [LG]="button1.LG"
+    (click)="button1Listener()"
+  ></motive-button>
+  <motive-button
+    *ngIf="button2"
+    [type]="button2.type"
+    [title]="button2.title"
+    [explanatoryNote]="button2.explanatoryNote"
+    [SM]="button2.SM"
+    [MD]="button2.MD"
+    [LG]="button2.LG"
+    (click)="button2Listener()"
+  ></motive-button>
+  <motive-button
+    *ngIf="button3"
+    [type]="button3.type"
+    [title]="button3.title"
+    [explanatoryNote]="button3.explanatoryNote"
+    [SM]="button3.SM"
+    [MD]="button3.MD"
+    [LG]="button3.LG"
+    (click)="button3Listener()"
+  ></motive-button>
+</ion-grid>

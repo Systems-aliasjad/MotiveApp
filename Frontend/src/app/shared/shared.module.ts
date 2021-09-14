@@ -24,7 +24,7 @@ import { DeviceCareComponent } from './components/device-care/device-care.compon
 import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
 import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
-import { ButtonsComponent } from './components/buttons/buttons.component';
+import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
 import { BrowserStepperComponent } from './components/browser-stepper/browser-stepper.component';
 import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
@@ -43,6 +43,7 @@ import { TransferPackageComponent } from './components/transfer-package/transfer
 import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
+import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -50,6 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
+    DiagnoseIssueComponent,
     PageTopComponent,
     HeaderComponent,
     MessageScreenComponent,
@@ -67,7 +69,7 @@ export function createTranslateLoader(http: HttpClient) {
     PasswordResetDialog,
     InternetIssuesDialog,
     RestartRouterDialog,
-    ButtonsComponent,
+    ButtonComponent,
     IssueListDialog,
     BrowserStepperComponent,
     UnableVideoCallsComponent,
@@ -103,8 +105,9 @@ export function createTranslateLoader(http: HttpClient) {
     }),
   ],
   exports: [
+    DiagnoseIssueComponent,
     PageTopComponent,
-    ButtonsComponent,
+    ButtonComponent,
     HeaderComponent,
     MessageScreenComponent,
     ThankyouScreenComponent,

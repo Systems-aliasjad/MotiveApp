@@ -1,20 +1,17 @@
 <ion-content>
   <ion-grid class="tv-detail-contanier">
     <!-- Page Heading Start -->
-    <ion-row class="tv-detail_title"> 
+    <ion-row class="tv-detail_title">
       <ion-col size="12">
         <app-page-top></app-page-top>
       </ion-col>
     </ion-row>
     <!-- Page Heading End -->
 
-    
     <ion-row class="tv-detail-inner_container">
       <!-- Flow Chart Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="flow-chart_container">
-        <div class="flow-chart">
-
-        </div>
+        <div class="flow-chart"></div>
       </ion-col>
       <!-- Flow Chart End -->
 
@@ -42,7 +39,7 @@
                   <ion-row class="package">
                     <ion-col sizeLg="5" sizeMd="5" size="12" class="ion-no-padding">
                       <ion-list>
-                        <ion-item *ngFor="let item of card.list" >
+                        <ion-item *ngFor="let item of card.list">
                           <ion-label> {{ item }}</ion-label>
                         </ion-item>
                       </ion-list>
@@ -69,13 +66,13 @@
               <ion-card>
                 <ion-card-content>
                   <ion-label class="subscription"> eLifeON service</ion-label>
-                  <ion-label class="status"> Status</ion-label> 
+                  <ion-label class="status"> Status</ion-label>
                 </ion-card-content>
               </ion-card>
             </ion-col>
           </ion-row>
           <!-- My Subscribtions End -->
-          
+
           <!-- Game Sessions Start -->
           <ion-row class="sessions-container">
             <ion-col size="12">
@@ -99,16 +96,12 @@
             </ion-col>
           </ion-row>
           <!-- Game Sessions End -->
-
         </div>
       </ion-col>
       <!-- Tv Detai End -->
-
     </ion-row>
 
-    
-
     <!-- Buttons -->
-    <!-- <app-buttons></app-buttons> -->
+    <!-- <motive-button></motive-button> -->
   </ion-grid>
 </ion-content>

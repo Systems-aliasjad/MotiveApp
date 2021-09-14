@@ -13,7 +13,9 @@ export interface ITabTile {
   case: string; // Success-green | Error-red | Default-grey
   title: string;
 }
-
+/**
+ * @deprecated - need to be removed, please don't use this
+ */
 export interface IButton {
   title: string;
   clickListener: () => void;
