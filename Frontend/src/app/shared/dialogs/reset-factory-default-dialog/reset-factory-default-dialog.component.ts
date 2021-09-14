@@ -8,7 +8,7 @@ import { SharedService } from '../../shared.service';
 @Component({
   selector: 'app-reset-factory-default-dialog',
   templateUrl: './reset-factory-default-dialog.component.html',
-  styleUrls: ['./reset-factory-default-dialog.component.css'],
+  styleUrls: ['./reset-factory-default-dialog.component.scss'],
 })
 export class ResetFactoryDefaultDialog implements OnInit {
   terms: boolean = true;

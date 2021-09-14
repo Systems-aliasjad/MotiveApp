@@ -43,59 +43,10 @@
     background: var(--ion-item-background, var(--ion-background-color, transparent ));
     --ion-background-color:transparent;
   }
-  ion-card{
-    border-radius: 0.5rem;
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
-   }
-   
-  .inline-ion-list {
+ .inline-ion-list {
     ion-item {
       --min-height: 30px;
     }
-  }
-}
-ion-checkbox{
-  margin-right: 0;
-  margin-left: 0;
-  @media screen and (max-width: 992px) {
-    width: 1.1rem;
-    height: 1.1rem;
-  }
-  --background:$white;
-  --border-radius:50%;
-  --border-color:#719E19;
-  --border-style:solid;
-  --checkmark-color:#ffffff;
-  --background-checked:#719E19;
-  --border-color-checked:#719E19;
-  /*  --size: 26px;
-  width: var(--size);
-  height: var(--size); 
-  --checkmark-width:1px; 
-  box-shadow: 0 5px 10px rgb(25 0 0 / 16%);*/
-}
-.header-ios {
-	ion-toolbar {
-		&:last-of-type {
-			--border-width: 0;
-		}
-	}
-}
-ion-modal,
-.sc-ion-modal-md-h,
-.sc-ion-modal-ios-h{
-  --border-radius: 1rem ;
-  --width: 100%;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
-  align-items: flex-end;
-  @media screen and (max-width: 767px) {
-    --height:70%;
-    --border-radius: 0;
-  }
-  @media screen and (max-width: 281px) {
-    --height:100%;
   }
 }
 // --------------------------------------------------------------
@@ -262,6 +213,68 @@ h6{
   letter-spacing: 0;
 }
 // ------------Help classes Styling End-------------------
+
+// ------------Box Shadow Start-------------------
+.shadow-box,
+ion-card{
+  border-radius: 0.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+ }
+ // ------------Box Shadow End-------------------
+ 
+// ------------Checkbox Start-------------------
+ion-checkbox{
+  margin-right: 0;
+  margin-left: 0;
+  @media screen and (max-width: 992px) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+  --background:$white;
+  --border-radius:50%;
+  --border-color:#719E19;
+  --border-style:solid;
+  --checkmark-color:#ffffff;
+  --background-checked:#719E19;
+  --border-color-checked:#719E19;
+  /*  --size: 26px;
+  width: var(--size);
+  height: var(--size); 
+  --checkmark-width:1px; 
+  box-shadow: 0 5px 10px rgb(25 0 0 / 16%);*/
+}
+// ------------Checkbox End-------------------
+
+// ------------IOS Header Start-------------------
+.header-ios {
+	ion-toolbar {
+		&:last-of-type {
+			--border-width: 0;
+		}
+	}
+}
+// ------------IOS Header End-------------------
+
+// ------------Modal Start-------------------
+ion-modal,
+.sc-ion-modal-md-h,
+.sc-ion-modal-ios-h{
+  --border-radius: 1rem ;
+  --width: 100%;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+  @media screen and (max-width: 767px) {
+    --height:70%;
+    --border-radius: 0;
+  }
+  @media screen and (max-width: 281px) {
+    --height:100%;
+  }
+}
+// ------------Modal End-------------------
+
 // ------------Bullet List Start-------------------
 .bullet-list{
   .item{
