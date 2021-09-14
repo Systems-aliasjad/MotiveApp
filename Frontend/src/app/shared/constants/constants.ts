@@ -66,6 +66,22 @@ export enum ERoutingIds {
   packageavailable,
   issueNotFixedTv,
   packagetransfer,
+
+  noIssuePhone,
+  noIssuePhoneUnablePhoneCalls,
+  noIssuePhoneNoDialTone,
+  noIssuePhoneProblemValueAdded,
+  noIssuePhoneResetCCBPin,
+  noIssuePhoneResetCCBPinSuccessfully,
+  noIssuePhoneChangeCallForward,
+  noIssuePhoneChangeCallForwardSuccessfully,
+
+  ontRestartRequired,
+  ontRestartRequiredSuccessfully,
+  ontRestartRequiredManually,
+  ontRestartRequiredDeviceCare,
+  issueNotFixedPhone,
+  phoneOutage,
 }
 
 // const P3: string = '3P';

@@ -97,6 +97,24 @@ export class DeviceCareComponent implements OnInit, OnDestroy {
       this.PageContent = 'DEVICE_CARE.PAGE_CONTENT';
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableDeviceCareOwnRouterButtons));
     }
+
+    //#region  Modle 3
+    //unable to make phone calls
+    else if (this.codeType === ERoutingIds.noIssuePhoneUnablePhoneCalls) {
+      this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.PAGE_HEADING';
+      this.PageContent = 'DEVICE_CARE.PAGE_CONTENT';
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableDeviceCareOwnRouterButtons));
+    }
+    //ont restart manually
+    else if (this.codeType === ERoutingIds.ontRestartRequiredDeviceCare) {
+      this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+      this.pageHeading = 'DEVICE_CARE.PAGE_HEADING';
+      this.PageContent = 'DEVICE_CARE.PAGE_CONTENT';
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartManuualDeviceCareOwnRouterButtons));
+    }
+
+    //#endregion Module 3
   }
 
   async continueTroubleShoot() {
