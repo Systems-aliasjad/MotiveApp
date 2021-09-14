@@ -80,7 +80,7 @@ export class IssueListDialog implements OnInit {
     {
       issue: "Reset router's Wi-Fi password",
       description: "Tap here if you forgot your router's Wi-Fi password",
-      route: '',
+      route: 'reset-router-password',
     },
     {
       issue: 'Reset TV admin PIN',
