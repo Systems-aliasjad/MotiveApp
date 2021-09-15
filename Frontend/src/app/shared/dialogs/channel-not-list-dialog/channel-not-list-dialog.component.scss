@@ -57,3 +57,25 @@ ion-item::part(native){
 	}
 }
 /*-------------------------------------------------*/
+.channel-list-dialog-container{
+  .__title-wrapper{
+      h2{
+        font-size: 1.2rem;
+        margin-top: 14px;
+      }
+  }
+  .__desc-wrapper{
+    margin: 24px 0 30px 0;
+    p{
+      margin: 16px 0;
+      &:first-of-type{
+        margin-top: 18px;
+      }
+    }
+  }
+  .button-wrapper{
+    ion-button{
+      width: 100%;
+    }
+  }
+}

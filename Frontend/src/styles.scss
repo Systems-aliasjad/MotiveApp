@@ -249,6 +249,21 @@ ion-checkbox{
 }
 // ------------Checkbox End-------------------
 
+// ------------Radiobutton Start-----------------
+ion-radio{
+  --color:#719E19;
+  --color-checked:#719E19;  
+}
+ion-radio::part(container){
+  margin: 0;  
+  border-width: 2px;
+  border-style: solid;
+  border-color: #719E19;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+// ------------Radiobutton End-------------------
 // ------------IOS Header Start-------------------
 .header-ios {
 	ion-toolbar {
@@ -459,3 +474,13 @@ ion-footer{
   } */
 }
 
+app-diagnose-issue{
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}

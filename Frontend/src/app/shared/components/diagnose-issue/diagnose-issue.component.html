@@ -3,7 +3,8 @@
     <app-issue-tabs [messageSection]="messageSection"></app-issue-tabs>
   </ion-grid>
 </ion-content>
-<motive-button
+<ion-footer>
+  <motive-button
   *ngIf="button1"
   [type]="button1.type"
   [title]="button1.title"
@@ -11,10 +12,11 @@
   [SM]="button1.SM"
   [MD]="button1.MD"
   [LG]="button1.LG"
-  (clickHandler)="button1Listener()"
-></motive-button>
-
-<motive-button
+  (click)="button1Listener()"
+  ></motive-button>
+  
+  
+  <motive-button
   *ngIf="button2"
   [type]="button2.type"
   [title]="button2.title"
@@ -22,10 +24,11 @@
   [SM]="button2.SM"
   [MD]="button2.MD"
   [LG]="button2.LG"
-  (clickHandler)="button2Listener()"
-></motive-button>
-
-<motive-button
+  (click)="button2Listener()"
+  ></motive-button>
+  
+  
+  <motive-button
   *ngIf="button3"
   [type]="button3.type"
   [title]="button3.title"
@@ -33,5 +36,7 @@
   [SM]="button3.SM"
   [MD]="button3.MD"
   [LG]="button3.LG"
-  (clickHandler)="button3Listener()"
-></motive-button>
+  (click)="button3Listener()"
+  ></motive-button>
+</ion-footer>
+
