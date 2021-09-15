@@ -50,11 +50,7 @@ export class OSRPComponent implements OnInit {
     };
   }
 
-  button1Listener() {
-    console.log('====================================');
-    console.log('hello from main-component - parent');
-    console.log('====================================');
-  }
+  button1Listener() {}
 
   button2Listener() {
     this.router.navigate(['/thanks']);

@@ -154,6 +154,7 @@ const routes: Routes = [
   { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
   { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
   { path: 'unable-to-process-request', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToProcessRequest } },
+  { path: 'reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.resetTelephoneCCBPIN } },
   // 1122 Module - 4 END
 
   //3rd party router requires configuration
