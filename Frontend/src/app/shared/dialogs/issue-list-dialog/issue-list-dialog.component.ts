@@ -95,7 +95,7 @@ export class IssueListDialog implements OnInit {
     {
       issue: 'Reset CCB PIN',
       description: 'Find out how to reset your Code Control Barring PIN',
-      route: '',
+      route: 'reset-ccb-pin',
     },
   ];
   issuesList: any[];

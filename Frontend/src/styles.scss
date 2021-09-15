@@ -33,17 +33,17 @@
 // --------------------------------------------------------------
 :host {
   font-size: 1rem;
-  --background-color:  transparent;
-  --ion-item-background:transparent;
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
-  ion-content{
+  --background-color: transparent;
+  --ion-item-background: transparent;
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  ion-content {
     --background: var(--ion-background-color, transparent);
   }
-  ion-list{
-    background: var(--ion-item-background, var(--ion-background-color, transparent ));
-    --ion-background-color:transparent;
+  ion-list {
+    background: var(--ion-item-background, var(--ion-background-color, transparent));
+    --ion-background-color: transparent;
   }
- .inline-ion-list {
+  .inline-ion-list {
     ion-item {
       --min-height: 30px;
     }
@@ -96,7 +96,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 html,
-body{
+body {
   height: 100%;
   height: 100vh;
 }
@@ -105,25 +105,25 @@ body {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   margin: 0;
-  font-family:Lato,Roboto,Arial,sans-serif;
+  font-family: Lato, Roboto, Arial, sans-serif;
   color: $secondary-color;
   font-size: 1rem;
 }
 
 // ------------Removed Ionic Button Styling start-------------------
-ion-button{
+ion-button {
   --background: transparent;
   --border-radius: 0;
-  --box-shadow: none;;
-  --padding-top:0;
-  --padding-bottom:0;
+  --box-shadow: none;
+  --padding-top: 0;
+  --padding-bottom: 0;
 }
-ion-button::part(native){
+ion-button::part(native) {
   background-color: transparent;
   margin: 0;
   padding-right: 0;
   padding-left: 0;
-  --background-hover-opacity:0;
+  --background-hover-opacity: 0;
 }
 // ------------Removed Ionic Button Styling End-------------------
 
@@ -145,25 +145,25 @@ h6 {
   line-height: 1.3;
   color: $primary-color;
 }
-h1{
+h1 {
   font-size: 2.1875rem;
 }
-h2{
+h2 {
   font-size: 1.75rem;
 }
-h3{
+h3 {
   font-size: 1.53125rem;
 }
-h4{
+h4 {
   font-size: 1.3125rem;
 }
-h5{
+h5 {
   font-size: 1.09375rem;
 }
-h6{
+h6 {
   font-size: 0.875rem;
 }
-p{
+p {
   color: $secondary-color;
 }
 // ------------Title Styling End-------------------
@@ -187,109 +187,124 @@ p{
   }
 }
 // ------------Help classes Styling Start-------------------
-.full-width{
+.full-width {
   width: 100%;
 }
-.pt-0{
+.pt-0 {
   padding-top: 0;
 }
-.pr-0{
+.pr-0 {
   padding-right: 0;
 }
-.pb-0{
+.pb-0 {
   padding-bottom: 0;
 }
-.pl-0{
+.pl-0 {
   padding-left: 0;
 }
-.green-box-shadow{
+.green-box-shadow {
   -webkit-box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
   box-shadow: 0 5px 10px rgb(95 136 15 / 57%);
 }
-.mt-1{
+.mt-1 {
   margin-top: 1rem;
 }
-.mt-5{
+.mt-5 {
   margin-top: 5rem;
 }
-.letter-space-none{
+.letter-space-none {
   letter-spacing: 0;
 }
 // ------------Help classes Styling End-------------------
 
 // ------------Box Shadow Start-------------------
 .shadow-box,
-ion-card{
+ion-card {
   border-radius: 0.5rem;
   background-color: #ffffff;
   box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
- }
- // ------------Box Shadow End-------------------
+}
+// ------------Box Shadow End-------------------
 
 // ------------Checkbox Start-------------------
-ion-checkbox{
+ion-checkbox {
   margin-right: 0;
   margin-left: 0;
   @media screen and (max-width: 992px) {
     width: 1.1rem;
     height: 1.1rem;
   }
-  --background:$white;
-  --border-radius:50%;
-  --border-color:#719E19;
-  --border-style:solid;
-  --checkmark-color:#ffffff;
-  --background-checked:#719E19;
-  --border-color-checked:#719E19;
+  --background: $white;
+  --border-radius: 50%;
+  --border-color: #719e19;
+  --border-style: solid;
+  --checkmark-color: #ffffff;
+  --background-checked: #719e19;
+  --border-color-checked: #719e19;
   /*  --size: 26px;
   width: var(--size);
-  height: var(--size); 
-  --checkmark-width:1px; 
+  height: var(--size);
+  --checkmark-width:1px;
   box-shadow: 0 5px 10px rgb(25 0 0 / 16%);*/
 }
 // ------------Checkbox End-------------------
 
+// ------------Radiobutton Start-----------------
+ion-radio {
+  --color: #719e19;
+  --color-checked: #719e19;
+}
+ion-radio::part(container) {
+  margin: 0;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #719e19;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+// ------------Radiobutton End-------------------
 // ------------IOS Header Start-------------------
 .header-ios {
-	ion-toolbar {
-		&:last-of-type {
-			--border-width: 0;
-		}
-	}
+  ion-toolbar {
+    &:last-of-type {
+      --border-width: 0;
+    }
+  }
 }
 // ------------IOS Header End-------------------
 
 // ------------Modal Start-------------------
 ion-modal,
 .sc-ion-modal-md-h,
-.sc-ion-modal-ios-h{
-  --border-radius: 1rem ;
+.sc-ion-modal-ios-h {
+  --border-radius: 1rem;
   --width: 100%;
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
   @media screen and (max-width: 767px) {
-    --height:70%;
+    --height: 70%;
     --border-radius: 0;
   }
   @media screen and (max-width: 281px) {
-    --height:100%;
+    --height: 100%;
   }
 }
 // ------------Modal End-------------------
 
 // ------------Bullet List Start-------------------
-.bullet-list{
-  .item{
-    ion-label{
-      position:relative;
-      display:block;
-      padding-left:1rem;
+.bullet-list {
+  .item {
+    ion-label {
+      position: relative;
+      display: block;
+      padding-left: 1rem;
       @media screen and (max-width: 767px) {
-        white-space:normal;
+        white-space: normal;
       }
-      &:before{
-        content: "";
+      &:before {
+        content: '';
         position: absolute;
         -webkit-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -304,7 +319,7 @@ ion-modal,
     }
   }
 }
-// ------------Bullet List End------------------- 
+// ------------Bullet List End-------------------
 
 // ------------Inline List Start-------------------
 .inline-ion-list-border {
@@ -334,8 +349,8 @@ ion-modal,
   }
 }
 // ------------Inline List End-------------------
-.ion-list-arrow{
-  ion-item{
+.ion-list-arrow {
+  ion-item {
     cursor: pointer;
   }
 }
@@ -357,7 +372,7 @@ ion-modal,
   letter-spacing: 0.14285714em;
   text-decoration: none;
   @include transition(all 0.3s ease-in-out);
-  &:hover{
+  &:hover {
     text-decoration: underline;
     color: $primary-color;
   }
@@ -376,37 +391,37 @@ ion-modal,
     margin-left: 0.8rem;
   }
 }
-.tag-title{
-  color:$primary-color;
+.tag-title {
+  color: $primary-color;
   font-weight: 600;
 }
-html{
+html {
   --background: var(--ion-background-color, #f4f7eb);
-  background-color: #f4f7eb ; /* Old browsers */
-  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: -webkit-linear-gradient(top, #ffffff 15%, #f4f7eb 100%)  ; /* Chrome10-25,Safari5.1-6 */
-  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%) ; /* FF3.6-15 */
-  background-image: linear-gradient(to bottom, #ffffff 15%, #f4f7eb 100%) ; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ) ; /* IE6-9 */
-  -webkit-background-size: cover ;
-  -moz-background-size: cover ;
-  -o-background-size: cover ;
-  background-size: cover ;
+  background-color: #f4f7eb; /* Old browsers */
+  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%); /* FF3.6-15 */
+  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%); /* FF3.6-15 */
+  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%); /* FF3.6-15 */
+  background-image: -webkit-linear-gradient(top, #ffffff 15%, #f4f7eb 100%); /* Chrome10-25,Safari5.1-6 */
+  background-image: -moz-linear-gradient(top, #ffffff 15%, #f4f7eb 100%); /* FF3.6-15 */
+  background-image: linear-gradient(to bottom, #ffffff 15%, #f4f7eb 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f7eb',GradientType=0 ); /* IE6-9 */
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   background-repeat: no-repeat;
   padding-top: 0;
   padding-left: 0;
-  ion-content{
+  ion-content {
     position: relative;
     z-index: 10;
     --background: var(--ion-background-color, transparent);
-  } 
+  }
   .list-ios,
-  .list-md{
+  .list-md {
     --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
   }
-  .body-wrapper{
+  .body-wrapper {
     background-color: transparent;
   }
   .header-wrapper-wave {
@@ -422,11 +437,11 @@ html{
   }
 }
 
-.transparent-btn{
-  a{
+.transparent-btn {
+  a {
     display: inline-block;
     text-decoration: none;
-    color:$etisalat-color;
+    color: $etisalat-color;
     text-transform: $text-uppercase;
     letter-spacing: 0.14285714em;
     margin-top: 1rem;
@@ -434,28 +449,40 @@ html{
     @include transition(all 0.3s ease-in-out);
     &:hover,
     &:focus,
-    &:active{
+    &:active {
       text-decoration: none;
-      color:$primary-color;
+      color: $primary-color;
     }
     @media screen and (max-width: 320px) {
-      font-size: .9rem;
+      font-size: 0.9rem;
     }
   }
 }
-ion-grid{
+ion-grid {
   width: 100%;
   padding-bottom: 0;
 }
 
-ion-footer{
-  
+ion-footer {
   /* background-color: #f6f8ef; */
-  &::before{
+  &::before {
     background-image: none !important;
   }
   /* @media screen and (min-width: 768px) {
     display: none;
   } */
 }
+.__clickhere {
+  color: $etisalat-color;
+}
 
+app-diagnose-issue {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}

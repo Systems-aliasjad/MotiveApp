@@ -194,7 +194,7 @@
   "CHANNEL_LIST_DIALOG": {
     "TITLE": "Channel is not on the list",
     "CONTENT1": "The channel is not available as part of the TV package you have subscribed.",
-    "CONTENT2": "If you wish to subscribe more channels, please click here."
+    "CONTENT2": "If you wish to subscribe more channels, please <a class='__clickhere'>click here.</a>"
   },
 
   "MESSAGES": {

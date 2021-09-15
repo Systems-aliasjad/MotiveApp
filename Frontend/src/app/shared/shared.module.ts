@@ -18,7 +18,7 @@ import { BrMaskerModule } from 'br-mask';
 import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
 import { TabTileComponent } from './components/tab-tile/tab-tile.component';
 import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
-import { RouterRestartComponent } from './components/router-restart/router-restart.component';
+import { RestartInstructionComponent } from './components/restart-instruction/restart-instruction.component';
 import { ResetInternetPasswordComponent } from './components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './components/device-care/device-care.component';
 import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
@@ -71,7 +71,7 @@ export function createTranslateLoader(http: HttpClient) {
     IssueTabsComponent,
     TabTileComponent,
     ServiceIssueComponent,
-    RouterRestartComponent,
+    RestartInstructionComponent,
     ResetInternetPasswordComponent,
     DeviceCareComponent,
     PasswordResetDialog,
