@@ -13,20 +13,22 @@
 
 <!-- Button with White background -->
 <div *ngIf="type === 'secondary'">
-  <ion-row>
+  <ion-button class="btn secondary-btn close" (click)="handleClick()">{{ title | translate }}</ion-button>
+ <!--  <ion-row>
     <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-      <ion-button class="btn secondary-btn close" (click)="handleClick()">{{ title | translate }}</ion-button>
+      
     </ion-col>
-  </ion-row>
+  </ion-row> -->
 </div>
 
 <!-- Link -->
 <div class="link-wrapper" *ngIf="type === 'link'">
-  <ion-row>
+  <div class="transparent-btn" (click)="handleClick()">
+    <a> {{ title | translate }}</a>
+  </div>
+  <!-- <ion-row>
     <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-      <div class="transparent-btn" (click)="handleClick()">
-        <a> {{ title | translate }}</a>
-      </div>
+      
     </ion-col>
-  </ion-row>
+  </ion-row> -->
 </div>

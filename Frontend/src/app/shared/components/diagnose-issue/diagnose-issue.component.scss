@@ -11,3 +11,13 @@ ion-grid {
     height: auto;
   }
 }
+ion-footer {
+  -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
+  box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
+  @media screen and (max-width: 767px) {
+    box-shadow: none;
+  }
+  .footer-btns-container{
+
+  }
+}
