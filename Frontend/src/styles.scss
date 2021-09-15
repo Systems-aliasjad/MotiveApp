@@ -253,13 +253,16 @@ ion-checkbox{
 ion-radio{
   --color:#719E19;
   --color-checked:#719E19;  
+  margin-top: 0.5rem;
+  margin-right: 1.2rem;
+  margin-left: 0;
 }
 ion-radio::part(container){
   margin: 0;  
-  border-width: 2px;
-  border-style: solid;
-  border-color: #719E19;
-  border-radius: 50%;
+  --border-width: 2px;
+  --border-style: solid;
+  --border-color: #719E19;
+  --border-radius: 50%;
   width: 24px;
   height: 24px;
 }
