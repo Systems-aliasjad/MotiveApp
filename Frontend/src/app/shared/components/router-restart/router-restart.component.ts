@@ -89,6 +89,21 @@ export class RouterRestartComponent implements OnInit, OnDestroy {
       this.instructionList = ['Unplug the router', 'Wait for 30 seconds', 'Plug the router back in', 'Wait for 5 mins', 'Try to use the internet again'];
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRestartManuallyButtons));
     }
+
+    //ont restart manually
+    else if (this.codeType === ERoutingIds.ontRestartRequiredManually) {
+      this.ImgPath = this.ImgSrc;
+      this.headerTitle = 'ONT_REBOOT_MANUALLY.ONT_REBOOT_H1';
+      this.instructionHeaderTitle = 'ONT_REBOOT_MANUALLY.ONT_REBOOT_H1';
+      this.instructionStepsTitle = 'INSTRUCTIONS_STEPS.ONT_REBOOT_TITLE';
+      this.instructionsOR = 'INSTRUCTIONS_STEPS.OR';
+      this.instructionsORTitle = 'INSTRUCTIONS_STEPS_OR.ONT_RESTART_TITLE';
+      this.instructionsORBody = 'INSTRUCTIONS_STEPS_OR.ONT_RESTART_BODY';
+      this.instructionList = ['Unplug the fiber box from power', 'Wait for 30 seconds', 'Plug the fiber box back in', 'Wait for 5 minutes', 'Try to use the phone again'];
+
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartManuallyButtons));
+    }
+
     // this.selectedLang = this.sharedService.getDefaultLanguage();
     // this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
     // this.sharedService.setButtonConfig(this.buttonsConfig);

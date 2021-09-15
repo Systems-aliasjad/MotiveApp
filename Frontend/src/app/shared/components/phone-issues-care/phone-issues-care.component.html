@@ -1,0 +1,56 @@
+<ion-content>
+  <ion-grid class="device-care-container">
+    <!-- Page Title Start -->
+    <ion-row class="device-care_title">
+      <ion-col size="12">
+        <!-- <app-page-top></app-page-top> -->
+        <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
+          <h2>{{ pageHeading | translate }}</h2>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Page Title End  -->
+
+    <!-- Page Content Start  -->
+    <ion-row class="device-care_inner_container device-care-lg">
+      <ion-col sizeLg="12" sizeMd="12" size="12" class="device-care_content">
+        <div class="content">
+          <div *ngIf="section1">
+            <div *ngFor="let message of section1.body">
+              <h2>{{ message.title | translate }}</h2>
+              <ion-list *ngIf="message.children" class="bullet-list">
+                <ion-item *ngFor="let item of message.children">
+                  <ion-label> {{ item | translate }}</ion-label>
+                </ion-item>
+              </ion-list>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_image_lg">
+        <div class="image">
+          <img src="https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg" alt="Picture placeholder" />
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="device-care_inner_container device-care-sm">
+      <ion-col sizeLg="12" sizeMd="12" size="12" class="device-care_content">
+        <div class="content">
+          <div *ngIf="section2">
+            <div *ngFor="let message of section2.body">
+              <h2>{{ message.title | translate }}</h2>
+              <ion-list *ngIf="message.children" class="bullet-list">
+                <ion-item *ngFor="let item of message.children">
+                  <ion-label> {{ item | translate }}</ion-label>
+                </ion-item>
+              </ion-list>
+            </div>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Page Content End -->
+  </ion-grid>
+</ion-content>

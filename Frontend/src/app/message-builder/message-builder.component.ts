@@ -279,6 +279,28 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
     //#endregion Module 2
 
+    //#region  Module 3
+    //reset ccb pin successfully
+    else if (this.codeType === ERoutingIds.noIssuePhoneResetCCBPinSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.resetCCBPinsuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
+    }
+    //change call forwarding number
+    else if (this.codeType === ERoutingIds.noIssuePhoneChangeCallForwardSuccessfully) {
+      this.Section1Data = CustomerJourneyConstants.changeCallForwardsuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
+    }
+
+    // ont reboot successfully
+    else if (this.codeType === ERoutingIds.ontRestartRequiredSuccessfully) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.ontRestartssuccessfullyCase;
+      this.imgSrc = this.successImgSrc;
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartSuccessfullyButtons));
+    }
+    //#endregion Module 3
     ///For Internet Password Reset
     else if (this.codeType === ERoutingIds.resetInternetPasswordSuccess) {
       this.sharedService.setHeaderConfig('', false, false);
@@ -303,7 +325,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     else if (this.codeType === ERoutingIds.tryAgainError) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
-      this.imgSrc = this.successImgSrc;
+      this.imgSrc = this.warningImgSrc;
       this.buttonConfig = [CustomerJourneyConstants.closeButtonSecondary];
       this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
     }
