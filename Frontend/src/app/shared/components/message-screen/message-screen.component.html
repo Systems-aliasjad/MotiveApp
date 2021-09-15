@@ -15,12 +15,12 @@
       </h4>
 
       <!-- for subHeader -->
-      <h4 *ngIf="subHeaderSectionTemplate">
+      <ion-list >
         <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
           <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
           <ion-label class="detail_list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
         </ion-item>
-      </h4>
+      </ion-list>
 
       <div class="content" *ngIf="Section1Data?.paragraphs">
         <p *ngFor="let txt of Section1Data?.paragraphs">
