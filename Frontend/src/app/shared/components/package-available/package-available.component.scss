@@ -1,0 +1,22 @@
+@import '/src/assets/scss/base/variables';
+@import '/src/assets/scss/base/mixins';
+
+/*-------------------------------------------------*/
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-list {
+    --ion-background-color: transparent;
+  }
+} 
+ion-item::part(native){
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-width: 0;
+  --inner-border-width: 0;
+}
+/*-------------------------------------------------*/
+ion-card{
+  margin-right: 0;
+  margin-left: 0;
+ }
