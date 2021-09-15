@@ -1,10 +1,12 @@
 <ion-content>
-  <ion-grid class="service-detail-contanier">
-    <ion-row class="service-detail_title">
-      <ion-col size="12">
+  <ion-grid>
+    <ion-row class="page-title">
+      <ion-col size="12" class="pb-0">
         <app-page-top></app-page-top>
       </ion-col>
-      <p>{{ PageContent | translate }}</p>
+      <ion-col size="12" class="pt-0 pb-0">
+        <p>{{ PageContent | translate }}</p>
+      </ion-col>
     </ion-row>
     <ion-row>
       <!-- Package list Start -->

@@ -249,7 +249,7 @@ ion-checkbox{
 }
 // ------------Checkbox End-------------------
 
-// ------------Radiobutton Start-----------------
+// ------------Radio Button Start-----------------
 ion-radio{
   --color:#719E19;
   --color-checked:#719E19;  
@@ -263,7 +263,8 @@ ion-radio::part(container){
   width: 24px;
   height: 24px;
 }
-// ------------Radiobutton End-------------------
+// ------------Radio Button End-------------------
+
 // ------------IOS Header Start-------------------
 .header-ios {
 	ion-toolbar {
@@ -356,6 +357,24 @@ ion-modal,
 }
 .quick-links_all,
 .arrow-link,
+.arrow-btn,
+.__clickhere {
+  @include transition(all 0.3s ease-in-out);
+}
+.__clickhere {
+  color: $etisalat-color;
+  &:hover{
+    text-decoration: underline;
+    color: $primary-color;
+  }
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: $primary-color;
+  }
+}
+.quick-links_all,
+.arrow-link,
 .arrow-btn {
   color: $etisalat-color;
   text-transform: $text-uppercase;
@@ -371,7 +390,7 @@ ion-modal,
   align-items: center;
   letter-spacing: 0.14285714em;
   text-decoration: none;
-  @include transition(all 0.3s ease-in-out);
+  
   &:hover{
     text-decoration: underline;
     color: $primary-color;

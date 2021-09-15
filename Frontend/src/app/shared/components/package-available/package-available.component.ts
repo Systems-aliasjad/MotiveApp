@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-package-available',
   templateUrl: './package-available.component.html',
-  styleUrls: ['./package-available.component.css'],
+  styleUrls: ['./package-available.component.scss'],
 })
 export class PackageAvailableComponent implements OnInit, OnDestroy {
   codeType: any;

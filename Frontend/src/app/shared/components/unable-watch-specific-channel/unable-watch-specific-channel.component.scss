@@ -6,6 +6,8 @@
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
    ion-card{
     border-radius: 0.5rem;
+    margin-right: 0;
+    margin-left: 0;
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
    }
@@ -36,7 +38,6 @@ ion-item::part(native){
   --border-width: 0;
   --inner-border-width: 0
 }
-
 // --------------------------------------------------------------
 
 .btn {
