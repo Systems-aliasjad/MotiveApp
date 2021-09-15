@@ -22,7 +22,7 @@ export class ButtonComponent implements OnInit {
   @Input()
   LG: string = '12'; //size Large
   @Output()
-  click = new EventEmitter();
+  clickHandler = new EventEmitter();
 
   constructor(private modalCtrl: ModalController) {}
 
@@ -33,6 +33,6 @@ export class ButtonComponent implements OnInit {
   }
 
   handleClick() {
-    this.click.emit();
+    this.clickHandler.emit();
   }
 }
