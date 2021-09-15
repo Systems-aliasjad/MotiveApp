@@ -1,54 +1,87 @@
-<ion-grid class="info-container">
-  <!-- Action Icon Start -->
-  <ion-row class="info-container_icon">
-    <ion-col size="12">
-      <img [src]="imgSrc" alt="warning" />
-    </ion-col>
-  </ion-row>
-  <!-- Action Icon End -->
+<ion-content>
+  <ion-grid class="info-container">
+    <!-- Action Icon Start -->
+    <ion-row class="info-container_icon">
+      <ion-col size="12">
+        <img [src]="imgSrc" alt="warning" />
+      </ion-col>
+    </ion-row>
+    <!-- Action Icon End -->
 
-  <!-- Action Title Content Start -->
-  <ion-row class="info-container_title_content">
-    <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12">
-      <h4 *ngIf="Section1Data?.header">
-        {{ Section1Data.header | translate }}
-      </h4>
+    <!-- Action Title Content Start -->
+    <ion-row class="info-container_title_content">
+      <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12">
+        <h4 *ngIf="Section1Data?.header">
+          {{ Section1Data.header | translate }}
+        </h4>
 
-      <!-- for subHeader -->
-      <h4 *ngIf="subHeaderSectionTemplate">
-        <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
-          <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
-          <ion-label class="detail_list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
-        </ion-item>
-      </h4>
+        <!-- for subHeader -->
+        <h4 *ngIf="subHeaderSectionTemplate">
+          <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
+            <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
+            <ion-label class="detail_list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
+          </ion-item>
+        </h4>
 
-      <div class="content" *ngIf="Section1Data?.paragraphs">
-        <p *ngFor="let txt of Section1Data?.paragraphs">
-          <!-- for CLICK HERE see screen 1.17.2 -->
-          <span *ngIf="Section1Data?.span" (click)="Section1Data.spanListener()" class="">{{ Section1Data.span | translate }}</span>
-          {{ txt | translate }}
-        </p>
-      </div>
-    </ion-col>
-  </ion-row>
-  <!-- Action Title Content End -->
-
-  <div class="info-container_detail_followup">
-    <!-- Detail List and Follow up Start -->
-    <ion-row class="info-container_detail" *ngIf="Section2Data">
-      <ion-col size="12" class="pt-0 pb-0">
-        <div class="info-container_detail_list">
-          <ion-list class="inline-ion-list inline-ion-list-border">
-            <ion-item lines="none" class="ion-no-padding" *ngFor="let template of Section2Template">
-              <ion-label class="inline-list_title"> {{ template.title | translate }} </ion-label>
-              <ion-label class="inline-list_value"> {{ Section2Data[template.objKeyNameEN] }} </ion-label>
-            </ion-item>
-          </ion-list>
+        <div class="content" *ngIf="Section1Data?.paragraphs">
+          <p *ngFor="let txt of Section1Data?.paragraphs">
+            <!-- for CLICK HERE see screen 1.17.2 -->
+            <span *ngIf="Section1Data?.span" (click)="Section1Data.spanListener()" class="">{{ Section1Data.span | translate }}</span>
+            {{ txt | translate }}
+          </p>
         </div>
       </ion-col>
     </ion-row>
-    <!-- Detail List and Follow up and Close End -->
+    <!-- Action Title Content End -->
 
-    <!-- <motive-button></motive-button> -->
-  </div>
-</ion-grid>
+    <div class="info-container_detail_followup">
+      <!-- Detail List and Follow up Start -->
+      <ion-row class="info-container_detail" *ngIf="Section2Data">
+        <ion-col size="12" class="pt-0 pb-0">
+          <div class="info-container_detail_list">
+            <ion-list class="inline-ion-list inline-ion-list-border">
+              <ion-item lines="none" class="ion-no-padding" *ngFor="let template of Section2Template">
+                <ion-label class="inline-list_title"> {{ template.title | translate }} </ion-label>
+                <ion-label class="inline-list_value"> {{ Section2Data[template.objKeyNameEN] }} </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-col>
+      </ion-row>
+      <!-- Detail List and Follow up and Close End -->
+    </div>
+  </ion-grid>
+</ion-content>
+
+<!-- Buttons Start -->
+<motive-button
+  *ngIf="button1"
+  [type]="button1.type"
+  [title]="button1.title"
+  [explanatoryNote]="button1.explanatoryNote"
+  [SM]="button1.SM"
+  [MD]="button1.MD"
+  [LG]="button1.LG"
+  (click)="button1Listener()"
+></motive-button>
+<motive-button
+  *ngIf="button2"
+  [type]="button2.type"
+  [title]="button2.title"
+  [explanatoryNote]="button2.explanatoryNote"
+  [SM]="button2.SM"
+  [MD]="button2.MD"
+  [LG]="button2.LG"
+  (click)="button2Listener()"
+></motive-button>
+<motive-button
+  *ngIf="button3"
+  [type]="button3.type"
+  [title]="button3.title"
+  [explanatoryNote]="button3.explanatoryNote"
+  [SM]="button3.SM"
+  [MD]="button3.MD"
+  [LG]="button3.LG"
+  (click)="button3Listener()"
+></motive-button>
+<!-- Buttons End -->
