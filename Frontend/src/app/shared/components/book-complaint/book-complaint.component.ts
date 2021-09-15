@@ -86,6 +86,16 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
     }
     //#endregion Module 2
+
+    //#region  Module 3
+    else if (this.codeType === ERoutingIds.bookComplaintAsComplaint) {
+      this.buttonText = 'BUTTONS.BOOK_AN_APPOINTMENT';
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    } else if (this.codeType === ERoutingIds.bookAppointmentAsAppointment) {
+      this.buttonText = 'BUTTONS.BOOK_AN_APPOINTMENT';
+      this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    }
+    //#endregion Module 3
   }
 
   get f() {
@@ -117,5 +127,13 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.router.navigate(['tvBox-not-reachable-form_successfully']);
     }
     //#endregion Module 2
+
+    //#region  Module 3
+    else if (this.codeType === ERoutingIds.bookComplaintAsComplaint) {
+      this.router.navigate(['/issues/phone/outage-message']);
+    } else if (this.codeType === ERoutingIds.bookAppointmentAsAppointment) {
+      this.router.navigate(['/issues/phone/issue-not-fixed-message']);
+    }
+    //#endregion Module 3
   }
 }

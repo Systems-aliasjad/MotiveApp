@@ -43,13 +43,13 @@ export class PhoneIssueListDialogComponent implements OnInit {
     }
   }
 
-  dismiss() {
-    this.modalCtrl.dismiss();
+  async dismiss() {
+    return this.modalCtrl.dismiss();
   }
 
-  onIssueClick(item) {
+  async onIssueClick(item) {
     if (item.route != '') {
-      this.dismiss();
+      await this.dismiss();
       this.router.navigate([item.route]);
     } else if (item.customEvent) {
       this[item.customEvent]();

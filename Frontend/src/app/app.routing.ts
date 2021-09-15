@@ -8,7 +8,7 @@ import { TermsConditionsComponent } from './shared/components/terms-conditions/t
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
 import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
-import { RouterRestartComponent } from './shared/components/router-restart/router-restart.component';
+import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
 import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
 import { BrowserStepperComponent } from './shared/components/browser-stepper/browser-stepper.component';
@@ -91,7 +91,7 @@ const routes: Routes = [
   },
   {
     path: 'router-restart',
-    component: RouterRestartComponent,
+    component: RestartInstructionComponent,
     data: { id: ERoutingIds.routerRestart },
   },
   {
@@ -110,6 +110,10 @@ const routes: Routes = [
   { path: 'osrp', component: MessageBuilderComponent, data: { id: ERoutingIds.osrp } },
   //Appointment Successfully
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.appoinmentSuccessfully } },
+
+  //complaint Successfully
+  { path: 'complaint-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.complaintSuccessfully } },
+
   //Open technical S/R
   { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
   //package upgrade Successfully
@@ -189,6 +193,13 @@ const routes: Routes = [
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
   // Book A Complaint
   { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
+
+  // Book A Complaint As Complaint message
+  { path: 'book-Complaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaintAsComplaint } },
+
+  // Book A Appointment As Appointment message
+  { path: 'book-Appointment', component: BookComplaintComponent, data: { id: ERoutingIds.bookAppointmentAsAppointment } },
+
   // 3rd party router form
   { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
   // #endregion  third party  router
@@ -215,7 +226,7 @@ const routes: Routes = [
   //TV set top box restart required
   { path: 'tvBox-restart-required', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequired } },
   { path: 'tvBox-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequiredSuccessfully } },
-  { path: 'tvBox-restart-required-manually', component: RouterRestartComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
+  { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
   { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
 
   { path: 'browser-stapper', component: BrowserStepperComponent },
@@ -258,7 +269,7 @@ const routes: Routes = [
   //Ont reboot required
   { path: 'ont-restart-required', component: IssueBuilderComponent, data: { id: ERoutingIds.ontRestartRequired } },
   { path: 'ont-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.ontRestartRequiredSuccessfully } },
-  { path: 'ont-restart-required-manually', component: RouterRestartComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
+  { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
   { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
 
   { path: 'issue-not-fixed-phone', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixedPhone } },

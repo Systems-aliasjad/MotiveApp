@@ -61,6 +61,6 @@ export class ChangeCallForwardComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.valid);
-    this.router.navigate(['/no-issue-phone-phone-Change-call-forward-successfully']);
+    this.router.navigate(['/issues/phone/call-forward-message']);
   }
 }

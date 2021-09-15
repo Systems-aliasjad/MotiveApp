@@ -18,13 +18,11 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
   error = errorMessages;
   modal: any;
   passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
 
   termsCheck: boolean = false;
   subscription: Subscription;
   hideShowPassword() {
     this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
-    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController, private location: Location) {

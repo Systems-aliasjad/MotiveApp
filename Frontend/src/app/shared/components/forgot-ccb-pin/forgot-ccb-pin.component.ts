@@ -70,7 +70,7 @@ export class ForgotCcbPinComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.valid);
-    this.router.navigate(['no-issue-phone-phone-reset-ccb-pin-successfully']);
+    this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
   }
 
   onBackClick() {
