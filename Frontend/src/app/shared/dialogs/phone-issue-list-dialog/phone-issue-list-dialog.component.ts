@@ -50,7 +50,6 @@ export class PhoneIssueListDialogComponent implements OnInit {
   async onIssueClick(item) {
     if (item.route != '') {
       await this.dismiss();
-      await this.dismiss();
       this.router.navigate([item.route]);
     } else if (item.customEvent) {
       this[item.customEvent]();

@@ -130,9 +130,9 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
 
     //#region  Module 3
     else if (this.codeType === ERoutingIds.bookComplaintAsComplaint) {
-      this.router.navigate(['complaint-successfully']);
+      this.router.navigate(['/issues/phone/outage-message']);
     } else if (this.codeType === ERoutingIds.bookAppointmentAsAppointment) {
-      this.router.navigate(['appoinment-successfully']);
+      this.router.navigate(['/issues/phone/issue-not-fixed-message']);
     }
     //#endregion Module 3
   }

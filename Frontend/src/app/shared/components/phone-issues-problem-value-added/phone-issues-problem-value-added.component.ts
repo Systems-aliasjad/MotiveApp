@@ -1,5 +1,5 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
@@ -11,6 +11,7 @@ import { InternetIssuesDialog } from '../../dialogs/internet-issues-dialog/inter
 import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
 import { RestartTvboxDialog } from '../../dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { SharedService } from '../../shared.service';
+import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-phone-issues-problem-value-added',
@@ -24,6 +25,31 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   cardList;
   PageTitle: string;
   PageContent: string;
+
+  @Input()
+  button1: IMotiveButton;
+  @Output()
+  button1Click = new EventEmitter();
+
+  @Input()
+  button2: IMotiveButton;
+  @Output()
+  button2Click = new EventEmitter();
+
+  @Input()
+  button3: IMotiveButton;
+  @Output()
+  button3Click = new EventEmitter();
+
+  @Input()
+  section1;
+
+  @Input()
+  section2;
+
+  @Input()
+  pageHeading;
+
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -53,7 +79,17 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
       this.heading = 'PHONE_ISSUES_PROBLEM_VALUE_ADDED.HEADER';
       this.sharedService.setHeaderConfig('PHONE_ISSUES_PROBLEM_VALUE_ADDED.HEADER', true);
 
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.phoneIssuesProblemValueAddedButtons));
+      // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.phoneIssuesProblemValueAddedButtons));
+      this.button1 = {
+        type: 'primary',
+        title: 'BUTTONS.ISSUE_FIXED',
+        explanatoryNote: '',
+      };
+      this.button2 = {
+        type: 'link',
+        title: 'BUTTONS.REQUEST_SUPPORT',
+        explanatoryNote: '',
+      };
     }
 
     this.cardList = [
@@ -122,5 +158,19 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
       this.router.navigate(['/unable-to-watch-package-transfer']);
     }
+  }
+
+  button1Listener() {
+    this.router.navigate(['/thanks']);
+    // this.button1Click.emit();
+  }
+
+  button2Listener() {
+    this.router.navigate(['/browser-stapper']);
+    // this.button2Click.emit();
+  }
+
+  button3Listener() {
+    this.button3Click.emit();
   }
 }

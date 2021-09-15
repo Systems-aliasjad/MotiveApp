@@ -28,7 +28,7 @@ export class OntRebootComponent implements OnInit {
   }
 
   button1Listener() {
-    this.router.navigate(['/ont-restart-required-successfully']);
+    this.router.navigate(['/issues/phone/ont-reboot-message']);
   }
   button2Listener() {
     this.router.navigate(['/ont-restart-required-manually']);
