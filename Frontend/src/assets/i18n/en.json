@@ -163,7 +163,13 @@
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
-    "USING_THE_SAME_ROUTER": "Are you using the same router?"
+    "USING_THE_SAME_ROUTER": "Are you using the same router?",
+    "PASSWORD_STRENGTH": "Password strength section",
+    "Minimum_8_Characters": "Minimum 8 characters",
+    "CONTAIN_AT_LEAST_1_NUMERIC_CHARCTER": "Contain at least 1 numeric character",
+    "CONTAIN_AT_LEAST_1_SPECIAL_CHARCTER": "Contain at least 1 special character",
+    "I_AGREE_TO": "I agree to",
+    "TERMS_AND_CONDITIONS": "Terms & Conditions"
   },
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",

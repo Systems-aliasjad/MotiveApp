@@ -9,6 +9,8 @@ export enum ERoutingIds {
   openComplaint,
   osrp,
   appoinmentSuccessfully,
+  complaintSuccessfully,
+
   openSr,
   packageUpgradeRequestSuccessfully,
   routerRebootRequired,
@@ -19,6 +21,9 @@ export enum ERoutingIds {
   packageUpgradeRecommendedForm,
   WiFiAlarm,
   bookComplaint,
+  bookComplaintAsComplaint,
+  bookAppointmentAsAppointment,
+
   routerUpgradeRecommended,
   routerUpgradeRecommendedForm,
   routerUpgradeRequestSuccessfully,

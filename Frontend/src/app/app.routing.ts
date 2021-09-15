@@ -109,6 +109,10 @@ const routes: Routes = [
   { path: 'osrp', component: MessageBuilderComponent, data: { id: ERoutingIds.osrp } },
   //Appointment Successfully
   { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.appoinmentSuccessfully } },
+
+  //complaint Successfully
+  { path: 'complaint-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.complaintSuccessfully } },
+
   //Open technical S/R
   { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
   //package upgrade Successfully
@@ -180,6 +184,13 @@ const routes: Routes = [
   { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
   // Book A Complaint
   { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
+
+  // Book A Complaint As Complaint message
+  { path: 'book-Complaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaintAsComplaint } },
+
+  // Book A Appointment As Appointment message
+  { path: 'book-Appointment', component: BookComplaintComponent, data: { id: ERoutingIds.bookAppointmentAsAppointment } },
+
   // 3rd party router form
   { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
   // #endregion  third party  router

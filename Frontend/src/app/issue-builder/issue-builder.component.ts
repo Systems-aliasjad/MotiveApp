@@ -249,32 +249,32 @@ export class IssueBuilderComponent implements OnInit, OnDestroy {
     }
 
     //#region  Module 3
-    //no issue phone
-    else if (this.codeType === ERoutingIds.noIssuePhone) {
-      this.messageSection = CustomerJourneyConstants.phoneIssuesMainMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.PHONE_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssuePhoneButton));
-    }
+    // //no issue phone
+    // else if (this.codeType === ERoutingIds.noIssuePhone) {
+    //   this.messageSection = CustomerJourneyConstants.phoneIssuesMainMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.PHONE_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssuePhoneButton));
+    // }
 
-    //ont restart required
-    else if (this.codeType === ERoutingIds.ontRestartRequired) {
-      this.messageSection = CustomerJourneyConstants.ontRestartMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRebootButtons));
-    }
+    // //ont restart required
+    // else if (this.codeType === ERoutingIds.ontRestartRequired) {
+    //   this.messageSection = CustomerJourneyConstants.ontRestartMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRebootButtons));
+    // }
 
-    //no issues fixed phone
-    else if (this.codeType === ERoutingIds.issueNotFixedPhone) {
-      this.messageSection = CustomerJourneyConstants.issueNotFixedPhoneMessageSection;
-      this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
-    }
-    //phone outage
-    else if (this.codeType === ERoutingIds.phoneOutage) {
-      this.messageSection = CustomerJourneyConstants.phoneOutageMessageSection;
-      this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.phoneOutageButtons));
-    }
+    // //no issues fixed phone
+    // else if (this.codeType === ERoutingIds.issueNotFixedPhone) {
+    //   this.messageSection = CustomerJourneyConstants.issueNotFixedPhoneMessageSection;
+    //   this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
+    // }
+    // //phone outage
+    // else if (this.codeType === ERoutingIds.phoneOutage) {
+    //   this.messageSection = CustomerJourneyConstants.phoneOutageMessageSection;
+    //   this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.phoneOutageButtons));
+    // }
 
     //#endregion Module 3
   }

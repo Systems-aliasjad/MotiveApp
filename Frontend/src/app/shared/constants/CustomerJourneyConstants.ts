@@ -31,6 +31,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
   };
 
+  public static complaintFormsuccessfullyCase = {
+    header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
+  };
+
   public static tvBoxNotReachableFormsuccessfullyCase = {
     header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
