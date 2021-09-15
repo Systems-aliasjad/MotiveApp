@@ -36,11 +36,16 @@
               </ion-col>
             </ion-row>
 
-            <ion-row>
+            <ion-row *ngIf="case == 1">
               <ion-col sizeLg="2" sizeMd="3" sizeSm="12" size="12">
                 <ion-button class="btn secondary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{ 'BUTTONS.NEXT' | translate }}</ion-button>
               </ion-col>
             </ion-row>
+
+            <!-- Reset Telephone Case Buttons -->
+            <motive-button *ngIf="case == 2" [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
+            <motive-button *ngIf="case == 2" [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button>
+            <!-- Reset Telephone Case Buttons -->
           </ion-grid>
         </form>
       </ion-col>

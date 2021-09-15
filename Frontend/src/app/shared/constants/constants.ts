@@ -95,6 +95,7 @@ export enum ERoutingIds {
   resetTvAdminPin,
   resetELifeONPin,
   unableToProcessRequest,
+  resetTelephoneCCBPIN,
 }
 
 // const P3: string = '3P';
@@ -134,12 +135,14 @@ export enum ERoutingIds {
 // const UPGRADE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 // const UPGRADE_PACKAGE: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 
+export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
+export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
+
 const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
   body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
   linkTo: 'issues/internet',
-  customEvent: 'openInternetIssueDialog',
 };
 
 const TV_ISSUES = {
@@ -147,7 +150,6 @@ const TV_ISSUES = {
   body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
   linkTo: 'issues/tv',
-  customEvent: 'openTVIssueDialog',
 };
 
 const PHONE_ISSUES = {

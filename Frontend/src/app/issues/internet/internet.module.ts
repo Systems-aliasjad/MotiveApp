@@ -5,9 +5,10 @@ import { MainComponent } from './routes/main.component';
 import { SharedModule } from '../../shared/shared.module';
 import { InternetRoutingModule } from './internet.routing';
 import { OutageComponent } from './routes/outage.component';
+import { OSRPComponent } from './routes/osrp.component';
 
 @NgModule({
-  declarations: [MainComponent, OutageComponent],
+  declarations: [MainComponent, OutageComponent, OSRPComponent],
   imports: [CommonModule, InternetRoutingModule, SharedModule],
 })
 export class InternetModule {}

@@ -225,7 +225,7 @@ ion-card{
   box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
  }
  // ------------Box Shadow End-------------------
- 
+
 // ------------Checkbox Start-------------------
 ion-checkbox{
   margin-right: 0;
@@ -474,3 +474,13 @@ ion-footer{
   } */
 }
 
+app-diagnose-issue{
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
