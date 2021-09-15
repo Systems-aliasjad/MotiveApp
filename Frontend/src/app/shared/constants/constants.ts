@@ -95,6 +95,7 @@ export enum ERoutingIds {
   resetTvAdminPin,
   resetELifeONPin,
   unableToProcessRequest,
+  resetTelephoneCCBPIN,
 }
 
 // const P3: string = '3P';
@@ -142,7 +143,6 @@ const INTERNET_ISSUES = {
   body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
   linkTo: 'issues/internet',
-  customEvent: 'openInternetIssueDialog',
 };
 
 const TV_ISSUES = {
@@ -150,7 +150,6 @@ const TV_ISSUES = {
   body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
   img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
   linkTo: 'issues/tv',
-  customEvent: 'openTVIssueDialog',
 };
 
 const PHONE_ISSUES = {
