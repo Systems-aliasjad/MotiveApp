@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
 import { ThankyouScreenComponent } from '../thankyou-screen/thankyou-screen.component';
-import { MessageScreenComponent } from './components/message-screen/message-screen.component';
+import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -62,7 +62,7 @@ export function createTranslateLoader(http: HttpClient) {
     DiagnoseIssueComponent,
     PageTopComponent,
     HeaderComponent,
-    MessageScreenComponent,
+    MotiveMessageComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
     LoaderComponent,
@@ -125,7 +125,7 @@ export function createTranslateLoader(http: HttpClient) {
     PageTopComponent,
     ButtonComponent,
     HeaderComponent,
-    MessageScreenComponent,
+    MotiveMessageComponent,
     ThankyouScreenComponent,
     LoaderComponent,
     BookComplaintComponent,

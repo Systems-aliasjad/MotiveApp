@@ -1,20 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessageScreenComponent } from './message-screen.component';
+import { MotiveMessageComponent } from './motive-message.component';
 
 describe('MessageScreenComponent', () => {
-  let component: MessageScreenComponent;
-  let fixture: ComponentFixture<MessageScreenComponent>;
+  let component: MotiveMessageComponent;
+  let fixture: ComponentFixture<MotiveMessageComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MessageScreenComponent ]
-    })
-    .compileComponents();
+      declarations: [MotiveMessageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MessageScreenComponent);
+    fixture = TestBed.createComponent(MotiveMessageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
