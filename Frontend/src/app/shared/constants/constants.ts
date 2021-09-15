@@ -88,6 +88,13 @@ export enum ERoutingIds {
   resetInternetPasswordSuccessDetail,
   resetRouterWifiPassword,
   resetRouterWifiPasswordSuccess,
+
+  unableToReachRouter,
+  unableToReachRouterFailed,
+  unableToResetPassword,
+  resetTvAdminPin,
+  resetELifeONPin,
+  unableToProcessRequest,
 }
 
 // const P3: string = '3P';

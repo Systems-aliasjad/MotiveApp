@@ -31,6 +31,7 @@ import { ChangeCallForwardComponent } from './shared/components/change-call-forw
 import { DummyDelComponent } from './shared/components/dummy-del/dummy-del.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
+import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -136,7 +137,7 @@ const routes: Routes = [
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixed } },
-  //Internet password reset required - 1122
+  //Internet password reset required - 1122 - Module - 4
   { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.internetPasswordReset } },
   { path: 'internet-password-reset-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccess } },
   { path: 'internet-password-reset-error', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordError } },
@@ -146,7 +147,14 @@ const routes: Routes = [
   // Reset Router Wi-Fi Password
   { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
   { path: 'reset-router-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetRouterWifiPasswordSuccess } },
-  //Internet password reset required - 1122 END
+
+  { path: 'unable-to-reach-router', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToReachRouter } },
+  { path: 'unable-to-reach-router-failed', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToReachRouterFailed } },
+  { path: 'unable-to-reset-password', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToResetPassword } },
+  { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
+  { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
+  { path: 'unable-to-process-request', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToProcessRequest } },
+  // 1122 Module - 4 END
 
   //3rd party router requires configuration
   { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },

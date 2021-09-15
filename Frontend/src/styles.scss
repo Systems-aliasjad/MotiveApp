@@ -163,6 +163,9 @@ h5{
 h6{
   font-size: 0.875rem;
 }
+p{
+  color: $secondary-color;
+}
 // ------------Title Styling End-------------------
 .page-top_title {
   h2 {
@@ -331,7 +334,11 @@ ion-modal,
   }
 }
 // ------------Inline List End-------------------
-
+.ion-list-arrow{
+  ion-item{
+    cursor: pointer;
+  }
+}
 .quick-links_all,
 .arrow-link,
 .arrow-btn {

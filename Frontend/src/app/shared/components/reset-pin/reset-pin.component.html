@@ -1,0 +1,43 @@
+<ion-content>
+  <ion-grid class="form-main-container">
+    <!-- Page Title and Sub Title Start -->
+    <ion-row>
+      <ion-col size="12">
+        <p class="sub-title">{{ 'SUBHEADER.RESET_INTERNET_PASSWORD' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <!-- Page Title and Sub Title End -->
+
+    <!-- Form Start -->
+    <ion-row class="form-inner_container">
+      <ion-col size="12">
+        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
+          <ion-grid class="pr-0 pl-0">
+            <ion-row>
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-item>
+                  <ion-label position="stacked">{{ 'RESET_TV_ADMIN_PIN.LABEL1' | translate }}</ion-label>
+                  <ion-input
+                    type="text"
+                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                    placeholder="+971xxxxxxxxx"
+                    formControlName="MobileNo"
+                    [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
+                  ></ion-input>
+
+                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                    {{ 'RESET_TV_ADMIN_PIN.LABEL2' | translate }}
+                  </div>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (click)="SubmitForm()"></motive-button>
+            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (click)="onBackClick()"></motive-button>
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+    <!-- Form End -->
+  </ion-grid>
+</ion-content>
