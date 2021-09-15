@@ -1,3 +1,27 @@
-.btn {
-  width: 100%;
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
+// --------------------------------------------------------------
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-list{
+    --ion-background-color:transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  ion-item{
+    --min-height: auto; 
+    ion-label{
+      margin-bottom:0;
+      color:$secondary-color;
+    }
+  }
+} 
+ion-item::part(native){
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-width: 0;
+  --inner-border-width: 0
 }
+// --------------------------------------------------------------

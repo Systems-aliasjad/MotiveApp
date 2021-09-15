@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
 import { ThankyouScreenComponent } from '../thankyou-screen/thankyou-screen.component';
-import { MessageScreenComponent } from './components/message-screen/message-screen.component';
+import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -51,6 +51,7 @@ import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pi
 import { ChangeCallForwardComponent } from './components/change-call-forward/change-call-forward.component';
 import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
+import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -61,7 +62,7 @@ export function createTranslateLoader(http: HttpClient) {
     DiagnoseIssueComponent,
     PageTopComponent,
     HeaderComponent,
-    MessageScreenComponent,
+    MotiveMessageComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
     LoaderComponent,
@@ -102,6 +103,7 @@ export function createTranslateLoader(http: HttpClient) {
     ChangeCallForwardComponent,
     DummyDelComponent,
     ResetRouterPasswordComponent,
+    ResetPinComponent,
   ],
   imports: [
     CommonModule,
@@ -123,7 +125,7 @@ export function createTranslateLoader(http: HttpClient) {
     PageTopComponent,
     ButtonComponent,
     HeaderComponent,
-    MessageScreenComponent,
+    MotiveMessageComponent,
     ThankyouScreenComponent,
     LoaderComponent,
     BookComplaintComponent,
@@ -139,6 +141,7 @@ export function createTranslateLoader(http: HttpClient) {
     ChangeCallForwardComponent,
     DummyDelComponent,
     ResetRouterPasswordComponent,
+    ResetPinComponent,
   ],
 
   entryComponents: [],

@@ -406,6 +406,26 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.RESET_ROUTER_WIFI_PASSWORD_SUCCESS_BODY'],
   };
 
+  public static unableToReachRouter = {
+    header: 'MESSAGES.UNABLE_TO_REACH_ROUTER',
+    paragraphs: ['MESSAGES.UNABLE_TO_REACH_ROUTER_BODY'],
+  };
+
+  public static unableToReachRouterFailed = {
+    header: 'MESSAGES.UNABLE_TO_REACH_ROUTER',
+    paragraphs: ['MESSAGES.UNABLE_TO_REACH_ROUTER_FAILED_BODY'],
+  };
+
+  public static unableToResetPassword = {
+    header: 'MESSAGES.UNABLE_TO_RESET_PASSWORD',
+    paragraphs: ['MESSAGES.UNABLE_TO_RESET_PASSWORD_BODY', 'MESSAGES.UNABLE_TO_RESET_PASSWORD_BODY2'],
+  };
+
+  public static unableToProcessRequest = {
+    header: 'MESSAGES.UNABLE_TO_PROCESS_REQUEST',
+    paragraphs: ['MESSAGES.UNABLE_TO_PROCESS_REQUEST_BODY'],
+  };
+
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',
     clickListener: () => {},

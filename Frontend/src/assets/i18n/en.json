@@ -24,7 +24,8 @@
     "UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE": "Transfer package",
     "RESET_CCB_PIN": "Reset CCB PIN",
     "CALL_FORWARD": "Change call forwarding number",
-    "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password"
+    "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password",
+    "RESET_ELIFEON_PIN": "Reset eLifeON PIN"
   },
 
   "SUBHEADER": {
@@ -333,7 +334,15 @@
     "RESET_INTERNET_PASSWORD_SUCCESS_DETAIL_BODY": "The router needs to be configured with the new password. Visit 'Device Care' to find more details on how to reconfigure your router.",
     "RESET_INTERNET_PASSWORD_SUCCESS_DETAIL_BODY2": "We recommend using an Etisalat router so that we can provice remote support.",
     "RESET_ROUTER_WIFI_PASSWORD_SUCCESS": "Router's Wi-Fi password reset successfully!",
-    "RESET_ROUTER_WIFI_PASSWORD_SUCCESS_BODY": "Please wait for 2 minutes and then try connecting to the Wi-Fi network with the password."
+    "RESET_ROUTER_WIFI_PASSWORD_SUCCESS_BODY": "Please wait for 2 minutes and then try connecting to the Wi-Fi network with the password.",
+    "UNABLE_TO_REACH_ROUTER": "We can't reach your router",
+    "UNABLE_TO_REACH_ROUTER_BODY": "Make sure that router is turned on and is connected to the 'X' port of the wall-mounted fiber box.",
+    "UNABLE_TO_REACH_ROUTER_FAILED_BODY": "Tap 'Continue to troubleshooting' if you think this is related to a technical issue.",
+    "UNABLE_TO_RESET_PASSWORD": "Unable to reset password",
+    "UNABLE_TO_RESET_PASSWORD_BODY": "We can't reset your Wi-Fi password because you don't have an Etisalat router.",
+    "UNABLE_TO_RESET_PASSWORD_BODY2": "We recommend using an Etisalat router so that we can provide remote support.",
+    "UNABLE_TO_PROCESS_REQUEST": "Unable to process request",
+    "UNABLE_TO_PROCESS_REQUEST_BODY": "It looks like you are not subscribed to eLifeON."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -524,5 +533,9 @@
     "TITLE": "Phone Issues",
     "SUB_HEADING": "Phone service is down",
     "TEXT1": "Sorry, the service is not working properly. Please try again later or book an appointment instead."
+  },
+  "RESET_TV_ADMIN_PIN": {
+    "LABEL1": "Enter your mobile number to recive the new PIN via SMS",
+    "LABEL2": "Please enter a valid mobile number"
   }
 }

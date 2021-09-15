@@ -93,6 +93,13 @@ export enum ERoutingIds {
   resetInternetPasswordSuccessDetail,
   resetRouterWifiPassword,
   resetRouterWifiPasswordSuccess,
+
+  unableToReachRouter,
+  unableToReachRouterFailed,
+  unableToResetPassword,
+  resetTvAdminPin,
+  resetELifeONPin,
+  unableToProcessRequest,
 }
 
 // const P3: string = '3P';
@@ -131,6 +138,9 @@ export enum ERoutingIds {
 // const TRACK_REQUEST: string[] = ALL_PRODUCT_CODES;
 // const UPGRADE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 // const UPGRADE_PACKAGE: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
+
+export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
+export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
 
 const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',

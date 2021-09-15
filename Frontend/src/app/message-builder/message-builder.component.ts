@@ -362,10 +362,45 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.Section1Data = CustomerJourneyConstants.resetRouterWifiPasswordSuccess;
       this.imgSrc = this.successImgSrc;
       this.buttonConfig = [CustomerJourneyConstants.doneButtonSecondary];
-      this.buttonConfig.forEach((elem) => {});
       this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
     }
-
+    // For unable to reach router
+    else if (this.codeType === ERoutingIds.unableToReachRouter) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.unableToReachRouter;
+      this.imgSrc = this.warningImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.closeButton];
+      this.buttonConfig.forEach((elem) => {
+        if (elem.title == 'BUTTONS.TRY_AGAIN') {
+          elem.linkTo = 'unable-to-reach-router-failed';
+        }
+      });
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
+    // For unable to reach router failed
+    else if (this.codeType === ERoutingIds.unableToReachRouterFailed) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.unableToReachRouterFailed;
+      this.imgSrc = this.warningImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.continueToTroubleshootButton, CustomerJourneyConstants.closeButton];
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
+    // For unable to reset password
+    else if (this.codeType === ERoutingIds.unableToResetPassword) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.unableToResetPassword;
+      this.imgSrc = this.warningImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.buyEtisalatRouterButton, CustomerJourneyConstants.closeButton];
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
+    // For unable to process request
+    else if (this.codeType === ERoutingIds.unableToProcessRequest) {
+      this.sharedService.setHeaderConfig('', false, false);
+      this.Section1Data = CustomerJourneyConstants.unableToProcessRequest;
+      this.imgSrc = this.warningImgSrc;
+      this.buttonConfig = [CustomerJourneyConstants.closeButton];
+      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    }
     //TODO: dummy need to remove this case at the end
     else {
       this.sharedService.setHeaderConfig('', false, false);
