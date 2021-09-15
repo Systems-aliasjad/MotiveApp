@@ -9,11 +9,11 @@ export interface IMessageSection1 {
 }
 
 @Component({
-  selector: 'app-message-screen',
-  templateUrl: './message-screen.component.html',
-  styleUrls: ['./message-screen.component.scss'],
+  selector: 'motive-message',
+  templateUrl: './motive-message.component.html',
+  styleUrls: ['./motive-message.component.scss'],
 })
-export class MessageScreenComponent implements OnInit {
+export class MotiveMessageComponent implements OnInit {
   @Input()
   imgSrc: String = '';
   @Input()
