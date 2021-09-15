@@ -331,7 +331,11 @@ ion-modal,
   }
 }
 // ------------Inline List End-------------------
-
+.ion-list-arrow{
+  ion-item{
+    cursor: pointer;
+  }
+}
 .quick-links_all,
 .arrow-link,
 .arrow-btn {
