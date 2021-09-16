@@ -6,8 +6,9 @@
 <ion-footer>
   <ion-toolbar>
     <ion-row class="footer-btns-container">
-      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0" *ngIf="button1">
+      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0" >
         <motive-button
+        *ngIf="button1"
         [type]="button1.type"
         [title]="button1.title"
         [explanatoryNote]="button1.explanatoryNote"
@@ -16,10 +17,8 @@
         [LG]="button1.LG"
         (click)="button1Listener()"
         ></motive-button>
-      </ion-col>
-      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0"   *ngIf="button2">  
         <motive-button
-      
+        *ngIf="button2"
         [type]="button2.type"
         [title]="button2.title"
         [explanatoryNote]="button2.explanatoryNote"
@@ -29,8 +28,9 @@
         (click)="button2Listener()"
         ></motive-button>
       </ion-col>
-      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0"  *ngIf="button3">
+      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0">
         <motive-button
+        *ngIf="button3"
        [type]="button3.type"
         [title]="button3.title"
         [explanatoryNote]="button3.explanatoryNote"
