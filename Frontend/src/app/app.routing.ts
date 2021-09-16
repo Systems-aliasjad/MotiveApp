@@ -259,7 +259,6 @@ const routes: Routes = [
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
   { path: 'no-issue-phone-phone-reset-ccb-pin-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPinSuccessfully } },
-  { path: 'no-issue-phone-phone-reset-ccb-pin-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPinSuccessfully } },
   { path: 'no-issue-phone-phone-Change-call-forward', component: ChangeCallForwardComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForward } },
   { path: 'no-issue-phone-phone-Change-call-forward-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForwardSuccessfully } },
 
