@@ -215,6 +215,12 @@ p{
 .letter-space-none{
   letter-spacing: 0;
 }
+.text-error{
+  color: $error-color;
+}
+.field-error{
+  border-bottom-color: $error-color;
+}
 // ------------Help classes Styling End-------------------
 
 // ------------Box Shadow Start-------------------
