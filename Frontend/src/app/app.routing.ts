@@ -89,11 +89,11 @@ const routes: Routes = [
     path: 'issue',
     component: IssueBuilderComponent,
   },
-  {
-    path: 'router-restart',
-    component: RestartInstructionComponent,
-    data: { id: ERoutingIds.routerRestart },
-  },
+  // {
+  //   path: 'router-restart',
+  //   component: RestartInstructionComponent,
+  //   data: { id: ERoutingIds.routerRestart },
+  // },
   {
     path: 'reset-internet-password',
     component: ResetInternetPasswordComponent,
@@ -141,7 +141,7 @@ const routes: Routes = [
   { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
   { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixed } },
-  //Internet password reset required - 1122 - Module - 4
+  //Internet password reset required - 1122 - Module-4
   { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.internetPasswordReset } },
   { path: 'internet-password-reset-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccess } },
   { path: 'internet-password-reset-error', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordError } },

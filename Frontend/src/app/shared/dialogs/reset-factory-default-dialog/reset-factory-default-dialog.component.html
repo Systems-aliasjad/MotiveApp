@@ -19,9 +19,10 @@
     <ion-row>
       <ion-col size="12">
         <ion-checkbox checked="true" color="primary"></ion-checkbox>
-        I agree to <a>Terms & Conditions</a>
+        {{ 'TEXT.I_AGREE_TO' | translate }} <a>{{ 'TEXT.TERMS_AND_CONDITIONS' | translate }}</a>
       </ion-col>
     </ion-row>
   </ion-grid>
-  <motive-button></motive-button>
+  <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'secondary'" (clickHandler)="CloseMOdal()"></motive-button>
+  <motive-button [title]="'BUTTONS.CANCEL'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>
 </ion-content>

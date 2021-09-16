@@ -322,7 +322,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
     }
-    // For Error Occured First Time
+    // For Error Occured First Time - In Progress
     else if (this.codeType === ERoutingIds.resetInternetPasswordError) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.errorOccured;
@@ -335,72 +335,72 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       });
       this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
     }
-    // For try Again Error
-    else if (this.codeType === ERoutingIds.tryAgainError) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
-      this.imgSrc = this.warningImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.closeButtonSecondary];
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
-    // For reset Internet Password Success Detail
-    else if (this.codeType === ERoutingIds.resetInternetPasswordSuccessDetail) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccessDetail;
-      this.imgSrc = this.successImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.buyEtisalatRouterButton, CustomerJourneyConstants.doneButtonSecondary];
-      this.buttonConfig.forEach((elem) => {
-        if (elem.title === 'BUTTONS.DONE') {
-          elem.behaviour = 'link';
-        }
-      });
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
-    // For reset Router Wifi Password Success
-    else if (this.codeType === ERoutingIds.resetRouterWifiPasswordSuccess) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.resetRouterWifiPasswordSuccess;
-      this.imgSrc = this.successImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.doneButtonSecondary];
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
-    // For unable to reach router
-    else if (this.codeType === ERoutingIds.unableToReachRouter) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.unableToReachRouter;
-      this.imgSrc = this.warningImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.closeButton];
-      this.buttonConfig.forEach((elem) => {
-        if (elem.title == 'BUTTONS.TRY_AGAIN') {
-          elem.linkTo = 'unable-to-reach-router-failed';
-        }
-      });
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
-    // For unable to reach router failed
-    else if (this.codeType === ERoutingIds.unableToReachRouterFailed) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.unableToReachRouterFailed;
-      this.imgSrc = this.warningImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.continueToTroubleshootButton, CustomerJourneyConstants.closeButton];
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
-    // For unable to reset password
-    else if (this.codeType === ERoutingIds.unableToResetPassword) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.unableToResetPassword;
-      this.imgSrc = this.warningImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.buyEtisalatRouterButton, CustomerJourneyConstants.closeButton];
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
-    // For unable to process request
-    else if (this.codeType === ERoutingIds.unableToProcessRequest) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.unableToProcessRequest;
-      this.imgSrc = this.warningImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.closeButton];
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
+    // // For try Again Error - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.tryAgainError) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
+    //   this.imgSrc = this.warningImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.closeButtonSecondary];
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
+    // // For reset Internet Password Success Detail - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.resetInternetPasswordSuccessDetail) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccessDetail;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.buyEtisalatRouterButton, CustomerJourneyConstants.doneButtonSecondary];
+    //   this.buttonConfig.forEach((elem) => {
+    //     if (elem.title === 'BUTTONS.DONE') {
+    //       elem.behaviour = 'link';
+    //     }
+    //   });
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
+    // // For reset Router Wifi Password Success - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.resetRouterWifiPasswordSuccess) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.resetRouterWifiPasswordSuccess;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.doneButtonSecondary];
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
+    // // For unable to reach router - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.unableToReachRouter) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.unableToReachRouter;
+    //   this.imgSrc = this.warningImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.closeButton];
+    //   this.buttonConfig.forEach((elem) => {
+    //     if (elem.title == 'BUTTONS.TRY_AGAIN') {
+    //       elem.linkTo = 'unable-to-reach-router-failed';
+    //     }
+    //   });
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
+    // // For unable to reach router failed - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.unableToReachRouterFailed) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.unableToReachRouterFailed;
+    //   this.imgSrc = this.warningImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.continueToTroubleshootButton, CustomerJourneyConstants.closeButton];
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
+    // // For unable to reset password - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.unableToResetPassword) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.unableToResetPassword;
+    //   this.imgSrc = this.warningImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.buyEtisalatRouterButton, CustomerJourneyConstants.closeButton];
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
+    // // For unable to process request - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.unableToProcessRequest) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.unableToProcessRequest;
+    //   this.imgSrc = this.warningImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.closeButton];
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
     //TODO: dummy need to remove this case at the end
     else {
       this.sharedService.setHeaderConfig('', false, false);

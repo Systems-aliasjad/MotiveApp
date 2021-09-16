@@ -4,9 +4,25 @@ import { CommonModule } from '@angular/common';
 import { TvRoutingModule } from './tv.routing';
 import { MainComponent } from './routes/main.component';
 import { SharedModule } from '../../shared/shared.module';
+import { NoIssuesComponent } from './routes/no-issues.component';
+import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
+import { OutageComponent } from './routes/outage.component';
+import { TvBoxNotReachableComponent } from './routes/tvBox-not-reachable.component';
+import { TvBoxNotReachableTryAgainComponent } from './routes/tvBox-not-reachable-try-again.component';
+import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.component';
+import { UnableWatchChannelComponent } from './routes/unable-watch-channel.component';
 
 @NgModule({
-  declarations: [MainComponent],
+  declarations: [
+    MainComponent,
+    NoIssuesComponent,
+    IssueNotFixedComponent,
+    OutageComponent,
+    TvBoxNotReachableComponent,
+    TvBoxNotReachableTryAgainComponent,
+    TvBoxRestartRequiredComponent,
+    UnableWatchChannelComponent,
+  ],
   imports: [CommonModule, TvRoutingModule, SharedModule],
 })
 export class TvModule {}

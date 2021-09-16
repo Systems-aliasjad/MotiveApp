@@ -112,6 +112,7 @@
   },
   "BUTTONS": {
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
+    "CONFIGURE_WI_FI": "CONFIGURE WI-FI",
     "NEXT": "NEXT",
     "REQUEST_SUPPORT": "REQUEST SUPPORT",
     "TRY_AGAIN": "TRY AGAIN",
@@ -342,7 +343,8 @@
     "UNABLE_TO_RESET_PASSWORD_BODY": "We can't reset your Wi-Fi password because you don't have an Etisalat router.",
     "UNABLE_TO_RESET_PASSWORD_BODY2": "We recommend using an Etisalat router so that we can provide remote support.",
     "UNABLE_TO_PROCESS_REQUEST": "Unable to process request",
-    "UNABLE_TO_PROCESS_REQUEST_BODY": "It looks like you are not subscribed to eLifeON."
+    "UNABLE_TO_PROCESS_REQUEST_BODY": "It looks like you are not subscribed to eLifeON.",
+    "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "Etisalat device care gives you precise instructions specific for your device"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

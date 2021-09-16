@@ -131,6 +131,7 @@ export function createTranslateLoader(http: HttpClient) {
     BookComplaintComponent,
     ServiceIssueComponent,
     ResetInternetPasswordComponent,
+    RestartInstructionComponent,
     ResetWifiPasswordComponent,
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
