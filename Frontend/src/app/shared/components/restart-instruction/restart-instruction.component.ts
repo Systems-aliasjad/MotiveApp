@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { ERoutingIds } from '../../constants/constants';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { SharedService } from '../../shared.service';
 import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 
@@ -45,17 +44,6 @@ export class RestartInstructionComponent implements OnInit {
     this.button2Click.emit();
   }
 
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
-  }
-
   constructor(private sharedService: SharedService, private router: Router) {
     this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', false);
   }
@@ -70,7 +58,7 @@ export class RestartInstructionComponent implements OnInit {
       this.instruction2.title = 'INSTRUCTIONS_STEPS_OR.TVBOX_RESTART_TITLE';
       this.instruction2.body = 'INSTRUCTIONS_STEPS_OR.TVBOX_RESTART_BODY';
       this.sharedService.setHeaderConfig('TVBOX_RESTART.TVBOX_DIDNOT_RESTART_H1', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartManuallyButtons));
+      // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartManuallyButtons));
     }
     // router didnot restarted
     // else if ((this as any) === ERoutingIds.routerRestart) {
@@ -91,7 +79,7 @@ export class RestartInstructionComponent implements OnInit {
       this.instruction2.title = 'INSTRUCTIONS_STEPS_OR.ONT_RESTART_TITLE';
       this.instruction2.body = 'INSTRUCTIONS_STEPS_OR.ONT_RESTART_BODY';
       this.sharedService.setHeaderConfig('ONT_REBOOT_MANUALLY.ONT_REBOOT_H1', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartManuallyButtons));
+      // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartManuallyButtons));
     }
   }
 }

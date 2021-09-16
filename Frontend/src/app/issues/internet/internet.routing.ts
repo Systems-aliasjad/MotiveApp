@@ -5,6 +5,7 @@ import { MainComponent } from './routes/main.component';
 import { OSRPComponent } from './routes/osrp.component';
 import { OutageComponent } from './routes/outage.component';
 import { RouterNotRestartedComponent } from './routes/router-not-restarted.component';
+import { RouterRestartComponent } from './routes/router-restart.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'router-not-restarted',
     component: RouterNotRestartedComponent,
+  },
+  {
+    path: 'router-restart',
+    component: RouterRestartComponent,
   },
 ];
 
