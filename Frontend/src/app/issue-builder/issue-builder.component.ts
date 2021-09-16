@@ -110,143 +110,142 @@ export class IssueBuilderComponent implements OnInit, OnDestroy {
     this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
 
     //Router Reboot Required
-    if (this.codeType === ERoutingIds.routerRebootRequired) {
-      this.messageSection = CustomerJourneyConstants.routerRebootRequiredMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons));
-    }
-    //Router Reset Required
-    else if (this.codeType === ERoutingIds.routerResetRequired) {
-      this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons));
-    }
-    //Issue Not Fixed
-    else if (this.codeType === ERoutingIds.issueNotFixed) {
-      this.messageSection = CustomerJourneyConstants.issueNotFixedMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
-    }
+    // if (this.codeType === ERoutingIds.routerRebootRequired) {
+    // this.messageSection = CustomerJourneyConstants.routerRebootRequiredMessageSection;
+    // this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerRebootRequiredButtons));
+    // }
+    // //Router Reset Required
+    // else if (this.codeType === ERoutingIds.routerResetRequired) {
+    //   this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerResetRequiredButtons));
+    // }
+    //    //Issue Not Fixed
+    // else if (this.codeType === ERoutingIds.issueNotFixed) {
+    //   this.messageSection = CustomerJourneyConstants.issueNotFixedMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
+    // }
+    // else if (this.codeType === ERoutingIds.noIssueTv) {
+    //   this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
+    // }
 
-    //Router Reset Required
-    else if (this.codeType === ERoutingIds.noIssueTv) {
-      this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.noIssueTvButton));
-    }
+    // //Issue Not Fixed - TV
+    // else if (this.codeType === ERoutingIds.issueNotFixedTv) {
+    //   this.messageSection = CustomerJourneyConstants.issueNotFixedTVMessageSection;
+    //   this.sharedService.setHeaderConfig('TV_ISSUE_NOT_FIXED.TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
+    // }
 
-    //Issue Not Fixed - TV
-    else if (this.codeType === ERoutingIds.issueNotFixedTv) {
-      this.messageSection = CustomerJourneyConstants.issueNotFixedTVMessageSection;
-      this.sharedService.setHeaderConfig('TV_ISSUE_NOT_FIXED.TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.issuesNotFixedButtons));
-    }
+    // //Internet password reset required
+    // else if (this.codeType === ERoutingIds.internetPasswordReset) {
+    //   this.messageSection = CustomerJourneyConstants.internetPasswordResetRequiredMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons));
+    // }
+    // //3rd party router requires configuration
+    // else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
+    //   this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty));
+    // }
+    // //Package Upgrade Recommended
+    // else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
+    //   this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons));
+    // }
+    // //router Upgrade Recommended
+    // else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
+    //   this.messageSection = CustomerJourneyConstants.routerUpdradeRecomendedMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons));
+    // }
+    // //Wi-Fi Alarm
+    // else if (this.codeType === ERoutingIds.WiFiAlarm) {
+    //   this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons));
+    // }
 
-    //Internet password reset required
-    else if (this.codeType === ERoutingIds.internetPasswordReset) {
-      this.messageSection = CustomerJourneyConstants.internetPasswordResetRequiredMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.internetPasswordResetButtons));
-    }
-    //3rd party router requires configuration
-    else if (this.codeType === ERoutingIds.RouterReset3rdParty) {
-      this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.RouterReset3rdParty));
-    }
-    //Package Upgrade Recommended
-    else if (this.codeType === ERoutingIds.packageUpgradeRecommended) {
-      this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpgradeRecommendedButtons));
-    }
-    //router Upgrade Recommended
-    else if (this.codeType === ERoutingIds.routerUpgradeRecommended) {
-      this.messageSection = CustomerJourneyConstants.routerUpdradeRecomendedMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpgradeRecommendedButtons));
-    }
-    //Wi-Fi Alarm
-    else if (this.codeType === ERoutingIds.WiFiAlarm) {
-      this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.wiFiAlarmButtons));
-    }
     //Outage
-    else if (this.codeType === ERoutingIds.outage) {
-      this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
-    }
-    //Router & package upgrade recommended
-    else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
-      this.messageSection = CustomerJourneyConstants.packageAndRouterUpdradeRecomendedMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
-    }
-    //TV Outage
-    else if (this.codeType === ERoutingIds.tvOutage) {
-      this.messageSection = CustomerJourneyConstants.tvOutageMessageSection;
-      this.sharedService.setHeaderConfig('HEADER.TV_ISSUES', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
-    }
+    // else if (this.codeType === ERoutingIds.outage) {
+    //   this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
+    // }
+    // //Router & package upgrade recommended
+    // else if (this.codeType === ERoutingIds.routerPackageUpgradeRecommended) {
+    //   this.messageSection = CustomerJourneyConstants.packageAndRouterUpdradeRecomendedMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpgradeRecommendedButtons));
+    // }
+    // //TV Outage
+    // else if (this.codeType === ERoutingIds.tvOutage) {
+    //   this.messageSection = CustomerJourneyConstants.tvOutageMessageSection;
+    //   this.sharedService.setHeaderConfig('HEADER.TV_ISSUES', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.outageButtons));
+    // }
     // Router no-issue
-    else if (this.codeType === ERoutingIds.noIssue) {
-      this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.btnConfig = CustomerJourneyConstants.noIssue;
-      this.btnConfig.forEach((elem) => {
-        if (elem.title === 'BUTTONS.ISSUE_FIXED') {
-          elem.linkTo = 'service-detail';
-        }
-      });
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.btnConfig));
-    }
-    ///3rd party router
-    else if (this.codeType === ERoutingIds.thirdPartyRouter) {
-      this.messageSection = CustomerJourneyConstants.router3rdPartyMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
-    }
-    //Router managed, but not reachable
-    else if (this.codeType === ERoutingIds.routerNotReachable) {
-      this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
-    }
+    // else if (this.codeType === ERoutingIds.noIssue) {
+    //   this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.btnConfig = CustomerJourneyConstants.noIssue;
+    //   this.btnConfig.forEach((elem) => {
+    //     if (elem.title === 'BUTTONS.ISSUE_FIXED') {
+    //       elem.linkTo = 'service-detail';
+    //     }
+    //   });
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.btnConfig));
+    // }
+    // ///3rd party router
+    // else if (this.codeType === ERoutingIds.thirdPartyRouter) {
+    //   this.messageSection = CustomerJourneyConstants.router3rdPartyMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyMainButtons));
+    // }
+    // //Router managed, but not reachable
+    // else if (this.codeType === ERoutingIds.routerNotReachable) {
+    //   this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableButtons));
+    // }
 
-    //Router not reachable using own router button
-    else if (this.codeType === ERoutingIds.routerNotReachableOwnRouter) {
-      this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
-      //this.sharedService.setHeaderConfig('', true);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableOwnRouterButtons));
-    }
+    // //Router not reachable using own router button
+    // else if (this.codeType === ERoutingIds.routerNotReachableOwnRouter) {
+    //   this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
+    //   //this.sharedService.setHeaderConfig('', true);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerNotReachableOwnRouterButtons));
+    // }
 
-    //TV set top box not reachable
-    else if (this.codeType === ERoutingIds.tvBoxNotReachable) {
-      this.messageSection = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableButtons));
-    }
-    //TV set top box not reachable - AGAIN
-    else if (this.codeType === ERoutingIds.tvBoxNotReachableTryAgain) {
-      this.messageSection = CustomerJourneyConstants.tvBoxNotReachableAgainMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableTryAgainButtons));
-    }
-    //TV set top box restart required
-    else if (this.codeType === ERoutingIds.tvBoxRestartRequired) {
-      this.messageSection = CustomerJourneyConstants.tvBoxRestartMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartRequiredButtons));
-    }
+    // //TV set top box not reachable
+    // else if (this.codeType === ERoutingIds.tvBoxNotReachable) {
+    //   this.messageSection = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableButtons));
+    // }
+    // //TV set top box not reachable - AGAIN
+    // else if (this.codeType === ERoutingIds.tvBoxNotReachableTryAgain) {
+    //   this.messageSection = CustomerJourneyConstants.tvBoxNotReachableAgainMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxNotReachableTryAgainButtons));
+    // }
+    // //TV set top box restart required
+    // else if (this.codeType === ERoutingIds.tvBoxRestartRequired) {
+    //   this.messageSection = CustomerJourneyConstants.tvBoxRestartMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartRequiredButtons));
+    // }
 
-    //Unable to watch channel
-    else if (this.codeType === ERoutingIds.enableWatchChannel) {
-      this.messageSection = CustomerJourneyConstants.unableWatchChannelsMessageSection;
-      this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableToWatchButtons));
-    }
+    // //Unable to watch channel
+    // else if (this.codeType === ERoutingIds.enableWatchChannel) {
+    //   this.messageSection = CustomerJourneyConstants.unableWatchChannelsMessageSection;
+    //   this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableToWatchButtons));
+    // }
 
     //#region  Module 3
     // //no issue phone
