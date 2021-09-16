@@ -315,12 +315,12 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     // }
     //#endregion Module 3
     // ///For Internet Password Reset - Done (Moved To the Component)
-    else if (this.codeType === ERoutingIds.resetInternetPasswordSuccess) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccess;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
-    }
+    // else if (this.codeType === ERoutingIds.resetInternetPasswordSuccess) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccess;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    // }
     // For Error Occured First Time - Done (Moved To the Component)
     // else if (this.codeType === ERoutingIds.resetInternetPasswordError) {
     //   this.sharedService.setHeaderConfig('', false, false);
