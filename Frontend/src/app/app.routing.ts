@@ -89,11 +89,11 @@ const routes: Routes = [
     path: 'issue',
     component: IssueBuilderComponent,
   },
-  {
-    path: 'router-restart',
-    component: RestartInstructionComponent,
-    data: { id: ERoutingIds.routerRestart },
-  },
+  // {
+  //   path: 'router-restart',
+  //   component: RestartInstructionComponent,
+  //   data: { id: ERoutingIds.routerRestart },
+  // },
   {
     path: 'reset-internet-password',
     component: ResetInternetPasswordComponent,

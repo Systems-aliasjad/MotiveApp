@@ -10,13 +10,13 @@
       <!-- Router Image Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="device pt-0 pb-0">
         <picture>
-          <source [srcset]="ImgPath" media="(max-width: 414px)" />
-          <source [srcset]="ImgPath" media="(max-width: 768px)" />
-          <source [srcset]="ImgPath" media="(max-width: 1024px)" />
-          <source [srcset]="ImgPath" media="(max-width: 1366px)" />
-          <source [srcset]="ImgPath" media="(max-width: 1440px)" />
-          <source [srcset]="ImgPath" media="(max-width: 1920px)" />
-          <img [src]="ImgPath" class="cover lazyloaded" alt="" />
+          <source [srcset]="ImgSrc" media="(max-width: 414px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 768px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1024px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1366px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1440px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1920px)" />
+          <img [src]="ImgSrc" class="cover lazyloaded" alt="" />
         </picture>
       </ion-col>
       <!-- Router Image End -->
@@ -51,4 +51,35 @@
     </ion-row>
   </ion-grid>
 </ion-content>
-<!-- <motive-button></motive-button> -->
+<!-- Buttons -->
+<ion-footer>
+  <ion-toolbar>
+    <ion-row class="footer-btns-container">
+      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0">
+        <motive-button
+          *ngIf="button1"
+          [type]="button1.type"
+          [title]="button1.title"
+          [explanatoryNote]="button1.explanatoryNote"
+          [SM]="button1.SM"
+          [MD]="button1.MD"
+          [LG]="button1.LG"
+          (click)="button1Listener()"
+        ></motive-button>
+      </ion-col>
+      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0">
+        <motive-button
+          *ngIf="button2"
+          [type]="button2.type"
+          [title]="button2.title"
+          [explanatoryNote]="button2.explanatoryNote"
+          [SM]="button2.SM"
+          [MD]="button2.MD"
+          [LG]="button2.LG"
+          (click)="button2Listener()"
+        ></motive-button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>
+<!-- Buttons -->

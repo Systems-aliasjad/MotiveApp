@@ -1,9 +1,10 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MainComponent } from './routes/main.component';
 import { OSRPComponent } from './routes/osrp.component';
 import { OutageComponent } from './routes/outage.component';
+import { RouterNotRestartedComponent } from './routes/router-not-restarted.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'osrp',
     component: OSRPComponent,
+  },
+  {
+    path: 'router-not-restarted',
+    component: RouterNotRestartedComponent,
   },
 ];
 
