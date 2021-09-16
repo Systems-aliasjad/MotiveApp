@@ -6,8 +6,6 @@
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
    ion-card{
     border-radius: 0.5rem;
-    margin-right: 0;
-    margin-left: 0;
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
    }
@@ -46,3 +44,8 @@ ion-item::part(native){
 .channel-list-items{
   margin: 0 0 22px 0;
 }
+ion-radio{
+  @media screen and (max-width: 1025px) {
+    margin-top:0;
+  }
+ }

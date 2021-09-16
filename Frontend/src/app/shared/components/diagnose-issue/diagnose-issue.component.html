@@ -3,10 +3,9 @@
     <app-issue-tabs [messageSection]="messageSection"></app-issue-tabs>
   </ion-grid>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
+<div class="footer">  
     <ion-row class="footer-btns-container">
-      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0">
+      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0" >
         <motive-button
         *ngIf="button1"
         [type]="button1.type"
@@ -17,8 +16,6 @@
         [LG]="button1.LG"
         (click)="button1Listener()"
         ></motive-button>
-      </ion-col>
-      <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0">  
         <motive-button
         *ngIf="button2"
         [type]="button2.type"
@@ -33,7 +30,7 @@
       <ion-col sizeLg="6" sizeMd="6" size="12" class="pt-0 pb-0">
         <motive-button
         *ngIf="button3"
-        [type]="button3.type"
+       [type]="button3.type"
         [title]="button3.title"
         [explanatoryNote]="button3.explanatoryNote"
         [SM]="button3.SM"
@@ -43,8 +40,7 @@
         ></motive-button>
       </ion-col>
      </ion-row>
-  </ion-toolbar>
   
  
-</ion-footer>
+</div>
 
