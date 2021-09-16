@@ -259,10 +259,10 @@ ion-radio{
 }
 ion-radio::part(container){
   margin: 0;  
-  --border-width: 2px;
-  --border-style: solid;
-  --border-color: #719E19;
-  --border-radius: 50%;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #719E19;
+  border-radius: 50%;
   width: 24px;
   height: 24px;
 }
