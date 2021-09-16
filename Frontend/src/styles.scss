@@ -520,12 +520,11 @@ app-diagnose-issue{
     }
   }
 }
-
 motive-button{
   display: inline-block;
   width:100%;
   @media screen and (min-width: 992px) {
-    min-width:300px;
+    min-width:250px;
     width:auto;
   }
 }
