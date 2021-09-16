@@ -15,6 +15,9 @@ import { CallForwardMessageComponent } from './routes/call-forward-message.compo
 import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
 import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
 import { OntNotRestartInstructionsComponent } from './routes/ont-not-restart-instructions.component';
+import { OntRestartSuccessComponent } from './routes/ont-restart-success.component';
+import { ChangeCallForwardSuccessComponent } from './routes/change-call-forward-success.component';
+import { ResetCCBPINSuccessComponent } from './routes/reset-ccb-pin-success.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { OntNotRestartInstructionsComponent } from './routes/ont-not-restart-ins
     ForgotCcbPinMessageComponent,
     OntRestartInstructionsComponent,
     OntNotRestartInstructionsComponent,
+    OntRestartSuccessComponent,
+    ChangeCallForwardSuccessComponent,
+    ResetCCBPINSuccessComponent,
   ],
   imports: [CommonModule, PhoneRoutingModule, SharedModule],
 })

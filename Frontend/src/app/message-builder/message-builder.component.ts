@@ -242,99 +242,98 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
     //#region  Module 2
     // Tv box not reachable
-    else if (this.codeType === ERoutingIds.tvBoxNotReachableFormSuccessfully) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.tvBoxNotReachableFormsuccessfullyCase;
-      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
-      this.Section2Data = {
-        referenceNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        location: 'Xxxxx xxxxx xxxx',
-      };
+    // else if (this.codeType === ERoutingIds.tvBoxNotReachableFormSuccessfully) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.tvBoxNotReachableFormsuccessfullyCase;
+    //   this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+    //   this.Section2Data = {
+    //     referenceNo: '436529873',
+    //     dateVisit: 'Jul 10 2019, 10:30 AM',
+    //     location: 'Xxxxx xxxxx xxxx',
+    //   };
 
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
-    }
-    // Tv box Restart Required
-    else if (this.codeType === ERoutingIds.tvBoxRestartRequiredSuccessfully) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.tvBoxRestartssuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartSuccessfullyButtons));
-    }
-    // Game session cancel Confirm
-    else if (this.codeType === ERoutingIds.gameSessionCancelConfirmed) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.gameSessionCancelConfirmed;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
-    }
-    //For Reset TV box successfully
-    else if (this.codeType === ERoutingIds.tvBoxResetSuccessfully) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.tvBoxResetSuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxResetSuccessfullyButtons));
-    }
-    // package transfer success
-    else if (this.codeType === ERoutingIds.packageTransferSuccess) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.packageTransferSuccess;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
-    }
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
+    // }
+    // // Tv box Restart Required - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.tvBoxRestartRequiredSuccessfully) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.tvBoxRestartssuccessfullyCase;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxRestartSuccessfullyButtons));
+    // }
+    // Game session cancel Confirm - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.gameSessionCancelConfirmed) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.gameSessionCancelConfirmed;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    // }
+    //For Reset TV box successfully - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.tvBoxResetSuccessfully) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.tvBoxResetSuccessfullyCase;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvBoxResetSuccessfullyButtons));
+    // }
+    // // package transfer success - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.packageTransferSuccess) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.packageTransferSuccess;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
+    // }
 
-    // Unable to watch specific channles package transfer success
-    else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.unableWatchSpecificChannelPackageTransferSuccess;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.BackLocationLink]));
-    }
+    // // Unable to watch specific channles package transfer success - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.unableWatchSpecificChannelPackageTransferSuccess;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.BackLocationLink]));
+    // }
     //#endregion Module 2
 
     //#region  Module 3
-    //reset ccb pin successfully
-    else if (this.codeType === ERoutingIds.noIssuePhoneResetCCBPinSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.resetCCBPinsuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
-    }
-    //change call forwarding number
-    else if (this.codeType === ERoutingIds.noIssuePhoneChangeCallForwardSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.changeCallForwardsuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
-    }
-
-    // ont reboot successfully
-    else if (this.codeType === ERoutingIds.ontRestartRequiredSuccessfully) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.ontRestartssuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartSuccessfullyButtons));
-    }
+    //reset ccb pin successfully - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.noIssuePhoneResetCCBPinSuccessfully) {
+    //   this.Section1Data = CustomerJourneyConstants.resetCCBPinsuccessfullyCase;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
+    // }
+    //change call forwarding number - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.noIssuePhoneChangeCallForwardSuccessfully) {
+    //   this.Section1Data = CustomerJourneyConstants.changeCallForwardsuccessfullyCase;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
+    // }
+    // ont reboot successfully - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.ontRestartRequiredSuccessfully) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.ontRestartssuccessfullyCase;
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.ontRestartSuccessfullyButtons));
+    // }
     //#endregion Module 3
-    ///For Internet Password Reset
+    // ///For Internet Password Reset - Done (Moved To the Component)
     else if (this.codeType === ERoutingIds.resetInternetPasswordSuccess) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccess;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper([CustomerJourneyConstants.doneButtonSecondary]));
     }
-    // For Error Occured First Time - In Progress
-    else if (this.codeType === ERoutingIds.resetInternetPasswordError) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.errorOccured;
-      this.imgSrc = this.warningImgSrc;
-      this.buttonConfig = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.closeButton];
-      this.buttonConfig.forEach((elem) => {
-        if (elem.title == 'BUTTONS.TRY_AGAIN') {
-          elem.linkTo = '/internet-password-reset-fail';
-        }
-      });
-      this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
-    }
+    // For Error Occured First Time - Done (Moved To the Component)
+    // else if (this.codeType === ERoutingIds.resetInternetPasswordError) {
+    //   this.sharedService.setHeaderConfig('', false, false);
+    //   this.Section1Data = CustomerJourneyConstants.errorOccured;
+    //   this.imgSrc = this.warningImgSrc;
+    //   this.buttonConfig = [CustomerJourneyConstants.tryAgainButton, CustomerJourneyConstants.closeButton];
+    //   this.buttonConfig.forEach((elem) => {
+    //     if (elem.title == 'BUTTONS.TRY_AGAIN') {
+    //       elem.linkTo = '/internet-password-reset-fail';
+    //     }
+    //   });
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(this.buttonConfig));
+    // }
     // // For try Again Error - Done (Moved To the Component)
     // else if (this.codeType === ERoutingIds.tryAgainError) {
     //   this.sharedService.setHeaderConfig('', false, false);
