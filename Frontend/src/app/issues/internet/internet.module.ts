@@ -20,7 +20,7 @@ import { RouterNotReachableComponent } from './routes/router-not-reachable.compo
 import { RouterNotReachableOwnRouterComponent } from './routes/router-not-reachable-own-router.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { RouterNotRestartedComponent } from './routes/router-not-restarted.component';
-import { RouterRestartComponent } from './routes/router-restart.component';
+import { RouterRestartInstructionsComponent } from './routes/router-restart-instructions.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { RouterRestartComponent } from './routes/router-restart.component';
     OutageComponent,
     OSRPComponent,
     RouterNotRestartedComponent,
-    RouterRestartComponent,
+    RouterRestartInstructionsComponent,
     RouterRebootRequiredComponent,
     RouterResetRequiredComponent,
     IssueNotFixedComponent,

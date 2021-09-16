@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BoxNotRestartInstructionsComponent } from './routes/box-not-restart-instructions.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 
 import { MainComponent } from './routes/main.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { OutageComponent } from './routes/outage.component';
+import { RestartInstructionsComponent } from './routes/restart-instructions.component';
 import { TvBoxNotReachableTryAgainComponent } from './routes/tvBox-not-reachable-try-again.component';
 import { TvBoxNotReachableComponent } from './routes/tvBox-not-reachable.component';
 import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.component';
@@ -51,6 +53,16 @@ const routes: Routes = [
     //Unable to watch channel
     path: 'unable-watch-channel',
     component: UnableWatchChannelComponent,
+  },
+
+  {
+    path: 'restart-instructions',
+    component: RestartInstructionsComponent,
+  },
+
+  {
+    path: 'box-not-restart-instructions',
+    component: BoxNotRestartInstructionsComponent,
   },
 ];
 

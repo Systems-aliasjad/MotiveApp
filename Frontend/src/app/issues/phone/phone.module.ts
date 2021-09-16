@@ -13,6 +13,8 @@ import { IssueNotFixedMessageComponent } from './routes/issue-not-fixed-message.
 import { OntRebootMessageComponent } from './routes/ont-reboot-message.component';
 import { CallForwardMessageComponent } from './routes/call-forward-message.component';
 import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
+import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
+import { OntNotRestartInstructionsComponent } from './routes/ont-not-restart-instructions.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-co
     OntRebootMessageComponent,
     CallForwardMessageComponent,
     ForgotCcbPinMessageComponent,
+    OntRestartInstructionsComponent,
+    OntNotRestartInstructionsComponent,
   ],
   imports: [CommonModule, PhoneRoutingModule, SharedModule],
 })

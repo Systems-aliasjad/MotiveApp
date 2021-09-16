@@ -7,8 +7,10 @@ import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 
 import { MainComponent } from './routes/main.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
+import { OntNotRestartInstructionsComponent } from './routes/ont-not-restart-instructions.component';
 import { OntRebootMessageComponent } from './routes/ont-reboot-message.component';
 import { OntRebootComponent } from './routes/ont-reboot.component';
+import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
 import { OutageMessageComponent } from './routes/outage-message.component';
 import { OutageComponent } from './routes/outage.component';
 
@@ -58,6 +60,18 @@ const routes: Routes = [
     //No ussues or issue fixed
     path: 'no-issues',
     component: NoIssuesComponent,
+  },
+
+  {
+    //ont reboot manually instructions
+    path: 'ont-restart-instructions',
+    component: OntRestartInstructionsComponent,
+  },
+
+  {
+    //ont not reboot manually instructions
+    path: 'ont-not-restart-instructions',
+    component: OntNotRestartInstructionsComponent,
   },
 ];
 

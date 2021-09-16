@@ -3,14 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { ThirdPartyRouterResetComponent } from './routes/3rd-party-router-reset.component';
 import { ThirdPartyRouterComponent } from './routes/3rd-party-router.component';
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
-import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 
 import { MainComponent } from './routes/main.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { OSRPComponent } from './routes/osrp.component';
 import { OutageComponent } from './routes/outage.component';
 import { RouterNotRestartedComponent } from './routes/router-not-restarted.component';
-import { RouterRestartComponent } from './routes/router-restart.component';
 import { PackageUpgradeRecommendedComponent } from './routes/package-upgrade-recommended.component';
 import { RouterNotReachableOwnRouterComponent } from './routes/router-not-reachable-own-router.component';
 import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
@@ -19,6 +17,8 @@ import { RouterRebootRequiredComponent } from './routes/router-reboot-required.c
 import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 import { RouterUpgradeRecommendedComponent } from './routes/router-upgrade-recommended.component';
 import { WifiAlarmComponent } from './routes/wifi-alarm.component';
+import { RouterRestartInstructionsComponent } from './routes/router-restart-instructions.component';
+import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 
 const routes: Routes = [
   {
@@ -39,7 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'router-restart',
-    component: RouterRestartComponent,
+    component: RouterRestartInstructionsComponent,
   },
   {
     //Router Reboot Required

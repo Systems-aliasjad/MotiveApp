@@ -366,11 +366,13 @@
     "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
   },
   "TVBOX_RESTART": {
-    "TVBOX_DIDNOT_RESTART_H1": "Restart TV box manually"
+    "TVBOX_DIDNOT_RESTART_H1": "Restart TV box manually",
+    "YOUR_TVBOX_DID_NOT_RESTART_H1": "Your TV box didn't restart"
   },
 
   "ONT_REBOOT_MANUALLY": {
-    "ONT_REBOOT_H1": "Restart fiber box manually"
+    "ONT_REBOOT_H1": "Restart fiber box manually",
+    "ONT_NOT_REBOOT_H1": "Your fiber box didn't restart"
   },
 
   "INSTRUCTIONS_STEPS": {

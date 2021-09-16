@@ -32,6 +32,6 @@ export class TvBoxRestartRequiredComponent implements OnInit {
   }
 
   button2Listener() {
-    this.router.navigate(['/tvBox-restart-required-manually']);
+    this.router.navigate(['/issues/tv/restart-instructions']);
   }
 }

@@ -5,18 +5,17 @@ import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'app-router-restart',
+  selector: 'app-ont-not-restart-instruction',
   template: `<app-restart-instruction
     [ImgSrc]="ImgSrc"
     [instruction1]="instruction1"
-    [instruction2]="instruction2"
     [button1]="button1"
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
   ></app-restart-instruction>`,
 })
-export class RouterRestartComponent implements OnInit {
+export class OntNotRestartInstructionsComponent implements OnInit {
   ImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
   instruction1: IRestartInstruction = {
     title: '',
@@ -27,36 +26,30 @@ export class RouterRestartComponent implements OnInit {
     body: '',
   };
   button1: IMotiveButton = {
-    type: 'secondary',
-    title: 'BUTTONS.VIEW_DEVICE_CARE',
+    type: 'primary',
+    title: 'BUTTONS.ISSUE_RESLOVED',
   };
   button2: IMotiveButton = {
     type: 'link',
-    title: 'BUTTONS.CLOSE',
+    title: 'BUTTONS.REQUEST_SUPPORT',
   };
 
   constructor(private sharedService: SharedService, private router: Router) {}
   RESTART_ROUTER_H2;
   ngOnInit() {
-    this.instruction1.title = 'ROUTER_RESTART.RESTART_ROUTER_H2';
-    this.instruction1.steps = [
-      'Unplug both router & modem',
-      'Wait at least 30 seconds',
-      'Plug the modem back in',
-      'Wait at least 60 seconds',
-      'Plug the router back in',
-      'Wait at least 2 minutes',
-      'Test to see if the problem went away',
-    ];
-    this.instruction2.title = 'ROUTER_RESTART.RESTART_ROUTER_H3';
-    this.instruction2.body = 'MESSAGES.ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE';
-    this.sharedService.setHeaderConfig('ROUTER_RESTART.RESTART_ROUTER_H1', false);
+    this.instruction1.title = 'INSTRUCTIONS_STEPS.ONT_REBOOT_TITLE';
+    this.instruction1.steps = ['Unplug the fiber box from power', 'Wait for 30 seconds', 'Plug the fiber box back in', 'Wait for 5 minutes', 'Try to use the phone again'];
+
+    this.instruction2.title = 'INSTRUCTIONS_STEPS_OR.ONT_RESTART_TITLE';
+    this.instruction2.body = 'INSTRUCTIONS_STEPS_OR.ONT_RESTART_BODY';
+    this.sharedService.setHeaderConfig('ONT_REBOOT_MANUALLY.ONT_NOT_REBOOT_H1', false);
   }
 
   button1Listener() {
-    this.router.navigate(['/device-care']);
-  }
-  button2Listener() {
     this.router.navigate(['/thanks']);
+  }
+
+  button2Listener() {
+    this.router.navigate(['/bookComplaint']);
   }
 }

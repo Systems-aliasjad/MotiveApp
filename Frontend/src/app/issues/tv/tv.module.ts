@@ -11,6 +11,8 @@ import { TvBoxNotReachableComponent } from './routes/tvBox-not-reachable.compone
 import { TvBoxNotReachableTryAgainComponent } from './routes/tvBox-not-reachable-try-again.component';
 import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.component';
 import { UnableWatchChannelComponent } from './routes/unable-watch-channel.component';
+import { RestartInstructionsComponent } from './routes/restart-instructions.component';
+import { BoxNotRestartInstructionsComponent } from './routes/box-not-restart-instructions.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { UnableWatchChannelComponent } from './routes/unable-watch-channel.compo
     TvBoxNotReachableTryAgainComponent,
     TvBoxRestartRequiredComponent,
     UnableWatchChannelComponent,
+    RestartInstructionsComponent,
+    BoxNotRestartInstructionsComponent,
   ],
   imports: [CommonModule, TvRoutingModule, SharedModule],
 })
