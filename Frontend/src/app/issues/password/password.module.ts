@@ -12,6 +12,8 @@ import { UnableToReachRouterComponent } from './routes/unable-reach-router.compo
 import { ResetRouterWiFiPasswordSuccess } from './routes/reset-router-wifi-password-success.component';
 import { ResetInternetPasswordSuccessDetailComponent } from './routes/rest-internet-password-success-detail.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
+import { ResetInternetPasswordFailComponent } from './routes/reset-internet-password-fail.component';
+import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-password-success.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     ResetRouterWiFiPasswordSuccess,
     ResetInternetPasswordSuccessDetailComponent,
     TryAgainErrorComponent,
+    ResetInternetPasswordFailComponent,
+    ResetInternetPasswordSuccessComponent,
   ],
   imports: [CommonModule, PasswordRoutingModule, SharedModule],
 })

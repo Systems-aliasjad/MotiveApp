@@ -13,6 +13,12 @@ import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.c
 import { UnableWatchChannelComponent } from './routes/unable-watch-channel.component';
 import { RestartInstructionsComponent } from './routes/restart-instructions.component';
 import { BoxNotRestartInstructionsComponent } from './routes/box-not-restart-instructions.component';
+import { UnableToWatchPackageTransferSuccessComponent } from './routes/unable-to-watch-package-transfer-success.component';
+import { PackageTransferSuccessComponent } from './routes/package-transfer-success.component';
+import { TvBoxResetSuccessComponent } from './routes/box-reset-success.component';
+import { GameSessionCancelComponent } from './routes/game-session-cancel.component';
+import { TvBoxResetRequiredSuccessComponent } from './routes/box-restart-required-success.component';
+import { TvBoxNotReachableSuccessComponent } from './routes/box-not-reachable-success.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +32,12 @@ import { BoxNotRestartInstructionsComponent } from './routes/box-not-restart-ins
     UnableWatchChannelComponent,
     RestartInstructionsComponent,
     BoxNotRestartInstructionsComponent,
+    UnableToWatchPackageTransferSuccessComponent,
+    PackageTransferSuccessComponent,
+    TvBoxResetSuccessComponent,
+    GameSessionCancelComponent,
+    TvBoxResetRequiredSuccessComponent,
+    TvBoxNotReachableSuccessComponent,
   ],
   imports: [CommonModule, TvRoutingModule, SharedModule],
 })

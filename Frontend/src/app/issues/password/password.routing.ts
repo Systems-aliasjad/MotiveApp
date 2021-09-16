@@ -4,6 +4,8 @@ import { InternetPasswordResetComponent } from './routes/internet-password-reset
 
 import { MainComponent } from './routes/main.component';
 import { RequestFailComponent } from './routes/request-fail.component';
+import { ResetInternetPasswordFailComponent } from './routes/reset-internet-password-fail.component';
+import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-password-success.component';
 import { ResetPasswordFailComponenet } from './routes/reset-password-fail.component';
 import { ResetRouterWiFiPasswordSuccess } from './routes/reset-router-wifi-password-success.component';
 import { ResetInternetPasswordSuccessDetailComponent } from './routes/rest-internet-password-success-detail.component';
@@ -49,6 +51,14 @@ const routes: Routes = [
   {
     path: 'internet-password-reset-fail',
     component: TryAgainErrorComponent,
+  },
+  {
+    path: 'internet-password-reset-error',
+    component: ResetInternetPasswordFailComponent,
+  },
+  {
+    path: 'internet-password-reset-success',
+    component: ResetInternetPasswordSuccessComponent,
   },
 ];
 
