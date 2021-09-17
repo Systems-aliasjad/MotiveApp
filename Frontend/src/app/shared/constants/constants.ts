@@ -2,6 +2,11 @@ import { FormGroup } from '@angular/forms';
 
 import { IMotvieSubscription, ISection2Template } from './types';
 
+export class RoutingPaths {
+  public static readonly routerInstallSuccessfully: string = 'router-install-successfully';
+  public static readonly installNewRouter: string = 'install-new-router';
+}
+
 export enum ERoutingIds {
   noIssueTv,
   tvOutage,
@@ -101,6 +106,8 @@ export enum ERoutingIds {
   resetELifeONPin,
   unableToProcessRequest,
   resetTelephoneCCBPIN,
+
+  quickLinksAll,
 }
 
 // const P3: string = '3P';
@@ -188,11 +195,11 @@ const RESET_PIN = {
 
 const INSTALL_NEW_ROUTER = {
   body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
-  linkTo: '',
+  linkTo: '/issues/internet/install-new-router',
 };
 const FACTORY_RESET_ROUTER = {
   body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
-  linkTo: '',
+  linkTo: '/issues/internet/router-reset-factory',
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.FACTORY_RESET_TV',

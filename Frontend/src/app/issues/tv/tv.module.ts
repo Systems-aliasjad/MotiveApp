@@ -19,6 +19,7 @@ import { TvBoxResetSuccessComponent } from './routes/box-reset-success.component
 import { GameSessionCancelComponent } from './routes/game-session-cancel.component';
 import { TvBoxResetRequiredSuccessComponent } from './routes/box-restart-required-success.component';
 import { TvBoxNotReachableSuccessComponent } from './routes/box-not-reachable-success.component';
+import { TvBoxResetFactoryComponent } from './routes/tv-box-reset-factory.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { TvBoxNotReachableSuccessComponent } from './routes/box-not-reachable-su
     GameSessionCancelComponent,
     TvBoxResetRequiredSuccessComponent,
     TvBoxNotReachableSuccessComponent,
+    TvBoxResetFactoryComponent,
   ],
   imports: [CommonModule, TvRoutingModule, SharedModule],
 })

@@ -17,6 +17,7 @@ import { TvBoxNotReachableComponent } from './routes/tvBox-not-reachable.compone
 import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.component';
 import { UnableToWatchPackageTransferSuccessComponent } from './routes/unable-to-watch-package-transfer-success.component';
 import { UnableWatchChannelComponent } from './routes/unable-watch-channel.component';
+import { TvBoxResetFactoryComponent } from './routes/tv-box-reset-factory.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,13 @@ const routes: Routes = [
   {
     path: 'tvBox-not-reachable-form_successfully',
     component: TvBoxNotReachableSuccessComponent,
+  },
+
+  {
+    //Quick Links
+    //I want to factory reset my TV box
+    path: 'tv-box-reset-factory',
+    component: TvBoxResetFactoryComponent,
   },
 ];
 

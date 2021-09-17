@@ -19,6 +19,11 @@ import { RouterUpgradeRecommendedComponent } from './routes/router-upgrade-recom
 import { WifiAlarmComponent } from './routes/wifi-alarm.component';
 import { RouterRestartInstructionsComponent } from './routes/router-restart-instructions.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
+import { InstallNewRouterMessageComponent } from './routes/install-new-router-message.component';
+import { RouterInstallSuccessfullyMessageComponent } from './routes/router-install-successfully-message.component';
+import { RoutingPaths } from 'src/app/shared/constants/constants';
+import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
+import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
 
 const routes: Routes = [
   {
@@ -117,6 +122,34 @@ const routes: Routes = [
     //no issues
     path: 'no-issue',
     component: NoIssuesComponent,
+  },
+
+  {
+    // //quick links
+    //I want to install my new router
+    path: 'install-new-router',
+    component: InstallNewRouterMessageComponent,
+  },
+
+  {
+    //quick links
+    //router installed successfully
+    path: 'router-install-successfully',
+    component: RouterInstallSuccessfullyMessageComponent,
+  },
+
+  {
+    //quick links
+    //router installation failed
+    path: 'router-installation-failed',
+    component: RouterInstallationFailedMessageComponent,
+  },
+
+  {
+    //quick links
+    //I wanto to factory reset my router
+    path: 'router-reset-factory',
+    component: RouterResetFactoryComponent,
   },
 ];
 
