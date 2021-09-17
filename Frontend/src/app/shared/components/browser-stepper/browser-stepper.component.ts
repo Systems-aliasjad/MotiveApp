@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-browser-stepper',
   templateUrl: './browser-stepper.component.html',
-  styleUrls: ['./browser-stepper.component.css'],
+  styleUrls: ['./browser-stepper.component.scss'],
 })
 export class BrowserStepperComponent implements OnInit, OnDestroy {
   selectedLang: string = 'en';

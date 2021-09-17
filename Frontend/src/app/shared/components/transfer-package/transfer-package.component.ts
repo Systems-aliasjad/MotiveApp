@@ -9,7 +9,7 @@ import { SharedService } from '../../shared.service';
 @Component({
   selector: 'app-transfer-package',
   templateUrl: './transfer-package.component.html',
-  styleUrls: ['./transfer-package.component.css'],
+  styleUrls: ['./transfer-package.component.scss'],
 })
 export class TransferPackageComponent implements OnInit, OnDestroy {
   PageTitle: string = 'HEADER.TRANSFER_PACKAGE';
