@@ -1,5 +1,5 @@
 <!-- Button with Green background -->
-<div class="btn-wrapper" *ngIf="type === 'primary'">
+<div *ngIf="type === 'primary'">
   <p *ngIf="explanatoryNote">{{ explanatoryNote | translate }}</p>
   <ion-button class="btn primary-btn follow-up green-box-shadow" (click)="handleClick()">{{ title | translate }}</ion-button>
    <!-- TODO: need to be moved to the parent component -->
@@ -22,7 +22,7 @@
 </div>
 
 <!-- Link -->
-<div class="link-wrapper" *ngIf="type === 'link'">
+<div *ngIf="type === 'link'">
   <div class="transparent-btn" (click)="handleClick()">
     <a> {{ title | translate }}</a>
   </div>

@@ -116,3 +116,15 @@ ion-item::part(native){
     }
   }
 }
+.lg-screen{
+  display: block;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+.sm-screen{
+  display: none;
+  @media screen and (max-width: 992px) {
+    display: block;
+  }
+}
