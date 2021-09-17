@@ -7,7 +7,7 @@ import { SharedService } from '../../shared.service';
 @Component({
   selector: 'app-device-connected-homezone',
   templateUrl: './device-connected-homezone.component.html',
-  styleUrls: ['./device-connected-homezone.component.css'],
+  styleUrls: ['./device-connected-homezone.component.scss'],
 })
 export class DeviceConnectedHomezoneComponent implements OnInit, OnDestroy {
   subscription: Subscription;

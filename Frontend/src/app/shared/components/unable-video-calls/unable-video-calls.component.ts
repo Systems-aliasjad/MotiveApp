@@ -7,7 +7,7 @@ import { SharedService } from '../../shared.service';
 @Component({
   selector: 'unable-video-calls',
   templateUrl: './unable-video-calls.component.html',
-  styleUrls: ['./unable-video-calls.component.css'],
+  styleUrls: ['./unable-video-calls.component.scss'],
 })
 export class UnableVideoCallsComponent implements OnInit, OnDestroy {
   selectedLang: string = 'en';
