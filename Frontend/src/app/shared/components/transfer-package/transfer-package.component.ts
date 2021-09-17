@@ -80,6 +80,31 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
       ];
     }
 
+    //RESET TV BOX FACTORY
+    else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
+      this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
+      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION';
+      this.sharedService.setHeaderConfig(this.PageTitle, false, true);
+      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
+      this.cardList = [
+        {
+          title: 'STB SR#039838920',
+          description: 'MAC abcd@1234',
+          checked: true,
+        },
+        {
+          title: 'STB SR#039838931',
+          description: 'MAC abcd@567',
+          checked: false,
+        },
+        {
+          title: 'STB SR#039838920',
+          description: 'MAC abcd@789',
+          checked: false,
+        },
+      ];
+    }
+
     this.formGroup = new FormGroup({
       radioButton: new FormControl(),
     });

@@ -1,22 +1,22 @@
 <!-- Button with Green background -->
 <div *ngIf="type === 'primary'">
   <p *ngIf="explanatoryNote">{{ explanatoryNote | translate }}</p>
-  <ion-button class="btn primary-btn follow-up green-box-shadow" (click)="handleClick()">{{ title | translate }}</ion-button>
-   <!-- TODO: need to be moved to the parent component -->
-     <!--  <ion-row>
+  <ion-button class="btn primary-btn follow-up green-box-shadow" [disabled]="disable" (click)="handleClick()">{{ title | translate }}</ion-button>
+  <!-- TODO: need to be moved to the parent component -->
+  <!--  <ion-row>
     <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-     
-      
+
+
     </ion-col>
   </ion-row> -->
 </div>
 
 <!-- Button with White background -->
 <div *ngIf="type === 'secondary'">
-  <ion-button class="btn secondary-btn close" (click)="handleClick()">{{ title | translate }}</ion-button>
- <!--  <ion-row>
+  <ion-button class="btn secondary-btn close" [disabled]="disable" (click)="handleClick()">{{ title | translate }}</ion-button>
+  <!--  <ion-row>
     <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-      
+
     </ion-col>
   </ion-row> -->
 </div>
@@ -28,7 +28,7 @@
   </div>
   <!-- <ion-row>
     <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-      
+
     </ion-col>
   </ion-row> -->
 </div>
