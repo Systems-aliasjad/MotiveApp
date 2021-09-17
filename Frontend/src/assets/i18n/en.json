@@ -25,7 +25,8 @@
     "RESET_CCB_PIN": "Reset CCB PIN",
     "CALL_FORWARD": "Change call forwarding number",
     "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password",
-    "RESET_ELIFEON_PIN": "Reset eLifeON PIN"
+    "RESET_ELIFEON_PIN": "Reset eLifeON PIN",
+    "ELIFE_UPGRADE": "eLife Upgrade"
   },
 
   "SUBHEADER": {
@@ -35,7 +36,8 @@
     "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz",
     "MY_TV_BOXES": "MY TV BOXES",
     "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS",
-    "RESET_CCB_PIN": "Reset CCB PIN"
+    "RESET_CCB_PIN": "Reset CCB PIN",
+    "REVIEW_YOUR_CONTACT_DETAILS": "Review your contact details"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -358,7 +360,8 @@
     "ROUTER_INSTALL_SUCCESSFULLY": "Router installed successfully!",
     "ROUTER_INSTALL_SUCCESSFULLY_BODY": "Your router should now work. Tap ‘Configure router’ or 'Continue to troubleshooting' if you are still facing an issue.",
     "ROUTER_INSTALL_FAILED": "Router Installation Failed",
-    "ROUTER_INSTALL_FAILED_BODY": "Router installation failed. Tap 'Book Complaint' if you wish to book a complaint or please try again later"
+    "ROUTER_INSTALL_FAILED_BODY": "Router installation failed. Tap 'Book Complaint' if you wish to book a complaint or please try again later",
+    "ELIFE_UPGRADE_SUCCESS": "eLife package upgrade request was raised successfully"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

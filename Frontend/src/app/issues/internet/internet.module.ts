@@ -25,6 +25,7 @@ import { InstallNewRouterMessageComponent } from './routes/install-new-router-me
 import { RouterInstallSuccessfullyMessageComponent } from './routes/router-install-successfully-message.component';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
+import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { RouterResetFactoryComponent } from './routes/router-reset-factory.compo
     RouterInstallSuccessfullyMessageComponent,
     RouterInstallationFailedMessageComponent,
     RouterResetFactoryComponent,
+    RouterUpgradeSuccessComponent,
   ],
   imports: [CommonModule, InternetRoutingModule, SharedModule],
 })

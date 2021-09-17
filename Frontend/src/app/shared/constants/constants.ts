@@ -108,6 +108,8 @@ export enum ERoutingIds {
   resetTelephoneCCBPIN,
 
   quickLinksAll,
+  routerUpgrade,
+  eLifeUpgrade,
 }
 
 // const P3: string = '3P';

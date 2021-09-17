@@ -24,6 +24,9 @@ import { RouterInstallSuccessfullyMessageComponent } from './routes/router-insta
 import { RoutingPaths } from 'src/app/shared/constants/constants';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
+import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
+import { ERoutingIds } from 'src/app/shared/constants/constants';
+import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
 
 const routes: Routes = [
   {
@@ -150,6 +153,16 @@ const routes: Routes = [
     //I wanto to factory reset my router
     path: 'router-reset-factory',
     component: RouterResetFactoryComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
+    data: { id: ERoutingIds.routerUpgrade },
+  },
+  {
+    //Router upgrade Request Successfully
+    path: 'router-upgrade-success',
+    component: RouterUpgradeSuccessComponent,
   },
 ];
 

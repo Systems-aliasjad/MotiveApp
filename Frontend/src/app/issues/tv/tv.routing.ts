@@ -18,6 +18,9 @@ import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.c
 import { UnableToWatchPackageTransferSuccessComponent } from './routes/unable-to-watch-package-transfer-success.component';
 import { UnableWatchChannelComponent } from './routes/unable-watch-channel.component';
 import { TvBoxResetFactoryComponent } from './routes/tv-box-reset-factory.component';
+import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
+import { ERoutingIds } from 'src/app/shared/constants/constants';
+import { ELifeUpgradeSuccessComponent } from './routes/eLife-upgrade-success.component';
 
 const routes: Routes = [
   {
@@ -94,6 +97,15 @@ const routes: Routes = [
     //I want to factory reset my TV box
     path: 'tv-box-reset-factory',
     component: TvBoxResetFactoryComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
+    data: { id: ERoutingIds.eLifeUpgrade },
+  },
+  {
+    path: 'eLife-upgrade-success',
+    component: ELifeUpgradeSuccessComponent,
   },
 ];
 

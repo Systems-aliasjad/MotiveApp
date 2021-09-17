@@ -151,15 +151,15 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
 
     ///For router upgrade Successfully
-    else if (this.codeType === ERoutingIds.routerUpgradeRequestSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
-      this.subHeaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
-      this.subHeaderSectionData = {
-        referenceNo: '436529873',
-      };
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons));
-    }
+    // else if (this.codeType === ERoutingIds.routerUpgradeRequestSuccessfully) {
+    //   this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
+    //   this.subHeaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
+    //   this.subHeaderSectionData = {
+    //     referenceNo: '436529873',
+    //   };
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons));
+    // }
 
     ///For router Package upgrade Successfully
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
