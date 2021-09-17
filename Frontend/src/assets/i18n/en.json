@@ -25,7 +25,8 @@
     "RESET_CCB_PIN": "Reset CCB PIN",
     "CALL_FORWARD": "Change call forwarding number",
     "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password",
-    "RESET_ELIFEON_PIN": "Reset eLifeON PIN"
+    "RESET_ELIFEON_PIN": "Reset eLifeON PIN",
+    "ELIFE_UPGRADE": "eLife Upgrade"
   },
 
   "SUBHEADER": {
@@ -35,7 +36,8 @@
     "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz",
     "MY_TV_BOXES": "MY TV BOXES",
     "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS",
-    "RESET_CCB_PIN": "Reset CCB PIN"
+    "RESET_CCB_PIN": "Reset CCB PIN",
+    "REVIEW_YOUR_CONTACT_DETAILS": "Review your contact details"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -344,7 +346,8 @@
     "UNABLE_TO_RESET_PASSWORD_BODY2": "We recommend using an Etisalat router so that we can provide remote support.",
     "UNABLE_TO_PROCESS_REQUEST": "Unable to process request",
     "UNABLE_TO_PROCESS_REQUEST_BODY": "It looks like you are not subscribed to eLifeON.",
-    "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "Etisalat device care gives you precise instructions specific for your device"
+    "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "Etisalat device care gives you precise instructions specific for your device",
+    "ELIFE_UPGRADE_SUCCESS": "eLife package upgrade request was raised successfully"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

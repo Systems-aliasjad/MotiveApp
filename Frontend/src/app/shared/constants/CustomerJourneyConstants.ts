@@ -316,7 +316,12 @@ export class CustomerJourneyConstants {
 
   public static routerUpgradesuccessfullyCase = {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLYY_BODY'],
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
+  };
+
+  public static eLifeUpgradeSuccess = {
+    header: 'MESSAGES.ELIFE_UPGRADE_SUCCESS',
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
   public static routerPackageUpgradesuccessfullyCase = {

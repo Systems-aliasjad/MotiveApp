@@ -101,6 +101,8 @@ export enum ERoutingIds {
   resetELifeONPin,
   unableToProcessRequest,
   resetTelephoneCCBPIN,
+  routerUpgrade,
+  eLifeUpgrade,
 }
 
 // const P3: string = '3P';

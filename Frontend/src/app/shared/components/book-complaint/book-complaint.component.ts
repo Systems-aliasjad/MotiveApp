@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -17,17 +18,11 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   codeType;
   buttonText;
   subscription: Subscription;
-  constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private formBuilder: FormBuilder, public router: Router) {
+  constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, private formBuilder: FormBuilder, public router: Router, private location: Location) {
     this.codeType = this.router.url;
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
       this.initialization();
-    });
-
-    this.formGroup = this.formBuilder.group({
-      MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-      AlternateContactNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-      Remarks: [''],
     });
   }
   ngOnDestroy(): void {
@@ -36,8 +31,17 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
+  createForm() {
+    this.formGroup = this.formBuilder.group({
+      MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+      AlternateContactNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+      Remarks: [''],
+    });
+  }
+
   initialization() {
     this.sharedService.setDefaultValues();
+    this.createForm();
     //IF IS FOR PACKAGE UPGRADE RECOMMENDED
     if (this.codeType === ERoutingIds.packageUpgradeRecommendedForm) {
       this.buttonText = 'BUTTONS.CONTINUE';
@@ -96,6 +100,17 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
     }
     //#endregion Module 3
+
+    // #region  Module 5
+    // Router Upgrade
+    else if (this.codeType === ERoutingIds.routerUpgrade) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.ROUTER_UPGRADE', false);
+    } else if (this.codeType === ERoutingIds.eLifeUpgrade) {
+      this.buttonText = 'BUTTONS.CONTINUE';
+      this.sharedService.setHeaderConfig('HEADER.ELIFE_UPGRADE', false);
+    }
+    // #endregion Module 5
   }
 
   get f() {
@@ -135,5 +150,18 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.router.navigate(['/issues/phone/issue-not-fixed-message']);
     }
     //#endregion Module 3
+
+    // #region  Module 5
+    // Router Upgrade
+    else if (this.codeType === ERoutingIds.routerUpgrade) {
+      this.router.navigate(['/issues/internet/router-upgrade-success']);
+    } else if (this.codeType === ERoutingIds.eLifeUpgrade) {
+      this.router.navigate(['/issues/tv/eLife-upgrade-success']);
+    }
+    // #endregion Module 5
+  }
+
+  onBackClick() {
+    this.location.back();
   }
 }

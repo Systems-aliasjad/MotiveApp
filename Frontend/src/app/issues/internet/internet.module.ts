@@ -21,6 +21,7 @@ import { RouterNotReachableOwnRouterComponent } from './routes/router-not-reacha
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { RouterNotRestartedComponent } from './routes/router-not-restarted.component';
 import { RouterRestartInstructionsComponent } from './routes/router-restart-instructions.component';
+import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { RouterRestartInstructionsComponent } from './routes/router-restart-inst
     RouterNotReachableComponent,
     RouterNotReachableOwnRouterComponent,
     NoIssuesComponent,
+    RouterUpgradeSuccessComponent,
   ],
   imports: [CommonModule, InternetRoutingModule, SharedModule],
 })

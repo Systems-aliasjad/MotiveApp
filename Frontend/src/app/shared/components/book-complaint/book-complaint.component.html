@@ -4,7 +4,8 @@
     <ion-row>
       <ion-col size="12">
         <app-page-top></app-page-top>
-        <p class="tag-title">{{ 'SUBHEADER.BOOK_COMPLAINT' | translate }}</p>
+        <p *ngIf="!formGroup.valid" class="tag-title">{{ 'SUBHEADER.BOOK_COMPLAINT' | translate }}</p>
+        <p *ngIf="formGroup.valid" class="tag-title">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
       </ion-col>
     </ion-row>
     <!-- Page Title and Sub Title End -->
@@ -54,11 +55,11 @@
                 </ion-item>
               </ion-col>
             </ion-row>
-            <ion-row>
-              <ion-col sizeLg="2" sizeMd="4" sizeSm="12" size="12">
-                <ion-button class="btn secondary-btn" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{ buttonText | translate }}</ion-button>
-              </ion-col>
-            </ion-row>
+
+            <!-- Reset Book A Complaint Buttons -->
+            <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button>
+            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button>
+            <!-- Reset Book A Complaint Buttons -->
           </ion-grid>
         </form>
       </ion-col>

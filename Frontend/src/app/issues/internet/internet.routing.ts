@@ -19,6 +19,9 @@ import { RouterUpgradeRecommendedComponent } from './routes/router-upgrade-recom
 import { WifiAlarmComponent } from './routes/wifi-alarm.component';
 import { RouterRestartInstructionsComponent } from './routes/router-restart-instructions.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
+import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
+import { ERoutingIds } from 'src/app/shared/constants/constants';
+import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
 
 const routes: Routes = [
   {
@@ -117,6 +120,16 @@ const routes: Routes = [
     //no issues
     path: 'no-issue',
     component: NoIssuesComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
+    data: { id: ERoutingIds.routerUpgrade },
+  },
+  {
+    //Router upgrade Request Successfully
+    path: 'router-upgrade-success',
+    component: RouterUpgradeSuccessComponent,
   },
 ];
 
