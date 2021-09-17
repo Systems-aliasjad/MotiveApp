@@ -111,6 +111,11 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY_BODY2' }],
   };
 
+  public static routerResetFactorySection: IMessageIssue = {
+    header: 'MESSAGES.ROUTER_RESET_FACTORY',
+    body: [{ title: 'MESSAGES.ROUTER_RESET_FACTORY_BODY' }],
+  };
+
   public static phoneIssuesMainMessageSection: IMessageIssue = {
     header: 'MESSAGES.PHONE_ISSUE_MAIN_TITLE',
     body: [{ title: 'MESSAGES.PHONE_ISSUE_MAIN_TITLE_BODY1' }, { title: 'MESSAGES.PHONE_ISSUE_MAIN_TITLE_BODY2' }],
@@ -267,6 +272,15 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static tvBoxFactoryResetSection: IMessageIssue = {
+    header: 'MESSAGES.TV_BOX_RESET_FACOTORY',
+    body: [
+      {
+        title: 'MESSAGES.TV_BOX_RESET_FACOTORY_BODY',
+      },
+    ],
+  };
+
   public static ontRestartMessageSection: IMessageIssue = {
     header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
     body: [
@@ -316,7 +330,12 @@ export class CustomerJourneyConstants {
 
   public static routerUpgradesuccessfullyCase = {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLYY_BODY'],
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
+  };
+
+  public static eLifeUpgradeSuccess = {
+    header: 'MESSAGES.ELIFE_UPGRADE_SUCCESS',
+    paragraphs: ['MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY_BODY'],
   };
 
   public static routerPackageUpgradesuccessfullyCase = {
@@ -425,6 +444,23 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.UNABLE_TO_PROCESS_REQUEST',
     paragraphs: ['MESSAGES.UNABLE_TO_PROCESS_REQUEST_BODY'],
   };
+
+  //#region  Quick Links
+  public static installNewRouterMessageCase = {
+    header: 'MESSAGES.INSTALL_NEW_ROUTER',
+    paragraphs: ['MESSAGES.INSTALL_NEW_ROUTER_BODY1', 'MESSAGES.INSTALL_NEW_ROUTER_BODY2'],
+  };
+
+  public static routerInstallSuccessfullyMessageCase = {
+    header: 'MESSAGES.ROUTER_INSTALL_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.ROUTER_INSTALL_SUCCESSFULLY_BODY'],
+  };
+
+  public static routerInstallFailedMessageCase = {
+    header: 'MESSAGES.ROUTER_INSTALL_FAILED',
+    paragraphs: ['MESSAGES.ROUTER_INSTALL_FAILED_BODY'],
+  };
+  //#endregion Quick Links
 
   public static resetNowButton1: IButton = {
     title: 'BUTTONS.RESET_NOW',

@@ -32,6 +32,7 @@ import { DummyDelComponent } from './shared/components/dummy-del/dummy-del.compo
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
+import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -275,6 +276,11 @@ const routes: Routes = [
 
   //pHONE Outage
   { path: 'phone-outage', component: IssueBuilderComponent, data: { id: ERoutingIds.phoneOutage } },
+
+  //Quick Links all
+  { path: 'quick-links-all', component: QuickLinksAllComponent, data: { id: ERoutingIds.quickLinksAll } },
+  // { path: '', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
+
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },
   { path: '**', redirectTo: '' },

@@ -25,7 +25,8 @@
     "RESET_CCB_PIN": "Reset CCB PIN",
     "CALL_FORWARD": "Change call forwarding number",
     "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password",
-    "RESET_ELIFEON_PIN": "Reset eLifeON PIN"
+    "RESET_ELIFEON_PIN": "Reset eLifeON PIN",
+    "ELIFE_UPGRADE": "eLife Upgrade"
   },
 
   "SUBHEADER": {
@@ -35,7 +36,8 @@
     "RESET_WIFI_PASSWORD_TAB2": "SSID 5.0 Ghz",
     "MY_TV_BOXES": "MY TV BOXES",
     "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS",
-    "RESET_CCB_PIN": "Reset CCB PIN"
+    "RESET_CCB_PIN": "Reset CCB PIN",
+    "REVIEW_YOUR_CONTACT_DETAILS": "Review your contact details"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -253,10 +255,15 @@
     "NO_INTERNET_CONNECTION_BODY2": "The internet service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
     "RESET_ELIFEON_PIN_HEADING": "Unable to login",
     "RESET_ELIFEON_PIN_BODY1": "Please reset your eLifeON PIN to fix the issue.",
-    "RESET_ELIFEON_PIN_BODY2": "It will be reset to the default PIN: 1111@elife",
     "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING": "eLifeON PIN reset successfully!",
     "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY": "Your PIN has been successfully reset to the default PIN.",
     "ISSUE_FIXED_SUCCESSFULLY": "Issue fixed successfully!",
+    "ROUTER_RESET_FACTORY": "Reset Router to factory default",
+    "ROUTER_RESET_FACTORY_BODY": "Do you want to reset the router to the factory default?",
+
+    "TV_BOX_RESET_FACOTORY": "Reset TV Set Top Box to factory default",
+    "TV_BOX_RESET_FACOTORY_BODY": "Do you want to reset the TV Set Top Box to the factory default?",
+
     "ISSUE_FIXED_SUCCESSFULLY_BODY1": "We have fixed the technical issues. Please restart the router and then try using the internet again.",
     "ISSUE_FIXED_SUCCESSFULLY_BODY2": "We have fixed the technical issues.  Please reset the router and then try using the internet again.",
     "RESET_YOUR_PASSWORD": "Reset your password",
@@ -344,7 +351,17 @@
     "UNABLE_TO_RESET_PASSWORD_BODY2": "We recommend using an Etisalat router so that we can provide remote support.",
     "UNABLE_TO_PROCESS_REQUEST": "Unable to process request",
     "UNABLE_TO_PROCESS_REQUEST_BODY": "It looks like you are not subscribed to eLifeON.",
-    "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "Etisalat device care gives you precise instructions specific for your device"
+    "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "Etisalat device care gives you precise instructions specific for your device",
+
+    "INSTALL_NEW_ROUTER": "Installing new router",
+
+    "INSTALL_NEW_ROUTER_BODY1": "Please wait… this might take up to 30 minutes.",
+    "INSTALL_NEW_ROUTER_BODY2": "You can contact us if the router does not start working after date/time.",
+    "ROUTER_INSTALL_SUCCESSFULLY": "Router installed successfully!",
+    "ROUTER_INSTALL_SUCCESSFULLY_BODY": "Your router should now work. Tap ‘Configure router’ or 'Continue to troubleshooting' if you are still facing an issue.",
+    "ROUTER_INSTALL_FAILED": "Router Installation Failed",
+    "ROUTER_INSTALL_FAILED_BODY": "Router installation failed. Tap 'Book Complaint' if you wish to book a complaint or please try again later",
+    "ELIFE_UPGRADE_SUCCESS": "eLife package upgrade request was raised successfully"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

@@ -48,8 +48,13 @@ export class MotiveMessageComponent implements OnInit {
   @Output()
   button3Click = new EventEmitter();
 
+  myBtnSize
+ngOnInit() {
+    this.myBtnSize = this.button3 ? '6' : '12'
+  }
+
   constructor() {}
-  ngOnInit(): void {}
+ /*  ngOnInit(): void {} */
 
   button1Listener() {
     this.button1Click.next({ bubbles: false });

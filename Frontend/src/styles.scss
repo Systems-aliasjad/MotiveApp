@@ -489,7 +489,9 @@ ion-grid{
   width: 100%;
   padding-bottom: 0;
 }
-app-diagnose-issue{
+app-diagnose-issue,
+motive-message,
+app-device-care{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -503,7 +505,7 @@ app-diagnose-issue{
   -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
   box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
   background-color:$white;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 992px) {
     box-shadow: none;
     background-color: transparent;
   }

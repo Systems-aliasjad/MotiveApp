@@ -32,16 +32,16 @@ ion-grid {
       ion-col{
         &:first-child{
           ion-col{
-            -webkit-box-flex: 0 !important;
+            /* -webkit-box-flex: 0 !important;
             -ms-flex: 0 0 100% !important;
             flex: 0 0 100% !important;
             max-width: 100% !important;
-            width: 100% !important;
+            width: 100% !important; */
           }
         } 
         motive-button{
-          min-width: 100%;
-          width: 100%;
+          min-width: 240px;
+          /* width: 100%; */
         }
       }
       > ion-col{

@@ -12,6 +12,8 @@ export class ButtonComponent implements OnInit {
   type: 'primary' | 'secondary' | 'link';
   @Input()
   title: string;
+  @Input()
+  disable: boolean;
   /** @deprecated - Please use parent component for this message. */
   @Input()
   explanatoryNote: string;
