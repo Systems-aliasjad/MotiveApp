@@ -10,7 +10,8 @@
 
     <!-- Action Title Content Start -->
     <ion-row class="info-container_title_content">
-      <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12">
+      <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
+      <ion-col size="12">
         <h4 *ngIf="Section1Data?.header">
           {{ Section1Data.header | translate }}
         </h4>
@@ -49,12 +50,46 @@
         </ion-col>
       </ion-row>
       <!-- Detail List and Follow up and Close End -->
+      <ion-row>
+        <ion-col size="12" class="pt-0 pb-0">
+          <motive-button
+          *ngIf="button1"
+          [type]="button1.type"
+          [title]="button1.title"
+          [explanatoryNote]="button1.explanatoryNote"
+          [SM]="button1.SM"
+          [MD]="button1.MD"
+          [LG]="button1.LG"
+          (clickHandler)="button1Listener()"
+        ></motive-button>
+        <motive-button
+          *ngIf="button2"
+          [type]="button2.type"
+          [title]="button2.title"
+          [explanatoryNote]="button2.explanatoryNote"
+          [SM]="button2.SM"
+          [MD]="button2.MD"
+          [LG]="button2.LG"
+          (clickHandler)="button2Listener()"
+        ></motive-button>
+        <motive-button
+          *ngIf="button3"
+          [type]="button3.type"
+          [title]="button3.title"
+          [explanatoryNote]="button3.explanatoryNote"
+          [SM]="button3.SM"
+          [MD]="button3.MD"
+          [LG]="button3.LG"
+          (clickHandler)="button3Listener()"
+        ></motive-button> 
+        </ion-col>
+      </ion-row>
     </div>
   </ion-grid>
 </ion-content>
 
 <!-- Buttons Start -->
-<motive-button
+<!-- <motive-button
   *ngIf="button1"
   [type]="button1.type"
   [title]="button1.title"
@@ -83,5 +118,5 @@
   [MD]="button3.MD"
   [LG]="button3.LG"
   (clickHandler)="button3Listener()"
-></motive-button>
+></motive-button> -->
 <!-- Buttons End -->
