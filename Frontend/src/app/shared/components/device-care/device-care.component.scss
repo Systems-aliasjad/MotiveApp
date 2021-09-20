@@ -3,7 +3,25 @@
 
 // --------------------------------------------------------------
 :host {
-  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  ion-list{
+    --ion-background-color:transparent;
+    padding-bottom: 0;
+  }
+  ion-item{
+    --min-height: auto; 
+    ion-label{
+      color:$secondary-color;
+    }
+  }
+}
+ion-item::part(native){
+  --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-radius:0;
+  --border-width: 0;
+  --inner-border-width: 0
 }
 // --------------------------------------------------------------
 
@@ -79,9 +97,12 @@ ion-grid {
 }
 .content {
   max-width: 550px;
-  margin-top: 4rem;
+  margin-top: 2rem;
   margin-right: auto;
   margin-bottom: 0;
+  .sub-title{
+    letter-spacing: 0;
+  }
 }
 p {
   color: $secondary-color;
