@@ -36,6 +36,8 @@
   --background-color:  transparent;
   --ion-item-background:transparent;
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --background-hover:$secondary-color;
+  --background-focused:$primary-color;
   ion-content{
     --background: var(--ion-background-color, transparent);
   }
