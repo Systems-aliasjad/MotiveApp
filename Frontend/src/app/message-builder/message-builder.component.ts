@@ -59,138 +59,53 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
   initialization() {
     this.sharedService.setDefaultValues();
 
-    //Open Complaint
+    // complaint-already-exists
     if (this.codeType === ERoutingIds.openComplaint) {
-      this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
-      this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
-      this.Section2Data = {
-        complaintNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        status: 'Xxxxx xxxxx xxxx',
-      };
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons));
     }
-    //Open service request present
+    // osrp/move-elife-connection
     else if (this.codeType === ERoutingIds.osrp) {
-      this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
-      this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
-      this.Section2Data = {
-        reqNo: '436529873',
-        reqType: 'Xxxxx xxxxx xxxx',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        status: 'Xxxxx xxxxx xxxx',
-      };
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons));
     } //end of OSRP //Open service request present
 
-    ///For Appointment book successfully IssuesNotFixed
+    // appointment-successful
     else if (this.codeType === ERoutingIds.appoinmentSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
-      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
-      this.Section2Data = {
-        referenceNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        location: 'Xxxxx xxxxx xxxx',
-      };
-
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.appointmentbookssuccessfullyButtons));
     }
 
     ///For Compliant booked successfully
-    else if (this.codeType === ERoutingIds.complaintSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.complaintFormsuccessfullyCase;
-      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
-      this.Section2Data = {
-        referenceNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        location: 'Xxxxx xxxxx xxxx',
-      };
-
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
-    }
-
-    ///For Router Not Reachable Compliant booked successfully
-    else if (this.codeType === ERoutingIds.routerNotReachableFormSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.routerNotReachableFormsuccessfullyCase;
-      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
-      this.Section2Data = {
-        referenceNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        location: 'Xxxxx xxxxx xxxx',
-      };
-
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
-    }
-
-    //Open technical S/R
-    else if (this.codeType === ERoutingIds.openSr) {
-      this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
-      this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
-      this.Section2Data = {
-        reqNo: '436529873',
-        reqType: 'Xxxxx xxxxx xxxx',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        status: 'Xxxxx xxxxx xxxx',
-      };
-
-      this.imgSrc = this.warningImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons));
-    }
-    //package upgrade Successfully
-    else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
-      this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
-      this.subHeaderSectionData = {
-        referenceNo: '436529873',
-      };
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
-    }
-
-    ///For router upgrade Successfully
-    // else if (this.codeType === ERoutingIds.routerUpgradeRequestSuccessfully) {
-    //   this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
-    //   this.subHeaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
-    //   this.subHeaderSectionData = {
+    // else if (this.codeType === ERoutingIds.complaintSuccessfully) {
+    //   this.Section1Data = CustomerJourneyConstants.complaintFormsuccessfullyCase;
+    //   this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+    //   this.Section2Data = {
     //     referenceNo: '436529873',
+    //     dateVisit: 'Jul 10 2019, 10:30 AM',
+    //     location: 'Xxxxx xxxxx xxxx',
     //   };
+
     //   this.imgSrc = this.successImgSrc;
-    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons));
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
     // }
 
-    ///For router Package upgrade Successfully
-    else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
-      this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
-      this.subHeaderSectionData = {
-        referenceNo: '436529873',
-      };
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons));
+    // compalint-successful
+    else if (this.codeType === ERoutingIds.routerNotReachableFormSuccessfully) {
     }
 
-    //Account not active
+    // open-technical-request
+    else if (this.codeType === ERoutingIds.openSr) {
+    }
+    // package-upgrade-success
+    else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
+    }
+
+    // router-and-package-upgrade-success
+    else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
+    }
+
+    // account-not-active
     else if (this.codeType === ERoutingIds.accountNotActive) {
-      this.Section1Data = CustomerJourneyConstants.accountNotActive;
-      this.Section1Data.spanListener = () => {
-        console.log('Span Click Listener');
-      };
-      this.imgSrc = this.warningImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.accountNotActiveButtons));
     }
 
     ///For third party router Successfully
+    // new-router-request-success
     else if (this.codeType === ERoutingIds.thirdPartyRouterSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.thirdPartyRoutersuccessfullyCase;
-      this.subHeaderSectionTemplate = ApplicableCodes.thirdPartyRouterUpgradeTemplate;
-      this.subHeaderSectionData = {
-        referenceNo: '436529873',
-      };
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.thirdPartyRoutersuccessfullyButtons));
     }
 
     ///For Reset Wifi password first  Successfull
@@ -201,12 +116,11 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
 
     ///For Reset Wifi password Second/Final  Successfull
+    // password-update-success
     else if (this.codeType === ERoutingIds.resetWifiPasswordFormSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.resetWifiResetSecondsuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessSecondCasesuccessfullyButtons));
     }
     // Troubleshoot Complete
+    // 2.7.52
     else if (this.codeType === ERoutingIds.troubleshootComplete) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.troubleshootComplete;
@@ -214,31 +128,17 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
     }
     // TV PIN update Complete
+    // /tv/troubleshoot-complete
     else if (this.codeType === ERoutingIds.tvPinUpdateSuccessfull) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvAdminPinResetSuccessfullyButton));
     }
 
     // ELife Login PIN Reset Complete
+    // /tv/unable-to-login-elife
     else if (this.codeType === ERoutingIds.restELifeLoginPin) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.restELifeLoginPin;
-      this.imgSrc = this.warningImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinButton));
     }
     // ELife Login PIN Reset Success Complete
+    // /tv/reset-elife-pin-success
     else if (this.codeType === ERoutingIds.restELifeLoginPinResetSuccess) {
-      this.sharedService.setHeaderConfig('', false, false);
-      this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
-      this.imgSrc = this.successImgSrc;
-      this.Section2Template = ApplicableCodes.userCredentialsTemplate;
-      this.Section2Data = {
-        userId: '<XXX>',
-        pin: '1111@eLife',
-      };
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinResetSuccessButton));
     }
     //#region  Module 2
     // Tv box not reachable

@@ -22,7 +22,6 @@ import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { MessageBuilderComponent } from './message-builder/message-builder.component';
-import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
 import { TvDetailComponent } from './tv-detail/tv-detail.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 
@@ -35,7 +34,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent, IssueBuilderComponent, TvDetailComponent, QuickLinksAllComponent],
+  declarations: [AppComponent, LandingComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent, TvDetailComponent, QuickLinksAllComponent],
   imports: [
     SharedModule,
     RoutingModule,

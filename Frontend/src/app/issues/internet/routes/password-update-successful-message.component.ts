@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'install-new-router-message',
+  selector: 'password-update-successful-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -17,7 +17,7 @@ import { Subscription } from 'rxjs';
     (button1Click)="button1Listener()"
   ></motive-message>`,
 })
-export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
+export class PasswordUpdateSuccessfulMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -25,8 +25,7 @@ export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'secondary',
-    title: 'BUTTONS.DONE',
-    explanatoryNote: '',
+    title: 'BUTTONS.OK',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -45,11 +44,12 @@ export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
+    this.Section1Data = CustomerJourneyConstants.resetWifiResetSecondsuccessfullyCase;
     this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterMessageCase;
+    CustomerJourneyConstants.resestWifiPasswordSuccessSecondCasesuccessfullyButtons;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.router.navigate(['/thanks']);
   }
 }

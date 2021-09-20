@@ -7,7 +7,6 @@ import { ThankyouScreenComponent } from './thankyou-screen/thankyou-screen.compo
 import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
-import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
 import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
 import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
@@ -84,10 +83,6 @@ const routes: Routes = [
     path: 'loader',
     component: LoaderComponent,
   },
-  {
-    path: 'issue',
-    component: IssueBuilderComponent,
-  },
   // {
   //   path: 'router-restart',
   //   component: RestartInstructionComponent,
@@ -137,11 +132,8 @@ const routes: Routes = [
   { path: 'game-session-cancel', component: MessageBuilderComponent, data: { id: ERoutingIds.gameSessionCancelConfirmed } },
 
   //Router Reboot Required
-  { path: 'router-reboot-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerRebootRequired } },
   //Issue Not Fixed
-  { path: 'issue-not-fixed', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixed } },
   //Internet password reset required - 1122 - Module-4
-  { path: 'internet-password-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.internetPasswordReset } },
   { path: 'internet-password-reset-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccess } },
   { path: 'internet-password-reset-error', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordError } },
   { path: 'internet-password-reset-fail', component: MessageBuilderComponent, data: { id: ERoutingIds.tryAgainError } },
@@ -160,30 +152,6 @@ const routes: Routes = [
   { path: 'reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.resetTelephoneCCBPIN } },
   // 1122 Module - 4 END
 
-  //3rd party router requires configuration
-  { path: '3rd-party-router-reset', component: IssueBuilderComponent, data: { id: ERoutingIds.RouterReset3rdParty } },
-  //Package Upgrade Recommended
-  { path: 'package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.packageUpgradeRecommended } },
-  //Wi-Fi Alarm
-  { path: 'wifi-alarm', component: IssueBuilderComponent, data: { id: ERoutingIds.WiFiAlarm } },
-  //Outage
-  { path: 'outage', component: IssueBuilderComponent, data: { id: ERoutingIds.outage } },
-
-  //TV Outage
-  { path: 'tv-outage', component: IssueBuilderComponent, data: { id: ERoutingIds.tvOutage } },
-  //Router Upgrade Recommended
-  { path: 'router-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerUpgradeRecommended } },
-  //Router & package upgrade recommended
-  { path: 'router-package-upgrade-recommended', component: IssueBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommended } },
-  //No Issue
-  { path: 'no-issue', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssue } },
-  // 3rd party router
-  { path: 'third-party-router', component: IssueBuilderComponent, data: { id: ERoutingIds.thirdPartyRouter } },
-  // no Issue  - TV
-  { path: 'no-issue-tv', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssueTv } },
-  // no Issue  - TV
-  { path: 'issue-not-fixed-tv', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixedTv } },
-
   //router and package Upgrade Recommended form
   { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
   //Router Upgrade Recommended form
@@ -199,31 +167,25 @@ const routes: Routes = [
   // Book A Appointment As Appointment message
   { path: 'book-Appointment', component: BookComplaintComponent, data: { id: ERoutingIds.bookAppointmentAsAppointment } },
 
-  // 3rd party router form
+  // 3rd party router form -
   { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
   // #endregion  third party  router
 
   //Router Reset Required
-  { path: 'reset-wifi-required', component: IssueBuilderComponent, data: { id: ERoutingIds.routerResetRequired } },
   { path: 'reset-wifi-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordSuccess } },
   { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
   { path: 'reset-wifi-password-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordFormSuccessfully } },
 
   //Router managed, but not reachable
-  { path: 'router-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.routerNotReachable } },
   { path: 'router-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerNotReachableForm } },
   { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
-  { path: 'router-not-reachable-own-router', component: IssueBuilderComponent, data: { id: ERoutingIds.routerNotReachableOwnRouter } },
   { path: 'router-not-reachable-own-router-care', component: DeviceCareComponent, data: { id: ERoutingIds.routerNotReachableOwnRouterCare } },
 
   //TV Box Not Reachable
-  { path: 'tvBox-not-reachable', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachable } },
-  { path: 'tvBox-not-reachable_try_again', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableTryAgain } },
   { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
   { path: 'tvBox-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableFormSuccessfully } },
 
   //TV set top box restart required
-  { path: 'tvBox-restart-required', component: IssueBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequired } },
   { path: 'tvBox-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequiredSuccessfully } },
   { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
   { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
@@ -236,7 +198,6 @@ const routes: Routes = [
   { path: 'game-session', component: GameSessionComponent },
 
   //Unable to watch channel
-  { path: 'unable-to-watch-channel', component: IssueBuilderComponent, data: { id: ERoutingIds.enableWatchChannel } },
   // { path: 'unable-to-watch-channel-continue', component: DeviceCareComponent, data: { id: ERoutingIds.enableWatchChannelContinueTroubleshoot } },
   { path: 'tvBox-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxResetSuccessfully } },
 
@@ -250,8 +211,6 @@ const routes: Routes = [
   { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
   { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
-  { path: 'no-issue-phone', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssuePhone } },
-
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
   { path: 'no-issue-phone-phone-reset-ccb-pin-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPinSuccessfully } },
@@ -262,15 +221,9 @@ const routes: Routes = [
   { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },
 
   //Ont reboot required
-  { path: 'ont-restart-required', component: IssueBuilderComponent, data: { id: ERoutingIds.ontRestartRequired } },
   { path: 'ont-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.ontRestartRequiredSuccessfully } },
   { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
   { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
-
-  { path: 'issue-not-fixed-phone', component: IssueBuilderComponent, data: { id: ERoutingIds.issueNotFixedPhone } },
-
-  //pHONE Outage
-  { path: 'phone-outage', component: IssueBuilderComponent, data: { id: ERoutingIds.phoneOutage } },
 
   //Quick Links all
   { path: 'quick-links-all', component: QuickLinksAllComponent, data: { id: ERoutingIds.quickLinksAll } },

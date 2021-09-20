@@ -45,6 +45,22 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BrMaskerModule } from 'br-mask';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { ComplaintSuccessfulMessageComponent } from './routes/complaint-successful-message.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
+import { PackageUpgradeSuccessMessageComponent } from './routes/package-upgrade-success-message.component';
+import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-and-package-upgrade-successful-message.component';
+import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { NewRouterSuccessMessageComponent } from './routes/new-router-success-message.component';
+import { PasswordUpdateSuccessfulMessageComponent } from './routes/password-update-successful-message.component';
+import { RouterUpgradeComponent } from './routes/router-upgrade.component';
+import { RouterNotReachableFormComponent } from './routes/router-not-reachable-form.component';
+import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.component';
+import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
+import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +68,17 @@ import { BrMaskerModule } from 'br-mask';
     BrowsingUnableStep1Component,
     BrowsingUnableStep2Component,
     BrowsingUnableStep3Component,
+    ComplaintExistsMessageComponent,
     RouterFixedRestartRequiredComponent,
+    MoveElifeConnectionMessageComponent,
+    AppointmentSuccessfulMessageComponent,
+    NewRouterSuccessMessageComponent,
+    PasswordUpdateSuccessfulMessageComponent,
+    ComplaintSuccessfulMessageComponent,
+    OpenServiceRequestMessageComponent,
+    PackageUpgradeSuccessMessageComponent,
+    RouterAndPackageUpgradeSuccessMessageComponent,
+    AccountNotActiveMessageComponent,
     RouterRestartCareComponent,
     RouterNotRestartedCareComponent,
     OutageComponent,
@@ -77,6 +103,7 @@ import { BrMaskerModule } from 'br-mask';
     RouterInstallSuccessfullyMessageComponent,
     RouterInstallationFailedMessageComponent,
     RouterResetFactoryComponent,
+    RouterUpgradeComponent,
     RouterUpgradeSuccessComponent,
     InstallNewRouterCareComponent,
     InstallNewRouterComplaintSuccessfullyMessageComponent,
@@ -102,6 +129,11 @@ import { BrMaskerModule } from 'br-mask';
       defaultLanguage: 'en',
     }),
     BrMaskerModule,
+    RouterNotReachableFormComponent,
+    ThirdPartyRouterFormComponent,
+    RouterPackageUpgradeRecommendedFormComponent,
+    RouterUpgradeRecommendedFormComponent,
+    BookComplaintComponent,
   ],
 })
 export class InternetModule {}

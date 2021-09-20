@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'install-new-router-message',
+  selector: 'troubleshoot-complete-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -15,18 +15,23 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
+export class TroubleshootCompleteMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'secondary',
-    title: 'BUTTONS.DONE',
-    explanatoryNote: '',
+    title: 'BUTTONS.REQUEST_PAID_TECHNICIAN_VISIT',
+    type: 'primary',
+  };
+  button2: IMotiveButton = {
+    title: 'BUTTONS.CANCEL',
+    type: 'link',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -45,11 +50,15 @@ export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
+    this.Section1Data = CustomerJourneyConstants.troubleshootComplete;
     this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterMessageCase;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.router.navigate(['/bookComplaint']);
+  }
+
+  button2Listener() {
+    this.router.navigate(['/thanks']);
   }
 }

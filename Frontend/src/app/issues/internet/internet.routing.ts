@@ -27,8 +27,6 @@ import { RouterInstallSuccessfullyMessageComponent } from './routes/router-insta
 import { RoutingPaths } from 'src/app/shared/constants/constants';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
-import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
-import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
 import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-reset-care.component';
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
@@ -41,6 +39,21 @@ import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-rout
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
 import { InstallNewRouterFlow5MessageComponent } from './routes/install-new-router-flow5-message.component';
 import { InstallEtisalatRouterComponent } from './routes/install-etisalat-router/install-etisalat-router.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { ComplaintSuccessfulMessageComponent } from './routes/complaint-successful-message.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
+import { PackageUpgradeSuccessMessageComponent } from './routes/package-upgrade-success-message.component';
+import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-and-package-upgrade-successful-message.component';
+import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { NewRouterSuccessMessageComponent } from './routes/new-router-success-message.component';
+import { PasswordUpdateSuccessfulMessageComponent } from './routes/password-update-successful-message.component';
+import { RouterUpgradeComponent } from './routes/router-upgrade.component';
+import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.component';
+import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
+import { RouterNotReachableFormComponent } from './routes/router-not-reachable-form.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
 
 const routes: Routes = [
   {
@@ -60,12 +73,49 @@ const routes: Routes = [
     component: BrowsingUnableStep2Component,
   },
   {
+    path: 'osrp/move-elife-connection',
+    component: MoveElifeConnectionMessageComponent,
+  },
+  {
+    path: 'appointment-successful',
+    component: AppointmentSuccessfulMessageComponent,
+  },
+  {
+    path: 'compalint-successful',
+    component: ComplaintSuccessfulMessageComponent,
+  },
+  {
+    path: 'open-technical-request',
+    component: OpenServiceRequestMessageComponent,
+  },
+  {
+    path: 'package-upgrade-success',
+    component: PackageUpgradeSuccessMessageComponent,
+  },
+  {
+    path: 'router-and-package-upgrade-success',
+    component: RouterAndPackageUpgradeSuccessMessageComponent,
+  },
+  {
+    path: 'account-not-active',
+    component: AccountNotActiveMessageComponent,
+  },
+  {
     path: 'unable-to-browse-internet/step3',
     component: BrowsingUnableStep3Component,
   },
   {
-    path: 'router-restart/device-care',
-    component: RouterRestartCareComponent,
+    path: 'password-update-success',
+    component: PasswordUpdateSuccessfulMessageComponent,
+  },
+  {
+    path: 'new-router-request-success',
+    component: NewRouterSuccessMessageComponent,
+  },
+
+  {
+    path: 'complaint-already-exists',
+    component: ComplaintExistsMessageComponent,
   },
   {
     path: 'outage',
@@ -206,9 +256,8 @@ const routes: Routes = [
     component: RouterResetFactoryComponent,
   },
   {
-    path: 'book-complaint',
-    component: BookComplaintComponent,
-    data: { id: ERoutingIds.routerUpgrade },
+    path: 'router-upgrade',
+    component: RouterUpgradeComponent,
   },
 
   {
@@ -269,6 +318,22 @@ const routes: Routes = [
     //Router upgrade Request Successfully
     path: 'router-upgrade-success',
     component: RouterUpgradeSuccessComponent,
+  },
+  {
+    path: 'router-not-reachable-form',
+    component: RouterNotReachableFormComponent,
+  },
+  {
+    path: 'third-party-router-form',
+    component: ThirdPartyRouterFormComponent,
+  },
+  {
+    path: 'router-package-upgrade-recommended-form',
+    component: RouterPackageUpgradeRecommendedFormComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
   },
 ];
 

@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { successImgSrc } from 'src/app/shared/constants/constants';
+import { ApplicableCodes, successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'install-new-router-message',
+  selector: 'unable-elife-login-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -17,16 +17,15 @@ import { Subscription } from 'rxjs';
     (button1Click)="button1Listener()"
   ></motive-message>`,
 })
-export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
+export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'secondary',
     title: 'BUTTONS.DONE',
-    explanatoryNote: '',
+    type: 'secondary',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -45,11 +44,16 @@ export class InstallNewRouterMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
+    this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
     this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterMessageCase;
+    this.Section2Template = ApplicableCodes.userCredentialsTemplate;
+    this.Section2Data = {
+      userId: '<XXX>',
+      pin: '1111@eLife',
+    };
+    CustomerJourneyConstants.restELifeLoginPinResetSuccessButton;
   }
-
   button1Listener() {
-    this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.router.navigate(['/thanks']);
   }
 }
