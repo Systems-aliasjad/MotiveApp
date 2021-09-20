@@ -59,8 +59,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
   initialization() {
     this.sharedService.setDefaultValues();
 
-    //Open Complaint
-    // 1.3.2
+    // complaint-already-exists
     if (this.codeType === ERoutingIds.openComplaint) {
       //   this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
       //   this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
@@ -71,8 +70,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       //   };
       //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons));
     }
-    //Open service request present
-    // 1.1.2A
+    // osrp/move-elife-connection
     else if (this.codeType === ERoutingIds.osrp) {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
@@ -85,8 +83,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons));
     } //end of OSRP //Open service request present
 
-    ///For Appointment book successfully IssuesNotFixed
-    // 1.4.6
+    // appointment-successful
     else if (this.codeType === ERoutingIds.appoinmentSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
@@ -114,8 +111,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
     // }
 
-    ///For Router Not Reachable Compliant booked successfully
-    // 1.10.25
+    // compalint-successful
     else if (this.codeType === ERoutingIds.routerNotReachableFormSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.routerNotReachableFormsuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
@@ -129,8 +125,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
     }
 
-    //Open technical S/R
-    // 1.6.2
+    // open-technical-request
     else if (this.codeType === ERoutingIds.openSr) {
       this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
@@ -144,8 +139,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.imgSrc = this.warningImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons));
     }
-    //package upgrade Successfully
-    //1.12.6
+    // package-upgrade-success
     else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
       this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
@@ -156,8 +150,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
     }
 
-    ///For router Package upgrade Successfully
-    // 1.13.6
+    // router-and-package-upgrade-success
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
       this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
@@ -168,8 +161,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons));
     }
 
-    //Account not active
-    // 1.17.2
+    // account-not-active
     else if (this.codeType === ERoutingIds.accountNotActive) {
       this.Section1Data = CustomerJourneyConstants.accountNotActive;
       this.Section1Data.spanListener = () => {
