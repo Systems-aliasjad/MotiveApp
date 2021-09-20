@@ -27,7 +27,7 @@
         <div class="content" *ngIf="Section1Data?.paragraphs">
           <p *ngFor="let txt of Section1Data?.paragraphs">
             <!-- for CLICK HERE see screen 1.17.2 -->
-            <span *ngIf="Section1Data?.span" (click)="Section1Data.spanListener()" class="">{{ Section1Data.span | translate }}</span>
+            <a *ngIf="Section1Data?.span" (click)="Section1Data.spanListener()" class="__clickhere">{{ Section1Data.span | translate }}</a>
             {{ txt | translate }}
           </p>
         </div>
