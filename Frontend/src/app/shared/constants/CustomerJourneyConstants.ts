@@ -469,6 +469,15 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static installNewRouterFlow5MessageCase = {
+    header: 'MESSAGES.INSTALL_ROUTER',
+    paragraphs: [
+      'MESSAGES.YOU_ARE_CURRENTLY_USING_A_THIRD-PARTY_ROUTER',
+      'MESSAGES.WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_INSTALL_AN_ETISALAT_ROUTER',
+      'MESSAGES.IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD',
+    ],
+  };
+
   public static installNewRouterFlow4MessageCase = {
     header: 'MESSAGES.INSTALLING_THIRD-PARTY_ROUTER',
 

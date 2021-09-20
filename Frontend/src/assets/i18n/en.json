@@ -1,6 +1,8 @@
 {
   "HEADER": {
     "NO_DIAL_TONE": "No dial tone",
+    "SELECT_BRAND": "Select Brand",
+    "SELECT_MODEL": "Select Model",
     "UNABLE_TO_MAKE_RECEIVE_CALLS": "Unable to make/receive calls",
     "TECHNICAL_SUPPORT": "Technical Support",
     "QUICK_LINKS": "Quick links",
@@ -133,7 +135,11 @@
     "PIN": "PIN"
   },
   "BUTTONS": {
+    "SELECT": "SELECT",
+    "INSTALL_ROUTER": "Install router",
+    "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
     "CONTINUE_WITH_ETISALAT_ROUTERR": "Continue with Etisalat router",
+
     "INSTALL_THIRD_PARTY_ROUTER": "Install third-party router",
     "HOW_DO_I_RESTART": "How do I restart?",
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
@@ -225,6 +231,11 @@
   },
 
   "MESSAGES": {
+    "INSTALL_ROUTER": "Install router",
+    "YOU_ARE_CURRENTLY_USING_A_THIRD-PARTY_ROUTER": "You are currently using a third-party router.",
+
+    "WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_INSTALL_AN_ETISALAT_ROUTER": "We can provide remote support if you install an Etisalat router.",
+    "IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD": "If you choose the second option, you will need to wait 30 minutes and then reset your internet password.",
     "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
     "CHECK_THE_BATTERY_OF_THE_CORDLESS_PHONE": "Check the battery of the cordless phone",
     "LAST_INCOMING_OUTGOING_CALLS": "Last incoming/outgoing calls",

@@ -1,0 +1,69 @@
+<ion-content>
+  <ion-grid class="form-main-container">
+    <!-- Page Title and Sub Title Start -->
+    <ion-row>
+      <ion-col size="12">
+        <app-page-top></app-page-top>
+        <p *ngIf="!formGroup.valid" class="tag-title">{{ 'SUBHEADER.BOOK_COMPLAINT' | translate }}</p>
+        <p *ngIf="formGroup.valid" class="tag-title">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <!-- Page Title and Sub Title End -->
+
+    <!-- Form Start -->
+    <ion-row class="form-inner_container">
+      <ion-col size="12">
+        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
+          <ion-grid class="pr-0 pl-0">
+            <ion-row>
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-list>
+                  <ion-item>
+                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(1)">Select Brand</ion-label>
+
+                    <!-- <ion-select okText="Okay" cancelText="Dismiss" placeholder="Select Brand" formControlName="Brand">
+                      <ion-select-option *ngFor="let brand of brandList" [value]="brand.value">{{ brand.text }}</ion-select-option>
+                    </ion-select> -->
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-list>
+                  <ion-item>
+                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(2)">Select Model</ion-label>
+                    <!-- <ion-select placeholder="Select Brand" formControlName="Model">
+                      <ion-select-option *ngFor="let model of modelList" [value]="model.value">{{ model.text }}</ion-select-option>
+                    </ion-select> -->
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-item>
+                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate }}</ion-label>
+                  <ion-input
+                    type="text"
+                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                    placeholder="+971xxxxxxxxx"
+                    formControlName="MobileNo"
+                    [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
+                  ></ion-input>
+                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                    {{ error.phoneNumber }}
+                  </div>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <!-- Reset Book A Complaint Buttons -->
+            <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button>
+            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button>
+            <!-- Reset Book A Complaint Buttons -->
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+    <!-- Form End -->
+  </ion-grid>
+</ion-content>

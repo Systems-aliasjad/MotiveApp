@@ -4,10 +4,12 @@ import { InternetPasswordResetComponent } from './routes/internet-password-reset
 
 import { MainComponent } from './routes/main.component';
 import { RequestFailComponent } from './routes/request-fail.component';
+import { ResetElifeOnPinComponent } from './routes/reset-elife-on-pin.component';
 import { ResetInternetPasswordFailComponent } from './routes/reset-internet-password-fail.component';
 import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-password-success.component';
 import { ResetPasswordFailComponenet } from './routes/reset-password-fail.component';
 import { ResetRouterWiFiPasswordSuccess } from './routes/reset-router-wifi-password-success.component';
+import { ResetTvAdminPinComponent } from './routes/reset-tv-admin-pin.component';
 import { ResetInternetPasswordSuccessDetailComponent } from './routes/rest-internet-password-success-detail.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { UnableToReachRouterFailComponent } from './routes/unable-reach-router-fail.component';
@@ -59,6 +61,15 @@ const routes: Routes = [
   {
     path: 'internet-password-reset-success',
     component: ResetInternetPasswordSuccessComponent,
+  },
+  {
+    path: 'reset-eLifeON-pin',
+    component: ResetElifeOnPinComponent,
+  },
+
+  {
+    path: 'reset-tv-admin-pin',
+    component: ResetTvAdminPinComponent,
   },
 ];
 

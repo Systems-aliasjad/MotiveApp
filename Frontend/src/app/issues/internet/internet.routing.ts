@@ -39,6 +39,8 @@ import { InstallNewRouterComplaintSuccessfullyMessageComponent } from './routes/
 import { InstallNewRouterFlow2MessageComponent } from './routes/install-new-router-flow2-message.component';
 import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-router-flow4-message.component';
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
+import { InstallNewRouterFlow5MessageComponent } from './routes/install-new-router-flow5-message.component';
+import { InstallEtisalatRouterComponent } from './routes/install-etisalat-router/install-etisalat-router.component';
 
 const routes: Routes = [
   {
@@ -239,9 +241,28 @@ const routes: Routes = [
   {
     //quick links
     //I want to install my new router
+    //Flow 5 Message
+
+    path: 'install-new-router-flow5',
+    component: InstallNewRouterFlow5MessageComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
     //
     path: 'install-new-router-reset-internet-password',
     component: InstallNewRouterResetInternetPasswordComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
+    //Install etisalat router
+    //App.MotiveH&S.5.1.22
+    //
+    path: 'install-etisalat-router',
+    component: InstallEtisalatRouterComponent,
   },
 
   {

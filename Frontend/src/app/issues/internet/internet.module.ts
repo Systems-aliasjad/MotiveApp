@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MainComponent } from './routes/main.component';
-import { SharedModule } from '../../shared/shared.module';
+import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
 import { InternetRoutingModule } from './internet.routing';
 import { OutageComponent } from './routes/outage.component';
 import { OSRPComponent } from './routes/osrp.component';
@@ -38,6 +38,13 @@ import { InstallNewRouterComplaintSuccessfullyMessageComponent } from './routes/
 import { InstallNewRouterFlow2MessageComponent } from './routes/install-new-router-flow2-message.component';
 import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-router-flow4-message.component';
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
+import { InstallNewRouterFlow5MessageComponent } from './routes/install-new-router-flow5-message.component';
+import { InstallEtisalatRouterComponent } from './routes/install-etisalat-router/install-etisalat-router.component';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { BrMaskerModule } from 'br-mask';
 
 @NgModule({
   declarations: [
@@ -76,7 +83,25 @@ import { InstallNewRouterResetInternetPasswordComponent } from './routes/install
     InstallNewRouterFlow2MessageComponent,
     InstallNewRouterFlow4MessageComponent,
     InstallNewRouterResetInternetPasswordComponent,
+    InstallNewRouterFlow5MessageComponent,
+    InstallEtisalatRouterComponent,
   ],
-  imports: [CommonModule, InternetRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    InternetRoutingModule,
+    SharedModule,
+    IonicModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    }),
+    BrMaskerModule,
+  ],
 })
 export class InternetModule {}

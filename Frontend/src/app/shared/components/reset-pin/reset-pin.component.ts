@@ -67,7 +67,8 @@ export class ResetPinComponent implements OnInit {
     // this.sharedService.setDefaultValues();
     // if (this.codeType === ERoutingIds.resetTvAdminPin) {
     //   this.sharedService.setHeaderConfig('DIALOG.RESET_TV_ADMIN_PIN', true);
-    // } else if (this.codeType === ERoutingIds.resetELifeONPin) {
+    // }
+    //  else if (this.codeType === ERoutingIds.resetELifeONPin) {
     //   this.sharedService.setHeaderConfig('HEADER.RESET_ELIFEON_PIN', true);
     // }
 
