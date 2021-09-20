@@ -36,6 +36,8 @@
   --background-color:  transparent;
   --ion-item-background:transparent;
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --background-hover:$secondary-color;
+  --background-focused:$primary-color;
   ion-content{
     --background: var(--ion-background-color, transparent);
   }
@@ -212,6 +214,9 @@ p{
 .mt-5{
   margin-top: 5rem;
 }
+.mb-2{
+  margin-bottom: 2rem;
+}
 .letter-space-none{
   letter-spacing: 0;
 }
@@ -309,17 +314,19 @@ ion-modal,
     ion-label{
       position:relative;
       display:block;
+      margin-bottom: 0;
       padding-left:1rem;
-      @media screen and (max-width: 767px) {
+      white-space:normal;
+      /* @media screen and (max-width: 767px) {
         white-space:normal;
-      }
+      } */
       &:before{
         content: "";
         position: absolute;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        top: 50%;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+        top: 0;
         left: 0;
         width: 0.4rem;
         height: 0.4rem;
@@ -372,6 +379,7 @@ ion-modal,
 }
 .__clickhere {
   color: $etisalat-color;
+  display: inline-block;
   &:hover{
     text-decoration: underline;
     color: $primary-color;
