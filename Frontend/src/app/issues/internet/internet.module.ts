@@ -43,6 +43,12 @@ import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-
 import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
 import { NewRouterSuccessMessageComponent } from './routes/new-router-success-message.component';
 import { PasswordUpdateSuccessfulMessageComponent } from './routes/password-update-successful-message.component';
+import { RouterUpgradeComponent } from './routes/router-upgrade.component';
+import { RouterNotReachableFormComponent } from './routes/router-not-reachable-form.component';
+import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.component';
+import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
+import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +91,13 @@ import { PasswordUpdateSuccessfulMessageComponent } from './routes/password-upda
     RouterInstallSuccessfullyMessageComponent,
     RouterInstallationFailedMessageComponent,
     RouterResetFactoryComponent,
+    RouterUpgradeComponent,
     RouterUpgradeSuccessComponent,
+    RouterNotReachableFormComponent,
+    ThirdPartyRouterFormComponent,
+    RouterPackageUpgradeRecommendedFormComponent,
+    RouterUpgradeRecommendedFormComponent,
+    BookComplaintComponent,
   ],
   imports: [CommonModule, InternetRoutingModule, SharedModule],
 })

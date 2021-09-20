@@ -28,6 +28,8 @@ import { UnableWatchChannelStep1Component } from './routes/unable-watch-channel-
 import { TroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 import { UnableElifeLoginMessageComponent } from './routes/unable-elife-login-message.component';
 import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
+import { ELifeUpgradeComponent } from './routes/eLife-upgrade.component';
+import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-form.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-s
     TvBoxResetRequiredSuccessComponent,
     TvBoxNotReachableSuccessComponent,
     TvBoxResetFactoryComponent,
+    ELifeUpgradeComponent,
     ELifeUpgradeSuccessComponent,
+    TVBoxNotReachableFormComponent,
   ],
   imports: [CommonModule, TvRoutingModule, SharedModule],
 })

@@ -28,6 +28,8 @@ import { UnableWatchChannelStep1Component } from './routes/unable-watch-channel-
 import { TroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 import { UnableElifeLoginMessageComponent } from './routes/unable-elife-login-message.component';
 import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
+import { ELifeUpgradeComponent } from './routes/eLife-upgrade.component';
+import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-form.component';
 
 const routes: Routes = [
   {
@@ -124,6 +126,10 @@ const routes: Routes = [
     component: TvBoxResetRequiredSuccessComponent,
   },
   {
+    path: 'tvBox-not-reachable-form',
+    component: TVBoxNotReachableFormComponent,
+  },
+  {
     path: 'tvBox-not-reachable-form_successfully',
     component: TvBoxNotReachableSuccessComponent,
   },
@@ -135,9 +141,8 @@ const routes: Routes = [
     component: TvBoxResetFactoryComponent,
   },
   {
-    path: 'book-complaint',
-    component: BookComplaintComponent,
-    data: { id: ERoutingIds.eLifeUpgrade },
+    path: 'eLife-upgrade',
+    component: ELifeUpgradeComponent,
   },
   {
     path: 'eLife-upgrade-success',
