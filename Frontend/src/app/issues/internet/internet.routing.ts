@@ -34,6 +34,7 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 
 const routes: Routes = [
   {
@@ -57,8 +58,8 @@ const routes: Routes = [
     component: BrowsingUnableStep3Component,
   },
   {
-    path: 'router-restart/device-care',
-    component: RouterRestartCareComponent,
+    path: 'complaint-already-exists',
+    component: ComplaintExistsMessageComponent,
   },
   {
     path: 'outage',

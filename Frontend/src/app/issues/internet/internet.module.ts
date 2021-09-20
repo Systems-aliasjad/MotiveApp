@@ -33,6 +33,7 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.com
     BrowsingUnableStep1Component,
     BrowsingUnableStep2Component,
     BrowsingUnableStep3Component,
+    ComplaintExistsMessageComponent,
     RouterFixedRestartRequiredComponent,
     RouterRestartCareComponent,
     RouterNotRestartedCareComponent,
