@@ -1,5 +1,7 @@
 {
   "HEADER": {
+    "NO_DIAL_TONE": "No dial tone",
+    "UNABLE_TO_MAKE_RECEIVE_CALLS": "Unable to make/receive calls",
     "TECHNICAL_SUPPORT": "Technical Support",
     "QUICK_LINKS": "Quick links",
     "TERMS_AND_CONDITIONS": "Terms & Conditions",
@@ -26,10 +28,21 @@
     "CALL_FORWARD": "Change call forwarding number",
     "RESET_ROUTER_WIFI_PASSWORD": "Reset router's Wi-Fi password",
     "RESET_ELIFEON_PIN": "Reset eLifeON PIN",
+    "STEP_1/3": "Step 1/3",
+    "STEP_2/3": "Step 2/3",
+    "STEP_3/3": "Step 3/3",
+    "STEP_1/2": "Step 1/2",
+    "STEP_2/2": "Step 2/2",
+    "STEP_1/1": "Step 1/1",
     "ELIFE_UPGRADE": "eLife Upgrade"
   },
 
   "SUBHEADER": {
+    "CALL_DETAILS": "Call details",
+    "PHONE_TROUBLESHOOTING_GUIDELINES": "Phone troubleshooting guidelines",
+    "RESET_TV_BOX": "Reset TV box",
+    "CHECK_CHANNEL_FILTER": "Check Channel Filter",
+    "SPECIFIC_DEVICE_GUIDES": "Specific device guides",
     "RESET_INTERNET_PASSWORD": "",
     "BOOK_COMPLAINT": "Please fill your complete details",
     "RESET_WIFI_PASSWORD_TAB1": "SSID 2.5 Ghz",
@@ -37,7 +50,12 @@
     "MY_TV_BOXES": "MY TV BOXES",
     "MY_SUBSCRIPTIONS": "MY SUBSCRIPTIONS",
     "RESET_CCB_PIN": "Reset CCB PIN",
-    "REVIEW_YOUR_CONTACT_DETAILS": "Review your contact details"
+    "HOW_TO_RESTART_YOUR_ROUTER": "How to restart your router",
+    "REVIEW_YOUR_CONTACT_DETAILS": "Review your contact details",
+    "ROUTER_RECONFIGURE": "Router reconfigure",
+    "CHECK_YOUR_BROWSER_SETTING": "Check your browser setting",
+    "CHECK_YOUR_NETWORK_SETTING": "Check your network setting",
+    "CHECK_YOUR_FIREWALL_SETTING": "Check your firewall setting"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -113,6 +131,7 @@
     "PIN": "PIN"
   },
   "BUTTONS": {
+    "HOW_DO_I_RESTART": "How do I restart?",
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "CONFIGURE_WI_FI": "CONFIGURE WI-FI",
     "NEXT": "NEXT",
@@ -125,6 +144,7 @@
     "BACK": "BACK",
     "CONTINUE": "CONTINUE",
     "VIEW_DEVICE_CARE": "VIEW DEVICE CARE",
+    "DEVICE_CARE": "Device Care",
     "ISSUE_FIXED": "ISSUE FIXED",
     "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
@@ -152,7 +172,7 @@
     "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
     "USING_THE_SAME_ROUTER": "YES I AM",
     "REQUEST_PAID_TECHNICIAN_VISIT": "REQUEST PAID TECHNICIAN VISIT",
-    "ISSUE_RESLOVED": "Issue resolved",
+    "ISSUE_RESOLVED": "Issue resolved",
     "TRANSFER_PACKAGE": "Transfer package",
     "CANCEL_GAME_SESSION": "Cancel game sessions",
     "CONFIRM": "CONFIRM",
@@ -201,11 +221,19 @@
   },
 
   "MESSAGES": {
+    "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
+    "CHECK_THE_BATTERY_OF_THE_CORDLESS_PHONE": "Check the battery of the cordless phone",
+    "LAST_INCOMING_OUTGOING_CALLS": "Last incoming/outgoing calls",
+    "CALL_FORWARDING_ENABLED_OR_DISABLED": "Call forwarding enabled or disabled",
+    "OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING": "Option to enable/disable call forwarding",
+    "IF_YOU_ARE_STILL_UNABLE_TO_WATCH_TAP_RESET_TV_BOX_SO_THAT_WE_CAN_RESET_IT_REMOTELY": "If you are still unable to watch <channel name>, tap 'Reset TV box' so that we can reset it remotely.",
+    "PLEASE_REMOVE_ALL_CHANNEL_FILTERS_AND_THEN_TRY_TO_WATCH_THE_CHANNEL_AGAIN": "Please remove all channel filters and then try to watch the channel again.",
+    "YOU_MAY_VIEW_OUR_GUIDELINES_ON_HOW_TO_REMOVE_THE_CHANNEL_FILTER": "You may view our guidelines on how to remove the channel filter.",
     "THANKYOU": "Thank you!",
     "PHONE_ISSUE_MAIN_TITLE": "No issues found!",
     "PHONE_ISSUE_MAIN_TITLE_BODY1": "We couldn’t find any technical problem. Your phone should be working normally. ",
     "PHONE_ISSUE_MAIN_TITLE_BODY2": "Tap ‘View details’ to take a closer look at your phone service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
-
+    "PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER": "Please select the device make & model and follow the instructions to configure your router. Make sure to use the correct User Id and Password while configuring the router",
     "THANKYOU_BODY": "Thank you for using Self-care. Hope we could make your experience better.",
     "MOVING_ELIFE_CONNECTION": "We are moving your eLife connection",
     "MOVING_ELIFE_CONNECTION_BODY_1": "The service will be discontinued while the transfer is under process.",
@@ -255,12 +283,17 @@
     "NO_INTERNET_CONNECTION_BODY2": "The internet service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
     "RESET_ELIFEON_PIN_HEADING": "Unable to login",
     "RESET_ELIFEON_PIN_BODY1": "Please reset your eLifeON PIN to fix the issue.",
+    "RESET_ELIFEON_PIN_BODY2": "It will be reset to the default PIN: 1111@elife",
     "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING": "eLifeON PIN reset successfully!",
     "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY": "Your PIN has been successfully reset to the default PIN.",
     "ISSUE_FIXED_SUCCESSFULLY": "Issue fixed successfully!",
     "ROUTER_RESET_FACTORY": "Reset Router to factory default",
     "ROUTER_RESET_FACTORY_BODY": "Do you want to reset the router to the factory default?",
-
+    "SELECT_THE_OPERATING_SYSTEM_AND_BROWSER_FROM_THE_DROP_DOWN_MENU_IN_ORDER_TO_LEARN_MORE_ABOUT_PROXY_CONFIGURATION": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
+    "PLEASE_MAKE_SURE_THAT_YOUR_PC/LAPTOP_BROWSER_IS_CONFIGURED_WITH_THE_CORRECT_PROXY_SETTINGS": "Please make sure that your PC/laptop browser is configured with the correct proxy settings.",
+    "SELECT_THE_OPERATING_SYSTEM_AND_TYPE_OF_CONNECTIVITY_(WI-FI_OR_LAN_CABLE)_FROM_THE_DROP-DOWN_MENU_IN_ORDER_TO_LEARN_MORE_ABOUT_DNS_CONFIGURATION": "Select the operating system and type of connectivity (Wi-Fi or LAN cable) from the drop-down menu in order to learn more about DNS configuration.",
+    "PLEASE_MAKE_SURE_THAT_YOUR_PC/LAPTOP_BROWSER_IS_CONFIGURED_WITH_THE_CORRECT_DNS_SETTINGS": "Please make sure that your PC/laptop browser is configured with the correct DNS settings.",
+    "PLEASE_MAKE_SURE_THAT_YOUR_PC/LAPTOP_FIREWALL_IS_NOT_BLOCKING_YOUR_INTERNET": "Please make sure that your PC/Laptop firewall is not blocking your internet.",
     "TV_BOX_RESET_FACOTORY": "Reset TV Set Top Box to factory default",
     "TV_BOX_RESET_FACOTORY_BODY": "Do you want to reset the TV Set Top Box to the factory default?",
 
@@ -352,9 +385,8 @@
     "UNABLE_TO_PROCESS_REQUEST": "Unable to process request",
     "UNABLE_TO_PROCESS_REQUEST_BODY": "It looks like you are not subscribed to eLifeON.",
     "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "Etisalat device care gives you precise instructions specific for your device",
-
+    "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESTART_YOUR_ROUTER_AND_THEN_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN": "We have fixed the technical issues. Please restart your router and then wait for 5 minutes before using the internet again.",
     "INSTALL_NEW_ROUTER": "Installing new router",
-
     "INSTALL_NEW_ROUTER_BODY1": "Please wait… this might take up to 30 minutes.",
     "INSTALL_NEW_ROUTER_BODY2": "You can contact us if the router does not start working after date/time.",
     "ROUTER_INSTALL_SUCCESSFULLY": "Router installed successfully!",
@@ -432,26 +464,8 @@
   },
   "DEVICE_CARE": {
     "PAGE_HEADING": "How to configure your router",
-    "TVBOX_RESTART_HEADING": "Specific device guides",
-    "UNABLE_TO_WATCH_CHANNELS": "Reset TV box",
-
     "PAGE_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best.",
-    "TVBOX_RESTART_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best.",
-    "UNABLE_TO_WATCH_CHANNELS_CONTENT": "If you are still unable to watch <channel name>, tap 'Reset TV box' so that we can reset it remotely."
-  },
-
-  "PHONE_ISSUES_CARE": {
-    "HEADER": "Unable to make/receive calls",
-    "Heading1": "Phone troubleshooting guidelines",
-    "BODY1Children1": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
-    "BODY1Children2": "Check the battery of the cordless phone",
-
-    "NO_DIAL_TONE": "No dial tone",
-
-    "Heading2": "Call details",
-    "BODY2Children1": "Last incoming/outgoing calls",
-    "BODY2Children2": "Call forwarding enabled or disabled",
-    "BODY2Children3": "Option to enable/disable call forwarding"
+    "TVBOX_RESTART_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best."
   },
 
   "PHONE_ISSUES_PROBLEM_VALUE_ADDED": {
@@ -498,22 +512,6 @@
     "SUCCESS_BODY_1": "Please wait while our automated system is diagnosing the service.",
     "SUCCESS_BODY_2": "This will take up to 1 minute",
     "FALIURE_BODY": "It is taking longer than expected. Kindly wait"
-  },
-  "BROWSERSTEPPER": {
-    "HEADING_STEP1": "Check your browser setting",
-    "DESCRIPTION1_STEP1": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
-    "DESCRIPTION2_STEP1": "Please make sure that your PC/laptop browser is configured with the correct proxy settings.",
-    "IMG_TEXT_STEP1": "Picture or animated GIF of how to reach proxy configuration setting in a browser",
-
-    "HEADING_STEP2": "Check your internet setting",
-    "DESCRIPTION1_STEP2": "Select the operating system and type of connectivity (Wi-Fi or LAN cable) from the drop-down menu in order to learn more about DNS configuration.",
-    "DESCRIPTION2_STEP2": "Please make sure that your PC/laptop browser is configured with the correct DNS settings.",
-    "IMG_TEXT_STEP2": "Picture correct network settings",
-
-    "HEADING_STEP3": "Check your firewall setting",
-    "DESCRIPTION1_STEP3": "Select the operating system and browser from the drop-down menu in order to learn more about proxy configuration.",
-    "DESCRIPTION2_STEP3": "",
-    "IMG_TEXT_STEP3": "Video"
   },
   "SERVICE_DEATAIL": {
     "HEADING": "Service details",

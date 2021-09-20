@@ -1,20 +1,25 @@
-
 @import 'src/assets/scss/base/variables';
 @import 'src/assets/scss/base/mixins';
 
 // --------------------------------------------------------------
 :host {
-   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
 }
 // --------------------------------------------------------------
 
+ion-grid {
+  height: 100%;
+  @media screen and (max-width: 992px) {
+    height: auto;
+  }
+}
 .device-care-container,
 .device-care_inner_container {
   height: 100%;
 }
-.device-care-lg{
+.device-care-lg {
   @media screen and (max-width: 992px) {
-    display:none;
+    display: none;
   }
   /* .device-care_image_lg{
     @media screen and (max-width: 992px) {
@@ -22,36 +27,36 @@
     }
   } */
 }
-.device-care-sm{
+.device-care-sm {
   @media screen and (min-width: 992px) {
-    display:none;
+    display: none;
   }
-  .content{
+  .content {
     max-width: 100%;
-    margin:0;
+    margin: 0;
   }
-  .image{
+  .image {
     max-width: 100%;
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
   }
-  p{
-    margin:0;
+  p {
+    margin: 0;
   }
 }
 
-.device-care_title{
+.device-care_title {
   @media screen and (min-width: 992px) {
-    display:none;
+    display: none;
   }
 }
-.device-care_content{
+.device-care_content {
   height: 100%;
-  .page-top_title{
-   @media screen and (max-width: 992px) {
+  .page-top_title {
+    @media screen and (max-width: 992px) {
       display: none;
     }
   }
-  h2{
+  h2 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     margin-top: 0;
   }
@@ -68,17 +73,50 @@
   max-width: 472px;
   height: auto;
   margin: 2rem auto 0;
-  img{
+  img {
     width: 100%;
   }
 }
-.content{
+.content {
   max-width: 550px;
   margin-top: 4rem;
   margin-right: auto;
   margin-bottom: 0;
 }
-p{
+p {
   color: $secondary-color;
   line-height: 1.5;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .footer {
+    .footer-btns-container {
+      ion-row {
+        width: 100%;
+      }
+      ion-col {
+        &:first-child {
+          ion-col {
+            -webkit-box-flex: 0 !important;
+            -ms-flex: 0 0 100% !important;
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+            width: 100% !important;
+          }
+        }
+        motive-button {
+          min-width: 100%;
+          width: 100%;
+        }
+      }
+      > ion-col {
+        &:last-child {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
 }

@@ -18,12 +18,16 @@ import { OntNotRestartInstructionsComponent } from './routes/ont-not-restart-ins
 import { OntRestartSuccessComponent } from './routes/ont-restart-success.component';
 import { ChangeCallForwardSuccessComponent } from './routes/change-call-forward-success.component';
 import { ResetCCBPINSuccessComponent } from './routes/reset-ccb-pin-success.component';
+import { NoDailToneCareComponent } from './routes/no-dial-tone-care.component';
+import { UnableToCallCareComponent } from './routes/unable-to-call-care.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     OutageComponent,
     IssueNotFixedComponent,
+    NoDailToneCareComponent,
+    UnableToCallCareComponent,
     OntRebootComponent,
     NoIssuesComponent,
     OutageMessageComponent,

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IExplainInstruction, IRestartInstruction } from 'src/app/shared/components/restart-instruction/restart-instruction.component';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { SharedService } from 'src/app/shared/shared.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-router-restart',
@@ -16,7 +17,8 @@ import { SharedService } from 'src/app/shared/shared.service';
     (button2Click)="button2Listener()"
   ></app-restart-instruction>`,
 })
-export class RouterRestartInstructionsComponent implements OnInit {
+export class RouterRestartInstructionsComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   ImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
   instruction1: IRestartInstruction = {
     title: '',
@@ -35,9 +37,24 @@ export class RouterRestartInstructionsComponent implements OnInit {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private sharedService: SharedService, private router: Router) {}
-  RESTART_ROUTER_H2;
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+
   ngOnInit() {
+    this.subscription = this.activatedRoute.data.subscribe(() => {
+      this.updateHeader();
+    });
+    this.updatePageContent();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  updateHeader() {
+    this.sharedService.setHeaderConfig('ROUTER_RESTART.RESTART_ROUTER_H1', false);
+  }
+
+  updatePageContent() {
     this.instruction1.title = 'ROUTER_RESTART.RESTART_ROUTER_H2';
     this.instruction1.steps = [
       'Unplug both router & modem',
@@ -50,12 +67,12 @@ export class RouterRestartInstructionsComponent implements OnInit {
     ];
     this.instruction2.title = 'ROUTER_RESTART.RESTART_ROUTER_H3';
     this.instruction2.body = 'MESSAGES.ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE';
-    this.sharedService.setHeaderConfig('ROUTER_RESTART.RESTART_ROUTER_H1', false);
   }
 
   button1Listener() {
-    this.router.navigate(['/device-care']);
+    this.router.navigate(['issues/internet/router-restart/device-care']);
   }
+
   button2Listener() {
     this.router.navigate(['/thanks']);
   }

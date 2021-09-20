@@ -14,11 +14,11 @@ export class PhoneIssueListDialogComponent implements OnInit {
   phoneIssuesList: any[] = [
     {
       issue: 'Unable to make/receive calls',
-      route: 'no-issue-phone-unable-calls',
+      route: '/issues/phone/unable-to-call/device-care',
     },
     {
       issue: 'No dial tone',
-      route: 'no-issue-phone-no-dial-tone',
+      route: '/issues/phone/no-dail-tone/device-care',
     },
     {
       issue: 'Problem with Value-Added Service ',

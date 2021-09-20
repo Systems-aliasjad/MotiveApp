@@ -32,12 +32,12 @@ export class DiagnoseIssueComponent implements OnInit {
 
   @Input()
   messageSection;
-  myBtnSize
+  myBtnSize;
 
   constructor() {}
 
   ngOnInit() {
-    this.myBtnSize = this.button3 ? '6' : '12'
+    this.myBtnSize = this.button3 ? '6' : '12';
   }
 
   button1Listener() {

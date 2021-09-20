@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ThirdPartyRouterResetComponent } from './routes/3rd-party-router-reset.component';
 import { ThirdPartyRouterComponent } from './routes/3rd-party-router.component';
-import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
+import { PasswordResetComponent } from './routes/password-reset.component';
 
 import { MainComponent } from './routes/main.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
@@ -19,6 +19,9 @@ import { RouterUpgradeRecommendedComponent } from './routes/router-upgrade-recom
 import { WifiAlarmComponent } from './routes/wifi-alarm.component';
 import { RouterRestartInstructionsComponent } from './routes/router-restart-instructions.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
+import { RouterNotRestartedCareComponent } from './routes/router-not-restarted-care.component';
+import { RouterFixedRestartRequiredComponent } from './routes/router-fixed-restart-required.component';
+import { RouterRestartCareComponent } from './routes/router-restart-care.component';
 import { InstallNewRouterMessageComponent } from './routes/install-new-router-message.component';
 import { RouterInstallSuccessfullyMessageComponent } from './routes/router-install-successfully-message.component';
 import { RoutingPaths } from 'src/app/shared/constants/constants';
@@ -27,11 +30,35 @@ import { RouterResetFactoryComponent } from './routes/router-reset-factory.compo
 import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
+import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-reset-care.component';
+import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
+import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
+import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+  },
+  {
+    path: 'router-not-restarted/device-care',
+    component: RouterNotRestartedCareComponent,
+  },
+  {
+    path: 'unable-to-browse-internet/step1',
+    component: BrowsingUnableStep1Component,
+  },
+  {
+    path: 'unable-to-browse-internet/step2',
+    component: BrowsingUnableStep2Component,
+  },
+  {
+    path: 'unable-to-browse-internet/step3',
+    component: BrowsingUnableStep3Component,
+  },
+  {
+    path: 'router-restart/device-care',
+    component: RouterRestartCareComponent,
   },
   {
     path: 'outage',
@@ -40,6 +67,10 @@ const routes: Routes = [
   {
     path: 'osrp',
     component: OSRPComponent,
+  },
+  {
+    path: 'router-fixed-restart-required',
+    component: RouterFixedRestartRequiredComponent,
   },
   {
     path: 'router-not-restarted',
@@ -70,13 +101,18 @@ const routes: Routes = [
   {
     //Internet password reset
     path: 'internet-password-reset',
-    component: InternetPasswordResetComponent,
+    component: PasswordResetComponent,
   },
 
   {
     //3rd party router requires configuration
     path: '3rd-party-router-reset',
     component: ThirdPartyRouterResetComponent,
+  },
+  {
+    //3rd party router requires configuration
+    path: '3rd-party-router-reset/device-care',
+    component: ThirdPartyRouterResetCareComponent,
   },
 
   {

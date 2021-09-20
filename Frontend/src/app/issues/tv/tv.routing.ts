@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BoxNotRestartInstructionsComponent } from './routes/box-not-restart-instructions.component';
+import { BoxNotRestartedInstructionsComponent } from './routes/box-not-restarted-instructions.component';
 import { TvBoxNotReachableSuccessComponent } from './routes/box-not-reachable-success.component';
 import { TvBoxResetSuccessComponent } from './routes/box-reset-success.component';
 import { TvBoxResetRequiredSuccessComponent } from './routes/box-restart-required-success.component';
@@ -21,6 +21,10 @@ import { TvBoxResetFactoryComponent } from './routes/tv-box-reset-factory.compon
 import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { ELifeUpgradeSuccessComponent } from './routes/eLife-upgrade-success.component';
+import { BoxNotRestartedCareComponent } from './routes/box-not-restarted-care.component';
+import { PackageTransferStep1Component } from './routes/package-transfer-step1.component';
+import { PackageTransferStep2Component } from './routes/package-transfer-step2.component';
+import { UnableWatchChannelStep1Component } from './routes/unable-watch-channel-step1.component';
 
 const routes: Routes = [
   {
@@ -38,6 +42,14 @@ const routes: Routes = [
   {
     path: 'outage',
     component: OutageComponent,
+  },
+  {
+    path: 'transfer-package/step1',
+    component: PackageTransferStep1Component,
+  },
+  {
+    path: 'transfer-package/step2',
+    component: PackageTransferStep2Component,
   },
   {
     //Router managed, but not reachable
@@ -60,12 +72,21 @@ const routes: Routes = [
     component: UnableWatchChannelComponent,
   },
   {
+    //Unable to watch channel
+    path: 'unable-watch-channel/step1',
+    component: UnableWatchChannelStep1Component,
+  },
+  {
     path: 'restart-instructions',
     component: RestartInstructionsComponent,
   },
   {
-    path: 'box-not-restart-instructions',
-    component: BoxNotRestartInstructionsComponent,
+    path: 'box-not-restarted-instructions',
+    component: BoxNotRestartedInstructionsComponent,
+  },
+  {
+    path: 'box-not-restarted-instructions/device-care',
+    component: BoxNotRestartedCareComponent,
   },
   {
     path: 'unable-to-watch-package-transfer-success',

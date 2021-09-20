@@ -12,7 +12,7 @@ import { SharedService } from '../../../shared/shared.service';
 export class UnableWatchChannelComponent implements OnInit {
   messageSection;
   button1: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_RESLOVED',
+    title: 'BUTTONS.ISSUE_RESOLVED',
     type: 'primary',
   };
   button2: IMotiveButton = {
@@ -23,6 +23,10 @@ export class UnableWatchChannelComponent implements OnInit {
   constructor(private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {
+    this.updatePageContent();
+  }
+
+  updatePageContent() {
     this.messageSection = CustomerJourneyConstants.unableWatchChannelsMessageSection;
     this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
   }
@@ -32,6 +36,6 @@ export class UnableWatchChannelComponent implements OnInit {
   }
 
   button2Listener() {
-    this.router.navigate(['/unable-to-watch-channel-continue']);
+    this.router.navigate(['/issues/tv/unable-watch-channel/step1']);
   }
 }

@@ -6,6 +6,7 @@ import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-package-available',
@@ -19,6 +20,9 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
   cardList: any;
   subscription: Subscription;
   buttonConfigs: IButton[] = [];
+  button1: IMotiveButton;
+  button2: IMotiveButton;
+
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
@@ -81,7 +85,14 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
           description: 'STB SR#039838920',
         },
       ];
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtonsUnableWatchSpecific));
+      this.button1 = {
+        type: 'primary',
+        title: 'BUTTONS.SKIP_TO_NEXT_STEP',
+      };
+      this.button2 = {
+        title: 'BUTTONS.CANCEL',
+        type: 'link',
+      };
     }
   }
 
@@ -96,7 +107,7 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
     });
   }
 
-  goToTransferPackage(item) {
+  goToTransferPackage() {
     if (this.codeType === ERoutingIds.packageavailable) {
       this.router.navigate(['/package-transfer']);
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
@@ -104,11 +115,11 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
     }
   }
 
-  cancelBackLocationLink() {
-    this.location.back();
+  button1Listener() {
+    this.router.navigate(['/issues/tv/transfer-package/step1']);
   }
 
-  CloseMOdal() {
-    this.location.back();
+  button2Listener() {
+    this.router.navigate(['unable-to-watch-specific-channel']);
   }
 }

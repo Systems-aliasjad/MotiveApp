@@ -16,6 +16,8 @@ import { OntRestartSuccessComponent } from './routes/ont-restart-success.compone
 import { OutageMessageComponent } from './routes/outage-message.component';
 import { OutageComponent } from './routes/outage.component';
 import { ResetCCBPINSuccessComponent } from './routes/reset-ccb-pin-success.component';
+import { NoDailToneCareComponent } from './routes/no-dial-tone-care.component';
+import { UnableToCallCareComponent } from './routes/unable-to-call-care.component';
 
 const routes: Routes = [
   {
@@ -29,6 +31,14 @@ const routes: Routes = [
   {
     path: 'outage-message',
     component: OutageMessageComponent,
+  },
+  {
+    path: 'no-dail-tone/device-care',
+    component: NoDailToneCareComponent,
+  },
+  {
+    path: 'unable-to-call/device-care',
+    component: UnableToCallCareComponent,
   },
   {
     //Issue not fixed

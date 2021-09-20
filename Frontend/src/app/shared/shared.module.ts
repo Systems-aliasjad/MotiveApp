@@ -26,7 +26,6 @@ import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
-import { BrowserStepperComponent } from './components/browser-stepper/browser-stepper.component';
 import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
@@ -45,7 +44,6 @@ import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
-import { PhoneIssuesCareComponent } from './components/phone-issues-care/phone-issues-care.component';
 import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
 import { ChangeCallForwardComponent } from './components/change-call-forward/change-call-forward.component';
@@ -79,7 +77,6 @@ export function createTranslateLoader(http: HttpClient) {
     RestartRouterDialog,
     ButtonComponent,
     IssueListDialog,
-    BrowserStepperComponent,
     UnableVideoCallsComponent,
     UnableConnectNewDeviceWifiComponent,
     ResetFactoryDefaultDialog,
@@ -97,7 +94,6 @@ export function createTranslateLoader(http: HttpClient) {
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
-    PhoneIssuesCareComponent,
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinComponent,
     ChangeCallForwardComponent,
@@ -122,6 +118,7 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   exports: [
     DiagnoseIssueComponent,
+    DeviceCareComponent,
     PageTopComponent,
     ButtonComponent,
     HeaderComponent,
@@ -136,7 +133,6 @@ export function createTranslateLoader(http: HttpClient) {
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
-    PhoneIssuesCareComponent,
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinComponent,
     ChangeCallForwardComponent,

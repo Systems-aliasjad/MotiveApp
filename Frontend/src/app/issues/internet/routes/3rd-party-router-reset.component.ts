@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { Subscription } from 'rxjs';
 import { IMotiveButton } from '../../../shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -18,10 +19,11 @@ import { SharedService } from '../../../shared/shared.service';
   >
   </app-diagnose-issue>`,
 })
-export class ThirdPartyRouterResetComponent implements OnInit {
+export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
-    title: 'BUTTONS.VIEW_DEVICE_CARE',
+    title: 'BUTTONS.DEVICE_CARE',
     type: 'link',
   };
   button2: IMotiveButton = {
@@ -34,15 +36,29 @@ export class ThirdPartyRouterResetComponent implements OnInit {
     type: 'secondary',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController) {}
+  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
+    this.subscription = this.activatedRoute.data.subscribe(() => {
+      this.updateHeader();
+    });
+    this.updatePageContent();
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  updateHeader() {
     this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
   }
 
-  async button1Listener() {
-    this.router.navigate(['/device-care']);
+  updatePageContent() {
+    this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
+  }
+
+  button1Listener() {
+    this.router.navigate(['/issues/internet/3rd-party-router-reset/device-care']);
   }
 
   button2Listener() {

@@ -11,7 +11,6 @@ import { IssueBuilderComponent } from './issue-builder/issue-builder.component';
 import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
 import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
-import { BrowserStepperComponent } from './shared/components/browser-stepper/browser-stepper.component';
 import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
@@ -24,7 +23,6 @@ import { PackageAvailableComponent } from './shared/components/package-available
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
-import { PhoneIssuesCareComponent } from './shared/components/phone-issues-care/phone-issues-care.component';
 import { PhoneIssuesProblemValueAddedComponent } from './shared/components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinComponent } from './shared/components/forgot-ccb-pin/forgot-ccb-pin.component';
 import { ChangeCallForwardComponent } from './shared/components/change-call-forward/change-call-forward.component';
@@ -230,7 +228,6 @@ const routes: Routes = [
   { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
   { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
 
-  { path: 'browser-stapper', component: BrowserStepperComponent },
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
   { path: 'service-detail', component: ServiceDetailComponent },
@@ -240,7 +237,7 @@ const routes: Routes = [
 
   //Unable to watch channel
   { path: 'unable-to-watch-channel', component: IssueBuilderComponent, data: { id: ERoutingIds.enableWatchChannel } },
-  { path: 'unable-to-watch-channel-continue', component: DeviceCareComponent, data: { id: ERoutingIds.enableWatchChannelContinueTroubleshoot } },
+  // { path: 'unable-to-watch-channel-continue', component: DeviceCareComponent, data: { id: ERoutingIds.enableWatchChannelContinueTroubleshoot } },
   { path: 'tvBox-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxResetSuccessfully } },
 
   // Package Transfer
@@ -254,8 +251,6 @@ const routes: Routes = [
   { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
   { path: 'no-issue-phone', component: IssueBuilderComponent, data: { id: ERoutingIds.noIssuePhone } },
-  { path: 'no-issue-phone-unable-calls', component: PhoneIssuesCareComponent, data: { id: ERoutingIds.noIssuePhoneUnablePhoneCalls } },
-  { path: 'no-issue-phone-no-dial-tone', component: PhoneIssuesCareComponent, data: { id: ERoutingIds.noIssuePhoneNoDialTone } },
 
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },

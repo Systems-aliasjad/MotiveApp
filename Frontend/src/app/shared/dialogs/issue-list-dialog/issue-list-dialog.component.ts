@@ -25,7 +25,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to browse the internet',
-      route: 'browser-stapper',
+      route: 'issues/internet/unable-to-browse-internet/step3',
     },
     {
       issue: 'Forgot my Wi-Fi password',

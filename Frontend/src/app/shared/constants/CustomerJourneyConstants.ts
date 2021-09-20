@@ -81,6 +81,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.TVBOX_RESET_SUCCESSFULLY_BODY'],
   };
 
+  public static routerFixedRestartRequired = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [{ title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESTART_YOUR_ROUTER_AND_THEN_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN' }],
+  };
+
   public static outageIssueMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_INTERNET_CONNECTION',
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
@@ -308,25 +313,25 @@ export class CustomerJourneyConstants {
     ],
   };
 
-  public static noIssuesPhoneCareSection1: IMessageIssue = {
-    header: '',
-    body: [
-      {
-        title: 'PHONE_ISSUES_CARE.Heading1',
-        children: ['PHONE_ISSUES_CARE.BODY1Children1', 'PHONE_ISSUES_CARE.BODY1Children2'],
-      },
-    ],
-  };
+  // public static noIssuesPhoneCareSection1: IMessageIssue = {
+  //   header: '',
+  //   body: [
+  //     {
+  //       title: 'PHONE_ISSUES_CARE.Heading1',
+  //       children: ['PHONE_ISSUES_CARE.BODY1Children1', 'PHONE_ISSUES_CARE.BODY1Children2'],
+  //     },
+  //   ],
+  // };
 
-  public static noIssuesPhoneCareSection2: IMessageIssue = {
-    header: '',
-    body: [
-      {
-        title: 'PHONE_ISSUES_CARE.Heading2',
-        children: ['PHONE_ISSUES_CARE.BODY2Children1', 'PHONE_ISSUES_CARE.BODY2Children2', 'PHONE_ISSUES_CARE.BODY2Children3'],
-      },
-    ],
-  };
+  // public static noIssuesPhoneCareSection2: IMessageIssue = {
+  //   header: '',
+  //   body: [
+  //     {
+  //       title: 'PHONE_ISSUES_CARE.Heading2',
+  //       children: ['PHONE_ISSUES_CARE.BODY2Children1', 'PHONE_ISSUES_CARE.BODY2Children2', 'PHONE_ISSUES_CARE.BODY2Children3'],
+  //     },
+  //   ],
+  // };
 
   public static routerUpgradesuccessfullyCase = {
     header: 'MESSAGES.ROUTER_UPGRADE_REQUEST_SUCCESSFULLY',
@@ -817,7 +822,7 @@ export class CustomerJourneyConstants {
   public static requestSupportPhoneIssuesCareButton: IButton = {
     title: 'BUTTONS.REQUEST_SUPPORT',
     clickListener: () => {},
-    linkTo: '/browser-stapper',
+    linkTo: '/issues/internet/unable-to-browse-internet/step3',
     behaviour: 'link',
     customListner: '',
   };
@@ -825,16 +830,9 @@ export class CustomerJourneyConstants {
   public static requestSupportProblemValueAddedButton: IButton = {
     title: 'BUTTONS.REQUEST_SUPPORT',
     clickListener: () => {},
-    linkTo: 'browser-stapper',
+    linkTo: 'issues/internet/unable-to-browse-internet/step3',
     behaviour: 'link',
     customListner: '',
-  };
-
-  public static continueToBrowserStepperButton: IButton = {
-    title: 'LINKS.CONTINUE_TO_TROUBLESHOOTING',
-    clickListener: () => {},
-    linkTo: '/browser-stapper',
-    behaviour: 'link',
   };
 
   public static upgradePackageButton: IButton = {
@@ -980,7 +978,7 @@ export class CustomerJourneyConstants {
   };
 
   public static issueResolvedButton = {
-    title: 'BUTTONS.ISSUE_RESLOVED',
+    title: 'BUTTONS.ISSUE_RESOLVED',
     clickListener: () => {},
     linkTo: '/thanks',
     behaviour: 'primary',
@@ -1001,7 +999,7 @@ export class CustomerJourneyConstants {
   };
 
   public static issueResolvedLink = {
-    title: 'BUTTONS.ISSUE_RESLOVED',
+    title: 'BUTTONS.ISSUE_RESOLVED',
     clickListener: () => {},
     linkTo: '/thanks',
     behaviour: 'link',
@@ -1157,10 +1155,6 @@ export class CustomerJourneyConstants {
   public static internetPasswordResetButtons: IButton[] = [CustomerJourneyConstants.resetNowButton2, CustomerJourneyConstants.closeButton];
 
   public static resetWifiPasswordFistSuccessButtons: IButton[] = [CustomerJourneyConstants.resetWifiPasswordSuccessButton];
-
-  public static browserStapperCase1Buttons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.continueToBrowserStepperButton];
-
-  public static browserStapperCase2Buttons: IButton[] = [CustomerJourneyConstants.issueFixedButton, CustomerJourneyConstants.bookAComplaintButton];
 
   public static accountNotActiveButtons: IButton[] = [CustomerJourneyConstants.closeButtonSecondary];
 

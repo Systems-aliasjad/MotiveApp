@@ -166,7 +166,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   }
 
   button2Listener() {
-    this.router.navigate(['/browser-stapper']);
+    this.router.navigate(['/issues/internet/unable-to-browse-internet/step3']);
     // this.button2Click.emit();
   }
 
