@@ -3,7 +3,8 @@
     <!-- Page Title and Sub Title Start -->
     <ion-row>
       <ion-col size="12">
-        <p class="sub-title">{{ 'SUBHEADER.RESET_INTERNET_PASSWORD' | translate }}</p>
+        <!-- <p class="sub-title">{{ 'SUBHEADER.RESET_INTERNET_PASSWORD' | translate }}</p> -->
+        <p class="sub-title">{{ resetPinContent.subheader | translate }}</p>
       </ion-col>
     </ion-row>
     <!-- Page Title and Sub Title End -->
@@ -16,7 +17,7 @@
             <ion-row>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'RESET_TV_ADMIN_PIN.LABEL1' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ resetPinContent.inputLablel | translate }}</ion-label>
                   <ion-input
                     type="text"
                     [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
@@ -32,8 +33,8 @@
               </ion-col>
             </ion-row>
 
-            <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
-            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button>
+            <!-- <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
+            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
           </ion-grid>
         </form>
       </ion-col>
@@ -41,3 +42,47 @@
     <!-- Form End -->
   </ion-grid>
 </ion-content>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button
+            *ngIf="button1"
+            [type]="button1.type"
+            [title]="button1.title"
+            [explanatoryNote]="button1.explanatoryNote"
+            [SM]="button1.SM"
+            [MD]="button1.MD"
+            [LG]="button1.LG"
+            (click)="button1Listener()"
+          ></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button
+            *ngIf="button2"
+            [type]="button2.type"
+            [title]="button2.title"
+            [explanatoryNote]="button2.explanatoryNote"
+            [SM]="button2.SM"
+            [MD]="button2.MD"
+            [LG]="button2.LG"
+            (click)="button2Listener()"
+          ></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngIf="button3">
+      <motive-button
+        [type]="button3.type"
+        [title]="button3.title"
+        [explanatoryNote]="button3.explanatoryNote"
+        [SM]="button3.SM"
+        [MD]="button3.MD"
+        [LG]="button3.LG"
+        (click)="button3Listener()"
+      ></motive-button>
+    </ion-col>
+  </ion-row>
+</div>

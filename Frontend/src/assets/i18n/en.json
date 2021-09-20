@@ -39,6 +39,7 @@
 
   "SUBHEADER": {
     "CALL_DETAILS": "Call details",
+
     "PHONE_TROUBLESHOOTING_GUIDELINES": "Phone troubleshooting guidelines",
     "RESET_TV_BOX": "Reset TV box",
     "CHECK_CHANNEL_FILTER": "Check Channel Filter",
@@ -55,7 +56,8 @@
     "ROUTER_RECONFIGURE": "Router reconfigure",
     "CHECK_YOUR_BROWSER_SETTING": "Check your browser setting",
     "CHECK_YOUR_NETWORK_SETTING": "Check your network setting",
-    "CHECK_YOUR_FIREWALL_SETTING": "Check your firewall setting"
+    "CHECK_YOUR_FIREWALL_SETTING": "Check your firewall setting",
+    "HOW_TO_RECONFIGURE_YOUR_ROUTER": "How to reconfigure your router"
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -131,6 +133,8 @@
     "PIN": "PIN"
   },
   "BUTTONS": {
+    "CONTINUE_WITH_ETISALAT_ROUTERR": "Continue with Etisalat router",
+    "INSTALL_THIRD_PARTY_ROUTER": "Install third-party router",
     "HOW_DO_I_RESTART": "How do I restart?",
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "CONFIGURE_WI_FI": "CONFIGURE WI-FI",
@@ -393,7 +397,20 @@
     "ROUTER_INSTALL_SUCCESSFULLY_BODY": "Your router should now work. Tap ‘Configure router’ or 'Continue to troubleshooting' if you are still facing an issue.",
     "ROUTER_INSTALL_FAILED": "Router Installation Failed",
     "ROUTER_INSTALL_FAILED_BODY": "Router installation failed. Tap 'Book Complaint' if you wish to book a complaint or please try again later",
-    "ELIFE_UPGRADE_SUCCESS": "eLife package upgrade request was raised successfully"
+    "ELIFE_UPGRADE_SUCCESS": "eLife package upgrade request was raised successfully",
+    "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "COMPLAINT_RAISED_SUCCESSFULLY!": "Complaint raised successfully!",
+    "WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your complaint and booked an appointment.  Our technician will contact you soon.",
+    "YOU_ARE_CURRENTLY_USING_AN_ETISALAT_ROUTER_WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_CONTINUE_USING_THIS_ROUTER": "You are currently using an Etisalat router. We can provide remote support if you continue using this router. ",
+    "HOWEVER_THIS_SERVICE_WILL_NOT_BE_AVAILABLE_IF_YOU_INSTALL_A_THIRD_PARTY_ROUTER": "However, this service will not be available if you install a third-party router. ",
+    "YOU_NEED_TO_RESET_YOUR_INTERNET_PASSWORD_TO_INSTALL_THE_THIRD-PARTY_ROUTER": "you need to reset your internet password to install the third-party router",
+    "ENTER_YOUR_MOBILE_NUMBER_TO_RECEIVE_THE_NEW_PIN_VIA_SMS": "Enter your mobile number to receive the new PIN via SMS",
+    "INSTALLING_THIRD-PARTY_ROUTER": "Installing third-party router",
+    "INSTALLATION_OF_ROUTER_IS_IN_PROGESS..._IT_WILL_TAKE_UP_TO_30_MINUTEs": "Installation of router is in progess... it will take up to 30 minutes.",
+    "FOLLOW_THESE_STEPS_AFTER_30_MINUTES": "Follow these steps after 30 minutes:",
+    "CONNECT_THE_NEW_ROUTER_TO_X_PORT_OF_THE_WALL-MOUNTED_FIBER_BOX": "Connect the new router to 'X' port of the wall-mounted fiber box",
+    "SET_THE_ROUTER_WITH_A_NEW_PASSWORD": "Set the router with a new password"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

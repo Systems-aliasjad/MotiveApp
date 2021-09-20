@@ -276,6 +276,8 @@ const routes: Routes = [
   { path: 'quick-links-all', component: QuickLinksAllComponent, data: { id: ERoutingIds.quickLinksAll } },
   // { path: '', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
 
+  { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
+
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },
   { path: '**', redirectTo: '' },

@@ -34,6 +34,11 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
+import { InstallNewRouterCareComponent } from './routes/install-new-router-care.component';
+import { InstallNewRouterComplaintSuccessfullyMessageComponent } from './routes/install-new-router-complaint-successfully-message.component';
+import { InstallNewRouterFlow2MessageComponent } from './routes/install-new-router-flow2-message.component';
+import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-router-flow4-message.component';
+import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
 
 const routes: Routes = [
   {
@@ -171,6 +176,14 @@ const routes: Routes = [
   },
 
   {
+    // //quick links
+    //I want to install my new router
+    //Care Screen
+    path: 'install-new-router-care',
+    component: InstallNewRouterCareComponent,
+  },
+
+  {
     //quick links
     //router installed successfully
     path: 'router-install-successfully',
@@ -195,6 +208,42 @@ const routes: Routes = [
     component: BookComplaintComponent,
     data: { id: ERoutingIds.routerUpgrade },
   },
+
+  {
+    //quick links
+    //I wanto to factory reset my router
+    //Complaint Raised Successfully
+
+    path: 'install-new-router-complaint-successfully',
+    component: InstallNewRouterComplaintSuccessfullyMessageComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
+    //Flow 2 Main
+
+    path: 'install-new-router-flow2',
+    component: InstallNewRouterFlow2MessageComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
+    //Flow 4 Message
+
+    path: 'install-new-router-flow4',
+    component: InstallNewRouterFlow4MessageComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
+    //
+    path: 'install-new-router-reset-internet-password',
+    component: InstallNewRouterResetInternetPasswordComponent,
+  },
+
   {
     //Router upgrade Request Successfully
     path: 'router-upgrade-success',

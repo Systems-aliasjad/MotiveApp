@@ -33,6 +33,11 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
+import { InstallNewRouterCareComponent } from './routes/install-new-router-care.component';
+import { InstallNewRouterComplaintSuccessfullyMessageComponent } from './routes/install-new-router-complaint-successfully-message.component';
+import { InstallNewRouterFlow2MessageComponent } from './routes/install-new-router-flow2-message.component';
+import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-router-flow4-message.component';
+import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +71,11 @@ import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.com
     RouterInstallationFailedMessageComponent,
     RouterResetFactoryComponent,
     RouterUpgradeSuccessComponent,
+    InstallNewRouterCareComponent,
+    InstallNewRouterComplaintSuccessfullyMessageComponent,
+    InstallNewRouterFlow2MessageComponent,
+    InstallNewRouterFlow4MessageComponent,
+    InstallNewRouterResetInternetPasswordComponent,
   ],
   imports: [CommonModule, InternetRoutingModule, SharedModule],
 })

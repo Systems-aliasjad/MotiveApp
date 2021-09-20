@@ -110,6 +110,7 @@ export enum ERoutingIds {
   quickLinksAll,
   routerUpgrade,
   eLifeUpgrade,
+  installNewRouterResetInternetPassword,
 }
 
 // const P3: string = '3P';
@@ -151,6 +152,7 @@ export enum ERoutingIds {
 
 export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
 export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
+export const infoImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_regular.svg';
 
 const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
@@ -579,6 +581,24 @@ export class ApplicableCodes {
   ];
 
   public static appointBookSuccessfullyTemplate: ISection2Template[] = [
+    {
+      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+    {
+      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.DATE_VISIT',
+      type: 'date',
+      objKeyNameEN: 'dateVisit',
+    },
+    {
+      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.LOCATION',
+      type: 'text',
+      objKeyNameEN: 'location',
+    },
+  ];
+
+  public static installNewRouterComplaintBookSuccessfullyTemplate: ISection2Template[] = [
     {
       title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',
       type: 'number',

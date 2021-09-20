@@ -26,7 +26,7 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'secondary',
+    type: 'primary',
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     explanatoryNote: '',
   };
@@ -58,7 +58,7 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['/issues/internet/install-new-router-care']);
   }
 
   button2Listener() {

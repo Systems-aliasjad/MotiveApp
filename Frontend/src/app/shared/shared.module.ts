@@ -50,6 +50,7 @@ import { ChangeCallForwardComponent } from './components/change-call-forward/cha
 import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
+import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -100,6 +101,7 @@ export function createTranslateLoader(http: HttpClient) {
     DummyDelComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
+    MotiveMessageBulletComponent,
   ],
   imports: [
     CommonModule,
@@ -139,6 +141,7 @@ export function createTranslateLoader(http: HttpClient) {
     DummyDelComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
+    MotiveMessageBulletComponent,
   ],
 
   entryComponents: [],

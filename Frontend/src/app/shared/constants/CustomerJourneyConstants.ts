@@ -410,6 +410,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS_BODY', 'MESSAGES.RESET_INTERNET_PASSWORD_SUCCESS_BODY2'],
   };
 
+  public static InstallNewRouterComplaintRaisedSuccessfully = {
+    header: 'MESSAGES.COMPLAINT_RAISED_SUCCESSFULLY!',
+    paragraphs: ['MESSAGES.WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON'],
+  };
+
   public static errorOccured = {
     header: 'MESSAGES.Error_Occured',
     paragraphs: ['MESSAGES.Error_Occured_BODY'],
@@ -454,6 +459,28 @@ export class CustomerJourneyConstants {
   public static installNewRouterMessageCase = {
     header: 'MESSAGES.INSTALL_NEW_ROUTER',
     paragraphs: ['MESSAGES.INSTALL_NEW_ROUTER_BODY1', 'MESSAGES.INSTALL_NEW_ROUTER_BODY2'],
+  };
+
+  public static installNewRouterFlow2MessageCase = {
+    header: 'MESSAGES.INSTALL_NEW_ROUTER',
+    paragraphs: [
+      'MESSAGES.YOU_ARE_CURRENTLY_USING_AN_ETISALAT_ROUTER_WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_CONTINUE_USING_THIS_ROUTER',
+      'MESSAGES.HOWEVER_THIS_SERVICE_WILL_NOT_BE_AVAILABLE_IF_YOU_INSTALL_A_THIRD_PARTY_ROUTER',
+    ],
+  };
+
+  public static installNewRouterFlow4MessageCase = {
+    header: 'MESSAGES.INSTALLING_THIRD-PARTY_ROUTER',
+
+    paragraphs: [
+      {
+        title: 'MESSAGES.INSTALLATION_OF_ROUTER_IS_IN_PROGESS..._IT_WILL_TAKE_UP_TO_30_MINUTEs',
+      },
+      {
+        title: 'MESSAGES.FOLLOW_THESE_STEPS_AFTER_30_MINUTES',
+        children: ['MESSAGES.CONNECT_THE_NEW_ROUTER_TO_X_PORT_OF_THE_WALL-MOUNTED_FIBER_BOX', 'MESSAGES.SET_THE_ROUTER_WITH_A_NEW_PASSWORD'],
+      },
+    ],
   };
 
   public static routerInstallSuccessfullyMessageCase = {
