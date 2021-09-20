@@ -25,6 +25,8 @@ import { BoxNotRestartedCareComponent } from './routes/box-not-restarted-care.co
 import { PackageTransferStep1Component } from './routes/package-transfer-step1.component';
 import { PackageTransferStep2Component } from './routes/package-transfer-step2.component';
 import { UnableWatchChannelStep1Component } from './routes/unable-watch-channel-step1.component';
+import { ELifeUpgradeComponent } from './routes/eLife-upgrade.component';
+import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-form.component';
 
 const routes: Routes = [
   {
@@ -109,6 +111,10 @@ const routes: Routes = [
     component: TvBoxResetRequiredSuccessComponent,
   },
   {
+    path: 'tvBox-not-reachable-form',
+    component: TVBoxNotReachableFormComponent,
+  },
+  {
     path: 'tvBox-not-reachable-form_successfully',
     component: TvBoxNotReachableSuccessComponent,
   },
@@ -120,9 +126,8 @@ const routes: Routes = [
     component: TvBoxResetFactoryComponent,
   },
   {
-    path: 'book-complaint',
-    component: BookComplaintComponent,
-    data: { id: ERoutingIds.eLifeUpgrade },
+    path: 'eLife-upgrade',
+    component: ELifeUpgradeComponent,
   },
   {
     path: 'eLife-upgrade-success',

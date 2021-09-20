@@ -18,6 +18,8 @@ import { OutageComponent } from './routes/outage.component';
 import { ResetCCBPINSuccessComponent } from './routes/reset-ccb-pin-success.component';
 import { NoDailToneCareComponent } from './routes/no-dial-tone-care.component';
 import { UnableToCallCareComponent } from './routes/unable-to-call-care.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
+import { BookAppointmentComponent } from './routes/book-appointment.component';
 
 const routes: Routes = [
   {
@@ -95,6 +97,14 @@ const routes: Routes = [
   {
     path: 'no-issue-phone-phone-reset-ccb-pin-successfully',
     component: ResetCCBPINSuccessComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
+  },
+  {
+    path: 'book-appointment',
+    component: BookAppointmentComponent,
   },
 ];
 

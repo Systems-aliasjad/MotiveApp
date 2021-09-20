@@ -27,8 +27,6 @@ import { RouterInstallSuccessfullyMessageComponent } from './routes/router-insta
 import { RoutingPaths } from 'src/app/shared/constants/constants';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
-import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
-import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
 import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-reset-care.component';
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
@@ -42,6 +40,11 @@ import { OpenServiceRequestMessageComponent } from './routes/open-service-reques
 import { PackageUpgradeSuccessMessageComponent } from './routes/package-upgrade-success-message.component';
 import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-and-package-upgrade-successful-message.component';
 import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { RouterUpgradeComponent } from './routes/router-upgrade.component';
+import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.component';
+import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
+import { RouterNotReachableFormComponent } from './routes/router-not-reachable-form.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
 
 const routes: Routes = [
   {
@@ -227,14 +230,29 @@ const routes: Routes = [
     component: RouterResetFactoryComponent,
   },
   {
-    path: 'book-complaint',
-    component: BookComplaintComponent,
-    data: { id: ERoutingIds.routerUpgrade },
+    path: 'router-upgrade',
+    component: RouterUpgradeComponent,
   },
   {
     //Router upgrade Request Successfully
     path: 'router-upgrade-success',
     component: RouterUpgradeSuccessComponent,
+  },
+  {
+    path: 'router-not-reachable-form',
+    component: RouterNotReachableFormComponent,
+  },
+  {
+    path: 'third-party-router-form',
+    component: ThirdPartyRouterFormComponent,
+  },
+  {
+    path: 'router-package-upgrade-recommended-form',
+    component: RouterPackageUpgradeRecommendedFormComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
   },
 ];
 

@@ -20,6 +20,8 @@ import { ChangeCallForwardSuccessComponent } from './routes/change-call-forward-
 import { ResetCCBPINSuccessComponent } from './routes/reset-ccb-pin-success.component';
 import { NoDailToneCareComponent } from './routes/no-dial-tone-care.component';
 import { UnableToCallCareComponent } from './routes/unable-to-call-care.component';
+import { BookAppointmentComponent } from './routes/book-appointment.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { UnableToCallCareComponent } from './routes/unable-to-call-care.componen
     OntRestartSuccessComponent,
     ChangeCallForwardSuccessComponent,
     ResetCCBPINSuccessComponent,
+    BookComplaintComponent,
+    BookAppointmentComponent,
   ],
   imports: [CommonModule, PhoneRoutingModule, SharedModule],
 })
