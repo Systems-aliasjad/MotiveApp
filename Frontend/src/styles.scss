@@ -310,9 +310,10 @@ ion-modal,
       position:relative;
       display:block;
       padding-left:1rem;
-      @media screen and (max-width: 767px) {
+      white-space:normal;
+      /* @media screen and (max-width: 767px) {
         white-space:normal;
-      }
+      } */
       &:before{
         content: "";
         position: absolute;
