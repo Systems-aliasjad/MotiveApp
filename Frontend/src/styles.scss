@@ -309,6 +309,7 @@ ion-modal,
     ion-label{
       position:relative;
       display:block;
+      margin-bottom: 0;
       padding-left:1rem;
       white-space:normal;
       /* @media screen and (max-width: 767px) {
@@ -317,10 +318,10 @@ ion-modal,
       &:before{
         content: "";
         position: absolute;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        top: 50%;
+        -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+        transform: translateY(100%);
+        top: 0;
         left: 0;
         width: 0.4rem;
         height: 0.4rem;
