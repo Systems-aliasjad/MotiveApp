@@ -11,7 +11,7 @@
         <div class="content">
           <!-- Content 1 -->
           <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''">
-            <h3 class="sub-title">{{ deviceCareContent?.header1 | translate }}</h3>
+            <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header1 | translate }}</h3>
           </div>
           <p>{{ deviceCareContent?.body1 | translate }}</p>
           <ion-list *ngIf="deviceCareContent?.bullet1" class="bullet-list mb-2">
@@ -21,7 +21,7 @@
           </ion-list>
           <!-- Content 2 -->
           <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''" *ngIf="deviceCareContent.header2">
-            <h3 class="sub-title">{{ deviceCareContent?.header2 | translate }}</h3>
+            <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header2 | translate }}</h3>
           </div>
           <p *ngIf="deviceCareContent.body2">{{ deviceCareContent?.body2 | translate }}</p>
           <ion-list *ngIf="deviceCareContent?.bullet2" class="bullet-list">
@@ -40,7 +40,7 @@
         <div class="content">
           <!-- Content Above Image -->
           <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''" *ngIf="deviceCareContent.header1">
-            <h3 class="sub-title">{{ deviceCareContent?.header1 | translate }}</h3>
+            <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header1 | translate }}</h3>
           </div>
           <p>{{ deviceCareContent?.body1 | translate }}</p>
           <ion-list *ngIf="deviceCareContent?.bullet1" class="bullet-list">
@@ -55,7 +55,7 @@
         </div>
         <!-- Content Below Image -->
         <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''" *ngIf="deviceCareContent.header2">
-          <h3 class="sub-title">{{ deviceCareContent?.header2 | translate }}</h3>
+          <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header2 | translate }}</h3>
         </div>
         <p *ngIf="deviceCareContent.body2">{{ deviceCareContent?.body2 | translate }}</p>
         <ion-list *ngIf="deviceCareContent?.bullet2" class="bullet-list">
