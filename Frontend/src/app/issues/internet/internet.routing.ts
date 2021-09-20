@@ -34,6 +34,14 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { ComplaintSuccessfulMessageComponent } from './routes/complaint-successful-message.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
+import { PackageUpgradeSuccessMessageComponent } from './routes/package-upgrade-success-message.component';
+import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-and-package-upgrade-successful-message.component';
+import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
 
 const routes: Routes = [
   {
@@ -53,12 +61,40 @@ const routes: Routes = [
     component: BrowsingUnableStep2Component,
   },
   {
+    path: 'osrp/move-elife-connection',
+    component: MoveElifeConnectionMessageComponent,
+  },
+  {
+    path: 'appointment-successful',
+    component: AppointmentSuccessfulMessageComponent,
+  },
+  {
+    path: 'compalint-successful',
+    component: ComplaintSuccessfulMessageComponent,
+  },
+  {
+    path: 'open-technical-request',
+    component: OpenServiceRequestMessageComponent,
+  },
+  {
+    path: 'package-upgrade-success',
+    component: PackageUpgradeSuccessMessageComponent,
+  },
+  {
+    path: 'router-and-package-upgrade-success',
+    component: RouterAndPackageUpgradeSuccessMessageComponent,
+  },
+  {
+    path: 'account-not-active',
+    component: AccountNotActiveMessageComponent,
+  },
+  {
     path: 'unable-to-browse-internet/step3',
     component: BrowsingUnableStep3Component,
   },
   {
-    path: 'router-restart/device-care',
-    component: RouterRestartCareComponent,
+    path: 'complaint-already-exists',
+    component: ComplaintExistsMessageComponent,
   },
   {
     path: 'outage',

@@ -183,7 +183,8 @@
     "SKIP_TO_NEXT_STEP": "SKIP TO NEXT STEP",
     "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
     "END_TROUBLESHOOTING": "END TROUBLESHOOTING",
-    "BUY_ETISALAT_ROUTER": "BUY ETISALAT ROUTER"
+    "BUY_ETISALAT_ROUTER": "BUY ETISALAT ROUTER",
+    "NO_I_WANT_TO_REPORT_ANOTHER_ISSUE": "No, I want to report another issue"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -197,7 +198,6 @@
   },
   "LINKS": {
     "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
-    "COMPLAINT_ANOTHER": "No, I want to report another issue",
     "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
     "DEVICE_CARE": "Device Care",
     "CLOSE": "CLOSE",

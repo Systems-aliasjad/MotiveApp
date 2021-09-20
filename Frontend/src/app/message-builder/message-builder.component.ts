@@ -59,18 +59,18 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
   initialization() {
     this.sharedService.setDefaultValues();
 
-    //Open Complaint
+    // complaint-already-exists
     if (this.codeType === ERoutingIds.openComplaint) {
-      this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
-      this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
-      this.Section2Data = {
-        complaintNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        status: 'Xxxxx xxxxx xxxx',
-      };
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons));
+      //   this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
+      //   this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
+      //   this.Section2Data = {
+      //     complaintNo: '436529873',
+      //     dateVisit: 'Jul 10 2019, 10:30 AM',
+      //     status: 'Xxxxx xxxxx xxxx',
+      //   };
+      //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openComplaintButtons));
     }
-    //Open service request present
+    // osrp/move-elife-connection
     else if (this.codeType === ERoutingIds.osrp) {
       this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
@@ -83,7 +83,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openServiceRequestCaseButtons));
     } //end of OSRP //Open service request present
 
-    ///For Appointment book successfully IssuesNotFixed
+    // appointment-successful
     else if (this.codeType === ERoutingIds.appoinmentSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
@@ -98,20 +98,20 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
 
     ///For Compliant booked successfully
-    else if (this.codeType === ERoutingIds.complaintSuccessfully) {
-      this.Section1Data = CustomerJourneyConstants.complaintFormsuccessfullyCase;
-      this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
-      this.Section2Data = {
-        referenceNo: '436529873',
-        dateVisit: 'Jul 10 2019, 10:30 AM',
-        location: 'Xxxxx xxxxx xxxx',
-      };
+    // else if (this.codeType === ERoutingIds.complaintSuccessfully) {
+    //   this.Section1Data = CustomerJourneyConstants.complaintFormsuccessfullyCase;
+    //   this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+    //   this.Section2Data = {
+    //     referenceNo: '436529873',
+    //     dateVisit: 'Jul 10 2019, 10:30 AM',
+    //     location: 'Xxxxx xxxxx xxxx',
+    //   };
 
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
-    }
+    //   this.imgSrc = this.successImgSrc;
+    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
+    // }
 
-    ///For Router Not Reachable Compliant booked successfully
+    // compalint-successful
     else if (this.codeType === ERoutingIds.routerNotReachableFormSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.routerNotReachableFormsuccessfullyCase;
       this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
@@ -125,7 +125,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.complaintbookssuccessfullyButtons));
     }
 
-    //Open technical S/R
+    // open-technical-request
     else if (this.codeType === ERoutingIds.openSr) {
       this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
       this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
@@ -139,7 +139,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.imgSrc = this.warningImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.openTechnicalSrButtons));
     }
-    //package upgrade Successfully
+    // package-upgrade-success
     else if (this.codeType === ERoutingIds.packageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
       this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
@@ -150,18 +150,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageUpdareRequestsuccessfullyButtons));
     }
 
-    ///For router upgrade Successfully
-    // else if (this.codeType === ERoutingIds.routerUpgradeRequestSuccessfully) {
-    //   this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
-    //   this.subHeaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
-    //   this.subHeaderSectionData = {
-    //     referenceNo: '436529873',
-    //   };
-    //   this.imgSrc = this.successImgSrc;
-    //   this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerUpdateRequestsuccessfullyButtons));
-    // }
-
-    ///For router Package upgrade Successfully
+    // router-and-package-upgrade-success
     else if (this.codeType === ERoutingIds.routerPackageUpgradeRequestSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
       this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
@@ -172,7 +161,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.routerPackageUpdateRequestsuccessfullyButtons));
     }
 
-    //Account not active
+    // account-not-active
     else if (this.codeType === ERoutingIds.accountNotActive) {
       this.Section1Data = CustomerJourneyConstants.accountNotActive;
       this.Section1Data.spanListener = () => {
@@ -183,6 +172,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
 
     ///For third party router Successfully
+    // 1.5.6
     else if (this.codeType === ERoutingIds.thirdPartyRouterSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.thirdPartyRoutersuccessfullyCase;
       this.subHeaderSectionTemplate = ApplicableCodes.thirdPartyRouterUpgradeTemplate;
@@ -201,12 +191,14 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
 
     ///For Reset Wifi password Second/Final  Successfull
+    // 1.6.7
     else if (this.codeType === ERoutingIds.resetWifiPasswordFormSuccessfully) {
       this.Section1Data = CustomerJourneyConstants.resetWifiResetSecondsuccessfullyCase;
       this.imgSrc = this.successImgSrc;
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessSecondCasesuccessfullyButtons));
     }
     // Troubleshoot Complete
+    // 2.7.52
     else if (this.codeType === ERoutingIds.troubleshootComplete) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.troubleshootComplete;
@@ -214,6 +206,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
     }
     // TV PIN update Complete
+    // 2.7.10
     else if (this.codeType === ERoutingIds.tvPinUpdateSuccessfull) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
@@ -222,6 +215,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     }
 
     // ELife Login PIN Reset Complete
+    // 2.7.14
     else if (this.codeType === ERoutingIds.restELifeLoginPin) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.restELifeLoginPin;
@@ -229,6 +223,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.restELifeLoginPinButton));
     }
     // ELife Login PIN Reset Success Complete
+    // 2.7.16
     else if (this.codeType === ERoutingIds.restELifeLoginPinResetSuccess) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;

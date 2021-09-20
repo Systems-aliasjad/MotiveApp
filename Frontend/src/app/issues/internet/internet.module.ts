@@ -33,6 +33,14 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { ComplaintSuccessfulMessageComponent } from './routes/complaint-successful-message.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
+import { PackageUpgradeSuccessMessageComponent } from './routes/package-upgrade-success-message.component';
+import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-and-package-upgrade-successful-message.component';
+import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +48,15 @@ import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.com
     BrowsingUnableStep1Component,
     BrowsingUnableStep2Component,
     BrowsingUnableStep3Component,
+    ComplaintExistsMessageComponent,
     RouterFixedRestartRequiredComponent,
+    MoveElifeConnectionMessageComponent,
+    AppointmentSuccessfulMessageComponent,
+    ComplaintSuccessfulMessageComponent,
+    OpenServiceRequestMessageComponent,
+    PackageUpgradeSuccessMessageComponent,
+    RouterAndPackageUpgradeSuccessMessageComponent,
+    AccountNotActiveMessageComponent,
     RouterRestartCareComponent,
     RouterNotRestartedCareComponent,
     OutageComponent,

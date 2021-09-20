@@ -564,7 +564,7 @@ export class CustomerJourneyConstants {
   };
 
   public static bookAnotherComplaintButton: IButton = {
-    title: 'LINKS.COMPLAINT_ANOTHER',
+    title: 'LINKS.NO_I_WANT_TO_REPORT_ANOTHER_ISSUE',
     clickListener: () => {},
     behaviour: 'link',
     linkTo: '/bookComplaint',

@@ -379,6 +379,7 @@ ion-modal,
 }
 .__clickhere {
   color: $etisalat-color;
+  display: inline-block;
   &:hover{
     text-decoration: underline;
     color: $primary-color;
