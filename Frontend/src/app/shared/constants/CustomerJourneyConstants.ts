@@ -372,7 +372,10 @@ export class CustomerJourneyConstants {
 
   public static resetWifiResetSecondsuccessfullyCase = {
     header: 'MESSAGES.RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY'],
+    paragraphs: [
+      'MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN',
+      'MESSAGES.YOUR_NEW_PASSWORD_IS_XXXX_MAKE_SURE_TO_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER',
+    ],
   };
 
   public static troubleshootComplete = {
@@ -382,7 +385,7 @@ export class CustomerJourneyConstants {
 
   public static restELifeLoginPin = {
     header: 'MESSAGES.RESET_ELIFEON_PIN_HEADING',
-    paragraphs: ['MESSAGES.RESET_ELIFEON_PIN_BODY1', 'MESSAGES.RESET_ELIFEON_PIN_BODY2'],
+    paragraphs: ['MESSAGES.PLEASE_RESET_YOUR_ELIFEON_PIN_TO_FIX_THE_ISSUE_IT_WILL_BE_RESET_TO_THE_DEFAULT_PIN_1111_ELIFE'],
   };
 
   public static restELifeLoginPinResetSuccess = {

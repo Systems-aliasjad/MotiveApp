@@ -41,6 +41,8 @@ import { OpenServiceRequestMessageComponent } from './routes/open-service-reques
 import { PackageUpgradeSuccessMessageComponent } from './routes/package-upgrade-success-message.component';
 import { RouterAndPackageUpgradeSuccessMessageComponent } from './routes/router-and-package-upgrade-successful-message.component';
 import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { NewRouterSuccessMessageComponent } from './routes/new-router-success-message.component';
+import { PasswordUpdateSuccessfulMessageComponent } from './routes/password-update-successful-message.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +54,8 @@ import { AccountNotActiveMessageComponent } from './routes/account-not-active-me
     RouterFixedRestartRequiredComponent,
     MoveElifeConnectionMessageComponent,
     AppointmentSuccessfulMessageComponent,
+    NewRouterSuccessMessageComponent,
+    PasswordUpdateSuccessfulMessageComponent,
     ComplaintSuccessfulMessageComponent,
     OpenServiceRequestMessageComponent,
     PackageUpgradeSuccessMessageComponent,

@@ -25,6 +25,9 @@ import { BoxNotRestartedCareComponent } from './routes/box-not-restarted-care.co
 import { PackageTransferStep1Component } from './routes/package-transfer-step1.component';
 import { PackageTransferStep2Component } from './routes/package-transfer-step2.component';
 import { UnableWatchChannelStep1Component } from './routes/unable-watch-channel-step1.component';
+import { TroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
+import { UnableElifeLoginMessageComponent } from './routes/unable-elife-login-message.component';
+import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,18 @@ const routes: Routes = [
   {
     path: 'issues-not-fixed',
     component: IssueNotFixedComponent,
+  },
+  {
+    path: 'troubleshoot-complete',
+    component: TroubleshootCompleteMessageComponent,
+  },
+  {
+    path: 'unable-to-login-elife',
+    component: UnableElifeLoginMessageComponent,
+  },
+  {
+    path: 'reset-elife-pin-success',
+    component: ResetElifePinSuccessMessageComponent,
   },
   {
     path: 'outage',
