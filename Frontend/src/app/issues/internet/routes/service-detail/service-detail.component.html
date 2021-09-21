@@ -3,9 +3,6 @@
     <ion-row class="service-detail_title">
       <ion-col size="12">
         <app-page-top></app-page-top>
-        <!--  <div>
-          <h2>{{ 'SERVICE_DEATAIL.HEADING' | translate }}</h2>
-        </div> -->
       </ion-col>
     </ion-row>
 
@@ -60,7 +57,7 @@
               <ion-card *ngFor="let d of cardList">
                 <ion-card-header>
                   <ion-card-title>
-                    <img src="../../../../assets/images/indicators-icons/icon_all_okay.svg" alt="" />
+                    <img src="assets/images/indicators-icons/icon_all_okay.svg" alt="" />
                     <h5 class="sub-title">{{ d.heading }}</h5>
                   </ion-card-title>
                 </ion-card-header>
@@ -82,4 +79,35 @@
   </ion-grid>
 </ion-content>
 <!-- Configured button -->
-<!-- <motive-button class="footer"></motive-button> -->
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button
+            *ngIf="button1"
+            [type]="button1.type"
+            [title]="button1.title"
+            [explanatoryNote]="button1.explanatoryNote"
+            [SM]="button1.SM"
+            [MD]="button1.MD"
+            [LG]="button1.LG"
+            (click)="button1Listener()"
+          ></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button
+            *ngIf="button2"
+            [type]="button2.type"
+            [title]="button2.title"
+            [explanatoryNote]="button2.explanatoryNote"
+            [SM]="button2.SM"
+            [MD]="button2.MD"
+            [LG]="button2.LG"
+            (click)="button2Listener()"
+          ></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>

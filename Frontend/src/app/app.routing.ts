@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
-import { MessageBuilderComponent } from './message-builder/message-builder.component';
+// import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { ThankyouScreenComponent } from './thankyou-screen/thankyou-screen.component';
 import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
@@ -13,9 +13,8 @@ import { UnableVideoCallsComponent } from './shared/components/unable-video-call
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
 import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
-import { ServiceDetailComponent } from './shared/components/service-detail/service-detail.component';
 import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
-import { TvDetailComponent } from './tv-detail/tv-detail.component';
+
 import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
@@ -61,14 +60,18 @@ const routes: Routes = [
     path: 'issues/tv',
     loadChildren: () => import('./issues/tv/tv.module').then((m) => m.TvModule),
   },
+  {
+    path: 'track-complaint',
+    loadChildren: () => import('./common-quick-links/track-complaint/track-complaint.module').then((m) => m.TrackComplaintModule),
+  },
+  {
+    path: 'track-request',
+    loadChildren: () => import('./common-quick-links/track-request/track-request.module').then((m) => m.TrackRequestModule),
+  },
   // REFACTORED LOGIC
   {
     path: '',
     component: LandingComponent,
-  },
-  {
-    path: 'info',
-    component: MessageBuilderComponent,
   },
   {
     path: 'thanks',
@@ -91,63 +94,21 @@ const routes: Routes = [
   //   path: 'reset-internet-password',
   //   component: ResetInternetPasswordComponent,
   // },
+  // {
+  //   path: 'reset-internet-password',
+  //   component: ResetInternetPasswordComponent,
+  // },
   {
     path: 'device-care',
     component: DeviceCareComponent,
     data: { id: ERoutingIds.routerDeviceCare },
   },
 
-  //Open Complaint
-  { path: 'open-complaint', component: MessageBuilderComponent, data: { id: ERoutingIds.openComplaint } },
-  //Open service request present
-  { path: 'osrp', component: MessageBuilderComponent, data: { id: ERoutingIds.osrp } },
-  //Appointment Successfully
-  { path: 'appoinment-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.appoinmentSuccessfully } },
-
-  //complaint Successfully
-  { path: 'complaint-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.complaintSuccessfully } },
-
-  //Open technical S/R
-  { path: 'open-sr', component: MessageBuilderComponent, data: { id: ERoutingIds.openSr } },
-  //package upgrade Successfully
-  { path: 'package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.packageUpgradeRequestSuccessfully } },
-  //Account not active
-  { path: 'account-not-active', component: MessageBuilderComponent, data: { id: ERoutingIds.accountNotActive } },
-  //Router upgrade Successfully
-  { path: 'router-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerUpgradeRequestSuccessfully } },
-  //router and package upgrade Successfully
-  { path: 'router-package-upgrade-request-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerPackageUpgradeRequestSuccessfully } },
-  // 3rd party router Successfully
-  { path: 'third-party-router-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.thirdPartyRouterSuccessfully } },
-  // third party  router Successfully
-  { path: 'troubleshoot-complete', component: MessageBuilderComponent, data: { id: ERoutingIds.troubleshootComplete } },
-  // tv-pin-reset-successfull
-  { path: 'tv-pin-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvPinUpdateSuccessfull } },
-  // rest ELife Login Pin
-  { path: 'reset-login-pin', component: MessageBuilderComponent, data: { id: ERoutingIds.restELifeLoginPin } },
-  // rest ELife Login Pin Success
-  { path: 'reset-login-pin-success', component: MessageBuilderComponent, data: { id: ERoutingIds.restELifeLoginPinResetSuccess } },
-  // Cancel Game Session Confirm
-  { path: 'game-session-cancel', component: MessageBuilderComponent, data: { id: ERoutingIds.gameSessionCancelConfirmed } },
-
-  //Router Reboot Required
-  //Issue Not Fixed
-  //Internet password reset required - 1122 - Module-4
-  { path: 'internet-password-reset-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccess } },
-  { path: 'internet-password-reset-error', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordError } },
-  { path: 'internet-password-reset-fail', component: MessageBuilderComponent, data: { id: ERoutingIds.tryAgainError } },
-  { path: 'internet-password-reset-detail', component: MessageBuilderComponent, data: { id: ERoutingIds.resetInternetPasswordSuccessDetail } },
-
   // Reset Router Wi-Fi Password
   { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
-  { path: 'reset-router-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetRouterWifiPasswordSuccess } },
 
-  { path: 'unable-to-reach-router', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToReachRouter } },
-  { path: 'unable-to-reach-router-failed', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToReachRouterFailed } },
-  { path: 'unable-to-reset-password', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToResetPassword } },
   { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
   { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
-  { path: 'unable-to-process-request', component: MessageBuilderComponent, data: { id: ERoutingIds.unableToProcessRequest } },
   { path: 'reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.resetTelephoneCCBPIN } },
   // 1122 Module - 4 END
 
@@ -171,56 +132,40 @@ const routes: Routes = [
   // #endregion  third party  router
 
   //Router Reset Required
-  { path: 'reset-wifi-password-success', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordSuccess } },
   { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
-  { path: 'reset-wifi-password-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.resetWifiPasswordFormSuccessfully } },
 
   //Router managed, but not reachable
   { path: 'router-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerNotReachableForm } },
-  { path: 'router-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.routerNotReachableFormSuccessfully } },
   { path: 'router-not-reachable-own-router-care', component: DeviceCareComponent, data: { id: ERoutingIds.routerNotReachableOwnRouterCare } },
 
   //TV Box Not Reachable
   { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
-  { path: 'tvBox-not-reachable-form_successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxNotReachableFormSuccessfully } },
 
   //TV set top box restart required
-  { path: 'tvBox-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxRestartRequiredSuccessfully } },
   { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
   { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
 
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
-  { path: 'service-detail', component: ServiceDetailComponent },
-  { path: 'tv-details', component: TvDetailComponent },
   { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
   { path: 'game-session', component: GameSessionComponent },
-
-  //Unable to watch channel
-  // { path: 'unable-to-watch-channel-continue', component: DeviceCareComponent, data: { id: ERoutingIds.enableWatchChannelContinueTroubleshoot } },
-  { path: 'tvBox-reset-successfull', component: MessageBuilderComponent, data: { id: ERoutingIds.tvBoxResetSuccessfully } },
 
   // Package Transfer
   { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
   { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
-  { path: 'package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.packageTransferSuccess } },
   //Unable to watch specific channel
   { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
   { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
   { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
-  { path: 'unable-to-watch-package-transfer-success', component: MessageBuilderComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransferSuccess } },
 
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
-  { path: 'no-issue-phone-phone-reset-ccb-pin-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPinSuccessfully } },
   { path: 'no-issue-phone-phone-Change-call-forward', component: ChangeCallForwardComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForward } },
-  { path: 'no-issue-phone-phone-Change-call-forward-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForwardSuccessfully } },
 
   { path: 'DummyDel', component: DummyDelComponent, data: { id: ERoutingIds.noIssuePhone } },
   { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },
 
   //Ont reboot required
-  { path: 'ont-restart-required-successfully', component: MessageBuilderComponent, data: { id: ERoutingIds.ontRestartRequiredSuccessfully } },
   { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
   { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
 

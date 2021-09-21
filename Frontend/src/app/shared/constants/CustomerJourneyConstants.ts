@@ -796,14 +796,14 @@ export class CustomerJourneyConstants {
   public static issueFixedTvButton: IButton = {
     title: 'BUTTONS.ISSUE_FIXED',
     clickListener: () => {},
-    linkTo: '/tv-details',
+    linkTo: '/issues/tv/detail',
     behaviour: 'primary',
   };
 
   public static issueFixedPhoneButton: IButton = {
     title: 'BUTTONS.ISSUE_FIXED',
     clickListener: () => {},
-    linkTo: '/tv-details',
+    linkTo: '/issues/tv/detail',
     behaviour: 'primary',
   };
 
@@ -1075,7 +1075,7 @@ export class CustomerJourneyConstants {
   public static backButton = {
     title: 'BUTTONS.BACK',
     clickListener: () => {},
-    linkTo: '/tv-details',
+    linkTo: '/issues/tv/detail',
     behaviour: 'secondary',
   };
 

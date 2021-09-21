@@ -231,11 +231,11 @@ const CONNECT_HOME_ZONE = {
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.TRACK_COMPLAINT',
-  linkTo: '',
+  linkTo: 'track-complaint',
 };
 const TRACK_REQUEST = {
   body: 'QUICK_LINKS.TRACK_REQUEST',
-  linkTo: '',
+  linkTo: 'track-request',
 };
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.UPGRADE_ROUTER',

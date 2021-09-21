@@ -9,7 +9,7 @@ import { EventEmitter } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input()
-  type: 'primary' | 'secondary' | 'link';
+  type: 'primary' | 'secondary' | 'link' | 'terms';
   @Input()
   title: string;
   @Input()

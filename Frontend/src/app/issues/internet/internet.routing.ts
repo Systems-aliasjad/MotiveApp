@@ -58,6 +58,7 @@ import { InstallNewRouterFlow6MessageComponent } from './routes/install-new-rout
 import { InstallNewRouterFlow7MessageComponent } from './routes/install-new-router-flow7-message.component';
 import { ResetInternetPasswordComponent } from './routes/reset-internet-password/reset-internet-password.component';
 import { ResetInternetPasswordSuccessComponent } from '../password/routes/reset-internet-password-success.component';
+import { ServiceDetailComponent } from './routes/service-detail/service-detail.component';
 
 const routes: Routes = [
   {
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'unable-to-browse-internet/step2',
     component: BrowsingUnableStep2Component,
+  },
+  {
+    path: 'service-detail',
+    component: ServiceDetailComponent,
   },
   {
     path: 'osrp/move-elife-connection',

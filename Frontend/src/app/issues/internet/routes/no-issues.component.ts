@@ -47,7 +47,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/service-detail']);
+    this.router.navigate(['issues/internet/service-detail']);
   }
 
   async button2Listener() {
