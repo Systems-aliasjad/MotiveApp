@@ -1,3 +1,6 @@
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
 ion-button,
 .btn {
   width: 100%;
@@ -12,4 +15,37 @@ ion-button,
 .transparent-btn{
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.agree-terms{
+  @media screen and (max-width: 992px)  {
+    margin-bottom: 1rem;
+  }
+  ion-item{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    --min-height: auto;
+    margin-bottom: 0;
+    --border-style:none;
+    --background: transparent;
+    --color: $secondary-color;
+    ion-label{
+      transform:none;
+      margin-top: 0;
+      margin-right: 0;
+      margin-left: .8rem;
+      margin-bottom: 0;
+      color: $secondary-color;      
+      a{
+        color: $etisalat-color;
+        display: inline-block;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+          color: $primary-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
 }
