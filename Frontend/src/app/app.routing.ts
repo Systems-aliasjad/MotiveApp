@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 // import { MessageBuilderComponent } from './message-builder/message-builder.component';
-import { ThankyouScreenComponent } from './thankyou-screen/thankyou-screen.component';
+import { ThankyouScreenComponent } from './shared/components/thankyou-screen/thankyou-screen.component';
 import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
-import { ThankyouScreenComponent } from '../thankyou-screen/thankyou-screen.component';
+import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-screen.component';
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 
