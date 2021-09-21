@@ -8,6 +8,11 @@ import { InstallEtisalatRouterDialogComponent } from 'src/app/shared/dialogs/ins
 import { SharedService } from 'src/app/shared/shared.service';
 import { errorMessages, regExps } from 'src/app/shared/validators/validations';
 
+export enum DialogType {
+  Brand = 1,
+  MOdal,
+}
+
 @Component({
   selector: 'app-install-etisalat-router',
   templateUrl: './install-etisalat-router.component.html',
@@ -16,14 +21,28 @@ import { errorMessages, regExps } from 'src/app/shared/validators/validations';
 export class InstallEtisalatRouterComponent implements OnInit {
   public formGroup: FormGroup;
   error = errorMessages;
-  codeType;
   modal;
-  buttonText;
   subscription: Subscription;
+
+  //for storing lists //later comes from server
   brandList;
   modelList;
+
+  //for passing the array to child dialog
   arrayList;
+
   modelHeader;
+
+  //differentiate modal is for brand or modal
+  modalType;
+
+  //value returned selected by user
+  formValueReturned;
+
+  valueForBrand;
+  valueForModel;
+
+  myBtnSize;
   constructor(
     private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute,
@@ -32,7 +51,6 @@ export class InstallEtisalatRouterComponent implements OnInit {
     public router: Router,
     private location: Location
   ) {
-    this.codeType = this.router.url;
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.initialization();
     });
@@ -53,6 +71,7 @@ export class InstallEtisalatRouterComponent implements OnInit {
 
   initialization() {
     this.sharedService.setDefaultValues();
+    this.sharedService.setHeaderConfig('HEADER.INSTALL_ETISALAT_ROUTER', true);
 
     this.brandList = [
       { text: 'Brand 1', value: '1' },
@@ -74,13 +93,15 @@ export class InstallEtisalatRouterComponent implements OnInit {
   }
 
   async openInstallEtisalatRouterDialog(value) {
-    if (value == 1) {
+    if (value == DialogType.Brand) {
       this.arrayList = this.brandList;
       this.modelHeader = 'HEADER.SELECT_BRAND';
-    } else {
+    } else if (value == DialogType.MOdal) {
       this.modelHeader = 'HEADER.SELECT_MODEL';
       this.arrayList = this.modelList;
     }
+
+    this.modalType = value;
 
     //Now open dialog
     this.modal = await this.modalCtrl.create({
@@ -90,7 +111,23 @@ export class InstallEtisalatRouterComponent implements OnInit {
         modelHeader: this.modelHeader,
       },
     });
+    this.modal.onWillDismiss().then((dataReturned) => {
+      // trigger when about to close the modal
+      this.formValueReturned = dataReturned.data;
+      this.InitilizeHtmlDOM();
+    });
+
     return await this.modal.present();
+  }
+  InitilizeHtmlDOM() {
+    if (this.formValueReturned != null && this.formValueReturned != undefined && this.formValueReturned != '') {
+      //Add value to Brand
+      if (this.modalType == DialogType.Brand) {
+        this.valueForBrand = this.brandList.find((x) => x.value.toString() == this.formValueReturned);
+      } else if (this.modalType == DialogType.MOdal) {
+        this.valueForModel = this.modelList.find((x) => x.value.toString() == this.formValueReturned);
+      }
+    }
   }
 
   get f() {
@@ -99,7 +136,7 @@ export class InstallEtisalatRouterComponent implements OnInit {
 
   SubmitForm() {
     console.log(this.formGroup.value);
-    // this.router.navigate(['package-upgrade-request-successfully']);
+    this.router.navigate(['/issues/internet/install-new-router-flow6']);
   }
 
   onBackClick() {

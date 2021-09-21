@@ -8,7 +8,6 @@ import { TermsConditionsComponent } from './shared/components/terms-conditions/t
 import { LoaderComponent } from './shared/components/loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
 import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
-import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
 import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
@@ -86,10 +85,19 @@ const routes: Routes = [
     path: 'loader',
     component: LoaderComponent,
   },
-  {
-    path: 'reset-internet-password',
-    component: ResetInternetPasswordComponent,
-  },
+  // {
+  //   path: 'router-restart',
+  //   component: RestartInstructionComponent,
+  //   data: { id: ERoutingIds.routerRestart },
+  // },
+  // {
+  //   path: 'reset-internet-password',
+  //   component: ResetInternetPasswordComponent,
+  // },
+  // {
+  //   path: 'reset-internet-password',
+  //   component: ResetInternetPasswordComponent,
+  // },
   {
     path: 'device-care',
     component: DeviceCareComponent,

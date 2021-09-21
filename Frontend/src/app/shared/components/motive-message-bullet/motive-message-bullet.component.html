@@ -25,11 +25,14 @@
         </ion-list>
 
         <div class="content" *ngIf="Section1Data?.paragraphs">
-          <p *ngFor="let txt of Section1Data?.paragraphs">
-            <!-- for CLICK HERE see screen 1.17.2 -->
-            <a *ngIf="Section1Data?.span" (click)="Section1Data.spanListener()" class="__clickhere">{{ Section1Data.span | translate }}</a>
-            {{ txt.title | translate }}
-          </p>
+          <div *ngFor="let obj of Section1Data?.paragraphs">
+            <p>{{ obj.title | translate }}</p>
+            <ion-list *ngIf="obj.children" class="bullet-list">
+              <ion-item *ngFor="let item of obj.children; let i = index">
+                <ion-label>{{ i + 1 }}. {{ item | translate }}</ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
         </div>
       </ion-col>
     </ion-row>

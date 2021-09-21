@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -27,12 +27,6 @@ export class InstallEtisalatRouterDialogComponent implements OnInit {
   }
 
   dismiss() {
-    this.modalCtrl.dismiss();
-  }
-
-  SubmitForm() {
-    console.log(this.formGroup.value);
-    this.dismiss();
-    // this.router.navigate(['package-upgrade-request-successfully']);
+    this.modalCtrl.dismiss(this.formGroup.controls['radioList'].value);
   }
 }

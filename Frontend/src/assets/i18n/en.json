@@ -1,5 +1,6 @@
 {
   "HEADER": {
+    "INSTALL_ETISALAT_ROUTER": "Install Etisalat router",
     "NO_DIAL_TONE": "No dial tone",
     "SELECT_BRAND": "Select Brand",
     "SELECT_MODEL": "Select Model",
@@ -41,6 +42,7 @@
 
   "SUBHEADER": {
     "CALL_DETAILS": "Call details",
+    "PLEASE_FILL_YOUR_COMPLETE_DETAILS": "Please fill your complete details",
 
     "PHONE_TROUBLESHOOTING_GUIDELINES": "Phone troubleshooting guidelines",
     "RESET_TV_BOX": "Reset TV box",
@@ -135,6 +137,9 @@
     "PIN": "PIN"
   },
   "BUTTONS": {
+    "INSTALLATION_COMPLETED": "Installation completed",
+    "FORGOT_PASSWORD": "Forgot password",
+    "I_NEED_HELP_WITH_INSTALLING_THE_ROUTER": "I need help with installing the router",
     "SELECT": "SELECT",
     "INSTALL_ROUTER": "Install router",
     "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
@@ -232,8 +237,10 @@
 
   "MESSAGES": {
     "INSTALL_ROUTER": "Install router",
+    "FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION": "Follow these steps to complete the installation:",
+    "Connect_the_new_router_to_the_‘X’_port_of_the_wall-mounted_fiber_BOX": "Connect the new router to the ‘X’ port of the wall-mounted fiber box",
     "YOU_ARE_CURRENTLY_USING_A_THIRD-PARTY_ROUTER": "You are currently using a third-party router.",
-
+    "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
     "WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_INSTALL_AN_ETISALAT_ROUTER": "We can provide remote support if you install an Etisalat router.",
     "IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD": "If you choose the second option, you will need to wait 30 minutes and then reset your internet password.",
     "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
@@ -421,7 +428,9 @@
     "INSTALLATION_OF_ROUTER_IS_IN_PROGESS..._IT_WILL_TAKE_UP_TO_30_MINUTEs": "Installation of router is in progess... it will take up to 30 minutes.",
     "FOLLOW_THESE_STEPS_AFTER_30_MINUTES": "Follow these steps after 30 minutes:",
     "CONNECT_THE_NEW_ROUTER_TO_X_PORT_OF_THE_WALL-MOUNTED_FIBER_BOX": "Connect the new router to 'X' port of the wall-mounted fiber box",
-    "SET_THE_ROUTER_WITH_A_NEW_PASSWORD": "Set the router with a new password"
+    "SET_THE_ROUTER_WITH_A_NEW_PASSWORD": "Set the router with a new password",
+    "INSTALLING_ETISALAT_ROUTER": "Installing Etisalat router",
+    "WAIT_FOR_5_MINUTES_THE_ROUTER_WILL_BE_CONFIGURED_WITH_NEW_PASSWORD_AUTOMATICALLY_AND_YOU_WILL_BE_ABLE_TO_USE_INTERNET_SERVICE_NORMALLY": "Wait for 5 minutes. The router will be configured with new password automatically and you will be able to use Internet service normally"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

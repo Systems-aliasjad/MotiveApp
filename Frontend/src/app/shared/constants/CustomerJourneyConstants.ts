@@ -495,6 +495,34 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static installNewRouterFlow6MessageCase = {
+    header: 'MESSAGES.INSTALLING_ETISALAT_ROUTER',
+
+    paragraphs: [
+      {
+        title: 'MESSAGES.INSTALLATION_OF_ROUTER_IS_IN_PROGESS..._IT_WILL_TAKE_UP_TO_30_MINUTEs',
+      },
+      {
+        title: 'MESSAGES.FOLLOW_THESE_STEPS_AFTER_30_MINUTES',
+        children: [
+          'MESSAGES.CONNECT_THE_NEW_ROUTER_TO_X_PORT_OF_THE_WALL-MOUNTED_FIBER_BOX',
+          'MESSAGES.WAIT_FOR_5_MINUTES_THE_ROUTER_WILL_BE_CONFIGURED_WITH_NEW_PASSWORD_AUTOMATICALLY_AND_YOU_WILL_BE_ABLE_TO_USE_INTERNET_SERVICE_NORMALLY',
+        ],
+      },
+    ],
+  };
+
+  public static installNewRouterFlow7MessageCase = {
+    header: 'MESSAGES.INSTALL_NEW_THIRD-PARTY_ROUTER',
+
+    paragraphs: [
+      {
+        title: 'MESSAGES.FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION',
+        children: ['MESSAGES.Connect_the_new_router_to_the_‘X’_port_of_the_wall-mounted_fiber_BOX', 'MESSAGES.SET_THE_ROUTER_WITH_A_NEW_PASSWORD'],
+      },
+    ],
+  };
+
   public static routerInstallSuccessfullyMessageCase = {
     header: 'MESSAGES.ROUTER_INSTALL_SUCCESSFULLY',
     paragraphs: ['MESSAGES.ROUTER_INSTALL_SUCCESSFULLY_BODY'],
@@ -518,7 +546,7 @@ export class CustomerJourneyConstants {
     title: 'BUTTONS.RESET_NOW',
     explanatoryNote: '',
     clickListener: () => {},
-    linkTo: '/reset-internet-password',
+    linkTo: '/issues/internet/reset-internet-password',
     behaviour: 'primary',
   };
 

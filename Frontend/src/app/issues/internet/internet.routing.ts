@@ -54,6 +54,10 @@ import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.
 import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
 import { RouterNotReachableFormComponent } from './routes/router-not-reachable-form.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
+import { InstallNewRouterFlow6MessageComponent } from './routes/install-new-router-flow6-message.component';
+import { InstallNewRouterFlow7MessageComponent } from './routes/install-new-router-flow7-message.component';
+import { ResetInternetPasswordComponent } from './routes/reset-internet-password/reset-internet-password.component';
+import { ResetInternetPasswordSuccessComponent } from '../password/routes/reset-internet-password-success.component';
 import { ServiceDetailComponent } from './routes/service-detail/service-detail.component';
 
 const routes: Routes = [
@@ -295,6 +299,24 @@ const routes: Routes = [
   {
     //quick links
     //I want to install my new router
+    //Flow 6 Message
+
+    path: 'install-new-router-flow6',
+    component: InstallNewRouterFlow6MessageComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
+    //Flow 7 Message
+
+    path: 'install-new-router-flow7',
+    component: InstallNewRouterFlow7MessageComponent,
+  },
+
+  {
+    //quick links
+    //I want to install my new router
     //Flow 5 Message
 
     path: 'install-new-router-flow5',
@@ -307,6 +329,11 @@ const routes: Routes = [
     //
     path: 'install-new-router-reset-internet-password',
     component: InstallNewRouterResetInternetPasswordComponent,
+  },
+
+  {
+    path: 'reset-internet-password',
+    component: ResetInternetPasswordComponent,
   },
 
   {
@@ -339,6 +366,11 @@ const routes: Routes = [
   {
     path: 'book-complaint',
     component: BookComplaintComponent,
+  },
+
+  {
+    path: 'internet-password-reset-success',
+    component: ResetInternetPasswordSuccessComponent,
   },
 ];
 
