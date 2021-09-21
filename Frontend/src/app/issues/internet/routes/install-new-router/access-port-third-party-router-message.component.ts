@@ -7,17 +7,19 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-install-new-router-flow4-message',
-  template: `<app-motive-message-bullet
+  selector: 'app-access-port-thirdparty-router-message',
+  template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-  ></app-motive-message-bullet>`,
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  ></motive-message>`,
 })
-export class InstallNewRouterFlow4MessageComponent implements OnInit, OnDestroy {
+export class AccessPortThirdPartyRouterMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -25,7 +27,12 @@ export class InstallNewRouterFlow4MessageComponent implements OnInit, OnDestroy 
   imgSrc;
   button1: IMotiveButton = {
     type: 'secondary',
-    title: 'BUTTONS.DONE',
+    title: 'BUTTONS.INSTALL_ROUTER',
+  };
+
+  button2: IMotiveButton = {
+    type: 'link',
+    title: 'BUTTONS.INSTALL_NEW_THIRD-PARTY_ROUTER',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -45,10 +52,13 @@ export class InstallNewRouterFlow4MessageComponent implements OnInit, OnDestroy 
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow4MessageCase;
+    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow5MessageCase;
   }
 
   button1Listener() {
     this.router.navigate(['/thanks']);
+  }
+  button2Listener() {
+    this.router.navigate(['/issues/internet/router-install-successfully']);
   }
 }

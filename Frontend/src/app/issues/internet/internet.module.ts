@@ -29,7 +29,7 @@ import { RouterRestartInstructionsComponent } from './routes/router-restart-inst
 import { RouterNotRestartedCareComponent } from './routes/router-not-restarted-care.component';
 import { RouterFixedRestartRequiredComponent } from './routes/router-fixed-restart-required.component';
 import { RouterRestartCareComponent } from './routes/router-restart-care.component';
-import { InstallNewRouterMessageComponent } from './routes/install-new-router-message.component';
+
 import { RouterInstallSuccessfullyMessageComponent } from './routes/router-install-successfully-message.component';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
@@ -38,12 +38,8 @@ import { ThirdPartyRouterResetCareComponent } from './routes/3rd-party-router-re
 import { BrowsingUnableStep1Component } from './routes/browsing-unable-step1.component';
 import { BrowsingUnableStep2Component } from './routes/browsing-unable-step2.component';
 import { BrowsingUnableStep3Component } from './routes/browsing-unable-step3.component';
-import { InstallNewRouterCareComponent } from './routes/install-new-router-care.component';
-import { InstallNewRouterComplaintSuccessfullyMessageComponent } from './routes/install-new-router-complaint-successfully-message.component';
-import { InstallNewRouterFlow2MessageComponent } from './routes/install-new-router-flow2-message.component';
-import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-router-flow4-message.component';
-import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
-import { InstallNewRouterFlow5MessageComponent } from './routes/install-new-router-flow5-message.component';
+import { InstallNewRouterCareComponent } from './routes/install-new-router/install-new-router-care.component';
+import { PnpPortManagedRouterMessageComponent } from './routes/install-new-router/pnp-Port-Managed-Router-Message.Component';
 import { InstallEtisalatRouterComponent } from './routes/install-etisalat-router/install-etisalat-router.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
@@ -61,10 +57,15 @@ import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.
 import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
 import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
-import { InstallNewRouterFlow6MessageComponent } from './routes/install-new-router-flow6-message.component';
-import { InstallNewRouterFlow7MessageComponent } from './routes/install-new-router-flow7-message.component';
 import { ResetInternetPasswordComponent } from './routes/reset-internet-password/reset-internet-password.component';
 import { ServiceDetailComponent } from './routes/service-detail/service-detail.component';
+import { InstallNewRouterMessageComponent } from './routes/install-new-router/install-new-router-message.component';
+import { InstallNewRouterComplaintSuccessfullyMessageComponent } from './routes/install-new-router/install-new-router-complaint-successfully-message.component';
+import { ContinueInstallingThirdPartyRouterMessageComponent } from './routes/install-new-router/continue-installing-thirdparty-router-message.component';
+import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router/install-new-router-reset-internet-passoword.component';
+import { AccessPortThirdPartyRouterMessageComponent } from './routes/install-new-router/access-port-third-party-router-message.component';
+import { InstallNewEtisalatRouterMessageComponent } from './routes/install-new-router/install-new-etisalat-router-message.component';
+import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new-router/install-new-thirdparty-router-message.component';
 
 @NgModule({
   declarations: [
@@ -112,12 +113,12 @@ import { ServiceDetailComponent } from './routes/service-detail/service-detail.c
     RouterUpgradeSuccessComponent,
     InstallNewRouterCareComponent,
     InstallNewRouterComplaintSuccessfullyMessageComponent,
-    InstallNewRouterFlow2MessageComponent,
-    InstallNewRouterFlow4MessageComponent,
+    PnpPortManagedRouterMessageComponent,
+    ContinueInstallingThirdPartyRouterMessageComponent,
     InstallNewRouterResetInternetPasswordComponent,
-    InstallNewRouterFlow5MessageComponent,
-    InstallNewRouterFlow6MessageComponent,
-    InstallNewRouterFlow7MessageComponent,
+    AccessPortThirdPartyRouterMessageComponent,
+    InstallNewEtisalatRouterMessageComponent,
+    InstallNewThirdPartyRouterMessageComponent,
     ResetInternetPasswordComponent,
     InstallEtisalatRouterComponent,
     RouterNotReachableFormComponent,

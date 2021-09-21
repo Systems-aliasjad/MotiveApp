@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-install-new-router-flow6-message',
+  selector: 'app-continue-installing-thirdparty-router-message',
   template: `<app-motive-message-bullet
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -15,32 +15,17 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
   ></app-motive-message-bullet>`,
 })
-export class InstallNewRouterFlow7MessageComponent implements OnInit, OnDestroy {
+export class ContinueInstallingThirdPartyRouterMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
-
   button1: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.I_NEED_HELP_WITH_INSTALLING_THE_ROUTER',
-  };
-
-  button2: IMotiveButton = {
     type: 'secondary',
-    title: 'BUTTONS.INSTALLATION_COMPLETED',
-  };
-
-  button3: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.FORGOT_PASSWORD',
+    title: 'BUTTONS.DONE',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -60,16 +45,10 @@ export class InstallNewRouterFlow7MessageComponent implements OnInit, OnDestroy 
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow7MessageCase;
+    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow4MessageCase;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/install-new-router-care']);
+    this.router.navigate(['/thanks']);
   }
-
-  button2Listener() {
-    this.router.navigate(['/issues/internet/reset-internet-password']);
-  }
-
-  button3Listener() {}
 }
