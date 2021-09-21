@@ -112,6 +112,11 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
     InstallNewRouterResetInternetPasswordComponent,
     InstallNewRouterFlow5MessageComponent,
     InstallEtisalatRouterComponent,
+    RouterNotReachableFormComponent,
+    ThirdPartyRouterFormComponent,
+    RouterPackageUpgradeRecommendedFormComponent,
+    RouterUpgradeRecommendedFormComponent,
+    BookComplaintComponent,
   ],
   imports: [
     CommonModule,
@@ -129,11 +134,6 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
       defaultLanguage: 'en',
     }),
     BrMaskerModule,
-    RouterNotReachableFormComponent,
-    ThirdPartyRouterFormComponent,
-    RouterPackageUpgradeRecommendedFormComponent,
-    RouterUpgradeRecommendedFormComponent,
-    BookComplaintComponent,
   ],
 })
 export class InternetModule {}
