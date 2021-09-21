@@ -120,7 +120,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     else if (this.codeType === ERoutingIds.resetWifiPasswordFormSuccessfully) {
     }
     // Troubleshoot Complete
-    // 2.7.52
+    // /tv/troubleshoot-complete 2.7.52
     else if (this.codeType === ERoutingIds.troubleshootComplete) {
       this.sharedService.setHeaderConfig('', false, false);
       this.Section1Data = CustomerJourneyConstants.troubleshootComplete;
@@ -128,7 +128,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.troubleshootCompleteButtons));
     }
     // TV PIN update Complete
-    // /tv/troubleshoot-complete
+    // 2.7.14
     else if (this.codeType === ERoutingIds.tvPinUpdateSuccessfull) {
     }
 
