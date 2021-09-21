@@ -5,7 +5,7 @@
       <h5>{{ modelHeader | translate }}</h5>
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
+      <motive-button [title]="'BUTTONS.CLOSE'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -14,13 +14,13 @@
 <ion-content>
   <ion-grid class="ion-no-padding">
     <!-- Dialog Internet Issues List Start -->
-    <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
+    <form [formGroup]="formGroup">
       <ion-row>
         <ion-col size="12" class="pb-0">
           <ion-list>
             <ion-radio-group allow-empty-selection="true" name="radio-group" formControlName="radioList">
               <ion-list-header>
-                <ion-label>Name</ion-label>
+                <!-- <ion-label>Name</ion-label> -->
               </ion-list-header>
 
               <ion-item *ngFor="let item of arrayList">
@@ -31,8 +31,18 @@
           </ion-list>
         </ion-col>
       </ion-row>
-
-      <motive-button [title]="'BUTTONS.SELECT'" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button>
     </form>
   </ion-grid>
 </ion-content>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button [title]="'BUTTONS.SELECT'" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="dismiss()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>

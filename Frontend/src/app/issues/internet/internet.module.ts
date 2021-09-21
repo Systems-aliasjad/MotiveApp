@@ -61,6 +61,9 @@ import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.
 import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
 import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
+import { InstallNewRouterFlow6MessageComponent } from './routes/install-new-router-flow6-message.component';
+import { InstallNewRouterFlow7MessageComponent } from './routes/install-new-router-flow7-message.component';
+import { ResetInternetPasswordComponent } from './routes/reset-internet-password/reset-internet-password.component';
 
 @NgModule({
   declarations: [
@@ -111,6 +114,9 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
     InstallNewRouterFlow4MessageComponent,
     InstallNewRouterResetInternetPasswordComponent,
     InstallNewRouterFlow5MessageComponent,
+    InstallNewRouterFlow6MessageComponent,
+    InstallNewRouterFlow7MessageComponent,
+    ResetInternetPasswordComponent,
     InstallEtisalatRouterComponent,
     RouterNotReachableFormComponent,
     ThirdPartyRouterFormComponent,

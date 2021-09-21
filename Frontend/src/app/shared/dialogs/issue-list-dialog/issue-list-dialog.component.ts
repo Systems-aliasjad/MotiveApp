@@ -75,7 +75,7 @@ export class IssueListDialog implements OnInit {
     {
       issue: 'Reset internet password',
       description: 'Find our how to change your password',
-      route: 'reset-internet-password',
+      route: '/issues/internet/reset-internet-password',
     },
     {
       issue: "Reset router's Wi-Fi password",
