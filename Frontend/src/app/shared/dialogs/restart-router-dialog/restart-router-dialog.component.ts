@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { SharedService } from '../../shared.service';
 })
 export class RestartRouterDialog implements OnInit {
   constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
-  buttonsConfig: IButton[] = [
+  buttonsConfig: any[] = [
     {
       title: 'BUTTONS.EXIT_TROUBLESHOOTING',
       clickListener: () => {

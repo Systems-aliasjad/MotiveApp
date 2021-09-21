@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApplicableCodes } from '../shared/constants/constants';
 import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
-import { IButton } from '../shared/constants/types';
 import { ERoutingIds } from '../shared/constants/constants';
 import { SharedService } from '../shared/shared.service';
 import { Location } from '@angular/common';
@@ -29,7 +28,7 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
   imgSrc: string = this.warningImgSrc;
 
   showLoader: boolean = false;
-  buttonConfig: IButton[] = [];
+  buttonConfig: any[] = [];
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
