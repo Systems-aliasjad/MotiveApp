@@ -1,27 +1,23 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { successImgSrc, warningImgSrc } from 'src/app/shared/constants/constants';
+import { infoImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
-import { SharedService } from 'src/app/shared/shared.service';
 
-/**
- * Reset Internet Password Success
- */
 @Component({
-  selector: 'reset-internet-password-success',
-  template: `<motive-message
+  selector: 'app-install-new-router-flow6-message',
+  template: `<app-motive-message-bullet
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-  ></motive-message>`,
+  ></app-motive-message-bullet>`,
 })
-export class ResetInternetPasswordSuccessComponent implements OnInit, OnDestroy {
+export class InstallNewRouterFlow6MessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -32,7 +28,7 @@ export class ResetInternetPasswordSuccessComponent implements OnInit, OnDestroy 
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -45,13 +41,11 @@ export class ResetInternetPasswordSuccessComponent implements OnInit, OnDestroy 
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {
-    this.sharedService.setHeaderConfig('', false);
-  }
+  updateHeader() {}
 
   updatePageContent() {
-    this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.resetInternetPasswordSuccess;
+    this.imgSrc = infoImgSrc;
+    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow6MessageCase;
   }
 
   button1Listener() {

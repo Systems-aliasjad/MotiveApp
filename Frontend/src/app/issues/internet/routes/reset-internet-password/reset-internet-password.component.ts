@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { regExps, errorMessages } from '../../validators/validations';
-import { SharedService } from '../../shared.service';
-import { ConfirmedValidator } from '../../constants/constants';
+import { regExps, errorMessages } from '../../../../shared/validators/validations';
+import { SharedService } from '../../../../shared/shared.service';
+import { ConfirmedValidator } from '../../../../shared/constants/constants';
 import { Subscription } from 'rxjs';
 import { ModalController } from '@ionic/angular';
-import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
+import { TermsConditionsComponent } from '../../../../shared/components/terms-conditions/terms-conditions.component';
 import { Location } from '@angular/common';
 @Component({
   selector: 'app-reset-internet-password',
@@ -56,7 +56,7 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
 
   SubmitForm() {
     console.log(this.formGroup.valid);
-    this.router.navigate(['internet-password-reset-success']);
+    this.router.navigate(['/issues/internet/internet-password-reset-success']);
     // On Error Navigate to
     // this.router.navigate(['internet-password-reset-error']);
   }

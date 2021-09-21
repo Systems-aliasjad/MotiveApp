@@ -45,7 +45,7 @@ export class InternetPasswordResetComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/reset-internet-password']);
+    this.router.navigate(['/issues/internet/reset-internet-password']);
   }
 
   button2Listener() {
