@@ -58,7 +58,6 @@ export class MotiveMessageBulletComponent implements OnInit {
   }
 
   constructor() {}
-  /*  ngOnInit(): void {} */
 
   button1Listener() {
     this.button1Click.next({ bubbles: false });
