@@ -5,7 +5,7 @@ import { LandingComponent } from './landing/landing.component';
 // import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { ThankyouScreenComponent } from './shared/components/thankyou-screen/thankyou-screen.component';
 import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
-import { LoaderComponent } from './shared/components/loader/loader.component';
+import { LoaderComponent } from './loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
 import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
 import { ResetInternetPasswordComponent } from './shared/components/reset-internet-password/reset-internet-password.component';

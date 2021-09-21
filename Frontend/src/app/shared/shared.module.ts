@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { LoaderComponent } from './components/loader/loader.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
 import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-screen.component';
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
@@ -64,7 +63,6 @@ export function createTranslateLoader(http: HttpClient) {
     MotiveMessageComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
-    LoaderComponent,
     BookComplaintComponent,
     NumberOnlyDirective,
     IssueTabsComponent,
@@ -126,7 +124,6 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     MotiveMessageComponent,
     ThankyouScreenComponent,
-    LoaderComponent,
     BookComplaintComponent,
     ServiceIssueComponent,
     ResetInternetPasswordComponent,
