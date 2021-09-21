@@ -1,6 +1,8 @@
 import { Component, Input, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
+import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'motive-button',
@@ -26,7 +28,9 @@ export class ButtonComponent implements OnInit {
   @Output()
   clickHandler = new EventEmitter();
 
-  constructor(private modalCtrl: ModalController) {}
+  terms: boolean = false;
+  modal: any;
+  constructor(private modalCtrl: ModalController, private sharedService: SharedService) {}
 
   ngOnInit() {}
 
@@ -36,5 +40,21 @@ export class ButtonComponent implements OnInit {
 
   handleClick() {
     this.clickHandler.emit();
+  }
+
+  termsChange() {
+    this.sharedService.setTermsConditions(this.terms);
+  }
+
+  async PopupTermsConditions() {
+    this.modal = await this.modalCtrl.create({
+      component: TermsConditionsComponent,
+    });
+    this.modal.onDidDismiss().then((d) => {
+      this.sharedService.getTermsConditions().subscribe((_terms) => {
+        this.terms = _terms;
+      });
+    });
+    return await this.modal.present();
   }
 }
