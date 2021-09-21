@@ -18,8 +18,6 @@ import { TvBoxRestartRequiredComponent } from './routes/tvBox-restart-required.c
 import { UnableToWatchPackageTransferSuccessComponent } from './routes/unable-to-watch-package-transfer-success.component';
 import { UnableWatchChannelComponent } from './routes/unable-watch-channel.component';
 import { TvBoxResetFactoryComponent } from './routes/tv-box-reset-factory.component';
-import { BookComplaintComponent } from 'src/app/shared/components/book-complaint/book-complaint.component';
-import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { ELifeUpgradeSuccessComponent } from './routes/eLife-upgrade-success.component';
 import { BoxNotRestartedCareComponent } from './routes/box-not-restarted-care.component';
 import { PackageTransferStep1Component } from './routes/package-transfer-step1.component';
