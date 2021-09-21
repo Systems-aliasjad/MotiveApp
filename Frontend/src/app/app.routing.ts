@@ -16,7 +16,7 @@ import { ERoutingIds } from './shared/constants/constants';
 import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 import { ServiceDetailComponent } from './shared/components/service-detail/service-detail.component';
 import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
-import { TvDetailComponent } from './tv-detail/tv-detail.component';
+
 import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
@@ -193,7 +193,6 @@ const routes: Routes = [
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
   { path: 'service-detail', component: ServiceDetailComponent },
-  { path: 'tv-details', component: TvDetailComponent },
   { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
   { path: 'game-session', component: GameSessionComponent },
 

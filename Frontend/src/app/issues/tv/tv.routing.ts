@@ -30,6 +30,7 @@ import { UnableElifeLoginMessageComponent } from './routes/unable-elife-login-me
 import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
 import { ELifeUpgradeComponent } from './routes/eLife-upgrade.component';
 import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-form.component';
+import { TvDetailComponent } from './routes/detail/detail.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'troubleshoot-complete',
     component: TroubleshootCompleteMessageComponent,
+  },
+  {
+    path: 'detail',
+    component: TvDetailComponent,
   },
   {
     path: 'unable-to-login-elife',

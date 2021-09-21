@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 import { TvRoutingModule } from './tv.routing';
 import { MainComponent } from './routes/main.component';
-import { SharedModule } from '../../shared/shared.module';
+import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { OutageComponent } from './routes/outage.component';
@@ -30,10 +31,14 @@ import { UnableElifeLoginMessageComponent } from './routes/unable-elife-login-me
 import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
 import { ELifeUpgradeComponent } from './routes/eLife-upgrade.component';
 import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-form.component';
+import { TvDetailComponent } from './routes/detail/detail.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MainComponent,
+    TvDetailComponent,
     NoIssuesComponent,
     UnableWatchChannelStep1Component,
     PackageTransferStep1Component,
@@ -61,6 +66,19 @@ import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-for
     ELifeUpgradeSuccessComponent,
     TVBoxNotReachableFormComponent,
   ],
-  imports: [CommonModule, TvRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    TvRoutingModule,
+    SharedModule,
+    IonicModule.forRoot(),
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    }),
+  ],
 })
 export class TvModule {}

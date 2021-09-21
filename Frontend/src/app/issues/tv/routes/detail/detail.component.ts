@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { CustomerJourneyConstants } from '../shared/constants/CustomerJourneyConstants';
-import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
-import { SharedService } from '../shared/shared.service';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'app-tv-detail',
-  templateUrl: './tv-detail.component.html',
-  styleUrls: ['./tv-detail.component.scss'],
+  selector: 'tv-detail',
+  templateUrl: './detail.component.html',
+  styleUrls: ['./detail.component.scss'],
 })
 export class TvDetailComponent implements OnInit {
   modal;
