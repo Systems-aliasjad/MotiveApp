@@ -14,11 +14,6 @@
 <!-- Button with White background -->
 <div *ngIf="type === 'secondary'">
   <ion-button class="btn secondary-btn close" [disabled]="disable" (click)="handleClick()">{{ title | translate }}</ion-button>
-  <!--  <ion-row>
-    <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-
-    </ion-col>
-  </ion-row> -->
 </div>
 
 <!-- Link -->
@@ -26,13 +21,7 @@
   <div class="transparent-btn" (click)="handleClick()">
     <a> {{ title | translate }}</a>
   </div>
-  <!-- <ion-row>
-    <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-
-    </ion-col>
-  </ion-row> -->
 </div>
-
 
 <!-- Terms and Condition -->
 <div *ngIf="type === 'terms'">
@@ -50,10 +39,4 @@
       </ion-label>
     </ion-item>
   </div>
-  <!-- <ion-row>
-    <ion-col [sizeLg]="LG" [sizeMd]="MD" [size]="SM" class="pt-0 pb-0 ion-text-center">
-
-    </ion-col>
-  </ion-row> -->
 </div>
-

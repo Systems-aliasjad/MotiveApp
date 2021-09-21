@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IButton } from '../../constants/types';
-import { SharedService } from '../../shared.service';
+
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-thankyou-screen',
@@ -10,32 +10,21 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./thankyou-screen.component.scss'],
 })
 export class ThankyouScreenComponent implements OnInit, OnDestroy {
-  buttonConfig: IButton[] = [
-    {
-      title: 'BUTTONS.CLOSE',
-      clickListener: () => {
-        this.goToLandingScreen();
-      },
-      linkTo: '/',
-      behaviour: 'secondary',
-    },
-  ];
   subscription: Subscription;
 
-  constructor(public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {
-    this.subscription = this.activatedRoute.params.subscribe((data) => {
-      this.initialization();
-    });
-  }
+  constructor(private router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {}
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.subscription = this.activatedRoute.params.subscribe((data) => {
+      this.setHeader();
+    });
+  }
 
-  initialization() {
+  setHeader() {
     this.sharedService.setHeaderConfig('', false, false);
-    this.sharedService.setButtonConfig(this.buttonConfig);
   }
 
   goToLandingScreen = () => {
