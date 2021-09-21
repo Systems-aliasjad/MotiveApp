@@ -46,4 +46,12 @@ export class UnableConnectNewDeviceWifiComponent implements OnInit, OnDestroy {
       };
     });
   }
+
+  onIssueFixed() {
+    this.router.navigate(['thanks']);
+  }
+
+  onBookAComplaint() {
+    this.router.navigate(['/issues/internet/book-complaint']);
+  }
 }

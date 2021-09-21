@@ -13,6 +13,20 @@
         </div>
       </ion-col>
     </ion-row>
-    <!-- <motive-button></motive-button> -->
   </ion-grid>
 </ion-content>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button [title]="'BUTTONS.ISSUE_FIXED'" [type]="'primary'" (clickHandler)="onIssueFixed()"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button [title]="'BUTTONS.BOOK_A_COMPLAINT'" [type]="'link'" (clickHandler)="onBookAComplaint()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>
