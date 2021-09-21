@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { BrMaskerModule } from 'br-mask';
 
-import { MainComponent } from './routes/main.component';
 import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
+import { MainComponent } from './routes/main.component';
 import { InternetRoutingModule } from './internet.routing';
 import { OutageComponent } from './routes/outage.component';
 import { OSRPComponent } from './routes/osrp.component';
@@ -40,11 +45,6 @@ import { InstallNewRouterFlow4MessageComponent } from './routes/install-new-rout
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router-reset-internet-passoword.component';
 import { InstallNewRouterFlow5MessageComponent } from './routes/install-new-router-flow5-message.component';
 import { InstallEtisalatRouterComponent } from './routes/install-etisalat-router/install-etisalat-router.component';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
-import { BrMaskerModule } from 'br-mask';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
@@ -61,6 +61,7 @@ import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.
 import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
 import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
+import { ServiceDetailComponent } from './routes/service-detail/service-detail.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
     MoveElifeConnectionMessageComponent,
     AppointmentSuccessfulMessageComponent,
     NewRouterSuccessMessageComponent,
+    ServiceDetailComponent,
     PasswordUpdateSuccessfulMessageComponent,
     ComplaintSuccessfulMessageComponent,
     OpenServiceRequestMessageComponent,

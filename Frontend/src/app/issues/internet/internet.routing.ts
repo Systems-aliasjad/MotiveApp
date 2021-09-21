@@ -54,6 +54,7 @@ import { ThirdPartyRouterFormComponent } from './routes/third-party-router-form.
 import { RouterPackageUpgradeRecommendedFormComponent } from './routes/router-package-upgrade-recommended-form.component';
 import { RouterNotReachableFormComponent } from './routes/router-not-reachable-form.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
+import { ServiceDetailComponent } from './routes/service-detail/service-detail.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
   {
     path: 'unable-to-browse-internet/step2',
     component: BrowsingUnableStep2Component,
+  },
+  {
+    path: 'service-detail',
+    component: ServiceDetailComponent,
   },
   {
     path: 'osrp/move-elife-connection',
