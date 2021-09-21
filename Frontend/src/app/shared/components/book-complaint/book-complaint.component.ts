@@ -67,7 +67,6 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     this.button1Click.emit(this.formGroup);
-    this.button1Click.next({ bubbles: false });
   }
 
   button2Listener() {
