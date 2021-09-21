@@ -44,7 +44,6 @@ import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-iss
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { ChangeCallForwardComponent } from './components/change-call-forward/change-call-forward.component';
 import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
@@ -94,7 +93,6 @@ export function createTranslateLoader(http: HttpClient) {
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinComponent,
-    ChangeCallForwardComponent,
     DummyDelComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
@@ -134,7 +132,6 @@ export function createTranslateLoader(http: HttpClient) {
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinComponent,
-    ChangeCallForwardComponent,
     DummyDelComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,

@@ -23,7 +23,6 @@ import { UnableWatchSpecificChannelComponent } from './shared/components/unable-
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 import { PhoneIssuesProblemValueAddedComponent } from './shared/components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinComponent } from './shared/components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { ChangeCallForwardComponent } from './shared/components/change-call-forward/change-call-forward.component';
 import { DummyDelComponent } from './shared/components/dummy-del/dummy-del.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
@@ -152,7 +151,6 @@ const routes: Routes = [
 
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
-  { path: 'no-issue-phone-phone-Change-call-forward', component: ChangeCallForwardComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForward } },
 
   { path: 'DummyDel', component: DummyDelComponent, data: { id: ERoutingIds.noIssuePhone } },
   { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },

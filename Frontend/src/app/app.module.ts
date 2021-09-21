@@ -7,7 +7,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -43,8 +42,6 @@ export function createTranslateLoader(http: HttpClient) {
     HttpModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
     BrowserAnimationsModule,
     PerfectScrollbarModule,
     IonicModule.forRoot(),

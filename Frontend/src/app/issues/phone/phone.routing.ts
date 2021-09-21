@@ -20,6 +20,7 @@ import { NoDailToneCareComponent } from './routes/no-dial-tone-care.component';
 import { UnableToCallCareComponent } from './routes/unable-to-call-care.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
+import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
 
 const routes: Routes = [
   {
@@ -89,6 +90,10 @@ const routes: Routes = [
   {
     path: 'ont-restart-required-successfully',
     component: OntRestartSuccessComponent,
+  },
+  {
+    path: 'no-issue-phone-phone-Change-call-forward',
+    component: ChangeCallForwardComponent,
   },
   {
     path: 'no-issue-phone-phone-Change-call-forward-successfully',

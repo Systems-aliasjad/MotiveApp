@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { HttpClient } from '@angular/common/http';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { PhoneRoutingModule } from './phone.routing';
 import { MainComponent } from './routes/main.component';
-import { SharedModule } from '../../shared/shared.module';
+import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { OntRebootComponent } from './routes/ont-reboot.component';
@@ -22,6 +26,7 @@ import { NoDailToneCareComponent } from './routes/no-dial-tone-care.component';
 import { UnableToCallCareComponent } from './routes/unable-to-call-care.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
+import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,7 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
     OutageComponent,
     IssueNotFixedComponent,
     NoDailToneCareComponent,
+    ChangeCallForwardComponent,
     UnableToCallCareComponent,
     OntRebootComponent,
     NoIssuesComponent,
@@ -45,6 +51,21 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
     BookComplaintComponent,
     BookAppointmentComponent,
   ],
-  imports: [CommonModule, PhoneRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    PhoneRoutingModule,
+    SharedModule,
+    ReactiveFormsModule,
+    FormsModule,
+    IonicModule.forRoot(),
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    }),
+  ],
 })
 export class PhoneModule {}
