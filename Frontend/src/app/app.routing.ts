@@ -61,6 +61,14 @@ const routes: Routes = [
     path: 'issues/tv',
     loadChildren: () => import('./issues/tv/tv.module').then((m) => m.TvModule),
   },
+  {
+    path: 'track-complaint',
+    loadChildren: () => import('./common-quick-links/track-complaint/track-complaint.module').then((m) => m.TrackComplaintModule),
+  },
+  {
+    path: 'track-request',
+    loadChildren: () => import('./common-quick-links/track-request/track-request.module').then((m) => m.TrackRequestModule),
+  },
   // REFACTORED LOGIC
   {
     path: '',
