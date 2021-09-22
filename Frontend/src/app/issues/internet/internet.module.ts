@@ -67,6 +67,7 @@ import { AccessPortThirdPartyRouterMessageComponent } from './routes/install-new
 import { InstallNewEtisalatRouterMessageComponent } from './routes/install-new-router/install-new-etisalat-router-message.component';
 import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new-router/install-new-thirdparty-router-message.component';
 import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
+import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 
 @NgModule({
@@ -103,6 +104,7 @@ import { BookAppointmentComponent } from './routes/book-appointment.component';
     RouterUpgradeRecommendedComponent,
     WifiAlarmComponent,
     RouterPackageUpgradeRecommendedComponent,
+    UnableHomezoneConnectionComponent,
     ThirdPartyRouterComponent,
     RouterNotReachableComponent,
     RouterNotReachableOwnRouterComponent,

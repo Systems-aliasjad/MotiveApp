@@ -22,7 +22,7 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
   termsCheck: boolean = false;
   subscription: Subscription;
   hideShowPassword(Type: any) {
-    Type.type = Type.type === 'password' ? 'text' : 'password';
+    this.passwordType = Type.type === 'password' ? 'text' : 'password';
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController, private location: Location) {

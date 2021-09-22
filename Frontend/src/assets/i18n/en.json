@@ -37,13 +37,14 @@
     "STEP_1/2": "Step 1/2",
     "STEP_2/2": "Step 2/2",
     "STEP_1/1": "Step 1/1",
-    "ELIFE_UPGRADE": "eLife Upgrade"
+    "ELIFE_UPGRADE": "eLife Upgrade",
+    "DEVICE_CONNECTED_TO_HOME_ZONE": "Device connected to Home Zone"
   },
 
   "SUBHEADER": {
     "CALL_DETAILS": "Call details",
     "PLEASE_FILL_YOUR_COMPLETE_DETAILS": "Please fill your complete details",
-
+    "UNABLE_TO_CONNECT_TO_HOME_ZONE": "Unable to connect to Home Zone",
     "PHONE_TROUBLESHOOTING_GUIDELINES": "Phone troubleshooting guidelines",
     "RESET_TV_BOX": "Reset TV box",
     "CHECK_CHANNEL_FILTER": "Check Channel Filter",
@@ -188,7 +189,7 @@
     "UPGRADE_ROUTER": "UPGRADE ROUTER",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
     "BUY_NEW_ROUTER": "BUY NEW ROUTER",
-    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
+    "YES_RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
     "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
     "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
     "USING_THE_SAME_ROUTER": "YES I AM",
@@ -264,6 +265,8 @@
     "DATE_VISIT": "Date of visit:",
     "APPOINTMENT_DETAILS": "Appointment details:",
     "HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT": "Here are the details of your complaint:",
+    "MAKE_SURE_TO_SELECT_YOUR_WIFI_NETWORK_NAME_USE_THE_CORRECT_WIFI_PASSWORD_WHILE_CONNECTING_TO_YOUR_WIFI_NETWORK": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
+    "WE_CAN_HELP_YOU_TO_RESET_WIFI_SETTINGS_IF_YOU_FORGOT_YOUR_WIFI_PASSWORD": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password",
     "INSTALL_ROUTER": "Install router",
     "CONTINUE_TO_CONFIGURE_YOUR_WI-FI_SETTINGS": "Continue to configure your Wi-Fi settings.",
     "FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION": "Follow these steps to complete the installation:",
@@ -587,12 +590,6 @@
     "PARENTAL_CONTROL_CHILD_LOCK": "Child lock"
   },
 
-  "DEVICE_CONNECTED_HOMEZONE": {
-    "HEADING": "Device connected to Home Zone",
-    "SUB_HEADING": "Unable to connect to Home Zone",
-    "PARAGRAPH1": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
-    "PARAGRAPH2": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password"
-  },
   "GAME_SESSION": {
     "ACTIVE_GAME_SESSION_DESCRIPTION": "You can cancel any game session that isn't working properly.",
     "CARD_HEADING": "eLife TV game",

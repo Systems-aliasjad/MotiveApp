@@ -50,21 +50,14 @@ export class TabTileComponent implements OnInit {
     slidesPerView: 4,
     spaceBetween: 1,
     loop: false,
-    speed:500,
+    speed: 500,
     grid: {
       row: 2,
     },
-    
   };
   constructor(private sharedService: SharedService, private router: Router) {}
 
-  ngOnInit() {
-    this.initialization();
-  }
-
-  initialization() {
-    this.sharedService.setDefaultValues();
-  }
+  ngOnInit() {}
 }
 
 export class TabTiles {
