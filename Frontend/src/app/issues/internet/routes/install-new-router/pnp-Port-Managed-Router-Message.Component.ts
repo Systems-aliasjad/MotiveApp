@@ -7,25 +7,33 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-install-new-router-flow6-message',
-  template: `<app-motive-message-bullet
+  selector: 'app-pnp-port-managed-router-message',
+  template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-  ></app-motive-message-bullet>`,
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  ></motive-message>`,
 })
-export class InstallNewRouterFlow6MessageComponent implements OnInit, OnDestroy {
+//PnpPortManagedRouterMessageComponent
+export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'secondary',
-    title: 'BUTTONS.DONE',
+    type: 'primary',
+    title: 'BUTTONS.CONTINUE_WITH_ETISALAT_ROUTERR',
+  };
+
+  button2: IMotiveButton = {
+    type: 'link',
+    title: 'BUTTONS.INSTALL_THIRD_PARTY_ROUTER',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -45,10 +53,13 @@ export class InstallNewRouterFlow6MessageComponent implements OnInit, OnDestroy 
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow6MessageCase;
+    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow2MessageCase;
   }
 
   button1Listener() {
     this.router.navigate(['/thanks']);
+  }
+  button2Listener() {
+    this.router.navigate(['/issues/internet/router-install-successfully']);
   }
 }

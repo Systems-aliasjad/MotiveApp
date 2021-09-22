@@ -43,6 +43,9 @@ ion-toolbar{
     width: 100%;
     padding-right: 1rem;
     padding-left: 1rem;
+    @media screen and (max-width:767px) {
+      padding-left: 0.3rem;
+    }
     .back-to-page{
       margin-top: 0;
       text-decoration: none;
@@ -53,6 +56,10 @@ ion-toolbar{
       ion-title{
         padding-left: 0;
         padding-right: 0;
+        font-size: 1rem;
+        @media screen and (max-width:340px) {
+          font-size: 0.85rem;
+        }
       }
     }
   }

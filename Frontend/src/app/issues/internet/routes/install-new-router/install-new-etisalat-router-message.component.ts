@@ -7,19 +7,17 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-install-new-router-flow5-message',
-  template: `<motive-message
+  selector: 'app-insall-new-etisalat-router-message',
+  template: `<app-motive-message-bullet
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
-  ></motive-message>`,
+  ></app-motive-message-bullet>`,
 })
-export class InstallNewRouterFlow5MessageComponent implements OnInit, OnDestroy {
+export class InstallNewEtisalatRouterMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -27,12 +25,7 @@ export class InstallNewRouterFlow5MessageComponent implements OnInit, OnDestroy 
   imgSrc;
   button1: IMotiveButton = {
     type: 'secondary',
-    title: 'BUTTONS.INSTALL_ROUTER',
-  };
-
-  button2: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.INSTALL_NEW_THIRD-PARTY_ROUTER',
+    title: 'BUTTONS.DONE',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -52,13 +45,10 @@ export class InstallNewRouterFlow5MessageComponent implements OnInit, OnDestroy 
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow5MessageCase;
+    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow6MessageCase;
   }
 
   button1Listener() {
     this.router.navigate(['/thanks']);
-  }
-  button2Listener() {
-    this.router.navigate(['/issues/internet/router-install-successfully']);
   }
 }

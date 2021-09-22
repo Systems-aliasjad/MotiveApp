@@ -61,7 +61,7 @@
           <ion-row>
             <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
               <ion-row>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
                   <motive-button
                     *ngIf="button1"
                     [type]="button1.type"
@@ -74,7 +74,7 @@
                     [disable]="!formGroup.valid"
                   ></motive-button>
                 </ion-col>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
                   <motive-button
                     *ngIf="button2"
                     [type]="button2.type"
@@ -88,7 +88,7 @@
                 </ion-col>
               </ion-row>
             </ion-col>
-            <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngIf="button3">
+            <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center" *ngIf="button3">
               <motive-button
                 *ngIf="button3"
                 [type]="button3.type"

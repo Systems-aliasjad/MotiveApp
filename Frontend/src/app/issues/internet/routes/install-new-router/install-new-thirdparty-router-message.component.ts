@@ -7,8 +7,8 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-install-new-router-flow2-message',
-  template: `<motive-message
+  selector: 'app-install-new-thirdparty-router-message',
+  template: `<app-motive-message-bullet
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
@@ -17,22 +17,30 @@ import { Subscription } from 'rxjs';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
-  ></motive-message>`,
+    [button3]="button3"
+    (button3Click)="button3Listener()"
+  ></app-motive-message-bullet>`,
 })
-export class InstallNewRouterFlow2MessageComponent implements OnInit, OnDestroy {
+export class InstallNewThirdPartyRouterMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
+
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.CONTINUE_WITH_ETISALAT_ROUTERR',
+    type: 'link',
+    title: 'BUTTONS.I_NEED_HELP_WITH_INSTALLING_THE_ROUTER',
   };
 
   button2: IMotiveButton = {
+    type: 'secondary',
+    title: 'BUTTONS.INSTALLATION_COMPLETED',
+  };
+
+  button3: IMotiveButton = {
     type: 'link',
-    title: 'BUTTONS.INSTALL_THIRD_PARTY_ROUTER',
+    title: 'BUTTONS.FORGOT_PASSWORD',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -52,13 +60,16 @@ export class InstallNewRouterFlow2MessageComponent implements OnInit, OnDestroy 
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow2MessageCase;
+    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow7MessageCase;
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['/issues/internet/install-new-router-care']);
   }
+
   button2Listener() {
-    this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.router.navigate(['/issues/internet/reset-internet-password']);
   }
+
+  button3Listener() {}
 }
