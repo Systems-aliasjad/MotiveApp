@@ -207,7 +207,7 @@ const FACTORY_RESET_ROUTER = {
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.FACTORY_RESET_TV',
-  linkTo: '',
+  linkTo: 'issues/tv/tv-box-reset-factory',
 };
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
@@ -219,7 +219,7 @@ const CONNECTION_ISSUE_ROUTER = {
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
-  linkTo: '',
+  linkTo: '/issues/password/reset-tv-admin-pin',
 };
 const TRANSFER_PACKAGE_TV = {
   body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',

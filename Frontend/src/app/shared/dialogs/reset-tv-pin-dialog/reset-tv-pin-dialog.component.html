@@ -9,25 +9,23 @@
         <p>{{ 'DIALOG.RESET_TV_ADMIN_PIN_BODY' | translate }}</p>
       </div>
     </ion-col>
-    <ion-col size="12">
-      <div class="agree-terms">
-        <ion-checkbox color="primary" checked></ion-checkbox>
-        <ion-label>
-          I agree to
-          <a href="javascript:void(0)" class="back-to-page" (click)="showTermsConditionsModal()">
-            <span>Terms & Conditions</span>
-          </a>
-        </ion-label>
-      </div>
-    </ion-col>
   </ion-row>
-  <ion-row>
-    <ion-col Size="6" class="pt-0 pb-0 ion-text-center">
-      <ion-button class="btn secondary-btn close" (click)="dismiss()">{{ 'BUTTONS.BACK' | translate }}</ion-button>
-    </ion-col>
-    <ion-col Size="6" class="pt-0 pb-0 ion-text-center">
-      <ion-button class="btn primary-btn close" (click)="confirm()">{{ 'BUTTONS.CONFIRM' | translate }}</ion-button>
-    </ion-col>
-  </ion-row>
-  <!-- <motive-button></motive-button> -->
 </ion-grid>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'terms'"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [title]="'BUTTONS.CONFIRM'" [type]="'primary'" (clickHandler)="confirm()"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [title]="'BUTTONS.BACK'" [type]="'secondary'" (clickHandler)="dismiss()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>

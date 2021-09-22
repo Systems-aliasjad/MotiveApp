@@ -19,13 +19,6 @@ export class ResetTvPinDialog implements OnInit {
 
   ngOnInit() {}
 
-  async showTermsConditionsModal() {
-    this.modal = await this.modalCtrl.create({
-      component: TermsConditionsComponent,
-    });
-    return await this.modal.present();
-  }
-
   async dismiss() {
     await this.modalCtrl.dismiss();
   }
