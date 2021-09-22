@@ -14,7 +14,6 @@ import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-
 import { ERoutingIds } from './shared/constants/constants';
 import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 
-import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
@@ -142,7 +141,6 @@ const routes: Routes = [
 
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
-  { path: 'game-session', component: GameSessionComponent },
 
   // Package Transfer
   { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },

@@ -56,7 +56,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Facing problems while playing a game',
-      route: 'game-session',
+      route: 'issues/tv/game-session',
     },
     {
       issue: 'Transfer channel to another TV box',

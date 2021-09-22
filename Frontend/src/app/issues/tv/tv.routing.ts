@@ -29,6 +29,7 @@ import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-s
 import { ELifeUpgradeComponent } from './routes/eLife-upgrade.component';
 import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-form.component';
 import { TvDetailComponent } from './routes/detail/detail.component';
+import { GameSessionComponent } from './routes/game-session/game-session.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'issues-not-fixed',
     component: IssueNotFixedComponent,
+  },
+  {
+    path: 'game-session',
+    component: GameSessionComponent,
   },
   {
     path: 'troubleshoot-complete',

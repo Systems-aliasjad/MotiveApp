@@ -31,7 +31,6 @@ import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialo
 import { ResetWifiPasswordComponent } from './components/reset-wifi-password/reset-wifi-password.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
-import { GameSessionComponent } from './components/game-session/game-session.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 import { PackageAvailableComponent } from './components/package-available/package-available.component';
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
@@ -78,7 +77,6 @@ export function createTranslateLoader(http: HttpClient) {
     ResetWifiPasswordComponent,
     ResetTvPinDialog,
     RestartTvboxDialog,
-    GameSessionComponent,
     GameSessionDialog,
     PackageAvailableComponent,
     TransferPackageComponent,

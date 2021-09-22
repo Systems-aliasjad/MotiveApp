@@ -34,6 +34,7 @@ import { TVBoxNotReachableFormComponent } from './routes/tvBox-not-reachable-for
 import { TvDetailComponent } from './routes/detail/detail.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
+import { GameSessionComponent } from './routes/game-session/game-session.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { HttpClient } from '@angular/common/http';
     BoxNotRestartedCareComponent,
     UnableToWatchPackageTransferSuccessComponent,
     PackageTransferSuccessComponent,
+    GameSessionComponent,
     TvBoxResetSuccessComponent,
     GameSessionCancelComponent,
     TvBoxResetRequiredSuccessComponent,

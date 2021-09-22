@@ -3,9 +3,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { GameSessionDialog } from '../../dialogs/game-session-dialog/game-session-dialog.component';
-import { SharedService } from '../../shared.service';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { GameSessionDialog } from 'src/app/shared/dialogs/game-session-dialog/game-session-dialog.component';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-game-session',
@@ -26,8 +26,8 @@ export class GameSessionComponent implements OnInit, OnDestroy {
   ];
 
   constructor(private router: Router, private sharedService: SharedService, public activatedRoute: ActivatedRoute, private modalCtrl: ModalController, private location: Location) {
-    this.subscription = this.activatedRoute.params.subscribe((params) => {
-      this.initialization();
+    this.subscription = this.activatedRoute.params.subscribe(() => {
+      this.updateHeader();
     });
   }
   ngOnDestroy(): void {
@@ -36,9 +36,9 @@ export class GameSessionComponent implements OnInit, OnDestroy {
 
   ngOnInit() {}
 
-  initialization() {
+  updateHeader() {
     this.sharedService.setHeaderConfig('HEADER.ACTIVE_GAME_SESSION', false);
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.gameSessionButtons));
+    CustomerJourneyConstants.gameSessionButtons;
   }
 
   routeLinkHelper(arr) {
