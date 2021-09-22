@@ -1,110 +1,118 @@
-<ion-grid class="form-main-container">
-  <!-- Page Title and Sub Title Start -->
-  <ion-row>
-    <ion-col size="12">
-      <app-page-top></app-page-top>
-      <p *ngIf="!formGroup.valid" class="tag-title">{{ 'SUBHEADER.BOOK_COMPLAINT' | translate }}</p>
-      <p *ngIf="formGroup.valid" class="tag-title">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
+<ion-content>
+  <ion-grid class="form-main-container">
+    <!-- Page Title and Sub Title Start -->
+    <ion-row>
+      <ion-col size="12">
+        <app-page-top></app-page-top>
+        <p *ngIf="!formGroup.valid" class="tag-title">{{ 'SUBHEADER.BOOK_COMPLAINT' | translate }}</p>
+        <p *ngIf="formGroup.valid" class="tag-title">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
+      </ion-col>
+    </ion-row>
+    <!-- Page Title and Sub Title End -->
+
+    <!-- Form Start -->
+    <ion-row class="form-inner_container">
+      <ion-col size="12">
+        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
+          <ion-grid class="pr-0 pl-0">
+            <ion-row>
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-item>
+                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER1' | translate }}</ion-label>
+
+                  <ion-input
+                    type="text"
+                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                    placeholder="+971xxxxxxxxx"
+                    formControlName="MobileNo"
+                    [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
+                  ></ion-input>
+
+                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                    {{ error.phoneNumber }}
+                  </div>
+                </ion-item>
+              </ion-col>
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-item>
+                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate }}</ion-label>
+                  <ion-input
+                    type="text"
+                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                    placeholder="+971xxxxxxxxx"
+                    formControlName="AlternateContactNo"
+                    [ngClass]="{ 'is-invalid': f.AlternateContactNo.errors && f.AlternateContactNo.errors.pattern }"
+                  ></ion-input>
+                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'AlternateContactNo') && f.AlternateContactNo.touched">
+                    {{ error.phoneNumber }}
+                  </div>
+                </ion-item>
+              </ion-col>
+              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                <ion-item>
+                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.REMARKS' | translate }}</ion-label>
+                  <ion-input type="text" formControlName="Remarks"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+
+            <!-- Reset Book A Complaint Buttons -->
+            <!-- <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button> -->
+            <!-- <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
+            
+            
+            
+          
+            <!-- Reset Book A Complaint Buttons -->
+          </ion-grid>
+        </form>
+      </ion-col>
+    </ion-row>
+    <!-- Form End -->
+  </ion-grid>
+</ion-content>
+<div class="footer">
+  <ion-row class="footer-btns-container"> 
+    <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button
+            *ngIf="button1"
+            [type]="button1.type"
+            [title]="button1.title"
+            [explanatoryNote]="button1.explanatoryNote"
+            [SM]="button1.SM"
+            [MD]="button1.MD"
+            [LG]="button1.LG"
+            (clickHandler)="button1Listener()"
+            [disable]="!formGroup.valid"
+          ></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button
+            *ngIf="button2"
+            [type]="button2.type"
+            [title]="button2.title"
+            [explanatoryNote]="button2.explanatoryNote"
+            [SM]="button2.SM"
+            [MD]="button2.MD"
+            [LG]="button2.LG"
+            (clickHandler)="button2Listener()"
+          ></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center" *ngIf="button3">
+      <motive-button
+        *ngIf="button3"
+        [type]="button3.type"
+        [title]="button3.title"
+        [explanatoryNote]="button3.explanatoryNote"
+        [SM]="button3.SM"
+        [MD]="button3.MD"
+        [LG]="button3.LG"
+        (clickHandler)="button3Listener()"
+      ></motive-button>
     </ion-col>
   </ion-row>
-  <!-- Page Title and Sub Title End -->
-
-  <!-- Form Start -->
-  <ion-row class="form-inner_container">
-    <ion-col size="12">
-      <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
-        <ion-grid class="pr-0 pl-0">
-          <ion-row>
-            <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
-              <ion-item>
-                <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER1' | translate }}</ion-label>
-
-                <ion-input
-                  type="text"
-                  [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                  placeholder="+971xxxxxxxxx"
-                  formControlName="MobileNo"
-                  [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
-                ></ion-input>
-
-                <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
-                  {{ error.phoneNumber }}
-                </div>
-              </ion-item>
-            </ion-col>
-            <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
-              <ion-item>
-                <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate }}</ion-label>
-                <ion-input
-                  type="text"
-                  [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                  placeholder="+971xxxxxxxxx"
-                  formControlName="AlternateContactNo"
-                  [ngClass]="{ 'is-invalid': f.AlternateContactNo.errors && f.AlternateContactNo.errors.pattern }"
-                ></ion-input>
-                <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'AlternateContactNo') && f.AlternateContactNo.touched">
-                  {{ error.phoneNumber }}
-                </div>
-              </ion-item>
-            </ion-col>
-            <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
-              <ion-item>
-                <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.REMARKS' | translate }}</ion-label>
-                <ion-input type="text" formControlName="Remarks"></ion-input>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-
-          <!-- Reset Book A Complaint Buttons -->
-          <!-- <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button> -->
-          <!-- <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
-          <ion-row>
-            <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
-              <ion-row>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-                  <motive-button
-                    *ngIf="button1"
-                    [type]="button1.type"
-                    [title]="button1.title"
-                    [explanatoryNote]="button1.explanatoryNote"
-                    [SM]="button1.SM"
-                    [MD]="button1.MD"
-                    [LG]="button1.LG"
-                    (clickHandler)="button1Listener()"
-                    [disable]="!formGroup.valid"
-                  ></motive-button>
-                </ion-col>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-                  <motive-button
-                    *ngIf="button2"
-                    [type]="button2.type"
-                    [title]="button2.title"
-                    [explanatoryNote]="button2.explanatoryNote"
-                    [SM]="button2.SM"
-                    [MD]="button2.MD"
-                    [LG]="button2.LG"
-                    (clickHandler)="button2Listener()"
-                  ></motive-button>
-                </ion-col>
-              </ion-row>
-            </ion-col>
-            <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center" *ngIf="button3">
-              <motive-button
-                *ngIf="button3"
-                [type]="button3.type"
-                [title]="button3.title"
-                [explanatoryNote]="button3.explanatoryNote"
-                [SM]="button3.SM"
-                [MD]="button3.MD"
-                [LG]="button3.LG"
-                (clickHandler)="button3Listener()"
-              ></motive-button>
-            </ion-col>
-          </ion-row>
-          <!-- Reset Book A Complaint Buttons -->
-        </ion-grid>
-      </form>
-    </ion-col>
-  </ion-row>
-  <!-- Form End -->
-</ion-grid>
+</div>

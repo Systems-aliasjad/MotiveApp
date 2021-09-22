@@ -27,6 +27,7 @@ import { UnableToCallCareComponent } from './routes/unable-to-call-care.componen
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
 import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
+import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { ChangeCallForwardComponent } from './routes/change-call-forward/change-
     IssueNotFixedComponent,
     NoDailToneCareComponent,
     ChangeCallForwardComponent,
+    ForgotCcbPinComponent,
     UnableToCallCareComponent,
     OntRebootComponent,
     NoIssuesComponent,

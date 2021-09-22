@@ -21,6 +21,7 @@ import { UnableToCallCareComponent } from './routes/unable-to-call-care.componen
 import { BookComplaintComponent } from './routes/book-complaint.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
+import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
 
 const routes: Routes = [
   {
@@ -98,6 +99,10 @@ const routes: Routes = [
   {
     path: 'no-issue-phone-phone-Change-call-forward-successfully',
     component: ChangeCallForwardSuccessComponent,
+  },
+  {
+    path: 'forgot-ccb-pin',
+    component: ForgotCcbPinComponent,
   },
   {
     path: 'no-issue-phone-phone-reset-ccb-pin-successfully',

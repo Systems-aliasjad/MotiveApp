@@ -31,7 +31,6 @@ import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialo
 import { ResetWifiPasswordComponent } from './components/reset-wifi-password/reset-wifi-password.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
-import { GameSessionComponent } from './components/game-session/game-session.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 import { PackageAvailableComponent } from './components/package-available/package-available.component';
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
@@ -41,8 +40,7 @@ import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-d
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
-import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
+import { CcbPinResetFormComponent } from './components/forgot-ccb-pin/ccb-pin-reset-form.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
@@ -79,7 +77,6 @@ export function createTranslateLoader(http: HttpClient) {
     ResetWifiPasswordComponent,
     ResetTvPinDialog,
     RestartTvboxDialog,
-    GameSessionComponent,
     GameSessionDialog,
     PackageAvailableComponent,
     TransferPackageComponent,
@@ -88,8 +85,7 @@ export function createTranslateLoader(http: HttpClient) {
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
-    ForgotCcbPinComponent,
-    DummyDelComponent,
+    CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
     MotiveMessageBulletComponent,
@@ -126,8 +122,7 @@ export function createTranslateLoader(http: HttpClient) {
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
-    ForgotCcbPinComponent,
-    DummyDelComponent,
+    CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
     MotiveMessageBulletComponent,

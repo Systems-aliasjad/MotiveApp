@@ -14,14 +14,11 @@ import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-
 import { ERoutingIds } from './shared/constants/constants';
 import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 
-import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 import { PhoneIssuesProblemValueAddedComponent } from './shared/components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
-import { ForgotCcbPinComponent } from './shared/components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { DummyDelComponent } from './shared/components/dummy-del/dummy-del.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
@@ -107,7 +104,6 @@ const routes: Routes = [
 
   { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
   { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
-  { path: 'reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.resetTelephoneCCBPIN } },
   // 1122 Module - 4 END
 
   //router and package Upgrade Recommended form
@@ -145,7 +141,6 @@ const routes: Routes = [
 
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
-  { path: 'game-session', component: GameSessionComponent },
 
   // Package Transfer
   { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
@@ -156,9 +151,7 @@ const routes: Routes = [
   { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
 
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
-  { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
 
-  { path: 'DummyDel', component: DummyDelComponent, data: { id: ERoutingIds.noIssuePhone } },
   { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },
 
   //Ont reboot required
