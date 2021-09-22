@@ -66,6 +66,7 @@ import { InstallNewRouterResetInternetPasswordComponent } from './routes/install
 import { AccessPortThirdPartyRouterMessageComponent } from './routes/install-new-router/access-port-third-party-router-message.component';
 import { InstallNewEtisalatRouterMessageComponent } from './routes/install-new-router/install-new-etisalat-router-message.component';
 import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new-router/install-new-thirdparty-router-message.component';
+import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
 
 @NgModule({
   declarations: [
@@ -126,6 +127,7 @@ import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new
     RouterPackageUpgradeRecommendedFormComponent,
     RouterUpgradeRecommendedFormComponent,
     BookComplaintComponent,
+    RouterResetSuccessfullMessageComponent,
   ],
   imports: [
     CommonModule,

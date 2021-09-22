@@ -107,11 +107,13 @@ export class MessageBuilderComponent implements OnInit, OnDestroy {
     else if (this.codeType === ERoutingIds.thirdPartyRouterSuccessfully) {
     }
 
+    //App.MotiveH&S.5.2.8
+    //path: 'router-reset-successfull-message',
     ///For Reset Wifi password first  Successfull
     else if (this.codeType === ERoutingIds.resetWifiPasswordSuccess) {
-      this.Section1Data = CustomerJourneyConstants.resetWifiResetFirstsuccessfullyCase;
-      this.imgSrc = this.successImgSrc;
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessFirstCaseButtons));
+      // this.Section1Data = CustomerJourneyConstants.resetWifiResetFirstsuccessfullyCase;
+      // this.imgSrc = this.successImgSrc;
+      // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resestWifiPasswordSuccessFirstCaseButtons));
     }
 
     ///For Reset Wifi password Second/Final  Successfull

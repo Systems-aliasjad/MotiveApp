@@ -237,6 +237,7 @@
 
   "MESSAGES": {
     "INSTALL_ROUTER": "Install router",
+    "CONTINUE_TO_CONFIGURE_YOUR_WI-FI_SETTINGS": "Continue to configure your Wi-Fi settings.",
     "FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION": "Follow these steps to complete the installation:",
     "Connect_the_new_router_to_the_‘X’_port_of_the_wall-mounted_fiber_BOX": "Connect the new router to the ‘X’ port of the wall-mounted fiber box",
     "YOU_ARE_CURRENTLY_USING_A_THIRD-PARTY_ROUTER": "You are currently using a third-party router.",

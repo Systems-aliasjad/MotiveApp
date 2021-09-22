@@ -367,7 +367,7 @@ export class CustomerJourneyConstants {
 
   public static resetWifiResetFirstsuccessfullyCase = {
     header: 'MESSAGES.RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY_BODY'],
+    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN', 'MESSAGES.CONTINUE_TO_CONFIGURE_YOUR_WI-FI_SETTINGS'],
   };
 
   public static resetWifiResetSecondsuccessfullyCase = {
