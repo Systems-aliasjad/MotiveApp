@@ -1,3 +1,4 @@
+<ion-content>
 <ion-grid class="form-main-container">
   <!-- Page Title and Sub Title Start -->
   <ion-row>
@@ -58,49 +59,10 @@
           <!-- Reset Book A Complaint Buttons -->
           <!-- <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button> -->
           <!-- <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
-          <ion-row>
-            <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
-              <ion-row>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-                  <motive-button
-                    *ngIf="button1"
-                    [type]="button1.type"
-                    [title]="button1.title"
-                    [explanatoryNote]="button1.explanatoryNote"
-                    [SM]="button1.SM"
-                    [MD]="button1.MD"
-                    [LG]="button1.LG"
-                    (clickHandler)="button1Listener()"
-                    [disable]="!formGroup.valid"
-                  ></motive-button>
-                </ion-col>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-                  <motive-button
-                    *ngIf="button2"
-                    [type]="button2.type"
-                    [title]="button2.title"
-                    [explanatoryNote]="button2.explanatoryNote"
-                    [SM]="button2.SM"
-                    [MD]="button2.MD"
-                    [LG]="button2.LG"
-                    (clickHandler)="button2Listener()"
-                  ></motive-button>
-                </ion-col>
-              </ion-row>
-            </ion-col>
-            <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center" *ngIf="button3">
-              <motive-button
-                *ngIf="button3"
-                [type]="button3.type"
-                [title]="button3.title"
-                [explanatoryNote]="button3.explanatoryNote"
-                [SM]="button3.SM"
-                [MD]="button3.MD"
-                [LG]="button3.LG"
-                (clickHandler)="button3Listener()"
-              ></motive-button>
-            </ion-col>
-          </ion-row>
+          
+          
+          
+         
           <!-- Reset Book A Complaint Buttons -->
         </ion-grid>
       </form>
@@ -108,3 +70,47 @@
   </ion-row>
   <!-- Form End -->
 </ion-grid>
+</ion-content>
+<ion-row>
+  <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
+    <ion-row>
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+        <motive-button
+          *ngIf="button1"
+          [type]="button1.type"
+          [title]="button1.title"
+          [explanatoryNote]="button1.explanatoryNote"
+          [SM]="button1.SM"
+          [MD]="button1.MD"
+          [LG]="button1.LG"
+          (clickHandler)="button1Listener()"
+          [disable]="!formGroup.valid"
+        ></motive-button>
+      </ion-col>
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+        <motive-button
+          *ngIf="button2"
+          [type]="button2.type"
+          [title]="button2.title"
+          [explanatoryNote]="button2.explanatoryNote"
+          [SM]="button2.SM"
+          [MD]="button2.MD"
+          [LG]="button2.LG"
+          (clickHandler)="button2Listener()"
+        ></motive-button>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+  <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center" *ngIf="button3">
+    <motive-button
+      *ngIf="button3"
+      [type]="button3.type"
+      [title]="button3.title"
+      [explanatoryNote]="button3.explanatoryNote"
+      [SM]="button3.SM"
+      [MD]="button3.MD"
+      [LG]="button3.LG"
+      (clickHandler)="button3Listener()"
+    ></motive-button>
+  </ion-col>
+</ion-row>
