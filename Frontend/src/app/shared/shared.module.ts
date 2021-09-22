@@ -41,8 +41,7 @@ import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-d
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
-import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
+import { CcbPinResetFormComponent } from './components/forgot-ccb-pin/ccb-pin-reset-form.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
@@ -88,8 +87,7 @@ export function createTranslateLoader(http: HttpClient) {
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
-    ForgotCcbPinComponent,
-    DummyDelComponent,
+    CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
     MotiveMessageBulletComponent,
@@ -126,8 +124,7 @@ export function createTranslateLoader(http: HttpClient) {
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
-    ForgotCcbPinComponent,
-    DummyDelComponent,
+    CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
     MotiveMessageBulletComponent,
