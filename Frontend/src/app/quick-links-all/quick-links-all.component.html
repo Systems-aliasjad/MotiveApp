@@ -4,14 +4,16 @@
     <!-- Page Title Start -->
     <ion-row>
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <div class="header-custom">        
+          <app-page-top></app-page-top>
+        </div>
       </ion-col>
     </ion-row>
     <!-- Page Title End -->
 
     <!-- Quick Links Slider Start -->
     <ion-row class="quick-links-card">
-      <ion-col size="12" class="pt-0 pb-0" *ngFor="let link of quickLinks">
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngFor="let link of quickLinks">
         <span (click)="onCardClick(link)">
           <ion-card>
             <ion-card-content>

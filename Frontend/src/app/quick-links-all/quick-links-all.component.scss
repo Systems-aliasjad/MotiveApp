@@ -1,0 +1,69 @@
+@import '/src/assets/scss/base/variables';
+@import '/src/assets/scss/base/mixins';
+
+/*-------------------------------------------------*/
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-buttons{
+    --min-height:auto;
+  }
+  ion-header{
+    ion-toolbar{
+      border-bottom: 2px dashed #d0d6da;
+      ion-title{
+        padding-right:0;
+        padding-left: 0;
+        h5{
+          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+          color:$primary-color;
+          @media screen and (max-width: 281px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    ion-buttons{
+      margin-inline-end:0;
+      margin-right:0;
+      --padding-end: 0;
+      padding-right: 0;
+      padding-right: 0;
+      ion-button{
+        margin-inline-start:0;
+        margin-inline-end:0;
+        height: auto;
+        @media screen and (max-width: 281px) {
+          font-size: .8rem;
+        }
+       }
+     }
+    }
+  }
+}
+ion-item::part(native){
+  /* padding-inline-end: .8rem;  */
+  --inner-padding-end: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --padding-start:1rem;
+  --border-color:#ededed;
+}
+.header-ios {
+	ion-toolbar {
+    ion-title{
+      h5{
+        text-align: left;
+      }
+    }
+	}
+}
+/*-------------------------------------------------*/
+
+.quick-links-container{    
+    .header-custom{
+        margin-left: 10px;
+    }
+    ion-card{
+        cursor: pointer;
+        margin: 12px 10px;
+    }    
+}
