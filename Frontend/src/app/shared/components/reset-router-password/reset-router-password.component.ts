@@ -19,16 +19,14 @@ export class ResetRouterPasswordComponent implements OnInit {
   public routerSettingsForm: FormGroup;
   error = errorMessages;
   @ViewChild('staticTabs', { static: false }) staticTabs: ResetRouterPasswordComponent;
-  passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
+
   termsCheck: boolean = false;
   modal: any;
   subscription: Subscription;
   id: number;
   btnText: string;
-  hideShowPassword() {
-    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
-    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  hideShowPassword(Type: any) {
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
   constructor(
