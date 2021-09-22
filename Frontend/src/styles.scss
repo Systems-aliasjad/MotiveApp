@@ -493,13 +493,33 @@ html{
     }
   }
 }
+.two-col-container,
+.two-col_inner_container {
+  height: 100%;
+  @media screen and (max-width: 992px) {
+    height: auto;
+  }
+}
+.two-col_left{
+  background-color: $white;
+  @media screen and (max-width: 992px) {
+    background-color: transparent;
+  }
+}
+.two-col_right{
+  @media screen and (max-width: 992px) {
+    border-top: 1px solid #ededed;
+    padding-top: 0;
+  }
+}
 ion-grid{
   width: 100%;
   padding-bottom: 0;
 }
 app-diagnose-issue,
 motive-message,
-app-device-care{
+app-device-care,
+app-service-detail{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
