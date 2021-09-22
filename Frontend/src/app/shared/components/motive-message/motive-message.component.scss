@@ -51,14 +51,6 @@ ion-item::part(native){
   -ms-flex-align: center;
   align-items: center;
   margin-top: 1rem;
-  /* .info-container_icon{
-    img{
-      @media screen and (max-width: 476px) {
-        height: 90px;
-        width: 90px;
-      }
-    }
-  } */
   h4 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
@@ -109,6 +101,19 @@ ion-item::part(native){
       .follow-up {
         margin-bottom: 1rem;
       }
+    }
+  }
+}
+.info-content{
+  @media screen and (min-width: 992px) {
+    margin-bottom: 2rem;
+  }
+}
+.ion-list-capital{
+  ion-item{
+    ion-label{
+      color: $primary-color;
+      font-size: 1.1rem;
     }
   }
 }

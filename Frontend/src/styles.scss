@@ -365,6 +365,15 @@ ion-modal,
     }
   }
 }
+.ion-list-capital{
+  ion-item{
+    ion-label{
+      color: $primary-color;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
 // ------------Inline List End-------------------
 .ion-list-arrow{
   ion-item{
