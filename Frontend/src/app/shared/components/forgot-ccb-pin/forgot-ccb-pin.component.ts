@@ -16,14 +16,11 @@ export class ForgotCcbPinComponent implements OnInit {
   error = errorMessages;
   codeType;
   case: number = 1;
-  passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
 
   termsCheck: boolean = false;
   subscription: Subscription;
-  hideShowPassword() {
-    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
-    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  hideShowPassword(Type: any) {
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute, private location: Location) {
