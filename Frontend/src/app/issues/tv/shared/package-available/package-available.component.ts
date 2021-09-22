@@ -1,11 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ERoutingIds } from '../../constants/constants';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { SharedService } from '../../shared.service';
+import { ERoutingIds } from '../../../../shared/constants/constants';
+import { CustomerJourneyConstants } from '../../../../shared/constants/CustomerJourneyConstants';
+import { SharedService } from '../../../../shared/shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
+import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-package-available',
@@ -13,6 +13,8 @@ import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
   styleUrls: ['./package-available.component.scss'],
 })
 export class PackageAvailableComponent implements OnInit, OnDestroy {
+  // unable-to-watch-package-available
+  // package-available
   codeType: any;
   PageTitle: string;
   PageContent: string;
