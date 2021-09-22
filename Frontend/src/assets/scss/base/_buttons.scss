@@ -1,7 +1,12 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 
-
+.button-disabled {
+  color: #979696;
+  --color: #979696;
+  background-color: #d1d2d1;
+  border: 2px solid #d1d2d1;
+}
 .primary-btn,
 .primary-btn.button-solid,
 .secondary-btn{
@@ -23,7 +28,6 @@
   line-height: 1.5;
   border-radius: 0.25rem;
   cursor: pointer;
-
 }
 .primary-btn,
 .primary-btn.button-solid{
@@ -74,9 +78,3 @@
   }
 }
 
-.button-disabled {
-  color: #979696;
-  --color: #979696;
-  background-color: #d1d2d1;
-  border: 2px solid #d1d2d1;
-}
