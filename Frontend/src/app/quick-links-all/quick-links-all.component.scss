@@ -58,12 +58,10 @@ ion-item::part(native){
 }
 /*-------------------------------------------------*/
 
-.quick-links-container{    
-    .header-custom{
-        margin-left: 10px;
-    }
+.quick-links-container{   
     ion-card{
-        cursor: pointer;
-        margin: 12px 10px;
+      cursor: pointer;
+      margin-right: 0;
+      margin-left: 0;
     }    
 }
