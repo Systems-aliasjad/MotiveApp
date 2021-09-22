@@ -1,7 +1,8 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 
-.button-disabled {
+
+ion-button.button-disabled {
   color: #979696;
   --color: #979696;
   background-color: #d1d2d1;
