@@ -114,6 +114,9 @@ ion-item::part(native){
     ion-label{
       color: $primary-color;
       font-size: 1.1rem;
+      @media screen and (max-width: 321px) {
+        margin-bottom: 1rem;
+      }
     }
   }
 }
