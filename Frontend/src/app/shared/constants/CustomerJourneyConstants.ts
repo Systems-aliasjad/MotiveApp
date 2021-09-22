@@ -1005,7 +1005,7 @@ export class CustomerJourneyConstants {
   };
 
   public static resetWifiButton = {
-    title: 'BUTTONS.RESET_WIFI_PASSWORD',
+    title: 'BUTTONS.YES_RESET_WIFI_PASSWORD',
     clickListener: () => {},
     linkTo: '/reset-wifi-password-form',
     behaviour: 'primary',

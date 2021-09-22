@@ -1,0 +1,120 @@
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
+// --------------------------------------------------------------
+:host {
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  ion-list {
+    --ion-background-color: transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  ion-item {
+    --min-height: auto;
+    ion-label {
+      color: $secondary-color;
+    }
+    .inline-list_value {
+      color: $primary-color;
+      font-weight: 600;
+      text-align: right;
+    }
+  }
+  .inline-ion-list {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    ion-item {
+      --min-height: 30px;
+    }
+  }
+}
+ion-item::part(native) {
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-width: 0;
+  --inner-border-width: 0;
+  @media screen and (max-width: 321px) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+}
+// --------------------------------------------------------------
+
+.issue-tabs-contanier,
+.issue-tabs_content {
+  height: 100%;
+  /* height: calc(100vh - 132px);
+  @media screen and (max-width: 992px) {
+    height:100%;
+  } */
+}
+.issue-tabs_title {
+  @media screen and (min-width: 992px) {
+    display: none;
+  }
+}
+
+.issue-tabs_wizard {
+  background-color: $white;
+  @media screen and (max-width: 992px) {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: transparent;
+  }
+}
+.issue-tab_content {
+  @media screen and (max-width: 992px) {
+    border-top: 1px solid #ededed;
+  }
+  .content {
+    width: 450px;
+    margin: 0 auto;
+    @media screen and (max-width: 992px) {
+      margin-top: 1rem;
+      width: 100%;
+    }
+    /*  border-top: 1px solid #f1f1eb;
+    -webkit-box-shadow: 0 -1px 0 #f1f1eb;
+    box-shadow: 0 -1px 0 #f1f1eb; */
+    .sub-title {
+      @media screen and (max-width: 992px) {
+        display: block;
+      }
+    }
+    app-page-top {
+      @media screen and (max-width: 992px) {
+        display: none;
+      }
+    }
+    p {
+      margin-bottom: 0;
+      color: $secondary-color;
+      line-height: 1.5;
+    }
+    .inline-list {
+      margin-top: 1.5rem;
+      ion-item {
+        padding-bottom: 0.5rem;
+      }
+      padding-top: 1rem;
+      padding-bottom: 0.8rem;
+      .inline-list_title {
+        color: #848789;
+      }
+      .inline-list_value {
+        color: $primary-color;
+      }
+    }
+  }
+}

@@ -29,7 +29,6 @@ import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
 import { ResetWifiPasswordComponent } from './components/reset-wifi-password/reset-wifi-password.component';
-import { DeviceConnectedHomezoneComponent } from './components/device-connected-homezone/device-connected-homezone.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionComponent } from './components/game-session/game-session.component';
@@ -78,7 +77,6 @@ export function createTranslateLoader(http: HttpClient) {
     ResetFactoryDefaultDialog,
     DeviceListDialog,
     ResetWifiPasswordComponent,
-    DeviceConnectedHomezoneComponent,
     ResetTvPinDialog,
     RestartTvboxDialog,
     GameSessionComponent,

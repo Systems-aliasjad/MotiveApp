@@ -13,7 +13,6 @@ import { UnableVideoCallsComponent } from './shared/components/unable-video-call
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
 import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
-import { DeviceConnectedHomezoneComponent } from './shared/components/device-connected-homezone/device-connected-homezone.component';
 
 import { GameSessionComponent } from './shared/components/game-session/game-session.component';
 import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
@@ -146,7 +145,6 @@ const routes: Routes = [
 
   { path: 'unable-video-call', component: UnableVideoCallsComponent },
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
-  { path: 'device-connected-homezone', component: DeviceConnectedHomezoneComponent },
   { path: 'game-session', component: GameSessionComponent },
 
   // Package Transfer

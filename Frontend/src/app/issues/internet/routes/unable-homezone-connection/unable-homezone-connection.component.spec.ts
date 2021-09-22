@@ -3,21 +3,20 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { DeviceConnectedHomezoneComponent } from './device-connected-homezone.component';
+import { UnableHomezoneConnectionComponent } from './unable-homezone-connection.component';
 
 describe('DeviceConnectedHomezoneComponent', () => {
-  let component: DeviceConnectedHomezoneComponent;
-  let fixture: ComponentFixture<DeviceConnectedHomezoneComponent>;
+  let component: UnableHomezoneConnectionComponent;
+  let fixture: ComponentFixture<UnableHomezoneConnectionComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DeviceConnectedHomezoneComponent ]
-    })
-    .compileComponents();
+      declarations: [UnableHomezoneConnectionComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DeviceConnectedHomezoneComponent);
+    fixture = TestBed.createComponent(UnableHomezoneConnectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

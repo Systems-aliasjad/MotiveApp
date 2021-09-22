@@ -60,6 +60,7 @@ import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new
 import { AccessPortThirdPartyRouterMessageComponent } from './routes/install-new-router/access-port-third-party-router-message.component';
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router/install-new-router-reset-internet-passoword.component';
 import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
+import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
 
 const routes: Routes = [
   {
@@ -109,6 +110,10 @@ const routes: Routes = [
   {
     path: 'account-not-active',
     component: AccountNotActiveMessageComponent,
+  },
+  {
+    path: 'unable-to-connect-to-homezone',
+    component: UnableHomezoneConnectionComponent,
   },
   {
     path: 'unable-to-browse-internet/step3',
