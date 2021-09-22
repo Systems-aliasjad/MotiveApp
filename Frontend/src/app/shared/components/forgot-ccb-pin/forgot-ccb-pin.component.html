@@ -17,7 +17,8 @@
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'RESET_CCB_PIN.NEW_CCB_PIN' | translate }}</ion-label>
-                  <ion-input formControlName="NewPassword" [type]="passwordType" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-icon slot="end" name="eye" (click)="hideShowPassword(NewPassword)"></ion-icon>
 
                   <!-- <button type="button" (click)="hideShowPassword()">Click to show</button> -->
                   <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
@@ -28,7 +29,8 @@
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'RESET_CCB_PIN.NEW_CCB_PIN_AGAIN' | translate }}</ion-label>
-                  <ion-input formControlName="ConfirmPassword" [type]="passwordType" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-icon slot="end" name="eye" (click)="hideShowPassword(ConfirmPassword)"></ion-icon>
                   <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
                     {{ error.password }}
                   </div>

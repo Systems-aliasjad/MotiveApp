@@ -12,17 +12,12 @@ import { Subscription } from 'rxjs';
 export class ChangeCallForwardComponent implements OnInit {
   public formGroup: FormGroup;
   error = errorMessages;
-
-  passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
-
   termsCheck: boolean = false;
   subscription: Subscription;
   codeType;
   rules = ['rule 1', 'rule 2', 'rule 3'];
-  hideShowPassword() {
-    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
-    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  hideShowPassword(Type: any) {
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {

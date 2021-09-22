@@ -17,14 +17,11 @@ export class ResetWifiPasswordComponent implements OnInit, OnDestroy {
   public routerSettingsForm: FormGroup;
   error = errorMessages;
   @ViewChild('staticTabs', { static: false }) staticTabs: ResetWifiPasswordComponent;
-  passwordType: string = 'password';
-  passwordIcon: string = 'eye-off';
   termsCheck: boolean = false;
   modal: any;
   subscription: Subscription;
-  hideShowPassword() {
-    this.passwordType = this.passwordType === 'text' ? 'password' : 'text';
-    this.passwordIcon = this.passwordIcon === 'eye-off' ? 'eye' : 'eye-off';
+  hideShowPassword(Type: any) {
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
   constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute, private modalCtrl: ModalController) {
