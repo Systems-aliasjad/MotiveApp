@@ -59,6 +59,7 @@ import { InstallNewEtisalatRouterMessageComponent } from './routes/install-new-r
 import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new-router/install-new-thirdparty-router-message.component';
 import { AccessPortThirdPartyRouterMessageComponent } from './routes/install-new-router/access-port-third-party-router-message.component';
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router/install-new-router-reset-internet-passoword.component';
+import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
 
 const routes: Routes = [
   {
@@ -371,6 +372,12 @@ const routes: Routes = [
   {
     path: 'internet-password-reset-success',
     component: ResetInternetPasswordSuccessComponent,
+  },
+
+  {
+    //App.MotiveH&S.5.2.8
+    path: 'router-reset-successfull-message',
+    component: RouterResetSuccessfullMessageComponent,
   },
 ];
 

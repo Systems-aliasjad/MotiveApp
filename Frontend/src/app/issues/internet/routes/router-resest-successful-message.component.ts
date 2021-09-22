@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'router-intall-scuccessfully-message',
+  selector: 'router-reset-successfull-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -15,11 +15,9 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDestroy {
+export class RouterResetSuccessfullMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -27,13 +25,7 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
-    explanatoryNote: '',
-  };
-
-  button2: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.CLOSE',
+    title: 'BUTTONS.CONTINUE_TO_WIFI_SETTINGS',
     explanatoryNote: '',
   };
 
@@ -54,14 +46,10 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
 
   updatePageContent() {
     this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.routerInstallSuccessfullyMessageCase;
+    this.Section1Data = CustomerJourneyConstants.resetWifiResetFirstsuccessfullyCase;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/install-new-router-care']);
-  }
-
-  button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['/reset-wifi-password-form']);
   }
 }
