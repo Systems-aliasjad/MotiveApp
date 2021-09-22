@@ -7,10 +7,10 @@ import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'book-complaint',
+  selector: 'book-appointment',
   template: `<app-book-complaint [button1]="button1" (button1Click)="button1Listener($event)" [button2]="button2" (button2Click)="button2Listener()"></app-book-complaint>`,
 })
-export class BookComplaintComponent implements OnInit, OnDestroy {
+export class BookAppointmentComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   button1: IMotiveButton = {
     type: 'primary',
@@ -44,7 +44,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   button1Listener(_event) {
     this.formGroup = _event;
     console.log(this.formGroup.valid);
-    this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);
+    this.router.navigate(['/issues/internet/appointment-successful']);
   }
 
   button2Listener() {
