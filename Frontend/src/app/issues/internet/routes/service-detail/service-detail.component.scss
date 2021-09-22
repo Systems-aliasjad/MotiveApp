@@ -172,11 +172,7 @@ ion-item::part(native) {
 }
 .service-detail_content {
   .content {
-    width: 450px;
-    margin: 0 auto;
-    @media screen and (max-width: 992px) {
-      width: 100%;
-    }
+    
     /*  border-top: 1px solid #f1f1eb;
     -webkit-box-shadow: 0 -1px 0 #f1f1eb;
     box-shadow: 0 -1px 0 #f1f1eb; */
