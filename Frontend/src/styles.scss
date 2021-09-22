@@ -472,6 +472,12 @@ html{
     z-index: 0;
   }
 }
+.page-title {
+  margin-bottom: 2rem;
+  @media screen and (max-width: 992px) {
+    margin-bottom: 0;
+  }
+}
 .transparent-btn{
   a{
     display: inline-block;

@@ -11,18 +11,6 @@ ion-grid {
     height: auto;
   }
 }
-/* .footer-btns-container{
-  ion-col{
-    &:first-child {
-      display: -webkit-box;
-       display: -ms-flexbox;
-       display: flex;
-      -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-      justify-content: space-evenly;
-    }
-  }
-}  */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .footer{
     .footer-btns-container{

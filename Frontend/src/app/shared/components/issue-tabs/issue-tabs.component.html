@@ -1,21 +1,28 @@
-<!-- <ion-row class="issue-tabs_title"> </ion-row> -->
+ <!-- Page Title Start -->
+ <!-- <ion-row class="issue-tabs_title"></ion-row> -->
+ <ion-row class="page-title"> 
+    <ion-col class="pt-0 pb-0">
+      <app-page-top></app-page-top>
+    </ion-col>
+</ion-row> 
+ <!-- Page Title End -->
 
-<ion-row class="issue-tabs_content">
-  <!-- <ion-col size="12"> -->
-  <!-- <app-page-top></app-page-top> -->
-  <!-- </ion-col> -->
-  <ion-col sizeLg="6" sizeMd="12" size="12" git class="issue-tabs_wizard ion-text-center">
-    <app-page-top></app-page-top>
-    <div class="tabs-wizard">
+<ion-row class="issue-tabs_content two-col_inner_container">
+  <ion-col sizeLg="6" sizeMd="12" size="12" git class="issue-tabs_wizard two-col_left">
+    
+    <!-- Tabs Wizard Start -->
+    <div class="tabs-wizard ion-text-center">
       <app-tab-tile></app-tab-tile>
     </div>
+    <!-- Tabs Wizard End -->
+
     <!-- <a href="javascript:void(0)" class="arrow-link ion-justify-content-center">
       <span>View Details</span>
       <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
     </a> -->
   </ion-col>
 
-  <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tab_content">
+  <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tab_content two-col_right">
     <div class="content">
       <h4 class="sub-title letter-space-none">{{ messageSection.header | translate }}</h4>
       <div *ngFor="let message of messageSection.body">
