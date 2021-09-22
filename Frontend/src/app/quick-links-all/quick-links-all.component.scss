@@ -63,5 +63,9 @@ ion-item::part(native){
       cursor: pointer;
       margin-right: 0;
       margin-left: 0;
+      @include transition(all 0.3s ease-in-out);
+      &:hover{
+        background-color: #f9f8f8;
+      }
     }    
 }

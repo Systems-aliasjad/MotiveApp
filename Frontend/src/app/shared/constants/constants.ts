@@ -235,7 +235,7 @@ const TRACK_COMPLAINT = {
 };
 const TRACK_REQUEST = {
   body: 'QUICK_LINKS.TRACK_REQUEST',
-  linkTo: 'track-request',
+  linkTo: 'track-request/request-detail',
 };
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.UPGRADE_ROUTER',
@@ -567,6 +567,51 @@ export class ApplicableCodes {
     },
   ];
 
+  public static complaintDetailsTarckComplaintTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referecneNo',
+    },
+    {
+      title: 'MESSAGES.DATE_VISIT',
+      type: 'date',
+      objKeyNameEN: 'dateVisit',
+    },
+    {
+      title: 'MESSAGES.APPOINTMENT_DETAILS',
+      type: 'text',
+      objKeyNameEN: 'appointmentDetails',
+    },
+  ];
+
+  public static appointmentSetSuccessfullyTarckRequestTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.APOINTMENT_DATE',
+      type: 'text',
+      objKeyNameEN: 'appointmentDate',
+    },
+    {
+      title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
+      type: 'text',
+      objKeyNameEN: 'appointmentTimeSlot',
+    },
+  ];
+
+  public static complaintDetailsResolvedTarckComplaintTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referecneNo',
+    },
+
+    {
+      title: 'MESSAGES.RESOLVED_DATE',
+      type: 'date',
+      objKeyNameEN: 'resolvedDetails',
+    },
+  ];
+
   public static routerNotReachableTemplate: ISection2Template[] = [
     {
       title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_NAME',
@@ -616,6 +661,57 @@ export class ApplicableCodes {
     },
   ];
 
+  public static requestDetailsTemplate: ISection2Template[] = [
+    {
+      title: 'REQUEST_DETAILS.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+    {
+      title: 'REQUEST_DETAILS.DATE_CREATED',
+      type: 'date',
+      objKeyNameEN: 'dateCreated',
+    },
+    {
+      title: 'REQUEST_DETAILS.APPOINTMENT_DETAILS',
+      type: 'text',
+      objKeyNameEN: 'details',
+    },
+  ];
+
+  public static requestAlreadyExistsTemplate: ISection2Template[] = [
+    {
+      title: 'REQUEST_ALREADY_EXISTS.APPOINTMENT_DATE',
+      type: 'date',
+      objKeyNameEN: 'appointmentDate',
+    },
+    {
+      title: 'REQUEST_ALREADY_EXISTS.APPOINTMENT_TIME',
+      type: 'time',
+      objKeyNameEN: 'appointmentTime',
+    },
+  ];
+
+  public static appointmentChangedSuccessTemplate: ISection2Template[] = [
+    {
+      title: 'APPOINTMENT_CHANGED_SUCCESSFULLY.DATE',
+      type: 'date',
+      objKeyNameEN: 'date',
+    },
+    {
+      title: 'APPOINTMENT_CHANGED_SUCCESSFULLY.TIME',
+      type: 'time',
+      objKeyNameEN: 'time',
+    },
+  ];
+
+  public static serviceUnavailableTemplate: ISection2Template[] = [
+    {
+      title: 'SERVICE_UNAVAILABLE.EXPECTED_DATE_OF_COMPLETION',
+      type: 'date',
+      objKeyNameEN: 'expecDateOfCompletion',
+    },
+  ];
   public static OpenServiceRequestTemplate: ISection2Template[] = [
     {
       title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',

@@ -21,6 +21,44 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.COMPLAINT_ALREADY_EXISTS_BODY'],
   };
 
+  public static compliantDetailsTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_DETAILS',
+    paragraphs: ['MESSAGES.HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT'],
+  };
+  public static compliantNotFoundTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_NOT_FOUND',
+    paragraphs: ['MESSAGES.SORRY_WE_COULDNT_FIND_THE_COMPLAINT_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING'],
+  };
+
+  public static workNotCompletedTrackRequest = {
+    header: 'MESSAGES.WORK_NOT_COMPLETED',
+    paragraphs: ['MESSAGES.PLEASE_SET_AN_APPOINTMENT_WITH_US_ONCE_YOU_COMPLETE_THE_WORK'],
+  };
+
+  public static requestInProcessTrackRequest = {
+    header: 'MESSAGES.REQUEST_IN_PROGRESS',
+    paragraphs: ['MESSAGES.WE_APOLOGIZE_FOR_THE_DELAY_COMPLAINT_WILL_BE_BOOKED_REGARDING_THE_DELAY'],
+  };
+
+  public static compliantDetailsResolvedTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_DETAILS',
+    paragraphs: ['MESSAGES.HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT'],
+  };
+
+  public static compliantDetailsResolvedSection3TrackComplaint = {
+    paragraphs: ['MESSAGES.IT_LOOKS_LIKE_THIS_COMPLAINT_HAS_ALREADY_BEEN_RESOLVED_BY_OUR_TECHNICIAN_YOU_CAN_REOPEN_THE_COMPLAINT_IF_YOURE_STILL_FACING_AN_ISSUE'],
+  };
+
+  public static compliantAlreadyExistsTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_ALREADY_EXISTS',
+    paragraphs: ['MESSAGES.OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE', 'MESSAGES.YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON'],
+  };
+
+  public static compliantUnderProcessTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_UNDER_PROCESS',
+    paragraphs: ['MESSAGES.WE_APOLOGIZE_FOR_THE_DELAY_OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON'],
+  };
+
   public static appointmentbookssuccessfullyCase = {
     header: 'MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY',
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
@@ -313,6 +351,11 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static appointmentSetSuccessfullyTrackRequest = {
+    header: 'MESSAGES.APPOINTMENT_SET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.YOUR_APPOINTMENT_HAS_BEEN_SET_SUCCESSFULLY', 'MESSAGES.THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT'],
+  };
+
   // public static noIssuesPhoneCareSection1: IMessageIssue = {
   //   header: '',
   //   body: [
@@ -416,6 +459,36 @@ export class CustomerJourneyConstants {
   public static InstallNewRouterComplaintRaisedSuccessfully = {
     header: 'MESSAGES.COMPLAINT_RAISED_SUCCESSFULLY!',
     paragraphs: ['MESSAGES.WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON'],
+  };
+
+  public static requestDetails = {
+    header: 'MESSAGES.REQUEST_DETAILS',
+    paragraphs: ['MESSAGES.HERE_ARE_THE_DETAILS_OF_YOUR_REQUEST'],
+  };
+
+  public static requestUnderProcess = {
+    header: 'MESSAGES.REQUEST_UNDER_PROCESS',
+    paragraphs: ['MESSAGES.PLEASE_WAIT_..._YOUR_REQUEST_WILL_BE_PROCESSED_SOON'],
+  };
+
+  public static requestAlreadyExists = {
+    header: 'MESSAGES.REQUEST_ALREADY_EXISTS',
+    paragraphs: ['MESSAGES.THERE_IS_ALREADY_AN_APPOINTMENT_SCHEDULED_FOR_PROVIDING_THE_SERVICE'],
+  };
+
+  public static appointmentChangeSuccess = {
+    header: 'MESSAGES.APPOINTMENT_CHANGED_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.YOUR_APPOINTMENT_HAS_BEEN_CHANGED_SUCCESSFULLY._THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT'],
+  };
+
+  public static serviceUnavailable = {
+    header: 'MESSAGES.SERVICE_UNAVAILABLE',
+    paragraphs: ['MESSAGES.THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON._OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE'],
+  };
+
+  public static actionRequired = {
+    header: 'MESSAGES.ACTION_REQUIRED',
+    paragraphs: ["MESSAGES.THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT"],
   };
 
   public static errorOccured = {
