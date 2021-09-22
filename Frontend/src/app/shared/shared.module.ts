@@ -2,9 +2,8 @@ import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/header/header.component';
-import { LoaderComponent } from './components/loader/loader.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
-import { ThankyouScreenComponent } from '../thankyou-screen/thankyou-screen.component';
+import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-screen.component';
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 
@@ -44,7 +43,6 @@ import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-iss
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinComponent } from './components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { ChangeCallForwardComponent } from './components/change-call-forward/change-call-forward.component';
 import { DummyDelComponent } from './components/dummy-del/dummy-del.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
@@ -63,7 +61,6 @@ export function createTranslateLoader(http: HttpClient) {
     MotiveMessageComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
-    LoaderComponent,
     BookComplaintComponent,
     NumberOnlyDirective,
     IssueTabsComponent,
@@ -94,7 +91,6 @@ export function createTranslateLoader(http: HttpClient) {
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinComponent,
-    ChangeCallForwardComponent,
     DummyDelComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
@@ -124,7 +120,6 @@ export function createTranslateLoader(http: HttpClient) {
     HeaderComponent,
     MotiveMessageComponent,
     ThankyouScreenComponent,
-    LoaderComponent,
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
@@ -134,7 +129,6 @@ export function createTranslateLoader(http: HttpClient) {
     PhoneIssueListDialogComponent,
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinComponent,
-    ChangeCallForwardComponent,
     DummyDelComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,

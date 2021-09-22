@@ -25,12 +25,6 @@ export interface IButton {
   customListner?: string;
 }
 
-export interface IButtonSize {
-  SM: string;
-  MD: string;
-  LG: string;
-}
-
 interface IMessageIssueBody {
   title: string;
   children?: string[];

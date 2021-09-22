@@ -3,9 +3,9 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 // import { MessageBuilderComponent } from './message-builder/message-builder.component';
-import { ThankyouScreenComponent } from './thankyou-screen/thankyou-screen.component';
+import { ThankyouScreenComponent } from './shared/components/thankyou-screen/thankyou-screen.component';
 import { TermsConditionsComponent } from './shared/components/terms-conditions/terms-conditions.component';
-import { LoaderComponent } from './shared/components/loader/loader.component';
+import { LoaderComponent } from './loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
 import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
@@ -22,7 +22,6 @@ import { UnableWatchSpecificChannelComponent } from './shared/components/unable-
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 import { PhoneIssuesProblemValueAddedComponent } from './shared/components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinComponent } from './shared/components/forgot-ccb-pin/forgot-ccb-pin.component';
-import { ChangeCallForwardComponent } from './shared/components/change-call-forward/change-call-forward.component';
 import { DummyDelComponent } from './shared/components/dummy-del/dummy-del.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
@@ -160,7 +159,6 @@ const routes: Routes = [
 
   { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'no-issue-phone-reset-ccb-pin', component: ForgotCcbPinComponent, data: { id: ERoutingIds.noIssuePhoneResetCCBPin } },
-  { path: 'no-issue-phone-phone-Change-call-forward', component: ChangeCallForwardComponent, data: { id: ERoutingIds.noIssuePhoneChangeCallForward } },
 
   { path: 'DummyDel', component: DummyDelComponent, data: { id: ERoutingIds.noIssuePhone } },
   { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },

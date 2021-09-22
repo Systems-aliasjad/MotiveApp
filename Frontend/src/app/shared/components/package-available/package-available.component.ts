@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ERoutingIds } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -19,7 +18,7 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
   PageContent: string;
   cardList: any;
   subscription: Subscription;
-  buttonConfigs: IButton[] = [];
+  buttonConfigs: any[] = [];
   button1: IMotiveButton;
   button2: IMotiveButton;
 

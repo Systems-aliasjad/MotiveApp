@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
-import { IButton, IButtonSize, IPageHeader } from './constants/types';
+import { IPageHeader } from './constants/types';
 
 @Injectable({
   providedIn: 'root',
@@ -17,35 +17,19 @@ export class SharedService {
   loaderSubject: BehaviorSubject<boolean>;
   loader$: Observable<boolean>;
 
-  buttonsConfigSubject: BehaviorSubject<IButton[]>;
-  buttonsConfig$: Observable<IButton[]>;
-
-  buttonSizeSubject: BehaviorSubject<IButtonSize>;
-  buttonSize$: Observable<IButtonSize>;
-
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
     singleLine: false,
     showBackBtn: true,
   };
 
-  defaultBtnSize: IButtonSize = {
-    SM: '',
-    MD: '',
-    LG: '',
-  };
-
   constructor(public translate: TranslateService) {
     this.loaderSubject = new BehaviorSubject(false);
-    this.buttonsConfigSubject = new BehaviorSubject(null);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
-    this.buttonSizeSubject = new BehaviorSubject(this.defaultBtnSize);
 
     this.loader$ = this.loaderSubject.asObservable();
-    this.buttonSize$ = this.buttonSizeSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
-    this.buttonsConfig$ = this.buttonsConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
@@ -85,25 +69,20 @@ export class SharedService {
     return this.loader$;
   }
 
-  setButtonConfig(config: IButton[]) {
-    this.buttonsConfigSubject.next(config);
+  setButtonConfig(config: any) {}
+
+  getButtonConfig(): Observable<any[]> {
+    return null;
   }
 
-  getButtonConfig(): Observable<IButton[]> {
-    return this.buttonsConfig$;
-  }
+  setButtonSize(config: any) {}
 
-  setButtonSize(config: IButtonSize) {
-    this.buttonSizeSubject.next(config);
-  }
-
-  getButtonSize(): Observable<IButtonSize> {
-    return this.buttonSize$;
+  getButtonSize(): Observable<any> {
+    return null;
   }
 
   setDefaultValues() {
     this.setHeaderConfig('', false, true);
-    this.setButtonSize(this.defaultBtnSize);
     this.setButtonConfig([]);
     this.setTermsConditions(false);
   }

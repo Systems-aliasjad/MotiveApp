@@ -1,15 +1,8 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IButton } from '../../constants/types';
-import { InternetIssuesDialogSecondComponent } from '../../dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
-import { InternetIssuesDialog } from '../../dialogs/internet-issues-dialog/internet-issues-dialog.component';
-import { RestartRouterDialog } from '../../dialogs/restart-router-dialog/restart-router-dialog.component';
-import { RestartTvboxDialog } from '../../dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { SharedService } from '../../shared.service';
 import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 

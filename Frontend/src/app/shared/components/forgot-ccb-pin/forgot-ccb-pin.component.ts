@@ -45,8 +45,10 @@ export class ForgotCcbPinComponent implements OnInit {
   initialization() {
     this.sharedService.setHeaderConfig('HEADER.RESET_CCB_PIN', true);
     this.createForm();
+    // 3.6.16
     if (this.codeType === ERoutingIds.noIssuePhoneResetCCBPin) {
       this.case = 1;
+      // 4.5.1
     } else if (this.codeType === ERoutingIds.resetTelephoneCCBPIN) {
       this.case = 2;
     }

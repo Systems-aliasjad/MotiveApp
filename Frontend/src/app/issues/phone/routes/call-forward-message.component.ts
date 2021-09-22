@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ApplicableCodes, successImgSrc, warningImgSrc } from 'src/app/shared/constants/constants';
+import { successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 /**
  * Open Service Request present
@@ -32,7 +33,7 @@ export class CallForwardMessageComponent implements OnInit, OnDestroy {
     explanatoryNote: '',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -45,7 +46,9 @@ export class CallForwardMessageComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    this.sharedService.setDefaultValues();
+  }
 
   updatePageContent() {
     this.imgSrc = successImgSrc;

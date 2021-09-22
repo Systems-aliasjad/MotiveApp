@@ -1,11 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { regExps, errorMessages } from '../../validators/validations';
-import { SharedService } from '../../shared.service';
-import { ConfirmedValidator } from '../../constants/constants';
+import { regExps, errorMessages } from '../../../../shared/validators/validations';
+import { SharedService } from '../../../../shared/shared.service';
 import { Subscription } from 'rxjs';
-import { initialize } from '@ionic/core';
 @Component({
   selector: 'app-change-call-forward',
   templateUrl: './change-call-forward.component.html',

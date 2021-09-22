@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 @Component({
   selector: 'app-channel-not-list-dialog',
