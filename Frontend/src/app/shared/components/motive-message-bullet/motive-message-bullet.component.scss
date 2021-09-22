@@ -38,13 +38,13 @@ ion-item::part(native) {
 }
 // ------------Removed Ionic ion-item Styling End-------------------
 ion-content {  
-  .bullet-list{
-    margin-top: 20px;
+  ion-list{
     ion-item{
       color: $secondary-color;
       &:first-child{
         ion-label{
           margin-top: 0;
+          margin-bottom: 0;
         }
       }
     }

@@ -27,7 +27,7 @@
         <div class="content" *ngIf="Section1Data?.paragraphs">
           <div *ngFor="let obj of Section1Data?.paragraphs">
             <p>{{ obj.title | translate }}</p>
-            <ion-list *ngIf="obj.children" class="bullet-list">
+            <ion-list *ngIf="obj.children" class="">
               <ion-item *ngFor="let item of obj.children; let i = index">
                 <ion-label>{{ i + 1 }}. {{ item | translate }}</ion-label>
               </ion-item>
