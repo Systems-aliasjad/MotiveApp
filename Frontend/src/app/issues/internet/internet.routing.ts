@@ -61,6 +61,7 @@ import { AccessPortThirdPartyRouterMessageComponent } from './routes/install-new
 import { InstallNewRouterResetInternetPasswordComponent } from './routes/install-new-router/install-new-router-reset-internet-passoword.component';
 import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
 import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
+import { BookAppointmentComponent } from './routes/book-appointment.component';
 
 const routes: Routes = [
   {
@@ -373,7 +374,10 @@ const routes: Routes = [
     path: 'book-complaint',
     component: BookComplaintComponent,
   },
-
+  {
+    path: 'book-appointment',
+    component: BookAppointmentComponent,
+  },
   {
     path: 'internet-password-reset-success',
     component: ResetInternetPasswordSuccessComponent,
