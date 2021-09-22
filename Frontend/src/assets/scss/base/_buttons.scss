@@ -49,7 +49,7 @@
   &:focus{
     color: $etisalat-color;
     --color:$etisalat-color;
-    background-color: $white;
+    background-color:transparent;
     border: 2px solid $etisalat-color;
   }
 }
