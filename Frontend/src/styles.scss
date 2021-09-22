@@ -511,6 +511,13 @@ html{
     border-top: 1px solid #ededed;
     padding-top: 0;
   }
+  .content {
+    width: 450px;
+    margin: 0 auto;
+    @media screen and (max-width: 992px) {
+      width: 100%;
+    }
+  }
 }
 ion-grid{
   width: 100%;
