@@ -72,7 +72,9 @@ export class ResetTvAdminPinComponent implements OnInit, OnDestroy {
     this.modal = await this.modalCtrl.create({
       component: ResetTvPinDialog,
     });
-    this.modal.onDidDismiss().then((d) => {});
+    this.modal.onDidDismiss().then((d) => {
+      this.sharedService.setHeaderConfig('DIALOG.RESET_TV_ADMIN_PIN', true);
+    });
     return await this.modal.present();
   }
 
