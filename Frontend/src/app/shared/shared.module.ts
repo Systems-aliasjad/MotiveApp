@@ -48,6 +48,7 @@ import { ResetRouterPasswordComponent } from './components/reset-router-password
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
+import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -96,6 +97,7 @@ export function createTranslateLoader(http: HttpClient) {
     ResetPinComponent,
     MotiveMessageBulletComponent,
     InstallEtisalatRouterDialogComponent,
+    MotiveMessageFeedbackComponent,
   ],
   imports: [
     CommonModule,
@@ -134,6 +136,7 @@ export function createTranslateLoader(http: HttpClient) {
     ResetPinComponent,
     MotiveMessageBulletComponent,
     TabTileComponent,
+    MotiveMessageFeedbackComponent,
   ],
 
   entryComponents: [],

@@ -567,6 +567,51 @@ export class ApplicableCodes {
     },
   ];
 
+  public static complaintDetailsTarckComplaintTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referecneNo',
+    },
+    {
+      title: 'MESSAGES.DATE_VISIT',
+      type: 'date',
+      objKeyNameEN: 'dateVisit',
+    },
+    {
+      title: 'MESSAGES.APPOINTMENT_DETAILS',
+      type: 'text',
+      objKeyNameEN: 'appointmentDetails',
+    },
+  ];
+
+  public static appointmentSetSuccessfullyTarckRequestTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.APOINTMENT_DATE',
+      type: 'text',
+      objKeyNameEN: 'appointmentDate',
+    },
+    {
+      title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
+      type: 'text',
+      objKeyNameEN: 'appointmentTimeSlot',
+    },
+  ];
+
+  public static complaintDetailsResolvedTarckComplaintTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referecneNo',
+    },
+
+    {
+      title: 'MESSAGES.RESOLVED_DATE',
+      type: 'date',
+      objKeyNameEN: 'resolvedDetails',
+    },
+  ];
+
   public static routerNotReachableTemplate: ISection2Template[] = [
     {
       title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_NAME',

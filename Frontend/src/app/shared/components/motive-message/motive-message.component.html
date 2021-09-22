@@ -49,6 +49,18 @@
           </div>
         </ion-col>
       </ion-row>
+
+      <!-- //for paragraph in content -->
+      <ion-row class="info-container_detail" *ngIf="Section3Data">
+        <ion-col size="12" class="pt-0 pb-0">
+          <div class="content" *ngIf="Section3Data?.paragraphs">
+            <p *ngFor="let txt of Section3Data?.paragraphs">
+              {{ txt | translate }}
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+
       <!-- Detail List and Follow up and Close End -->
       <ion-row class="ion-text-center lg-screen">
         <ion-col size="12" class="pt-0 pb-0">

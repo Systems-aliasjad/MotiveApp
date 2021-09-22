@@ -21,6 +21,44 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.COMPLAINT_ALREADY_EXISTS_BODY'],
   };
 
+  public static compliantDetailsTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_DETAILS',
+    paragraphs: ['MESSAGES.HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT'],
+  };
+  public static compliantNotFoundTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_NOT_FOUND',
+    paragraphs: ['MESSAGES.SORRY_WE_COULDNT_FIND_THE_COMPLAINT_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING'],
+  };
+
+  public static workNotCompletedTrackRequest = {
+    header: 'MESSAGES.WORK_NOT_COMPLETED',
+    paragraphs: ['MESSAGES.PLEASE_SET_AN_APPOINTMENT_WITH_US_ONCE_YOU_COMPLETE_THE_WORK'],
+  };
+
+  public static requestInProcessTrackRequest = {
+    header: 'MESSAGES.REQUEST_IN_PROGRESS',
+    paragraphs: ['MESSAGES.WE_APOLOGIZE_FOR_THE_DELAY_COMPLAINT_WILL_BE_BOOKED_REGARDING_THE_DELAY'],
+  };
+
+  public static compliantDetailsResolvedTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_DETAILS',
+    paragraphs: ['MESSAGES.HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT'],
+  };
+
+  public static compliantDetailsResolvedSection3TrackComplaint = {
+    paragraphs: ['MESSAGES.IT_LOOKS_LIKE_THIS_COMPLAINT_HAS_ALREADY_BEEN_RESOLVED_BY_OUR_TECHNICIAN_YOU_CAN_REOPEN_THE_COMPLAINT_IF_YOURE_STILL_FACING_AN_ISSUE'],
+  };
+
+  public static compliantAlreadyExistsTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_ALREADY_EXISTS',
+    paragraphs: ['MESSAGES.OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE', 'MESSAGES.YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON'],
+  };
+
+  public static compliantUnderProcessTrackComplaint = {
+    header: 'MESSAGES.COMPLAINT_UNDER_PROCESS',
+    paragraphs: ['MESSAGES.WE_APOLOGIZE_FOR_THE_DELAY_OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON'],
+  };
+
   public static appointmentbookssuccessfullyCase = {
     header: 'MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY',
     paragraphs: ['MESSAGES.APPOINTMENT_BOOK_SUCCESSFULLY_BODY'],
@@ -311,6 +349,11 @@ export class CustomerJourneyConstants {
         ],
       },
     ],
+  };
+
+  public static appointmentSetSuccessfullyTrackRequest = {
+    header: 'MESSAGES.APPOINTMENT_SET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.YOUR_APPOINTMENT_HAS_BEEN_SET_SUCCESSFULLY', 'MESSAGES.THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT'],
   };
 
   // public static noIssuesPhoneCareSection1: IMessageIssue = {
