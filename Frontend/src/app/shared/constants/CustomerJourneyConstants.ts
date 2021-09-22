@@ -461,6 +461,36 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON'],
   };
 
+  public static requestDetails = {
+    header: 'MESSAGES.REQUEST_DETAILS',
+    paragraphs: ['MESSAGES.HERE_ARE_THE_DETAILS_OF_YOUR_REQUEST'],
+  };
+
+  public static requestUnderProcess = {
+    header: 'MESSAGES.REQUEST_UNDER_PROCESS',
+    paragraphs: ['MESSAGES.PLEASE_WAIT_..._YOUR_REQUEST_WILL_BE_PROCESSED_SOON'],
+  };
+
+  public static requestAlreadyExists = {
+    header: 'MESSAGES.REQUEST_ALREADY_EXISTS',
+    paragraphs: ['MESSAGES.THERE_IS_ALREADY_AN_APPOINTMENT_SCHEDULED_FOR_PROVIDING_THE_SERVICE'],
+  };
+
+  public static appointmentChangeSuccess = {
+    header: 'MESSAGES.APPOINTMENT_CHANGED_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.YOUR_APPOINTMENT_HAS_BEEN_CHANGED_SUCCESSFULLY._THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT'],
+  };
+
+  public static serviceUnavailable = {
+    header: 'MESSAGES.SERVICE_UNAVAILABLE',
+    paragraphs: ['MESSAGES.THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON._OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE'],
+  };
+
+  public static actionRequired = {
+    header: 'MESSAGES.ACTION_REQUIRED',
+    paragraphs: ["MESSAGES.THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT"],
+  };
+
   public static errorOccured = {
     header: 'MESSAGES.Error_Occured',
     paragraphs: ['MESSAGES.Error_Occured_BODY'],

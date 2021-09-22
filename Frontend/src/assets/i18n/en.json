@@ -142,7 +142,6 @@
     "REOPEN_COMPLAINT": "reopen complaint",
     "SUBMIT_FEEDBACK": "Submit feedback",
     "TRACK_COMPLAINT": "Track complaint",
-    "CHANGE_APPOINTMENT": "Change appointment",
     "CANCEL_COMPLAINT": "Cancel complaint",
     "INSTALLATION_COMPLETED": "Installation completed",
     "FORGOT_PASSWORD": "Forgot password",
@@ -206,7 +205,11 @@
     "CONFIRM_TRANSFER": "CONFIRM TRANSFER",
     "END_TROUBLESHOOTING": "END TROUBLESHOOTING",
     "BUY_ETISALAT_ROUTER": "BUY ETISALAT ROUTER",
-    "NO_I_WANT_TO_REPORT_ANOTHER_ISSUE": "No, I want to report another issue"
+    "NO_I_WANT_TO_REPORT_ANOTHER_ISSUE": "No, I want to report another issue",
+    "TRACK_REQUEST": "TRACK REQUEST",
+    "CHANGE_APPOINTMENT": "CHANGE APPOINTMENT",
+    "SET_AN_APPOINTMENT": "SET AN APPOINTMENT",
+    "WORK_NOT_COMPLETED": "WORK NOT COMPLETED"
   },
   "TEXT": {
     "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
@@ -462,7 +465,19 @@
     "CONNECT_THE_NEW_ROUTER_TO_X_PORT_OF_THE_WALL-MOUNTED_FIBER_BOX": "Connect the new router to 'X' port of the wall-mounted fiber box",
     "SET_THE_ROUTER_WITH_A_NEW_PASSWORD": "Set the router with a new password",
     "INSTALLING_ETISALAT_ROUTER": "Installing Etisalat router",
-    "WAIT_FOR_5_MINUTES_THE_ROUTER_WILL_BE_CONFIGURED_WITH_NEW_PASSWORD_AUTOMATICALLY_AND_YOU_WILL_BE_ABLE_TO_USE_INTERNET_SERVICE_NORMALLY": "Wait for 5 minutes. The router will be configured with new password automatically and you will be able to use Internet service normally"
+    "WAIT_FOR_5_MINUTES_THE_ROUTER_WILL_BE_CONFIGURED_WITH_NEW_PASSWORD_AUTOMATICALLY_AND_YOU_WILL_BE_ABLE_TO_USE_INTERNET_SERVICE_NORMALLY": "Wait for 5 minutes. The router will be configured with new password automatically and you will be able to use Internet service normally",
+    "REQUEST_DETAILS": "Request details",
+    "HERE_ARE_THE_DETAILS_OF_YOUR_REQUEST": "Here are the details of your request:",
+    "REQUEST_UNDER_PROCESS": "Request under process",
+    "PLEASE_WAIT_..._YOUR_REQUEST_WILL_BE_PROCESSED_SOON": "Please wait... Your request will be processed soon.",
+    "REQUEST_ALREADY_EXISTS": "Request already exists",
+    "THERE_IS_ALREADY_AN_APPOINTMENT_SCHEDULED_FOR_PROVIDING_THE_SERVICE": "There is already an appointment scheduled for providing the service",
+    "APPOINTMENT_CHANGED_SUCCESSFULLY": "Appointment change successfully!",
+    "YOUR_APPOINTMENT_HAS_BEEN_CHANGED_SUCCESSFULLY._THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT": "Your appointment has been changed successfully. Thank you for using our technical support.",
+    "SERVICE_UNAVAILABLE": "Service unavailable",
+    "THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON._OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE": "This service is coming to your area soon. Our team will contact you once it is available.",
+    "ACTION_REQUIRED": "Action required",
+    "THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT": "There is some work pending from your side. Please tap 'Set an appointment' if you have already completed it."
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",
@@ -619,5 +634,21 @@
   "RESET_TV_ADMIN_PIN": {
     "LABEL1": "Enter your mobile number to recive the new PIN via SMS",
     "LABEL2": "Please enter a valid mobile number"
+  },
+  "REQUEST_DETAILS": {
+    "REFERENCE_NO": "Reference no.",
+    "DATE_CREATED": "Date created:",
+    "APPOINTMENT_DETAILS": "Appointment details:"
+  },
+  "REQUEST_ALREADY_EXISTS": {
+    "APPOINTMENT_DATE": "Appointment Date",
+    "APPOINTMENT_TIME": "Appointment Time"
+  },
+  "APPOINTMENT_CHANGED_SUCCESSFULLY": {
+    "DATE": "Date",
+    "TIME": "Time"
+  },
+  "SERVICE_UNAVAILABLE": {
+    "EXPECTED_DATE_OF_COMPLETION": "Expected date of completion:"
   }
 }
