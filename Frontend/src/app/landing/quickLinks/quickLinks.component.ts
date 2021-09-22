@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { motiveSubscriptions } from 'src/app/shared/constants/constants';
 import { ICard } from 'src/app/shared/constants/types';
 
@@ -21,7 +22,7 @@ export class QuickLinksComponent implements OnInit {
   width: number = window.innerWidth;
   mobileWidth: number = 760;
 
-  constructor() {
+  constructor(private router: Router) {
     this.setSlideOpts();
   }
 
@@ -46,5 +47,9 @@ export class QuickLinksComponent implements OnInit {
         spaceBetween: 5,
       };
     }
+  }
+
+  onClickSeeAllQuickLinks() {
+    this.router.navigate(['quick-links-all']);
   }
 }
