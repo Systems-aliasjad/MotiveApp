@@ -24,11 +24,11 @@ ion-item::part(native) {
 }
 // --------------------------------------------------------------
 
-.service-detail_title {
+/* .service-detail_title {
   @media screen and (min-width: 992px) {
     display: none;
   }
-}
+} */
 .service-detail_slider {
   .service-states-container {
     text-align: center;
@@ -181,12 +181,6 @@ ion-item::part(native) {
         display: block;
       }
     }
-    /* app-page-top {
-      @media screen and (max-width: 992px) {
-        display: none;
-      }
-    } */
-
     .shadow-box {
       border-radius: 0.5rem;
       background-color: #ffffff;

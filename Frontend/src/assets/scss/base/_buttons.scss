@@ -1,13 +1,6 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 
-
-ion-button.button-disabled {
-  color: #979696;
-  --color: #979696;
-  background-color: #d1d2d1;
-  border: 2px solid #d1d2d1;
-}
 .primary-btn,
 .primary-btn.button-solid,
 .secondary-btn{
@@ -78,4 +71,18 @@ ion-button.button-disabled {
     --color:#353738;
   }
 }
-
+.button-solid.button-disabled {
+  color: #474747;
+  --color: #474747;
+  background-color: #d1d2d1;
+  border: 2px solid #d1d2d1;
+  box-shadow: none;
+  &:hover,
+  &:focus,
+  &:active{
+    color: #474747;
+    --color: #474747;
+    background-color: #d1d2d1;
+    border: 2px solid #d1d2d1;
+  }
+}
