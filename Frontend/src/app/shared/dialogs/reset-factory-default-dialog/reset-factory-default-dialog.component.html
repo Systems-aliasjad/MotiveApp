@@ -16,13 +16,29 @@
         <p>{{ 'DIALOG.RESET_FACTORY_DEFAULT_NOTE' | translate }}</p>
       </ion-col>
     </ion-row>
-    <ion-row>
+    <!-- <ion-row>
       <ion-col size="12">
         <ion-checkbox checked="true" color="primary"></ion-checkbox>
         {{ 'TEXT.I_AGREE_TO' | translate }} <a>{{ 'TEXT.TERMS_AND_CONDITIONS' | translate }}</a>
       </ion-col>
-    </ion-row>
+    </ion-row> -->
   </ion-grid>
-  <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'secondary'" (clickHandler)="CloseMOdal()"></motive-button>
-  <motive-button [title]="'BUTTONS.CANCEL'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>
 </ion-content>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'terms'"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'primary'" (clickHandler)="CloseMOdal()"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [title]="'BUTTONS.CANCEL'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>

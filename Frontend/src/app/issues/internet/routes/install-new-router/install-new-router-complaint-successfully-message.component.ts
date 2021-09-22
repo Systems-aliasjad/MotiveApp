@@ -5,6 +5,7 @@ import { ApplicableCodes, successImgSrc, warningImgSrc } from 'src/app/shared/co
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 /**
  * Open Service Request present
@@ -40,7 +41,7 @@ export class InstallNewRouterComplaintSuccessfullyMessageComponent implements On
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -53,7 +54,9 @@ export class InstallNewRouterComplaintSuccessfullyMessageComponent implements On
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    this.sharedService.setHeaderConfig('', false, false);
+  }
 
   updatePageContent() {
     this.imgSrc = successImgSrc;

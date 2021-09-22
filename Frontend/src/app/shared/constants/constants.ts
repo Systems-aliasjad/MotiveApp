@@ -211,11 +211,11 @@ const FACTORY_RESET_TV = {
 };
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
-  linkTo: '',
+  linkTo: 'issues/internet/reset-internet-password',
 };
 const CONNECTION_ISSUE_ROUTER = {
   body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
-  linkTo: '',
+  linkTo: 'unable-connect-newDevice',
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
@@ -223,11 +223,11 @@ const FORGOT_PASSWORD_TV = {
 };
 const TRANSFER_PACKAGE_TV = {
   body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
-  linkTo: '',
+  linkTo: 'issues/tv/eLife-upgrade',
 };
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
-  linkTo: '',
+  linkTo: 'device-connected-homezone',
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.TRACK_COMPLAINT',
@@ -239,11 +239,11 @@ const TRACK_REQUEST = {
 };
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.UPGRADE_ROUTER',
-  linkTo: '',
+  linkTo: 'issues/internet/router-upgrade',
 };
 const UPGRADE_PACKAGE = {
   body: 'QUICK_LINKS.UPGRADE_PACKAGE',
-  linkTo: '',
+  linkTo: 'issues/tv/eLife-upgrade',
 };
 
 export const motiveSubscriptions: IMotvieSubscription = {
