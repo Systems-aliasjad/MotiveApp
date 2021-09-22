@@ -38,11 +38,15 @@ ion-item::part(native) {
 }
 // ------------Removed Ionic ion-item Styling End-------------------
 ion-content {  
-  ion-list{
-    margin: 20px 0 0 0;
-    
+  .bullet-list{
+    margin-top: 20px;
     ion-item{
       color: $secondary-color;
+      &:first-child{
+        ion-label{
+          margin-top: 0;
+        }
+      }
     }
   }
   
@@ -123,6 +127,11 @@ ion-content {
         margin-bottom: 1rem;
       }
     }
+  }
+}
+.info-content{
+  @media screen and (min-width: 992px) {
+    margin-bottom: 2rem;
   }
 }
 .lg-screen {
