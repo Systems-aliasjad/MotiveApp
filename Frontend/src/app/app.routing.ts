@@ -28,6 +28,9 @@ import { ResetPinFailedMessageComponent } from './shared/all-services/reset-pin-
 import { PhoneNotReachableComponent } from './shared/all-services/phone-not-reachable.component';
 import { OntRebootRequiredTvComponent } from './shared/all-services/ont-reboot-required-tv.component';
 import { OntRebootRequiredInternetComponent } from './shared/all-services/ont-reboot-required-internet.component';
+import { CustomerNotSameRouterComponent } from './shared/all-services/customer-not-same-router.component';
+import { OutageComponent } from './shared/all-services/outage.component';
+import { IssueNotFixedComponent } from './shared/all-services/issue-not-fixed.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -176,6 +179,9 @@ const routes: Routes = [
   { path: 'phone-not-reachable', component: PhoneNotReachableComponent },
   { path: 'ont-reboot-required-tv', component: OntRebootRequiredTvComponent },
   { path: 'ont-reboot-required-internet', component: OntRebootRequiredInternetComponent },
+  { path: 'customer-not-using-same-router', component: CustomerNotSameRouterComponent },
+  { path: 'outage', component: OutageComponent },
+  { path: 'issue-not-fixed', component: IssueNotFixedComponent },
 
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },

@@ -1,5 +1,6 @@
 {
   "HEADER": {
+    "ALL_SERVICES": "All services",
     "INTERNET_ISSUES": "Internet issues",
     "PHONE_ISSUES": "Phone Issues",
     "ISSUES": "Issues",
@@ -251,6 +252,14 @@
   },
 
   "MESSAGES": {
+    "NO_SERVICE": "No service",
+    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": "The eLife service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
+    "DEVICES_IS_NOT_ACCESSIBLE": "Devices is not accessible!",
+    "THE_TV_BOX_IS_SWITCHED_ON": "The TV Box is switched ON",
+    "THE_TV_BOX_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": "The TV Box is connected to “X” port on the Fiber Box",
+    "THE_TELEPHONE_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": "The Telephone is connected to “X Port on the Fiber Box",
+    "THE_TELEPHONE_DEVICE_IS_SWITCHED_ON": "The Telephone device is switched ON",
+    "IF_ISSUE_IS_STILL_NOT_FIXED_PLEASE_RECONFIGURE_YOUR_ROUTER_WITH_THE_CORRECT_SETTINGS": "If issue is still not fixed, please reconfigure your router with the correct settings",
     "WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES": "We have fixed all the technical issues.",
     "PLEASE_RESTART_THE_WALL-MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": "Please restart the wall-mounted fiber box and then try using the TV again.",
     "WE_CANT_REACH_YOUR_PHONE": "We can’t reach your Phone",
