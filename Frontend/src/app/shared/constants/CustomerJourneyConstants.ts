@@ -194,6 +194,11 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.UNPLANNED_INTERRUPTION_BODY' }],
   };
 
+  public static fiberBoxNotReachableBuilderSection: IMessageIssue = {
+    header: 'MESSAGES.FIBER_BOX_NOT_REACHABLE',
+    body: [{ title: 'MESSAGES.PLEASE_MAKE_SURE_THAT_THE_POWER_CABLE_FOR_WALL_MOUNTED_FIBER_BOX_IS_CONNECTED_PROPERLY_AND_POWER_IS_ON' }],
+  };
+
   public static routerUpdradeRecomendedMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_ISSUE_FOUND',
     body: [
@@ -248,6 +253,22 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
+    ],
+  };
+
+  public static phoneNotReachableAllServicesSection: IMessageIssue = {
+    header: 'MESSAGES.WE_CANT_REACH_YOUR_PHONE',
+    body: [
+      {
+        title: 'MESSAGES.ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE',
+        children: ['MESSAGES.THE_PHONE_IS_NOT_SWITCHED_ON', 'MESSAGES.THE_CABLE_ISNT_CONNECTED_PROPERLY', 'MESSAGES.THE_PHONE_IS_FAULTY'],
+      },
+      {
+        title: 'MESSAGES.TAP_TRY_AGAIN_LATER_IF_YOU_WANT_TO_CHECK_THE_PROBLEM_LATER',
+      },
+      {
+        title: 'MESSAGES.TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT',
       },
     ],
   };
@@ -337,6 +358,18 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.ONT_REBOOT_REQUIRED_BODY2',
+      },
+    ],
+  };
+
+  public static ontRestartTVAllServices: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
+      },
+      {
+        title: 'MESSAGES.PLEASE_RESTART_THE_WALL-MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN',
       },
     ],
   };
