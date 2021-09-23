@@ -1,5 +1,8 @@
 {
   "HEADER": {
+    "INTERNET_ISSUES": "Internet issues",
+    "PHONE_ISSUES": "Phone Issues",
+    "ISSUES": "Issues",
     "INSTALL_ETISALAT_ROUTER": "Install Etisalat router",
     "NO_DIAL_TONE": "No dial tone",
     "SELECT_BRAND": "Select Brand",
@@ -138,6 +141,7 @@
     "PIN": "PIN"
   },
   "BUTTONS": {
+    "ISSUE_STILL_NOT_RESOLVED": "ISSUE STILL NOT RESOLVED",
     "BOOK_COMPLAINT": "Book complaint",
     "REOPEN_COMPLAINT": "reopen complaint",
     "SUBMIT_FEEDBACK": "Submit feedback",
@@ -246,6 +250,17 @@
   },
 
   "MESSAGES": {
+    "WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES": "We have fixed all the technical issues.",
+    "PLEASE_RESTART_THE_WALL-MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": "Please restart the wall-mounted fiber box and then try using the TV again.",
+    "WE_CANT_REACH_YOUR_PHONE": "We can’t reach your Phone",
+    "ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE": "One of these options could be causing the issue:",
+    "THE_PHONE_IS_NOT_SWITCHED_ON": "The Phone is not switched on",
+    "THE_CABLE_ISNT_CONNECTED_PROPERLY": "The cable isn't connected properly",
+    "THE_PHONE_IS_FAULTY": "The Phone is faulty",
+    "TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT": "Tap 'Book an appointment' if you want to book a technician visit.",
+    "TAP_TRY_AGAIN_LATER_IF_YOU_WANT_TO_CHECK_THE_PROBLEM_LATER": "Tap 'Try again later' if you want to check the problem later.",
+    "FIBER_BOX_NOT_REACHABLE": "Fiber Box not reachable",
+    "PLEASE_MAKE_SURE_THAT_THE_POWER_CABLE_FOR_WALL_MOUNTED_FIBER_BOX_IS_CONNECTED_PROPERLY_AND_POWER_IS_ON": "Please make sure that the power cable for wall mounted Fiber Box is connected properly and power is ON.",
     "PIN_RESET_FAILED": "PIN Reset Failed",
     "SORRY_PIN_RESET_FAILED": "Sorry, PIN reset failed.",
     "BOOK_COMPLAINT_TO_FIX_THE_ISSUE": "Book complaint to fix the issue",
