@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { regExps, errorMessages } from '../../../../shared/validators/validations';
 import { SharedService } from '../../../../shared/shared.service';
-import { ConfirmedValidator } from '../../../../shared/constants/constants';
+import { ConfirmedValidator, eyeHide, eyeShow } from '../../../../shared/constants/constants';
 import { Subscription } from 'rxjs';
 import { ModalController } from '@ionic/angular';
 import { TermsConditionsComponent } from '../../../../shared/components/terms-conditions/terms-conditions.component';
@@ -17,12 +17,14 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
   public formGroup: FormGroup;
   error = errorMessages;
   modal: any;
-  passwordType: string = 'password';
+  // passwordType: string = 'password';
+  passwordShowIcon: string = eyeShow;
+  passwordHideIcon: string = eyeHide;
 
   termsCheck: boolean = false;
   subscription: Subscription;
   hideShowPassword(Type: any) {
-    this.passwordType = Type.type === 'password' ? 'text' : 'password';
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController, private location: Location) {

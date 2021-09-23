@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
-import { ConfirmedValidator } from '../../constants/constants';
+import { ConfirmedValidator, eyeHide, eyeShow } from '../../constants/constants';
 import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
@@ -20,6 +20,8 @@ export class ResetWifiPasswordComponent implements OnInit, OnDestroy {
   termsCheck: boolean = false;
   modal: any;
   subscription: Subscription;
+  passwordShowIcon: string = eyeShow;
+  passwordHideIcon: string = eyeHide;
   hideShowPassword(Type: any) {
     Type.type = Type.type === 'password' ? 'text' : 'password';
   }

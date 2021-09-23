@@ -153,6 +153,8 @@ export enum ERoutingIds {
 export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
 export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
 export const infoImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_regular.svg';
+export const eyeShow: string = 'assets/images/action-icons/icon_show.svg';
+export const eyeHide: string = 'assets/images/action-icons/icon_hide.svg';
 
 const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
