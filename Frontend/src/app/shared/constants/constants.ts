@@ -211,6 +211,11 @@ const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.FACTORY_RESET_TV',
   linkTo: 'issues/tv/tv-box-reset-factory',
 };
+const ELIFE_ON_PIN_RESET = {
+  body: 'QUICK_LINKS.ELIFE_ON_PIN_RESET',
+  linkTo: 'issues/tv/pin-reset-failed',
+};
+
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
   linkTo: 'issues/internet/reset-internet-password',
@@ -255,6 +260,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FACTORY_RESET_TV,
+      ELIFE_ON_PIN_RESET,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
       FORGOT_PASSWORD_TV,

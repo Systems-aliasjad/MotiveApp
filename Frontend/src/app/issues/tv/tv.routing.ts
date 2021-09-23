@@ -32,6 +32,7 @@ import { TvDetailComponent } from './routes/detail/detail.component';
 import { GameSessionComponent } from './routes/game-session/game-session.component';
 import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
+import { ResetPinFailedMessageComponent } from 'src/app/shared/all-services/reset-pin-failed-message.component';
 
 const routes: Routes = [
   {
@@ -165,6 +166,10 @@ const routes: Routes = [
   {
     path: 'no-non-shared-package',
     component: NoNonSharedPackageComponent,
+  },
+  {
+    path: 'pin-reset-failed',
+    component: ResetPinFailedMessageComponent,
   },
 ];
 

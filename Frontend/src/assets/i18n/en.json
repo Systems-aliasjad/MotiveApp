@@ -96,7 +96,8 @@
     "TRACK_COMPLAINT": "I want to track a recent complaint",
     "TRACK_REQUEST": "I want to track my request",
     "UPGRADE_ROUTER": "I want to upgrade my router",
-    "UPGRADE_PACKAGE": "I want to upgrade my eLife package"
+    "UPGRADE_PACKAGE": "I want to upgrade my eLife package",
+    "ELIFE_ON_PIN_RESET": "I want to reset ELife on"
   },
   "OPEN_SERVICE_REQUEST": {
     "REQUEST_NO": "Request No",
