@@ -47,6 +47,11 @@ ion-content {
           margin-bottom: 0;
         }
       }
+      &:last-child{
+        ion-label{
+          margin-bottom: 0;
+        }
+      }
     }
   }
   
