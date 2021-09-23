@@ -51,6 +51,9 @@ import { ResetPinFailedMessageComponent } from './all-services/reset-pin-failed-
 import { PhoneNotReachableComponent } from './all-services/phone-not-reachable.component';
 import { OntRebootRequiredTvComponent } from './all-services/ont-reboot-required-tv.component';
 import { OntRebootRequiredInternetComponent } from './all-services/ont-reboot-required-internet.component';
+import { CustomerNotSameRouterComponent } from './all-services/customer-not-same-router.component';
+import { OutageComponent } from './all-services/outage.component';
+import { IssueNotFixedComponent } from './all-services/issue-not-fixed.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -102,6 +105,9 @@ export function createTranslateLoader(http: HttpClient) {
     PhoneNotReachableComponent,
     OntRebootRequiredTvComponent,
     OntRebootRequiredInternetComponent,
+    CustomerNotSameRouterComponent,
+    OutageComponent,
+    IssueNotFixedComponent,
   ],
   imports: [
     CommonModule,
