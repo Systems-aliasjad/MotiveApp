@@ -223,7 +223,7 @@ const FORGOT_PASSWORD_TV = {
 };
 const TRANSFER_PACKAGE_TV = {
   body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
-  linkTo: 'issues/tv/eLife-upgrade',
+  linkTo: 'issues/tv/no-additional-stb',
 };
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.CONNECT_HOME_ZONE',

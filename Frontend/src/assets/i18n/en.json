@@ -477,7 +477,11 @@
     "SERVICE_UNAVAILABLE": "Service unavailable",
     "THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON._OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE": "This service is coming to your area soon. Our team will contact you once it is available.",
     "ACTION_REQUIRED": "Action required",
-    "THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT": "There is some work pending from your side. Please tap 'Set an appointment' if you have already completed it."
+    "THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT": "There is some work pending from your side. Please tap 'Set an appointment' if you have already completed it.",
+    "NO_ADDITIONAL_STB": "No additional STB",
+    "SORRY,_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DON'T_HAVE_ADDITIONAL_STB": "Sorry, transfer of package is not applicable as you don't have additional STB",
+    "NO_NON_SHARED_PACKAGE": "No non shared package",
+    "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS": "You are subscribed for shared TV packages that can be viewed from all your STBs"
   },
   "TERMS_AND_CONDITIONS": {
     "HEADER1": "Lorem Ipsum",

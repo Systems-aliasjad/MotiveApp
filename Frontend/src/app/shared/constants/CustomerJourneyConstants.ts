@@ -491,6 +491,16 @@ export class CustomerJourneyConstants {
     paragraphs: ["MESSAGES.THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT"],
   };
 
+  public static noAdditionalSTB = {
+    header: 'MESSAGES.NO_ADDITIONAL_STB',
+    paragraphs: ["MESSAGES.SORRY,_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DON'T_HAVE_ADDITIONAL_STB"],
+  };
+
+  public static noNonSharedPackage = {
+    header: 'MESSAGES.NO_NON_SHARED_PACKAGE',
+    paragraphs: ['MESSAGES.YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS'],
+  };
+
   public static errorOccured = {
     header: 'MESSAGES.Error_Occured',
     paragraphs: ['MESSAGES.Error_Occured_BODY'],
