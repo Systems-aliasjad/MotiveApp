@@ -365,6 +365,15 @@ ion-modal,
     }
   }
 }
+.ion-list-capital{
+  ion-item{
+    ion-label{
+      color: $primary-color;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+}
 // ------------Inline List End-------------------
 .ion-list-arrow{
   ion-item{
@@ -470,6 +479,12 @@ html{
     top: 0;
     right: 0;
     z-index: 0;
+  }
+}
+.page-title {
+  margin-bottom: 2rem;
+  @media screen and (max-width: 992px) {
+    margin-bottom: 0;
   }
 }
 .transparent-btn{

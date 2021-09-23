@@ -5,6 +5,7 @@ import { errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
 import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
+import { eyeHide, eyeShow } from '../../constants/constants';
 
 @Component({
   selector: 'app-ccb-pin-reset-form',
@@ -25,6 +26,9 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
   button2: IMotiveButton;
   @Output()
   button2Click = new EventEmitter();
+
+  passwordShowIcon: string = eyeShow;
+  passwordHideIcon: string = eyeHide;
 
   hideShowPassword(Type: any) {
     Type.type = Type.type === 'password' ? 'text' : 'password';

@@ -153,6 +153,8 @@ export enum ERoutingIds {
 export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
 export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
 export const infoImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_regular.svg';
+export const eyeShow: string = 'assets/images/action-icons/icon_show.svg';
+export const eyeHide: string = 'assets/images/action-icons/icon_hide.svg';
 
 const INTERNET_ISSUES = {
   title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
@@ -209,6 +211,11 @@ const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.FACTORY_RESET_TV',
   linkTo: 'issues/tv/tv-box-reset-factory',
 };
+const ELIFE_ON_PIN_RESET = {
+  body: 'QUICK_LINKS.ELIFE_ON_PIN_RESET',
+  linkTo: 'issues/tv/pin-reset-failed',
+};
+
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
   linkTo: 'issues/internet/reset-internet-password',
@@ -223,7 +230,7 @@ const FORGOT_PASSWORD_TV = {
 };
 const TRANSFER_PACKAGE_TV = {
   body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
-  linkTo: 'issues/tv/eLife-upgrade',
+  linkTo: 'issues/tv/no-additional-stb',
 };
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
@@ -231,11 +238,11 @@ const CONNECT_HOME_ZONE = {
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.TRACK_COMPLAINT',
-  linkTo: 'track-complaint',
+  linkTo: 'track-complaint/complaint-details-message',
 };
 const TRACK_REQUEST = {
   body: 'QUICK_LINKS.TRACK_REQUEST',
-  linkTo: 'track-request',
+  linkTo: 'track-request/request-detail',
 };
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.UPGRADE_ROUTER',
@@ -253,6 +260,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FACTORY_RESET_TV,
+      ELIFE_ON_PIN_RESET,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
       FORGOT_PASSWORD_TV,
@@ -567,6 +575,51 @@ export class ApplicableCodes {
     },
   ];
 
+  public static complaintDetailsTarckComplaintTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referecneNo',
+    },
+    {
+      title: 'MESSAGES.DATE_VISIT',
+      type: 'date',
+      objKeyNameEN: 'dateVisit',
+    },
+    {
+      title: 'MESSAGES.APPOINTMENT_DETAILS',
+      type: 'text',
+      objKeyNameEN: 'appointmentDetails',
+    },
+  ];
+
+  public static appointmentSetSuccessfullyTarckRequestTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.APOINTMENT_DATE',
+      type: 'text',
+      objKeyNameEN: 'appointmentDate',
+    },
+    {
+      title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
+      type: 'text',
+      objKeyNameEN: 'appointmentTimeSlot',
+    },
+  ];
+
+  public static complaintDetailsResolvedTarckComplaintTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referecneNo',
+    },
+
+    {
+      title: 'MESSAGES.RESOLVED_DATE',
+      type: 'date',
+      objKeyNameEN: 'resolvedDetails',
+    },
+  ];
+
   public static routerNotReachableTemplate: ISection2Template[] = [
     {
       title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_NAME',
@@ -616,6 +669,57 @@ export class ApplicableCodes {
     },
   ];
 
+  public static requestDetailsTemplate: ISection2Template[] = [
+    {
+      title: 'REQUEST_DETAILS.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+    {
+      title: 'REQUEST_DETAILS.DATE_CREATED',
+      type: 'date',
+      objKeyNameEN: 'dateCreated',
+    },
+    {
+      title: 'REQUEST_DETAILS.APPOINTMENT_DETAILS',
+      type: 'text',
+      objKeyNameEN: 'details',
+    },
+  ];
+
+  public static requestAlreadyExistsTemplate: ISection2Template[] = [
+    {
+      title: 'REQUEST_ALREADY_EXISTS.APPOINTMENT_DATE',
+      type: 'date',
+      objKeyNameEN: 'appointmentDate',
+    },
+    {
+      title: 'REQUEST_ALREADY_EXISTS.APPOINTMENT_TIME',
+      type: 'time',
+      objKeyNameEN: 'appointmentTime',
+    },
+  ];
+
+  public static appointmentChangedSuccessTemplate: ISection2Template[] = [
+    {
+      title: 'APPOINTMENT_CHANGED_SUCCESSFULLY.DATE',
+      type: 'date',
+      objKeyNameEN: 'date',
+    },
+    {
+      title: 'APPOINTMENT_CHANGED_SUCCESSFULLY.TIME',
+      type: 'time',
+      objKeyNameEN: 'time',
+    },
+  ];
+
+  public static serviceUnavailableTemplate: ISection2Template[] = [
+    {
+      title: 'SERVICE_UNAVAILABLE.EXPECTED_DATE_OF_COMPLETION',
+      type: 'date',
+      objKeyNameEN: 'expecDateOfCompletion',
+    },
+  ];
   public static OpenServiceRequestTemplate: ISection2Template[] = [
     {
       title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',

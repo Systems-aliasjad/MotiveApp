@@ -11,23 +11,23 @@
     <!-- Action Title Content Start -->
     <ion-row class="info-container_title_content">
       <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
-      <ion-col size="12">
+      <ion-col size="12" class="info-content">
         <h4 *ngIf="Section1Data?.header">
           {{ Section1Data.header | translate }}
         </h4>
 
         <!-- for subHeader -->
-        <ion-list>
+        <ion-list class="inline-ion-list">
           <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
-            <ion-label class="detail_list_title"> {{ template.title | translate }}</ion-label>
-            <ion-label class="detail_list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
+            <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
+            <ion-label class="inline-list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
           </ion-item>
         </ion-list>
 
         <div class="content" *ngIf="Section1Data?.paragraphs">
           <div *ngFor="let obj of Section1Data?.paragraphs">
             <p>{{ obj.title | translate }}</p>
-            <ion-list *ngIf="obj.children" class="bullet-list">
+            <ion-list *ngIf="obj.children" class="">
               <ion-item *ngFor="let item of obj.children; let i = index">
                 <ion-label>{{ i + 1 }}. {{ item | translate }}</ion-label>
               </ion-item>

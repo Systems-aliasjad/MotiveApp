@@ -35,6 +35,8 @@ import { TvDetailComponent } from './routes/detail/detail.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { GameSessionComponent } from './routes/game-session/game-session.component';
+import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
+import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { GameSessionComponent } from './routes/game-session/game-session.compone
     ELifeUpgradeComponent,
     ELifeUpgradeSuccessComponent,
     TVBoxNotReachableFormComponent,
+    NoAdditionalSTBComponent,
+    NoNonSharedPackageComponent,
   ],
   imports: [
     CommonModule,

@@ -22,6 +22,7 @@ ion-item::part(native) {
   background-color: $white;
   @media screen and (max-width: 992px) {
     background-color: transparent;
+    margin-bottom: 1rem;
   }
   .service-states-container {
     text-align: center;

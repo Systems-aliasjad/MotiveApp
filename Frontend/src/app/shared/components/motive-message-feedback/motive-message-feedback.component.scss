@@ -3,22 +3,17 @@
 
 // ------------Removed Ionic ion-item Styling start-------------------
 :host {
-  --ion-font-family: Lato, Roboto, Arial, sans-serif;   
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
   ion-list {
     --ion-background-color: transparent;
   }
   ion-item {
     --min-height: 30px;
-    --inner-border-width: 0px 0px 0px 0px;
-    --border-width: 0px;
-    --border-style: transparent;
-    --border-color: transparent;
-    --inner-border-width: 0px 0px 0px 0px;
     @media screen and (max-width: 321px) {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
     }
-  }  
+  }
 }
 ion-item::part(native) {
   padding-inline-end: 0;
@@ -37,20 +32,7 @@ ion-item::part(native) {
   }
 }
 // ------------Removed Ionic ion-item Styling End-------------------
-ion-content {  
-  ion-list{
-    ion-item{
-      color: $secondary-color;
-      &:first-child{
-        ion-label{
-          margin-top: 0;
-          margin-bottom: 0;
-        }
-      }
-    }
-  }
-  
-}
+
 .info-container {
   font-family: Lato, Roboto, Arial, sans-serif;
   display: -webkit-box;
@@ -127,11 +109,6 @@ ion-content {
         margin-bottom: 1rem;
       }
     }
-  }
-}
-.info-content{
-  @media screen and (min-width: 992px) {
-    margin-bottom: 2rem;
   }
 }
 .lg-screen {

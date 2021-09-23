@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ISection2Template } from '../../constants/types';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
-
 export interface IMessageSection1 {
   header: string;
   paragraphs: string[];
@@ -10,11 +9,12 @@ export interface IMessageSection1 {
 }
 
 @Component({
-  selector: 'motive-message',
-  templateUrl: './motive-message.component.html',
-  styleUrls: ['./motive-message.component.scss'],
+  selector: 'app-motive-message-feedback',
+  templateUrl: './motive-message-feedback.component.html',
+  styleUrls: ['./motive-message-feedback.component.scss'],
 })
-export class MotiveMessageComponent implements OnInit {
+export class MotiveMessageFeedbackComponent implements OnInit {
+  formGroup: FormGroup;
   @Input()
   imgSrc: String = '';
   @Input()
@@ -24,22 +24,6 @@ export class MotiveMessageComponent implements OnInit {
     span: '',
     spanListener: () => {},
   };
-
-  @Input()
-  Section3Data?: IMessageSection1 = {
-    header: '',
-    paragraphs: null,
-    span: '',
-    spanListener: () => {},
-  };
-  @Input()
-  Section2Data: any;
-  @Input()
-  Section2Template: ISection2Template[];
-  @Input()
-  subHeaderSectionData: any;
-  @Input()
-  subHeaderSectionTemplate: ISection2Template[];
 
   @Input()
   button1: IMotiveButton;
@@ -56,15 +40,20 @@ export class MotiveMessageComponent implements OnInit {
   @Output()
   button3Click = new EventEmitter();
 
+  @Output()
+  formValue = new EventEmitter();
+
   myBtnSize;
   ngOnInit() {
     this.myBtnSize = this.button3 ? '6' : '12';
+    this.createForm();
   }
 
-  constructor() {}
+  constructor(private formBuilder: FormBuilder) {}
   /*  ngOnInit(): void {} */
 
   button1Listener() {
+    this.formValue.emit(this.formGroup.controls['Feedback'].value);
     this.button1Click.emit();
   }
 
@@ -75,4 +64,12 @@ export class MotiveMessageComponent implements OnInit {
   button3Listener() {
     this.button3Click.emit();
   }
+
+  createForm() {
+    this.formGroup = this.formBuilder.group({
+      Feedback: [''],
+    });
+  }
+
+  SubmitForm() {}
 }
