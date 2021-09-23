@@ -231,7 +231,7 @@ const CONNECT_HOME_ZONE = {
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.TRACK_COMPLAINT',
-  linkTo: 'track-complaint',
+  linkTo: 'track-complaint/complaint-details-message',
 };
 const TRACK_REQUEST = {
   body: 'QUICK_LINKS.TRACK_REQUEST',
