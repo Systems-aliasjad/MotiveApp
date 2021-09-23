@@ -253,11 +253,6 @@ ion-checkbox{
   --checkmark-color:#ffffff;
   --background-checked:#719E19;
   --border-color-checked:#719E19;
-  /*  --size: 26px;
-  width: var(--size);
-  height: var(--size); 
-  --checkmark-width:1px; 
-  box-shadow: 0 5px 10px rgb(25 0 0 / 16%);*/
 }
 // ------------Checkbox End-------------------
 
@@ -546,7 +541,8 @@ app-service-detail,
 app-book-complaint,
 app-restart-instruction,
 app-motive-message-bullet,
-app-motive-message-feedback{
+app-motive-message-feedback,
+app-reset-pin{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -556,7 +552,88 @@ app-motive-message-feedback{
   -ms-flex-flow: column nowrap;
   flex-flow: column nowrap;
 }
+.lg-screen{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+}
+.sm-screen{
+  display: none;
+  @media screen and (max-width: 992px) {
+    display: block;
+  }
+}
+
 .footer{
+  -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
+  box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
+  background-color:$white;
+  @media screen and (max-width: 992px) {
+    box-shadow: none;
+    background-color: transparent;
+  }
+  .footer-btns-container{
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    @media screen and (max-width: 767px) {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+    ion-col {
+      text-align: center;
+    }
+    ion-row{
+      @media screen and (min-width: 769px) and (max-width: 1024px) {
+        width:100%;
+      }
+      
+    }
+    ion-col{
+      &:first-child{
+        ion-col{
+          /* -webkit-box-flex: 0 !important;
+          -ms-flex: 0 0 100% !important;
+          flex: 0 0 100% !important;
+          max-width: 100% !important;
+          width: 100% !important; */
+        }
+      } 
+      motive-button{
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+          min-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+    > ion-col{
+      &:last-child {
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+          display:flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        
+      }
+    }
+  } 
+} 
+
+/* .footer{
   -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
   box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
   background-color:$white;
@@ -582,7 +659,7 @@ app-motive-message-feedback{
       text-align: center;
     }
   }
-}
+} */
 motive-button{
   display: inline-block;
   width:100%;
