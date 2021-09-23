@@ -30,6 +30,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.SORRY_WE_COULDNT_FIND_THE_COMPLAINT_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING'],
   };
 
+  public static pinResetFaildAllServices = {
+    header: 'MESSAGES.PIN_RESET_FAILED',
+    paragraphs: ['MESSAGES.SORRY_PIN_RESET_FAILED', 'MESSAGES.BOOK_COMPLAINT_TO_FIX_THE_ISSUE'],
+  };
+
   public static workNotCompletedTrackRequest = {
     header: 'MESSAGES.WORK_NOT_COMPLETED',
     paragraphs: ['MESSAGES.PLEASE_SET_AN_APPOINTMENT_WITH_US_ONCE_YOU_COMPLETE_THE_WORK'],

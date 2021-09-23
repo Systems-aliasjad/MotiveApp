@@ -23,6 +23,7 @@ import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
+import { ResetPinFailedMessageComponent } from './shared/all-services/reset-pin-failed-message.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -163,6 +164,10 @@ const routes: Routes = [
   // { path: '', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
 
   { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
+
+  /////All Services
+
+  { path: 'reset-pin-failed', component: ResetPinFailedMessageComponent },
 
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },

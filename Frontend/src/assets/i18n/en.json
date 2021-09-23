@@ -246,6 +246,9 @@
   },
 
   "MESSAGES": {
+    "PIN_RESET_FAILED": "PIN Reset Failed",
+    "SORRY_PIN_RESET_FAILED": "Sorry, PIN reset failed.",
+    "BOOK_COMPLAINT_TO_FIX_THE_ISSUE": "Book complaint to fix the issue",
     "REQUEST_IN_PROGRESS": "Request In Progress",
     "THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT": "Thank you for using our technical support.",
     "WE_APOLOGIZE_FOR_THE_DELAY_COMPLAINT_WILL_BE_BOOKED_REGARDING_THE_DELAY": "We apologize for the delay. Complaint will be booked regarding the delay",
