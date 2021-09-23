@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-grid class="tv-detail-contanier">
+  <ion-grid class="tv-detail-container">
     <!-- Page Heading Start -->
     <ion-row class="device-care_title">
       <ion-col size="12">
@@ -16,7 +16,7 @@
         <h6 class="sub-title">{{ d.header | translate }}</h6>
       </ion-col>
       <ion-col size="12" class="subscriptions-box">
-        <ion-col size="12" class="shadow-box">
+        <div class="data-traffic-container">
           <div class="data-traffic ion-text-left">
             <h6 class="sub-title">{{ d.subHeader }}</h6>
 
@@ -39,7 +39,7 @@
               </ion-card-content>
             </ion-card>
           </div>
-        </ion-col>
+        </div>
       </ion-col>
     </ion-row>
 
