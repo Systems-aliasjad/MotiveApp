@@ -11,10 +11,11 @@
 	-ms-transform: $transformsY;
 	transform: $transformsY;
 }
-@mixin box-shadow-hover($x:0px, $y:0.35em, $blur:1.175em, $color:rgb(2 8 20 / 10%)) {
+
+/* @mixin box-shadow-hover($x:0, $y:0.35em, $blur:1.175em, $color:rgb(2 8 20 / 10%)) {
   -webkit-box-shadow: $x, $y, $blur, $color;
    box-shadow: $x, $y, $blur, $color;
-}
+} */
 @mixin parent() {
   white-space:nowrap;
 }

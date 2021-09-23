@@ -13,13 +13,13 @@
       <!-- Quick Links Slider Start -->
       <ion-row class="quick-links-card">
         <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngFor="let link of quickLinks">
-          <span (click)="onCardClick(link)">
+          <div (click)="onCardClick(link)">
             <ion-card>
               <ion-card-content>
                 <p>{{ link.body | translate }}</p>
               </ion-card-content>
             </ion-card>
-          </span>
+          </div>
         </ion-col>
       </ion-row>
       <!-- Quick Links Slider End -->
