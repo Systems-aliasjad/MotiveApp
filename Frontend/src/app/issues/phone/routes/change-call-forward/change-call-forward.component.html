@@ -10,7 +10,12 @@
                 <ion-item>
                   <ion-label position="stacked">{{ 'CHANGE_CALL_FORWARD.NEW_NUMBER' | translate }}</ion-label>
                   <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
-                  <ion-icon slot="end" name="eye" (click)="hideShowPassword(NewPassword)"></ion-icon>
+                  <img
+                    [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
+                    (click)="hideShowPassword(NewPassword)"
+                    class="show-icon"
+                    alt="show password"
+                  />
                   <!-- <button type="button" (click)="hideShowPassword()">Click to show</button> -->
                   <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
                     {{ error.password }}
@@ -21,7 +26,12 @@
                 <ion-item>
                   <ion-label position="stacked">{{ 'CHANGE_CALL_FORWARD.NEW_NUMBER_AGAIN' | translate }}</ion-label>
                   <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
-                  <ion-icon slot="end" name="eye" (click)="hideShowPassword(ConfirmPassword)"></ion-icon>
+                  <img
+                    [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
+                    (click)="hideShowPassword(ConfirmPassword)"
+                    class="show-icon"
+                    alt="show password"
+                  />
                   <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
                     {{ error.password }}
                   </div>

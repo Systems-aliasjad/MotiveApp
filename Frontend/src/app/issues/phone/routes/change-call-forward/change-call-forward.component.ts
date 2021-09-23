@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../../../shared/validators/validations';
 import { SharedService } from '../../../../shared/shared.service';
 import { Subscription } from 'rxjs';
+import { eyeHide, eyeShow } from 'src/app/shared/constants/constants';
 @Component({
   selector: 'app-change-call-forward',
   templateUrl: './change-call-forward.component.html',
@@ -16,6 +17,10 @@ export class ChangeCallForwardComponent implements OnInit {
   subscription: Subscription;
   codeType;
   rules = ['rule 1', 'rule 2', 'rule 3'];
+
+  passwordShowIcon: string = eyeShow;
+  passwordHideIcon: string = eyeHide;
+
   hideShowPassword(Type: any) {
     Type.type = Type.type === 'password' ? 'text' : 'password';
   }
