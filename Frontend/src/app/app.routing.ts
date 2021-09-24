@@ -31,6 +31,7 @@ import { OntRebootRequiredInternetComponent } from './shared/all-services/ont-re
 import { CustomerNotSameRouterComponent } from './shared/all-services/customer-not-same-router.component';
 import { OutageComponent } from './shared/all-services/outage.component';
 import { IssueNotFixedComponent } from './shared/all-services/issue-not-fixed.component';
+import { NoIssuesServiceDetailsComponent } from './shared/all-services/no-issues-service-details/no-issues-service-details.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -182,6 +183,7 @@ const routes: Routes = [
   { path: 'customer-not-using-same-router', component: CustomerNotSameRouterComponent },
   { path: 'outage', component: OutageComponent },
   { path: 'issue-not-fixed', component: IssueNotFixedComponent },
+  { path: 'no-issues-service-details', component: NoIssuesServiceDetailsComponent },
 
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },

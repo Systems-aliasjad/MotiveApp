@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-grid class="form-main-container">
+    <!-- Form Start -->
+    <ion-row class="form-inner_container">
+      <ion-col size="12" class="rws-top-tabs-col">
+        <ion-row>
+          <ion-col sizeLg="4" sizeMd="12" sizeSm="12">
+            <ion-segment (ionChange)="segmentChanged($event)" [value]="segment">
+              <ion-segment-button value="1">
+                <ion-label>{{ 'MESSAGES.INTERNET' | translate }}</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="2">
+                <ion-label>{{ 'MESSAGES.TELEVISION' | translate }}</ion-label>
+              </ion-segment-button>
+              <ion-segment-button value="3">
+                <ion-label>{{ 'MESSAGES.TELEPHONE' | translate }}</ion-label>
+              </ion-segment-button>
+            </ion-segment>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+      <ion-col sizeLg="4" sizeMd="12" sizeSM="12" class="rws-bottom-main-col">
+        <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast">
+          <ion-row>
+            <!-- <app-service-detail></app-service-detail> -->
+          </ion-row>
+        </div>
+        <div *ngIf="segment === '2'" class="animate__animated animate__slideInUp animate__fast">
+          <ion-row> </ion-row>
+        </div>
+
+        <div *ngIf="segment === '3'" class="animate__animated animate__slideInUp animate__fast">
+          <ion-row> </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+    <!-- Form End -->
+  </ion-grid>
+</ion-content>

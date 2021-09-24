@@ -54,6 +54,8 @@ import { OntRebootRequiredInternetComponent } from './all-services/ont-reboot-re
 import { CustomerNotSameRouterComponent } from './all-services/customer-not-same-router.component';
 import { OutageComponent } from './all-services/outage.component';
 import { IssueNotFixedComponent } from './all-services/issue-not-fixed.component';
+import { NoIssuesServiceDetailsComponent } from './all-services/no-issues-service-details/no-issues-service-details.component';
+import { InternetModule } from '../issues/internet/internet.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -108,6 +110,7 @@ export function createTranslateLoader(http: HttpClient) {
     CustomerNotSameRouterComponent,
     OutageComponent,
     IssueNotFixedComponent,
+    NoIssuesServiceDetailsComponent,
   ],
   imports: [
     CommonModule,
