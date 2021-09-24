@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { motiveSubscriptions } from 'src/app/shared/constants/constants';
 import { ICard } from 'src/app/shared/constants/types';
 
@@ -21,13 +22,22 @@ export class QuickLinksComponent implements OnInit {
 
   width: number = window.innerWidth;
   mobileWidth: number = 760;
-
-  constructor(private router: Router) {
-    this.setSlideOpts();
+  subscription: Subscription;
+  constructor(private router: Router, private actRoute: ActivatedRoute) {
+    this.subscription = this.actRoute.data.subscribe((data) => {
+      this.initialization();
+    });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  initialization() {
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
+    this.setSlideOpts();
   }
 
   onWindowResize(event) {
@@ -51,5 +61,9 @@ export class QuickLinksComponent implements OnInit {
 
   onClickSeeAllQuickLinks() {
     this.router.navigate(['quick-links-all']);
+  }
+
+  onCardClick(link) {
+    this.router.navigate([link.linkTo]);
   }
 }
