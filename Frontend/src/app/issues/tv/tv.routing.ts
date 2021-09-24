@@ -33,6 +33,8 @@ import { GameSessionComponent } from './routes/game-session/game-session.compone
 import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 import { ResetPinFailedMessageComponent } from 'src/app/shared/all-services/reset-pin-failed-message.component';
+import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
+import { ERoutingIds } from 'src/app/shared/constants/constants';
 
 const routes: Routes = [
   {
@@ -170,6 +172,16 @@ const routes: Routes = [
   {
     path: 'pin-reset-failed',
     component: ResetPinFailedMessageComponent,
+  },
+  {
+    path: 'package-transfer',
+    component: TransferPackageComponent,
+    data: { id: ERoutingIds.packagetransfer },
+  },
+  {
+    path: 'unable-to-watch-package-transfer',
+    component: TransferPackageComponent,
+    data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer },
   },
 ];
 

@@ -59,7 +59,7 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
       this.buttonConfigs = CustomerJourneyConstants.packageAvailableButtons;
       this.buttonConfigs.forEach((elem) => {
         if (elem.title == 'BUTTONS.SKIP_TO_NEXT_STEP') {
-          elem.linkTo = '/package-transfer';
+          elem.linkTo = '/issues/tv/package-transfer';
         }
       });
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtons));
@@ -108,9 +108,9 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
 
   goToTransferPackage() {
     if (this.codeType === ERoutingIds.packageavailable) {
-      this.router.navigate(['/package-transfer']);
+      this.router.navigate(['/issues/tv/package-transfer']);
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
-      this.router.navigate(['/unable-to-watch-package-transfer']);
+      this.router.navigate(['issues/tv/unable-to-watch-package-transfer']);
     }
   }
 

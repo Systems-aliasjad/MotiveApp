@@ -33,7 +33,6 @@ import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dia
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 import { PackageAvailableComponent } from './components/package-available/package-available.component';
-import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
@@ -88,7 +87,6 @@ export function createTranslateLoader(http: HttpClient) {
     RestartTvboxDialog,
     GameSessionDialog,
     PackageAvailableComponent,
-    TransferPackageComponent,
     UnableWatchSpecificChannelComponent,
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,

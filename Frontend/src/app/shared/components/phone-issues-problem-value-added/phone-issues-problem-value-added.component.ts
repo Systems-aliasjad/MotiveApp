@@ -147,9 +147,9 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
 
   goToTransferPackage(item) {
     if (this.codeType === ERoutingIds.packageavailable) {
-      this.router.navigate(['/package-transfer']);
+      this.router.navigate(['/issues/tv/package-transfer']);
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
-      this.router.navigate(['/unable-to-watch-package-transfer']);
+      this.router.navigate(['/issues/tv/unable-to-watch-package-transfer']);
     }
   }
 
