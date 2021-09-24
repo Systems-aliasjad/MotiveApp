@@ -37,6 +37,8 @@ import { HttpClient } from '@angular/common/http';
 import { GameSessionComponent } from './routes/game-session/game-session.component';
 import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
+import { PackageAvailableComponent } from './shared/package-available/package-available.component';
+import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
 
 @NgModule({
   declarations: [
@@ -46,11 +48,13 @@ import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.comp
     UnableWatchChannelStep1Component,
     PackageTransferStep1Component,
     PackageTransferStep2Component,
+    TransferTvboxChannelComponent,
     TroubleshootCompleteMessageComponent,
     ResetElifePinSuccessMessageComponent,
     UnableElifeLoginMessageComponent,
     IssueNotFixedComponent,
     OutageComponent,
+    PackageAvailableComponent,
     TvBoxNotReachableComponent,
     TvBoxNotReachableTryAgainComponent,
     TvBoxRestartRequiredComponent,

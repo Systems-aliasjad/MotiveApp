@@ -1,11 +1,9 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ERoutingIds } from '../../../../shared/constants/constants';
-import { CustomerJourneyConstants } from '../../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../../shared/shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-package-available',
@@ -15,18 +13,18 @@ import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diag
 export class PackageAvailableComponent implements OnInit, OnDestroy {
   // unable-to-watch-package-available
   // package-available
-  codeType: any;
-  PageTitle: string;
-  PageContent: string;
-  cardList: any;
   subscription: Subscription;
-  buttonConfigs: any[] = [];
-  button1: IMotiveButton;
-  button2: IMotiveButton;
 
+  @Input()
+  subHeader: string;
+  @Input()
+  packages: any;
+  @Output()
+  button1Click = new EventEmitter();
+  @Output()
+  button2Click = new EventEmitter();
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {
     this.subscription = this.activatedRoute.data.subscribe((data) => {
-      this.codeType = data.id;
       this.initialization();
     });
   }
@@ -39,61 +37,13 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
   initialization() {
     this.sharedService.setDefaultValues();
 
-    if (this.codeType === ERoutingIds.packageavailable) {
-      this.PageTitle = 'HEADER.AVAILABLE_PACKAGE';
-      this.PageContent = 'AVAILABLE_PACKAGE.DESCRIPTION';
-      this.sharedService.setHeaderConfig(this.PageTitle, false, true);
-      this.cardList = [
-        {
-          title: 'Movies Unlimited Premium',
-          description: 'STB SR#039838920',
-        },
-        {
-          title: 'Bein Sports',
-          description: 'STB SR#039838920',
-          checked: false,
-        },
-        {
-          title: 'Pehla Plus',
-          description: 'STB SR#039838920',
-        },
-      ];
-      this.buttonConfigs = CustomerJourneyConstants.packageAvailableButtons;
-      this.buttonConfigs.forEach((elem) => {
-        if (elem.title == 'BUTTONS.SKIP_TO_NEXT_STEP') {
-          elem.linkTo = '/package-transfer';
-        }
-      });
-      this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtons));
+    if (ERoutingIds.packageavailable) {
+      this.subHeader = 'AVAILABLE_PACKAGE.DESCRIPTION';
     }
     /// Unable to watch specific channel package available
-    else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
-      this.PageTitle = 'HEADER.CHANNEL_DETAILS';
-      this.PageContent = 'AVAILABLE_PACKAGE.DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL';
-      this.sharedService.setHeaderConfig(this.PageTitle, false, true);
-      this.cardList = [
-        {
-          title: 'Movies Unlimited Premium',
-          description: 'STB SR#039838920',
-        },
-        {
-          title: 'Bein Sports',
-          description: 'STB SR#039838920',
-          checked: false,
-        },
-        {
-          title: 'Pehla Plus',
-          description: 'STB SR#039838920',
-        },
-      ];
-      this.button1 = {
-        type: 'primary',
-        title: 'BUTTONS.SKIP_TO_NEXT_STEP',
-      };
-      this.button2 = {
-        title: 'BUTTONS.CANCEL',
-        type: 'link',
-      };
+    else if (ERoutingIds.enableWatchSpecificChannelpackageavailable) {
+      this.subHeader = 'AVAILABLE_PACKAGE.DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL';
+      this.sharedService.setHeaderConfig('HEADER.CHANNEL_DETAILS', false, true);
     }
   }
 
@@ -109,9 +59,9 @@ export class PackageAvailableComponent implements OnInit, OnDestroy {
   }
 
   goToTransferPackage() {
-    if (this.codeType === ERoutingIds.packageavailable) {
+    if (ERoutingIds.packageavailable) {
       this.router.navigate(['/package-transfer']);
-    } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
+    } else if (ERoutingIds.enableWatchSpecificChannelpackageavailable) {
       this.router.navigate(['/unable-to-watch-package-transfer']);
     }
   }

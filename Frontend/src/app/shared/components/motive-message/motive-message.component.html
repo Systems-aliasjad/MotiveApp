@@ -16,7 +16,7 @@
           {{ Section1Data.header | translate }}
         </h4>
         <!-- for subHeader -->
-        <ion-list class="inline-ion-list ion-list-capital">
+        <ion-list class="inline-ion-list ion-list-capital" *ngIf="subHeaderSectionTemplate">
           <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
             <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
             <ion-label class="inline-list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
