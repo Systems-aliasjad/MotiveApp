@@ -20,14 +20,14 @@
         </ion-row>
       </ion-col>
       <ion-col sizeLg="4" sizeMd="12" sizeSM="12" class="rws-bottom-main-col">
-        <div style="min-height: 500px" *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast">
-          <app-service-detail [isPartialLoaded]="true" style="min-height: 500px"></app-service-detail>
+        <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast">
+          <app-service-detail [isPartialLoaded]="true"></app-service-detail>
         </div>
-        <div style="min-height: 500px" *ngIf="segment === '2'" class="animate__animated animate__slideInUp animate__fast">
+        <div *ngIf="segment === '2'" class="animate__animated animate__slideInUp animate__fast">
           <app-tv-detail [isPartialLoaded]="true"></app-tv-detail>
         </div>
 
-        <div style="min-height: 500px" *ngIf="segment === '3'" class="animate__animated animate__slideInUp animate__fast">
+        <div *ngIf="segment === '3'" class="animate__animated animate__slideInUp animate__fast">
           <app-phone-issues-problem-value-added [isPartialLoaded]="true"></app-phone-issues-problem-value-added>
         </div>
       </ion-col>
