@@ -8,6 +8,7 @@ import { ResetElifeOnPinComponent } from './routes/reset-elife-on-pin.component'
 import { ResetInternetPasswordFailComponent } from './routes/reset-internet-password-fail.component';
 import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-password-success.component';
 import { ResetPasswordFailComponenet } from './routes/reset-password-fail.component';
+import { ResetRouterPasswordComponent } from './routes/reset-router-password.component';
 import { ResetRouterWiFiPasswordSuccess } from './routes/reset-router-wifi-password-success.component';
 import { ResetTvAdminPinComponent } from './routes/reset-tv-admin-pin.component';
 import { ResetInternetPasswordSuccessDetailComponent } from './routes/rest-internet-password-success-detail.component';
@@ -70,6 +71,10 @@ const routes: Routes = [
   {
     path: 'reset-tv-admin-pin',
     component: ResetTvAdminPinComponent,
+  },
+  {
+    path: 'reset-router-password',
+    component: ResetRouterPasswordComponent,
   },
 ];
 

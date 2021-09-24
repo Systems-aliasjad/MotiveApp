@@ -32,10 +32,10 @@ import { TvDetailComponent } from './routes/detail/detail.component';
 import { GameSessionComponent } from './routes/game-session/game-session.component';
 import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
-import { ResetPinFailedMessageComponent } from 'src/app/shared/all-services/reset-pin-failed-message.component';
-import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
+import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
+import { ResetPinFailedMessageComponent } from 'src/app/all-services/routes/reset-pin-failed-message.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
 
 const routes: Routes = [

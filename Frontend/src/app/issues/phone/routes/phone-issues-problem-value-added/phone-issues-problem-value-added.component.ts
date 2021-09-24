@@ -2,9 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../../../shared/constants/constants';
 import { SharedService } from '../../../../shared/shared.service';
-import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-phone-issues-problem-value-added',
@@ -14,35 +12,9 @@ import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diag
 export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy {
   codeType;
   subscription: Subscription;
-  heading;
   cardList;
-  PageTitle: string;
-  PageContent: string;
-
   @Input()
-  button1: IMotiveButton;
-  @Output()
-  button1Click = new EventEmitter();
-
-  @Input()
-  button2: IMotiveButton;
-  @Output()
-  button2Click = new EventEmitter();
-
-  @Input()
-  button3: IMotiveButton;
-  @Output()
-  button3Click = new EventEmitter();
-
-  @Input()
-  section1;
-
-  @Input()
-  section2;
-
-  @Input()
-  pageHeading;
-
+  isPartialLoaded: boolean = false;
   routeLinkHelper(arr) {
     return arr.map((obj) => {
       return {
@@ -67,22 +39,9 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   ngOnInit() {}
 
   initialization() {
-    this.sharedService.setDefaultValues();
-    if (this.codeType === ERoutingIds.noIssuePhoneProblemValueAdded) {
-      this.heading = 'PHONE_ISSUES_PROBLEM_VALUE_ADDED.HEADER';
+    if (!this.isPartialLoaded) {
+      this.sharedService.setDefaultValues();
       this.sharedService.setHeaderConfig('PHONE_ISSUES_PROBLEM_VALUE_ADDED.HEADER', true);
-
-      // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.phoneIssuesProblemValueAddedButtons));
-      this.button1 = {
-        type: 'primary',
-        title: 'BUTTONS.ISSUE_FIXED',
-        explanatoryNote: '',
-      };
-      this.button2 = {
-        type: 'link',
-        title: 'BUTTONS.REQUEST_SUPPORT',
-        explanatoryNote: '',
-      };
     }
 
     this.cardList = [
@@ -145,25 +104,12 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     //#endregion Module 3
   }
 
-  goToTransferPackage(item) {
-    if (this.codeType === ERoutingIds.packageavailable) {
-      this.router.navigate(['/issues/tv/package-transfer']);
-    } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
-      this.router.navigate(['/issues/tv/unable-to-watch-package-transfer']);
-    }
-  }
-
   button1Listener() {
     this.router.navigate(['/thanks']);
     // this.button1Click.emit();
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/internet/unable-to-browse-internet/step3']);
     // this.button2Click.emit();
-  }
-
-  button3Listener() {
-    this.button3Click.emit();
   }
 }

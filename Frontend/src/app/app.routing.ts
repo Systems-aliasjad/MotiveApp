@@ -11,26 +11,16 @@ import { DeviceCareComponent } from './shared/components/device-care/device-care
 import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
-import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
+// import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 // import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 // import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 // import { PhoneIssuesProblemValueAddedComponent } from './issues/phone/routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
-import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
+// import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
-import { FiberBoxNotReachableComponent } from './shared/all-services/fiber-box-not-reachable-message.component';
-import { ResetPinFailedMessageComponent } from './shared/all-services/reset-pin-failed-message.component';
-import { PhoneNotReachableComponent } from './shared/all-services/phone-not-reachable.component';
-import { OntRebootRequiredTvComponent } from './shared/all-services/ont-reboot-required-tv.component';
-import { OntRebootRequiredInternetComponent } from './shared/all-services/ont-reboot-required-internet.component';
-import { CustomerNotSameRouterComponent } from './shared/all-services/customer-not-same-router.component';
-import { OutageComponent } from './shared/all-services/outage.component';
-import { IssueNotFixedComponent } from './shared/all-services/issue-not-fixed.component';
-import { NoIssuesServiceDetailsComponent } from './shared/all-services/no-issues-service-details/no-issues-service-details.component';
-
 const routes: Routes = [
   // REFACTORED LOGIC
   {
@@ -70,6 +60,12 @@ const routes: Routes = [
     path: 'track-request',
     loadChildren: () => import('./common-quick-links/track-request/track-request.module').then((m) => m.TrackRequestModule),
   },
+
+  {
+    path: 'all-links',
+    loadChildren: () => import('./all-services/all-services.module').then((m) => m.AllServicesModule),
+  },
+
   // REFACTORED LOGIC
   {
     path: '',
@@ -107,7 +103,7 @@ const routes: Routes = [
   },
 
   // Reset Router Wi-Fi Password
-  { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
+  // { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
   { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
   { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
   // 1122 Module - 4 END
@@ -132,7 +128,7 @@ const routes: Routes = [
   // #endregion  third party  router
 
   //Router Reset Required
-  { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
+  // { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
 
   //Router managed, but not reachable
   { path: 'router-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerNotReachableForm } },
@@ -169,16 +165,6 @@ const routes: Routes = [
   { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
 
   /////All Services
-
-  { path: 'reset-pin-failed', component: ResetPinFailedMessageComponent },
-  { path: 'fiber-box-not-reachable', component: FiberBoxNotReachableComponent },
-  { path: 'phone-not-reachable', component: PhoneNotReachableComponent },
-  { path: 'ont-reboot-required-tv', component: OntRebootRequiredTvComponent },
-  { path: 'ont-reboot-required-internet', component: OntRebootRequiredInternetComponent },
-  { path: 'customer-not-using-same-router', component: CustomerNotSameRouterComponent },
-  { path: 'outage', component: OutageComponent },
-  { path: 'issue-not-fixed', component: IssueNotFixedComponent },
-  { path: 'no-issues-service-details', component: NoIssuesServiceDetailsComponent },
 
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },

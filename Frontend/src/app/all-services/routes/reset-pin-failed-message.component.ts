@@ -5,7 +5,7 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
-import { SharedService } from '../shared.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'reset-pin-failed-message',

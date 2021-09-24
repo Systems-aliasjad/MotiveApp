@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../components/diagnose-issue/diagnose-issue.component';
-import { CustomerJourneyConstants } from '../constants/CustomerJourneyConstants';
-import { SharedService } from '../shared.service';
+import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'all-services-fiber-box-not-reachable',
+  selector: 'all-services-customer-not-using-router',
   template: `<app-diagnose-issue
     [messageSection]="messageSection"
     [button1]="button1"
@@ -18,11 +18,11 @@ import { SharedService } from '../shared.service';
   >
   </app-diagnose-issue>`,
 })
-export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
+export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
-    title: 'BUTTONS.DEVICE_CARE',
+    title: 'LINKS.DEVICE_CARE',
     type: 'link',
   };
   button2: IMotiveButton = {
@@ -32,9 +32,8 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
 
   button3: IMotiveButton = {
     title: 'BUTTONS.ISSUE_STILL_NOT_RESOLVED',
-    type: 'secondary',
+    type: 'link',
   };
-
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
@@ -49,18 +48,19 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.ISSUES', false);
+    this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
   }
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.fiberBoxNotReachableBuilderSection;
+    this.messageSection = CustomerJourneyConstants.customerNotUsingSameRouterAllServicesSection;
   }
 
   button1Listener() {
-    //this.router.navigate(['/thanks']);
+    this.router.navigate(['/router-not-reachable-own-router-care']);
   }
 
-  button2Listener() {}
-
+  button2Listener() {
+    this.router.navigate(['/thanks']);
+  }
   button3Listener() {}
 }

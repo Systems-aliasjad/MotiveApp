@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 export interface IMotiveButton {
-  type: 'link' | 'primary' | 'secondary';
+  type: 'link' | 'primary' | 'secondary' | 'terms';
   title: string;
   explanatoryNote?: string;
   SM?: string;

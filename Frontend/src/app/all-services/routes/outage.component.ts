@@ -1,24 +1,24 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../components/diagnose-issue/diagnose-issue.component';
-import { CustomerJourneyConstants } from '../constants/CustomerJourneyConstants';
-import { SharedService } from '../shared.service';
+import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'all-services-ont-reboot-internet',
+  selector: 'all-services-outage',
   template: `<app-diagnose-issue [messageSection]="messageSection" [button1]="button1" (button1Click)="button1Listener()" [button2]="button2" (button2Click)="button2Listener()">
   </app-diagnose-issue>`,
 })
-export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
+export class OutageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
-    title: 'BUTTONS.RESTART_ONT_NOW',
+    title: 'BUTTONS.OK',
     type: 'primary',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.RESTART_MANUALLY',
+    title: 'BUTTONS.BOOK_A_COMPLAINT',
     type: 'link',
   };
 
@@ -36,18 +36,18 @@ export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.INTERNET_ISSUES', false);
+    this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
   }
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.ontRestartTVAllServices;
+    this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
   }
 
   button1Listener() {
-    //this.router.navigate(['/issues/phone/ont-reboot-message']);
+    this.router.navigate(['/thanks']);
   }
 
   button2Listener() {
-    // this.router.navigate(['/issues/phone/ont-restart-instructions']);
+    this.router.navigate(['/bookComplaint']);
   }
 }

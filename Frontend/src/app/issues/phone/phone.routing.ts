@@ -121,7 +121,6 @@ const routes: Routes = [
   {
     path: 'no-issue-phone-value-added',
     component: PhoneIssuesProblemValueAddedComponent,
-    data: { id: ERoutingIds.noIssuePhoneProblemValueAdded },
   },
 ];
 

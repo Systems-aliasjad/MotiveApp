@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
@@ -12,6 +12,8 @@ import { SharedService } from 'src/app/shared/shared.service';
   styleUrls: ['./service-detail.component.scss'],
 })
 export class ServiceDetailComponent implements OnInit, OnDestroy {
+  @Input()
+  isPartialLoaded: boolean = false;
   modal: any;
   subscription: Subscription;
   cardList: any[] = [
@@ -61,7 +63,9 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.SERVICE_DEATAIL', false);
+    if (!this.isPartialLoaded) {
+      this.sharedService.setHeaderConfig('HEADER.SERVICE_DEATAIL', false);
+    }
   }
 
   updatePageContent() {}

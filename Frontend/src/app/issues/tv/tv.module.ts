@@ -94,5 +94,6 @@ import { ChannelDetailComponent } from './routes/channel-detail.component';
       defaultLanguage: 'en',
     }),
   ],
+  exports: [TvDetailComponent],
 })
 export class TvModule {}

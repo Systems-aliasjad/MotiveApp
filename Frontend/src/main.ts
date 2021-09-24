@@ -15,10 +15,6 @@ platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
 
-// if (environment.production) {
-//     enableProdMode();
-// }
-
 // window.addEventListener('DOMContentLoaded', (event) => {
 //     platformBrowserDynamic()
 //         .bootstrapModule(AppModule)
