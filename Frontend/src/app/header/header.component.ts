@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { IPageHeader } from '../../constants/types';
-import { SharedService } from '../../shared.service';
+import { IPageHeader } from '../shared/constants/types';
+import { SharedService } from '../shared/shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 
