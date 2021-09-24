@@ -1,18 +1,21 @@
 <ion-content>
   <ion-grid>
+    <!-- Page Title Start -->
     <ion-row class="page-title">
       <ion-col size="12" class="pb-0">
         <app-page-top></app-page-top>
+        <p>{{ subHeader | translate }}</p>
       </ion-col>
     </ion-row>
-
+    <!-- Page Title End-->
+    
     <ion-row>
       <!-- Package list Start -->
-      <ion-col size="12">
+      <ion-col sizeLg="5" sizeMd="12" size="12">
         <ion-card *ngFor="let card of packages">
           <ion-card-header>
             <ion-card-title>
-              <h5 class="sub-title">{{ card.title }}</h5>
+              <h5 class="sub-title letter-space-none">{{ card.title }}</h5>
             </ion-card-title>
           </ion-card-header>
           <ion-card-content>

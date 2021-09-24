@@ -22,13 +22,7 @@ ion-item::part(native) {
   --border-width: 0;
   --inner-border-width: 0;
 }
-// --------------------------------------------------------------
 
-/* .service-detail_title {
-  @media screen and (min-width: 992px) {
-    display: none;
-  }
-} */
 .service-detail_slider {
   .service-states-container {
     text-align: center;
@@ -172,7 +166,6 @@ ion-item::part(native) {
 }
 .service-detail_content {
   .content {
-    
     /*  border-top: 1px solid #f1f1eb;
     -webkit-box-shadow: 0 -1px 0 #f1f1eb;
     box-shadow: 0 -1px 0 #f1f1eb; */
@@ -362,49 +355,3 @@ ion-item::part(native) {
     }
   }
 }
-/* app-service-detail{
-  motive-button {
-    background: red;
-    display: flex;
-    flex-direction: row;
-  }
-}  */
-/* .footer {
-  background-color: $white;
-  -webkit-box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
-  box-shadow: 0px 0px 11px -2px rgb(0 0 0 / 8%);
-  position: $relative;
-  @media screen and (max-width: 992px) {
-    background-color: transparent;
-    box-shadow: none;
-  }
-  ion-col {
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-pack: space-evenly;
-    -ms-flex-pack: space-evenly;
-    justify-content: space-evenly;
-    @media screen and (max-width: 992px) {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-    }
-  }
-  a {
-    margin-left: 0.5rem;
-  }
-  .btn {
-    margin-right: 1rem;
-    min-width: 250px;
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-}
- */

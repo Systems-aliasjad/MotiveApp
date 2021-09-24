@@ -36,6 +36,7 @@ import { ResetPinFailedMessageComponent } from 'src/app/shared/all-services/rese
 import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
+import { ChannelDetailComponent } from './routes/channel-detail.component';
 
 const routes: Routes = [
   {
@@ -69,6 +70,10 @@ const routes: Routes = [
   {
     path: 'reset-elife-pin-success',
     component: ResetElifePinSuccessMessageComponent,
+  },
+  {
+    path: 'channel-detail',
+    component: ChannelDetailComponent,
   },
   {
     path: 'transfer-channel-to-another-tvBox',
