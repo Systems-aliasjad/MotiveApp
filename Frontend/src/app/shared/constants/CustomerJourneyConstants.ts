@@ -1274,14 +1274,14 @@ export class CustomerJourneyConstants {
   public static confirmTransferButton = {
     title: 'BUTTONS.CONFIRM_TRANSFER',
     clickListener: () => {},
-    linkTo: '/package-transfer-success',
+    linkTo: 'issues/tv/package-transfer-success',
     behaviour: 'primary',
   };
 
   public static unableWatchSpecificChannelconfirmTransferButton = {
     title: 'BUTTONS.CONFIRM_TRANSFER',
     clickListener: () => {},
-    linkTo: '/unable-to-watch-package-transfer-success',
+    linkTo: 'issues/tv/unable-to-watch-package-transfer-success',
     behaviour: 'primary',
   };
 

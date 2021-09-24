@@ -22,7 +22,7 @@ export class PhoneIssueListDialogComponent implements OnInit {
     },
     {
       issue: 'Problem with Value-Added Service ',
-      route: 'no-issue-phone-value-added',
+      route: 'issues/phone/no-issue-phone-value-added',
     },
     {
       issue: 'Forgot Code Control Barring (CCB) PIN',

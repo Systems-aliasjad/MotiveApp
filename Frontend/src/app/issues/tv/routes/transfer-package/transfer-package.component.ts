@@ -2,9 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../constants/constants';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { SharedService } from '../../shared.service';
+import { ERoutingIds } from 'src/app/shared/constants/constants';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-transfer-package',

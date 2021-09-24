@@ -24,7 +24,7 @@
               <p>{{ item.text }}</p>
             </div>
             <a href="javascript:void(0)" class="arrow-link" (click)="cancelGameSessionDialog()">
-              <span>{{ 'LINKS.CANCEL_GAME_SESSION' | translate }}</span>
+              <span>{{ 'BUTTONS.CANCEL_GAME_SESSION' | translate }}</span>
               <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
             </a>
           </ion-card-content>
@@ -33,3 +33,18 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'primary'" [title]="'BUTTONS.ISSUE_FIXED_CLOSE'" (clickHandler)="goToThanks()"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'link'" [title]="'BUTTONS.CANCEL'" (clickHandler)="closeModal()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>
