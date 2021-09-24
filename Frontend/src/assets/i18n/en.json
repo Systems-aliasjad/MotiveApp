@@ -66,7 +66,8 @@
     "CHECK_YOUR_BROWSER_SETTING": "Check your browser setting",
     "CHECK_YOUR_NETWORK_SETTING": "Check your network setting",
     "CHECK_YOUR_FIREWALL_SETTING": "Check your firewall setting",
-    "HOW_TO_RECONFIGURE_YOUR_ROUTER": "How to reconfigure your router"
+    "HOW_TO_RECONFIGURE_YOUR_ROUTER": "How to reconfigure your router",
+    "CHOOSE_THE_PLAN_PACKAGE_YOU_LIKE_TO_TRANSFER_TO_ANOTHER_TV_BOX": "Choose the plan package you'd like to transfer to another TV box."
   },
   "LANDING_PAGE": {
     "SWITCH": "Switch",
@@ -644,7 +645,6 @@
     "CARD_SUB_HEADING2": "Living Room TV, Kids Room TV"
   },
   "AVAILABLE_PACKAGE": {
-    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box.",
     "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
   },
   "TRANSFER_PACKAGE": {

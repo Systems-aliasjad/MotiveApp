@@ -3,7 +3,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { GameSessionDialog } from 'src/app/shared/dialogs/game-session-dialog/game-session-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -38,18 +37,6 @@ export class GameSessionComponent implements OnInit, OnDestroy {
 
   updateHeader() {
     this.sharedService.setHeaderConfig('HEADER.ACTIVE_GAME_SESSION', false);
-    CustomerJourneyConstants.gameSessionButtons;
-  }
-
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
   }
 
   async cancelGameSessionDialog() {
@@ -59,11 +46,12 @@ export class GameSessionComponent implements OnInit, OnDestroy {
     return await modal.present();
   }
 
-  dismiss() {
-    this.modalCtrl.dismiss();
+  closeModal() {
+    //TODO: should go to 2.7.19
+    this.location.back();
   }
 
-  CloseMOdal() {
-    this.location.back();
+  goToThanks() {
+    this.router.navigate(['/thanks']);
   }
 }
