@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { ERoutingIds } from '../../../../shared/constants/constants';
 
 @Component({
   selector: 'app-package-available',
@@ -24,18 +23,16 @@ export class PackageAvailableComponent implements OnInit {
   ngOnInit() {}
 
   goToTransferPackage() {
-    if (ERoutingIds.packageavailable) {
-      // this.router.navigate(['/package-transfer']);
-    } else if (ERoutingIds.enableWatchSpecificChannelpackageavailable) {
-      // this.router.navigate(['/unable-to-watch-package-transfer']);
-    }
+    // this.router.navigate(['/package-transfer']);
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/tv/transfer-package/step1']);
+    this.button1Click.emit();
+    // this.router.navigate(['/issues/tv/transfer-package/step1']);
   }
 
   button2Listener() {
-    this.router.navigate(['unable-to-watch-specific-channel']);
+    this.button2Click.emit();
+    // this.router.navigate(['unable-to-watch-specific-channel']);
   }
 }
