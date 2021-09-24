@@ -13,8 +13,6 @@ import { FormGroup } from '@angular/forms';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener($event)"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
   ></app-reset-router-password>`,
 })
 export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
@@ -27,7 +25,7 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
 
   button2: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.NEXT',
+    title: 'BUTTONS.CONTINUE',
     explanatoryNote: '',
   };
 
