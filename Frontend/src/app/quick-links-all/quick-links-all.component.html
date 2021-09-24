@@ -4,12 +4,14 @@
     <div class="quick-links-container">
       <!-- Page Title Start -->
       <ion-row>
-        <ion-col size="12">      
-          <app-page-top></app-page-top>
+        <ion-col size="12">
+          <div class="page-top_title">
+            <h2>{{ 'HEADER.QUICK_LINKS' | translate }}</h2>
+          </div>
         </ion-col>
       </ion-row>
       <!-- Page Title End -->
-  
+
       <!-- Quick Links Slider Start -->
       <ion-row class="quick-links-card">
         <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngFor="let link of quickLinks">
@@ -25,5 +27,4 @@
       <!-- Quick Links Slider End -->
     </div>
   </ion-grid>
-  
 </ion-content>

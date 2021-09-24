@@ -16,13 +16,13 @@ import { AppComponent } from './app.component';
 import { HttpModule } from './http/http.module';
 import { CacheModule } from './cache/cache.module';
 import { environment } from '../environments/environment';
-import { SharedModule } from 'src/app/shared/shared.module';
+
+import { LoaderComponent } from './loader/loader.component';
+import { HeaderComponent } from './header/header.component';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
-import { LoaderComponent } from './loader/loader.component';
-import { HeaderComponent } from './header/header.component';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -33,9 +33,8 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent,HeaderComponent, LoaderComponent, ProfileComponent, QuickLinksComponent, QuickLinksAllComponent],
+  declarations: [AppComponent, LandingComponent, HeaderComponent, LoaderComponent, ProfileComponent, QuickLinksComponent, QuickLinksAllComponent],
   imports: [
-    SharedModule,
     RoutingModule,
     FlexLayoutModule,
     CacheModule,
