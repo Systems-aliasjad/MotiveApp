@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
 import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-screen.component';
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
@@ -51,7 +50,6 @@ import { CustomerNotSameRouterComponent } from './all-services/customer-not-same
 import { OutageComponent } from './all-services/outage.component';
 import { IssueNotFixedComponent } from './all-services/issue-not-fixed.component';
 import { NoIssuesServiceDetailsComponent } from './all-services/no-issues-service-details/no-issues-service-details.component';
-import { InternetModule } from '../issues/internet/internet.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -61,7 +59,6 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     DiagnoseIssueComponent,
     PageTopComponent,
-    HeaderComponent,
     MotiveMessageComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
@@ -124,7 +121,6 @@ export function createTranslateLoader(http: HttpClient) {
     DeviceCareComponent,
     PageTopComponent,
     ButtonComponent,
-    HeaderComponent,
     MotiveMessageComponent,
     ThankyouScreenComponent,
     BookComplaintComponent,
