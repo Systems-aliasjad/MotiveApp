@@ -1,62 +1,56 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator, eyeHide, eyeShow } from '../../constants/constants';
-import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
-import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { Location } from '@angular/common';
+import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-reset-router-password',
   templateUrl: './reset-router-password.component.html',
   styleUrls: ['./reset-router-password.component.scss'],
 })
-export class ResetRouterPasswordComponent implements OnInit {
+export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
+  //
+  @Input()
+  button1: IMotiveButton;
+  @Output()
+  button1Click = new EventEmitter();
+
+  @Input()
+  button2: IMotiveButton;
+  @Output()
+  button2Click = new EventEmitter<any>();
+
+  @Input()
+  button3: IMotiveButton;
+  @Output()
+  button3Click = new EventEmitter();
+
+  //
   public segment: string = '1';
   public routerSettingsForm: FormGroup;
-  error = errorMessages;
-  @ViewChild('staticTabs', { static: false }) staticTabs: ResetRouterPasswordComponent;
-
-  termsCheck: boolean = false;
-  modal: any;
-  subscription: Subscription;
-  id: number;
-  btnText: string;
   passwordShowIcon: string = eyeShow;
   passwordHideIcon: string = eyeHide;
+  error = errorMessages;
+  @ViewChild('staticTabs', { static: false }) staticTabs: ResetRouterPasswordComponent;
+  subscription: Subscription;
 
-  hideShowPassword(Type: any) {
-    Type.type = Type.type === 'password' ? 'text' : 'password';
-  }
-
-  constructor(
-    private fb: FormBuilder,
-    public router: Router,
-    private sharedService: SharedService,
-    private actRoute: ActivatedRoute,
-    private modalCtrl: ModalController,
-    private location: Location
-  ) {
+  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute) {
     this.subscription = actRoute.data.subscribe((data) => {
-      this.id = data.id;
       this.initialization();
     });
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
   }
 
   ngOnInit() {}
 
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
   initialization() {
-    this.sharedService.setDefaultValues();
-    this.sharedService.setHeaderConfig('HEADER.RESET_ROUTER_WIFI_PASSWORD', true);
-    this.sharedService.getTermsConditions().subscribe((config) => {
-      this.termsCheck = config;
-    });
     this.createForm();
   }
 
@@ -90,26 +84,25 @@ export class ResetRouterPasswordComponent implements OnInit {
     return this.routerSettingsForm.controls;
   }
 
-  SubmitForm() {
-    this.router.navigate(['reset-router-password-success']);
-  }
-
-  async PopupTermsConditions() {
-    this.modal = await this.modalCtrl.create({
-      component: TermsConditionsComponent,
-    });
-    return await this.modal.present();
-  }
-
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
   }
 
-  async dismiss() {
-    await this.modalCtrl.dismiss();
+  hideShowPassword(Type: any) {
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
-  onBackClick() {
-    this.location.back();
+  //
+  button1Listener() {
+    this.button1Click.emit();
   }
+
+  button2Listener() {
+    this.button2Click.emit(this.routerSettingsForm);
+  }
+
+  button3Listener() {
+    this.button3Click.emit();
+  }
+  //
 }

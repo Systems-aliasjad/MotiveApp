@@ -63,6 +63,7 @@ import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-s
 import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
+import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.component';
 
 const routes: Routes = [
   {
@@ -393,6 +394,10 @@ const routes: Routes = [
     //App.MotiveH&S.5.2.8
     path: 'router-not-reachable-own-care',
     component: RouterNotReachableOwnCareComponent,
+  },
+  {
+    path: 'reset-wifi-password',
+    component: ResetWIFIPasswordComponent,
   },
 ];
 

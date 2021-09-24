@@ -28,7 +28,6 @@ import { UnableVideoCallsComponent } from './components/unable-video-calls/unabl
 import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
-import { ResetWifiPasswordComponent } from './components/reset-wifi-password/reset-wifi-password.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
@@ -82,7 +81,6 @@ export function createTranslateLoader(http: HttpClient) {
     UnableConnectNewDeviceWifiComponent,
     ResetFactoryDefaultDialog,
     DeviceListDialog,
-    ResetWifiPasswordComponent,
     ResetTvPinDialog,
     RestartTvboxDialog,
     GameSessionDialog,
@@ -132,7 +130,6 @@ export function createTranslateLoader(http: HttpClient) {
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
-    ResetWifiPasswordComponent,
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
