@@ -37,6 +37,7 @@ import { HttpClient } from '@angular/common/http';
 import { GameSessionComponent } from './routes/game-session/game-session.component';
 import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
+import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
 import { PackageAvailableComponent } from './shared/package-available/package-available.component';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
@@ -77,6 +78,7 @@ import { ChannelDetailComponent } from './routes/channel-detail.component';
     TVBoxNotReachableFormComponent,
     NoAdditionalSTBComponent,
     NoNonSharedPackageComponent,
+    TransferPackageComponent,
   ],
   imports: [
     CommonModule,

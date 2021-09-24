@@ -1,5 +1,6 @@
 {
   "HEADER": {
+    "SERVICE_DETAILS": "Service details",
     "ALL_SERVICES": "All services",
     "INTERNET_ISSUES": "Internet issues",
     "PHONE_ISSUES": "Phone Issues",
@@ -254,6 +255,9 @@
   },
 
   "MESSAGES": {
+    "INTERNET": "INTERNET",
+    "TELEVISION": "TELEVISION",
+    "TELEPHONE": "TELEPHONE",
     "NO_SERVICE": "No service",
     "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": "The eLife service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
     "DEVICES_IS_NOT_ACCESSIBLE": "Devices is not accessible!",

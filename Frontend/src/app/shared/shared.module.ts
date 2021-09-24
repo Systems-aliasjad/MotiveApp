@@ -32,13 +32,11 @@ import { ResetWifiPasswordComponent } from './components/reset-wifi-password/res
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
-import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
-import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { CcbPinResetFormComponent } from './components/forgot-ccb-pin/ccb-pin-reset-form.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
@@ -53,6 +51,8 @@ import { OntRebootRequiredInternetComponent } from './all-services/ont-reboot-re
 import { CustomerNotSameRouterComponent } from './all-services/customer-not-same-router.component';
 import { OutageComponent } from './all-services/outage.component';
 import { IssueNotFixedComponent } from './all-services/issue-not-fixed.component';
+import { NoIssuesServiceDetailsComponent } from './all-services/no-issues-service-details/no-issues-service-details.component';
+import { InternetModule } from '../issues/internet/internet.module';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -86,12 +86,10 @@ export function createTranslateLoader(http: HttpClient) {
     ResetTvPinDialog,
     RestartTvboxDialog,
     GameSessionDialog,
-    TransferPackageComponent,
     UnableWatchSpecificChannelComponent,
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
-    PhoneIssuesProblemValueAddedComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
@@ -106,6 +104,7 @@ export function createTranslateLoader(http: HttpClient) {
     CustomerNotSameRouterComponent,
     OutageComponent,
     IssueNotFixedComponent,
+    NoIssuesServiceDetailsComponent,
   ],
   imports: [
     CommonModule,
@@ -137,7 +136,6 @@ export function createTranslateLoader(http: HttpClient) {
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
-    PhoneIssuesProblemValueAddedComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,

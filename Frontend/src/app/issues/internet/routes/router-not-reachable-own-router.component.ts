@@ -7,7 +7,15 @@ import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-3rd-party-router',
-  template: `<app-diagnose-issue [messageSection]="messageSection" [button1]="button1" (button1Click)="button1Listener()" [button2]="button2" (button2Click)="button2Listener()">
+  template: `<app-diagnose-issue
+    [messageSection]="messageSection"
+    [button1]="button1"
+    (button1Click)="button1Listener()"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+    [button3]="button3"
+    (button3Click)="button3Listener()"
+  >
   </app-diagnose-issue>`,
 })
 export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
@@ -23,8 +31,8 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   };
 
   button3: IMotiveButton = {
-    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
-    type: 'primary',
+    title: 'BUTTONS.ISSUE_STILL_NOT_RESOLVED',
+    type: 'secondary',
   };
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
@@ -48,7 +56,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/router-not-reachable-own-router-care']);
+    this.router.navigate(['issues/internet/router-not-reachable-own-care']);
   }
 
   button2Listener() {

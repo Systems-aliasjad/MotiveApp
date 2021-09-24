@@ -69,6 +69,7 @@ import { InstallNewThirdPartyRouterMessageComponent } from './routes/install-new
 import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
 import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
+import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
 
 @NgModule({
   declarations: [
@@ -132,6 +133,7 @@ import { BookAppointmentComponent } from './routes/book-appointment.component';
     BookComplaintComponent,
     RouterResetSuccessfullMessageComponent,
     BookAppointmentComponent,
+    RouterNotReachableOwnCareComponent,
   ],
   imports: [
     CommonModule,

@@ -12,11 +12,11 @@ import { UnableVideoCallsComponent } from './shared/components/unable-video-call
 import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
 import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
-
-import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
+// import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
+// import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
 import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
-import { PhoneIssuesProblemValueAddedComponent } from './shared/components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
+// import { PhoneIssuesProblemValueAddedComponent } from './issues/phone/routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
@@ -29,6 +29,7 @@ import { OntRebootRequiredInternetComponent } from './shared/all-services/ont-re
 import { CustomerNotSameRouterComponent } from './shared/all-services/customer-not-same-router.component';
 import { OutageComponent } from './shared/all-services/outage.component';
 import { IssueNotFixedComponent } from './shared/all-services/issue-not-fixed.component';
+import { NoIssuesServiceDetailsComponent } from './shared/all-services/no-issues-service-details/no-issues-service-details.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -107,7 +108,6 @@ const routes: Routes = [
 
   // Reset Router Wi-Fi Password
   { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
-
   { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
   { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
   // 1122 Module - 4 END
@@ -149,13 +149,13 @@ const routes: Routes = [
   { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
 
   // Package Transfer
-  { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
+  // { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
+  // { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
   //Unable to watch specific channel
   { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
-  { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
-
-  { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
-
+  // { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
+  // { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
+  // { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
   { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },
 
   //Ont reboot required
@@ -178,6 +178,7 @@ const routes: Routes = [
   { path: 'customer-not-using-same-router', component: CustomerNotSameRouterComponent },
   { path: 'outage', component: OutageComponent },
   { path: 'issue-not-fixed', component: IssueNotFixedComponent },
+  { path: 'no-issues-service-details', component: NoIssuesServiceDetailsComponent },
 
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },

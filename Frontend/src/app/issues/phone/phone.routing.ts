@@ -22,6 +22,8 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
+import { ERoutingIds } from 'src/app/shared/constants/constants';
+import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 
 const routes: Routes = [
   {
@@ -115,6 +117,11 @@ const routes: Routes = [
   {
     path: 'book-appointment',
     component: BookAppointmentComponent,
+  },
+  {
+    path: 'no-issue-phone-value-added',
+    component: PhoneIssuesProblemValueAddedComponent,
+    data: { id: ERoutingIds.noIssuePhoneProblemValueAdded },
   },
 ];
 

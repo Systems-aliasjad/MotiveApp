@@ -32,6 +32,12 @@ export class DiagnoseIssueComponent implements OnInit {
 
   @Input()
   messageSection;
+
+  @Input()
+  section1Template;
+  @Input()
+  section1Data;
+
   myBtnSize;
 
   constructor() {}

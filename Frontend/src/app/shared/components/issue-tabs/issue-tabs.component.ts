@@ -16,7 +16,9 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   messageSection: IMessageIssue;
   subscription: Subscription;
   codeType;
+  @Input()
   section1Template;
+  @Input()
   section1Data;
   constructor(private activatedRoute: ActivatedRoute) {
     this.subscription = this.activatedRoute.data.subscribe((data) => {
@@ -31,12 +33,12 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   initialization() {
-    if (this.codeType === ERoutingIds.routerNotReachable) {
-      this.section1Template = ApplicableCodes.routerNotReachableTemplate;
-      this.section1Data = {
-        routerName: 'Unnamed router',
-        routerModel: 'xxxx xxxx  xxxx xxx',
-      };
-    }
+    // if (this.codeType === ERoutingIds.routerNotReachable) {
+    //   this.section1Template = ApplicableCodes.routerNotReachableTemplate;
+    //   this.section1Data = {
+    //     routerName: 'Unnamed router',
+    //     routerModel: 'xxxx xxxx  xxxx xxx',
+    //   };
+    // }
   }
 }
