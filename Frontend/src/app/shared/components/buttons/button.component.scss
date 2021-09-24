@@ -12,7 +12,12 @@ ion-button,
 
 .agree-terms{
   @media screen and (max-width: 992px)  {
-    margin-bottom: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   ion-item{
     -webkit-box-align: center;
