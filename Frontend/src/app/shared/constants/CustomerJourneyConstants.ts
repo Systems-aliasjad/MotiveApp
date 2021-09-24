@@ -134,6 +134,13 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY' }],
   };
 
+  public static issueNotFixedAllServicesSection: IMessageIssue = {
+    header: 'MESSAGES.NO_SERVICE',
+    body: [
+      { title: 'MESSAGES.THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD' },
+    ],
+  };
+
   public static issueNotFixedMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_INTERNET_CONNECTION',
     body: [{ title: 'MESSAGES.NO_INTERNET_CONNECTION_BODY2' }],
@@ -194,6 +201,11 @@ export class CustomerJourneyConstants {
     body: [{ title: 'MESSAGES.UNPLANNED_INTERRUPTION_BODY' }],
   };
 
+  public static fiberBoxNotReachableBuilderSection: IMessageIssue = {
+    header: 'MESSAGES.FIBER_BOX_NOT_REACHABLE',
+    body: [{ title: 'MESSAGES.PLEASE_MAKE_SURE_THAT_THE_POWER_CABLE_FOR_WALL_MOUNTED_FIBER_BOX_IS_CONNECTED_PROPERLY_AND_POWER_IS_ON' }],
+  };
+
   public static routerUpdradeRecomendedMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_ISSUE_FOUND',
     body: [
@@ -248,6 +260,43 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
+    ],
+  };
+
+  public static customerNotUsingSameRouterAllServicesSection: IMessageIssue = {
+    header: 'MESSAGES.DEVICES_IS_NOT_ACCESSIBLE',
+    body: [
+      {
+        title: 'MESSAGES.PLEASE_MAKE_SURE_THAT',
+        children: [
+          'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT1',
+          'MESSAGES.THE_TV_BOX_IS_SWITCHED_ON',
+          'MESSAGES.THE_TELEPHONE_DEVICE_IS_SWITCHED_ON',
+          'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY1_POINT2',
+          'MESSAGES.THE_TV_BOX_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX',
+          'MESSAGES.THE_TELEPHONE_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX',
+          'MESSAGES.IF_ISSUE_IS_STILL_NOT_FIXED_PLEASE_RECONFIGURE_YOUR_ROUTER_WITH_THE_CORRECT_SETTINGS',
+        ],
+      },
+      {
+        title: 'MESSAGES.RECONFIGURE_YOUR_ROUTER_BODY3',
+      },
+    ],
+  };
+
+  public static phoneNotReachableAllServicesSection: IMessageIssue = {
+    header: 'MESSAGES.WE_CANT_REACH_YOUR_PHONE',
+    body: [
+      {
+        title: 'MESSAGES.ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE',
+        children: ['MESSAGES.THE_PHONE_IS_NOT_SWITCHED_ON', 'MESSAGES.THE_CABLE_ISNT_CONNECTED_PROPERLY', 'MESSAGES.THE_PHONE_IS_FAULTY'],
+      },
+      {
+        title: 'MESSAGES.TAP_TRY_AGAIN_LATER_IF_YOU_WANT_TO_CHECK_THE_PROBLEM_LATER',
+      },
+      {
+        title: 'MESSAGES.TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT',
       },
     ],
   };
@@ -337,6 +386,18 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.ONT_REBOOT_REQUIRED_BODY2',
+      },
+    ],
+  };
+
+  public static ontRestartTVAllServices: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
+      },
+      {
+        title: 'MESSAGES.PLEASE_RESTART_THE_WALL-MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN',
       },
     ],
   };

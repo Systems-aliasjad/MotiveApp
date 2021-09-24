@@ -11,13 +11,13 @@
     <!-- Action Title Content Start -->
     <ion-row class="info-container_title_content">
       <!-- <ion-col sizeLg="8" sizeMd="8" offset-lg="2" offset-md="2" size="12"></ion-col> -->
-      <ion-col size="12" class="info-content">
+      <ion-col size="12">
         <h4 *ngIf="Section1Data?.header">
           {{ Section1Data.header | translate }}
         </h4>
 
         <!-- for subHeader -->
-        <ion-list class="inline-ion-list">
+        <ion-list class="inline-ion-list" *ngIf="subHeaderSectionTemplate">
           <ion-item lines="none" class="ion-no-padding" *ngFor="let template of subHeaderSectionTemplate">
             <ion-label class="inline-list_title"> {{ template.title | translate }}</ion-label>
             <ion-label class="inline-list_value"> {{ subHeaderSectionData[template.objKeyNameEN] }} </ion-label>
@@ -53,7 +53,7 @@
         </ion-col>
       </ion-row>
       <!-- Detail List and Follow up and Close End -->
-      <ion-row class="ion-text-center lg-screen">
+      <ion-row class="ion-text-center lg-screen ion-margin-top">
         <ion-col size="12" class="pt-0 pb-0">
           <motive-button
             *ngIf="button1"

@@ -47,6 +47,11 @@ ion-content {
           margin-bottom: 0;
         }
       }
+      &:last-child{
+        ion-label{
+          margin-bottom: 0;
+        }
+      }
     }
   }
   
@@ -134,53 +139,4 @@ ion-content {
     margin-bottom: 2rem;
   }
 }
-.lg-screen {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  @media screen and (max-width: 992px) {
-    display: none;
-  }
-}
-.sm-screen {
-  display: none;
-  @media screen and (max-width: 992px) {
-    display: block;
-  }
-}
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .footer {
-    .footer-btns-container {
-      ion-row {
-        width: 100%;
-      }
-      ion-col {
-        &:first-child {
-          ion-col {
-            /* -webkit-box-flex: 0 !important;
-            -ms-flex: 0 0 100% !important;
-            flex: 0 0 100% !important;
-            max-width: 100% !important;
-            width: 100% !important; */
-          }
-        }
-        motive-button {
-          min-width: 100%;
-          width: 100%;
-        }
-      }
-      > ion-col {
-        &:last-child {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-        }
-      }
-    }
-  }
-}
+

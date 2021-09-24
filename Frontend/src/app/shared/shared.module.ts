@@ -45,7 +45,14 @@ import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
+import { FiberBoxNotReachableComponent } from './all-services/fiber-box-not-reachable-message.component';
 import { ResetPinFailedMessageComponent } from './all-services/reset-pin-failed-message.component';
+import { PhoneNotReachableComponent } from './all-services/phone-not-reachable.component';
+import { OntRebootRequiredTvComponent } from './all-services/ont-reboot-required-tv.component';
+import { OntRebootRequiredInternetComponent } from './all-services/ont-reboot-required-internet.component';
+import { CustomerNotSameRouterComponent } from './all-services/customer-not-same-router.component';
+import { OutageComponent } from './all-services/outage.component';
+import { IssueNotFixedComponent } from './all-services/issue-not-fixed.component';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
@@ -92,6 +99,13 @@ export function createTranslateLoader(http: HttpClient) {
     InstallEtisalatRouterDialogComponent,
     MotiveMessageFeedbackComponent,
     ResetPinFailedMessageComponent,
+    FiberBoxNotReachableComponent,
+    PhoneNotReachableComponent,
+    OntRebootRequiredTvComponent,
+    OntRebootRequiredInternetComponent,
+    CustomerNotSameRouterComponent,
+    OutageComponent,
+    IssueNotFixedComponent,
   ],
   imports: [
     CommonModule,

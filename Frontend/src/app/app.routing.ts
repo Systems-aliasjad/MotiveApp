@@ -21,7 +21,14 @@ import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list
 import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
+import { FiberBoxNotReachableComponent } from './shared/all-services/fiber-box-not-reachable-message.component';
 import { ResetPinFailedMessageComponent } from './shared/all-services/reset-pin-failed-message.component';
+import { PhoneNotReachableComponent } from './shared/all-services/phone-not-reachable.component';
+import { OntRebootRequiredTvComponent } from './shared/all-services/ont-reboot-required-tv.component';
+import { OntRebootRequiredInternetComponent } from './shared/all-services/ont-reboot-required-internet.component';
+import { CustomerNotSameRouterComponent } from './shared/all-services/customer-not-same-router.component';
+import { OutageComponent } from './shared/all-services/outage.component';
+import { IssueNotFixedComponent } from './shared/all-services/issue-not-fixed.component';
 
 const routes: Routes = [
   // REFACTORED LOGIC
@@ -164,6 +171,13 @@ const routes: Routes = [
   /////All Services
 
   { path: 'reset-pin-failed', component: ResetPinFailedMessageComponent },
+  { path: 'fiber-box-not-reachable', component: FiberBoxNotReachableComponent },
+  { path: 'phone-not-reachable', component: PhoneNotReachableComponent },
+  { path: 'ont-reboot-required-tv', component: OntRebootRequiredTvComponent },
+  { path: 'ont-reboot-required-internet', component: OntRebootRequiredInternetComponent },
+  { path: 'customer-not-using-same-router', component: CustomerNotSameRouterComponent },
+  { path: 'outage', component: OutageComponent },
+  { path: 'issue-not-fixed', component: IssueNotFixedComponent },
 
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },
