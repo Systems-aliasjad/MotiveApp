@@ -16,6 +16,9 @@ ion-item::part(native){
   --inner-border-width: 0;
 }
 /*-------------------------------------------------*/
+.page-title{
+  margin-bottom: .5rem;
+}
 ion-card{
   margin-right: 0;
   margin-left: 0;
@@ -31,4 +34,19 @@ ion-card{
     }
   }
  }
- 
+ .footer{
+  .footer-btns-container {
+    ion-col {
+      ion-row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+    }
+   
+  }
+ } 
