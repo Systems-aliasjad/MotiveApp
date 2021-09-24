@@ -34,6 +34,7 @@ import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 import { ResetPinFailedMessageComponent } from 'src/app/shared/all-services/reset-pin-failed-message.component';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
+import { ChannelDetailComponent } from './routes/channel-detail.component';
 
 const routes: Routes = [
   {
@@ -67,6 +68,10 @@ const routes: Routes = [
   {
     path: 'reset-elife-pin-success',
     component: ResetElifePinSuccessMessageComponent,
+  },
+  {
+    path: 'channel-detail',
+    component: ChannelDetailComponent,
   },
   {
     path: 'transfer-channel-to-another-tvBox',

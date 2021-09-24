@@ -39,6 +39,7 @@ import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 import { PackageAvailableComponent } from './shared/package-available/package-available.component';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
+import { ChannelDetailComponent } from './routes/channel-detail.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.c
     NoIssuesComponent,
     UnableWatchChannelStep1Component,
     PackageTransferStep1Component,
+    ChannelDetailComponent,
     PackageTransferStep2Component,
     TransferTvboxChannelComponent,
     TroubleshootCompleteMessageComponent,

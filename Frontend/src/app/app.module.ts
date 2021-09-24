@@ -20,7 +20,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
-import { MessageBuilderComponent } from './message-builder/message-builder.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 import { LoaderComponent } from './loader/loader.component';
 
@@ -33,7 +32,7 @@ export function createTranslateLoader(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [AppComponent, LandingComponent, LoaderComponent, ProfileComponent, QuickLinksComponent, MessageBuilderComponent, QuickLinksAllComponent],
+  declarations: [AppComponent, LandingComponent, LoaderComponent, ProfileComponent, QuickLinksComponent, QuickLinksAllComponent],
   imports: [
     SharedModule,
     RoutingModule,

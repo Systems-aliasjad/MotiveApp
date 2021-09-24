@@ -46,6 +46,7 @@
   },
 
   "SUBHEADER": {
+    "THE_CHANNEL_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "The channel <xxx> is available on the below TV box.",
     "CALL_DETAILS": "Call details",
     "PLEASE_FILL_YOUR_COMPLETE_DETAILS": "Please fill your complete details",
     "UNABLE_TO_CONNECT_TO_HOME_ZONE": "Unable to connect to Home Zone",
@@ -643,9 +644,6 @@
     "CARD_HEADING": "eLife TV game",
     "CARD_SUB_HEADING1": "STB SR#039838920",
     "CARD_SUB_HEADING2": "Living Room TV, Kids Room TV"
-  },
-  "AVAILABLE_PACKAGE": {
-    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
   },
   "TRANSFER_PACKAGE": {
     "DESCRIPTION": "Choose the TV box you'd like to transfer the package to."
