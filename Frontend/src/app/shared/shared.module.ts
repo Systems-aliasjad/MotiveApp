@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './components/header/header.component';
 import { PageTopComponent } from './components/page-top/page-top.component';
 import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-screen.component';
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
@@ -28,7 +27,6 @@ import { UnableVideoCallsComponent } from './components/unable-video-calls/unabl
 import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
-import { ResetWifiPasswordComponent } from './components/reset-wifi-password/reset-wifi-password.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
@@ -52,7 +50,6 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     DiagnoseIssueComponent,
     PageTopComponent,
-    HeaderComponent,
     MotiveMessageComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
@@ -72,7 +69,6 @@ export function createTranslateLoader(http: HttpClient) {
     UnableConnectNewDeviceWifiComponent,
     ResetFactoryDefaultDialog,
     DeviceListDialog,
-    ResetWifiPasswordComponent,
     ResetTvPinDialog,
     RestartTvboxDialog,
     GameSessionDialog,
@@ -107,13 +103,11 @@ export function createTranslateLoader(http: HttpClient) {
     DeviceCareComponent,
     PageTopComponent,
     ButtonComponent,
-    HeaderComponent,
     MotiveMessageComponent,
     ThankyouScreenComponent,
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
-    ResetWifiPasswordComponent,
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,

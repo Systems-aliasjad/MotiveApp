@@ -400,9 +400,9 @@ ion-modal,
 .arrow-btn {
   color: $etisalat-color;
   text-transform: $text-uppercase;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -542,7 +542,8 @@ app-book-complaint,
 app-restart-instruction,
 app-motive-message-bullet,
 app-motive-message-feedback,
-app-reset-pin{
+app-reset-pin,
+app-package-available{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

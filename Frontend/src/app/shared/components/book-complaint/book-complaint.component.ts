@@ -61,7 +61,6 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   get f() {
     return this.formGroup.controls;
   }
-  SubmitForm() {}
 
   onBackClick() {}
 

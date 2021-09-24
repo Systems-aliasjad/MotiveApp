@@ -70,6 +70,7 @@ import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-s
 import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
+import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.component';
 
 @NgModule({
   declarations: [
@@ -134,6 +135,7 @@ import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachabl
     RouterResetSuccessfullMessageComponent,
     BookAppointmentComponent,
     RouterNotReachableOwnCareComponent,
+    ResetWIFIPasswordComponent,
   ],
   imports: [
     CommonModule,

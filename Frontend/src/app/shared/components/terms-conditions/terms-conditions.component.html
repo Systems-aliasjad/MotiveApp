@@ -15,8 +15,9 @@
           <p *ngFor="let text of term.body">{{ text | translate }}</p>
         </div>
       </ion-col>
-
-      <ion-col sizeLg="4" sizeMd="4" sizeSm="12" size="12">
+    </ion-row>
+    <ion-row>
+      <ion-col sizeLg="3" sizeMd="4" size="12">
         <ion-button class="btn secondary-btn close full-width" (click)="AcceptContinue($event)">Accept & Continue</ion-button>
       </ion-col>
     </ion-row>

@@ -861,7 +861,7 @@ export class CustomerJourneyConstants {
   public static continueToWIfiSettingButton: IButton = {
     title: 'BUTTONS.CONTINUE_TO_WIFI_SETTINGS',
     clickListener: () => {},
-    linkTo: '/reset-wifi-password-form',
+    linkTo: '/issues/internet/reset-wifi-password',
     behaviour: 'primary',
   };
 
@@ -1093,7 +1093,7 @@ export class CustomerJourneyConstants {
     title: 'BUTTONS.RESET_WIFI_PASSWORD_SUCCESS',
     explanatoryNote: '',
     clickListener: () => {},
-    linkTo: '/reset-wifi-password-form',
+    linkTo: '/issues/internet/reset-wifi-password',
     behaviour: 'primary',
   };
 
@@ -1156,7 +1156,7 @@ export class CustomerJourneyConstants {
   public static resetWifiButton = {
     title: 'BUTTONS.YES_RESET_WIFI_PASSWORD',
     clickListener: () => {},
-    linkTo: '/reset-wifi-password-form',
+    linkTo: '/issues/internet/reset-wifi-password',
     behaviour: 'primary',
   };
 

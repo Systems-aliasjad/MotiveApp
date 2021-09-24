@@ -19,7 +19,7 @@
       <ion-slides [options]="slideOpts">
         <ion-slide *ngFor="let link of quickLinks">
           <ion-col size="12">
-            <a href="javascript:void(0)">
+            <a href="javascript:void(0)" (click)="onCardClick(link)">
               <ion-card>
                 <ion-card-content>
                   <p>{{ link.body | translate }}</p>

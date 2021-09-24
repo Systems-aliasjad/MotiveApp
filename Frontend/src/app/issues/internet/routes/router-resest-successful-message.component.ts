@@ -50,6 +50,6 @@ export class RouterResetSuccessfullMessageComponent implements OnInit, OnDestroy
   }
 
   button1Listener() {
-    this.router.navigate(['/reset-wifi-password-form']);
+    this.router.navigate(['/issues/internet/reset-wifi-password']);
   }
 }
