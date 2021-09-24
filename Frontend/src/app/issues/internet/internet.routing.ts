@@ -62,6 +62,7 @@ import { InstallNewRouterResetInternetPasswordComponent } from './routes/install
 import { RouterResetSuccessfullMessageComponent } from './routes/router-resest-successful-message.component';
 import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-connection/unable-homezone-connection.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
+import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
 
 const routes: Routes = [
   {
@@ -387,6 +388,11 @@ const routes: Routes = [
     //App.MotiveH&S.5.2.8
     path: 'router-reset-successfull-message',
     component: RouterResetSuccessfullMessageComponent,
+  },
+  {
+    //App.MotiveH&S.5.2.8
+    path: 'router-not-reachable-own-care',
+    component: RouterNotReachableOwnCareComponent,
   },
 ];
 

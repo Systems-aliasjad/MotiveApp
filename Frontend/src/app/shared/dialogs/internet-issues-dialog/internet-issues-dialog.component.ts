@@ -45,4 +45,9 @@ export class InternetIssuesDialog implements OnInit {
     });
     return await modal.present();
   }
+
+  ExitTroubleshoot() {
+    this.modalCtrl.dismiss();
+    this.router.navigate(['/thanks']);
+  }
 }

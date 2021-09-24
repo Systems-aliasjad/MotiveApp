@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../constants/constants';
-import { SharedService } from '../../shared.service';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
+import { ERoutingIds } from '../../../../shared/constants/constants';
+import { SharedService } from '../../../../shared/shared.service';
+import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-phone-issues-problem-value-added',
@@ -147,9 +147,9 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
 
   goToTransferPackage(item) {
     if (this.codeType === ERoutingIds.packageavailable) {
-      this.router.navigate(['/package-transfer']);
+      this.router.navigate(['/issues/tv/package-transfer']);
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageavailable) {
-      this.router.navigate(['/unable-to-watch-package-transfer']);
+      this.router.navigate(['/issues/tv/unable-to-watch-package-transfer']);
     }
   }
 
