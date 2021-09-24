@@ -70,5 +70,6 @@ import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-pro
       defaultLanguage: 'en',
     }),
   ],
+  exports: [PhoneIssuesProblemValueAddedComponent],
 })
 export class PhoneModule {}

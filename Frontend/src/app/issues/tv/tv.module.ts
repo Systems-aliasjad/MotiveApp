@@ -92,5 +92,6 @@ import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.c
       defaultLanguage: 'en',
     }),
   ],
+  exports: [TvDetailComponent],
 })
 export class TvModule {}

@@ -152,5 +152,6 @@ import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachabl
     }),
     BrMaskerModule,
   ],
+  exports: [ServiceDetailComponent],
 })
 export class InternetModule {}

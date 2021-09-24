@@ -1,12 +1,11 @@
-import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { regExps, errorMessages } from '../../validators/validations';
-import { SharedService } from '../../shared.service';
-import { ConfirmedValidator, eyeHide, eyeShow } from '../../constants/constants';
+import { regExps, errorMessages } from '../../../shared/validators/validations';
+import { SharedService } from '../../../shared/shared.service';
+import { ConfirmedValidator, eyeHide, eyeShow } from '../../../shared/constants/constants';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { TermsConditionsComponent } from '../../components/terms-conditions/terms-conditions.component';
 @Component({
   selector: 'app-no-issues-service-details',
   templateUrl: './no-issues-service-details.component.html',
@@ -25,7 +24,7 @@ export class NoIssuesServiceDetailsComponent implements OnInit {
     Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
-  constructor(private fb: FormBuilder, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute, private modalCtrl: ModalController) {
+  constructor(private dc: ChangeDetectorRef, public router: Router, private sharedService: SharedService, private actRoute: ActivatedRoute) {
     this.subscription = actRoute.params.subscribe((val) => {
       this.initialization();
     });

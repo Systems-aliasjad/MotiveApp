@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
@@ -6,15 +6,20 @@ import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-d
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'tv-detail',
+  selector: 'app-tv-detail',
   templateUrl: './detail.component.html',
   styleUrls: ['./detail.component.scss'],
 })
 export class TvDetailComponent implements OnInit {
+  @Input()
+  isPartialLoaded: boolean = false;
   modal;
   constructor(public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
   ngOnInit() {
-    this.sharedService.setHeaderConfig('TV details', false);
+    if (!this.isPartialLoaded) {
+      this.sharedService.setHeaderConfig('TV details', false);
+    }
+
     this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvDetailsButton));
   }
   cardList = [
