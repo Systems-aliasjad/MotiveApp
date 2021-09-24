@@ -37,7 +37,6 @@ import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
-import { PhoneIssuesProblemValueAddedComponent } from './components/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { CcbPinResetFormComponent } from './components/forgot-ccb-pin/ccb-pin-reset-form.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
@@ -89,7 +88,6 @@ export function createTranslateLoader(http: HttpClient) {
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
-    PhoneIssuesProblemValueAddedComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
@@ -135,7 +133,6 @@ export function createTranslateLoader(http: HttpClient) {
     UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
-    PhoneIssuesProblemValueAddedComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,

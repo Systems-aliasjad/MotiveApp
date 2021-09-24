@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../constants/constants';
-import { SharedService } from '../../shared.service';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
+import { ERoutingIds } from '../../../../shared/constants/constants';
+import { SharedService } from '../../../../shared/shared.service';
+import { IMotiveButton } from '../../../../shared/components/diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-phone-issues-problem-value-added',
