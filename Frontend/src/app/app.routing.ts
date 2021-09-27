@@ -68,7 +68,7 @@ const routes: Routes = [
 
   // REFACTORED LOGIC
   {
-    path: '',
+    path: 'landing',
     component: LandingComponent,
   },
   {

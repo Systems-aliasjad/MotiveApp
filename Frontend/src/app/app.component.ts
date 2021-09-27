@@ -3,7 +3,9 @@ import { CacheService } from './cache/cache.service';
 import { StorageType } from './cache/storages/storage-type.enum';
 import { environment } from '../environments/environment';
 import { SharedService } from './shared/shared.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { BackendService } from './services/backend.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -13,15 +15,28 @@ import { ActivatedRoute } from '@angular/router';
 export class AppComponent implements OnInit {
   appDirection: string = 'rtl';
   showLoader: boolean = false;
-  constructor(private cacheService: CacheService, public sharedService: SharedService, private actRoute: ActivatedRoute) {
+  constructor(
+    public sharedService: SharedService,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService,
+    private authService: AuthService,
+    private router: Router
+  ) {
     // this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
-    actRoute.params.subscribe((params) => {
+  }
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(() => {
       this.Initialization();
     });
   }
-  ngOnInit(): void {}
 
   Initialization() {
+    this.sharedService.setLoader(true);
+    this.backendService.getUserDetail().subscribe((data: any) => {
+      this.authService.setAuthorizationToken(data?.result?.token);
+      this.sharedService.setLoader(false);
+      this.router.navigate(['landing'], { state: { user: data?.result } });
+    });
     const selectedLang = this.sharedService.getDefaultLanguage();
     this.appDirection = selectedLang === 'en' ? 'ltr' : 'rtl';
     this.sharedService.setDefaultLanguage(selectedLang);

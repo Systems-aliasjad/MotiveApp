@@ -20,6 +20,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   showLoader: boolean = false;
   paramsSubscription: Subscription;
   modal: any;
+  user: any;
 
   constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, public router: Router, private modalCtrl: ModalController) {
     this.paramsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
@@ -34,6 +35,11 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   initialization(params: Params) {
+    const navigation = this.router.getCurrentNavigation();
+    this.user = navigation?.extras?.state?.user as {
+      accountId: string;
+      username: string;
+    };
     this.sharedService.setDefaultValues();
     this.codeType = params['code']?.toUpperCase() || '3P';
     this.selectedLang = this.sharedService.getDefaultLanguage();
