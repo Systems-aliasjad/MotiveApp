@@ -51,6 +51,21 @@
     }
   }
 }
+.ios {
+  .segment-button-checked {
+    color: $etisalat-color;
+    --indicator-color: transparent;
+    --indicator-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    border-bottom-left-radius:0;
+    --border-radius: 0;
+  }
+  .segment-button-has-label {
+    margin-bottom: 0;
+    padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
+    
+  }
+}
 // --------------------------------------------------------------
 
 /*------------------- Neotech Fonts Start -------------------*/
