@@ -3,7 +3,7 @@
     <!-- Page Title Start -->
     <ion-row class="page-title">
       <ion-col class="pt-0 pb-0">
-        <app-page-top></app-page-top>
+        <app-page-top *ngIf="!isPartialLoaded"></app-page-top>
       </ion-col>
     </ion-row>
     <!-- Page Title End -->

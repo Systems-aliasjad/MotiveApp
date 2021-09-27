@@ -3,7 +3,7 @@
     <!-- Page Heading Start -->
     <ion-row class="tv-detail_title">
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top *ngIf="!isPartialLoaded"></app-page-top>
       </ion-col>
     </ion-row>
     <!-- Page Heading End -->
