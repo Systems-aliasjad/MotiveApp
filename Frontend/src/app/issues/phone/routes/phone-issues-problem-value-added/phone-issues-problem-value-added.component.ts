@@ -39,6 +39,11 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   }
 
   initialization() {
+    if (!this.isPartialLoaded) {
+      this.sharedService.setDefaultValues();
+      this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', false);
+    }
+
     this.cardList = [
       {
         header: 'Landline status',
