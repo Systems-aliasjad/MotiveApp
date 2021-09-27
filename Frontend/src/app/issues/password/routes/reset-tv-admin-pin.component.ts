@@ -50,13 +50,13 @@ export class ResetTvAdminPinComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('DIALOG.RESET_TV_ADMIN_PIN', true);
+    this.sharedService.setHeaderConfig('MESSAGES.RESET_TV_ADMIN_PIN', true);
   }
 
   updatePageContent() {
     this.resetContent.header = 'HEADER.RESET_INTERNET_PASSWORD';
     this.resetContent.subheader = 'SUBHEADER.RESET_INTERNET_PASSWORD';
-    this.resetContent.inputLablel = 'RESET_TV_ADMIN_PIN.LABEL1';
+    this.resetContent.inputLablel = 'MESSAGES.ENTER_YOUR_MOBILE_NUMBER_TO_RECIVE_THE_NEW_PIN_VIA_SMS';
   }
 
   getFormValue(evt) {
@@ -73,7 +73,7 @@ export class ResetTvAdminPinComponent implements OnInit, OnDestroy {
       component: ResetTvPinDialog,
     });
     this.modal.onDidDismiss().then((d) => {
-      this.sharedService.setHeaderConfig('DIALOG.RESET_TV_ADMIN_PIN', true);
+      this.sharedService.setHeaderConfig('MESSAGES.RESET_TV_ADMIN_PIN', true);
     });
     return await this.modal.present();
   }

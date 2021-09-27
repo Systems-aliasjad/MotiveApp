@@ -28,7 +28,7 @@ export class UnableWatchChannelComponent implements OnInit {
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.unableWatchChannelsMessageSection;
-    this.sharedService.setHeaderConfig('LANDING_PAGE.UNALBE_TO_WATCH_CHANNEL', false);
+    this.sharedService.setHeaderConfig('MESSAGES.UNALBE_TO_WATCH_CHANNELS', false);
   }
 
   button1Listener() {

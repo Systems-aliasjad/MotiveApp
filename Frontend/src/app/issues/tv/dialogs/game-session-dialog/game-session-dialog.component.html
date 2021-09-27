@@ -3,12 +3,12 @@
   <ion-row>
     <ion-col size="12">
       <div class="__title-wrapper">
-        <h2>{{ 'DIALOG.GAME_SESSION_HEADING' | translate }}</h2>
+        <h2>{{ 'MESSAGES.CANCEL_GAME_SESSION' | translate }}</h2>
       </div>
       <div class="__desc-wrapper">
-        <p>{{ 'DIALOG.GAME_SESSION_P1' | translate }}</p>
-        <p>{{ 'DIALOG.GAME_SESSION_P2' | translate }}</p>
-        <p>{{ 'DIALOG.GAME_SESSION_P3' | translate }}</p>
+        <p>{{ 'MESSAGES.ARE_YOU_SURE_YOU_WANT_TO_QUIT_ELIFE_TV_GAME_NAME_ANY_UNSAVED_CHANGES_WILL_BE_LOST' | translate }}</p>
+        <p>{{ 'MESSAGES.YOU_CAN_LAUNCH_A_NEW_GAME_SESSION_FROM_THE_MAIN_MENU_OF_ELIFE_TV_GAMING' | translate }}</p>
+        <p>{{ 'MESSAGES.THIS_ACTION_CANNOT_BE_UNDONE' | translate }}</p>
       </div>
     </ion-col>
   </ion-row>
@@ -16,12 +16,12 @@
     <ion-col sizeLg="6" sizeMd="6" size="6" class="pt-0 pb-0 ion-text-center">
       <div class="button-wrapper">
         <ion-button class="btn secondary-btn close" (click)="dismiss()">{{ 'BUTTONS.BACK' | translate }}</ion-button>
-      </div>      
+      </div>
     </ion-col>
     <ion-col sizeLg="6" sizeMd="6" size="6" class="pt-0 pb-0 ion-text-center">
       <div class="button-wrapper">
         <ion-button class="btn primary-btn close" (click)="confirm()">{{ 'BUTTONS.CONFIRM' | translate }}</ion-button>
-      </div>      
+      </div>
     </ion-col>
   </ion-row>
 </ion-grid>

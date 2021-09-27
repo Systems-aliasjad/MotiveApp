@@ -8,8 +8,8 @@ import { LoaderComponent } from './loader/loader.component';
 import { BookComplaintComponent } from './shared/components/book-complaint/book-complaint.component';
 import { RestartInstructionComponent } from './shared/components/restart-instruction/restart-instruction.component';
 import { DeviceCareComponent } from './shared/components/device-care/device-care.component';
-import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
-import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
+// import { UnableVideoCallsComponent } from './shared/components/unable-video-calls/unable-video-calls.component';
+// import { UnableConnectNewDeviceWifiComponent } from './shared/components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ERoutingIds } from './shared/constants/constants';
 // import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 // import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
@@ -141,8 +141,8 @@ const routes: Routes = [
   { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
   { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
 
-  { path: 'unable-video-call', component: UnableVideoCallsComponent },
-  { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
+  // { path: 'unable-video-call', component: UnableVideoCallsComponent },
+  // { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
 
   // Package Transfer
   // { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },

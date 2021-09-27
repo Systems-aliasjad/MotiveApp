@@ -51,14 +51,14 @@ export class RouterNotRestartedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('INSTRUCTIONS_STEPS.ROUTER_RESTART_TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.FOLLOW_THESE_STEPS', false);
   }
 
   updatePageContent() {
-    this.instruction1.title = 'INSTRUCTIONS_STEPS.ROUTER_RESTART_TITLE';
+    this.instruction1.title = 'MESSAGES.FOLLOW_THESE_STEPS';
     this.instruction1.steps = ['Unplug the router', 'Wait for 30 seconds', 'Plug the router back in', 'Wait for 5 mins', 'Try to use the internet again'];
-    this.instruction2.title = 'INSTRUCTIONS_STEPS_OR.ROUTER_RESTART_TITLE';
-    this.instruction2.body = 'INSTRUCTIONS_STEPS_OR.ROUTER_RESTART_BODY';
+    this.instruction2.title = 'MESSAGES.CONSULT_DEVICE_CARE_FOR';
+    this.instruction2.body = 'MESSAGES.ETISALAT_DEVICE_CARE_GIVES_YOU';
   }
 
   button1Listener() {

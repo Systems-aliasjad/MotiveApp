@@ -17,7 +17,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
-    explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+    explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };
   button2: IMotiveButton = {
     title: 'BUTTONS.ISSUE_RESOLVED',
@@ -38,7 +38,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
 
   updatePageContent() {

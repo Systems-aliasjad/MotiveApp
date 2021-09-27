@@ -47,7 +47,7 @@ export class ResetElifeOnPinComponent implements OnInit, OnDestroy {
   updatePageContent() {
     this.resetContent.header = 'HEADER.RESET_INTERNET_PASSWORD';
     this.resetContent.subheader = 'SUBHEADER.RESET_INTERNET_PASSWORD';
-    this.resetContent.inputLablel = 'RESET_TV_ADMIN_PIN.LABEL1';
+    this.resetContent.inputLablel = 'MESSAGES.ENTER_YOUR_MOBILE_NUMBER_TO_RECIVE_THE_NEW_PIN_VIA_SMS';
   }
 
   getFormValue(evt) {

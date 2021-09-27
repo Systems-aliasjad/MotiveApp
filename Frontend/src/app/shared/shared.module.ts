@@ -22,14 +22,10 @@ import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
-import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
-import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
-import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
-import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
@@ -60,14 +56,10 @@ import { createTranslateLoader } from '../app.module';
     RestartRouterDialog,
     ButtonComponent,
     IssueListDialog,
-    UnableVideoCallsComponent,
-    UnableConnectNewDeviceWifiComponent,
     ResetFactoryDefaultDialog,
     DeviceListDialog,
     ResetTvPinDialog,
     RestartTvboxDialog,
-    GameSessionDialog,
-    ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,

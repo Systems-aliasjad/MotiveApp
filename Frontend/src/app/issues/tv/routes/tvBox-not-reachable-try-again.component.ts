@@ -39,7 +39,7 @@ export class TvBoxNotReachableTryAgainComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.TV_BOX_TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
 
   updatePageContent() {

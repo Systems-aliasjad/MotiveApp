@@ -13,7 +13,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 })
 export class TransferPackageComponent implements OnInit, OnDestroy {
   PageTitle: string = 'HEADER.TRANSFER_PACKAGE';
-  PageContent: string = 'TRANSFER_PACKAGE.DESCRIPTION';
+  PageContent: string = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
   formGroup: FormGroup;
   codeType;
   subscription: Subscription;
@@ -36,7 +36,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
 
     if (this.codeType === ERoutingIds.packagetransfer) {
       this.PageTitle = 'HEADER.TRANSFER_PACKAGE';
-      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION';
+      this.PageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.transferPackageButtons));
       this.cardList = [
@@ -58,7 +58,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
       ];
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
       this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
-      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION';
+      this.PageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
       this.cardList = [
@@ -83,7 +83,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
     //RESET TV BOX FACTORY
     else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
       this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
-      this.PageContent = 'TRANSFER_PACKAGE.DESCRIPTION';
+      this.PageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
       this.cardList = [

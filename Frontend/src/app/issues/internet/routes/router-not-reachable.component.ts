@@ -29,10 +29,10 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   button1: IMotiveButton = {
     title: 'BUTTONS.USING_THE_SAME_ROUTER',
     type: 'primary',
-    explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+    explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };
   button2: IMotiveButton = {
-    title: 'LINKS.USING_OWN_ROUTER',
+    title: 'BUTTONS.NO_I_M_USING_MY_OWN_ROUTER',
     type: 'link',
   };
 
@@ -50,7 +50,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 
   updatePageContent() {

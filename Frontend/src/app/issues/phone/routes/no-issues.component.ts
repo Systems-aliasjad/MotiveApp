@@ -53,7 +53,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.PHONE_ISSUES_TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.PHONE_ISSUE', false);
   }
 
   updatePageContent() {
