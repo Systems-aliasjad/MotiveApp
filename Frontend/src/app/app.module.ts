@@ -13,7 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { RoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
-import { HttpModule } from './http/http.module';
 import { CacheModule } from './cache/cache.module';
 import { environment } from '../environments/environment';
 
@@ -23,6 +22,7 @@ import { LandingComponent } from './landing/landing.component';
 import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
+import { httpInterceptorProviders } from './http-interceptor';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -38,7 +38,6 @@ export function createTranslateLoader(http: HttpClient) {
     RoutingModule,
     FlexLayoutModule,
     CacheModule,
-    HttpModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     CommonModule,
     BrowserAnimationsModule,
@@ -56,6 +55,7 @@ export function createTranslateLoader(http: HttpClient) {
 
   entryComponents: [],
   providers: [
+    httpInterceptorProviders,
     {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
