@@ -73,22 +73,26 @@ ion-item::part(native){
   --inner-border-width: 0
 }
 // --------------------------------------------------------------
-.segment-tabs{
-  position: relative;
-  margin-bottom: 1.5rem;
-  &:after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: .1rem;
-    background-color:$border-color;
-    position:absolute;
-    bottom: 6px;
-    @media screen and (max-width: 767px) {
-      bottom:0;
+.segment-tabs-container{
+  background-color:$white;
+  .segment-tabs{
+    position: relative;
+    margin-bottom: 1.5rem;
+    &:after{
+      content: "";
+      display: block;
+      width: 100%;
+      height: .1rem;
+      background-color:$border-color;
+      position:absolute;
+      bottom: 6px;
+      @media screen and (max-width: 767px) {
+        bottom:0;
+      }
     }
   }
 }
+
 .no-issue-segment-tabs > div{
   height: calc(100vh - 135px);
 }
