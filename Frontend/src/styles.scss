@@ -430,6 +430,9 @@ ion-modal,
     width: 0.8rem;
     height: 0.8rem;
     margin-left: 0.8rem;
+    @media screen and (max-width: 992px) {
+      margin-left: 0.25rem;
+    }
   }
 }
 .tag-title{

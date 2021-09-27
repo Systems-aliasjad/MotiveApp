@@ -41,7 +41,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   initialization() {
     if (!this.isPartialLoaded) {
       this.sharedService.setDefaultValues();
-      this.sharedService.setHeaderConfig('PHONE_ISSUES_PROBLEM_VALUE_ADDED.HEADER', true);
+      this.sharedService.setHeaderConfig('PHONE_ISSUES_PROBLEM_VALUE_ADDED.HEADER', false);
     }
 
     this.cardList = [
