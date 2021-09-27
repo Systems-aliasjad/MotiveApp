@@ -87,7 +87,7 @@ ion-item::part(native){
       position:absolute;
       bottom: 6px;
       @media screen and (max-width: 767px) {
-        bottom:0;
+        bottom:3px;
       }
     }
   }
