@@ -147,13 +147,13 @@ export class CustomerJourneyConstants {
   };
 
   public static issueNotFixedTVMessageSection: IMessageIssue = {
-    header: 'TV_ISSUE_NOT_FIXED.SUB_HEADING',
-    body: [{ title: 'TV_ISSUE_NOT_FIXED.TEXT1' }],
+    header: 'MESSAGES.TV_SERVICE_IS_DOWN',
+    body: [{ title: 'MESSAGES.SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_INSTEAD' }],
   };
 
   public static issueNotFixedPhoneMessageSection: IMessageIssue = {
-    header: 'PHONE_ISSUE_NOT_FIXED.SUB_HEADING',
-    body: [{ title: 'PHONE_ISSUE_NOT_FIXED.TEXT1' }],
+    header: 'MESSAGES.PHONE_SERVICE_IS_DOWN',
+    body: [{ title: 'MESSAGES.SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_INSTEAD' }],
   };
 
   public static routerRebootRequiredMessageSection: IMessageIssue = {
@@ -667,7 +667,7 @@ export class CustomerJourneyConstants {
     paragraphs: [
       {
         title: 'MESSAGES.FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION',
-        children: ['MESSAGES.Connect_the_new_router_to_the_‘X’_port_of_the_wall-mounted_fiber_BOX', 'MESSAGES.SET_THE_ROUTER_WITH_A_NEW_PASSWORD'],
+        children: ['MESSAGES.CONNECT_THE_NEW_ROUTER_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX', 'MESSAGES.SET_THE_ROUTER_WITH_A_NEW_PASSWORD'],
       },
     ],
   };
@@ -715,7 +715,7 @@ export class CustomerJourneyConstants {
 
   public static followUpButton: IButton = {
     title: 'BUTTONS.FOLLOW_UP',
-    explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
     clickListener: () => {},
     linkTo: '',
     behaviour: 'primary',
@@ -1166,7 +1166,7 @@ export class CustomerJourneyConstants {
     linkTo: '',
     behaviour: 'primary',
     customListner: 'AppInternetIssuesDialog',
-    explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+    explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };
 
   public static usingSameRouterRouterNotReachableButton = {
@@ -1175,11 +1175,11 @@ export class CustomerJourneyConstants {
     linkTo: '',
     behaviour: 'primary',
     customListner: 'RouterNotReachableAppInternetIssuesDialog',
-    explanatoryNote: 'TEXT.USING_THE_SAME_ROUTER',
+    explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };
 
   public static usingOwnRouterButton = {
-    title: 'LINKS.USING_OWN_ROUTER',
+    title: 'BUTTONS.NO_I_M_USING_MY_OWN_ROUTER',
     clickListener: () => {},
     linkTo: '/router-not-reachable-own-router',
     behaviour: 'link',

@@ -18,7 +18,7 @@
             <ion-row>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER1' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.MOBILE_NO' | translate }}</ion-label>
 
                   <ion-input
                     type="text"
@@ -35,7 +35,7 @@
               </ion-col>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.MOBILE_NUMBER2' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.ALTERNATE_CONTACT_NO' | translate }}</ion-label>
                   <ion-input
                     type="text"
                     [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
@@ -50,7 +50,7 @@
               </ion-col>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'BOOKING_COMPLAINT.REMARKS' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.REMARKS' | translate }}</ion-label>
                   <ion-input type="text" formControlName="Remarks"></ion-input>
                 </ion-item>
               </ion-col>

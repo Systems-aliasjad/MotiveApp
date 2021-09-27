@@ -60,8 +60,8 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
       ChannelList: ['', [Validators.required]],
     });
 
-    this.channelListTitle = 'CHANNEL_LIST.TITLE';
-    this.channelListContent = 'CHANNEL_LIST.CONTENT';
+    this.channelListTitle = 'MESSAGES.CHANNEL_LIST';
+    this.channelListContent = 'MESSAGES.PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW';
     this.buttonText = 'BUTTONS.CONTINUE';
   }
 

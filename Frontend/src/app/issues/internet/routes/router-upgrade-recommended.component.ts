@@ -48,7 +48,7 @@ export class RouterUpgradeRecommendedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('LANDING_PAGE.INTERNET_ISSUES_TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 
   updatePageContent() {

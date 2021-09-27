@@ -2,7 +2,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <h5>{{ 'DIALOG.INTERNET_ISSUE_TITLE' | translate }}</h5>
+      <h5>{{ 'MESSAGES.INTERNET_ISSUES' | translate }}</h5>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
@@ -15,13 +15,13 @@
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col size="12" class="pb-0">
-        <h5 class="sub-title modal-sub-title">{{ 'DIALOG.INTERNET_ISSUE_HEADING' | translate }}</h5>
+        <h5 class="sub-title modal-sub-title">{{ 'MESSAGES.ROUTER_IS_NOT_ACCESSIBLE' | translate }}</h5>
         <div>
           <p>Please check if:</p>
           <p *ngFor="let ins of instructionList; let i = index"><b>.</b> {{ ins | translate }}</p>
         </div>
-        <p>{{ 'DIALOG.INTERNET_ISSUE_CONTINUE' | translate }}</p>
-        <p>{{ 'DIALOG.INTERNET_ISSUE_EXIST_TROUBLESHOOTING' | translate }}</p>
+        <p>{{ 'MESSAGES.ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE' | translate }}</p>
+        <p>{{ 'MESSAGES.IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIST_TROUBLESHOOTING' | translate }}</p>
       </ion-col>
     </ion-row>
     <!--  <ion-footer>

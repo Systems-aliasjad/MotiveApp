@@ -8,7 +8,7 @@
             <ion-row>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'CHANGE_CALL_FORWARD.NEW_NUMBER' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER' | translate }}</ion-label>
                   <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
                   <img
                     [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
@@ -24,7 +24,7 @@
               </ion-col>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'CHANGE_CALL_FORWARD.NEW_NUMBER_AGAIN' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
                   <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
                   <img
                     [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
@@ -41,7 +41,7 @@
 
             <ion-row>
               <ion-col size="12">
-                <p class="tag-title">{{ 'CHANGE_CALL_FORWARD.ROWARDING_NUMBER_RULES' | translate }}</p>
+                <p class="tag-title">{{ 'MESSAGES.ROWARDING_NUMBER_RULES' | translate }}</p>
                 <div>
                   <ion-item *ngFor="let m of rules">
                     <img src="/assets/images/indicators-icons/icon_check.svg" alt="" /> &nbsp;
