@@ -1,8 +1,8 @@
 <!-- <ion-content>
 </ion-content> -->
-  <ion-grid class="form-main-container">
+  <ion-grid class="pr-0 pl-0">
     <!-- Form Start -->
-    <ion-row class="form-inner_container">
+    <ion-row>
       <ion-col size="12" class="rws-top-tabs-col">
         <ion-row>
           <ion-col sizeLg="4" sizeMd="12" sizeSm="12">
@@ -20,7 +20,7 @@
           </ion-col>
         </ion-row>
       </ion-col>
-      <ion-col sizeLg="12" sizeMd="12" sizeSM="12" class="rws-bottom-main-col">
+      <ion-col sizeLg="12" sizeMd="12" size="12" class="rws-bottom-main-col pr-0 pl-0 no-issue-segment-tabs">
         <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast">
           <app-service-detail [isPartialLoaded]="true"></app-service-detail>
         </div>
