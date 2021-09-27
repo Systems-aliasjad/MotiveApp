@@ -150,6 +150,9 @@ ion-item::part(native){
         ion-col{
           height: 100%;
           .arrow-link{
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
             -webkit-box-pack: end;
             -ms-flex-pack: end;
             justify-content: flex-end;
