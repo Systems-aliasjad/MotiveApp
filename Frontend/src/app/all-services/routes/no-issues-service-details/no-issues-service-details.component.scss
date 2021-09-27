@@ -1,0 +1,40 @@
+@import 'src/assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+
+// --------------------------------------------------------------
+:host {
+   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+   ion-card{
+    border-radius: 0.5rem;
+    background-color: #ffffff;
+    box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+   }
+   ion-list{
+    background: var(--ion-item-background, var(--ion-background-color, transparent ));
+    --ion-background-color:transparent;
+    padding-top: 0;
+    padding-bottom: 0;
+   }
+   ion-item{
+    --min-height: auto; 
+    ion-label{
+      margin-top: 0;
+      margin-bottom:0;
+      color:$secondary-color;
+    }
+  }
+}
+ion-item::part(native){
+  padding-inline-end: 0 ;
+  --inner-padding-end: 0;
+  padding-left: 0;
+  --background:transparent;
+  --border-radius:0;
+  --border-width: 0;
+  --inner-border-width: 0
+}
+// --------------------------------------------------------------
+.no-issue-segment-tabs > div{
+  height: calc(100vh - 135px);
+}
+  

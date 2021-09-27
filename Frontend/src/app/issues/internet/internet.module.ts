@@ -6,7 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BrMaskerModule } from 'br-mask';
 
-import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { MainComponent } from './routes/main.component';
 import { InternetRoutingModule } from './internet.routing';
 import { OutageComponent } from './routes/outage.component';
@@ -71,6 +71,10 @@ import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-conn
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
 import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.component';
+import { createTranslateLoader } from 'src/app/app.module';
+import { UnableToConnectComponent } from './shared/unable-to-connect/unable-to-connect.component';
+import { UnableToConnectNewDeviceWiFiComponent } from './routes/unable-to-connect-newDevice-wifi.component';
+import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-call.component';
 
 @NgModule({
   declarations: [
@@ -136,6 +140,9 @@ import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.compone
     BookAppointmentComponent,
     RouterNotReachableOwnCareComponent,
     ResetWIFIPasswordComponent,
+    UnableToConnectComponent,
+    UnableToConnectNewDeviceWiFiComponent,
+    UnableToMaleVideoCallComponent,
   ],
   imports: [
     CommonModule,

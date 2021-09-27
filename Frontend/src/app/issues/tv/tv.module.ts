@@ -4,7 +4,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { TvRoutingModule } from './tv.routing';
 import { MainComponent } from './routes/main.component';
-import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { OutageComponent } from './routes/outage.component';
@@ -41,6 +41,11 @@ import { TransferPackageComponent } from './routes/transfer-package/transfer-pac
 import { PackageAvailableComponent } from './shared/package-available/package-available.component';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
+import { createTranslateLoader } from 'src/app/app.module';
+import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
+import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 
 @NgModule({
   declarations: [
@@ -79,12 +84,17 @@ import { ChannelDetailComponent } from './routes/channel-detail.component';
     NoAdditionalSTBComponent,
     NoNonSharedPackageComponent,
     TransferPackageComponent,
+    UnableWatchSpecificChannelComponent,
+    ChannelNotListDialogComponent,
+    GameSessionDialog,
   ],
   imports: [
     CommonModule,
     TvRoutingModule,
     SharedModule,
     IonicModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

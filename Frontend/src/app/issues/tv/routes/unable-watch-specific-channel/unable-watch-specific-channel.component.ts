@@ -1,13 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../constants/constants';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { ChannelNotListDialogComponent } from '../../dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
-import { SharedService } from '../../shared.service';
-import { regExps, errorMessages } from '../../validators/validations';
+import { SharedService } from '../../../../shared/shared.service';
+import { regExps, errorMessages } from '../../../../shared/validators/validations';
 
 @Component({
   selector: 'app-unable-watch-specific-channel',
@@ -50,9 +48,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {
-    // this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.packageAvailableButtonsUnableWatchSpecific));
-  }
+  ngOnInit() {}
 
   initialization() {
     this.sharedService.setDefaultValues();
@@ -60,6 +56,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
       ChannelList: ['', [Validators.required]],
     });
 
+    this.sharedService.setHeaderConfig('MESSAGES.CHANNEL_LIST', false);
     this.channelListTitle = 'MESSAGES.CHANNEL_LIST';
     this.channelListContent = 'MESSAGES.PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW';
     this.buttonText = 'BUTTONS.CONTINUE';

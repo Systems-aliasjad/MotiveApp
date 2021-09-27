@@ -6,7 +6,6 @@ import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-s
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
@@ -23,15 +22,10 @@ import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
-import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
-import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
-import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
-import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
-import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
@@ -41,10 +35,7 @@ import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
-
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
-}
+import { createTranslateLoader } from '../app.module';
 
 @NgModule({
   declarations: [
@@ -65,15 +56,10 @@ export function createTranslateLoader(http: HttpClient) {
     RestartRouterDialog,
     ButtonComponent,
     IssueListDialog,
-    UnableVideoCallsComponent,
-    UnableConnectNewDeviceWifiComponent,
     ResetFactoryDefaultDialog,
     DeviceListDialog,
     ResetTvPinDialog,
     RestartTvboxDialog,
-    GameSessionDialog,
-    UnableWatchSpecificChannelComponent,
-    ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,
@@ -108,7 +94,6 @@ export function createTranslateLoader(http: HttpClient) {
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
-    UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,

@@ -37,11 +37,11 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to make video calls',
-      route: 'unable-video-call',
+      route: 'issues/internet/unable-video-call',
     },
     {
       issue: 'Unable to connect new device to Wi-Fi',
-      route: 'unable-connect-newDevice',
+      route: 'issues/internet/unable-connect-newDevice',
     },
   ];
   tvIssuesList: any[] = [
@@ -64,7 +64,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to watch a specific channel',
-      route: 'unable-to-watch-specific-channel',
+      route: 'issues/tv/unable-to-watch-specific-channel',
     },
     {
       issue: 'Unable to watch any channel',
