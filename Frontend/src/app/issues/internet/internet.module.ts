@@ -72,6 +72,9 @@ import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
 import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.component';
 import { createTranslateLoader } from 'src/app/app.module';
+import { UnableToConnectComponent } from './shared/unable-to-connect/unable-to-connect.component';
+import { UnableToConnectNewDeviceWiFiComponent } from './routes/unable-to-connect-newDevice-wifi.component';
+import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-call.component';
 
 @NgModule({
   declarations: [
@@ -137,6 +140,9 @@ import { createTranslateLoader } from 'src/app/app.module';
     BookAppointmentComponent,
     RouterNotReachableOwnCareComponent,
     ResetWIFIPasswordComponent,
+    UnableToConnectComponent,
+    UnableToConnectNewDeviceWiFiComponent,
+    UnableToMaleVideoCallComponent,
   ],
   imports: [
     CommonModule,

@@ -31,7 +31,7 @@ export class OSRPComponent implements OnInit, OnDestroy {
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.FOLLOW_UP',
-    explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+    explanatoryNote: 'MESSAGES.FOLLOW_UP_THE_REQUEST',
   };
   button2: IMotiveButton = {
     type: 'link',

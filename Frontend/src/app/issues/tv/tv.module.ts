@@ -44,6 +44,8 @@ import { ChannelDetailComponent } from './routes/channel-detail.component';
 import { createTranslateLoader } from 'src/app/app.module';
 import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
+import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NoNonSharedPackageComponent,
     TransferPackageComponent,
     UnableWatchSpecificChannelComponent,
+    ChannelNotListDialogComponent,
+    GameSessionDialog,
   ],
   imports: [
     CommonModule,

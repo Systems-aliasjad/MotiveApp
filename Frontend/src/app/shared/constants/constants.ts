@@ -158,44 +158,44 @@ export const eyeShow: string = 'assets/images/action-icons/icon_show.svg';
 export const eyeHide: string = 'assets/images/action-icons/icon_hide.svg';
 
 const INTERNET_ISSUES = {
-  title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
-  body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
+  title: 'MESSAGES.INTERNET_ISSUES',
+  body: 'MESSAGES.MY_WIFI_IS_SLOW_OR_CAUSING_PROBLEMS',
   img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
   linkTo: 'issues/internet',
 };
 
 const TV_ISSUES = {
-  title: 'LANDING_PAGE.TV_ISSUES_TITLE',
-  body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
+  title: 'MESSAGES.TV_ISSUES',
+  body: 'MESSAGES.MY_TV_ISNT_WORKING_PROPERLY',
   img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
   linkTo: 'issues/tv',
 };
 
 const PHONE_ISSUES = {
-  title: 'LANDING_PAGE.PHONE_ISSUES_TITLE',
-  body: 'LANDING_PAGE.PHONE_ISSUES_DESCRIPTION',
+  title: 'MESSAGES.PHONE_ISSUE',
+  body: 'MESSAGES.I_CANT_MAKE_ANY_CALLS',
   img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
   linkTo: 'issues/phone',
 };
 
 const OTHER_ISSUES = {
-  title: 'LANDING_PAGE.OTHER_ISSUES_TITLE',
-  body: 'LANDING_PAGE.OTHER_ISSUES_DESCRIPTION',
+  title: 'MESSAGES.OTHER_ISSUES',
+  body: 'MESSAGES.I_AM_FACING_ISSUES_WILL_ALL_SERVICE',
   img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
   linkTo: 'issues/other',
 };
 
 const PASSWORD_ISSUES = {
-  title: 'LANDING_PAGE.PASSWORD_ISSUES_TITLE',
-  body: 'LANDING_PAGE.PASSWORD_ISSUES_DESCRIPTION',
+  title: 'MESSAGES.PASSWORD_ISSUES',
+  body: 'MESSAGES.I_WANT_TO_CHANGE_OR_RESET_MY_PASSWORD',
   img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
   linkTo: 'issues/password',
   customEvent: 'openPasswordIssueDialog',
 };
 
 const RESET_PIN = {
-  title: 'LANDING_PAGE.RESET_PIN_TITLE',
-  body: 'LANDING_PAGE.RESET_PIN_DESCRIPTION',
+  title: 'MESSAGES.RESET_PIN',
+  body: 'MESSAGES.I_WANT_TO_RESET_MY_PIN',
   img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
   linkTo: 'reset-pin',
 };
@@ -430,43 +430,43 @@ export const motiveSubscriptions: IMotvieSubscription = {
 export class ApplicableCodes {
   // public static landingPageCards: ICard[] = [
   //   {
-  //     title: 'LANDING_PAGE.INTERNET_ISSUES_TITLE',
-  //     body: 'LANDING_PAGE.INTERNET_ISSUES_DESCRIPTION',
+  //     title: 'MESSAGES.INTERNET_ISSUES',
+  //     body: 'MESSAGES.MY_WIFI_IS_SLOW_OR_CAUSING_PROBLEMS',
   //     img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
   //     applicableCodes: INTERNET_ISSUES,
   //     linkTo: 'info',
   //   },
   //   {
-  //     title: 'LANDING_PAGE.TV_ISSUES_TITLE',
-  //     body: 'LANDING_PAGE.TV_ISSUES_DESCRIPTION',
+  //     title: 'MESSAGES.TV_ISSUES',
+  //     body: 'MESSAGES.MY_TV_ISNT_WORKING_PROPERLY',
   //     img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
   //     applicableCodes: TV_ISSUES,
   //     linkTo: '#',
   //   },
   //   {
-  //     title: 'LANDING_PAGE.PHONE_ISSUES_TITLE',
-  //     body: 'LANDING_PAGE.PHONE_ISSUES_DESCRIPTION',
+  //     title: 'MESSAGES.PHONE_ISSUE',
+  //     body: 'MESSAGES.I_CANT_MAKE_ANY_CALLS',
   //     img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
   //     applicableCodes: PHONE_ISSUES,
   //     linkTo: '#',
   //   },
   //   {
-  //     title: 'LANDING_PAGE.OTHER_ISSUES_TITLE',
-  //     body: 'LANDING_PAGE.OTHER_ISSUES_DESCRIPTION',
+  //     title: 'MESSAGES.OTHER_ISSUES',
+  //     body: 'MESSAGES.I_AM_FACING_ISSUES_WILL_ALL_SERVICE',
   //     img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
   //     applicableCodes: OTHER_ISSUES,
   //     linkTo: '#',
   //   },
   //   {
-  //     title: 'LANDING_PAGE.PASSWORD_ISSUES_TITLE',
-  //     body: 'LANDING_PAGE.PASSWORD_ISSUES_DESCRIPTION',
+  //     title: 'MESSAGES.PASSWORD_ISSUES',
+  //     body: 'MESSAGES.I_WANT_TO_CHANGE_OR_RESET_MY_PASSWORD',
   //     img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
   //     applicableCodes: PASSWORD_ISSUES,
   //     linkTo: '#',
   //   },
   //   {
-  //     title: 'LANDING_PAGE.RESET_PIN_TITLE',
-  //     body: 'LANDING_PAGE.RESET_PIN_DESCRIPTION',
+  //     title: 'MESSAGES.RESET_PIN',
+  //     body: 'MESSAGES.I_WANT_TO_RESET_MY_PIN',
   //     img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
   //     applicableCodes: RESET_PIN,
   //     linkTo: '#',
@@ -537,12 +537,12 @@ export class ApplicableCodes {
 
   public static openServiceRequestTemplate: ISection2Template[] = [
     {
-      title: 'OPEN_SERVICE_REQUEST.REQUEST_NO',
+      title: 'MESSAGES.REQUEST_NO',
       type: 'number',
       objKeyNameEN: 'reqNo',
     },
     {
-      title: 'OPEN_SERVICE_REQUEST.REQUEST_TYPE',
+      title: 'MESSAGES.REQUEST_TYPE',
       type: 'text',
       objKeyNameEN: 'reqType',
     },
@@ -552,7 +552,7 @@ export class ApplicableCodes {
       objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'OPEN_SERVICE_REQUEST.STATUS',
+      title: 'MESSAGES.STATUS',
       type: 'text',
       objKeyNameEN: 'status',
     },
@@ -560,7 +560,7 @@ export class ApplicableCodes {
 
   public static openServiceRequestTemplateCompliant: ISection2Template[] = [
     {
-      title: 'COMPLAIN_REQUEST.COMPLAINT_NO',
+      title: 'MESSAGES.COMPLAINT_NO',
       type: 'number',
       objKeyNameEN: 'complaintNo',
     },
@@ -623,12 +623,12 @@ export class ApplicableCodes {
 
   public static routerNotReachableTemplate: ISection2Template[] = [
     {
-      title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_NAME',
+      title: 'MESSAGES.ROUTER_NAME',
       type: 'text',
       objKeyNameEN: 'routerName',
     },
     {
-      title: 'ROUTER_NOT_REACHABLE_TEMPLATE.ROUTER_MODEL',
+      title: 'MESSAGES.ROUTER_MODEL',
       type: 'text',
       objKeyNameEN: 'routerModel',
     },
@@ -636,17 +636,17 @@ export class ApplicableCodes {
 
   public static appointBookSuccessfullyTemplate: ISection2Template[] = [
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.DATE_VISIT',
+      title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.LOCATION',
+      title: 'MESSAGES.LOCATION',
       type: 'text',
       objKeyNameEN: 'location',
     },
@@ -654,17 +654,17 @@ export class ApplicableCodes {
 
   public static installNewRouterComplaintBookSuccessfullyTemplate: ISection2Template[] = [
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.DATE_VISIT',
+      title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.LOCATION',
+      title: 'MESSAGES.LOCATION',
       type: 'text',
       objKeyNameEN: 'location',
     },
@@ -672,17 +672,17 @@ export class ApplicableCodes {
 
   public static requestDetailsTemplate: ISection2Template[] = [
     {
-      title: 'REQUEST_DETAILS.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
     {
-      title: 'REQUEST_DETAILS.DATE_CREATED',
+      title: 'MESSAGES.DATE_CREATED',
       type: 'date',
       objKeyNameEN: 'dateCreated',
     },
     {
-      title: 'REQUEST_DETAILS.APPOINTMENT_DETAILS',
+      title: 'MESSAGES.APPOINTMENT_DETAILS',
       type: 'text',
       objKeyNameEN: 'details',
     },
@@ -690,12 +690,12 @@ export class ApplicableCodes {
 
   public static requestAlreadyExistsTemplate: ISection2Template[] = [
     {
-      title: 'REQUEST_ALREADY_EXISTS.APPOINTMENT_DATE',
+      title: 'MESSAGES.APPOINTMENT_DATE',
       type: 'date',
       objKeyNameEN: 'appointmentDate',
     },
     {
-      title: 'REQUEST_ALREADY_EXISTS.APPOINTMENT_TIME',
+      title: 'MESSAGES.APPOINTMENT_TIME',
       type: 'time',
       objKeyNameEN: 'appointmentTime',
     },
@@ -703,12 +703,12 @@ export class ApplicableCodes {
 
   public static appointmentChangedSuccessTemplate: ISection2Template[] = [
     {
-      title: 'APPOINTMENT_CHANGED_SUCCESSFULLY.DATE',
+      title: 'MESSAGES.DATE',
       type: 'date',
       objKeyNameEN: 'date',
     },
     {
-      title: 'APPOINTMENT_CHANGED_SUCCESSFULLY.TIME',
+      title: 'MESSAGES.TIME',
       type: 'time',
       objKeyNameEN: 'time',
     },
@@ -716,24 +716,24 @@ export class ApplicableCodes {
 
   public static serviceUnavailableTemplate: ISection2Template[] = [
     {
-      title: 'SERVICE_UNAVAILABLE.EXPECTED_DATE_OF_COMPLETION',
+      title: 'MESSAGES.EXPECTED_DATE_OF_COMPLETION',
       type: 'date',
       objKeyNameEN: 'expecDateOfCompletion',
     },
   ];
   public static OpenServiceRequestTemplate: ISection2Template[] = [
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.DATE_VISIT',
+      title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'APPOINTMENT_BOOKED_SUCCESSFULLY.LOCATION',
+      title: 'MESSAGES.LOCATION',
       type: 'text',
       objKeyNameEN: 'location',
     },
@@ -741,7 +741,7 @@ export class ApplicableCodes {
 
   public static packageUpgradeTemplate: ISection2Template[] = [
     {
-      title: 'PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
@@ -749,7 +749,7 @@ export class ApplicableCodes {
 
   public static routerUpgradeTemplate: ISection2Template[] = [
     {
-      title: 'ROUTER_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
@@ -757,7 +757,7 @@ export class ApplicableCodes {
 
   public static routerPackageUpgradeTemplate: ISection2Template[] = [
     {
-      title: 'ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
@@ -765,7 +765,7 @@ export class ApplicableCodes {
 
   public static thirdPartyRouterUpgradeTemplate: ISection2Template[] = [
     {
-      title: 'THIRD_PARTY_ROUTER_SUCCESSFULLY.REFERENCE_NO',
+      title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
@@ -773,12 +773,12 @@ export class ApplicableCodes {
 
   public static userCredentialsTemplate: ISection2Template[] = [
     {
-      title: 'USER_CREDENTIALS.USER_ID',
+      title: 'MESSAGES.USER_ID',
       type: 'text',
       objKeyNameEN: 'userId',
     },
     {
-      title: 'USER_CREDENTIALS.PIN',
+      title: 'MESSAGES.PIN',
       type: 'text',
       objKeyNameEN: 'pin',
     },

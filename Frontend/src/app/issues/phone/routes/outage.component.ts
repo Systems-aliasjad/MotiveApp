@@ -36,7 +36,7 @@ export class OutageComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('PHONE_ISSUE_NOT_FIXED.TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.PHONE_ISSUES', false);
   }
 
   updatePageContent() {

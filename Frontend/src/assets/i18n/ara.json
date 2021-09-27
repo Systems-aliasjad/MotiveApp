@@ -458,7 +458,7 @@
     "ONT_REBOOT_TITLE": "Follow these steps to restart your fiber box:",
     "OR": "OR"
   },
-  "INSTRUCTIONS_STEPS_OR": {
+  "MESSAGES.OR": {
     "ROUTER_RESTART_TITLE": "Consult Device care for...",
     "ROUTER_RESTART_BODY": "Etisalat device care gives you.....",
     "TVBOX_RESTART_TITLE": "Visit 'Device Care' ",

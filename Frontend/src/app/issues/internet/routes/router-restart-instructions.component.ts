@@ -51,11 +51,11 @@ export class RouterRestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('ROUTER_RESTART.RESTART_ROUTER_H1', false);
+    this.sharedService.setHeaderConfig('MESSAGES.RESTART_ROUTER', false);
   }
 
   updatePageContent() {
-    this.instruction1.title = 'ROUTER_RESTART.RESTART_ROUTER_H2';
+    this.instruction1.title = 'MESSAGES.YOU_CAN_FOLLOW_THESE_STEPS_TO_REBOOT_YOUR_ROUTER';
     this.instruction1.steps = [
       'Unplug both router & modem',
       'Wait at least 30 seconds',
@@ -65,7 +65,7 @@ export class RouterRestartInstructionsComponent implements OnInit, OnDestroy {
       'Wait at least 2 minutes',
       'Test to see if the problem went away',
     ];
-    this.instruction2.title = 'ROUTER_RESTART.RESTART_ROUTER_H3';
+    this.instruction2.title = 'MESSAGES.CONSULT_DEVICE_CARE_FOR_SPECIFIC_DEVICE_GUIDES';
     this.instruction2.body = 'MESSAGES.ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE';
   }
 

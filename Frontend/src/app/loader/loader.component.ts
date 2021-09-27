@@ -10,8 +10,8 @@ export class LoaderComponent implements OnInit {
   lateResponse: boolean = false;
   oneMinute: number = 60000;
   oneMinutePart100 = this.oneMinute / 100;
-  successMessages: string[] = ['LOADER.SUCCESS_BODY_1', 'LOADER.SUCCESS_BODY_2'];
-  faliureMessages: string[] = ['LOADER.FALIURE_BODY'];
+  successMessages: string[] = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
+  faliureMessages: string[] = ['MESSAGES.IT_IS_TAKING_LONGER_THAN_EXPECTED_KINDLY_WAIT'];
   messages: string[] = [];
   constructor() {}
 

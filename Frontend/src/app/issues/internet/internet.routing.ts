@@ -64,6 +64,8 @@ import { UnableHomezoneConnectionComponent } from './routes/unable-homezone-conn
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachable-own-care.component';
 import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.component';
+import { UnableToConnectNewDeviceWiFiComponent } from './routes/unable-to-connect-newDevice-wifi.component';
+import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-call.component';
 
 const routes: Routes = [
   {
@@ -398,6 +400,14 @@ const routes: Routes = [
   {
     path: 'reset-wifi-password',
     component: ResetWIFIPasswordComponent,
+  },
+  {
+    path: 'unable-connect-newDevice',
+    component: UnableToConnectNewDeviceWiFiComponent,
+  },
+  {
+    path: 'unable-video-call',
+    component: UnableToMaleVideoCallComponent,
   },
 ];
 
