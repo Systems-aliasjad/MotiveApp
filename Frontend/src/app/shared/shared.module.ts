@@ -29,7 +29,6 @@ import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialo
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
-import { UnableWatchSpecificChannelComponent } from './components/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
@@ -68,7 +67,6 @@ import { createTranslateLoader } from '../app.module';
     ResetTvPinDialog,
     RestartTvboxDialog,
     GameSessionDialog,
-    UnableWatchSpecificChannelComponent,
     ChannelNotListDialogComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
@@ -104,7 +102,6 @@ import { createTranslateLoader } from '../app.module';
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
-    UnableWatchSpecificChannelComponent,
     InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,
