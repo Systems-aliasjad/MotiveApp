@@ -22,8 +22,6 @@ import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
-import { UnableVideoCallsComponent } from './components/unable-video-calls/unable-video-calls.component';
-import { UnableConnectNewDeviceWifiComponent } from './components/unable-connect-newDevice-wifi/unable-connect-newDevice-wifi.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
@@ -60,8 +58,6 @@ import { createTranslateLoader } from '../app.module';
     RestartRouterDialog,
     ButtonComponent,
     IssueListDialog,
-    UnableVideoCallsComponent,
-    UnableConnectNewDeviceWifiComponent,
     ResetFactoryDefaultDialog,
     DeviceListDialog,
     ResetTvPinDialog,
