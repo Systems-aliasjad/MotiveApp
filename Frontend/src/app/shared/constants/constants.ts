@@ -150,6 +150,7 @@ export enum ERoutingIds {
 // const UPGRADE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 // const UPGRADE_PACKAGE: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
 
+export const MOTIVE_TOKEN = 'M_A_TOK'; //Motive Auth Token
 export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
 export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
 export const infoImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_regular.svg';

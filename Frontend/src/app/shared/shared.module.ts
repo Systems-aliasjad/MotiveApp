@@ -6,7 +6,6 @@ import { ThankyouScreenComponent } from './components/thankyou-screen/thankyou-s
 import { MotiveMessageComponent } from './components/motive-message/motive-message.component';
 import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component';
 
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
 import { BookComplaintComponent } from './components/book-complaint/book-complaint.component';
@@ -40,10 +39,7 @@ import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
-
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, 'src/assets/i18n/', '.json');
-}
+import { createTranslateLoader } from '../app.module';
 
 @NgModule({
   declarations: [
