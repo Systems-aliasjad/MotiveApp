@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { GameSessionDialog } from 'src/app/shared/dialogs/game-session-dialog/game-session-dialog.component';
+import { GameSessionDialog } from 'src/app/issues/tv/dialogs/game-session-dialog/game-session-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ChannelNotListDialogComponent } from '../../../../shared/dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
+import { ChannelNotListDialogComponent } from '../../dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { SharedService } from '../../../../shared/shared.service';
 import { regExps, errorMessages } from '../../../../shared/validators/validations';
 
