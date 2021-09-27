@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -42,6 +42,7 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     BrowserAnimationsModule,
     PerfectScrollbarModule,
+    HttpClientModule,
     IonicModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

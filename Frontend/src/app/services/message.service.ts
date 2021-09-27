@@ -5,6 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class MessageService {
   add(message: string) {
-    console.log(message);
+    // console.log('%c' + 'message', 'color: #fff2df; font-style: italic; background-color: #8b00dd;padding: 2px');
   }
 }

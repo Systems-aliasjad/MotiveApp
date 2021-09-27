@@ -6,7 +6,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { PhoneRoutingModule } from './phone.routing';
 import { MainComponent } from './routes/main.component';
-import { createTranslateLoader, SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { OntRebootComponent } from './routes/ont-reboot.component';
@@ -28,6 +28,7 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
 import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
 import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
+import { createTranslateLoader } from 'src/app/app.module';
 
 @NgModule({
   declarations: [
