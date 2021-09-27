@@ -28,7 +28,7 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.FOLLOW_UP',
-    explanatoryNote: 'TEXT.FOLLOW_UP_QUESTION',
+    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
   };
 
   button2: IMotiveButton = {

@@ -16,7 +16,7 @@
             <ion-row>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'RESET_CCB_PIN.NEW_CCB_PIN' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
                   <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
                   <img
                     [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
@@ -32,7 +32,7 @@
               </ion-col>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
-                  <ion-label position="stacked">{{ 'RESET_CCB_PIN.NEW_CCB_PIN_AGAIN' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
                   <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
                   <img
                     [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"

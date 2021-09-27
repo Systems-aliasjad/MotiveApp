@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { UnableVideoCallsComponent } from './unable-video-calls.component';
+import { UnableToConnectComponent } from './unable-to-connect.component';
 
-describe('UnableVideoCallsComponent', () => {
-  let component: UnableVideoCallsComponent;
-  let fixture: ComponentFixture<UnableVideoCallsComponent>;
+describe('UnableToConnectComponent', () => {
+  let component: UnableToConnectComponent;
+  let fixture: ComponentFixture<UnableToConnectComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UnableVideoCallsComponent ]
+      declarations: [ UnableToConnectComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UnableVideoCallsComponent);
+    fixture = TestBed.createComponent(UnableToConnectComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

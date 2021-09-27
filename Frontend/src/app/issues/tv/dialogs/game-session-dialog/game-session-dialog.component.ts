@@ -17,6 +17,6 @@ export class GameSessionDialog implements OnInit {
 
   confirm() {
     this.dismiss();
-    this.router.navigate(['/game-session-cancel']);
+    this.router.navigate(['issues/tv/game-session-cancel']);
   }
 }

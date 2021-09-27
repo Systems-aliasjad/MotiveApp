@@ -36,7 +36,7 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('TV_ISSUE_NOT_FIXED.TITLE', false);
+    this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
 
   updatePageContent() {

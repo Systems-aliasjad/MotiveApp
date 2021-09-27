@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ChannelNotListDialogComponent } from '../../../../shared/dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
+import { ChannelNotListDialogComponent } from '../../dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { SharedService } from '../../../../shared/shared.service';
 import { regExps, errorMessages } from '../../../../shared/validators/validations';
 
@@ -55,9 +55,10 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     this.formGroup = this.formBuilder.group({
       ChannelList: ['', [Validators.required]],
     });
-    this.sharedService.setHeaderConfig('CHANNEL_LIST.TITLE', false);
-    this.channelListTitle = 'CHANNEL_LIST.TITLE';
-    this.channelListContent = 'CHANNEL_LIST.CONTENT';
+
+    this.sharedService.setHeaderConfig('MESSAGES.CHANNEL_LIST', false);
+    this.channelListTitle = 'MESSAGES.CHANNEL_LIST';
+    this.channelListContent = 'MESSAGES.PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW';
     this.buttonText = 'BUTTONS.CONTINUE';
   }
 
