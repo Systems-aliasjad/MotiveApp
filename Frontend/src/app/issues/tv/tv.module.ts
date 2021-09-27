@@ -41,6 +41,8 @@ import { TransferPackageComponent } from './routes/transfer-package/transfer-pac
 import { PackageAvailableComponent } from './shared/package-available/package-available.component';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
+import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -79,12 +81,15 @@ import { ChannelDetailComponent } from './routes/channel-detail.component';
     NoAdditionalSTBComponent,
     NoNonSharedPackageComponent,
     TransferPackageComponent,
+    UnableWatchSpecificChannelComponent,
   ],
   imports: [
     CommonModule,
     TvRoutingModule,
     SharedModule,
     IonicModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,

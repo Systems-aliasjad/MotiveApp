@@ -37,6 +37,7 @@ import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.c
 import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
 import { ResetPinFailedMessageComponent } from 'src/app/all-services/routes/reset-pin-failed-message.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
+import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 
 const routes: Routes = [
   {
@@ -192,6 +193,10 @@ const routes: Routes = [
     path: 'unable-to-watch-package-transfer',
     component: TransferPackageComponent,
     data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer },
+  },
+  {
+    path: 'unable-to-watch-specific-channel',
+    component: UnableWatchSpecificChannelComponent,
   },
 ];
 

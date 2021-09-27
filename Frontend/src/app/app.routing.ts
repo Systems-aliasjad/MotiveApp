@@ -14,7 +14,7 @@ import { ERoutingIds } from './shared/constants/constants';
 // import { ResetWifiPasswordComponent } from './shared/components/reset-wifi-password/reset-wifi-password.component';
 // import { PackageAvailableComponent } from './shared/components/package-available/package-available.component';
 // import { TransferPackageComponent } from './shared/components/transfer-package/transfer-package.component';
-import { UnableWatchSpecificChannelComponent } from './shared/components/unable-watch-specific-channel/unable-watch-specific-channel.component';
+// import { UnableWatchSpecificChannelComponent } from './issues/tv/routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 // import { PhoneIssuesProblemValueAddedComponent } from './issues/phone/routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
@@ -148,7 +148,7 @@ const routes: Routes = [
   // { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
   // { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
   //Unable to watch specific channel
-  { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
+  // { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
   // { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
   // { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
   // { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },

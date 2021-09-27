@@ -33,6 +33,6 @@ export class PackageAvailableComponent implements OnInit {
 
   button2Listener() {
     this.button2Click.emit();
-    // this.router.navigate(['unable-to-watch-specific-channel']);
+    // this.router.navigate(['issues/tv/unable-to-watch-specific-channel']);
   }
 }
