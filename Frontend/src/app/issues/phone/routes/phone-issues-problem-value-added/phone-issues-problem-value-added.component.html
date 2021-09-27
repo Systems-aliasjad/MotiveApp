@@ -3,7 +3,7 @@
     <!-- Page Heading Start -->
     <ion-row class="device-care_title">
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top *ngIf="!isPartialLoaded"></app-page-top>
         <div>
           <!-- <h2>{{ heading | translate }}</h2> -->
         </div>
@@ -18,29 +18,29 @@
       </ion-col>
       <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_content two-col_right subscriptions-box">
         <div class="content">
-        <div class="data-traffic-container" *ngFor="let d of cardList">
-          <div class="data-traffic ion-text-left">
-            <div class="devices-network">
-              <h6 class="sub-title letter-space-none">{{ d.header | translate }}</h6>
-              <h6 class="sub-title grey letter-space-none">{{ d.subHeader }}</h6>
-            </div>
-            <div class="devices-list-container">
-              <ion-card *ngFor="let item of d.list">
-                <ion-card-header>
-                  <ion-card-title>                    
-                    <h5 class="sub-title">{{ item.title }}</h5>
-                    <p>{{ item.description }}</p>
-                  </ion-card-title>
-                </ion-card-header>
-                <ion-card-content class="pt-0">
-                  <p>{{ item.title2 }}</p>
-                  <a *ngIf="item.link" href="javascript:void(0)" class="arrow-link">
-                    <span>{{ item.description2 }}</span>
-                    <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details">
-                  </a> 
-                  {{ !item.link ? d.list.description2 : '' }}                 
-                </ion-card-content>
-                <!-- <ion-card-content>
+          <div class="data-traffic-container" *ngFor="let d of cardList">
+            <div class="data-traffic ion-text-left">
+              <div class="devices-network">
+                <h6 class="sub-title letter-space-none">{{ d.header | translate }}</h6>
+                <h6 class="sub-title grey letter-space-none">{{ d.subHeader }}</h6>
+              </div>
+              <div class="devices-list-container">
+                <ion-card *ngFor="let item of d.list">
+                  <ion-card-header>
+                    <ion-card-title>
+                      <h5 class="sub-title">{{ item.title }}</h5>
+                      <p>{{ item.description }}</p>
+                    </ion-card-title>
+                  </ion-card-header>
+                  <ion-card-content class="pt-0">
+                    <p>{{ item.title2 }}</p>
+                    <a *ngIf="item.link" href="javascript:void(0)" class="arrow-link">
+                      <span>{{ item.description2 }}</span>
+                      <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+                    </a>
+                    {{ !item.link ? d.list.description2 : '' }}
+                  </ion-card-content>
+                  <!-- <ion-card-content>
                   <ion-row class="package">
                     <ion-col sizeLg="5" sizeMd="5" size="12" class="ion-no-padding">
                       <ion-label class="subscription">{{ item.title }}</ion-label>
@@ -55,10 +55,10 @@
                     </ion-col>
                   </ion-row>
                 </ion-card-content> -->
-              </ion-card>
+                </ion-card>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </ion-col>
     </ion-row>

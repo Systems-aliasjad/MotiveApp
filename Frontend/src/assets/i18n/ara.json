@@ -1,5 +1,16 @@
 {
   "HEADER": {
+    "ALMOST_THERE": "Almost there",
+    "SERVICE_DETAILS": "Service details",
+    "ALL_SERVICES": "All services",
+    "INTERNET_ISSUES": "Internet issues",
+    "PHONE_ISSUES": "Phone Issues",
+    "ISSUES": "Issues",
+    "INSTALL_ETISALAT_ROUTER": "Install Etisalat router",
+    "NO_DIAL_TONE": "No dial tone",
+    "SELECT_BRAND": "Select Brand",
+    "SELECT_MODEL": "Select Model",
+    "UNABLE_TO_MAKE_RECEIVE_CALLS": "Unable to make/receive calls",
     "TECHNICAL_SUPPORT": "Technical Support",
     "QUICK_LINKS": "Quick links",
     "TERMS_AND_CONDITIONS": "Terms & Conditions",
@@ -32,10 +43,16 @@
     "STEP_1/2": "Step 1/2",
     "STEP_2/2": "Step 2/2",
     "STEP_1/1": "Step 1/1",
-    "ELIFE_UPGRADE": "eLife Upgrade"
+    "ELIFE_UPGRADE": "eLife Upgrade",
+    "DEVICE_CONNECTED_TO_HOME_ZONE": "Device connected to Home Zone"
   },
 
   "SUBHEADER": {
+    "THE_CHANNEL_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "The channel <xxx> is available on the below TV box.",
+    "CALL_DETAILS": "Call details",
+    "PLEASE_FILL_YOUR_COMPLETE_DETAILS": "Please fill your complete details",
+    "UNABLE_TO_CONNECT_TO_HOME_ZONE": "Unable to connect to Home Zone",
+    "PHONE_TROUBLESHOOTING_GUIDELINES": "Phone troubleshooting guidelines",
     "RESET_TV_BOX": "Reset TV box",
     "CHECK_CHANNEL_FILTER": "Check Channel Filter",
     "SPECIFIC_DEVICE_GUIDES": "Specific device guides",
@@ -51,27 +68,11 @@
     "ROUTER_RECONFIGURE": "Router reconfigure",
     "CHECK_YOUR_BROWSER_SETTING": "Check your browser setting",
     "CHECK_YOUR_NETWORK_SETTING": "Check your network setting",
-    "CHECK_YOUR_FIREWALL_SETTING": "Check your firewall setting"
+    "CHECK_YOUR_FIREWALL_SETTING": "Check your firewall setting",
+    "HOW_TO_RECONFIGURE_YOUR_ROUTER": "How to reconfigure your router",
+    "CHOOSE_THE_PLAN_PACKAGE_YOU_LIKE_TO_TRANSFER_TO_ANOTHER_TV_BOX": "Choose the plan package you'd like to transfer to another TV box."
   },
-  "LANDING_PAGE": {
-    "SWITCH": "Switch",
-    "INTERNET_ISSUES_TITLE": "Internet issues",
-    "TV_BOX_TITLE": "TV issues",
-    "ISSUES_NOT_FIEXED_TITLE": "Internet issues",
-    "INTERNET_ISSUES_DESCRIPTION": "My Wi-Fi is slow or causing problems",
-    "TV_ISSUES_TITLE": "TV issues",
-    "TV_ISSUES_DESCRIPTION": "My TV isn't working properly",
-    "PHONE_ISSUES_TITLE": "Phone issue",
-    "PHONE_ISSUES_DESCRIPTION": "I can't make any calls",
-    "OTHER_ISSUES_TITLE": "Other issues",
-    "OTHER_ISSUES_DESCRIPTION": "I am facing issues will all service",
-    "PASSWORD_ISSUES_TITLE": "Password issues",
-    "PASSWORD_ISSUES_DESCRIPTION": "I want to change or reset my password",
-    "RESET_PIN_TITLE": "Reset PIN",
-    "RESET_PIN_DESCRIPTION": "I want to reset my PIN",
-    "UNALBE_TO_WATCH_CHANNEL": "Unable to watch channels",
-    "ROUTER_IS_NOT_ACCESSABLE": "Router is not accessable"
-  },
+
   "QUICK_LINKS": {
     "SEE_ALL": "See All",
     "INSTALL_NEW_ROUTER": "I want to install my new router",
@@ -88,46 +89,25 @@
     "UPGRADE_PACKAGE": "I want to upgrade my eLife package",
     "ELIFE_ON_PIN_RESET": "I want to reset ELife on pin"
   },
-  "OPEN_SERVICE_REQUEST": {
-    "REQUEST_NO": "Request No",
-    "REQUEST_TYPE": "Request Type",
-    "DATE_VISIT": "Date of visit",
-    "STATUS": "Status"
-  },
-
-  "COMPLAIN_REQUEST": {
-    "DATE_VISIT": "Date of visit",
-    "STATUS": "Status",
-    "COMPLAINT_NO": "Complain No"
-  },
-
-  "ROUTER_NOT_REACHABLE_TEMPLATE": {
-    "ROUTER_NAME": "Router Name",
-    "ROUTER_MODEL": "Router Model"
-  },
-
-  "APPOINTMENT_BOOKED_SUCCESSFULLY": {
-    "REFERENCE_NO": "Reference No",
-    "DATE_VISIT": "Date of visit",
-    "LOCATION": "Location"
-  },
-  "PACKAGE_UPGRADE_SUCCESSFULLY": {
-    "REFERENCE_NO": "Reference No:"
-  },
-  "ROUTER_UPGRADE_SUCCESSFULLY": {
-    "REFERENCE_NO": "Reference No:"
-  },
-  "ROUTER_PACKAGE_UPGRADE_SUCCESSFULLY": {
-    "REFERENCE_NO": "Reference No:"
-  },
-  "THIRD_PARTY_ROUTER_SUCCESSFULLY": {
-    "REFERENCE_NO": "Reference No:"
-  },
-  "USER_CREDENTIALS": {
-    "USER_ID": "User ID",
-    "PIN": "PIN"
-  },
   "BUTTONS": {
+    "VIEW_DETAILS": "VIEW DETAILS",
+    "NO_I_M_USING_MY_OWN_ROUTER": "No, I'm using my own router",
+
+    "ISSUE_STILL_NOT_RESOLVED": "ISSUE STILL NOT RESOLVED",
+    "BOOK_COMPLAINT": "Book complaint",
+    "REOPEN_COMPLAINT": "reopen complaint",
+    "SUBMIT_FEEDBACK": "Submit feedback",
+    "TRACK_COMPLAINT": "Track complaint",
+    "CANCEL_COMPLAINT": "Cancel complaint",
+    "INSTALLATION_COMPLETED": "Installation completed",
+    "FORGOT_PASSWORD": "Forgot password",
+    "I_NEED_HELP_WITH_INSTALLING_THE_ROUTER": "I need help with installing the router",
+    "SELECT": "SELECT",
+    "INSTALL_ROUTER": "Install router",
+    "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
+    "CONTINUE_WITH_ETISALAT_ROUTERR": "Continue with Etisalat router",
+
+    "INSTALL_THIRD_PARTY_ROUTER": "Install third-party router",
     "HOW_DO_I_RESTART": "How do I restart?",
     "TRY_AGAIN_LATER": "TRY AGAIN LATER",
     "CONFIGURE_WI_FI": "CONFIGURE WI-FI",
@@ -164,7 +144,7 @@
     "UPGRADE_ROUTER": "UPGRADE ROUTER",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
     "BUY_NEW_ROUTER": "BUY NEW ROUTER",
-    "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
+    "YES_RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
     "RESET_WIFI_PASSWORD_SUCCESS": "CONTINUE TO WI-FI SETTINGS",
     "CONTINUE_TO_WIFI_SETTINGS": "continue to Wi-Fi settings",
     "USING_THE_SAME_ROUTER": "YES I AM",
@@ -187,42 +167,221 @@
     "SET_AN_APPOINTMENT": "SET AN APPOINTMENT",
     "WORK_NOT_COMPLETED": "WORK NOT COMPLETED"
   },
-  "TEXT": {
-    "FOLLOW_UP_QUESTION": "Do you want to follow-up the request?",
-    "USING_THE_SAME_ROUTER": "Are you using the same router?",
-    "PASSWORD_STRENGTH": "Password strength section",
-    "Minimum_8_Characters": "Minimum 8 characters",
+
+  "MESSAGES": {
+    "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_TV_BOX": "Where you can find more details on how to restart your TV box.",
+    "MY_WIFI_IS_SLOW_OR_CAUSING_PROBLEMS": "My Wi-Fi is slow or causing problems",
+    "SWITCH": "Switch",
+    "INTERNET_ISSUES": "Internet issues",
+    "TV_ISSUES": "TV issues",
+    "MY_TV_ISNT_WORKING_PROPERLY": "My TV isn't working properly",
+    "PHONE_ISSUE": "Phone issue",
+    "I_CANT_MAKE_ANY_CALLS": "I can't make any calls",
+    "OTHER_ISSUES": "Other issues",
+    "I_AM_FACING_ISSUES_WILL_ALL_SERVICE": "I am facing issues will all service",
+    "PASSWORD_ISSUES": "Password issues",
+    "I_WANT_TO_CHANGE_OR_RESET_MY_PASSWORD": "I want to change or reset my password",
+    "RESET_PIN": "Reset PIN",
+    "I_WANT_TO_RESET_MY_PIN": "I want to reset my PIN",
+    "UNALBE_TO_WATCH_CHANNELS": "Unable to watch channels",
+    "ROUTER_IS_NOT_ACCESSABLE": "Router is not accessable",
+
+    "REQUEST_NO": "Request No",
+    "REQUEST_TYPE": "Request Type",
+    "STATUS": "Status",
+    "COMPLAINT_NO": "Complain No",
+
+    "ROUTER_NAME": "Router Name",
+    "ROUTER_MODEL": "Router Model",
+
+    "DATE_OF_VISIT": "Date of visit",
+    "LOCATION": "Location",
+
+    "USER_ID": "User ID",
+    "PIN": "PIN",
+
+    "CHANNEL_LIST": "Channel List",
+    "PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW": "Please select the channel you are not able to watch from the list below:",
+    "CHANNEL_IS_NOT_ON_THE_LIST": "Channel is not on the list",
+    "THE_CHANNEL_IS_NOT_AVAILABLE_AS_PART_OF_THE_TV_PACKAGE_YOU_HAVE_SUBSCRIBED": "The channel is not available as part of the TV package you have subscribed.",
+    "IF_YOU_WISH_TO_SUBSCRIBE_MORE_CHANNELS_PLEASE": "If you wish to subscribe more channels, please <a class='__clickhere'>click here.</a>",
+
+    "DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST": "Do you want to follow-up the request?",
+    "ARE_YOU_USING_THE_SAME_ROUTER": "Are you using the same router?",
+    "PASSWORD_STRENGTH_SECTION": "Password strength section",
+    "MINIMUM_8_CHARACTERS": "Minimum 8 characters",
     "CONTAIN_AT_LEAST_1_NUMERIC_CHARCTER": "Contain at least 1 numeric character",
     "CONTAIN_AT_LEAST_1_SPECIAL_CHARCTER": "Contain at least 1 special character",
     "I_AGREE_TO": "I agree to",
-    "TERMS_AND_CONDITIONS": "Terms & Conditions"
-  },
-  "LINKS": {
-    "EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
-    "COMPLAINT_ANOTHER": "No, I want to report another issue",
-    "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
-    "DEVICE_CARE": "Device Care",
-    "CLOSE": "CLOSE",
-    "ISSUES_FIXED": "Issue Fixed",
-    "CONTINUE_TO_TROUBLESHOOTING": "CONTINUE TO TROUBLESHOOTING",
-    "VIEW_DETAILS": "VIEW DETAILS",
-    "USING_OWN_ROUTER": "No, I'm using my own router",
-    "CANCEL_GAME_SESSION": "CANCEL GAME SESSION",
-    "TRANSFER_PACKAGE": "TRANSFER PACKAGE"
-  },
+    "TERMS_AND_CONDITIONS": "Terms & Conditions",
 
-  "CHANNEL_LIST": {
-    "TITLE": "Channel List",
-    "CONTENT": "Please select the channel you are not able to watch from the list below:"
-  },
+    "LOREM_IPSUM": "Lorem Ipsum",
+    "BY_ACCEPTING_THE_TC_YOU_CONFIRM_THAT_ALL_INFORMATION_BY_YOU_IS_CORRECT_AND_YOU_BEAR_RESPONSIBILITY_IF_THERE_WILL_BE_ANY_DISCREPANCY_IN_THE_DOCUMENTS_AND_WILL_LIABLE_FOR_THE_ACTION": "By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.",
+    "DUIS_AUTE_IRURE_DOLOR_IN_REPREHENDERIT_IN_VOLUPTATE_VELIT_ESSE_CILLUM_DOLORE_EU_FUGIAT_NULLA_PARIATUR_EXCEPTEUR_SINT_OCCAECAT_CUPIDATAT_NON_PROIDENT_SUNT_IN_CULPA_QUI_OFFICIA_DESERUNT_MOLLIT_ANIM_ID_EST_LABORUM": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
 
-  "CHANNEL_LIST_DIALOG": {
-    "TITLE": "Channel is not on the list",
-    "CONTENT1": "The channel is not available as part of the TV package you have subscribed.",
-    "CONTENT2": "If you wish to subscribe more channels, please <a class='__clickhere'>click here.</a>"
-  },
+    "MOBILE_NO": "Mobile No*",
+    "ALTERNATE_CONTACT_NO": "Alternate Contact No*",
+    "REMARKS": "Remarks",
 
-  "MESSAGES": {
+    "RESTART_ROUTER": "Restart router",
+    "YOU_CAN_FOLLOW_THESE_STEPS_TO_REBOOT_YOUR_ROUTER": "You can follow these steps to reboot your router",
+    "CONSULT_DEVICE_CARE_FOR_SPECIFIC_DEVICE_GUIDES": "Consult device care for specific device guides",
+    "YOUR_ROUTER_DIDNT_RESTART": "Your router didn't restart",
+    "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_ROUTER": "Follow these steps to restart your router",
+    "VISIT_DEVICE_CARE": "Visit 'Device Care'",
+    "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_ROUTER": "Where you can find more details on how to restart your router.",
+
+    "RESTART_TV_BOX_MANUALLY": "Restart TV box manually",
+    "YOUR_TV_BOX_DIDNT_RESTART": "Your TV box didn't restart",
+
+    "RESTART_FIBER_BOX_MANUALLY": "Restart fiber box manually",
+    "YOUR_FIBER_BOX_DIDNT_RESTART": "Your fiber box didn't restart",
+
+    "FOLLOW_THESE_STEPS": "Follow these steps",
+    "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_FIBER_BOX": "Follow these steps to restart your fiber box:",
+    "OR": "OR",
+
+    "CONSULT_DEVICE_CARE_FOR": "Consult Device care for...",
+    "ETISALAT_DEVICE_CARE_GIVES_YOU": "Etisalat device care gives you.....",
+
+    "MOBILE_NUMBER": "Mobile Number*",
+    "NEW_PASSWORD": "New Password*",
+    "CONFIRM_PASSWORD": "Confirm Password*",
+
+    "ENTER_NEW_NUMBER": "Enter new number",
+    "ENTER_CCB_PIN_AGAIN": "Enter CCB PIN again",
+    "ROWARDING_NUMBER_RULES": "Rowarding number rules",
+
+    "NEW_CCB_PIN": "New CCB Pin",
+    "ENTER_NEW_NUMBER_AGAIN": "Enter new number again",
+
+    "WIFI_NAME": "Wi-fi name",
+
+    "SERVICE_DETAILS": "Service details",
+
+    "YOUR_PASSWORD_WASNT_RESET": "Your password wasn't reset",
+    "PLEASE_NOTE_THAT_THE_ISSUE_WONT_BE_FIXED_UNTIL_THE_PASSWORD_IS_CHANGED_AND_THE_ROUTER_IS_CONFIGURED_WITH_THE_NEW_PASSWORD": "Please note that the issue won't be fixed until the password is changed and the router is configured with the new password",
+
+    "ROUTER_IS_NOT_ACCESSIBLE": "Router is not accessible",
+    "ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE": "Once you complete these steps, tap 'Continue'.",
+    "IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIST_TROUBLESHOOTING": "If you want to complete these steps later, tap 'Exist troubleshooting'.",
+    "RESET_TV_ADMIN_PIN": "Reset TV admin PIN",
+    "YOUR_PIN_WILL_BE_RESET_TO_THE_DEFAULT_PIN": "Your PIN will be reset to the default PIN: 1111.",
+    "PLEASE_NOTE_THAT_THE_ISSUE_WONT_BE_FIXED_UNTIL_YOU_RESTART_YOUR_ROUTER": "Please note that the issue won't be fixed until you restart your router.",
+    "YOU_CAN_ALSO_RESTART_YOUR_ROUTER_MANUALLY": "You can also restart your router manually.",
+    "ONCE_YOU_RESTART_YOUR_ROUTER_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
+
+    "PLEASE_SELECT_YOUR_ISSUE": "Please select your issue",
+    "CHECK_WIFI_COVERAGE_GUIDLINES_TO_SOLVE_CONNECTIVITY_ISSUES": "Check wi-fi coverage guidlines to solve connectivity issues.",
+    "DONT_FORGET_TO_CHECK_THE_BATTERY_LEVEL_IN_YOUR_PHONE_HEADSET": "Don’t forget to check the battery level in your phone headset.",
+    "RESET_TO_FACTORY_DEFAULT": "Reset to factory default",
+    "THE_ROUTERS_WIFI_WILL_BE_RESET_TO_DEFAULT_FACTORY_SETTINGS": "The router's Wi-Fi will be reset to default factory settings.",
+    "NOTE_YOU_WILL_LOSE_ALL_SETTINGS_AFTER_THE_FACTORY_RESET": "Note: You will lose all settings after the factory reset.",
+    "SELECT_THE_DEVICE": "Select the device",
+    "PLEASE_CHECK_IF_ROUTER_IS_SWITCHED_ON_THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBRE_BOX_ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE_IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIT_TROUBLESHOOTING": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'.",
+
+    "CANCEL_GAME_SESSION": "Cancel game session",
+    "ARE_YOU_SURE_YOU_WANT_TO_QUIT_ELIFE_TV_GAME_NAME_ANY_UNSAVED_CHANGES_WILL_BE_LOST": "Are you sure you want to quit <eLife TV game name>? Any unsaved changes will be lost.",
+    "YOU_CAN_LAUNCH_A_NEW_GAME_SESSION_FROM_THE_MAIN_MENU_OF_ELIFE_TV_GAMING": "You can launch a new game session from the main menu of eLife TV Gaming.",
+    "THIS_ACTION_CANNOT_BE_UNDONE": "This action cannot be undone.",
+    "RESTART_TV_BOX": "Restart TV box",
+    "PLEASE_NOTE_THAT_THE_ISSUE_WONT_BE_FIXED_UNTIL_YOU_RESTART_YOUR_TV_BOX": "Please note that the issue won’t be fixed until you restart your TV box.",
+    "YOU_CAN_ALSO_RESTART_YOUR_TV_BOX_MANUALLY": "You can also restart your TV box manually.",
+    "ONCE_YOU_RESTART_YOUR_TV_BOX_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Once you restart your TV box, wait for 5 minutes and then try using the internet again.",
+
+    "PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE": "Please wait while our automated system is diagnosing the service.",
+    "THIS_WILL_TAKE_UP_TO_1_MINUTE": "This will take up to 1 minute",
+    "IT_IS_TAKING_LONGER_THAN_EXPECTED_KINDLY_WAIT": "It is taking longer than expected. Kindly wait",
+
+    "DATA_TRAFFIC_LAST_1_HOUR": "Data traffic (last 1 hour)",
+    "PARENTAL_CONTROL": "Parental control",
+    "WEB_THREAT_PROTECTION": "Web threat protection",
+    "CHILD_LOCK": "Child lock",
+    "YOU_CAN_CANCEL_ANY_GAME_SESSION_THAT_ISNT_WORKING_PROPERLY": "You can cancel any game session that isn't working properly.",
+    "ELIFE_TV_GAME": "eLife TV game",
+    "STB_SR039838920": "STB SR#039838920",
+    "LIVING_ROOM_TV_KIDS_ROOM_TV": "Living Room TV, Kids Room TV",
+
+    "CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO": "Choose the TV box you'd like to transfer the package to.",
+    "TV_SERVICE_IS_DOWN": "TV service is down",
+    "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_INSTEAD": "Sorry, the service is not working properly. Please try again later or book an appointment instead.",
+    "THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "The channel <xxx> is available on the below TV box.",
+    "PHONE_ISSUES": "Phone Issues",
+    "PHONE_SERVICE_IS_DOWN": "Phone service is down",
+
+    "ENTER_YOUR_MOBILE_NUMBER_TO_RECIVE_THE_NEW_PIN_VIA_SMS": "Enter your mobile number to recive the new PIN via SMS",
+    "PLEASE_ENTER_A_VALID_MOBILE_NUMBER": "Please enter a valid mobile number",
+
+    "DATE_CREATED": "Date created:",
+    "APPOINTMENT_DATE": "Appointment Date",
+    "APPOINTMENT_TIME": "Appointment Time",
+
+    "DATE": "Date",
+    "TIME": "Time",
+    "EXPECTED_DATE_OF_COMPLETION": "Expected date of completion:",
+
+    "INTERNET": "INTERNET",
+    "TELEVISION": "TELEVISION",
+    "TELEPHONE": "TELEPHONE",
+    "NO_SERVICE": "No service",
+    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": "The eLife service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
+    "DEVICES_IS_NOT_ACCESSIBLE": "Devices is not accessible!",
+    "THE_TV_BOX_IS_SWITCHED_ON": "The TV Box is switched ON",
+    "THE_TV_BOX_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": "The TV Box is connected to “X” port on the Fiber Box",
+    "THE_TELEPHONE_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": "The Telephone is connected to “X Port on the Fiber Box",
+    "THE_TELEPHONE_DEVICE_IS_SWITCHED_ON": "The Telephone device is switched ON",
+    "IF_ISSUE_IS_STILL_NOT_FIXED_PLEASE_RECONFIGURE_YOUR_ROUTER_WITH_THE_CORRECT_SETTINGS": "If issue is still not fixed, please reconfigure your router with the correct settings",
+    "WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES": "We have fixed all the technical issues.",
+    "PLEASE_RESTART_THE_WALL-MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": "Please restart the wall-mounted fiber box and then try using the TV again.",
+    "WE_CANT_REACH_YOUR_PHONE": "We can’t reach your Phone",
+    "ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE": "One of these options could be causing the issue:",
+    "THE_PHONE_IS_NOT_SWITCHED_ON": "The Phone is not switched on",
+    "THE_CABLE_ISNT_CONNECTED_PROPERLY": "The cable isn't connected properly",
+    "THE_PHONE_IS_FAULTY": "The Phone is faulty",
+    "TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT": "Tap 'Book an appointment' if you want to book a technician visit.",
+    "TAP_TRY_AGAIN_LATER_IF_YOU_WANT_TO_CHECK_THE_PROBLEM_LATER": "Tap 'Try again later' if you want to check the problem later.",
+    "FIBER_BOX_NOT_REACHABLE": "Fiber Box not reachable",
+    "PLEASE_MAKE_SURE_THAT_THE_POWER_CABLE_FOR_WALL_MOUNTED_FIBER_BOX_IS_CONNECTED_PROPERLY_AND_POWER_IS_ON": "Please make sure that the power cable for wall mounted Fiber Box is connected properly and power is ON.",
+    "PIN_RESET_FAILED": "PIN Reset Failed",
+    "SORRY_PIN_RESET_FAILED": "Sorry, PIN reset failed.",
+    "BOOK_COMPLAINT_TO_FIX_THE_ISSUE": "Book complaint to fix the issue",
+    "REQUEST_IN_PROGRESS": "Request In Progress",
+    "THANK_YOU_FOR_USING_OUR_TECHNICAL_SUPPORT": "Thank you for using our technical support.",
+    "WE_APOLOGIZE_FOR_THE_DELAY_COMPLAINT_WILL_BE_BOOKED_REGARDING_THE_DELAY": "We apologize for the delay. Complaint will be booked regarding the delay",
+    "COMPLAINT_UNDER_PROCESS": "Complaint under process",
+    "APPOINTMENT_SET_SUCCESSFULLY": "Appointment set successfully!",
+    "APOINTMENT_DATE": "Apointment Date:",
+    "APPOINTMENT_TIME_SLOT": "Appointment Time Slot:",
+    "WORK_NOT_COMPLETED": "Work not completed",
+    "PLEASE_SET_AN_APPOINTMENT_WITH_US_ONCE_YOU_COMPLETE_THE_WORK": "Please set an appointment with us once you complete the work.",
+    "YOUR_APPOINTMENT_HAS_BEEN_SET_SUCCESSFULLY": "Your appointment has been set successfully.",
+    "IT_LOOKS_LIKE_THIS_COMPLAINT_HAS_ALREADY_BEEN_RESOLVED_BY_OUR_TECHNICIAN_YOU_CAN_REOPEN_THE_COMPLAINT_IF_YOURE_STILL_FACING_AN_ISSUE": "It looks like this complaint has already been resolved by our technician. You can reopen the complaint if you’re still facing an issue. ",
+    "COMPLAINT_NOT_FOUND": "Complaint not found",
+    "SORRY_WE_COULDNT_FIND_THE_COMPLAINT_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING": "Sorry, we couldn’t find the complaint you requested. If you need help with a technical issue, tap ‘Continue to troubleshooting’.",
+    "RESOLVED_DATE": "Resolved Date:",
+    "WE_APOLOGIZE_FOR_THE_DELAY_OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON": "We apologize for the delay. Our team is already working on resolving the issue. You will be contacted by our technician soon.",
+    "COMPLAINT_DETAILS": "Complaint details",
+    "OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE": "Our team is already working on resolving the issue.",
+    "YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON": "You will be contacted by our technician soon.",
+    "REFERENCE_NO": "Reference no.",
+    "DATE_VISIT": "Date of visit:",
+    "APPOINTMENT_DETAILS": "Appointment details:",
+    "HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT": "Here are the details of your complaint:",
+    "MAKE_SURE_TO_SELECT_YOUR_WIFI_NETWORK_NAME_USE_THE_CORRECT_WIFI_PASSWORD_WHILE_CONNECTING_TO_YOUR_WIFI_NETWORK": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
+    "WE_CAN_HELP_YOU_TO_RESET_WIFI_SETTINGS_IF_YOU_FORGOT_YOUR_WIFI_PASSWORD": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password",
+    "INSTALL_ROUTER": "Install router",
+    "CONTINUE_TO_CONFIGURE_YOUR_WI-FI_SETTINGS": "Continue to configure your Wi-Fi settings.",
+    "FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION": "Follow these steps to complete the installation:",
+    "CONNECT_THE_NEW_ROUTER_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "Connect the new router to the ‘X’ port of the wall-mounted fiber box",
+    "YOU_ARE_CURRENTLY_USING_A_THIRD-PARTY_ROUTER": "You are currently using a third-party router.",
+    "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
+    "WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_INSTALL_AN_ETISALAT_ROUTER": "We can provide remote support if you install an Etisalat router.",
+    "IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD": "If you choose the second option, you will need to wait 30 minutes and then reset your internet password.",
+    "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
+    "CHECK_THE_BATTERY_OF_THE_CORDLESS_PHONE": "Check the battery of the cordless phone",
+    "LAST_INCOMING_OUTGOING_CALLS": "Last incoming/outgoing calls",
+    "CALL_FORWARDING_ENABLED_OR_DISABLED": "Call forwarding enabled or disabled",
+    "OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING": "Option to enable/disable call forwarding",
     "IF_YOU_ARE_STILL_UNABLE_TO_WATCH_TAP_RESET_TV_BOX_SO_THAT_WE_CAN_RESET_IT_REMOTELY": "If you are still unable to watch <channel name>, tap 'Reset TV box' so that we can reset it remotely.",
     "PLEASE_REMOVE_ALL_CHANNEL_FILTERS_AND_THEN_TRY_TO_WATCH_THE_CHANNEL_AGAIN": "Please remove all channel filters and then try to watch the channel again.",
     "YOU_MAY_VIEW_OUR_GUIDELINES_ON_HOW_TO_REMOVE_THE_CHANNEL_FILTER": "You may view our guidelines on how to remove the channel filter.",
@@ -262,7 +421,8 @@
     "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY": "New router request was raised successfully",
     "THIRD_PARTY_ROUTER_REQUEST_SUCCESSFULLY_BODY": "Thank you for your request. We will call you back within 24 hrs.",
     "RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY": "Router reset successful",
-    "RESET_WIIF_PASSWORD_FIRST_SUCCESSFULLY_BODY": "Please wait for 5 minutes before using the internet again.  Continue to configure your Wi-Fi settings.",
+    "PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN": "Please wait for 5 minutes before using the internet again.",
+    "YOUR_NEW_PASSWORD_IS_XXXX_MAKE_SURE_TO_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER": "Your new password is <XXXX>. Make sure to use the new Wi-Fi password to connect to the router.",
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY": "Wi-Fi Password Updated Successfully ",
     "RESET_WIIF_PASSWORD_SECOND_SUCCESSFULLY_BODY": "Please wait for 5 minutes and then try using the internet again.  Your new password is <XXXX>.Make sure to use the new Wi-Fi password to connect to the router.",
     "TROUBLESHOOT_COMPLETE_HEADING": "Troubleshooting Complete",
@@ -279,8 +439,7 @@
     "NO_INTERNET_CONNECTION_BODY": "We are facing an unplanned interruption of home services in your area which is beyond our control. Rest assured that that our teams are working on resolving the issue. We shall send an SMS to your registered contact number once the service is restored",
     "NO_INTERNET_CONNECTION_BODY2": "The internet service is down. We are sorry to be holding you up this time.  Please try again later or book an appointment for a technician visit instead.",
     "RESET_ELIFEON_PIN_HEADING": "Unable to login",
-    "RESET_ELIFEON_PIN_BODY1": "Please reset your eLifeON PIN to fix the issue.",
-    "RESET_ELIFEON_PIN_BODY2": "It will be reset to the default PIN: 1111@elife",
+    "PLEASE_RESET_YOUR_ELIFEON_PIN_TO_FIX_THE_ISSUE_IT_WILL_BE_RESET_TO_THE_DEFAULT_PIN_1111_ELIFE": "Please reset your eLifeON PIN to fix the issue. It will be reset to the default PIN: 1111@elife",
     "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_HEADING": "eLifeON PIN reset successfully!",
     "RESET_ELIFEON_PIN_RESETPIN_SUCCESS_BODY": "Your PIN has been successfully reset to the default PIN.",
     "ISSUE_FIXED_SUCCESSFULLY": "Issue fixed successfully!",
@@ -419,196 +578,8 @@
     "ACTION_REQUIRED": "Action required",
     "THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE._PLEASE_TAP_'SET_AN_APPOINTMENT'_IF_YOU_HAVE_ALREADY_COMPLETED_IT": "There is some work pending from your side. Please tap 'Set an appointment' if you have already completed it.",
     "NO_ADDITIONAL_STB": "No additional STB",
-    "SORRY,_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DON'T_HAVE_ADDITIONAL_STB": "Sorry, transfer of package is not applicable as you don't have additional STB",
+    "SORRY_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DONT_HAVE_ADDITIONAL_STB": "Sorry, transfer of package is not applicable as you don't have additional STB",
     "NO_NON_SHARED_PACKAGE": "No non shared package",
     "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS": "You are subscribed for shared TV packages that can be viewed from all your STBs"
-  },
-  "TERMS_AND_CONDITIONS": {
-    "HEADER1": "Lorem Ipsum",
-    "PARA1": "By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.",
-    "PARA2": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-  },
-  "BOOKING_COMPLAINT": {
-    "MOBILE_NUMBER1": "Mobile No*",
-    "MOBILE_NUMBER2": "Alternate Contact No*",
-    "REMARKS": "Remarks"
-  },
-  "ROUTER_RESTART": {
-    "RESTART_ROUTER_H1": "Restart router",
-    "RESTART_ROUTER_H2": "You can follow these steps to reboot your router",
-    "RESTART_ROUTER_H3": "Consult device care for specific device guides",
-    "ROUTER_DIDNOT_RESTART_H1": "Your router didn't restart",
-    "ROUTER_DIDNOT_RESTART_H2": "Follow these steps to restart your router",
-    "ROUTER_DIDNOT_RESTART_H3": "Visit 'Device Care'",
-    "ROUTER_DIDNOT_RESTART_H3_MSG": "Where you can find more details on how to restart your router."
-  },
-  "TVBOX_RESTART": {
-    "TVBOX_DIDNOT_RESTART_H1": "Restart TV box manually",
-    "YOUR_TVBOX_DID_NOT_RESTART_H1": "Your TV box didn't restart"
-  },
-
-  "ONT_REBOOT_MANUALLY": {
-    "ONT_REBOOT_H1": "Restart fiber box manually",
-    "ONT_NOT_REBOOT_H1": "Your fiber box didn't restart"
-  },
-
-  "INSTRUCTIONS_STEPS": {
-    "ROUTER_RESTART_TITLE": "Follow these steps",
-    "TVBOX_RESTART_TITLE": "Follow these steps",
-    "ONT_REBOOT_TITLE": "Follow these steps to restart your fiber box:",
-    "OR": "OR"
-  },
-  "MESSAGES.OR": {
-    "ROUTER_RESTART_TITLE": "Consult Device care for...",
-    "ROUTER_RESTART_BODY": "Etisalat device care gives you.....",
-    "TVBOX_RESTART_TITLE": "Visit 'Device Care' ",
-    "TVBOX_RESTART_BODY": "Where you can find more details on how to restart your TV box.",
-    "ONT_RESTART_TITLE": "Visit 'Device Care' ",
-    "ONT_RESTART_BODY": "Where you can find more details on how to restart your TV box."
-  },
-
-  "RESET_INTERNET_PASSWORD": {
-    "MOBILE_NUMBER": "Mobile Number*",
-    "NEW_PASSWORD": "New Password*",
-    "CONFIRM_PASSWORD": "Confirm Password*"
-  },
-
-  "CHANGE_CALL_FORWARD": {
-    "NEW_NUMBER": "Enter new number",
-    "NEW_NUMBER_AGAIN": "Enter CCB PIN again",
-    "ROWARDING_NUMBER_RULES": "Rowarding number rules"
-  },
-
-  "RESET_CCB_PIN": {
-    "NEW_CCB_PIN": "New CCB Pin",
-    "NEW_CCB_PIN_AGAIN": "Enter new number again"
-  },
-
-  "RESET_WIFI_PASSWORD": {
-    "WIFI_NAME": "Wi-fi name",
-    "MOBILE_NUMBER": "Mobile Number*",
-    "NEW_PASSWORD": "New Password*",
-    "CONFIRM_PASSWORD": "Confirm Password*"
-  },
-  "DEVICE_CARE": {
-    "PAGE_HEADING": "How to configure your router",
-    "PAGE_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best.",
-    "TVBOX_RESTART_CONTENT": "Travelling abroad? Take your local plan’s data and voice allowances with you to keep in touch with your family and loved ones when you subscribe to Roam like Home packs, starting from only AED 100. Available to all postpaid Freedom plans. Simply choose the pack that suits you best."
-  },
-
-  "PHONE_ISSUES_CARE": {
-    "HEADER": "Unable to make/receive calls",
-    "Heading1": "Phone troubleshooting guidelines",
-    "BODY1Children1": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",
-    "BODY1Children2": "Check the battery of the cordless phone",
-
-    "NO_DIAL_TONE": "No dial tone",
-
-    "Heading2": "Call details",
-    "BODY2Children1": "Last incoming/outgoing calls",
-    "BODY2Children2": "Call forwarding enabled or disabled",
-    "BODY2Children3": "Option to enable/disable call forwarding"
-  },
-
-  "PHONE_ISSUES_PROBLEM_VALUE_ADDED": {
-    "HEADER": "Service details"
-  },
-
-  "DIALOG": {
-    "PASSWORD_WASNOT_RESET_HEADING": "Your password wasn't reset",
-    "PASSWORD_WASNOT_RESET_DESCRIPTION": "Please note that the issue won't be fixed until the password is changed and the router is configured with the new password",
-    "INTERNET_ISSUE_TITLE": "Internet issues",
-    "INTERNET_ISSUE_HEADING": "Router is not accessible",
-    "INTERNET_ISSUE_CONTINUE": "Once you complete these steps, tap 'Continue'.",
-    "INTERNET_ISSUE_EXIST_TROUBLESHOOTING": "If you want to complete these steps later, tap 'Exist troubleshooting'.",
-    "RESET_TV_ADMIN_PIN": "Reset TV admin PIN",
-    "RESET_TV_ADMIN_PIN_BODY": "Your PIN will be reset to the default PIN: 1111.",
-    "RESTART_ROUTER_HEADING": "Restart router",
-    "RESTART_ROUTER_INS1": "Please note that the issue won't be fixed until you restart your router.",
-    "RESTART_ROUTER_INS2": "You can also restart your router manually.",
-    "RESTART_ROUTER_INS3": "Once you restart your router, wait for 5 minutes and then try using the internet again.",
-    "INTERNET_ISSUE_LIST_TITLE": "Please select your issue",
-    "INTERNET_ISSUE_LIST_MESSAGE": "Check wi-fi coverage guidlines to solve connectivity issues.",
-    "PHONE_ISSUE_LIST_MESSAGE": "Don’t forget to check the battery level in your phone headset.",
-
-    "RESET_FACTORY_DEFAULT_TITLE": "Reset to factory default",
-    "RESET_FACTORY_DEFAULT_DESCRIPTION": "The router's Wi-Fi will be reset to default factory settings.",
-    "RESET_FACTORY_DEFAULT_NOTE": "Note: You will lose all settings after the factory reset.",
-
-    "DEVICE_LIST_TITLE": "Select the device",
-    "ROUTER_NOT_REACHABLE_TITLIE": "Router is not accessible",
-    "ROUTER_NOT_REACHABLE_DESCRIPTION": "Please check if:• Router is switched on• The cable from the router is connected to the 'X' port of the wall mounted fibre box Once you complete these steps, tap 'Continue'.If you want to complete these steps later, tap 'Exit troubleshooting'.",
-
-    "GAME_SESSION_HEADING": "Cancel game session",
-    "GAME_SESSION_P1": "Are you sure you want to quit <eLife TV game name>? Any unsaved changes will be lost.",
-    "GAME_SESSION_P2": "You can launch a new game session from the main menu of eLife TV Gaming.",
-    "GAME_SESSION_P3": "This action cannot be undone.",
-
-    "TVBOX_ROUTER_HEADING": "Restart TV box",
-    "TVBOX_ROUTER_INS1": "Please note that the issue won’t be fixed until you restart your TV box.",
-    "TVBOX_ROUTER_INS2": "You can also restart your TV box manually.",
-    "TVBOX_ROUTER_INS3": "Once you restart your TV box, wait for 5 minutes and then try using the internet again."
-  },
-  "LOADER": {
-    "HEADER": "Almost there",
-    "SUCCESS_BODY_1": "Please wait while our automated system is diagnosing the service.",
-    "SUCCESS_BODY_2": "This will take up to 1 minute",
-    "FALIURE_BODY": "It is taking longer than expected. Kindly wait"
-  },
-  "SERVICE_DEATAIL": {
-    "HEADING": "Service details",
-    "DATA_TRAFFIC": "Data traffic (last 1 hour)",
-    "PARENTAL_CONTROL": "Parental control",
-    "PARENTAL_CONTROL_WEB_THREAT_PROTECTION": "Web threat protection",
-    "PARENTAL_CONTROL_CHILD_LOCK": "Child lock"
-  },
-
-  "DEVICE_CONNECTED_HOMEZONE": {
-    "HEADING": "Device connected to Home Zone",
-    "SUB_HEADING": "Unable to connect to Home Zone",
-    "PARAGRAPH1": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
-    "PARAGRAPH2": "We can help you to reset Wi-Fi settings if you forgot your Wi-Fi password"
-  },
-  "GAME_SESSION": {
-    "ACTIVE_GAME_SESSION_DESCRIPTION": "You can cancel any game session that isn't working properly.",
-    "CARD_HEADING": "eLife TV game",
-    "CARD_SUB_HEADING1": "STB SR#039838920",
-    "CARD_SUB_HEADING2": "Living Room TV, Kids Room TV"
-  },
-  "AVAILABLE_PACKAGE": {
-    "DESCRIPTION": "Choose the plan package you'd like to transfer to another TV box.",
-    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
-  },
-  "TRANSFER_PACKAGE": {
-    "DESCRIPTION": "Choose the TV box you'd like to transfer the package to."
-  },
-  "TV_ISSUE_NOT_FIXED": {
-    "TITLE": "TV Issues",
-    "SUB_HEADING": "TV service is down",
-    "TEXT1": "Sorry, the service is not working properly. Please try again later or book an appointment instead.",
-    "DESCRIPTION": "Choose the TV box you'd like to transfer the package to.",
-    "DESCRIPTION_UNABLE_WATCH_SPECIFIC_CHANNEL": "The channel <xxx> is available on the below TV box."
-  },
-
-  "PHONE_ISSUE_NOT_FIXED": {
-    "TITLE": "Phone Issues",
-    "SUB_HEADING": "Phone service is down",
-    "TEXT1": "Sorry, the service is not working properly. Please try again later or book an appointment instead."
-  },
-  "RESET_TV_ADMIN_PIN": {
-    "LABEL1": "Enter your mobile number to recive the new PIN via SMS",
-    "LABEL2": "Please enter a valid mobile number"
-  },
-  "REQUEST_DETAILS": {
-    "REFERENCE_NO": "Reference no.",
-    "DATE_CREATED": "Date created:",
-    "APPOINTMENT_DETAILS": "Appointment details:"
-  },
-  "APPOINTMENT_CHANGED_SUCCESSFULLY": {
-    "DATE": "Date",
-    "TIME": "Time"
-  },
-  "SERVICE_UNAVAILABLE": {
-    "EXPECTED_DATE_OF_COMPLETION": "Expected date of completion:"
   }
 }
