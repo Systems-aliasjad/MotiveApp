@@ -559,7 +559,7 @@ export class CustomerJourneyConstants {
 
   public static noAdditionalSTB = {
     header: 'MESSAGES.NO_ADDITIONAL_STB',
-    paragraphs: ["MESSAGES.SORRY,_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DON'T_HAVE_ADDITIONAL_STB"],
+    paragraphs: ['MESSAGES.SORRY_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DONT_HAVE_ADDITIONAL_STB'],
   };
 
   public static noNonSharedPackage = {

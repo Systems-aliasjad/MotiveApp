@@ -26,22 +26,22 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     });
   }
 
-  constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {
-    this.subscription = this.actRoute.data.subscribe((data) => {
-      this.codeType = data.id;
-      this.initialization();
-    });
-  }
+  constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {}
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscription = this.actRoute.data.subscribe(() => {
+      this.updateHeader();
+    });
+    this.updatePageContent();
+  }
 
   initialization() {
     if (!this.isPartialLoaded) {
       this.sharedService.setDefaultValues();
-      this.sharedService.setHeaderConfig('MESSAGES.SERVICE_DETAILS', true);
+      this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', false);
     }
 
     this.cardList = [
@@ -102,6 +102,17 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
       },
     ];
     //#endregion Module 3
+  }
+
+  updateHeader() {
+    if (!this.isPartialLoaded) {
+      this.sharedService.setDefaultValues();
+      this.sharedService.setHeaderConfig('MESSAGES.SERVICE_DETAILS', true);
+    }
+  }
+
+  updatePageContent() {
+    this.initialization();
   }
 
   button1Listener() {

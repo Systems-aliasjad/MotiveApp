@@ -28,8 +28,25 @@ ion-item::part(native) {
     text-align: center;
     max-width: 650px;
     margin: auto;
+    position: relative;
     @media screen and (max-width: 281px) {
       text-align: left;
+    }
+    .arrow-container{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+
+      &.left{
+        left: -5px;
+      }
+      &.right{
+        right: -5px;
+      }
+      img{
+        width: 18px;        
+      }
     }
     ion-list {
       padding-top: 0;

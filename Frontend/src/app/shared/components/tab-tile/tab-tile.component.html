@@ -2,7 +2,10 @@
   <ion-col size="12" class="service-detail_slider">
     <!-- service-State list Start-->
     <div class="service-states-container">
-      <ion-slides [options]="slideOpts">
+      <div class="arrow-container left">
+        <img src="assets/images/action-icons/icon_networkmap_arrow_left.svg" alt="move left" (click)="next()" />
+      </div>
+      <ion-slides [options]="slideOpts" #slides>
         <ion-slide *ngFor="let item of tilesList">
           <div class="service-state">
             <div class="{{ item.className }} state">
@@ -15,6 +18,9 @@
           </div>
         </ion-slide>
       </ion-slides>
+      <div class="arrow-container right">
+        <img src="assets/images/action-icons/icon_networkmap_arrow_right.svg" alt="move right" (click)="prev()" />
+      </div>
       <!-- service-States list Start-->
     </div>
   </ion-col>
