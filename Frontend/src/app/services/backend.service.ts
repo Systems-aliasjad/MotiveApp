@@ -10,4 +10,7 @@ export class BackendService {
   getUserDetail(token: string, lang: string) {
     return this.http.get(`MOTIVE_APP_SELFCARE/token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
   }
+  getLandingPageData() {
+    return this.http.get(`MOTIVE_APP_SELFCARE/motive/landing-screen`);
+  }
 }
