@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../constants/constants';
+import { ERoutingIds } from '../../../../shared/constants/constants';
 
 @Component({
   selector: 'app-internet-issues-dialog-second',

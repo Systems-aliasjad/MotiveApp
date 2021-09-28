@@ -75,6 +75,12 @@ import { createTranslateLoader } from 'src/app/app.module';
 import { UnableToConnectComponent } from './shared/unable-to-connect/unable-to-connect.component';
 import { UnableToConnectNewDeviceWiFiComponent } from './routes/unable-to-connect-newDevice-wifi.component';
 import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-call.component';
+import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-issues-dialog.component';
+import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
+import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
+import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
+import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
+import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 
 @NgModule({
   declarations: [
@@ -143,6 +149,12 @@ import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-ca
     UnableToConnectComponent,
     UnableToConnectNewDeviceWiFiComponent,
     UnableToMaleVideoCallComponent,
+    InternetIssuesDialog,
+    InternetIssuesDialogSecondComponent,
+    InstallEtisalatRouterDialogComponent,
+    RestartRouterDialog,
+    PasswordResetDialog,
+    ResetFactoryDefaultDialog,
   ],
   imports: [
     CommonModule,

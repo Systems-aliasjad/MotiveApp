@@ -6,7 +6,7 @@ import { IResetPinContent } from 'src/app/shared/components/reset-pin/reset-pin.
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
 import { ModalController } from '@ionic/angular';
-import { ResetTvPinDialog } from 'src/app/shared/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
+import { ResetTvPinDialog } from 'src/app/issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 @Component({
   selector: 'app-reset-tv-admin-pin',
   template:

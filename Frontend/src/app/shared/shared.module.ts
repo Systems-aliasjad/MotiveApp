@@ -17,23 +17,15 @@ import { TabTileComponent } from './components/tab-tile/tab-tile.component';
 import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
 import { RestartInstructionComponent } from './components/restart-instruction/restart-instruction.component';
 import { DeviceCareComponent } from './components/device-care/device-care.component';
-import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
-import { InternetIssuesDialog } from './dialogs/internet-issues-dialog/internet-issues-dialog.component';
-import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
-import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
-import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
-import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
-import { InternetIssuesDialogSecondComponent } from './dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
 import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { CcbPinResetFormComponent } from './components/forgot-ccb-pin/ccb-pin-reset-form.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
-import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
 import { createTranslateLoader } from '../app.module';
 
@@ -51,22 +43,14 @@ import { createTranslateLoader } from '../app.module';
     ServiceIssueComponent,
     RestartInstructionComponent,
     DeviceCareComponent,
-    PasswordResetDialog,
-    InternetIssuesDialog,
-    RestartRouterDialog,
     ButtonComponent,
     IssueListDialog,
-    ResetFactoryDefaultDialog,
     DeviceListDialog,
-    ResetTvPinDialog,
-    RestartTvboxDialog,
-    InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
     MotiveMessageBulletComponent,
-    InstallEtisalatRouterDialogComponent,
     MotiveMessageFeedbackComponent,
   ],
   imports: [
@@ -94,7 +78,6 @@ import { createTranslateLoader } from '../app.module';
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
-    InternetIssuesDialogSecondComponent,
     PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,

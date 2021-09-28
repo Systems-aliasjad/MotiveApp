@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ResetTvPinDialog } from '../reset-tv-pin-dialog/reset-tv-pin-dialog.component';
+import { ResetTvPinDialog } from '../../../issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 
 export enum EIssueFlow {
   internetIssue,
