@@ -169,6 +169,8 @@
   },
 
   "MESSAGES": {
+    "SELECT_BRAND": "Select Brand",
+    "SELECT_MODEL": "Select Model",
     "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_TV_BOX": "Where you can find more details on how to restart your TV box.",
     "MY_WIFI_IS_SLOW_OR_CAUSING_PROBLEMS": "My Wi-Fi is slow or causing problems",
     "SWITCH": "Switch",

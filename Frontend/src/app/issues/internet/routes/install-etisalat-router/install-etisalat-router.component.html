@@ -18,7 +18,7 @@
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-list>
                   <ion-item>
-                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(1)">Select Brand</ion-label>
+                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(1)">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
                     <ion-label position="stacked">{{ valueForBrand?.text }}</ion-label>
                   </ion-item>
                 </ion-list>
@@ -27,7 +27,7 @@
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-list>
                   <ion-item>
-                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(2)">Select Model</ion-label>
+                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(2)">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
                     <ion-label position="stacked">{{ valueForModel?.text }}</ion-label>
                     <!-- <ion-select placeholder="Select Brand" formControlName="Model">
                       <ion-select-option *ngFor="let model of modelList" [value]="model.value">{{ model.text }}</ion-select-option>
