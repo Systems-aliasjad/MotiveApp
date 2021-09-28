@@ -1,3 +1,115 @@
-.btn {
-  width: 100%;
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
+
+/* --------------------------------------------------------------*/
+:host {
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  ion-list {
+    --ion-background-color: transparent;
+    padding-bottom: 0;
+  }
+  ion-icon {
+    color: $primary-color;
+  }
+  ion-input{
+    --padding-end:1.7rem;
+  }
+}
+.ios {
+  ion-segment-button{
+    &:before{
+      border-left:0;
+      --border-width:0;
+    }
+  }
+  .segment-button-checked {
+    color: $etisalat-color;
+    --indicator-color: transparent;
+    --indicator-box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+    border-bottom-left-radius:0;
+    --border-radius: 0;
+  }
+  .segment-button-has-label {
+    margin-bottom: 0;
+    padding-top: 0.5625rem;
+    padding-bottom: 0.5625rem;
+    
+  }
+}
+ion-item::part(native) {
+  --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+}
+/* --------------------------------------------------------------*/
+
+.form-main-container {
+  font-family: Lato, Roboto, Arial, sans-serif;
+  .form-inner_container {
+    ion-item {
+      margin-bottom: 1rem;
+    }
+    form {
+      ion-item {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: end;
+        ion-label {
+          color: $secondary-color;
+          font-size: 1rem;
+          -webkit-transform: scale(0.9);
+          -ms-transform: scale(0.9);
+          transform: scale(0.9);
+          @media screen and (max-width: 1024px) {
+            transform: inherit;
+          }
+        }
+        ion-icon {
+          margin-right: 0;
+        }
+        
+      }
+      .check-list {
+        padding-top: 0;
+        ion-item {
+          -webkit-box-align: start;
+          -ms-flex-align: start;
+          align-items: flex-start;
+          --min-height: auto;
+          --border-width: 0;
+          --inner-border-width: 0;
+          img {
+            display: inline-block;
+            height: 1.4rem;
+          }
+          ion-label {
+            transform: none;
+            margin-top: 0;
+            margin-left: 0.8rem;
+            margin-bottom: 0;
+          }
+        }
+      }
+      
+      .full-width {
+        width: 100%;
+      }
+    }
+    .show-icon {
+      position: absolute;
+      bottom: .5rem;
+      cursor: pointer;
+      z-index: 2;
+    }
+  }
+  .text-error{
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+}
+.native-input{
+  padding-right: 1.7rem;
 }
