@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { IonSlides } from '@ionic/angular';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -58,23 +59,32 @@ export class TabTileComponent implements OnInit {
       // when window width is >= 320px
       320: {
         slidesPerView: 3,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 480px
       480: {
         slidesPerView: 3,
-        spaceBetween: 20
+        spaceBetween: 20,
       },
       // when window width is >= 640px
       640: {
         slidesPerView: 4,
-        spaceBetween: 40
-      }
-    }
+        spaceBetween: 40,
+      },
+    },
   };
+  @ViewChild('slides') slides: IonSlides;
   constructor(private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {}
+
+  next() {
+    this.slides.slideNext();
+  }
+
+  prev() {
+    this.slides.slidePrev();
+  }
 }
 
 export class TabTiles {
