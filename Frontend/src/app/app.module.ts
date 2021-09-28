@@ -23,6 +23,8 @@ import { ProfileComponent } from './landing/profile/profile.component';
 import { QuickLinksComponent } from './landing/quickLinks/quickLinks.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 import { httpInterceptorProviders } from './http-interceptor';
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
@@ -30,6 +32,10 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+}
+
+export function playerFactory() {
+  return player;
 }
 
 @NgModule({
@@ -52,6 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
       },
       defaultLanguage: 'en',
     }),
+    LottieModule.forRoot({ player: playerFactory }),
   ],
 
   entryComponents: [],
