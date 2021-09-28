@@ -590,10 +590,10 @@ app-package-available,
 app-reset-router-password,
 app-unable-to-connect,
 app-phone-issues-problem-value-added,
-.no-issue-segment-tabs > ion-col /* ,
-.service-detail-tab,
-.tv-detail-tab,
-.phone-issues-tabs */{
+.no-issue-segment-tabs > ion-col,
+app-service-detail,
+app-tv-detail,
+app-phone-issues-problem-value-added{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

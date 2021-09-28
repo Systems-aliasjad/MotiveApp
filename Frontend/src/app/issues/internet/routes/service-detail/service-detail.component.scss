@@ -200,8 +200,16 @@ ion-item::part(native) {
       @media screen and (max-width: 992px) {
         margin-bottom: 0;
       }
+      &:first-child {
+        @media screen and (max-width: 992px) {
+          padding-bottom: 0;
+        }
+      }
       &:last-child {
         margin-bottom: 0;
+        @media screen and (max-width: 992px) {
+          padding-top: 0;
+        }
       }
     }
     .sub-title {
