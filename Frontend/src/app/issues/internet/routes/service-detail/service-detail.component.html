@@ -1,9 +1,9 @@
 <ion-content>
   <ion-grid class="service-detail-contanier two-col-container">
     <!-- Page Title Start -->
-    <ion-row class="page-title">
+    <ion-row class="page-title" *ngIf="!isPartialLoaded">
       <ion-col class="pt-0 pb-0">
-        <app-page-top *ngIf="!isPartialLoaded"></app-page-top>
+        <app-page-top></app-page-top>
       </ion-col>
     </ion-row>
     <!-- Page Title End -->
