@@ -104,6 +104,11 @@ ion-item::part(native){
   }
 }
 // --------------------------------------------------------------
+.page-title{
+  margin-bottom: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .segment-tabs-container{
   background-color:$white;
   .segment-tabs{
@@ -131,7 +136,7 @@ ion-item::part(native){
   app-service-detail,
   app-tv-detail,
   app-phone-issues-problem-value-added {
-    height: calc(100vh - 134px);
+    height: calc(100vh - 184px);
     
   }
 }
