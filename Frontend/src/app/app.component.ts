@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
 
   Initialization() {
     this.sharedService.setLoader(true);
-    this.backendService.getUserDetail().subscribe((data: any) => {
+    this.backendService.getUserDetail('KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=', 'en').subscribe((data: any) => {
       this.authService.setAuthorizationToken(data?.result?.token);
       this.sharedService.setLoader(false);
       this.router.navigate(['landing'], { state: { user: data?.result } });

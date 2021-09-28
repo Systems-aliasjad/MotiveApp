@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class BackendService {
   constructor(public http: HttpClient) {}
 
-  getUserDetail() {
-    return this.http.get('http://10.51.106.150:7001/MOTIVE_APP_SELFCARE/token?lang=ar', { headers: { Authorization: `Bearer KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=` } });
+  getUserDetail(token: string, lang: string) {
+    return this.http.get(`MOTIVE_APP_SELFCARE/token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
   }
 }
