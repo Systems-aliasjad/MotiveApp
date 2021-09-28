@@ -46,6 +46,8 @@ import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-speci
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
+import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
+import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,8 @@ import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-di
     UnableWatchSpecificChannelComponent,
     ChannelNotListDialogComponent,
     GameSessionDialog,
+    RestartTvboxDialog,
+    ResetTvPinDialog,
   ],
   imports: [
     CommonModule,
@@ -104,6 +108,6 @@ import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-di
       defaultLanguage: 'en',
     }),
   ],
-  exports: [TvDetailComponent],
+  exports: [TvDetailComponent, ResetTvPinDialog],
 })
 export class TvModule {}

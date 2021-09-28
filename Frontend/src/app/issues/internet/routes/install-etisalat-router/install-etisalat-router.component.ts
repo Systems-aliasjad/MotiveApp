@@ -4,7 +4,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { InstallEtisalatRouterDialogComponent } from 'src/app/shared/dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
+import { InstallEtisalatRouterDialogComponent } from 'src/app/issues/internet/dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 import { errorMessages, regExps } from 'src/app/shared/validators/validations';
 

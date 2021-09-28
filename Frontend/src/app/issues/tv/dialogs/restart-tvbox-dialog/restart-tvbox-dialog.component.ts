@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { SharedService } from '../../shared.service';
+import { SharedService } from '../../../../shared/shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 

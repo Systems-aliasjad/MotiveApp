@@ -4,7 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { IDeviceCareContent } from 'src/app/shared/components/device-care/device-care.component';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
-import { RestartTvboxDialog } from 'src/app/shared/dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
+import { RestartTvboxDialog } from 'src/app/issues/tv/dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({

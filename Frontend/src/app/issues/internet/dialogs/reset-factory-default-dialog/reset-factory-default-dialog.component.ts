@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { SharedService } from '../../shared.service';
+import { CustomerJourneyConstants } from '../../../../shared/constants/CustomerJourneyConstants';
+import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
   selector: 'app-reset-factory-default-dialog',

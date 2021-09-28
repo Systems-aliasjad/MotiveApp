@@ -4,7 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { IDeviceCareContent } from 'src/app/shared/components/device-care/device-care.component';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
-import { RestartRouterDialog } from 'src/app/shared/dialogs/restart-router-dialog/restart-router-dialog.component';
+import { RestartRouterDialog } from 'src/app/issues/internet/dialogs/restart-router-dialog/restart-router-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({

@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { IDeviceCareContent } from 'src/app/shared/components/device-care/device-care.component';
 import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
-import { InternetIssuesDialogSecondComponent } from 'src/app/shared/dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
+import { InternetIssuesDialogSecondComponent } from 'src/app/issues/internet/dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({

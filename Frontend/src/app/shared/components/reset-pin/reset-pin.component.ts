@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ERoutingIds } from '../../constants/constants';
-import { ResetTvPinDialog } from '../../dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
+import { ResetTvPinDialog } from '../../../issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
 import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';

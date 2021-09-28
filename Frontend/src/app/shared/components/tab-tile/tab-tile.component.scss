@@ -37,12 +37,21 @@ ion-item::part(native) {
       top: 50%;
       transform: translateY(-50%);
       z-index: 2;
-
       &.left{
         left: -5px;
+        cursor: pointer;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+          opacity: .4;
+        }
       }
       &.right{
         right: -5px;
+        cursor: pointer;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+          opacity: .4;
+        }
       }
       img{
         width: 18px;        

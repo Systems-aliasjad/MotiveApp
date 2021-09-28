@@ -1,11 +1,5 @@
 import { Router } from '@angular/router';
-
-import { TermsConditionsComponent } from '../../components/terms-conditions/terms-conditions.component';
-
 import { Component, OnInit } from '@angular/core';
-
-import { SharedService } from '../../shared.service';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -26,6 +20,6 @@ export class ResetTvPinDialog implements OnInit {
   async confirm() {
     await this.modalCtrl.dismiss();
     await this.modalCtrl.dismiss();
-    this.router.navigate(['/tv-pin-reset-successfull']);
+    this.router.navigate(['issues/tv/tv-pin-reset-successfull']);
   }
 }
