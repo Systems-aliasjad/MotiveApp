@@ -128,17 +128,15 @@ ion-item::part(native){
   }
 }
 
-.no-issue-segment-tabs {
-  .service-detail-tab,
+/* .no-issue-segment-tabs {
+  .service-detail-tab{
+    height: calc(100vh - 145px);
+  } 
   .tv-detail-tab{
-    height: calc(100vh - 145px);
-    } 
-    /* app-tv-detail{
-    height: calc(100vh - 145px);
-    }
-    app-phone-issues-problem-value-added{
-    height: calc(100vh - 185px);
-    } */
-  
-} 
+    height: calc(100vh - 140px);
+  }
+  .phone-issues-tabs{
+    height: calc(100vh - 220px);
+  } 
+ }  */
   

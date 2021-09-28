@@ -19,7 +19,9 @@
           </ion-col>
         </ion-row>
       </ion-col>
-      <ion-col size="12" class="pr-0 pl-0 no-issue-segment-tabs">
+    </ion-row>
+    <ion-row class="no-issue-segment-tabs">
+      <ion-col size="12" class="ion-no-padding">
         <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast service-detail-tab">
           <app-service-detail [isPartialLoaded]="true"></app-service-detail>
         </div>

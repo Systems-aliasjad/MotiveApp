@@ -589,7 +589,11 @@ app-reset-pin,
 app-package-available,
 app-reset-router-password,
 app-unable-to-connect,
-.no-issue-segment-tabs{
+app-phone-issues-problem-value-added,
+.no-issue-segment-tabs > ion-col /* ,
+.service-detail-tab,
+.tv-detail-tab,
+.phone-issues-tabs */{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -55,6 +55,10 @@ export class TabTileComponent implements OnInit {
     grid: {
       row: 2,
     },
+   /*  navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    }, */
     breakpoints: {
       // when window width is >= 320px
       320: {
