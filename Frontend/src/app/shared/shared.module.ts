@@ -21,7 +21,6 @@ import { ButtonComponent } from './components/buttons/button.component';
 import { IssueListDialog } from './dialogs/issue-list-dialog/issue-list-dialog.component';
 import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
 import { DiagnoseIssueComponent } from './components/diagnose-issue/diagnose-issue.component';
-import { PhoneIssueListDialogComponent } from './dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 import { CcbPinResetFormComponent } from './components/forgot-ccb-pin/ccb-pin-reset-form.component';
 import { ResetRouterPasswordComponent } from './components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
@@ -46,7 +45,6 @@ import { createTranslateLoader } from '../app.module';
     ButtonComponent,
     IssueListDialog,
     DeviceListDialog,
-    PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
@@ -78,7 +76,6 @@ import { createTranslateLoader } from '../app.module';
     BookComplaintComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
-    PhoneIssueListDialogComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
