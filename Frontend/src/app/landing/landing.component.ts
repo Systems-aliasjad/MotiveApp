@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ICard } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
@@ -23,9 +23,18 @@ export class LandingComponent implements OnInit, OnDestroy {
   modal: any;
   user: any;
 
-  constructor(private sharedService: SharedService, public router: Router, private modalCtrl: ModalController, private backendService: BackendService) {}
+  constructor(
+    private sharedService: SharedService,
+    public router: Router,
+    private modalCtrl: ModalController,
+    private backendService: BackendService,
+    private activcatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
+    this.activcatedRoute.params.subscribe(() => {
+      this.sharedService.setDefaultValues();
+    });
     this.initialization();
   }
 
@@ -42,7 +51,6 @@ export class LandingComponent implements OnInit, OnDestroy {
     // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
     // this.getProductCode();
 
-    this.sharedService.setDefaultValues();
     this.selectedLang = this.sharedService.getDefaultLanguage();
     this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
   }

@@ -1,8 +1,7 @@
 <div [dir]="appDirection" class="app-container">
-  <app-loader *ngIf="showLoader"></app-loader>
-  <app-header *ngIf="!showLoader"></app-header>
-
+  <app-header></app-header>
   <ion-content class="body-wrapper export-wrapper">
+    <app-loader></app-loader>
     <ion-router-outlet [animated]="false"></ion-router-outlet>
   </ion-content>
 </div>

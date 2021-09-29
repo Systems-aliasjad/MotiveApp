@@ -63,6 +63,9 @@ export class SharedService {
   }
 
   setLoader(loaderState: boolean): void {
+    if (loaderState) {
+      this.setHeaderConfig('', false, false);
+    }
     this.loaderSubject.next(loaderState);
   }
   getLoader(): Observable<boolean> {
@@ -82,8 +85,8 @@ export class SharedService {
   }
 
   setDefaultValues() {
-    this.setHeaderConfig('', false, true);
-    this.setButtonConfig([]);
+    this.setHeaderConfig('', false, false);
     this.setTermsConditions(false);
+    this.setLoader(false);
   }
 }
