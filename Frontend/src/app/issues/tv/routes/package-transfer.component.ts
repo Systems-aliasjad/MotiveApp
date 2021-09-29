@@ -7,24 +7,48 @@ import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'book-complaint',
-  template: `<app-book-complaint [button1]="button1" (button1Click)="button1Listener($event)" [button2]="button2" (button2Click)="button2Listener()"></app-book-complaint>`,
+  selector: 'package-transfer',
+  template: `<app-transfer-package
+    [pageContent]="pageContent"
+    [cardList]="cardList"
+    [button1]="button1"
+    (button1Click)="button1Listener($event)"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  ></app-transfer-package>`,
 })
-export class BookComplaintComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
+export class PackageTransferComponent implements OnInit, OnDestroy {
+  pageContent: string;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.BOOK_AN_APPOINTMENT',
+    title: 'BUTTONS.CONFIRM_TRANSFER',
     explanatoryNote: '',
   };
 
   button2: IMotiveButton = {
     type: 'link',
-    title: 'BUTTONS.BACK',
+    title: 'BUTTONS.CLOSE',
     explanatoryNote: '',
   };
-
+  cardList: any[] = [
+    {
+      title: 'STB SR#039838920',
+      description: 'MAC abcd@1234',
+      checked: true,
+    },
+    {
+      title: 'STB SR#039838931',
+      description: 'MAC abcd@567',
+      checked: false,
+    },
+    {
+      title: 'STB SR#039838920',
+      description: 'MAC abcd@789',
+      checked: false,
+    },
+  ];
   formGroup: FormGroup;
+  subscription: Subscription;
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
@@ -38,16 +62,17 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.BOOK_A_COMPLAINT', false);
+    this.sharedService.setHeaderConfig('HEADER.TRANSFER_PACKAGE', false, true);
+    this.pageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
   }
 
   button1Listener(_event) {
     this.formGroup = _event;
     console.log(this.formGroup.valid);
-    this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);
+    this.router.navigate(['issues/tv/package-transfer-success']);
   }
 
   button2Listener() {
-    this.location.back();
+    this.router.navigate(['thanks']);
   }
 }

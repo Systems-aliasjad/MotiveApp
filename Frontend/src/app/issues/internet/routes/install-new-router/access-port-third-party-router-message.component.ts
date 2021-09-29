@@ -32,7 +32,7 @@ export class AccessPortThirdPartyRouterMessageComponent implements OnInit, OnDes
 
   button2: IMotiveButton = {
     type: 'link',
-    title: 'BUTTONS.INSTALL_NEW_THIRD-PARTY_ROUTER',
+    title: 'BUTTONS.INSTALL_NEW_THIRD_PARTY_ROUTER',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}

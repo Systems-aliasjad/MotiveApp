@@ -27,7 +27,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   section1Template;
   section1Data;
   button1: IMotiveButton = {
-    title: 'BUTTONS.USING_THE_SAME_ROUTER',
+    title: 'BUTTONS.YES_I_AM',
     type: 'primary',
     explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };

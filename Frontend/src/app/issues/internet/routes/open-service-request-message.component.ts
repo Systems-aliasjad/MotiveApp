@@ -27,7 +27,7 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.FOLLOW_UP',
+    title: 'BUTTONS.YES_FOLLOW_UP',
     explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
   };
 
@@ -61,8 +61,6 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
       dateVisit: 'Jul 10 2019, 10:30 AM',
       status: 'Xxxxx xxxxx xxxx',
     };
-
-    CustomerJourneyConstants.openTechnicalSrButtons;
   }
 
   button1Listener() {}

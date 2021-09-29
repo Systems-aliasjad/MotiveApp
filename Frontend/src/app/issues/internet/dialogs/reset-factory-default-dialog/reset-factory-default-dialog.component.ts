@@ -11,9 +11,7 @@ import { SharedService } from '../../../../shared/shared.service';
 })
 export class ResetFactoryDefaultDialog implements OnInit {
   terms: boolean = true;
-  constructor(private modalCtrl: ModalController, private router: Router, private sharedService: SharedService) {
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.resetFactoryDefault));
-  }
+  constructor(private modalCtrl: ModalController, private router: Router, private sharedService: SharedService) {}
 
   CloseMOdal() {
     this.dismiss();
@@ -21,17 +19,6 @@ export class ResetFactoryDefaultDialog implements OnInit {
   }
 
   ngOnInit() {}
-
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
-  }
 
   dismiss() {
     this.modalCtrl.dismiss();

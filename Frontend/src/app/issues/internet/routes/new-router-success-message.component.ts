@@ -50,7 +50,6 @@ export class NewRouterSuccessMessageComponent implements OnInit, OnDestroy {
     this.subHeaderSectionData = {
       referenceNo: '436529873',
     };
-    CustomerJourneyConstants.thirdPartyRoutersuccessfullyButtons;
   }
 
   button1Listener() {

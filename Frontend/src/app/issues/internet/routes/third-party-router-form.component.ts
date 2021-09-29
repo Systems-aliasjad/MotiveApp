@@ -38,7 +38,7 @@ export class ThirdPartyRouterFormComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.THIRD_PARTY_ROUTER', false);
+    this.sharedService.setHeaderConfig('HEADER.BUY_NEW_ROUTER', false);
   }
 
   button1Listener(_event) {

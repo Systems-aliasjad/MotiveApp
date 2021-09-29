@@ -46,7 +46,7 @@ export class InstallNewRouterResetInternetPasswordComponent implements OnInit, O
 
   updatePageContent() {
     this.resetContent.header = 'HEADER.RESET_INTERNET_PASSWORD';
-    this.resetContent.subheader = 'MESSAGES.YOU_NEED_TO_RESET_YOUR_INTERNET_PASSWORD_TO_INSTALL_THE_THIRD-PARTY_ROUTER';
+    this.resetContent.subheader = 'Messages.YOU_NEED_TO_RESET_YOUR_INTERNET_PASSWORD_TO_INSTALL_THE_THIRD_PARTY_ROUTER';
     this.resetContent.inputLablel = 'MESSAGES.ENTER_YOUR_MOBILE_NUMBER_TO_RECEIVE_THE_NEW_PIN_VIA_SMS';
   }
 

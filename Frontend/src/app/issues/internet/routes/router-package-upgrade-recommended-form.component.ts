@@ -38,7 +38,7 @@ export class RouterPackageUpgradeRecommendedFormComponent implements OnInit, OnD
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.ROUTER_PACKAGE_UPGRADE', false);
+    this.sharedService.setHeaderConfig('HEADER.ROUTER_AND_PACKAGE_UPGRADE', false);
   }
 
   button1Listener(_event) {
