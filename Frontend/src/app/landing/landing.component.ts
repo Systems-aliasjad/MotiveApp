@@ -34,8 +34,14 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   initialization() {
+    // TODO: REMOVE FOLLWOING
+    this.codeType = '3P';
+    this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+
     this.updateProfileData();
-    this.getProductCode();
+    // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
+    // this.getProductCode();
+
     this.sharedService.setDefaultValues();
     this.selectedLang = this.sharedService.getDefaultLanguage();
     this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);

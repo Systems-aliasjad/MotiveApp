@@ -31,12 +31,22 @@ export class AppComponent implements OnInit {
   }
 
   Initialization() {
-    this.sharedService.setLoader(true);
-    this.backendService.getUserDetail('KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=', 'en').subscribe((data: any) => {
-      this.authService.setAuthorizationToken(data?.result?.token);
-      this.sharedService.setLoader(false);
-      this.router.navigate(['landing'], { state: { user: data?.result } });
+    // TODO: ROMOVE this.router.navigate
+    this.router.navigate(['landing'], {
+      state: {
+        user: {
+          accountId: '1234567890',
+          username: 'Mock data',
+        },
+      },
     });
+    // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
+    // this.sharedService.setLoader(true);
+    // this.backendService.getUserDetail('KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=', 'en').subscribe((data: any) => {
+    //   this.authService.setAuthorizationToken(data?.result?.token);
+    //   this.sharedService.setLoader(false);
+    //   this.router.navigate(['landing'], { state: { user: data?.result } });
+    // });
     const selectedLang = this.sharedService.getDefaultLanguage();
     this.appDirection = selectedLang === 'en' ? 'ltr' : 'rtl';
     this.sharedService.setDefaultLanguage(selectedLang);
