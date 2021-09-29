@@ -9,7 +9,6 @@
 // --------------------------------------------------------------
 
 .info-container {
-  font-family: Lato, Roboto, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -20,7 +19,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 1rem;
+  text-align: center;
   h4 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
