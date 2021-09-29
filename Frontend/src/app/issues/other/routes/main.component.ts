@@ -3,12 +3,12 @@ import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-main',
-  template: `Loader works`,
+  template: '',
 })
 export class MainComponent implements OnInit {
   constructor(private shareService: SharedService) {}
 
   ngOnInit() {
-    this.shareService.setHeaderConfig('', false, true);
+    this.shareService.setLoader(true);
   }
 }
