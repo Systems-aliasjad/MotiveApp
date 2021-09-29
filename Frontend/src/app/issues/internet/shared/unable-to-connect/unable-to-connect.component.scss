@@ -36,19 +36,39 @@ ion-grid {
   height: 100%;
 }
 .device-care-lg {
-  @media screen and (max-width: 992px) {
-    display: none;
-  }
+  // @media screen and (max-width: 992px) {
+  //   display: none;
+  // }
   /* .device-care_image_lg{
     @media screen and (max-width: 992px) {
       display:none;
     }
   } */
+  ul.bullet-list{
+    padding-left: 0;
+    @media screen and (min-width: 992px) {
+      padding-left: 40px;
+    }
+    li {
+      color: $secondary-color;
+      margin: 18px 0;    
+      list-style: none;
+      &:first-of-type{
+        margin-top: 0;
+      }
+      ul{
+        padding-left: 30px;
+        li{
+          margin: 18px 0;          
+        }
+      }
+    }
+  }
 }
 .device-care-sm {
-  @media screen and (min-width: 992px) {
-    display: none;
-  }
+  // @media screen and (min-width: 992px) {
+  //   display: none;
+  // }
   .content {
     max-width: 100%;
     margin: 0;
@@ -62,6 +82,10 @@ ion-grid {
   }
   p {
     margin: 0;
+  }
+  ion-item {
+    color: $secondary-color;
+    margin: 18px 0;
   }
 }
 
@@ -91,7 +115,7 @@ ion-grid {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
-  max-width: 472px;
+  // max-width: 472px;
   height: auto;
   margin: 2rem auto 0;
   img {
