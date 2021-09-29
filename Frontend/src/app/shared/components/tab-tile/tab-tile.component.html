@@ -3,9 +3,13 @@
     <!-- service-State list Start-->
     <div class="service-states-container">
       <div class="arrow-container left">
-        <img src="assets/images/action-icons/icon_networkmap_arrow_left.svg" alt="move left" (click)="next()" />
+        <img
+          [src]="!arrow_left ? 'assets/images/action-icons/icon_networkmap_arrow_left.svg' : 'assets/images/action-icons/icon_arrow_left_grey.svg'"
+          alt="move left"
+          (click)="!arrow_left ? next() : ''"
+        />
       </div>
-      <ion-slides [options]="slideOpts" #slides>
+      <ion-slides [options]="slideOpts" #slides (ionSlideWillChange)="doCheck()">
         <ion-slide *ngFor="let item of tilesList">
           <div class="service-state">
             <div class="{{ item.className }} state">
@@ -18,12 +22,14 @@
           </div>
         </ion-slide>
       </ion-slides>
-     <!--  <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div> -->
       <div class="arrow-container right">
-        <img src="assets/images/action-icons/icon_networkmap_arrow_right.svg" alt="move right" (click)="prev()" />
+        <img
+          [src]="!arrow_right ? 'assets/images/action-icons/icon_networkmap_arrow_right.svg' : 'assets/images/action-icons/icon_arrow_right_grey.svg'"
+          alt="move right"
+          (click)="!arrow_right ? prev() : ''"
+        />
       </div>
-      
+
       <!-- service-States list Start-->
     </div>
   </ion-col>
