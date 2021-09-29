@@ -17,10 +17,10 @@ import { ERoutingIds } from './shared/constants/constants';
 // import { UnableWatchSpecificChannelComponent } from './issues/tv/routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { TabTileComponent } from './shared/components/tab-tile/tab-tile.component';
 // import { PhoneIssuesProblemValueAddedComponent } from './issues/phone/routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
-import { PhoneIssueListDialogComponent } from './shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
 // import { ResetRouterPasswordComponent } from './shared/components/reset-router-password/reset-router-password.component';
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
+import { EIssueFlow, IssueListDialog } from './shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 const routes: Routes = [
   // REFACTORED LOGIC
   {
@@ -152,7 +152,7 @@ const routes: Routes = [
   // { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
   // { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
   // { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
-  { path: 'phone-issue-list-dialog', component: PhoneIssueListDialogComponent, data: { id: ERoutingIds.noIssuePhone } },
+  { path: 'phone-issue-list-dialog', component: IssueListDialog, data: { id: EIssueFlow.phoneIssue } },
 
   //Ont reboot required
   { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },

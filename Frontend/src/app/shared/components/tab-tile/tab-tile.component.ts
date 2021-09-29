@@ -55,7 +55,7 @@ export class TabTileComponent implements OnInit {
     grid: {
       row: 2,
     },
-   /*  navigation: {
+    /*  navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     }, */
@@ -78,6 +78,8 @@ export class TabTileComponent implements OnInit {
     },
   };
   @ViewChild('slides') slides: IonSlides;
+  arrow_right: boolean = true;
+  arrow_left: boolean = false;
   constructor(private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {}
@@ -88,6 +90,15 @@ export class TabTileComponent implements OnInit {
 
   prev() {
     this.slides.slidePrev();
+  }
+
+  doCheck() {
+    this.slides.isBeginning().then((val) => {
+      this.arrow_right = val;
+    });
+    this.slides.isEnd().then((val) => {
+      this.arrow_left = val;
+    });
   }
 }
 
