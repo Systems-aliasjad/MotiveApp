@@ -282,6 +282,28 @@ ion-item::part(native) {
         }
       }
     }
+    .data-traffic-container{
+      &:nth-child(1){
+        @media screen and (min-width:992px) {
+          .devices-network{
+            border-radius: 0.5rem;
+            background-color: #ffffff;
+            box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+            padding: 16px;
+            display: block;
+            margin-bottom: 32px;
+            .sub-title{
+              margin-bottom: 8px;
+              
+              &:nth-child(2){
+                font-weight: 400;
+                margin-bottom: 0;
+              }
+            }
+          }  
+        }   
+      }
+    }
     .devices-network {
       margin-top: 1rem;
       display: -webkit-box;
@@ -296,10 +318,22 @@ ion-item::part(native) {
       align-items: center;
       -webkit-box-pack: justify;
       -ms-flex-pack: justify;
-      justify-content: space-between;
+      justify-content: space-between;      
       @media screen and (max-width: 992px) {
         margin-top: 1rem;
         margin-bottom: 1rem;
+        padding: 1rem 0;
+        display: block;
+      }
+      .sub-title{
+        @media screen and (max-width: 992px) {
+          margin-bottom: 0rem;
+        }
+        &:nth-child(2){
+          @media screen and (max-width: 992px) {
+            margin-top: 8px;
+          }
+        }
       }
       p {
         margin-top: 0;

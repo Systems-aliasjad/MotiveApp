@@ -104,6 +104,11 @@ ion-item::part(native){
   }
 }
 // --------------------------------------------------------------
+.page-title{
+  margin-bottom: 0;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+}
 .segment-tabs-container{
   background-color:$white;
   .segment-tabs{
@@ -127,18 +132,11 @@ ion-item::part(native){
     }
   }
 }
-
 .no-issue-segment-tabs {
-  .service-detail-tab,
-  .tv-detail-tab{
-    height: calc(100vh - 145px);
-    } 
-    /* app-tv-detail{
-    height: calc(100vh - 145px);
-    }
-    app-phone-issues-problem-value-added{
-    height: calc(100vh - 185px);
-    } */
-  
-} 
-  
+  app-service-detail,
+  app-tv-detail,
+  app-phone-issues-problem-value-added {
+    height: calc(100vh - 184px);
+    
+  }
+}

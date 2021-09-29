@@ -1,38 +1,43 @@
 <!-- <ion-content></ion-content>  -->
-  <ion-grid class="pr-0 pl-0">
-    <!-- Form Start -->
-    <ion-row>
-      <ion-col size="12" class="rws-top-tabs-col ion-no-padding segment-tabs-container">
-        <ion-row class="segment-tabs">
-          <ion-col sizeLg="4" sizeMd="12" sizeSm="12">
-            <ion-segment (ionChange)="segmentChanged($event)" [value]="segment">
-              <ion-segment-button value="1">
-                <ion-label>{{ 'MESSAGES.INTERNET' | translate }}</ion-label>
-              </ion-segment-button>
-              <ion-segment-button value="2">
-                <ion-label>{{ 'MESSAGES.TELEVISION' | translate }}</ion-label>
-              </ion-segment-button>
-              <ion-segment-button value="3">
-                <ion-label>{{ 'MESSAGES.TELEPHONE' | translate }}</ion-label>
-              </ion-segment-button>
-            </ion-segment>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-      <ion-col size="12" class="pr-0 pl-0 no-issue-segment-tabs">
-        <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast service-detail-tab">
-          <app-service-detail [isPartialLoaded]="true"></app-service-detail>
-        </div>
-        <div *ngIf="segment === '2'" class="animate__animated animate__slideInUp animate__fast tv-detail-tab">
-          <app-tv-detail [isPartialLoaded]="true"></app-tv-detail>
-        </div>
+<ion-grid class="pr-0 pl-0">
+  <ion-row class="page-title">
+    <ion-col class="pt-0 pb-0">
+      <app-page-top></app-page-top>
+    </ion-col>
+  </ion-row>
+  <!-- Form Start -->
+  <ion-row>
+    <ion-col size="12" class="rws-top-tabs-col pt-0 pb-0 segment-tabs-container">
+      <ion-row class="segment-tabs">
+        <ion-col sizeLg="4" sizeMd="12" sizeSm="12">
+          <ion-segment (ionChange)="segmentChanged($event)" [value]="segment">
+            <ion-segment-button value="1">
+              <ion-label>{{ 'MESSAGES.INTERNET' | translate }}</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="2">
+              <ion-label>{{ 'MESSAGES.TELEVISION' | translate }}</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="3">
+              <ion-label>{{ 'MESSAGES.TELEPHONE' | translate }}</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+  <ion-row class="no-issue-segment-tabs">
+    <ion-col size="12" class="ion-no-padding">
+      <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast service-detail-tab">
+        <app-service-detail [isPartialLoaded]="true"></app-service-detail>
+      </div>
+      <div *ngIf="segment === '2'" class="animate__animated animate__slideInUp animate__fast tv-detail-tab">
+        <app-tv-detail [isPartialLoaded]="true"></app-tv-detail>
+      </div>
 
-        <div *ngIf="segment === '3'" class="animate__animated animate__slideInUp animate__fast phone-issues-tabs">
-          <app-phone-issues-problem-value-added [isPartialLoaded]="true"></app-phone-issues-problem-value-added>
-        </div>
-      </ion-col>
-    </ion-row>
-    <!-- Form End -->
-  </ion-grid>
-
-
+      <div *ngIf="segment === '3'" class="animate__animated animate__slideInUp animate__fast phone-issues-tabs">
+        <app-phone-issues-problem-value-added [isPartialLoaded]="true"></app-phone-issues-problem-value-added>
+      </div>
+    </ion-col>
+  </ion-row>
+  <!-- Form End -->
+</ion-grid>

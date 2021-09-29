@@ -15,7 +15,7 @@
         <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
           <ion-grid class="pr-0 pl-0">
             <ion-row>
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ resetPinContent.inputLablel | translate }}</ion-label>
                   <ion-input
@@ -26,7 +26,7 @@
                     [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
                   ></ion-input>
 
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
                     {{ 'MESSAGES.PLEASE_ENTER_A_VALID_MOBILE_NUMBER' | translate }}
                   </div>
                 </ion-item>

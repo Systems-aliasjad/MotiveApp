@@ -260,6 +260,7 @@ p {
 .letter-space-none {
   letter-spacing: 0;
 }
+
 .text-error {
   color: $error-color;
 }
@@ -589,7 +590,11 @@ app-reset-pin,
 app-package-available,
 app-reset-router-password,
 app-unable-to-connect,
-.no-issue-segment-tabs{
+app-phone-issues-problem-value-added,
+.no-issue-segment-tabs > ion-col,
+app-service-detail,
+app-tv-detail,
+app-phone-issues-problem-value-added{
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
