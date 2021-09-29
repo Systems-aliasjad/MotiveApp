@@ -29,7 +29,7 @@ export class ChannelDetailComponent implements OnInit {
   }
 
   updatePageContent() {
-    this.subHeader = 'SUBHEADER.THE_CHANNEL_IS_AVAILABLE_ON_THE_BELOW_TV_BOX';
+    this.subHeader = 'SUBHEADER.THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX';
     this.packages = [
       {
         title: 'Movies Unlimited Premium',

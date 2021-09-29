@@ -201,56 +201,56 @@ const RESET_PIN = {
 };
 
 const INSTALL_NEW_ROUTER = {
-  body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
+  body: 'QUICK_LINKS.I_WANT_TO_INSTALL_MY_NEW_ROUTER',
   linkTo: '/issues/internet/install-new-router',
 };
 const FACTORY_RESET_ROUTER = {
-  body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
+  body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_ROUTER',
   linkTo: '/issues/internet/router-reset-factory',
 };
 const FACTORY_RESET_TV = {
-  body: 'QUICK_LINKS.FACTORY_RESET_TV',
+  body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
   linkTo: 'issues/tv/tv-box-reset-factory',
 };
 const ELIFE_ON_PIN_RESET = {
-  body: 'QUICK_LINKS.ELIFE_ON_PIN_RESET',
+  body: 'QUICK_LINKS.I_WANT_TO_RESET_ELIFE_ON_PIN',
   linkTo: 'issues/tv/pin-reset-failed',
 };
 
 const FORGOT_PASSWORD_INTERNET = {
-  body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
+  body: 'QUICK_LINKS.I_FORGOT_MY_INTERNET_PASSWORD',
   linkTo: 'issues/internet/reset-internet-password',
 };
 const CONNECTION_ISSUE_ROUTER = {
-  body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
+  body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
   linkTo: 'unable-connect-newDevice',
 };
 const FORGOT_PASSWORD_TV = {
-  body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
+  body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
   linkTo: '/issues/password/reset-tv-admin-pin',
 };
 const TRANSFER_PACKAGE_TV = {
-  body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
+  body: 'QUICK_LINKS.I_WANT_TO_TRANSFER_ELIFE_TV_PACKAGE_TO_ANOTHER_TV_BOX',
   linkTo: 'issues/tv/no-additional-stb',
 };
 const CONNECT_HOME_ZONE = {
-  body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
+  body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
   linkTo: 'device-connected-homezone',
 };
 const TRACK_COMPLAINT = {
-  body: 'QUICK_LINKS.TRACK_COMPLAINT',
+  body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
   linkTo: 'track-complaint/complaint-details-message',
 };
 const TRACK_REQUEST = {
-  body: 'QUICK_LINKS.TRACK_REQUEST',
+  body: 'QUICK_LINKS.I_WANT_TO_TRACK_MY_REQUEST',
   linkTo: 'track-request/request-detail',
 };
 const UPGRADE_ROUTER = {
-  body: 'QUICK_LINKS.UPGRADE_ROUTER',
+  body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ROUTER',
   linkTo: 'issues/internet/router-upgrade',
 };
 const UPGRADE_PACKAGE = {
-  body: 'QUICK_LINKS.UPGRADE_PACKAGE',
+  body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE',
   linkTo: 'issues/tv/eLife-upgrade',
 };
 
@@ -474,62 +474,62 @@ export class ApplicableCodes {
   // ];
   // public static quickLinkCards: ICard[] = [
   //   {
-  //     body: 'QUICK_LINKS.INSTALL_NEW_ROUTER',
+  //     body: 'QUICK_LINKS.I_WANT_TO_INSTALL_MY_NEW_ROUTER',
   //     applicableCodes: INSTALL_NEW_ROUTER,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.FACTORY_RESET_ROUTER',
+  //     body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_ROUTER',
   //     applicableCodes: FACTORY_RESET_ROUTER,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.FACTORY_RESET_TV',
+  //     body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
   //     applicableCodes: FACTORY_RESET_TV,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.FORGOT_PASSWORD_INTERNET',
+  //     body: 'QUICK_LINKS.I_FORGOT_MY_INTERNET_PASSWORD',
   //     applicableCodes: FORGOT_PASSWORD_INTERNET,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.CONNECTION_ISSUE_ROUTER',
+  //     body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
   //     applicableCodes: CONNECTION_ISSUE_ROUTER,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.FORGOT_PASSWORD_TV',
+  //     body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
   //     applicableCodes: FORGOT_PASSWORD_TV,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.TRANSFER_PACKAGE_TV',
+  //     body: 'QUICK_LINKS.I_WANT_TO_TRANSFER_ELIFE_TV_PACKAGE_TO_ANOTHER_TV_BOX',
   //     applicableCodes: TRANSFER_PACKAGE_TV,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.CONNECT_HOME_ZONE',
+  //     body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
   //     applicableCodes: CONNECT_HOME_ZONE,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.TRACK_COMPLAINT',
+  //     body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
   //     applicableCodes: TRACK_COMPLAINT,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.TRACK_REQUEST',
+  //     body: 'QUICK_LINKS.I_WANT_TO_TRACK_MY_REQUEST',
   //     applicableCodes: TRACK_REQUEST,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.UPGRADE_ROUTER',
+  //     body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ROUTER',
   //     applicableCodes: UPGRADE_ROUTER,
   //     linkTo: '',
   //   },
   //   {
-  //     body: 'QUICK_LINKS.UPGRADE_PACKAGE',
+  //     body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE',
   //     applicableCodes: UPGRADE_PACKAGE,
   //     linkTo: '',
   //   },

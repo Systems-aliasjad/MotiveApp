@@ -27,7 +27,7 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.FOLLOW_UP',
+    title: 'BUTTONS.YES_FOLLOW_UP',
     explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
   };
 

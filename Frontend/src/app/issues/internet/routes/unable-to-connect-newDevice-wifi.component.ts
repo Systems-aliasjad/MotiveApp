@@ -43,7 +43,7 @@ export class UnableToConnectNewDeviceWiFiComponent implements OnInit, OnDestroy 
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_CONNECT_NEW_DEVICE_WIFI', true);
+    this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI', true);
   }
 
   updatePageContent() {

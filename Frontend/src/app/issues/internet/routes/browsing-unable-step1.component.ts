@@ -47,7 +47,7 @@ export class BrowsingUnableStep1Component implements OnInit, OnDestroy {
     this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
     this.careContent.header1 = 'SUBHEADER.CHECK_YOUR_BROWSER_SETTING';
     this.careContent.body1 = 'MESSAGES.SELECT_THE_OPERATING_SYSTEM_AND_BROWSER_FROM_THE_DROP_DOWN_MENU_IN_ORDER_TO_LEARN_MORE_ABOUT_PROXY_CONFIGURATION';
-    this.careContent.body2 = 'MESSAGES.PLEASE_MAKE_SURE_THAT_YOUR_PC/LAPTOP_BROWSER_IS_CONFIGURED_WITH_THE_CORRECT_PROXY_SETTINGS';
+    this.careContent.body2 = 'Messages.PLEASE_MAKE_SURE_THAT_YOUR_PC_LAPTOP_BROWSER_IS_CONFIGURED_WITH_THE_CORRECT_PROXY_SETTINGS';
   }
 
   button1Listener() {

@@ -57,7 +57,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
         },
       ];
     } else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
-      this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
+      this.PageTitle = 'HEADER.TRANSFER_PACKAGE';
       this.PageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
@@ -82,7 +82,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
 
     //RESET TV BOX FACTORY
     else if (this.codeType === ERoutingIds.enableWatchSpecificChannelpackageTransfer) {
-      this.PageTitle = 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE';
+      this.PageTitle = 'HEADER.TRANSFER_PACKAGE';
       this.PageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
       this.sharedService.setHeaderConfig(this.PageTitle, false, true);
       this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.unableWatchSpecificTransferPackageButtons));
