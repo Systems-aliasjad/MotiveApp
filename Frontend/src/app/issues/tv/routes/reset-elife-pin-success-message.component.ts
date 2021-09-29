@@ -51,7 +51,6 @@ export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
       userId: '<XXX>',
       pin: '1111@eLife',
     };
-    CustomerJourneyConstants.restELifeLoginPinResetSuccessButton;
   }
   button1Listener() {
     this.router.navigate(['/thanks']);

@@ -40,7 +40,6 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
       console.log('Span Click Listener');
     };
     this.imgSrc = warningImgSrc;
-    CustomerJourneyConstants.accountNotActiveButtons;
   }
 
   button1Listener() {

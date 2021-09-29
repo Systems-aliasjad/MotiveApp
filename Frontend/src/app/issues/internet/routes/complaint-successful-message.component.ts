@@ -59,8 +59,6 @@ export class ComplaintSuccessfulMessageComponent implements OnInit, OnDestroy {
       dateVisit: 'Jul 10 2019, 10:30 AM',
       location: 'Xxxxx xxxxx xxxx',
     };
-
-    CustomerJourneyConstants.complaintbookssuccessfullyButtons;
   }
 
   button1Listener() {}

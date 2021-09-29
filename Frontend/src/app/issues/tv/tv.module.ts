@@ -37,7 +37,7 @@ import { HttpClient } from '@angular/common/http';
 import { GameSessionComponent } from './routes/game-session/game-session.component';
 import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
-import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
+import { TransferPackageComponent } from './shared/transfer-package/transfer-package.component';
 import { PackageAvailableComponent } from './shared/package-available/package-available.component';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
@@ -48,6 +48,8 @@ import { ChannelNotListDialogComponent } from './dialogs/channel-not-list-dialog
 import { GameSessionDialog } from './dialogs/game-session-dialog/game-session-dialog.component';
 import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox-dialog.component';
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
+import { PackageTransferComponent } from './routes/package-transfer.component';
+import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
 
 @NgModule({
   declarations: [
@@ -91,6 +93,8 @@ import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dia
     GameSessionDialog,
     RestartTvboxDialog,
     ResetTvPinDialog,
+    PackageTransferComponent,
+    UnableToWatchPackageTransferComponent,
   ],
   imports: [
     CommonModule,
