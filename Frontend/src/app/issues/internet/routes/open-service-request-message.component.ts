@@ -61,8 +61,6 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
       dateVisit: 'Jul 10 2019, 10:30 AM',
       status: 'Xxxxx xxxxx xxxx',
     };
-
-    CustomerJourneyConstants.openTechnicalSrButtons;
   }
 
   button1Listener() {}

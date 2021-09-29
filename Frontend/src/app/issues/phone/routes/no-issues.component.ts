@@ -2,8 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from 'src/app/shared/constants/constants';
-import { PhoneIssueListDialogComponent } from 'src/app/shared/dialogs/phone-issue-list-dialog/phone-issue-list-dialog.component';
+import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { IMotiveButton } from '../../../shared/components/diagnose-issue/diagnose-issue.component';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -67,11 +66,12 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
 
   async button3Listener() {
     this.modal = await this.modalCtrl.create({
-      component: PhoneIssueListDialogComponent,
+      component: IssueListDialog,
       componentProps: {
-        flow: ERoutingIds.noIssuePhone,
+        flow: EIssueFlow.phoneIssue,
       },
     });
+
     return await this.modal.present();
   }
 }

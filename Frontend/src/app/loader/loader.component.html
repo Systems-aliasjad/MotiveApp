@@ -1,6 +1,18 @@
-<ng-lottie [options]="optionsLoader"></ng-lottie>
-<p>{{ percentageLoaded }}</p>
-
-<P>{{ 'HEADER.ALMOST_THERE' | translate }}</P>
-
-<P *ngFor="let message of messages"> {{ message | translate }}</P>
+<ion-content>
+  <ion-grid class="info-container">
+    <ion-row>
+      <ion-col size="12">
+        <div class="loader-container">
+          <ng-lottie [options]="optionsLoader"></ng-lottie>
+          <span class="loader_count">{{ percentageLoaded }}%</span>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row class="content">
+      <ion-col size="12">
+        <h4>{{ 'HEADER.ALMOST_THERE' | translate }}</h4>
+        <P *ngFor="let message of messages"> {{ message | translate }}</P>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

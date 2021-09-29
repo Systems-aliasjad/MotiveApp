@@ -37,17 +37,6 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        obj,
-        clickListener: () => {
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
-  }
-
   ngOnInit() {}
 
   initialization() {

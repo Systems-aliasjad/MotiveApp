@@ -10,17 +10,6 @@ import { SharedService } from '../../../../shared/shared.service';
 export class ChannelNotListDialogComponent implements OnInit {
   constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
 
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
-  }
-
   ngOnInit() {}
 
   endTroubleshoot() {

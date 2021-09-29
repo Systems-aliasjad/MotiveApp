@@ -7,6 +7,7 @@ export enum EIssueFlow {
   internetIssue,
   tvIssue,
   passwordIssue,
+  phoneIssue,
 }
 @Component({
   selector: 'issue-list-dialog',
@@ -80,7 +81,7 @@ export class IssueListDialog implements OnInit {
     {
       issue: "Reset router's Wi-Fi password",
       description: "Tap here if you forgot your router's Wi-Fi password",
-      route: 'reset-router-password',
+      route: '/issues/internet/reset-wifi-password',
     },
     {
       issue: 'Reset TV admin PIN',
@@ -98,6 +99,28 @@ export class IssueListDialog implements OnInit {
       route: 'reset-ccb-pin',
     },
   ];
+  phoneIssuesList: any[] = [
+    {
+      issue: 'Unable to make/receive calls',
+      route: '/issues/phone/unable-to-call/device-care',
+    },
+    {
+      issue: 'No dial tone',
+      route: '/issues/phone/no-dail-tone/device-care',
+    },
+    {
+      issue: 'Problem with Value-Added Service ',
+      route: 'issues/phone/no-issue-phone-value-added',
+    },
+    {
+      issue: 'Forgot Code Control Barring (CCB) PIN',
+      route: 'no-issue-phone-reset-ccb-pin',
+    },
+    {
+      issue: 'Change call forwarding number',
+      route: 'no-issue-phone-phone-Change-call-forward',
+    },
+  ];
   issuesList: any[];
   constructor(private modalCtrl: ModalController, private router: Router) {}
 
@@ -109,6 +132,8 @@ export class IssueListDialog implements OnInit {
     } else if (this.flow === EIssueFlow.passwordIssue) {
       this.issuesList = this.passwordIssueList;
       this.showViewGuidline = false;
+    } else if (this.flow === EIssueFlow.phoneIssue) {
+      this.issuesList = this.phoneIssuesList;
     }
   }
 
