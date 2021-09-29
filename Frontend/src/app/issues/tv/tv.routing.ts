@@ -34,10 +34,11 @@ import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
-import { TransferPackageComponent } from './routes/transfer-package/transfer-package.component';
 import { ResetPinFailedMessageComponent } from 'src/app/all-services/routes/reset-pin-failed-message.component';
 import { ChannelDetailComponent } from './routes/channel-detail.component';
 import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
+import { PackageTransferComponent } from './routes/package-transfer.component';
+import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
 
 const routes: Routes = [
   {
@@ -186,13 +187,13 @@ const routes: Routes = [
   },
   {
     path: 'package-transfer',
-    component: TransferPackageComponent,
-    data: { id: ERoutingIds.packagetransfer },
+    component: PackageTransferComponent,
+    // data: { id: ERoutingIds.packagetransfer },
   },
   {
     path: 'unable-to-watch-package-transfer',
-    component: TransferPackageComponent,
-    data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer },
+    component: UnableToWatchPackageTransferComponent,
+    // data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer },
   },
   {
     path: 'unable-to-watch-specific-channel',

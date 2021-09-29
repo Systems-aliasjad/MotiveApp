@@ -15,16 +15,6 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   cardList;
   @Input()
   isPartialLoaded: boolean = false;
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
-  }
 
   constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {}
   ngOnDestroy(): void {

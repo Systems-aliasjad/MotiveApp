@@ -16,14 +16,14 @@ export interface ITabTile {
 /**
  * @deprecated - need to be removed, please don't use this
  */
-export interface IButton {
-  title: string;
-  clickListener: () => void;
-  behaviour: string; // primary | secondary | link
-  explanatoryNote?: string;
-  linkTo?: string;
-  customListner?: string;
-}
+// export interface IButton {
+//   title: string;
+//   clickListener: () => void;
+//   behaviour: string; // primary | secondary | link
+//   explanatoryNote?: string;
+//   linkTo?: string;
+//   customListner?: string;
+// }
 
 interface IMessageIssueBody {
   title: string;

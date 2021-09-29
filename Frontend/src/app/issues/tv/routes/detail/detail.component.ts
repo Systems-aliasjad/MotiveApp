@@ -14,14 +14,6 @@ export class TvDetailComponent implements OnInit {
   @Input()
   isPartialLoaded: boolean = false;
   modal;
-  constructor(public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
-  ngOnInit() {
-    if (!this.isPartialLoaded) {
-      this.sharedService.setHeaderConfig('TV details', false);
-    }
-
-    this.sharedService.setButtonConfig(this.routeLinkHelper(CustomerJourneyConstants.tvDetailsButton));
-  }
   cardList = [
     {
       header: 'STB SR#039838920',
@@ -43,6 +35,14 @@ export class TvDetailComponent implements OnInit {
     { title: 'Call of Duty: Modern Warfare', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
     { title: 'Dangerous driving 2018', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
   ];
+
+  constructor(public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
+  ngOnInit() {
+    if (!this.isPartialLoaded) {
+      this.sharedService.setHeaderConfig('TV details', false);
+    }
+  }
+
   async openInternetIssueDialog() {
     this.modal = await this.modalCtrl.create({
       component: IssueListDialog,
@@ -53,14 +53,7 @@ export class TvDetailComponent implements OnInit {
     return await this.modal.present();
   }
 
-  routeLinkHelper(arr) {
-    return arr.map((obj) => {
-      return {
-        ...obj,
-        clickListener: () => {
-          obj?.customListner ? this[obj.customListner]() : this.router.navigate([obj.linkTo]);
-        },
-      };
-    });
+  onIssueResolved() {
+    this.router.navigate(['/thanks']);
   }
 }

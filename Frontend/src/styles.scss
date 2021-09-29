@@ -52,23 +52,23 @@
   }
   .segment-button-checked {
     color: #719e19;
-    --indicator-color: transparent; 
+    --indicator-color: transparent;
     --background-hover: $secondary-color;
     --background-focused: $primary-color;
     --color-checked: $primary-color;
     position: relative;
-    &:after{
-      content: "";
+    &:after {
+      content: '';
       display: block;
-      background-color:$etisalat-color;
+      background-color: $etisalat-color;
       border-top-right-radius: 1rem;
       border-bottom-right-radius: 0;
       border-top-left-radius: 1rem;
       border-bottom-left-radius: 0;
       width: 100%;
-      height: .3rem;  
+      height: 0.3rem;
       position: absolute;
-      bottom: 0; 
+      bottom: 0;
       @media screen and (min-width: 768px) {
         border-radius: 0;
       }
@@ -594,7 +594,8 @@ app-phone-issues-problem-value-added,
 .no-issue-segment-tabs > ion-col,
 app-service-detail,
 app-tv-detail,
-app-phone-issues-problem-value-added{
+app-phone-issues-problem-value-added,
+app-transfer-package {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
