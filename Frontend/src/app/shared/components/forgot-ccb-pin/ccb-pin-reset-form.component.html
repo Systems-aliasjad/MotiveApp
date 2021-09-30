@@ -9,12 +9,12 @@
     <!-- Page Title and Sub Title End -->
 
     <!-- Form Start -->
-    <ion-row class="form-inner_container">
+    <ion-row class="form-inner_container animate__animated animate__slideInUp animate__fast">
       <ion-col size="12">
         <form [formGroup]="formGroup">
           <ion-grid class="pr-0 pl-0">
             <ion-row>
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+              <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
                   <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
@@ -24,13 +24,12 @@
                     class="show-icon"
                     alt="show password"
                   />
-                  <!-- <button type="button" (click)="hideShowPassword()">Click to show</button> -->
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
+                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
                     {{ error.password }}
                   </div>
                 </ion-item>
               </ion-col>
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+              <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
                   <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
@@ -40,23 +39,12 @@
                     class="show-icon"
                     alt="show password"
                   />
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
+                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
                     {{ error.password }}
                   </div>
                 </ion-item>
               </ion-col>
             </ion-row>
-
-            <!-- <ion-row *ngIf="case == 1">
-              <ion-col sizeLg="2" sizeMd="3" sizeSm="12" size="12">
-                <ion-button class="btn primary-btn close full-width" [disabled]="!formGroup.valid" (click)="SubmitForm()">{{ 'BUTTONS.NEXT' | translate }}</ion-button>
-              </ion-col>
-            </ion-row>
-
-            set Telephone Case Buttons
-            <motive-button *ngIf="case == 2" [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
-            <motive-button *ngIf="case == 2" [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button>
-            Reset Telephone Case Buttons -->
           </ion-grid>
         </form>
       </ion-col>

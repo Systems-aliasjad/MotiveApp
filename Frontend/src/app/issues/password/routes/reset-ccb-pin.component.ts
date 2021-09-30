@@ -4,13 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { Location } from '@angular/common';
 
 /**
  * Reset Telephone Code Control Barring (CCB) PIN
  */
 @Component({
   selector: 'reset-ccb-pin',
-  template: `working`,
+  template: `<app-ccb-pin-reset-form [button1]="button1" (button1Click)="(button1Listener)" [button2]="button2" (button2Click)="(button2Listener)"></app-ccb-pin-reset-form>`,
 })
 export class ResetCcbPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -23,7 +24,7 @@ export class ResetCcbPinComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.BACK',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -44,6 +45,6 @@ export class ResetCcbPinComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['']);
+    this.location.back();
   }
 }
