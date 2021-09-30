@@ -15,7 +15,7 @@
               {{ bullet.text | translate }}
               <ul no-lines *ngIf="bullet?.children" class="bullet-list">
                 <li *ngFor="let item of bullet?.children; let j = index">
-                  {{ i }}.{{ j + 1 }}.
+                  {{ i + 1 }}.{{ j + 1 }}.
                   {{ item.text | translate }}
                 </li>
               </ul>
@@ -23,7 +23,7 @@
           </ul>
         </div>
       </ion-col>
-    </ion-row>   
+    </ion-row>
   </ion-grid>
 </ion-content>
 

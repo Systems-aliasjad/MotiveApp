@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { IMotiveButton } from 'src/app/shared/constants/types';
 
 export class IUnableToConnectContent {
   imgSrc: string;

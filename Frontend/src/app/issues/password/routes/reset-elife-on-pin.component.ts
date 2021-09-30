@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
-import { IResetPinContent } from 'src/app/shared/components/reset-pin/reset-pin.component';
+import { IMotiveButton, IResetPinContent } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
 @Component({

@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { ModalController } from '@ionic/angular';
-export interface ITermsAndConditions {
-  head: string;
-  body: string[];
-}
+import { ITermsAndConditions } from '../../constants/types';
+
 @Component({
   selector: 'app-terms-conditions',
   templateUrl: './terms-conditions.component.html',

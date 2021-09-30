@@ -1,13 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-
-export interface IMotiveButton {
-  type: 'link' | 'primary' | 'secondary' | 'terms';
-  title: string;
-  explanatoryNote?: string;
-  SM?: string;
-  MD?: string;
-  LG?: string;
-}
+import { IMotiveButton } from '../../constants/types';
 
 @Component({
   selector: 'app-diagnose-issue',
