@@ -96,7 +96,7 @@ export class IssueListDialog implements OnInit {
     {
       issue: 'Reset CCB PIN',
       description: 'Find out how to reset your Code Control Barring PIN',
-      route: 'reset-ccb-pin',
+      route: 'issues/password/reset-ccb-pin',
     },
   ];
   phoneIssuesList: any[] = [

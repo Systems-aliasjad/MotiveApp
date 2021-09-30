@@ -1,6 +1,9 @@
 <ion-row>
   <ion-col size="12" class="service-detail_slider">
     <!-- service-State list Start-->
+    <div class="wizard-container">
+
+    </div>
     <div class="service-states-container">
       <div class="arrow-container left">
         <img
@@ -11,7 +14,7 @@
       </div>
       <ion-slides [options]="slideOpts" #slides (ionSlideWillChange)="doCheck()">
         <ion-slide *ngFor="let item of tilesList">
-          <div class="service-state">
+          <div class="states">
             <div class="{{ item.className }} state">
               <img src="{{ item.imgPath }}" alt="{{ item.altText }}" />
             </div>
