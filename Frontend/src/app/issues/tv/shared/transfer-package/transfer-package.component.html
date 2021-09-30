@@ -9,19 +9,20 @@
     <ion-row>
       <!-- Package list Start -->
       <ion-col size="12">
-        <form>
-          <ion-card *ngFor="let d of cardList">
-            <ion-card-header>
-              <ion-card-title>
-                <ion-label class="sub-title">{{ d.title }}</ion-label>
-                <!-- <input type="radio" name="radiobtn" /> -->
-                <ion-radio name="radiobtn" checked="true" ></ion-radio>
-              </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <p>{{ d.description }}</p>
-            </ion-card-content>
-          </ion-card>
+        <form [formGroup]="formGroup">
+          <ion-radio-group allow-empty-selection="true" name="radio-group" formControlName="radioButton">
+            <ion-card *ngFor="let d of cardList">
+              <ion-card-header>
+                <ion-card-title>
+                  <ion-label class="sub-title">{{ d.title }}</ion-label>
+                  <ion-radio name="radioButton" value="{{ d.title }}"></ion-radio>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <p>{{ d.description }}</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-radio-group>
         </form>
       </ion-col>
       <!-- Package Card list End -->

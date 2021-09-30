@@ -12,7 +12,7 @@
     <!-- Form Start -->
     <ion-row class="form-inner_container">
       <ion-col size="12">
-        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
+        <form [formGroup]="formGroup" (ngSubmit)="button1Listener()">
           <ion-grid class="pr-0 pl-0">
             <ion-row>
               <ion-col sizeLg="6" sizeMd="12" size="12">
@@ -32,9 +32,6 @@
                 </ion-item>
               </ion-col>
             </ion-row>
-
-            <!-- <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
-            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
           </ion-grid>
         </form>
       </ion-col>
@@ -45,7 +42,7 @@
 
 <div class="footer">
   <ion-row class="footer-btns-container">
-    <ion-col [sizeLg]="myBtnSize" sizeMd="12" size="12" class="pt-0 pb-0">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
           <motive-button

@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
  */
 @Component({
   selector: 'reset-ccb-pin',
-  template: `<app-ccb-pin-reset-form [button1]="button1" (button1Click)="(button1Listener)" [button2]="button2" (button2Click)="(button2Listener)"></app-ccb-pin-reset-form>`,
+  template: `<app-ccb-pin-reset-form [button1]="button1" (button1Click)="button1Listener($event)" [button2]="button2" (button2Click)="button2Listener()"></app-ccb-pin-reset-form>`,
 })
 export class ResetCcbPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -40,11 +40,12 @@ export class ResetCcbPinComponent implements OnInit, OnDestroy {
     this.sharedService.setHeaderConfig('HEADER.RESET_CCB_PIN', true);
   }
 
-  button1Listener() {
+  button1Listener(event) {
     this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
   }
 
   button2Listener() {
+    console.log('a');
     this.location.back();
   }
 }
