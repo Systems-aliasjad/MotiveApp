@@ -1,16 +1,8 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { IExplainInstruction, IMotiveButton, IRestartInstruction } from '../../constants/types';
 import { SharedService } from '../../shared.service';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 
-export interface IRestartInstruction {
-  title: string;
-  steps: string[];
-}
-export interface IExplainInstruction {
-  title: string;
-  body: string;
-}
 @Component({
   selector: 'app-restart-instruction',
   templateUrl: './restart-instruction.component.html',

@@ -1,16 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { IDeviceCareContent, IMotiveButton } from '../../constants/types';
 
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
-
-export interface IDeviceCareContent {
-  imgSrc: string;
-  header1: string;
-  header2?: string;
-  body1: string;
-  body2?: string;
-  bullet1?: string[];
-  bullet2?: string[];
-}
 @Component({
   selector: 'app-device-care',
   templateUrl: './device-care.component.html',

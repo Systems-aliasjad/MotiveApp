@@ -8,13 +8,7 @@ import { ERoutingIds } from '../../constants/constants';
 import { ResetTvPinDialog } from '../../../issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
-
-export interface IResetPinContent {
-  header: string;
-  subheader: string;
-  inputLablel: string;
-}
+import { IMotiveButton, IResetPinContent } from '../../constants/types';
 
 @Component({
   selector: 'app-reset-pin',

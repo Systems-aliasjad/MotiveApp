@@ -5,7 +5,7 @@ import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator, eyeHide, eyeShow } from '../../constants/constants';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
+import { IMotiveButton } from '../../constants/types';
 
 @Component({
   selector: 'app-reset-router-password',

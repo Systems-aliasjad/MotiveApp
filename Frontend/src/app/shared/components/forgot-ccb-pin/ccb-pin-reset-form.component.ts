@@ -4,8 +4,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 import { eyeHide, eyeShow } from '../../constants/constants';
+import { IMotiveButton } from '../../constants/types';
 
 @Component({
   selector: 'app-ccb-pin-reset-form',

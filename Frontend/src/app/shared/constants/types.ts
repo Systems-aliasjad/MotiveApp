@@ -4,31 +4,17 @@ export interface IPageHeader {
   showBackBtn?: boolean;
 }
 
-export interface ITermsAndConditions {
-  termsCheck: boolean;
-}
-
 export interface ITabTile {
   imageSrc: string;
   case: string; // Success-green | Error-red | Default-grey
   title: string;
 }
-/**
- * @deprecated - need to be removed, please don't use this
- */
-// export interface IButton {
-//   title: string;
-//   clickListener: () => void;
-//   behaviour: string; // primary | secondary | link
-//   explanatoryNote?: string;
-//   linkTo?: string;
-//   customListner?: string;
-// }
 
-interface IMessageIssueBody {
+export interface IMessageIssueBody {
   title: string;
   children?: string[];
 }
+
 export interface IMessageIssue {
   header: string;
   body: IMessageIssueBody[];
@@ -53,4 +39,62 @@ export interface IMotvieSubscription {
     landingPageCards: ICard[];
     quickLinkCard: ICard[];
   };
+}
+
+//----------------
+export interface IDeviceCareContent {
+  imgSrc: string;
+  header1: string;
+  header2?: string;
+  body1: string;
+  body2?: string;
+  bullet1?: string[];
+  bullet2?: string[];
+}
+
+export interface IMotiveButton {
+  type: 'link' | 'primary' | 'secondary' | 'terms';
+  title: string;
+  explanatoryNote?: string;
+  SM?: string;
+  MD?: string;
+  LG?: string;
+}
+
+export interface IMessageIssueBody {
+  title: string;
+  children?: string[];
+}
+export interface IMessageSection {
+  header: string;
+  paragraphs: IMessageIssueBody[];
+  span?: string;
+  spanListener?: () => void;
+}
+
+export interface IMessageSection1 {
+  header: string;
+  paragraphs: string[];
+  span?: string;
+  spanListener?: () => void;
+}
+
+export interface IResetPinContent {
+  header: string;
+  subheader: string;
+  inputLablel: string;
+}
+
+export interface IRestartInstruction {
+  title: string;
+  steps: string[];
+}
+export interface IExplainInstruction {
+  title: string;
+  body: string;
+}
+
+export interface ITermsAndConditions {
+  head: string;
+  body: string[];
 }
