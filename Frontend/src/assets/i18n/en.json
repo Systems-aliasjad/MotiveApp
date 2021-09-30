@@ -522,6 +522,7 @@
     "NO_NON_SHARED_PACKAGE": "No non shared package",
     "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS": "You are subscribed for shared TV packages that can be viewed from all your STBs",
     "FACING_SOME_ISSUE": "Facing some issue",
-    "TRY_AGAIN_LATER": "Try again later"
+    "TRY_AGAIN_LATER": "Try again later",
+    "CCB_PIN_RULES": "CCB PIN rules"
   }
 }

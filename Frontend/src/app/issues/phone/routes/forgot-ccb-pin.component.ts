@@ -10,7 +10,7 @@ import { SharedService } from 'src/app/shared/shared.service';
  */
 @Component({
   selector: 'forgot-ccb-pin',
-  template: `<app-ccb-pin-reset-form [button1]="button1" (button1Click)="(button1Listener)"></app-ccb-pin-reset-form>`,
+  template: `<app-ccb-pin-reset-form [button1]="button1" (button1Click)="(button1Listener)" [rules]="rulesList"></app-ccb-pin-reset-form>`,
 })
 export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -19,6 +19,7 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.NEXT',
   };
 
+  rulesList: string[] = ['4 random digits'];
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {

@@ -44,6 +44,18 @@
                   </div>
                 </ion-item>
               </ion-col>
+
+              <ion-row>
+                <ion-col size="12" *ngIf="rulesList?.length > 0">
+                  <p class="tag-title">{{ 'MESSAGES.CCB_PIN_RULES' | translate }}:</p>
+                  <ion-list class="check-list">
+                    <ion-item *ngFor="let rule of rulesList">
+                      <img src="/assets/images/indicators-icons/icon_check.svg" alt="" /> &nbsp;
+                      <ion-label>{{ rule }}</ion-label>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
             </ion-row>
           </ion-grid>
         </form>
