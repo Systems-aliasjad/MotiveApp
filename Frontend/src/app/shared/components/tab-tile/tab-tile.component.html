@@ -1,10 +1,44 @@
 <ion-row>
-  <ion-col size="12" class="service-detail_slider">
+  <ion-col size="12" class="states-main-container">
     <!-- service-State list Start-->
-    <div class="wizard-container">
-
+    <div class="wizard-main-container">
+      <div class="wizard-inner_container">
+        
+        <div class="states line default-line">
+          <div class="default-state state">
+            <img src="/assets/images/network-map-icons/icon_smartphone_default.svg" alt="Smart Phone Default State">
+          </div>
+          <ion-label>
+            abc
+          </ion-label>
+        </div>
+        <div class="states line okay-line">
+          <div class="okay-state state">
+            <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+          </div>
+          <ion-label>
+            abc
+          </ion-label>
+        </div>
+        <div class="states line error-line">
+          <div class="error-state state">
+            <img src="/assets/images/network-map-icons/icon_smartphone_error.svg" alt="Smart Phone Default State">
+          </div>
+          <ion-label>
+            abc
+          </ion-label>
+        </div>
+        <div class="states line pending-line">
+          <div class="pending-state state">
+            <img src="/assets/images/network-map-icons/icon_smartphone_error.svg" alt="Smart Phone Default State">
+          </div>
+          <ion-label>
+            abc
+          </ion-label>
+        </div>
+      </div>
     </div>
-    <div class="service-states-container">
+    <div class="states-inner_container">
       <div class="arrow-container left">
         <img
           [src]="!arrow_left ? 'assets/images/action-icons/icon_networkmap_arrow_left.svg' : 'assets/images/action-icons/icon_arrow_left_grey.svg'"
