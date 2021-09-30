@@ -22,7 +22,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
-    title: 'LINKS.DEVICE_CARE',
+    title: 'BUTTONS.DEVICE_CARE',
     type: 'link',
   };
   button2: IMotiveButton = {

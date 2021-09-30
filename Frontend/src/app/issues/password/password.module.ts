@@ -17,6 +17,7 @@ import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-p
 import { ResetElifeOnPinComponent } from './routes/reset-elife-on-pin.component';
 import { ResetTvAdminPinComponent } from './routes/reset-tv-admin-pin.component';
 import { ResetRouterPasswordComponent } from './routes/reset-router-password.component';
+import { ResetCcbPinComponent } from './routes/reset-ccb-pin.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ResetRouterPasswordComponent } from './routes/reset-router-password.com
     ResetElifeOnPinComponent,
     ResetTvAdminPinComponent,
     ResetRouterPasswordComponent,
+    ResetCcbPinComponent,
   ],
   imports: [CommonModule, PasswordRoutingModule, SharedModule],
 })

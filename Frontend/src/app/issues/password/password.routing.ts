@@ -4,6 +4,7 @@ import { InternetPasswordResetComponent } from './routes/internet-password-reset
 
 import { MainComponent } from './routes/main.component';
 import { RequestFailComponent } from './routes/request-fail.component';
+import { ResetCcbPinComponent } from './routes/reset-ccb-pin.component';
 import { ResetElifeOnPinComponent } from './routes/reset-elife-on-pin.component';
 import { ResetInternetPasswordFailComponent } from './routes/reset-internet-password-fail.component';
 import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-password-success.component';
@@ -75,6 +76,10 @@ const routes: Routes = [
   {
     path: 'reset-router-password',
     component: ResetRouterPasswordComponent,
+  },
+  {
+    path: 'reset-ccb-pin',
+    component: ResetCcbPinComponent,
   },
 ];
 

@@ -168,6 +168,10 @@
   },
 
   "MESSAGES": {
+    "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW_UP_ON_THE_SAME_COMPLAINT": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
+    "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY.": "We couldn’t find any technical problem. Your phone should be working normally.",
+    "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_PHONE_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "Tap ‘View details’ to take a closer look at your phone service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
+
     "ACCOUNT_TEMPORARILY_DISCONNECTED": "تم تعليق الحساب مؤقتًا",
     "ACTION_REQUIRED": "Action required",
     "ALTERNATE_CONTACT_NO": "رقم الاتصال البديل",
