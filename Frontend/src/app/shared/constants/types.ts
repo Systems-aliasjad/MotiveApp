@@ -98,3 +98,21 @@ export interface ITermsAndConditions {
   head: string;
   body: string[];
 }
+
+export interface IOntDetail {
+  ontSerial: string;
+  ontType: string;
+  isReachable: boolean;
+  isRebootRequired: boolean;
+  isUpgradeRequired: boolean;
+}
+
+export interface IRouterDetail {
+  routerSerial: string;
+  routerModel: string;
+  isReachable: boolean;
+  isRebootRequired: boolean;
+  isUpgradeRequired: boolean;
+  isManaged: boolean;
+  isResetRequired: boolean;
+}

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
+import { IOntDetail, IRouterDetail } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -9,6 +10,8 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./tab-tile.component.scss'],
 })
 export class TabTileComponent implements OnInit {
+  @Input() ontConfig: IOntDetail;
+  @Input() routerConfig: IRouterDetail;
   @Input() tilesList: TabTiles[] = [
     {
       className: 'default-state',
