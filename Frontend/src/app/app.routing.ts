@@ -84,10 +84,10 @@ const routes: Routes = [
     path: 'terms',
     component: TermsConditionsComponent,
   },
-  {
-    path: 'loader',
-    component: LoaderComponent,
-  },
+  // {
+  //   path: 'loader',
+  //   component: LoaderComponent,
+  // },
   // {
   //   path: 'router-restart',
   //   component: RestartInstructionComponent,
@@ -101,73 +101,73 @@ const routes: Routes = [
   //   path: 'reset-internet-password',
   //   component: ResetInternetPasswordComponent,
   // },
-  {
-    path: 'device-care',
-    component: DeviceCareComponent,
-    data: { id: ERoutingIds.routerDeviceCare },
-  },
+  // {
+  //   path: 'device-care',
+  //   component: DeviceCareComponent,
+  //   data: { id: ERoutingIds.routerDeviceCare },
+  // },
 
-  // Reset Router Wi-Fi Password
-  // { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
-  { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
-  { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
-  // 1122 Module - 4 END
+  // // Reset Router Wi-Fi Password
+  // // { path: 'reset-router-password', component: ResetRouterPasswordComponent, data: { id: ERoutingIds.resetRouterWifiPassword } },
+  // { path: 'reset-tv-admin-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetTvAdminPin } },
+  // { path: 'reset-eLifeON-pin', component: ResetPinComponent, data: { id: ERoutingIds.resetELifeONPin } },
+  // // 1122 Module - 4 END
 
-  //router and package Upgrade Recommended form
-  { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
-  //Router Upgrade Recommended form
-  { path: 'router-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerUpgradeRecommendedForm } },
-  //package-upgrade-recommended-form
-  { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
-  // Book A Complaint
-  { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
+  // //router and package Upgrade Recommended form
+  // { path: 'router-package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerPackageUpgradeRecommendedForm } },
+  // //Router Upgrade Recommended form
+  // { path: 'router-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerUpgradeRecommendedForm } },
+  // //package-upgrade-recommended-form
+  // { path: 'package-upgrade-recommended-form', component: BookComplaintComponent, data: { id: ERoutingIds.packageUpgradeRecommendedForm } },
+  // // Book A Complaint
+  // { path: 'bookComplaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaint } },
 
-  // Book A Complaint As Complaint message
-  { path: 'book-Complaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaintAsComplaint } },
+  // // Book A Complaint As Complaint message
+  // { path: 'book-Complaint', component: BookComplaintComponent, data: { id: ERoutingIds.bookComplaintAsComplaint } },
 
-  // Book A Appointment As Appointment message
-  { path: 'book-Appointment', component: BookComplaintComponent, data: { id: ERoutingIds.bookAppointmentAsAppointment } },
+  // // Book A Appointment As Appointment message
+  // { path: 'book-Appointment', component: BookComplaintComponent, data: { id: ERoutingIds.bookAppointmentAsAppointment } },
 
-  // 3rd party router form -
-  { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
-  // #endregion  third party  router
+  // // 3rd party router form -
+  // { path: 'third-party-router-form', component: BookComplaintComponent, data: { id: ERoutingIds.thirdPartyRouterForm } },
+  // // #endregion  third party  router
 
-  //Router Reset Required
-  // { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
+  // //Router Reset Required
+  // // { path: 'reset-wifi-password-form', component: ResetWifiPasswordComponent, data: { id: ERoutingIds.resetWifiPasswordForm } },
 
-  //Router managed, but not reachable
-  { path: 'router-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerNotReachableForm } },
-  { path: 'router-not-reachable-own-router-care', component: DeviceCareComponent, data: { id: ERoutingIds.routerNotReachableOwnRouterCare } },
+  // //Router managed, but not reachable
+  // { path: 'router-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.routerNotReachableForm } },
+  // { path: 'router-not-reachable-own-router-care', component: DeviceCareComponent, data: { id: ERoutingIds.routerNotReachableOwnRouterCare } },
 
-  //TV Box Not Reachable
-  { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
+  // //TV Box Not Reachable
+  // { path: 'tvBox-not-reachable-form', component: BookComplaintComponent, data: { id: ERoutingIds.tvBoxNotReachableForm } },
 
-  //TV set top box restart required
-  { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
-  { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
+  // //TV set top box restart required
+  // { path: 'tvBox-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.tvBoxRestartRequiredManually } },
+  // { path: 'tvBox-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.tvBoxRestartRequiredDeviceCare } },
 
-  // { path: 'unable-video-call', component: UnableVideoCallsComponent },
-  // { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
+  // // { path: 'unable-video-call', component: UnableVideoCallsComponent },
+  // // { path: 'unable-connect-newDevice', component: UnableConnectNewDeviceWifiComponent },
 
-  // Package Transfer
-  // { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
-  // { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
-  //Unable to watch specific channel
-  // { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
-  // { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
-  // { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
-  // { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
-  { path: 'phone-issue-list-dialog', component: IssueListDialog, data: { id: EIssueFlow.phoneIssue } },
+  // // Package Transfer
+  // // { path: 'package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.packageavailable } },
+  // // { path: 'package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
+  // //Unable to watch specific channel
+  // // { path: 'unable-to-watch-specific-channel', component: UnableWatchSpecificChannelComponent, data: { id: ERoutingIds.enableWatchSpecificChannel } },
+  // // { path: 'unable-to-watch-package-available', component: PackageAvailableComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageavailable } },
+  // // { path: 'unable-to-watch-package-transfer', component: TransferPackageComponent, data: { id: ERoutingIds.enableWatchSpecificChannelpackageTransfer } },
+  // // { path: 'no-issue-phone-value-added', component: PhoneIssuesProblemValueAddedComponent, data: { id: ERoutingIds.noIssuePhoneProblemValueAdded } },
+  // { path: 'phone-issue-list-dialog', component: IssueListDialog, data: { id: EIssueFlow.phoneIssue } },
 
-  //Ont reboot required
-  { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
-  { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
+  // //Ont reboot required
+  // { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
+  // { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
 
-  //Quick Links all
-  { path: 'quick-links-all', component: QuickLinksAllComponent, data: { id: ERoutingIds.quickLinksAll } },
-  // { path: '', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
+  // //Quick Links all
+  // { path: 'quick-links-all', component: QuickLinksAllComponent, data: { id: ERoutingIds.quickLinksAll } },
+  // // { path: '', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
 
-  { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
+  // { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
 
   /////All Services
   // For Demo
