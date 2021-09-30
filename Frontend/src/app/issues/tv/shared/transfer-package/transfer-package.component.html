@@ -4,7 +4,7 @@
       <ion-col size="12">
         <app-page-top></app-page-top>
       </ion-col>
-      <p>{{ pageContent | translate }}</p>
+      <p class="desc-msg">{{ pageContent | translate }}</p>
     </ion-row>
     <ion-row>
       <!-- Package list Start -->
@@ -13,8 +13,9 @@
           <ion-card *ngFor="let d of cardList">
             <ion-card-header>
               <ion-card-title>
-                <ion-label class="sub-title">{{ d.title }}</ion-label> &nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="radio" name="radiobtn" />
+                <ion-label class="sub-title">{{ d.title }}</ion-label>
+                <!-- <input type="radio" name="radiobtn" /> -->
+                <ion-radio name="radiobtn" checked="true" ></ion-radio>
               </ion-card-title>
             </ion-card-header>
             <ion-card-content>
