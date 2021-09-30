@@ -27,6 +27,7 @@ import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
 import { createTranslateLoader } from '../app.module';
+import { GenericErrorComponent } from './components/generic-error/generic-error.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { createTranslateLoader } from '../app.module';
     BookComplaintComponent,
     NumberOnlyDirective,
     IssueTabsComponent,
+    GenericErrorComponent,
     TabTileComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,

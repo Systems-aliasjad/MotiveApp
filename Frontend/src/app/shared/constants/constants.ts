@@ -7,6 +7,11 @@ export class RoutingPaths {
   public static readonly installNewRouter: string = 'install-new-router';
 }
 
+export const flowCodes = {
+  genericError: 'G11E24',
+  accountNotActive: 'E2ECRM14',
+};
+
 export enum ERoutingIds {
   noIssueTv,
   tvOutage,

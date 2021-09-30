@@ -21,6 +21,8 @@ import { TabTileComponent } from './shared/components/tab-tile/tab-tile.componen
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 import { EIssueFlow, IssueListDialog } from './shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { GenericErrorComponent } from './shared/components/generic-error/generic-error.component';
+
 const routes: Routes = [
   // REFACTORED LOGIC
   {
@@ -65,7 +67,10 @@ const routes: Routes = [
     path: 'all-links',
     loadChildren: () => import('./all-services/all-services.module').then((m) => m.AllServicesModule),
   },
-
+  {
+    path: 'unknown-error',
+    component: GenericErrorComponent,
+  },
   // REFACTORED LOGIC
   {
     path: 'landing',
@@ -165,7 +170,6 @@ const routes: Routes = [
   { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
 
   /////All Services
-
   // For Demo
   { path: 'tab-tiles', component: TabTileComponent },
   { path: '**', redirectTo: '' },

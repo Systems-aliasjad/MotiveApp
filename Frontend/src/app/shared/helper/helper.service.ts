@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { flowCodes } from '../constants/constants';
 
 @Injectable({
   providedIn: 'root',
 })
 export class HelperService {
-  constructor() {}
+  constructor(private router: Router) {}
 
-  // public filterCard = (code: String, objKey: string): ICard[] => {
-  //   return ApplicableCodes[objKey].filter((card) => {
-  //     return card.applicableCodes.includes(code.toUpperCase());
-  //   });
-  // };
+  public flowIdentifier(CodeId: string) {
+    if (CodeId === flowCodes.genericError) {
+      this.router.navigate['unknown-error'];
+    } else if (CodeId === flowCodes.accountNotActive) {
+      this.router.navigate['issues/internet/account-not-active'];
+    }
+  }
 }
