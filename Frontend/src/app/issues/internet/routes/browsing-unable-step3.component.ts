@@ -46,7 +46,7 @@ export class BrowsingUnableStep3Component implements OnInit, OnDestroy {
   updatePageContent() {
     this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
     this.careContent.header1 = 'SUBHEADER.CHECK_YOUR_FIREWALL_SETTING';
-    this.careContent.body1 = 'MESSAGES.PLEASE_MAKE_SURE_THAT_YOUR_PC/LAPTOP_FIREWALL_IS_NOT_BLOCKING_YOUR_INTERNET';
+    this.careContent.body1 = 'MESSAGES.PLEASE_MAKE_SURE_THAT_YOUR_PC_LAPTOP_FIREWALL_IS_NOT_BLOCKING_YOUR_INTERNET';
   }
 
   button1Listener() {

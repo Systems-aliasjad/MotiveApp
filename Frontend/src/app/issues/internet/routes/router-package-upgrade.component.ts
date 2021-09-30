@@ -26,7 +26,7 @@ export class RouterPackageUpgradeRecommendedComponent implements OnInit, OnDestr
     type: 'link',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.UPGRADE_ROUTER_PACKAGE',
+    title: 'BUTTONS.UPGRADE_ROUTER_AND_PACKAGE',
     type: 'primary',
   };
   button3: IMotiveButton = {

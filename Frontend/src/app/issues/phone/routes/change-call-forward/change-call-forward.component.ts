@@ -54,7 +54,7 @@ export class ChangeCallForwardComponent implements OnInit {
 
   initialization() {
     this.sharedService.setDefaultValues();
-    this.sharedService.setHeaderConfig('HEADER.CALL_FORWARD', true);
+    this.sharedService.setHeaderConfig('HEADER.CHANGE_CALL_FORWARDING_NUMBER', true);
   }
 
   SubmitForm() {

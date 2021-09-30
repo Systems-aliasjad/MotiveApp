@@ -26,7 +26,7 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.AVAILABLE_PACKAGE', false, true);
+    this.sharedService.setHeaderConfig('HEADER.AVAILABLE_PACKAGES', false, true);
   }
 
   updatePageContent() {

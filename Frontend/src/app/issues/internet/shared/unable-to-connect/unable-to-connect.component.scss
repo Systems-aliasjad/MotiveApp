@@ -24,7 +24,6 @@ ion-item::part(native) {
   --inner-border-width: 0;
 }
 // --------------------------------------------------------------
-
 ion-grid {
   height: 100%;
   @media screen and (max-width: 992px) {
@@ -34,37 +33,30 @@ ion-grid {
 .device-care-container,
 .device-care_inner_container {
   height: 100%;
-}
-.device-care-lg {
   @media screen and (max-width: 992px) {
-    display: none;
+    height: auto;
   }
-  /* .device-care_image_lg{
-    @media screen and (max-width: 992px) {
-      display:none;
-    }
-  } */
 }
-.device-care-sm {
+ul.bullet-list{
+  padding-left: 0;
   @media screen and (min-width: 992px) {
-    display: none;
+    padding-left: 40px;
   }
-  .content {
-    max-width: 100%;
-    margin: 0;
-    .sub-title {
-      margin-top: 1rem;
+  li {
+    color: $secondary-color;
+    margin: 18px 0;    
+    list-style: none;
+    &:first-of-type{
+      margin-top: 0;
+    }
+    ul{
+      padding-left: 30px;
+      li{
+        margin: 18px 0;          
+      }
     }
   }
-  .image {
-    max-width: 100%;
-    margin-bottom: 2rem;
-  }
-  p {
-    margin: 0;
-  }
 }
-
 .device-care_title {
   @media screen and (min-width: 992px) {
     display: none;
@@ -83,6 +75,7 @@ ion-grid {
   }
 }
 .image {
+  margin-top: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -91,9 +84,8 @@ ion-grid {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
-  max-width: 472px;
   height: auto;
-  margin: 2rem auto 0;
+ /* margin: 2rem auto 0; */
   img {
     width: 100%;
   }
@@ -102,7 +94,11 @@ ion-grid {
   max-width: 550px;
   margin-top: 2rem;
   margin-right: auto;
-  margin-bottom: 0;
+  margin-left: auto;
+  @media screen and (max-width: 992px) {
+    max-width: 100%;
+
+  }
 }
 p {
   color: $secondary-color;

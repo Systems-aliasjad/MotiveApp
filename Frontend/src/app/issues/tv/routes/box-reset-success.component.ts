@@ -35,7 +35,7 @@ export class TvBoxResetSuccessComponent implements OnInit, OnDestroy {
   };
   button2: IMotiveButton = {
     type: 'link',
-    title: 'BUTTONS.STILL_FACING_ISSUE',
+    title: 'BUTTONS.STILL_FACING_AN_ISSUE',
   };
 
   constructor(private router: Router, private location: Location, private activatedRoute: ActivatedRoute) {}

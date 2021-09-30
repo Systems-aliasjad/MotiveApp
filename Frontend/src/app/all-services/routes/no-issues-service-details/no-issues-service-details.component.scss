@@ -38,7 +38,7 @@
       color: $secondary-color;
       text-transform: uppercase;
       @media screen and (min-width: 768px) {
-        padding-top: .8rem;
+        /* padding-top: .8rem; */
         padding-bottom: .8rem;
       }
       ion-label{
@@ -137,6 +137,16 @@ ion-item::part(native){
   app-tv-detail,
   app-phone-issues-problem-value-added {
     height: calc(100vh - 184px);
-    
+    @media screen and (max-width: 767px) {
+      height: calc(100vh - 170px);
+    }
   }
+  
 }
+/* .no-issue-segment-tabs {
+  & > ion-col{
+    app-service-detail{
+      background-color: red;
+    }
+  }
+} */

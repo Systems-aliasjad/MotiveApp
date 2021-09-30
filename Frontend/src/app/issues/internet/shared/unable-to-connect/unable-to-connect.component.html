@@ -1,8 +1,7 @@
 <ion-content>
   <ion-grid class="device-care-container">
-    <!-- Web View start -->
-    <ion-row class="device-care_inner_container device-care-lg">
-      <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_image_lg">
+    <ion-row class="device-care_inner_container">
+      <ion-col sizeLg="6" sizeMd="12" size="12">
         <div class="image">
           <img [src]="unableToConnectContent?.imgSrc" alt="Picture placeholder" />
         </div>
@@ -10,46 +9,21 @@
       <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_content">
         <div class="content">
           <!-- Content 2 -->
-          <ion-list no-lines *ngIf="unableToConnectContent?.listItems" class="bullet-list">
-            <ion-item *ngFor="let bullet of unableToConnectContent?.listItems; let i = index">
+          <ul no-lines *ngIf="unableToConnectContent?.listItems" class="bullet-list">
+            <li *ngFor="let bullet of unableToConnectContent?.listItems; let i = index">
               {{ i + 1 }}.
               {{ bullet.text | translate }}
-              <ion-list no-lines *ngIf="bullet?.children" class="bullet-list">
-                <ion-item *ngFor="let item of bullet?.children; let j = index">
+              <ul no-lines *ngIf="bullet?.children" class="bullet-list">
+                <li *ngFor="let item of bullet?.children; let j = index">
                   {{ i }}.{{ j + 1 }}.
                   {{ item.text | translate }}
-                </ion-item>
-              </ion-list>
-            </ion-item>
-          </ion-list>
+                </li>
+              </ul>
+            </li>
+          </ul>
         </div>
       </ion-col>
-    </ion-row>
-    <!-- Web View End -->
-
-    <!-- Mobile View Start -->
-    <ion-row class="device-care_inner_container device-care-sm">
-      <ion-col size="12">
-        <!-- Image -->
-        <div class="image">
-          <img [src]="unableToConnectContent?.imgSrc" alt="Picture placeholder" />
-        </div>
-        <!-- Content Below Image -->
-        <ion-list no-lines *ngIf="unableToConnectContent?.listItems" class="bullet-list">
-          <ion-item *ngFor="let bullet of unableToConnectContent?.listItems; let i = index">
-            {{ i + 1 }}.
-            {{ bullet.text | translate }}
-            <ion-list no-lines *ngIf="bullet?.children" class="bullet-list">
-              <ion-item *ngFor="let item of bullet?.children; let j = index">
-                {{ i }}.{{ j + 1 }}.
-                {{ item.text | translate }}
-              </ion-item>
-            </ion-list>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
-    <!--  Mobile View End -->
+    </ion-row>   
   </ion-grid>
 </ion-content>
 

@@ -30,7 +30,7 @@ export class OSRPComponent implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.FOLLOW_UP',
+    title: 'BUTTONS.YES_FOLLOW_UP',
     explanatoryNote: 'MESSAGES.FOLLOW_UP_THE_REQUEST',
   };
   button2: IMotiveButton = {

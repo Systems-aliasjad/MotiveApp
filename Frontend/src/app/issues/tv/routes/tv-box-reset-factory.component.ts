@@ -18,7 +18,7 @@ export class TvBoxResetFactoryComponent implements OnInit, OnDestroy {
     type: 'primary',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.RESTART_MANUALLY',
+    title: 'BUTTONS.ILL_RESTART_IT_MANYALLY',
     type: 'link',
   };
 

@@ -38,7 +38,7 @@ export class BookAppointmentComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.BOOK_COMPLAINT', false);
+    this.sharedService.setHeaderConfig('HEADER.BOOK_A_COMPLAINT', false);
   }
 
   button1Listener(_event) {
