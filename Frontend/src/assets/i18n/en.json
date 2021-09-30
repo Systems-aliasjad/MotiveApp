@@ -161,6 +161,8 @@
   },
 
   "MESSAGES": {
+    "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "We couldn’t find any technical problem. Your phone should be working normally.",
+    "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_PHONE_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "Tap ‘View details’ to take a closer look at your phone service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
     "SELECT_BRAND": "Select Brand",
     "SELECT_MODEL": "Select Model",
     "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_TV_BOX": "Where you can find more details on how to restart your TV box.",
@@ -362,7 +364,7 @@
     "YOU_ELIFE_SERVICE_CANCELLATION_REQUEST_IS_IN_PROGRESS": "You eLife service cancellation request is in progress",
     "THE_SERVICE_WONT_WORK_AS_YOUR_ACCOUNT_IS_BEING_CANCELLED_BASED_UPON_YOUR_REQUEST": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
-    "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW-UP_ON_THE_SAME_COMPLAINT": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
+    "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW_UP_ON_THE_SAME_COMPLAINT": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
     "COMPLAINT_BOOK_SUCCESSFULLY": "Complaint booked successfully!",
     "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
     "WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your complain and booked an appointment. Our technician will contact you soon",
