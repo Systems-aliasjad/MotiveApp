@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IExplainInstruction, IRestartInstruction } from 'src/app/shared/components/restart-instruction/restart-instruction.component';
-import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { IExplainInstruction, IMotiveButton, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
 

@@ -1,12 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
-export interface IMessageSection1 {
-  header: string;
-  paragraphs: string[];
-  span?: string;
-  spanListener?: () => void;
-}
+import { IMessageSection1, IMotiveButton } from '../../constants/types';
 
 @Component({
   selector: 'app-motive-message-feedback',

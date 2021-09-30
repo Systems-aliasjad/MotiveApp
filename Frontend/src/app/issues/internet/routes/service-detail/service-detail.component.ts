@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { IMotiveButton } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 

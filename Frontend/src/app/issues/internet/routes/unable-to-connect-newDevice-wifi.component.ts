@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { IMotiveButton } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { IUnableToConnectContent } from '../shared/unable-to-connect/unable-to-connect.component';
 

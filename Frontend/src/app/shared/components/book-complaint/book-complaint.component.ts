@@ -1,12 +1,9 @@
-import { Location } from '@angular/common';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ERoutingIds } from '../../constants/constants';
-import { SharedService } from '../../shared.service';
+import { IMotiveButton } from '../../constants/types';
 import { regExps, errorMessages } from '../../validators/validations';
-import { IMotiveButton } from '../diagnose-issue/diagnose-issue.component';
 
 @Component({
   selector: 'app-book-complaint',

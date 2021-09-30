@@ -1,8 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IDeviceCareContent } from 'src/app/shared/components/device-care/device-care.component';
-import { IMotiveButton } from 'src/app/shared/components/diagnose-issue/diagnose-issue.component';
+import { IDeviceCareContent, IMotiveButton } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
