@@ -15,7 +15,7 @@ export class MainComponent implements OnInit {
     this.shareService.setLoader(true);
     this.backendService.getIssueDiagnositic('INTERNET').subscribe((data: any) => {
       this.shareService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       console.log('====ngOnInit INTERNET====');
       console.log(data);
       console.log('====================================');

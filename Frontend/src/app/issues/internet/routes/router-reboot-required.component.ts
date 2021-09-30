@@ -60,4 +60,10 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   button2Listener() {
     this.router.navigate(['/thanks']);
   }
+
+  getIssueTiles() {
+    const navigation = this.router.getCurrentNavigation();
+    this.ontConfig = navigation?.extras?.state?.ontDetails;
+    this.routerConfig = navigation?.extras?.state?.routerDetails;
+  }
 }

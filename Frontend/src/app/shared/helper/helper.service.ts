@@ -9,11 +9,13 @@ import { flowCodes } from '../constants/constants';
 export class HelperService {
   constructor(private router: Router) {}
 
-  public flowIdentifier(CodeId: string) {
+  public flowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
-      this.router.navigate['unknown-error'];
+      this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
-      this.router.navigate['issues/internet/account-not-active'];
+      this.router.navigate(['issues/internet/account-not-active']);
+    } else if (CodeId === flowCodes.routerRebootRequired) {
+      this.router.navigate(['issues/internet/router-reboot-required'], { state: { ontDetails: data?.ontDetails, routerDetails: data?.routerDetails } });
     }
   }
 }
