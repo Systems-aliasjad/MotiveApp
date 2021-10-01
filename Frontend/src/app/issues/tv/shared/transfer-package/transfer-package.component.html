@@ -10,12 +10,15 @@
       <!-- Package list Start -->
       <ion-col sizeLg="4" sizeMd="6" size="12">
         <form [formGroup]="formGroup">
-          <ion-radio-group name="homeButtons">
+
+          <ion-radio-group name="radio-group">
             <ion-item lines="none">
               <ion-label class="sub-title">abcd</ion-label>
               <ion-radio name="radioButton" value="3"></ion-radio>
             </ion-item>
           </ion-radio-group>
+
+
           <ion-radio-group allow-empty-selection="true" name="radio-group" formControlName="radioButton">
             <ion-card *ngFor="let d of cardList">
               <ion-card-header>
