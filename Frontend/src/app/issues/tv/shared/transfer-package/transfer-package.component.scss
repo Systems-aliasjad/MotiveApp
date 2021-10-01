@@ -39,6 +39,7 @@ form{
         // max-width: 376px;
         width: 100%;
         margin: 13px 5px;
+        @include transition(all 0.3s ease-in-out);
         @media screen and (min-width: 992px) {
             margin: 16px ​12px;
         }
@@ -67,6 +68,7 @@ form{
         ion-card-content{
             padding: 0 16px 20px 16px;
         }
+        
         &:hover {
             text-decoration: none;
             background-color: $alabaster;
