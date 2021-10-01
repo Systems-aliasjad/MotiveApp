@@ -23,6 +23,9 @@ ion-item::part(native) {
   --inner-border-width: 0;  
   --background-hover: transparent;
 }
+ion-radio.ios.radio-checked::part(mark){
+    transform: none;
+}
 /*------------------------------------------------------------------*/ 
 .page-top_title-container{
     @media screen and (max-width:992px) {            
@@ -61,6 +64,7 @@ form{
                 }
                 ion-radio{
                     margin-top: 0;
+                    margin-right: 0;
                     margin-bottom: 2px;
                 }
             }
@@ -75,6 +79,10 @@ form{
             @include transform(translateY(-1px));
             -webkit-box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
             box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+            @media screen and (max-width:992px) {    
+                transform: none;
+                background-color: $white;
+            }
         }
     }
 }
