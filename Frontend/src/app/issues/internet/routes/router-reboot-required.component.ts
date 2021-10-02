@@ -103,21 +103,25 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     this.ontConfig = { ...this.ontConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
     this.routerConfig = { ...this.routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
-    this.ontConfig = this.networkDiagramStylingMapper(this.ontConfig);
+    this.ontConfig = this.networkDiagramStylingMapper(this.ontConfig, this.etisalatConfig.className);
     if (this.ontConfig?.isReachable) {
-      this.routerConfig = this.networkDiagramStylingMapper(this.routerConfig);
+      this.routerConfig = this.networkDiagramStylingMapper(this.routerConfig, this.ontConfig.className);
     }
   }
 
-  networkDiagramStylingMapper(device: any) {
+  networkDiagramStylingMapper(device: any, previousDeviceState?: string) {
     let tempClass = '';
-    if (device?.isReachable) {
-      tempClass = 'okay';
-      if (device?.isRebootRequired) {
-        tempClass = 'pending';
-      }
+    if (['error', 'default'].includes(previousDeviceState)) {
+      tempClass = 'default';
     } else {
-      tempClass = 'error';
+      if (device?.isReachable) {
+        tempClass = 'okay';
+        if (device?.isRebootRequired) {
+          tempClass = 'pending';
+        }
+      } else {
+        tempClass = 'error';
+      }
     }
     return {
       ...device,
