@@ -17,6 +17,18 @@ ion-item::part(native) {
   --border-width: 0;
   --inner-border-width: 0;
 }
+// --------------------------------------------------------------
+
+.state {
+  position: relative;
+  z-index: 2;
+}
+ion-label {
+  margin-top: 0.4rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .states {
   display: -webkit-box;
   display: -ms-flexbox;
