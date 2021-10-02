@@ -39,6 +39,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
       this.updateHeader();
     });
     this.updatePageContent();
+    // this.getIssueTilesData();
   }
 
   ngOnDestroy(): void {
@@ -61,9 +62,27 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     this.router.navigate(['/thanks']);
   }
 
-  getIssueTiles() {
+  getIssueTilesData() {
     const navigation = this.router.getCurrentNavigation();
     this.ontConfig = navigation?.extras?.state?.ontDetails;
     this.routerConfig = navigation?.extras?.state?.routerDetails;
+  }
+  networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: IOntDetail) {
+    this.networkDiagramStylingMapper(ontConfig);
+    if (ontConfig?.isReachable) {
+      this.networkDiagramStylingMapper(ontConfig);
+    }
+  }
+
+  networkDiagramStylingMapper(device: IOntDetail) {
+    //  default
+    if (device?.isReachable) {
+      device['className'] = 'okay';
+      if (device?.isRebootRequired) {
+        device['className'] = 'pending';
+      }
+    } else {
+      device['className'] = 'error';
+    }
   }
 }
