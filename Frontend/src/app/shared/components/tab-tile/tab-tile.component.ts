@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { IonSlides } from '@ionic/angular';
-import { IOntDetail, IRouterDetail } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -10,46 +9,9 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./tab-tile.component.scss'],
 })
 export class TabTileComponent implements OnInit {
-  @Input() ontConfig: IOntDetail;
-  @Input() routerConfig: IRouterDetail;
-  @Input() tilesList: TabTiles[] = [
-    {
-      className: 'default-state',
-      imgPath: '/assets/images/network-map-icons/icon_smartphone_default.svg',
-      altText: 'Smart Phone Default State',
-      text1: 'Unamed',
-      text2: '21212',
-    },
-    {
-      className: 'okay-state',
-      imgPath: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
-      altText: 'Smart Phone okay State',
-      text1: 'Unamed',
-      text2: '21212',
-    },
-    {
-      className: 'error-state',
-      imgPath: '/assets/images/network-map-icons/icon_smartphone_error.svg',
-      altText: 'Smart Phone Error State',
-      text1: 'Unamed',
-      text2: '21212',
-    },
-    {
-      className: 'pending-state',
-      imgPath: '/assets/images/network-map-icons/icon_smartphone_action_pending.svg',
-      altText: 'Smart Phone Pending State',
-      text1: 'Unamed',
-      text2: '21212',
-    },
-    {
-      className: 'pending-state',
-      imgPath: '/assets/images/network-map-icons/icon_smartphone_action_pending.svg',
-      altText: 'Smart Phone Pending State',
-      text1: 'Unamed',
-      text2: '21212',
-    },
-  ];
-
+  @Input() tileConfig: any;
+  test = 'okay';
+  // /assets/images/network-map-icons/icon_smartphone_all_okay.svg
   slideOpts = {
     slidesPerView: 4,
     spaceBetween: 1,
@@ -85,11 +47,7 @@ export class TabTileComponent implements OnInit {
   arrow_left: boolean = false;
   constructor(private sharedService: SharedService, private router: Router) {}
 
-  ngOnInit() {
-    console.log('====================================');
-    console.log(this.ontConfig, this.routerConfig);
-    console.log('====================================');
-  }
+  ngOnInit() {}
 
   next() {
     this.slides.slideNext();

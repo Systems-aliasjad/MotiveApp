@@ -28,6 +28,7 @@ import { MotiveMessageBulletComponent } from './components/motive-message-bullet
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
 import { createTranslateLoader } from '../app.module';
 import { GenericErrorComponent } from './components/generic-error/generic-error.component';
+import { ThreeLayersComponent } from './components/network-diagrams/three-layers/three-layers.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { GenericErrorComponent } from './components/generic-error/generic-error.
     NumberOnlyDirective,
     IssueTabsComponent,
     GenericErrorComponent,
+    ThreeLayersComponent,
     TabTileComponent,
     ServiceIssueComponent,
     RestartInstructionComponent,
