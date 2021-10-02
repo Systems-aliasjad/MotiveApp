@@ -14,6 +14,7 @@ export const flowCodes = {
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
+  outageInternet: 'E2EN121 ',
 };
 
 export enum ERoutingIds {
