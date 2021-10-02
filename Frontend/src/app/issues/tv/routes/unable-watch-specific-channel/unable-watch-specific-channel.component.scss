@@ -41,15 +41,9 @@ ion-radio.ios.radio-checked::part(mark){
     transform: none;
 }
 // --------------------------------------------------------------
-
 ion-radio.ios{
   margin-top: 0;
 }
 .channel-list-items{
-  margin-bottom: 22px;
+  margin-bottom: 1rem;
 }
-/* ion-radio{
-  @media screen and (max-width: 1025px) {
-    margin-top:0;
-  }
- } */
