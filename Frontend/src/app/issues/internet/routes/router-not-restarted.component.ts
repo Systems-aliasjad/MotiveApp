@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IExplainInstruction, IMotiveButton, IRestartInstruction } from 'src/app/shared/constants/types';
+import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-router-not-restarted',
   template: `<app-restart-instruction
+    [headerConfig]="headerConfig"
     [ImgSrc]="ImgSrc"
     [instruction1]="instruction1"
     [instruction2]="instruction2"
@@ -50,8 +51,13 @@ export class RouterNotRestartedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('MESSAGES.FOLLOW_THESE_STEPS', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.FOLLOW_THESE_STEPS', false);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'MESSAGES.FOLLOW_THESE_STEPS',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.instruction1.title = 'MESSAGES.FOLLOW_THESE_STEPS';

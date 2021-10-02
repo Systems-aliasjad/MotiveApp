@@ -1,3 +1,5 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
+
 <!-- Quick Links Start -->
 <ion-content>
   <ion-grid>
@@ -6,7 +8,8 @@
       <ion-row>
         <ion-col size="12">
           <div class="page-top_title">
-            <h2>{{ 'HEADER.QUICK_LINKS' | translate }}</h2>
+            <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
+            <!-- <h2>{{ 'HEADER.QUICK_LINKS' | translate }}</h2> -->
           </div>
         </ion-col>
       </ion-row>

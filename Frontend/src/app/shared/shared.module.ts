@@ -27,6 +27,8 @@ import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
 import { createTranslateLoader } from '../app.module';
+import { HeaderSingleLineComponent } from './components/header-single-line/header-single-line.component';
+import { HeaderMultiLineComponent } from './components/header-multi-line/header-multi-line.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { createTranslateLoader } from '../app.module';
     ResetPinComponent,
     MotiveMessageBulletComponent,
     MotiveMessageFeedbackComponent,
+    HeaderSingleLineComponent,
+    HeaderMultiLineComponent,
   ],
   imports: [
     CommonModule,
@@ -82,6 +86,8 @@ import { createTranslateLoader } from '../app.module';
     MotiveMessageBulletComponent,
     TabTileComponent,
     MotiveMessageFeedbackComponent,
+    HeaderMultiLineComponent,
+    HeaderSingleLineComponent,
   ],
 
   entryComponents: [],

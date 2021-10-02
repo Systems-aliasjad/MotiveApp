@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { IDeviceCareContent, IMotiveButton } from 'src/app/shared/constants/types';
+import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { InternetIssuesDialogSecondComponent } from 'src/app/issues/internet/dialogs/internet-issues-dialog-second/internet-issues-dialog-second.component';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -10,7 +10,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 @Component({
   selector: 'app-install-new-router-care',
   template:
-    '<app-device-care [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
 export class RouterNotReachableOwnCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -43,7 +43,7 @@ export class RouterNotReachableOwnCareComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+    // this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
   }
 
   updatePageContent() {
@@ -52,6 +52,11 @@ export class RouterNotReachableOwnCareComponent implements OnInit, OnDestroy {
     this.careContent.body1 = 'MESSAGES.Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
     this.careContent.body2 = 'MESSAGES.Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.DEVICE_CARE',
+    showBackBtn: true,
+  };
 
   button1Listener() {
     this.router.navigate(['/thanks']);

@@ -8,6 +8,7 @@ import { Subscription } from 'rxjs';
 import { ModalController } from '@ionic/angular';
 import { TermsConditionsComponent } from '../../../../shared/components/terms-conditions/terms-conditions.component';
 import { Location } from '@angular/common';
+import { IPageHeader } from 'src/app/shared/constants/types';
 @Component({
   selector: 'app-reset-internet-password',
   templateUrl: './reset-internet-password.component.html',
@@ -27,8 +28,13 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
     Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.RESET_INTERNET_PASSWORD',
+    showBackBtn: true,
+  };
+
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController, private location: Location) {
-    this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
+    //this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
 
     this.subscription = this.sharedService.getTermsConditions().subscribe((config) => {
       this.termsCheck = config;

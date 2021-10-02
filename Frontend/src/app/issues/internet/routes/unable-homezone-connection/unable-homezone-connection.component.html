@@ -1,6 +1,8 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
+
 <ion-row>
   <ion-col size="12">
-    <app-page-top></app-page-top>
+    <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
   </ion-col>
 </ion-row>
 <!-- Home Zone Connected Devices list -->

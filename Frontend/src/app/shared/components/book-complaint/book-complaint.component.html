@@ -1,9 +1,10 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-grid class="form-main-container">
     <!-- Page Title and Sub Title Start -->
     <ion-row>
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p *ngIf="!formGroup.valid" class="tag-title">{{ 'SUBHEADER.PLEASE_FILL_YOUR_COMPLETE_DETAILS' | translate }}</p>
         <p *ngIf="formGroup.valid" class="tag-title">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
       </ion-col>

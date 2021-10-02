@@ -1,14 +1,15 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-grid>
     <!-- Page Title Start -->
     <ion-row class="page-title">
       <ion-col size="12" class="pb-0">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p>{{ subHeader | translate }}</p>
       </ion-col>
     </ion-row>
     <!-- Page Title End-->
-    
+
     <ion-row>
       <!-- Package list Start -->
       <ion-col sizeLg="5" sizeMd="12" size="12">

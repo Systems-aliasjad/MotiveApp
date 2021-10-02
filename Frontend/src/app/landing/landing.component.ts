@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
-import { ICard } from '../shared/constants/types';
+import { ICard, IPageHeader } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
 import { motiveSubscriptions } from '../shared/constants/constants';
 import { Subscription } from 'rxjs';
@@ -37,9 +37,14 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.sharedService.setDefaultValues();
     this.codeType = params['code']?.toUpperCase() || '3P';
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
+    //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
     this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.TECHNICAL_SUPPORT',
+    showBackBtn: false,
+  };
 
   handleClick = (route) => {
     this.router.navigate([route]);

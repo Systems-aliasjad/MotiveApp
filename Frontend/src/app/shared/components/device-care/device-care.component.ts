@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IDeviceCareContent, IMotiveButton } from '../../constants/types';
+import { IDeviceCareContent, IMotiveButton, IPageHeader } from '../../constants/types';
 
 @Component({
   selector: 'app-device-care',
@@ -26,6 +26,9 @@ export class DeviceCareComponent implements OnInit {
   button3: IMotiveButton;
   @Output()
   button3Click = new EventEmitter();
+
+  @Input()
+  headerConfig: IPageHeader;
 
   constructor() {}
 

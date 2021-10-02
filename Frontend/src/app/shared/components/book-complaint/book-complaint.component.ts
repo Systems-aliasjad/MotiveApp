@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../../constants/types';
+import { IMotiveButton, IPageHeader } from '../../constants/types';
 import { regExps, errorMessages } from '../../validators/validations';
 
 @Component({
@@ -25,6 +25,9 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   button3: IMotiveButton;
   @Output()
   button3Click = new EventEmitter();
+
+  @Input()
+  headerConfig: IPageHeader;
 
   myBtnSize;
   formGroup: FormGroup;

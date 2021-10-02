@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -32,6 +32,9 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
   pageContent: string;
   @Input()
   cardList: any;
+
+  @Input()
+  headerConfig: IPageHeader;
 
   formGroup: FormGroup;
   subscription: Subscription;

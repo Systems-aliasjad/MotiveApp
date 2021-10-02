@@ -1,13 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { IUnableToConnectContent } from '../shared/unable-to-connect/unable-to-connect.component';
 
 @Component({
   selector: 'unable-to-connect-newDevice-wifi',
   template: `<app-unable-to-connect
+    [headerConfig]="headerConfig"
     [unableToConnectContent]="content"
     [button1]="button1"
     (button1Click)="button1Listener()"
@@ -43,8 +44,13 @@ export class UnableToConnectNewDeviceWiFiComponent implements OnInit, OnDestroy 
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI', true);
+    //this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.content.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';

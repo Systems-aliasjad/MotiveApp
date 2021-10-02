@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IExplainInstruction, IMotiveButton, IRestartInstruction } from 'src/app/shared/constants/types';
+import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-router-restart',
   template: `<app-restart-instruction
+    [headerConfig]="headerConfig"
     [ImgSrc]="ImgSrc"
     [instruction1]="instruction1"
     [instruction2]="instruction2"
@@ -50,7 +51,7 @@ export class RouterRestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('MESSAGES.RESTART_ROUTER', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.RESTART_ROUTER', false);
   }
 
   updatePageContent() {
@@ -67,6 +68,11 @@ export class RouterRestartInstructionsComponent implements OnInit, OnDestroy {
     this.instruction2.title = 'MESSAGES.CONSULT_DEVICE_CARE_FOR_SPECIFIC_DEVICE_GUIDES';
     this.instruction2.body = 'MESSAGES.ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE';
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'MESSAGES.RESTART_ROUTER',
+    showBackBtn: true,
+  };
 
   button1Listener() {
     this.router.navigate(['issues/internet/router-restart/device-care']);

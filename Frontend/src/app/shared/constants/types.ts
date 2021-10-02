@@ -1,6 +1,6 @@
 export interface IPageHeader {
   pageTitle: string;
-  singleLine: boolean;
+  singleLine?: boolean;
   showBackBtn?: boolean;
 }
 

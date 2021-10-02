@@ -1,0 +1,15 @@
+<ion-header class="header-wrapper">
+  <div class="page-top-container">
+    <ion-row class="page-top_back" *ngIf="headerConfig.pageTitle === ''">
+      <div class="empty-header"></div>
+    </ion-row>
+
+    <ion-col size="12" class="pt-0 pb-0" *ngIf="headerConfig.showBackBtn">
+      <a href="javascript:void(0)" class="back-to-page" (click)="back()">
+        <img src="assets/images/action-icons/icon_back.svg" class="small-screen icon-back-arrow" width="24px" height="24px" alt="back to page" />
+        <img src="assets/images/action-icons/icon_arrow_left.svg" class="lg-screen icon-left-arrow" alt="back to page" />
+        <span>Back</span>
+      </a>
+    </ion-col>
+  </div>
+</ion-header>

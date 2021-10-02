@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { IPageHeader } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-package-available',
@@ -18,6 +19,9 @@ export class PackageAvailableComponent implements OnInit {
   button1Click = new EventEmitter();
   @Output()
   button2Click = new EventEmitter();
+  @Input()
+  headerConfig: IPageHeader;
+
   constructor(private router: Router) {}
 
   ngOnInit() {}

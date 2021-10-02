@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton, IResetPinContent } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader, IResetPinContent } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
 import { ModalController } from '@ionic/angular';
@@ -9,7 +9,7 @@ import { ResetTvPinDialog } from 'src/app/issues/tv/dialogs/reset-tv-pin-dialog/
 @Component({
   selector: 'app-reset-tv-admin-pin',
   template:
-    '<app-reset-pin [resetPinContent]="resetContent" (formValue)="getFormValue($event)" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-reset-pin>',
+    '<app-reset-pin [headerConfig]="headerConfig" [resetPinContent]="resetContent" (formValue)="getFormValue($event)" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-reset-pin>',
 })
 export class ResetTvAdminPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -49,8 +49,13 @@ export class ResetTvAdminPinComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('MESSAGES.RESET_TV_ADMIN_PIN', true);
+    //this.sharedService.setHeaderConfig('MESSAGES.RESET_TV_ADMIN_PIN', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'MESSAGES.RESET_TV_ADMIN_PIN',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.resetContent.header = 'HEADER.RESET_INTERNET_PASSWORD';

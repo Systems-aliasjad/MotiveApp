@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { IMotiveButton } from '../../constants/types';
+import { IMotiveButton, IPageHeader } from '../../constants/types';
 
 @Component({
   selector: 'app-diagnose-issue',
@@ -32,6 +32,8 @@ export class DiagnoseIssueComponent implements OnInit {
 
   myBtnSize;
 
+  @Input()
+  headerConfig: IPageHeader;
   constructor() {}
 
   ngOnInit() {

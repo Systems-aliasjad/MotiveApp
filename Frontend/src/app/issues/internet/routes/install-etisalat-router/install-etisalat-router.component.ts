@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { InstallEtisalatRouterDialogComponent } from 'src/app/issues/internet/dialogs/install-etisalat-router-dialog/install-etisalat-router-dialog.component';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { errorMessages, regExps } from 'src/app/shared/validators/validations';
 
@@ -69,10 +70,13 @@ export class InstallEtisalatRouterComponent implements OnInit {
     });
   }
 
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.INSTALL_ETISALAT_ROUTER',
+    showBackBtn: true,
+  };
+
   initialization() {
     this.sharedService.setDefaultValues();
-    this.sharedService.setHeaderConfig('HEADER.INSTALL_ETISALAT_ROUTER', true);
-
     this.brandList = [
       { text: 'Brand 1', value: '1' },
       { text: 'Brand 2', value: '2' },

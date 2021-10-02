@@ -8,7 +8,7 @@ import { ERoutingIds } from '../../constants/constants';
 import { ResetTvPinDialog } from '../../../issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { SharedService } from '../../shared.service';
 import { regExps, errorMessages } from '../../validators/validations';
-import { IMotiveButton, IResetPinContent } from '../../constants/types';
+import { IMotiveButton, IPageHeader, IResetPinContent } from '../../constants/types';
 
 @Component({
   selector: 'app-reset-pin',
@@ -54,6 +54,9 @@ export class ResetPinComponent implements OnInit {
   button3Click = new EventEmitter();
 
   @Output() formValue = new EventEmitter();
+
+  @Input()
+  headerConfig: IPageHeader;
 
   ngOnInit() {}
 

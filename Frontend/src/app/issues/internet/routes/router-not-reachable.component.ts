@@ -6,11 +6,12 @@ import { ApplicableCodes, ERoutingIds } from 'src/app/shared/constants/constants
 import { InternetIssuesDialog } from 'src/app/issues/internet/dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-3rd-party-router',
   template: `<app-diagnose-issue
+    [headerConfig]="headerConfig"
     [section1Data]="section1Data"
     [section1Template]="section1Template"
     [messageSection]="messageSection"
@@ -39,9 +40,6 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
-    });
     this.updatePageContent();
   }
 
@@ -50,8 +48,13 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'MESSAGES.INTERNET_ISSUES',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;

@@ -1,13 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'all-services-fiber-box-not-reachable',
   template: `<app-diagnose-issue
+    [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
@@ -49,8 +50,13 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.ISSUES', false);
+    // this.sharedService.setHeaderConfig('HEADER.ISSUES', false);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.ISSUES',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.fiberBoxNotReachableBuilderSection;

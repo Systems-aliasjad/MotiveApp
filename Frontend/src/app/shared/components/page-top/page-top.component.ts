@@ -1,5 +1,4 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { IPageHeader } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
@@ -9,17 +8,11 @@ import { SharedService } from '../../shared.service';
   styleUrls: ['./page-top.component.scss'],
 })
 export class PageTopComponent implements OnInit, OnDestroy {
-  headerConfig: IPageHeader;
-  subscription: Subscription;
+  @Input()
+  headerTitle: string = '';
 
-  constructor(private sharedService: SharedService) {
-    this.subscription = this.sharedService.getHeaderConfig().subscribe((config) => {
-      this.headerConfig = config;
-    });
-  }
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  constructor(private sharedService: SharedService) {}
+  ngOnDestroy(): void {}
 
   ngOnInit(): void {}
 }

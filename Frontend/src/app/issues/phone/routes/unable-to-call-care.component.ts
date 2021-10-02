@@ -1,13 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IDeviceCareContent, IMotiveButton } from 'src/app/shared/constants/types';
+import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-unable-to-call-care',
   template:
-    '<app-device-care [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
 export class UnableToCallCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -39,8 +39,13 @@ export class UnableToCallCareComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_MAKE_RECEIVE_CALLS', true);
+    //this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_MAKE_RECEIVE_CALLS', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.UNABLE_TO_MAKE_RECEIVE_CALLS',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.careContent.header1 = 'SUBHEADER.PHONE_TROUBLESHOOTING_GUIDELINES';
