@@ -6,6 +6,7 @@ import { Subscription } from 'rxjs';
 import { ChannelNotListDialogComponent } from '../../dialogs/channel-not-list-dialog/channel-not-list-dialog.component';
 import { SharedService } from '../../../../shared/shared.service';
 import { regExps, errorMessages } from '../../../../shared/validators/validations';
+import { IPageHeader } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-unable-watch-specific-channel',
@@ -45,11 +46,16 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
       ChannelList: ['', [Validators.required]],
     });
 
-    this.sharedService.setHeaderConfig('MESSAGES.CHANNEL_LIST', false);
+    // this.sharedService.setHeaderConfig('MESSAGES.CHANNEL_LIST', false);
     this.channelListTitle = 'MESSAGES.CHANNEL_LIST';
     this.channelListContent = 'MESSAGES.PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW';
     this.buttonText = 'BUTTONS.CONTINUE';
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'MESSAGES.CHANNEL_LIST',
+    showBackBtn: true,
+  };
 
   get f() {
     return this.formGroup.controls;

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
@@ -11,7 +11,13 @@ import { Location } from '@angular/common';
  */
 @Component({
   selector: 'reset-ccb-pin',
-  template: `<app-ccb-pin-reset-form [button1]="button1" (button1Click)="button1Listener($event)" [button2]="button2" (button2Click)="button2Listener()"></app-ccb-pin-reset-form>`,
+  template: `<app-ccb-pin-reset-form
+    [headerConfig]="headerConfig"
+    [button1]="button1"
+    (button1Click)="button1Listener($event)"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  ></app-ccb-pin-reset-form>`,
 })
 export class ResetCcbPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -37,8 +43,13 @@ export class ResetCcbPinComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.RESET_CCB_PIN', true);
+    //this.sharedService.setHeaderConfig('HEADER.RESET_CCB_PIN', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.RESET_CCB_PIN',
+    showBackBtn: true,
+  };
 
   button1Listener(event) {
     this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);

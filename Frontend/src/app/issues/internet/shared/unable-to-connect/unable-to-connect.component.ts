@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 
 export class IUnableToConnectContent {
   imgSrc: string;
@@ -40,6 +40,9 @@ export class UnableToConnectComponent implements OnInit {
   button3: IMotiveButton;
   @Output()
   button3Click = new EventEmitter();
+
+  @Input()
+  headerConfig: IPageHeader;
 
   myBtnSize: string;
   constructor(private router: Router) {}

@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { regExps, errorMessages } from '../../../../shared/validators/validations';
+import { errorMessages } from '../../../../shared/validators/validations';
 import { SharedService } from '../../../../shared/shared.service';
 import { Subscription } from 'rxjs';
 import { eyeHide, eyeShow } from 'src/app/shared/constants/constants';
+import { IPageHeader } from 'src/app/shared/constants/types';
 @Component({
   selector: 'app-change-call-forward',
   templateUrl: './change-call-forward.component.html',
@@ -54,8 +55,13 @@ export class ChangeCallForwardComponent implements OnInit {
 
   initialization() {
     this.sharedService.setDefaultValues();
-    this.sharedService.setHeaderConfig('HEADER.CHANGE_CALL_FORWARDING_NUMBER', true);
+    // this.sharedService.setHeaderConfig('HEADER.CHANGE_CALL_FORWARDING_NUMBER', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.CHANGE_CALL_FORWARDING_NUMBER',
+    showBackBtn: true,
+  };
 
   SubmitForm() {
     console.log(this.formGroup.valid);

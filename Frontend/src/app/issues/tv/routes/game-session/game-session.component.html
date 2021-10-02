@@ -1,9 +1,10 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-grid class="form-main-container game-session-container">
     <!-- Page Heading -->
     <ion-row>
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p>{{ 'MESSAGES.YOU_CAN_CANCEL_ANY_GAME_SESSION_THAT_ISNT_WORKING_PROPERLY' | translate }}</p>
       </ion-col>
     </ion-row>

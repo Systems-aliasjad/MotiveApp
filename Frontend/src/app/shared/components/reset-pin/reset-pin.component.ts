@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { regExps, errorMessages } from '../../validators/validations';
-import { IMotiveButton, IResetPinContent } from '../../constants/types';
+import { IMotiveButton, IPageHeader, IResetPinContent } from '../../constants/types';
 
 @Component({
   selector: 'app-reset-pin',
@@ -37,6 +37,9 @@ export class ResetPinComponent implements OnInit {
       this.initialization();
     });
   }
+
+  @Input()
+  headerConfig: IPageHeader;
 
   ngOnInit() {}
 

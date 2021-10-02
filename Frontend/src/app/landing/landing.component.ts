@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ICard } from '../shared/constants/types';
+import { ICard, IPageHeader } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
 import { motiveSubscriptions } from '../shared/constants/constants';
 import { Subscription } from 'rxjs';
@@ -68,7 +68,14 @@ export class LandingComponent implements OnInit, OnDestroy {
       this.codeType = data?.result?.productCode;
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
+    //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
+    this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.TECHNICAL_SUPPORT',
+    showBackBtn: false,
+  };
 
   handleClick = (route) => {
     this.router.navigate([route]);

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
@@ -28,10 +29,15 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     this.updatePageContent();
   }
 
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.SERVICE_DETAILS',
+    showBackBtn: true,
+  };
+
   initialization() {
     if (!this.isPartialLoaded) {
       this.sharedService.setDefaultValues();
-      this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', false);
+      //this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', false);
     }
 
     this.cardList = [

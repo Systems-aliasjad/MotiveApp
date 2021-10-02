@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -23,8 +24,13 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
     });
   }
 
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.DEVICE_CONNECTED_TO_HOME_ZONE',
+    showBackBtn: true,
+  };
+
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.DEVICE_CONNECTED_TO_HOME_ZONE', false);
+    // this.sharedService.setHeaderConfig('HEADER.DEVICE_CONNECTED_TO_HOME_ZONE', false);
   }
 
   button1Listener() {

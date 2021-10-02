@@ -29,6 +29,8 @@ import { MotiveMessageFeedbackComponent } from './components/motive-message-feed
 import { createTranslateLoader } from '../app.module';
 import { GenericErrorComponent } from './components/generic-error/generic-error.component';
 import { ThreeLayersComponent } from './components/network-diagrams/three-layers/three-layers.component';
+import { HeaderSingleLineComponent } from './components/header-single-line/header-single-line.component';
+import { HeaderMultiLineComponent } from './components/header-multi-line/header-multi-line.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { ThreeLayersComponent } from './components/network-diagrams/three-layers
     ResetPinComponent,
     MotiveMessageBulletComponent,
     MotiveMessageFeedbackComponent,
+    HeaderSingleLineComponent,
+    HeaderMultiLineComponent,
   ],
   imports: [
     CommonModule,
@@ -86,6 +90,8 @@ import { ThreeLayersComponent } from './components/network-diagrams/three-layers
     MotiveMessageBulletComponent,
     TabTileComponent,
     MotiveMessageFeedbackComponent,
+    HeaderMultiLineComponent,
+    HeaderSingleLineComponent,
   ],
 
   entryComponents: [],

@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IDeviceCareContent, IMotiveButton } from 'src/app/shared/constants/types';
+import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-router-not-restarted-care',
   template:
-    '<app-device-care [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
 export class RouterNotRestartedCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -28,9 +28,6 @@ export class RouterNotRestartedCareComponent implements OnInit, OnDestroy {
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
-    });
     this.updatePageContent();
   }
 
@@ -39,8 +36,13 @@ export class RouterNotRestartedCareComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+    //this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.DEVICE_CARE',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';

@@ -1,9 +1,10 @@
+<app-header-multi-line *ngIf="!isPartialLoaded" [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-grid class="tv-detail-container two-col-container">
     <!-- Page Heading Start -->
     <ion-row *ngIf="!isPartialLoaded">
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <div>
           <!-- <h2>{{ heading | translate }}</h2> -->
         </div>

@@ -3,13 +3,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ResetFactoryDefaultDialog } from 'src/app/issues/internet/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-router-reset-factory',
-  template: `<app-diagnose-issue [messageSection]="messageSection" [button1]="button1" (button1Click)="button1Listener()" [button2]="button2" (button2Click)="button2Listener()">
+  template: `<app-diagnose-issue
+    [headerConfig]="headerConfig"
+    [messageSection]="messageSection"
+    [button1]="button1"
+    (button1Click)="button1Listener()"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  >
   </app-diagnose-issue>`,
 })
 export class RouterResetFactoryComponent implements OnInit, OnDestroy {
@@ -37,8 +44,13 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
+  headerConfig: IPageHeader = {
+    pageTitle: 'MESSAGES.INTERNET_ISSUES',
+    showBackBtn: true,
+  };
+
   updateHeader() {
-    this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 
   updatePageContent() {

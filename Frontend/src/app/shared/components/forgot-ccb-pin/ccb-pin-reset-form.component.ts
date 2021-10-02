@@ -5,7 +5,7 @@ import { errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
 import { eyeHide, eyeShow } from '../../constants/constants';
-import { IMotiveButton } from '../../constants/types';
+import { IMotiveButton, IPageHeader } from '../../constants/types';
 
 @Component({
   selector: 'app-ccb-pin-reset-form',
@@ -32,6 +32,10 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
 
   passwordShowIcon: string = eyeShow;
   passwordHideIcon: string = eyeHide;
+
+  @Input()
+  headerConfig: IPageHeader;
+
   rulesList: string[] = [];
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {
     this.subscription.add(

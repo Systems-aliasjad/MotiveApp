@@ -1,13 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-3rd-party-router',
   template: `<app-diagnose-issue
+    [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
@@ -50,6 +51,11 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   updateHeader() {
     //this.sharedService.setHeaderConfig('', true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: '',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;

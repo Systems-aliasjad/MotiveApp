@@ -1,9 +1,10 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-grid>
     <!-- Page Title and Sub Title Start -->
     <ion-row>
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p>{{ channelListContent | translate }}</p>
       </ion-col>
     </ion-row>

@@ -1,13 +1,21 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
+<app-header-single-line [headerConfig]="headerConfig"></app-header-single-line>
 <ion-content>
   <ion-grid class="tabs-contanier two-col-container">
+    <ion-row class="page-title mobile-web">
+      <ion-col class="pt-0 pb-0">
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
+      </ion-col>
+    </ion-row>
+
     <app-issue-tabs
       [ontConfig]="ontConfig"
       [routerConfig]="routerConfig"
       [section1Data]="section1Data"
       [section1Template]="section1Template"
       [messageSection]="messageSection"
-    ></app-issue-tabs>
-  </ion-grid>
+    ></app-issue-tabs
+  ></ion-grid>
 </ion-content>
 <div class="footer">
   <ion-row class="footer-btns-container">

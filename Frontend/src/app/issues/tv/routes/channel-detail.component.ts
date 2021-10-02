@@ -1,11 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'channel-detail',
-  template: `<app-package-available [subHeader]="subHeader" [packages]="packages" (button1Click)="(button1Listener)" (button2Click)="(button2Listener)"></app-package-available>`,
+  template: `<app-package-available
+    [headerConfig]="headerConfig"
+    [subHeader]="subHeader"
+    [packages]="packages"
+    (button1Click)="(button1Listener)"
+    (button2Click)="(button2Listener)"
+  ></app-package-available>`,
 })
 export class ChannelDetailComponent implements OnInit {
   subscription: Subscription;
@@ -25,8 +32,13 @@ export class ChannelDetailComponent implements OnInit {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.CHANNEL_DETAILS', false, true);
+    // this.sharedService.setHeaderConfig('HEADER.CHANNEL_DETAILS', false, true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.CHANNEL_DETAILS',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.subHeader = 'SUBHEADER.THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX';

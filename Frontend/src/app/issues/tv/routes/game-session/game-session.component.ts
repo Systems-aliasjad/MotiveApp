@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { GameSessionDialog } from 'src/app/issues/tv/dialogs/game-session-dialog/game-session-dialog.component';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -36,8 +37,13 @@ export class GameSessionComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.ACTIVE_GAME_SESSION', false);
+    //this.sharedService.setHeaderConfig('HEADER.ACTIVE_GAME_SESSION', false);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.ACTIVE_GAME_SESSION',
+    showBackBtn: true,
+  };
 
   async cancelGameSessionDialog() {
     const modal = await this.modalCtrl.create({

@@ -2,14 +2,14 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { IDeviceCareContent, IMotiveButton } from 'src/app/shared/constants/types';
+import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { RestartRouterDialog } from 'src/app/issues/internet/dialogs/restart-router-dialog/restart-router-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-router-restart-care',
   template:
-    '<app-device-care [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
 export class RouterRestartCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -41,7 +41,7 @@ export class RouterRestartCareComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
+    // this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
   }
 
   updatePageContent() {
@@ -50,6 +50,11 @@ export class RouterRestartCareComponent implements OnInit, OnDestroy {
     this.careContent.body1 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
     this.careContent.body2 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.DEVICE_CARE',
+    showBackBtn: true,
+  };
 
   button1Listener() {
     this.router.navigate(['/thanks']);

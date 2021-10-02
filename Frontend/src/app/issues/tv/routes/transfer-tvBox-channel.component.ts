@@ -2,11 +2,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'transfer-tvBox-channel',
-  template: `<app-package-available [subHeader]="subHeader" [packages]="packages" (button1Click)="(button1Listener)" (button2Click)="(button2Listener)"></app-package-available>`,
+  template: `<app-package-available
+    [headerConfig]="headerConfig"
+    [subHeader]="subHeader"
+    [packages]="packages"
+    (button1Click)="(button1Listener)"
+    (button2Click)="(button2Listener)"
+  ></app-package-available>`,
 })
 export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -26,8 +33,13 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.AVAILABLE_PACKAGES', false, true);
+    //  this.sharedService.setHeaderConfig('HEADER.AVAILABLE_PACKAGES', false, true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.AVAILABLE_PACKAGES',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.subHeader = 'SUBHEADER.CHOOSE_THE_PLAN_PACKAGE_YOU_LIKE_TO_TRANSFER_TO_ANOTHER_TV_BOX';

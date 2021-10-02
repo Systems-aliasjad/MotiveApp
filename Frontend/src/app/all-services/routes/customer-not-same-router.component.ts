@@ -2,12 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'all-services-customer-not-using-router',
   template: `<app-diagnose-issue
+    [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
@@ -48,8 +49,13 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
+    //this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.ALL_SERVICES',
+    showBackBtn: true,
+  };
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.customerNotUsingSameRouterAllServicesSection;

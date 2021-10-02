@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -64,9 +64,14 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
 
   updateHeader() {
     if (!this.isPartialLoaded) {
-      this.sharedService.setHeaderConfig('HEADER.SERVICE_DEATAIL', false);
+      //this.sharedService.setHeaderConfig('HEADER.SERVICE_DEATAIL', false);
     }
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.SERVICE_DEATAIL',
+    showBackBtn: true,
+  };
 
   updatePageContent() {}
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
@@ -9,6 +9,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'unable-to-watch-package-transfer',
   template: `<app-transfer-package
+    [headerConfig]="headerConfig"
     [pageContent]="pageContent"
     [cardList]="cardList"
     [button1]="button1"
@@ -62,9 +63,14 @@ export class UnableToWatchPackageTransferComponent implements OnInit, OnDestroy 
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE', false, true);
+    //  this.sharedService.setHeaderConfig('HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE', false, true);
     this.pageContent = 'MESSAGES.CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO';
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE',
+    showBackBtn: true,
+  };
 
   button1Listener(_event) {
     this.formGroup = _event;

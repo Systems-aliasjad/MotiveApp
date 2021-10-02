@@ -1,13 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-outage',
-  template: `<app-diagnose-issue [messageSection]="messageSection" [button1]="button1" (button1Click)="button1Listener()" [button2]="button2" (button2Click)="button2Listener()">
+  template: `<app-diagnose-issue
+    [headerConfig]="headerConfig"
+    [messageSection]="messageSection"
+    [button1]="button1"
+    (button1Click)="button1Listener()"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  >
   </app-diagnose-issue>`,
 })
 export class OutageComponent implements OnInit, OnDestroy {
@@ -36,12 +43,17 @@ export class OutageComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.TV_ISSUES', false);
+    // this.sharedService.setHeaderConfig('HEADER.TV_ISSUES', false);
   }
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.tvOutageMessageSection;
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.TV_ISSUES',
+    showBackBtn: true,
+  };
 
   button1Listener() {
     this.router.navigate(['/thanks']);

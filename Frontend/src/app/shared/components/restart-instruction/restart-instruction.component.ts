@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { IExplainInstruction, IMotiveButton, IRestartInstruction } from '../../constants/types';
+import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -26,6 +26,9 @@ export class RestartInstructionComponent implements OnInit {
   button2: IMotiveButton;
   @Output()
   button2Click = new EventEmitter();
+
+  @Input()
+  headerConfig: IPageHeader;
 
   button1Listener() {
     this.button1Click.emit();

@@ -1,9 +1,10 @@
+<app-header-multi-line *ngIf="!isPartialLoaded" [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-grid class="tv-detail-contanier">
     <!-- Page Heading Start -->
     <ion-row class="tv-detail_title" *ngIf="!isPartialLoaded">
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
       </ion-col>
     </ion-row>
     <!-- Page Heading End -->

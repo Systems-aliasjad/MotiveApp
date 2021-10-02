@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
@@ -9,6 +9,7 @@ import { FormGroup } from '@angular/forms';
 @Component({
   selector: 'reset-wifi-password',
   template: `<app-reset-router-password
+    [headerConfig]="headerConfig"
     [button1]="button1"
     (button1Click)="button1Listener()"
     [button2]="button2"
@@ -49,8 +50,13 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.RESET_ROUTER_WIFI_PASSWORD', true, true);
+    //this.sharedService.setHeaderConfig('HEADER.RESET_ROUTER_WIFI_PASSWORD', true, true);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.RESET_ROUTER_WIFI_PASSWORD',
+    showBackBtn: true,
+  };
 
   button1Listener() {}
 

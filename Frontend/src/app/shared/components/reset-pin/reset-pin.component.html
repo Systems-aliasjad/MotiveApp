@@ -1,9 +1,12 @@
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
+<app-header-single-line [headerConfig]="headerConfig"></app-header-single-line>
+
 <ion-content>
   <ion-grid class="form-main-container">
     <!-- Page Title and Sub Title Start -->
     <ion-row class="page-title mobile-web">
       <ion-col class="pt-0 pb-0">
-        <app-page-top></app-page-top>
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p class="sub-title">{{ resetPinContent.subheader | translate }}</p>
       </ion-col>
     </ion-row>

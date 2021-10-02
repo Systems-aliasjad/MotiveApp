@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -39,9 +40,14 @@ export class TvDetailComponent implements OnInit {
   constructor(public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
   ngOnInit() {
     if (!this.isPartialLoaded) {
-      this.sharedService.setHeaderConfig('TV details', false);
+      // this.sharedService.setHeaderConfig('TV details', false);
     }
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.TV_DETAILS',
+    showBackBtn: true,
+  };
 
   async openInternetIssueDialog() {
     this.modal = await this.modalCtrl.create({

@@ -5,7 +5,7 @@ import { regExps, errorMessages } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { ConfirmedValidator, eyeHide, eyeShow } from '../../constants/constants';
 import { Subscription } from 'rxjs';
-import { IMotiveButton } from '../../constants/types';
+import { IMotiveButton, IPageHeader } from '../../constants/types';
 
 @Component({
   selector: 'app-reset-router-password',
@@ -29,6 +29,8 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   @Output()
   button3Click = new EventEmitter();
 
+  @Input()
+  headerConfig: IPageHeader;
   //
   public segment: string = '1';
   public routerSettingsForm: FormGroup;

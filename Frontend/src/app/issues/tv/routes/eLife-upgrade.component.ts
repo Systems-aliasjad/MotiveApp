@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IMotiveButton } from 'src/app/shared/constants/types';
+import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
@@ -8,7 +8,13 @@ import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'eLife-upgrade',
-  template: `<app-book-complaint [button1]="button1" (button1Click)="button1Listener($event)" [button2]="button2" (button2Click)="button2Listener()"></app-book-complaint>`,
+  template: `<app-book-complaint
+    [headerConfig]="headerConfig"
+    [button1]="button1"
+    (button1Click)="button1Listener($event)"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
+  ></app-book-complaint>`,
 })
 export class ELifeUpgradeComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -38,8 +44,13 @@ export class ELifeUpgradeComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    this.sharedService.setHeaderConfig('HEADER.ELIFE_UPGRADE', false);
+    // this.sharedService.setHeaderConfig('HEADER.ELIFE_UPGRADE', false);
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.ELIFE_UPGRADE',
+    showBackBtn: true,
+  };
 
   button1Listener(_event) {
     this.formGroup = _event;
