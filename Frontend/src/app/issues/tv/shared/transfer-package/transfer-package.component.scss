@@ -20,33 +20,68 @@ ion-item::part(native) {
   --background: transparent;
   --border-radius: 0;
   --border-width: 0;
-  --inner-border-width: 0;
+  --inner-border-width: 0;  
+  --background-hover: transparent;
+}
+ion-radio.ios.radio-checked::part(mark){
+    transform: none;
 }
 /*------------------------------------------------------------------*/ 
-
-.service-detail-contanier{
-    .desc-msg{
-        padding: 0 5px;
+.page-top_title-container{
+    @media screen and (max-width:992px) {            
+        margin-left: 5px;
     }
-    form{
-        ion-card{
-            margin: 24px 0;
-            ion-card-header{
-                padding: 16px 16px 0 16px;
-                ion-card-title{
-                    display: flex;
-                    justify-content: space-between;
-                    .sub-title{
-                        font-size: 1rem;
-                        word-break: break-word;
-                    }
-                    ion-radio{
-                        margin-top: 0;
-                    }
+}
+.page-top_sub-title{
+    @media screen and (max-width:992px) {            
+        margin-left: 5px;
+    }
+}
+form{
+    ion-card{
+        // max-width: 376px;
+        width: 100%;
+        margin: 13px 5px;
+        @include transition(all 0.3s ease-in-out);
+        @media screen and (min-width: 992px) {
+            margin: 16px ​12px;
+        }
+        ion-card-header{
+            padding: 16px 16px 20px 16px;
+            ion-card-title{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .sub-title{
+                    font-size: 1rem;
+                    word-break: break-word;
+                    width: calc(100% - 50px);
+                }
+                p{
+                    font-size: 1rem;
+                    margin: 0;
+                    font-weight: 500;
+                }
+                ion-radio{
+                    margin-top: 0;
+                    margin-right: 0;
+                    margin-bottom: 2px;
                 }
             }
-            ion-card-content{
-                padding: 0 16px 20px 16px;
+        }
+        ion-card-content{
+            padding: 0 16px 20px 16px;
+        }
+        
+        &:hover {
+            text-decoration: none;
+            background-color: $alabaster;
+            @include transform(translateY(-1px));
+            -webkit-box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+            box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+            @media screen and (max-width:992px) {    
+                transform: none;
+                background-color: $white;
             }
         }
     }

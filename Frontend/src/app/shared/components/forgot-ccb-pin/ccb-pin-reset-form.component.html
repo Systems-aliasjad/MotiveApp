@@ -17,7 +17,7 @@
               <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
-                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                   <img
                     [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                     (click)="hideShowPassword(NewPassword)"
@@ -32,7 +32,7 @@
               <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
-                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                   <img
                     [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                     (click)="hideShowPassword(ConfirmPassword)"

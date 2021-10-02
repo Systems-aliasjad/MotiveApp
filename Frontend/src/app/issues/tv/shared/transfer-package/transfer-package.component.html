@@ -1,27 +1,43 @@
 <ion-content>
-  <ion-grid class="service-detail-contanier">
-    <ion-row class="service-detail_title">
+  <ion-grid>
+    <ion-row>
       <ion-col size="12">
-        <app-page-top></app-page-top>
+        <div class="page-top_title-container">
+          <app-page-top></app-page-top>
+        </div>        
+        <p class="page-top_sub-title">{{ pageContent | translate }}</p>
       </ion-col>
-      <p class="desc-msg">{{ pageContent | translate }}</p>
     </ion-row>
     <ion-row>
       <!-- Package list Start -->
-      <ion-col size="12">
+      <ion-col sizeLg="4" sizeMd="6" size="12">
         <form [formGroup]="formGroup">
-          <ion-radio-group allow-empty-selection="true" name="radio-group" formControlName="radioButton">
-            <ion-card *ngFor="let d of cardList">
-              <ion-card-header>
-                <ion-card-title>
-                  <ion-label class="sub-title">{{ d.title }}</ion-label>
-                  <ion-radio name="radioButton" value="{{ d.title }}"></ion-radio>
-                </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <p>{{ d.description }}</p>
-              </ion-card-content>
-            </ion-card>
+
+          <!-- <ion-radio-group name="radio-group" value="0">
+            <ion-item lines="none" *ngFor="let d of cardList; let i=index;">
+              <div class="card">
+                <ion-label class="sub-title">{{ d.title }}</ion-label>
+                <ion-radio name="radioButton" value="{{i}}"></ion-radio>
+              </div>
+            </ion-item>
+          </ion-radio-group> -->
+
+
+          <ion-radio-group name="radio-group" value="0">
+            <ion-item lines="none" *ngFor="let d of cardList; let i=index;">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>
+                    <ion-label class="sub-title">{{ d.title }}</ion-label>
+                    <ion-radio name="radioButton" value="{{i}}"></ion-radio>                                        
+                    <p>{{ d.description }}</p>
+                  </ion-card-title>                  
+                </ion-card-header>
+                <!-- <ion-card-content>
+                  <p>{{ d.description }}</p>
+                </ion-card-content> -->
+              </ion-card>
+            </ion-item>
           </ion-radio-group>
         </form>
       </ion-col>

@@ -26,6 +26,7 @@
       color: $primary-color;
     }
   }
+  
 }
 ion-item::part(native){
   padding-inline-end: 0 ;
@@ -36,16 +37,19 @@ ion-item::part(native){
   --border-width: 0;
   --inner-border-width: 0
 }
+ion-radio.ios.radio-checked::part(mark){
+    transform: none;
+}
 // --------------------------------------------------------------
 
-.btn {
-  width: 100%;
+ion-radio.ios{
+  margin-top: 0;
 }
 .channel-list-items{
-  margin: 0 0 22px 0;
+  margin-bottom: 22px;
 }
-ion-radio{
+/* ion-radio{
   @media screen and (max-width: 1025px) {
     margin-top:0;
   }
- }
+ } */
