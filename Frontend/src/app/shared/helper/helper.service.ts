@@ -16,6 +16,12 @@ export class HelperService {
       this.router.navigate(['issues/internet/account-not-active']);
     } else if (CodeId === flowCodes.routerRebootRequired) {
       this.router.navigate(['issues/internet/router-reboot-required'], { state: { ontDetails: data?.ontDetails, routerDetails: data?.routerDetails } });
+    } else if (CodeId === flowCodes.movingElifeConnection) {
+      this.router.navigate(['issues/internet/osrp/move-elife-connection']);
+    } else if (CodeId === flowCodes.ElifeCancellationRequest) {
+      this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
+    } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
+      this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
     }
   }
 }

@@ -6,7 +6,6 @@ import { PasswordResetComponent } from './routes/password-reset.component';
 
 import { MainComponent } from './routes/main.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
-import { OSRPComponent } from './routes/osrp.component';
 import { OutageComponent } from './routes/outage.component';
 import { RouterNotRestartedComponent } from './routes/router-not-restarted.component';
 import { PackageUpgradeRecommendedComponent } from './routes/package-upgrade-recommended.component';
@@ -66,6 +65,8 @@ import { RouterNotReachableOwnCareComponent } from './routes/router-not-reachabl
 import { ResetWIFIPasswordComponent } from './routes/reset-wifi-password.component';
 import { UnableToConnectNewDeviceWiFiComponent } from './routes/unable-to-connect-newDevice-wifi.component';
 import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-call.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 
 const routes: Routes = [
   {
@@ -91,6 +92,14 @@ const routes: Routes = [
   {
     path: 'osrp/move-elife-connection',
     component: MoveElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/cancel-elife-connection',
+    component: CancelElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/account-temporarily-disconnected',
+    component: AccountTemporarilyDisconnectedMessageComponent,
   },
   {
     path: 'appointment-successful',
@@ -140,10 +149,6 @@ const routes: Routes = [
   {
     path: 'outage',
     component: OutageComponent,
-  },
-  {
-    path: 'osrp',
-    component: OSRPComponent,
   },
   {
     path: 'router-fixed-restart-required',

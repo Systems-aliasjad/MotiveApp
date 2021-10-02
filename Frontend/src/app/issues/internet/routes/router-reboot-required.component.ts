@@ -19,8 +19,22 @@ import { SharedService } from '../../../shared/shared.service';
   </app-diagnose-issue>`,
 })
 export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
-  ontConfig: IOntDetail;
-  routerConfig: IRouterDetail;
+  ontConfig: IOntDetail = {
+    ontSerial: '485754431E91C19B',
+    ontType: 'HG8240H',
+    isReachable: true,
+    isRebootRequired: false,
+    isUpgradeRequired: false,
+  };
+  routerConfig: IRouterDetail = {
+    routerSerial: '109461043164',
+    routerModel: 'DIR850',
+    isReachable: true,
+    isRebootRequired: false,
+    isUpgradeRequired: false,
+    isManaged: false,
+    isResetRequired: false,
+  };
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
@@ -64,6 +78,9 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
 
   getIssueTilesData() {
     const navigation = this.router.getCurrentNavigation();
+    console.log('===navigation?.extras?.state=========');
+    console.log(navigation?.extras?.state);
+    console.log('====================================');
     this.ontConfig = navigation?.extras?.state?.ontDetails;
     this.routerConfig = navigation?.extras?.state?.routerDetails;
   }

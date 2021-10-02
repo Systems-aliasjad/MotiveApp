@@ -85,7 +85,11 @@ export class TabTileComponent implements OnInit {
   arrow_left: boolean = false;
   constructor(private sharedService: SharedService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('====================================');
+    console.log(this.ontConfig, this.routerConfig);
+    console.log('====================================');
+  }
 
   next() {
     this.slides.slideNext();

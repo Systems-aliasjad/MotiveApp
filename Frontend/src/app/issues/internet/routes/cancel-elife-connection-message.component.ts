@@ -6,11 +6,8 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 
-/**
- * Open Service Request present
- */
 @Component({
-  selector: 'osrp-internet',
+  selector: 'cancel-elife-connection-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -22,7 +19,7 @@ import { Subscription } from 'rxjs';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class OSRPComponent implements OnInit, OnDestroy {
+export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -31,11 +28,12 @@ export class OSRPComponent implements OnInit, OnDestroy {
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.YES_FOLLOW_UP',
-    explanatoryNote: 'MESSAGES.FOLLOW_UP_THE_REQUEST',
+    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
   };
+
   button2: IMotiveButton = {
+    title: 'BUTTONS.EXIT_TROUBLESHOOTING',
     type: 'link',
-    title: 'LINKS.EXIT_TROUBLESHOOTING',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -55,7 +53,7 @@ export class OSRPComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
+    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
     this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
     this.Section2Data = {
       reqNo: '436529873',

@@ -11,6 +11,9 @@ export const flowCodes = {
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM14',
   routerRebootRequired: 'CI9',
+  movingElifeConnection: 'E2ECRM231',
+  ElifeCancellationRequest: 'E2ECRM232',
+  accountTemporarilyDisconnected: 'E2ECRM141',
 };
 
 export enum ERoutingIds {
@@ -452,7 +455,7 @@ export class ApplicableCodes {
       objKeyNameEN: 'reqType',
     },
     {
-      title: 'OPEN_SERVICE_REQUEST.DATE_VISIT',
+      title: 'MESSAGES.DATE_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },

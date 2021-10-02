@@ -32,14 +32,14 @@ export class AppComponent implements OnInit {
 
   Initialization() {
     // TODO: ROMOVE this.router.navigate
-    this.router.navigate(['landing'], {
-      state: {
-        user: {
-          accountId: '1234567890',
-          username: 'Mock data',
-        },
-      },
-    });
+    // this.router.navigate(['landing'], {
+    //   state: {
+    //     user: {
+    //       accountId: '1234567890',
+    //       username: 'Mock data',
+    //     },
+    //   },
+    // });
     // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
     // this.sharedService.setLoader(true);
     // this.backendService.getUserDetail('KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=', 'en').subscribe((data: any) => {
