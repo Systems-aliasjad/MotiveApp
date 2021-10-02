@@ -22,6 +22,9 @@ export class HelperService {
       this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
+    } else if (CodeId === flowCodes.outageInternet) {
+      //App.MotiveH&S.1.2.2
+      this.router.navigate(['issues/internet/outage']);
     }
   }
 }
