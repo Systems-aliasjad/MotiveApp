@@ -31,6 +31,8 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     isReachable: true,
     isRebootRequired: false,
     isUpgradeRequired: false,
+    url: '',
+    className: '',
   };
   routerConfig: IRouterDetail = {
     routerSerial: '109461043164',
@@ -40,6 +42,8 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     isUpgradeRequired: false,
     isManaged: false,
     isResetRequired: false,
+    url: '',
+    className: '',
   };
   subscription: Subscription;
   messageSection;
@@ -59,7 +63,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
       this.updateHeader();
     });
     this.updatePageContent();
-    // this.getIssueTilesData();
+    this.getIssueTilesData();
   }
 
   ngOnDestroy(): void {
@@ -94,25 +98,30 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     console.log('====================================');
     this.ontConfig = navigation?.extras?.state?.ontDetails;
     this.routerConfig = navigation?.extras?.state?.routerDetails;
+    this.networkDiagramStylingWrapper(this.ontConfig, this.routerConfig);
   }
-  networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: IOntDetail) {
-    this.ontConfig['url'] = '/assets/images/network-map-icons/icon_smartphone_all_okay.svg';
-    this.routerConfig['url'] = '/assets/images/network-map-icons/icon_smartphone_all_okay.svg';
-    this.networkDiagramStylingMapper(ontConfig);
-    if (ontConfig?.isReachable) {
-      this.networkDiagramStylingMapper(routerConfig);
+  networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
+    this.ontConfig = { ...this.ontConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
+    this.routerConfig = { ...this.routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
+    this.ontConfig = this.networkDiagramStylingMapper(this.ontConfig);
+    if (this.ontConfig?.isReachable) {
+      this.routerConfig = this.networkDiagramStylingMapper(this.routerConfig);
     }
   }
 
-  networkDiagramStylingMapper(device: IOntDetail) {
-    //  default
+  networkDiagramStylingMapper(device: any) {
+    let tempClass = '';
     if (device?.isReachable) {
-      device['className'] = 'okay';
+      tempClass = 'okay';
       if (device?.isRebootRequired) {
-        device['className'] = 'pending';
+        tempClass = 'pending';
       }
     } else {
-      device['className'] = 'error';
+      tempClass = 'error';
     }
+    return {
+      ...device,
+      className: tempClass,
+    };
   }
 }

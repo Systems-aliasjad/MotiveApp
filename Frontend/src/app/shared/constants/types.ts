@@ -102,6 +102,8 @@ export interface ITermsAndConditions {
 export interface IOntDetail {
   ontSerial: string;
   ontType: string;
+  url: string;
+  className: string;
   isReachable: boolean;
   isRebootRequired: boolean;
   isUpgradeRequired: boolean;
@@ -110,6 +112,8 @@ export interface IOntDetail {
 export interface IRouterDetail {
   routerSerial: string;
   routerModel: string;
+  url: string;
+  className: string;
   isReachable: boolean;
   isRebootRequired: boolean;
   isUpgradeRequired: boolean;

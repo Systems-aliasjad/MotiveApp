@@ -1,8 +1,8 @@
 <div class="states">
-  <div [class]="tileConfig.className + '-state state'">
-    <img src="tileConfig.url" alt="tab-tile" />
+  <div [class]="tileConfig?.className + '-state state'">
+    <img [src]="tileConfig?.url" alt="tab-tile" />
   </div>
-  <ion-label>{{ tileConfig.title }} </ion-label>
+  <ion-label>{{ tileConfig?.title }} </ion-label>
 </div>
 
 <!-- <div class="states-inner_container">
