@@ -96,8 +96,8 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     console.log('===navigation?.extras?.state=========');
     console.log(navigation?.extras?.state);
     console.log('====================================');
-    this.ontConfig = navigation?.extras?.state?.ontDetails;
-    this.routerConfig = navigation?.extras?.state?.routerDetails;
+    // this.ontConfig = navigation?.extras?.state?.ontDetails;
+    // this.routerConfig = navigation?.extras?.state?.routerDetails;
     this.networkDiagramStylingWrapper(this.ontConfig, this.routerConfig);
   }
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
