@@ -33,6 +33,7 @@ export class DiagnoseIssueComponent implements OnInit {
   ontConfig: IOntDetail;
   @Input()
   routerConfig: IRouterDetail;
+  @Input() etisalatConfig;
 
   myBtnSize;
 

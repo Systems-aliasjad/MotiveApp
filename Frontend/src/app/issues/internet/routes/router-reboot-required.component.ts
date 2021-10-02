@@ -8,6 +8,7 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-router-reboot-required',
   template: `<app-diagnose-issue
+    [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
@@ -20,6 +21,10 @@ import { SharedService } from '../../../shared/shared.service';
   </app-diagnose-issue>`,
 })
 export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
+  etisalatConfig = {
+    url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
+    className: 'error',
+  };
   ontConfig: IOntDetail = {
     ontSerial: '485754431E91C19B',
     ontType: 'HG8240H',
@@ -91,9 +96,11 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     this.routerConfig = navigation?.extras?.state?.routerDetails;
   }
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: IOntDetail) {
+    this.ontConfig['url'] = '/assets/images/network-map-icons/icon_smartphone_all_okay.svg';
+    this.routerConfig['url'] = '/assets/images/network-map-icons/icon_smartphone_all_okay.svg';
     this.networkDiagramStylingMapper(ontConfig);
     if (ontConfig?.isReachable) {
-      this.networkDiagramStylingMapper(ontConfig);
+      this.networkDiagramStylingMapper(routerConfig);
     }
   }
 

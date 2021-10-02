@@ -10,8 +10,6 @@ import { SharedService } from '../../shared.service';
 })
 export class TabTileComponent implements OnInit {
   @Input() tileConfig: any;
-  test = 'okay';
-  // /assets/images/network-map-icons/icon_smartphone_all_okay.svg
   slideOpts = {
     slidesPerView: 4,
     spaceBetween: 1,

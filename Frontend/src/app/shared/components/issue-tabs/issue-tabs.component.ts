@@ -11,6 +11,7 @@ import { Subscription } from 'rxjs';
 export class IssueTabsComponent implements OnInit, OnDestroy {
   @Input() ontConfig: IOntDetail;
   @Input() routerConfig: IRouterDetail;
+  @Input() etisalatConfig;
   @Input()
   tabTiles: ITabTile[];
   @Input()

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { IOntDetail, IRouterDetail } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-three-layers',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./three-layers.component.scss'],
 })
 export class ThreeLayersComponent implements OnInit {
-
-  constructor() { }
+  @Input() ontConfig: IOntDetail;
+  @Input() routerConfig: IRouterDetail;
+  @Input() etisalatConfig;
+  constructor() {}
 
   ngOnInit() {}
-
 }
