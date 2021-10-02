@@ -27,16 +27,16 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
   @Output()
   button2Click = new EventEmitter();
 
+  @Input()
+  rules: string[];
+
   passwordShowIcon: string = eyeShow;
   passwordHideIcon: string = eyeHide;
 
   @Input()
   headerConfig: IPageHeader;
 
-  hideShowPassword(Type: any) {
-    Type.type = Type.type === 'password' ? 'text' : 'password';
-  }
-
+  rulesList: string[] = [];
   constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {
     this.subscription.add(
       this.sharedService.getTermsConditions().subscribe((config) => {
@@ -49,13 +49,18 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
       })
     );
   }
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.rulesList = this.rules;
+  }
 
   createForm() {
+    console.log(this.rules);
+    this.rulesList = this.rules;
     this.formGroup = this.formBuilder.group(
       {
         NewPassword: ['', [Validators.required]],
@@ -69,6 +74,10 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
 
   get f() {
     return this.formGroup.controls;
+  }
+
+  hideShowPassword(Type: any) {
+    Type.type = Type.type === 'password' ? 'text' : 'password';
   }
 
   button1Listener() {

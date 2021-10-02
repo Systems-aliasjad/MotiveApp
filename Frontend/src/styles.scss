@@ -89,8 +89,29 @@
       text-transform: uppercase;
     }
   }
+  
 }
-
+ion-radio.ios::part(mark){
+  -webkit-transition: -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  -o-transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s, -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+}
+ion-radio.ios.radio-checked::part(mark){
+    transform: none;
+    border: 0;
+    background-color: $etisalat-color;
+    border-radius: 50%;
+    width: 11px;
+    height: 11px;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+ion-radio.radio-checked::part(mark){
+  width: 11px;
+  height: 11px;
+}
 // --------------------------------------------------------------
 
 /*------------------- Neotech Fonts Start -------------------*/

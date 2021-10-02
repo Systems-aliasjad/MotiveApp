@@ -17,10 +17,23 @@
 
     <ion-row class="service-detail-inner_container two-col_inner_container">
       <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_slider two-col_left">
+        <!-- Page Title Start -->
+        <ion-row class="page-title" *ngIf="!isPartialLoaded">
+          <ion-col size="12" class="ion-no-padding">
+            <app-page-top></app-page-top>
+          </ion-col>
+        </ion-row>
+        <!-- Page Title End -->
+
         <!-- Service List Slider Start -->
-        <app-tab-tile></app-tab-tile>
+        <ion-row>
+          <ion-col size="12" class="ion-no-padding">
+            <app-tab-tile></app-tab-tile>
+          </ion-col>
+        </ion-row>
         <!-- Service List Slider End -->
       </ion-col>
+
       <!-- Service List Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_content two-col_right">
         <div class="content">

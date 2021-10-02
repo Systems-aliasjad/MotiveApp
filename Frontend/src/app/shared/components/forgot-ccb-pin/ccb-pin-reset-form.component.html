@@ -19,7 +19,7 @@
               <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
-                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                   <img
                     [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                     (click)="hideShowPassword(NewPassword)"
@@ -34,7 +34,7 @@
               <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
-                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                   <img
                     [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                     (click)="hideShowPassword(ConfirmPassword)"
@@ -46,6 +46,18 @@
                   </div>
                 </ion-item>
               </ion-col>
+
+              <ion-row>
+                <ion-col size="12" *ngIf="rulesList?.length > 0">
+                  <p class="tag-title">{{ 'MESSAGES.CCB_PIN_RULES' | translate }}:</p>
+                  <ion-list class="check-list">
+                    <ion-item *ngFor="let rule of rulesList">
+                      <img src="/assets/images/indicators-icons/icon_check.svg" alt="" /> &nbsp;
+                      <ion-label>{{ rule }}</ion-label>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
             </ion-row>
           </ion-grid>
         </form>

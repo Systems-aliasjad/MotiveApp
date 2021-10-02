@@ -14,9 +14,9 @@ import { Location } from '@angular/common';
   template: `<app-ccb-pin-reset-form
     [headerConfig]="headerConfig"
     [button1]="button1"
-    (button1Click)="(button1Listener)"
+    (button1Click)="button1Listener($event)"
     [button2]="button2"
-    (button2Click)="(button2Listener)"
+    (button2Click)="button2Listener()"
   ></app-ccb-pin-reset-form>`,
 })
 export class ResetCcbPinComponent implements OnInit, OnDestroy {
@@ -51,11 +51,12 @@ export class ResetCcbPinComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
-  button1Listener() {
+  button1Listener(event) {
     this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
   }
 
   button2Listener() {
+    console.log('a');
     this.location.back();
   }
 }
