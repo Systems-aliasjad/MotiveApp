@@ -486,12 +486,12 @@ export class ApplicableCodes {
       objKeyNameEN: 'complaintNo',
     },
     {
-      title: 'COMPLAIN_REQUEST.DATE_VISIT',
+      title: 'MESSAGES.DATE_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'COMPLAIN_REQUEST.STATUS',
+      title: 'MESSAGES.STATUS',
       type: 'text',
       objKeyNameEN: 'status',
     },

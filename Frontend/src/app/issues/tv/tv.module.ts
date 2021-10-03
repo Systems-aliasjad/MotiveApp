@@ -50,6 +50,7 @@ import { RestartTvboxDialog } from './dialogs/restart-tvbox-dialog/restart-tvbox
 import { ResetTvPinDialog } from './dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
 import { PackageTransferComponent } from './routes/package-transfer.component';
 import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-
     ResetTvPinDialog,
     PackageTransferComponent,
     UnableToWatchPackageTransferComponent,
+    ComplaintExistsMessageComponent,
   ],
   imports: [
     CommonModule,

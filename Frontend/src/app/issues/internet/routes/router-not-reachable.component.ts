@@ -63,6 +63,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
       routerName: 'Unnamed router',
       routerModel: 'xxxx xxxx  xxxx xxx',
     };
+    console.log(this.section1Template);
   }
 
   async button1Listener() {

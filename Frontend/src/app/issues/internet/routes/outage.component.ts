@@ -60,6 +60,6 @@ export class OutageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/bookComplaint']);
+    this.router.navigate(['/issues/internet/book-complaint']);
   }
 }

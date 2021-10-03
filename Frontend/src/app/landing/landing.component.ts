@@ -49,7 +49,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     // this.getProductCode();
 
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    // this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
+    //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
   }
 
   updateProfileData() {
