@@ -17,6 +17,9 @@ export const flowCodes = {
   outageInternet: 'E2EN121 ',
 };
 
+export const ETISALAT = 'Etisalat';
+export const ONT = 'ONT';
+
 export enum ERoutingIds {
   routerNotReachable,
   routerNotReachableOwnRouter,

@@ -1,9 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+
+import { ETISALAT, ONT } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from 'src/app/shared/constants/types';
-import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
-import { SharedService } from '../../../shared/shared.service';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-router-reboot-required',
@@ -24,6 +26,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   etisalatConfig = {
     url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
     className: 'error',
+    title: ETISALAT,
   };
   ontConfig: IOntDetail = {
     ontSerial: '485754431E91C19B',
@@ -33,6 +36,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     isUpgradeRequired: false,
     url: '',
     className: '',
+    title: ONT,
   };
   routerConfig: IRouterDetail = {
     routerSerial: '109461043164',
@@ -44,6 +48,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     isResetRequired: false,
     url: '',
     className: '',
+    title: ETISALAT,
   };
   subscription: Subscription;
   messageSection;

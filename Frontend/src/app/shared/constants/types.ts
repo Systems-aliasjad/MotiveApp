@@ -107,12 +107,14 @@ export interface IOntDetail {
   isReachable: boolean;
   isRebootRequired: boolean;
   isUpgradeRequired: boolean;
+  title?: string;
 }
 
 export interface IRouterDetail {
   routerSerial: string;
   routerModel: string;
   url: string;
+  title?: string;
   className: string;
   isReachable: boolean;
   isRebootRequired: boolean;
