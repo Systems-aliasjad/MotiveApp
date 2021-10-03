@@ -1,9 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+
+import { ETISALAT, ONT } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from 'src/app/shared/constants/types';
-import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
-import { SharedService } from '../../../shared/shared.service';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { SharedService } from 'src/app/shared/shared.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'app-router-reboot-required',
@@ -23,28 +26,11 @@ import { SharedService } from '../../../shared/shared.service';
 export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   etisalatConfig = {
     url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
-    className: 'error',
+    className: 'okay',
+    title: ETISALAT,
   };
-  ontConfig: IOntDetail = {
-    ontSerial: '485754431E91C19B',
-    ontType: 'HG8240H',
-    isReachable: true,
-    isRebootRequired: false,
-    isUpgradeRequired: false,
-    url: '',
-    className: '',
-  };
-  routerConfig: IRouterDetail = {
-    routerSerial: '109461043164',
-    routerModel: 'DIR850',
-    isReachable: true,
-    isRebootRequired: false,
-    isUpgradeRequired: false,
-    isManaged: false,
-    isResetRequired: false,
-    url: '',
-    className: '',
-  };
+  ontConfig: IOntDetail;
+  routerConfig: IRouterDetail;
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
@@ -56,14 +42,14 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private helperService: HelperService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
-    this.getIssueTilesData();
   }
 
   ngOnDestroy(): void {
@@ -92,40 +78,9 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   getIssueTilesData() {
-    const navigation = this.router.getCurrentNavigation();
-    console.log('===navigation?.extras?.state=========');
-    console.log(navigation?.extras?.state);
-    console.log('====================================');
-    // this.ontConfig = navigation?.extras?.state?.ontDetails;
-    // this.routerConfig = navigation?.extras?.state?.routerDetails;
-    this.networkDiagramStylingWrapper(this.ontConfig, this.routerConfig);
-  }
-  networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
-    this.ontConfig = { ...this.ontConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
-    this.routerConfig = { ...this.routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
-    this.ontConfig = this.networkDiagramStylingMapper(this.ontConfig, this.etisalatConfig.className);
-    if (this.ontConfig?.isReachable) {
-      this.routerConfig = this.networkDiagramStylingMapper(this.routerConfig, this.ontConfig.className);
-    }
-  }
-
-  networkDiagramStylingMapper(device: any, previousDeviceState?: string) {
-    let tempClass = '';
-    if (['error', 'default'].includes(previousDeviceState)) {
-      tempClass = 'default';
-    } else {
-      if (device?.isReachable) {
-        tempClass = 'okay';
-        if (device?.isRebootRequired) {
-          tempClass = 'pending';
-        }
-      } else {
-        tempClass = 'error';
-      }
-    }
-    return {
-      ...device,
-      className: tempClass,
-    };
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

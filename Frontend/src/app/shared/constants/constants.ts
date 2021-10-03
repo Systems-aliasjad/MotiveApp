@@ -15,7 +15,12 @@ export const flowCodes = {
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
   outageInternet: 'E2EN121 ',
+  issueNotFixed: 'CI71',
+  issueFixed: 'CI72',
 };
+
+export const ETISALAT = 'Etisalat';
+export const ONT = 'ONT';
 
 export enum ERoutingIds {
   routerNotReachable,

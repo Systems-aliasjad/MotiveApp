@@ -3,83 +3,200 @@
 
 /*-------------------------------------------------*/
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
-  ion-buttons{
-    --min-height:auto;
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  ion-buttons {
+    --min-height: auto;
   }
-  ion-header{
-    ion-toolbar{
+  ion-header {
+    ion-toolbar {
       border-bottom: 2px dashed #d0d6da;
-      ion-title{
-        padding-right:0;
+      ion-title {
+        padding-right: 0;
         padding-left: 0;
-        h5{
+        h5 {
           font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-          color:$primary-color;
+          color: $primary-color;
           @media screen and (max-width: 281px) {
             font-size: 1rem;
           }
         }
       }
-    ion-buttons{
-      margin-inline-end:0;
-      margin-right:0;
-      --padding-end: 0;
-      padding-right: 0;
-      padding-right: 0;
-      ion-button{
-        margin-inline-start:0;
-        margin-inline-end:0;
-        height: auto;
-        @media screen and (max-width: 281px) {
-          font-size: .8rem;
+      ion-buttons {
+        margin-inline-end: 0;
+        margin-right: 0;
+        --padding-end: 0;
+        padding-right: 0;
+        padding-right: 0;
+        ion-button {
+          margin-inline-start: 0;
+          margin-inline-end: 0;
+          height: auto;
+          @media screen and (max-width: 281px) {
+            font-size: 0.8rem;
+          }
         }
-       }
-     }
+      }
     }
   }
 }
-ion-item::part(native){
+ion-item::part(native) {
   /* padding-inline-end: .8rem;  */
   --inner-padding-end: 0;
   padding-left: 1rem;
   padding-right: 1rem;
-  --padding-start:1rem;
-  --border-color:#ededed;
+  --padding-start: 1rem;
+  --border-color: #ededed;
 }
 .header-ios {
-	ion-toolbar {
-    ion-title{
-      h5{
+  ion-toolbar {
+    ion-title {
+      h5 {
         text-align: left;
       }
     }
-	}
+  }
 }
 /*-------------------------------------------------*/
 
-.quick-links-container{   
-    ion-card{
-      cursor: pointer;
-      margin-right: 0;
-      margin-left: 0;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      min-height: 60px;
-      @include transition(all 0.3s ease-in-out);
-      &:hover{
-        background-color: #f9f8f8;
-        @include transform(translateY(-1px));
-        -webkit-box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
-        box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+.quick-links-container {
+  ion-card {
+    cursor: pointer;
+    margin-right: 0;
+    margin-left: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    min-height: 60px;
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
+      background-color: #f9f8f8;
+      @include transform(translateY(-1px));
+      -webkit-box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+      box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+    }
+  }
+}
+
+.header-wrapper {
+  position: $relative;
+  .header-wrapper-wave {
+    background: transparent url(/assets/images/wave_graphic_bg.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 134px;
+    height: 138px;
+    position: $absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+  }
+  &:after {
+    display: none;
+  }
+}
+
+ion-toolbar {
+  background-color: $white;
+  -webkit-box-shadow: rgb(2 8 20 / 6%) 0px 1px 3px, rgb(2 8 20 / 4%) 0px 1px 2px;
+  box-shadow: rgb(2 8 20 / 6%) 0px 1px 3px, rgb(2 8 20 / 4%) 0px 1px 2px;
+  .header-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    @media screen and (max-width: 767px) {
+      padding-left: 0.3rem;
+    }
+    .back-to-page {
+      margin-top: 0;
+      text-decoration: none;
+    }
+    div {
+      text-align: center;
+      width: 100%;
+      ion-title {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 1rem;
+        @media screen and (max-width: 340px) {
+          font-size: 0.85rem;
+        }
       }
-    }    
+    }
+  }
+}
+.page-top-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 60px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  .back-to-page {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* margin-top: 2rem; */
+    text-decoration: none;
+    margin-left: 0.5rem;
+    @include transition(all 0.3s ease-in-out);
+    span {
+      display: inline-block;
+      color: $etisalat-color;
+      margin-left: 0.5rem;
+      text-transform: $text-uppercase;
+      letter-spacing: 0.14285714em;
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+    &:hover {
+      text-decoration: none;
+      span {
+        color: $primary-color;
+      }
+    }
+    .icon-left-arrow {
+      width: 0.8rem;
+      height: 0.8rem;
+      display: block;
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+    .icon-back-arrow {
+      display: block;
+      @media screen and (min-width: 767px) {
+        display: none;
+      }
+    }
+  }
 }
