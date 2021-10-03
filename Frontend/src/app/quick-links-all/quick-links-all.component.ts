@@ -44,4 +44,8 @@ export class QuickLinksAllComponent implements OnInit {
     console.log(item.linkTo);
     this.router.navigate([item.linkTo]);
   }
+
+  goToLanding() {
+    this.router.navigate(['landing']);
+  }
 }

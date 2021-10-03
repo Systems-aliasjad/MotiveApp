@@ -19,7 +19,6 @@ export class LandingComponent implements OnInit, OnDestroy {
   selectedLang: string;
   landingPageCards: ICard[];
   showLoader: boolean = false;
-  paramsSubscription: Subscription;
   modal: any;
   user: any;
 
@@ -38,9 +37,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.initialization();
   }
 
-  ngOnDestroy(): void {
-    this.paramsSubscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   initialization() {
     // TODO: REMOVE FOLLWOING
@@ -52,7 +49,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     // this.getProductCode();
 
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
+    // this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
   }
 
   updateProfileData() {

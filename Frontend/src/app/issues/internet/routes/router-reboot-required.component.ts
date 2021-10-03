@@ -28,28 +28,8 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     className: 'error',
     title: ETISALAT,
   };
-  ontConfig: IOntDetail = {
-    ontSerial: '485754431E91C19B',
-    ontType: 'HG8240H',
-    isReachable: true,
-    isRebootRequired: false,
-    isUpgradeRequired: false,
-    url: '',
-    className: '',
-    title: ONT,
-  };
-  routerConfig: IRouterDetail = {
-    routerSerial: '109461043164',
-    routerModel: 'DIR850',
-    isReachable: true,
-    isRebootRequired: false,
-    isUpgradeRequired: false,
-    isManaged: false,
-    isResetRequired: false,
-    url: '',
-    className: '',
-    title: ETISALAT,
-  };
+  ontConfig: IOntDetail;
+  routerConfig: IRouterDetail;
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
@@ -66,9 +46,9 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
-    this.getIssueTilesData();
   }
 
   ngOnDestroy(): void {
@@ -97,14 +77,12 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   getIssueTilesData() {
-    const navigation = this.router.getCurrentNavigation();
-    console.log('===navigation?.extras?.state=========');
-    console.log(navigation?.extras?.state);
-    console.log('====================================');
-    // this.ontConfig = navigation?.extras?.state?.ontDetails;
-    // this.routerConfig = navigation?.extras?.state?.routerDetails;
+    const apiResponse = this.sharedService.getApiResponseData();
+    this.ontConfig = apiResponse?.ontDetails;
+    this.routerConfig = apiResponse?.routerDetails;
     this.networkDiagramStylingWrapper(this.ontConfig, this.routerConfig);
   }
+
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     this.ontConfig = { ...this.ontConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
     this.routerConfig = { ...this.routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };

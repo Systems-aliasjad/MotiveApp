@@ -3,11 +3,13 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
 
 import { IPageHeader } from './constants/types';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SharedService {
+  apiResponseData: any;
   headerConfigSubject: BehaviorSubject<IPageHeader>;
   headerConfig$: Observable<IPageHeader>;
 
@@ -23,7 +25,7 @@ export class SharedService {
     showBackBtn: true,
   };
 
-  constructor(public translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
@@ -31,6 +33,18 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setApiResponseData(data: any) {
+    this.apiResponseData = data;
+  }
+
+  getApiResponseData(): any {
+    if (this.apiResponseData) {
+      return this.apiResponseData;
+    } else {
+      this.router.navigate(['landing']);
+    }
   }
 
   setHeaderConfig(pageTitle: string, oneLine: boolean, _showBackBtn: boolean = true) {
