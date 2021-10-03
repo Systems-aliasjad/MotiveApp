@@ -7,6 +7,7 @@ import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from 'src/app/s
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-router-reboot-required',
@@ -38,7 +39,13 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private helperService: HelperService) {}
+  constructor(
+    private router: Router,
+    private sharedService: SharedService,
+    private helperService: HelperService,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -66,7 +73,12 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/router-restart']);
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal({ signal: 'MandatoryOnly' }).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+    // this.router.navigate(['/router-restart']);
   }
 
   button2Listener() {

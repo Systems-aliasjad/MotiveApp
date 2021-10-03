@@ -18,4 +18,8 @@ export class BackendService {
   getIssueDiagnositic(forIssue: string) {
     return this.http.get(`motive/troubleshoot/${forIssue}`);
   }
+
+  nextSignal(body) {
+    return this.http.put(`motive/troubleshoot/next-step`, body);
+  }
 }

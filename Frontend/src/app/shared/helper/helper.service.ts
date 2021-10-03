@@ -19,10 +19,10 @@ const temp2 = {
   routerSerial: '109461043164',
   routerModel: 'DIR850',
   isReachable: true,
-  isRebootRequired: true,
+  isRebootRequired: false,
   isUpgradeRequired: false,
   isManaged: false,
-  isResetRequired: false,
+  isResetRequired: true,
   url: '',
   className: '',
 };
@@ -52,7 +52,7 @@ export class HelperService {
     } else {
       if (device?.isReachable) {
         tempClass = 'okay';
-        if (device?.isRebootRequired) {
+        if (device?.isRebootRequired || device?.isUpgradeRequired || device?.isResetRequired) {
           tempClass = 'pending';
         }
       } else {
