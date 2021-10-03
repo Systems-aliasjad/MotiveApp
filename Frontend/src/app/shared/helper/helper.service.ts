@@ -35,7 +35,7 @@ export class HelperService {
   constructor(private router: Router, private sharedService: SharedService) {}
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
-    ontConfig = { ...ontConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
+    ontConfig = { ...ontConfig, url: '/assets/images/network-map-icons/icon_desktop_default.svg' };
     routerConfig = { ...routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg' };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
     if (ontConfig?.isReachable) {

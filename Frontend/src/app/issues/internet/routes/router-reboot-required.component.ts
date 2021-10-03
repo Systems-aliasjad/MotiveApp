@@ -25,7 +25,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
 })
 export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   etisalatConfig = {
-    url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
+    url: '/assets/images/network-map-icons/icon_home_default.svg',
     className: 'okay',
     title: ETISALAT,
   };
