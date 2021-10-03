@@ -23,8 +23,11 @@ export class HelperService {
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
     } else if (CodeId === flowCodes.outageInternet) {
-      //App.MotiveH&S.1.2.2
       this.router.navigate(['issues/internet/outage']);
+    } else if (CodeId === flowCodes.issueNotFixed) {
+      this.router.navigate(['issues/internet/issue-not-fixed']);
+    } else if (CodeId === flowCodes.issueFixed) {
+      this.router.navigate(['issues/internet/no-issue']);
     }
   }
 }
