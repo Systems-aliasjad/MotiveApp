@@ -10,7 +10,7 @@ export class RoutingPaths {
 export const flowCodes = {
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM14',
-  routerRebootRequired: 'CI9',
+  CI9: 'CI9',
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
@@ -21,6 +21,13 @@ export const flowCodes = {
 
 export const ETISALAT = 'Etisalat';
 export const ONT = 'ONT';
+export const ROUTER = 'Router';
+
+export const ETISALAT_DEFAULT_CONFIG = {
+  url: '/assets/images/network-map-icons/icon_home_default.svg',
+  className: 'okay',
+  title: ETISALAT,
+};
 
 export enum ERoutingIds {
   routerNotReachable,

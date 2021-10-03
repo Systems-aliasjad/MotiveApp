@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { ETISALAT, ONT } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -24,11 +24,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   </app-diagnose-issue>`,
 })
 export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
-  etisalatConfig = {
-    url: '/assets/images/network-map-icons/icon_home_default.svg',
-    className: 'okay',
-    title: ETISALAT,
-  };
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
   routerConfig: IRouterDetail;
   subscription: Subscription;
