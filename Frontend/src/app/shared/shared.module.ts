@@ -14,7 +14,6 @@ import { NumberOnlyDirective } from './directives/number-only.directive';
 import { BrMaskerModule } from 'br-mask';
 import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
 import { TabTileComponent } from './components/tab-tile/tab-tile.component';
-import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
 import { RestartInstructionComponent } from './components/restart-instruction/restart-instruction.component';
 import { DeviceCareComponent } from './components/device-care/device-care.component';
 import { ButtonComponent } from './components/buttons/button.component';
@@ -45,7 +44,6 @@ import { HeaderMultiLineComponent } from './components/header-multi-line/header-
     GenericErrorComponent,
     ThreeLayersComponent,
     TabTileComponent,
-    ServiceIssueComponent,
     RestartInstructionComponent,
     DeviceCareComponent,
     ButtonComponent,
@@ -82,7 +80,6 @@ import { HeaderMultiLineComponent } from './components/header-multi-line/header-
     MotiveMessageComponent,
     ThankyouScreenComponent,
     BookComplaintComponent,
-    ServiceIssueComponent,
     RestartInstructionComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,

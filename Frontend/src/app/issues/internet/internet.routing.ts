@@ -67,6 +67,7 @@ import { UnableToConnectNewDeviceWiFiComponent } from './routes/unable-to-connec
 import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-call.component';
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
 
 const routes: Routes = [
   {
@@ -413,6 +414,11 @@ const routes: Routes = [
   {
     path: 'unable-video-call',
     component: UnableToMaleVideoCallComponent,
+  },
+
+  {
+    path: 'router-upgrade-recommended-form',
+    component: RouterUpgradeRecommendedFormComponent,
   },
 ];
 

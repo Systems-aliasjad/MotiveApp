@@ -57,6 +57,6 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
   button2Listener(_event) {
     this.formGroup = _event;
     console.log(this.formGroup.valid);
-    this.router.navigate(['/issues/internet/reset-wifi-password-form_successfully']);
+    this.router.navigate(['/issues/internet/password-update-success']);
   }
 }
