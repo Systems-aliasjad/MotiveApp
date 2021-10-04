@@ -57,7 +57,10 @@ ion-item::part(native) {
   }
 }
 /*-------------------------------------------------*/
-
+ion-card.ios {
+  margin-top: .625rem;
+  margin-bottom: .625rem;
+}
 .quick-links-container {
   ion-card {
     cursor: pointer;
