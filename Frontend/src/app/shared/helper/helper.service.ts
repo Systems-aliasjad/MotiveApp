@@ -21,7 +21,7 @@ const temp2 = {
   isReachable: false,
   isRebootRequired: false,
   isUpgradeRequired: false,
-  isManaged: true,
+  isManaged: false,
   isResetRequired: false,
   url: '',
   className: '',
@@ -62,6 +62,8 @@ export class HelperService {
           tempClass = networkDiagramClasses.pending;
         }
       } else if (device?.isManaged && !device?.isReachable) {
+        tempClass = networkDiagramClasses.pending;
+      } else if (!device?.isManaged) {
         tempClass = networkDiagramClasses.pending;
       } else {
         tempClass = networkDiagramClasses.error;
@@ -111,6 +113,8 @@ export class HelperService {
       this.router.navigate(['issues/internet/router-reset-required']);
     } else if (routerDetails?.isManaged && !routerDetails?.isReachable) {
       this.router.navigate(['issues/internet/router-not-reachable']);
+    } else if (!routerDetails?.isManaged) {
+      this.router.navigate(['issues/internet/third-party-router']);
     } else if (routerDetails?.isUpgradeRequired) {
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
     }
