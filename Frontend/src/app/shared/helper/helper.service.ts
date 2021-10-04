@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { flowCodes, ONT, ROUTER } from '../constants/constants';
+import { flowCodes, networkDiagramClasses, ONT, ROUTER, SVGs } from '../constants/constants';
 import { IOntDetail, IRouterDetail } from '../constants/types';
 import { SharedService } from '../shared.service';
 
@@ -33,8 +33,8 @@ export class HelperService {
   constructor(private router: Router, private sharedService: SharedService) {}
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
-    ontConfig = { ...ontConfig, url: '/assets/images/network-map-icons/icon_desktop_default.svg', title: ONT };
-    routerConfig = { ...routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg', title: ROUTER };
+    ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
+    routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
@@ -47,16 +47,16 @@ export class HelperService {
 
   networkDiagramStylingMapper(device: any, previousDeviceState?: string) {
     let tempClass = '';
-    if (['error', 'default'].includes(previousDeviceState)) {
-      tempClass = 'default';
+    if ([networkDiagramClasses.default, networkDiagramClasses.error].includes(previousDeviceState)) {
+      tempClass = networkDiagramClasses.default;
     } else {
       if (device?.isReachable) {
-        tempClass = 'okay';
+        tempClass = networkDiagramClasses.okay;
         if (device?.isRebootRequired || device?.isUpgradeRequired || device?.isResetRequired) {
-          tempClass = 'pending';
+          tempClass = networkDiagramClasses.pending;
         }
       } else {
-        tempClass = 'error';
+        tempClass = networkDiagramClasses.error;
       }
     }
     return {

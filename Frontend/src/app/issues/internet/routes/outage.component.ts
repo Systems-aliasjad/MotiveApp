@@ -1,13 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-tv-outage',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -18,6 +22,9 @@ import { SharedService } from '../../../shared/shared.service';
   </app-diagnose-issue>`,
 })
 export class OutageComponent implements OnInit, OnDestroy {
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.error };
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.default, title: ONT };
+  routerConfig: IRouterDetail = { url: SVGs.router.default, className: networkDiagramClasses.default, title: ROUTER };
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {

@@ -14,7 +14,7 @@ export const flowCodes = {
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
-  outageInternet: 'E2EN121 ',
+  outageInternet: 'E2EN121',
   issueNotFixed: 'CI71',
   issueFixed: 'CI72',
 };
@@ -23,9 +23,28 @@ export const ETISALAT = 'Etisalat';
 export const ONT = 'ONT';
 export const ROUTER = 'Router';
 
+export const networkDiagramClasses = {
+  default: 'default', //Gray
+  error: 'error', //Red
+  pending: 'pending', //Orange
+  okay: 'okay', //Green
+};
+
+export const SVGs = {
+  etisalat: {
+    default: '/assets/images/network-map-icons/icon_home_default.svg',
+  },
+  ont: {
+    default: '/assets/images/network-map-icons/icon_desktop_default.svg',
+  },
+  router: {
+    default: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
+  },
+};
+
 export const ETISALAT_DEFAULT_CONFIG = {
-  url: '/assets/images/network-map-icons/icon_home_default.svg',
-  className: 'okay',
+  url: SVGs.etisalat.default,
+  className: networkDiagramClasses.okay,
   title: ETISALAT,
 };
 
