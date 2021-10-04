@@ -32,7 +32,7 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
   };
 
   button2: IMotiveButton = {
-    title: 'BUTTONS.EXIT_TROUBLESHOOTING',
+    title: 'BUTTONS.NO_EXIT_TROUBLESHOOTING',
     type: 'link',
   };
 

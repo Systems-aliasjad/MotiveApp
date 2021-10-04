@@ -82,6 +82,9 @@ import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-re
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { ComplaintBookingFailedInvalidContactComponent } from './routes/complaint-booking-failed-invalid-contact.component';
+import { ComplaintBookingFailedComponent } from './routes/complaint-booking-failed.component';
+import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
 
 @NgModule({
   declarations: [
@@ -157,6 +160,9 @@ import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account
     RestartRouterDialog,
     PasswordResetDialog,
     ResetFactoryDefaultDialog,
+    ComplaintBookingFailedInvalidContactComponent,
+    ComplaintBookingFailedComponent,
+    RouterRebootSuccessfulComponent,
   ],
   imports: [
     CommonModule,

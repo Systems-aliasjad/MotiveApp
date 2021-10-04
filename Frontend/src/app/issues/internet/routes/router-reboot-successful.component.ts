@@ -1,13 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ApplicableCodes, warningImgSrc } from 'src/app/shared/constants/constants';
+import { successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'cancel-elife-connection-message',
+  selector: 'router-reboot-successful',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -15,11 +15,9 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy {
+export class RouterRebootSuccessfulComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -27,13 +25,8 @@ export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy 
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.YES_FOLLOW_UP',
-    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
-  };
-
-  button2: IMotiveButton = {
-    title: 'BUTTONS.NO_EXIT_TROUBLESHOOTING',
-    type: 'link',
+    title: 'BUTTONS.CONTINUE',
+    explanatoryNote: '',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -52,20 +45,9 @@ export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy 
   updateHeader() {}
 
   updatePageContent() {
-    this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
-    this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
-    this.Section2Data = {
-      reqNo: '436529873',
-      reqType: 'Xxxxx xxxxx xxxx',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      status: 'Xxxxx xxxxx xxxx',
-    };
+    this.imgSrc = successImgSrc;
+    this.Section1Data = CustomerJourneyConstants.routerRebootSuccessful;
   }
 
   button1Listener() {}
-
-  button2Listener() {
-    this.router.navigate(['/thanks']);
-  }
 }

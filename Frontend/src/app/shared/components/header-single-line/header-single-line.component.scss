@@ -1,12 +1,16 @@
 @import 'src/assets/scss/base/variables';
 @import 'src/assets/scss/base/mixins';
 
+//---------------------------------------------------
 :host {
   ion-header {
     --ion-background-color: transparent;
   }
 }
-
+//---------------------------------------------------
+ion-title.ios{
+  font-weight: 500;
+}
 .header-wrapper {
   position: $relative;
   .header-wrapper-wave {

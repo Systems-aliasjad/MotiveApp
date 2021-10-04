@@ -42,8 +42,8 @@ export class RouterNotRestartedComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.updatePageContent();
     });
-    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
@@ -51,23 +51,23 @@ export class RouterNotRestartedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    //this.sharedService.setHeaderConfig('MESSAGES.FOLLOW_THESE_STEPS', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.YOUR_ROUTER_DIDNT_RESTART', false);
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'MESSAGES.FOLLOW_THESE_STEPS',
+    pageTitle: 'MESSAGES.YOUR_ROUTER_DIDNT_RESTART',
     showBackBtn: true,
   };
 
   updatePageContent() {
-    this.instruction1.title = 'MESSAGES.FOLLOW_THESE_STEPS';
+    this.instruction1.title = 'MESSAGES.FOLLOW_THESE_STEPS_TO_RESTART_YOUR_ROUTER';
     this.instruction1.steps = ['Unplug the router', 'Wait for 30 seconds', 'Plug the router back in', 'Wait for 5 mins', 'Try to use the internet again'];
-    this.instruction2.title = 'MESSAGES.CONSULT_DEVICE_CARE_FOR';
-    this.instruction2.body = 'MESSAGES.ETISALAT_DEVICE_CARE_GIVES_YOU';
+    this.instruction2.title = 'MESSAGES.VISIT_DEVICE_CARE';
+    this.instruction2.body = 'MESSAGES.WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_ROUTER';
   }
 
   button1Listener() {
-    this.router.navigate(['/device-care']);
+    this.router.navigate(['issues/internet/router-not-restarted/device-care']);
   }
 
   button2Listener() {
