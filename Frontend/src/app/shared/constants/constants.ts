@@ -17,7 +17,8 @@ export const flowCodes = {
   accountTemporarilyDisconnected: 'E2ECRM141',
   outageInternet: 'E2EN121',
   issueNotFixed: 'CI71',
-  issueFixed: 'CI72',
+  CI72: 'CI72',
+  CI73: 'CI73',
 };
 
 export const ETISALAT = 'Etisalat';

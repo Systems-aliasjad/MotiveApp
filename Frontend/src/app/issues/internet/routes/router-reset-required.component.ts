@@ -8,6 +8,7 @@ import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
+import { BackendService } from '../../../services/backend.service';
 
 @Component({
   selector: 'app-router-reset-required',
@@ -44,7 +45,8 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
     private router: Router,
     private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute,
-    private helperService: HelperService
+    private helperService: HelperService,
+    private backendService: BackendService
   ) {}
 
   ngOnInit() {
@@ -80,7 +82,12 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+    // this.router.navigate(['/thanks']);
   }
 
   getIssueTilesData() {

@@ -91,8 +91,10 @@ export class HelperService {
       this.router.navigate(['issues/internet/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
-    } else if (CodeId === flowCodes.issueFixed) {
-      this.router.navigate(['issues/internet/no-issue']);
+    } else if (CodeId === flowCodes.CI72) {
+      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
+    } else if (CodeId === flowCodes.CI73) {
+      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
@@ -109,6 +111,14 @@ export class HelperService {
       this.router.navigate(['issues/internet/router-not-reachable']);
     } else if (routerDetails?.isUpgradeRequired) {
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
+    }
+  }
+
+  handleInternetPasswordResetCase(shouldReset) {
+    if (shouldReset) {
+      this.router.navigate(['/issues/internet/internet-password-reset']);
+    } else {
+      this.router.navigate(['issues/internet/no-issue']);
     }
   }
 }
