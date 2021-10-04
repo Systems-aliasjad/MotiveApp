@@ -9,40 +9,56 @@ ion-button,
   margin-top: 0;
   margin-bottom: 0;
 }
-
-.agree-terms{
-  @media screen and (max-width: 992px)  {
-    margin-bottom: 1rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
+.agree-terms-container{
+  @media screen and (min-width: 992px) and (max-width:1025px)  {
+    height: 100%;
   }
-  ion-item{
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    --min-height: auto;
-    margin-bottom: 0;
-    --border-style:none;
-    --background: transparent;
-    --color: $secondary-color;
-    ion-label{
-      transform:none;
-      margin-top: 0;
-      margin-right: 0;
-      margin-left: .8rem;
+  .agree-terms{
+    @media screen and (min-width: 992px) and (max-width:1025px)  {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100%;
+    }
+    @media screen and (max-width: 992px)  {
+      margin-bottom: 1rem;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+    ion-item{
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      --min-height: auto;
       margin-bottom: 0;
-      color: $secondary-color;      
-      a{
-        color: $etisalat-color;
-        display: inline-block;
-        @include transition(all 0.3s ease-in-out);
-        &:hover{
-          color: $primary-color;
-          text-decoration: none;
+      --border-style:none;
+      --background: transparent;
+      --color: $secondary-color;
+      ion-label{
+        transform:none;
+        margin-top: 0;
+        margin-right: 0;
+        margin-left: .8rem;
+        margin-bottom: 0;
+        color: $secondary-color;      
+        a{
+          color: $etisalat-color;
+          display: inline-block;
+          @include transition(all 0.3s ease-in-out);
+          &:hover{
+            color: $primary-color;
+            text-decoration: none;
+          }
         }
       }
     }

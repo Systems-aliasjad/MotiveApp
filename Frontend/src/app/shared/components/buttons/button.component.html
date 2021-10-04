@@ -24,7 +24,7 @@
 </div>
 
 <!-- Terms and Condition -->
-<div *ngIf="type === 'terms'">
+<div *ngIf="type === 'terms'" class="agree-terms-container">
   <div class="agree-terms">
     <ion-item>
       <ion-checkbox name="terms" color="primary" [(ngModel)]="terms" slot="start" (ionChange)="termsChange()"></ion-checkbox>
