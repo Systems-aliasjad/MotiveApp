@@ -7,7 +7,25 @@
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
 // --------------------------------------------------------------
-
+.loader-main-container{
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: rgb(244 247 235 / 66%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgb(255 255 255 / 66%)), to(#f4f7eb99));
+  background-image: -o-linear-gradient(top, rgb(255 255 255 / 66%) 15%, #f4f7eb99 100%);
+  background-image: linear-gradient(to bottom, rgb(255 255 255 / 66%) 15%, #f4f7eb99 100%);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
 .info-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,6 +57,7 @@
     -ms-flex-direction: column;
     flex-direction: column;
     position: relative;
+    margin-top: 2rem;
     ng-lottie {
       width:218px;
     }
