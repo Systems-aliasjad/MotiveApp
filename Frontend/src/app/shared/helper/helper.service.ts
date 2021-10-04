@@ -26,6 +26,12 @@ const temp2 = {
   url: '',
   className: '',
 };
+
+const temp3 = {
+  complaintNo: '1436529873',
+  dateVisit: 'Jul 10 2019, 10:30 AM',
+  status: 'Xxxxx xxxxx xxxx',
+};
 @Injectable({
   providedIn: 'root',
 })
@@ -87,13 +93,14 @@ export class HelperService {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.issueFixed) {
       this.router.navigate(['issues/internet/no-issue']);
+    } else if (CodeId === flowCodes.openComplaint) {
+      this.router.navigate(['issues/internet/complaint-already-exists']);
+      // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
+      this.sharedService.setApiResponseData({ complaintDetails: temp3 });
     }
   }
 
   handleCI9Cases(routerDetails: IRouterDetail) {
-    console.log('==========routerDetails==============');
-    console.log(routerDetails);
-    console.log('====================================');
     if (routerDetails?.isRebootRequired) {
       this.router.navigate(['issues/internet/router-reboot-required']);
     } else if (routerDetails?.isResetRequired) {
