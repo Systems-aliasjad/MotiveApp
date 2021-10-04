@@ -23,7 +23,6 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
-    explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };
   button2: IMotiveButton = {
     title: 'BUTTONS.ISSUE_RESOLVED',
