@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {}
 
   back(): void {
+    this.sharedService.setLoader(false);
     this.location.back();
   }
 }

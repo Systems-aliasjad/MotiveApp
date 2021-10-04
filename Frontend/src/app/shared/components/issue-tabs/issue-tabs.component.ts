@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { IMessageIssue, ITabTile } from '../../constants/types';
+import { IMessageIssue, IOntDetail, IRouterDetail, ITabTile } from '../../constants/types';
 import { ActivatedRoute } from '@angular/router';
-import { ApplicableCodes, ERoutingIds } from '../../constants/constants';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -10,6 +9,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./issue-tabs.component.scss'],
 })
 export class IssueTabsComponent implements OnInit, OnDestroy {
+  @Input() ontConfig: IOntDetail;
+  @Input() routerConfig: IRouterDetail;
+  @Input() etisalatConfig;
   @Input()
   tabTiles: ITabTile[];
   @Input()
@@ -23,7 +25,6 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute: ActivatedRoute) {
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
-      this.initialization();
     });
   }
   ngOnDestroy(): void {
@@ -31,14 +32,4 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {}
-
-  initialization() {
-    // if (this.codeType === ERoutingIds.routerNotReachable) {
-    //   this.section1Template = ApplicableCodes.routerNotReachableTemplate;
-    //   this.section1Data = {
-    //     routerName: 'Unnamed router',
-    //     routerModel: 'xxxx xxxx  xxxx xxx',
-    //   };
-    // }
-  }
 }

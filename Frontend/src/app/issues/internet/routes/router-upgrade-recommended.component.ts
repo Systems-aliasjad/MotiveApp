@@ -66,7 +66,7 @@ export class RouterUpgradeRecommendedComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/router-upgrade-recommended-form']);
+    this.router.navigate(['/issues/internet/router-upgrade-recommended-form']);
   }
 
   button3Listener() {}

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { ICard, IPageHeader } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
@@ -7,6 +7,7 @@ import { motiveSubscriptions } from '../shared/constants/constants';
 import { Subscription } from 'rxjs';
 import { ModalController } from '@ionic/angular';
 import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { BackendService } from '../services/backend.service';
 
 @Component({
   selector: 'app-landing',
@@ -18,25 +19,52 @@ export class LandingComponent implements OnInit, OnDestroy {
   selectedLang: string;
   landingPageCards: ICard[];
   showLoader: boolean = false;
-  paramsSubscription: Subscription;
   modal: any;
+  user: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private sharedService: SharedService, public router: Router, private modalCtrl: ModalController) {
-    this.paramsSubscription = this.activatedRoute.params.subscribe((params: Params) => {
-      this.initialization(params);
+  constructor(
+    private sharedService: SharedService,
+    public router: Router,
+    private modalCtrl: ModalController,
+    private backendService: BackendService,
+    private activcatedRoute: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.activcatedRoute.params.subscribe(() => {
+      this.sharedService.setDefaultValues();
     });
+    this.initialization();
   }
 
-  ngOnInit(): void {}
+  ngOnDestroy(): void {}
 
-  ngOnDestroy(): void {
-    this.paramsSubscription.unsubscribe();
-  }
+  initialization() {
+    // TODO: REMOVE FOLLWOING
+    this.codeType = '3P';
+    this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
 
-  initialization(params: Params) {
-    this.sharedService.setDefaultValues();
-    this.codeType = params['code']?.toUpperCase() || '3P';
+    this.updateProfileData();
+    // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
+    // this.getProductCode();
+
     this.selectedLang = this.sharedService.getDefaultLanguage();
+    //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
+  }
+
+  updateProfileData() {
+    const navigation = this.router.getCurrentNavigation();
+    this.user = navigation?.extras?.state?.user as {
+      accountId: string;
+      username: string;
+    };
+  }
+
+  getProductCode() {
+    this.backendService.getLandingPageData().subscribe((data: any) => {
+      this.codeType = data?.result?.productCode;
+      this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+    });
     //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
     this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }

@@ -39,6 +39,7 @@ import { ChannelDetailComponent } from './routes/channel-detail.component';
 import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { PackageTransferComponent } from './routes/package-transfer.component';
 import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 
 const routes: Routes = [
   {
@@ -198,6 +199,11 @@ const routes: Routes = [
   {
     path: 'unable-to-watch-specific-channel',
     component: UnableWatchSpecificChannelComponent,
+  },
+
+  {
+    path: 'complaint-exists',
+    component: ComplaintExistsMessageComponent,
   },
 ];
 

@@ -7,6 +7,28 @@ export class RoutingPaths {
   public static readonly installNewRouter: string = 'install-new-router';
 }
 
+export const flowCodes = {
+  genericError: 'G11E24',
+  accountNotActive: 'E2ECRM14',
+  CI9: 'CI9',
+  movingElifeConnection: 'E2ECRM231',
+  ElifeCancellationRequest: 'E2ECRM232',
+  accountTemporarilyDisconnected: 'E2ECRM141',
+  outageInternet: 'E2EN121 ',
+  issueNotFixed: 'CI71',
+  issueFixed: 'CI72',
+};
+
+export const ETISALAT = 'Etisalat';
+export const ONT = 'ONT';
+export const ROUTER = 'Router';
+
+export const ETISALAT_DEFAULT_CONFIG = {
+  url: '/assets/images/network-map-icons/icon_home_default.svg',
+  className: 'okay',
+  title: ETISALAT,
+};
+
 export enum ERoutingIds {
   routerNotReachable,
   routerNotReachableOwnRouter,
@@ -446,7 +468,7 @@ export class ApplicableCodes {
       objKeyNameEN: 'reqType',
     },
     {
-      title: 'OPEN_SERVICE_REQUEST.DATE_VISIT',
+      title: 'MESSAGES.DATE_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },
@@ -464,12 +486,12 @@ export class ApplicableCodes {
       objKeyNameEN: 'complaintNo',
     },
     {
-      title: 'COMPLAIN_REQUEST.DATE_VISIT',
+      title: 'MESSAGES.DATE_VISIT',
       type: 'date',
       objKeyNameEN: 'dateVisit',
     },
     {
-      title: 'COMPLAIN_REQUEST.STATUS',
+      title: 'MESSAGES.STATUS',
       type: 'text',
       objKeyNameEN: 'status',
     },

@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'move-elife-connection-message',
+  selector: 'cancel-elife-connection-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
+export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -53,7 +53,7 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
+    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
     this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
     this.Section2Data = {
       reqNo: '436529873',

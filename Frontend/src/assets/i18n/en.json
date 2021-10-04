@@ -332,7 +332,7 @@
     "OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE": "Our team is already working on resolving the issue.",
     "YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON": "You will be contacted by our technician soon.",
     "REFERENCE_NO": "Reference no.",
-    "DATE_VISIT": "Date of visit:",
+    "DATE_VISIT": "Date of visit",
     "APPOINTMENT_DETAILS": "Appointment details:",
     "HERE_ARE_THE_DETAILS_OF_YOUR_COMPLAINT": "Here are the details of your complaint:",
     "MAKE_SURE_TO_SELECT_YOUR_WIFI_NETWORK_NAME_USE_THE_CORRECT_WIFI_PASSWORD_WHILE_CONNECTING_TO_YOUR_WIFI_NETWORK": "Make sure to select your Wi-Fi network name Use the correct Wi-Fi password while connecting to your Wi-Fi network.",
@@ -522,6 +522,8 @@
     "SORRY_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DONT_HAVE_ADDITIONAL_STB": "Sorry, transfer of package is not applicable as you don't have additional STB",
     "NO_NON_SHARED_PACKAGE": "No non shared package",
     "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS": "You are subscribed for shared TV packages that can be viewed from all your STBs",
+    "FACING_SOME_ISSUE": "Facing some issue",
+    "TRY_AGAIN_LATER": "Try again later",
     "CCB_PIN_RULES": "CCB PIN rules"
   }
 }

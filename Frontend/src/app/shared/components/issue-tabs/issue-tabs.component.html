@@ -1,17 +1,9 @@
-<!-- Page Title Start -->
-<!-- <ion-row class="issue-tabs_title"></ion-row> -->
-<ion-row class="page-title">
-  <ion-col class="pt-0 pb-0">
-    <app-page-top></app-page-top>
-  </ion-col>
-</ion-row>
-<!-- Page Title End -->
-
 <ion-row class="issue-tabs_content two-col_inner_container">
   <ion-col sizeLg="6" sizeMd="12" size="12" git class="issue-tabs_wizard two-col_left">
     <!-- Tabs Wizard Start -->
     <div class="tabs-wizard ion-text-center">
-      <app-tab-tile></app-tab-tile>
+      <app-three-layers [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
+      <!-- <app-tab-tile [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-tab-tile> -->
     </div>
     <!-- Tabs Wizard End -->
 
@@ -32,19 +24,15 @@
           </ion-item>
         </ion-list>
       </div>
-    </div>
-  </ion-col>
-</ion-row>
 
-<ion-row class="info-container_detail" *ngIf="section1Data">
-  <ion-col size="12" class="pt-0 pb-0">
-    <div class="info-container_detail_list">
-      <ion-list class="inline-ion-list inline-ion-list-border">
-        <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
-          <ion-label class="inline-list_title"> {{ template.title | translate }} </ion-label>
-          <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
-        </ion-item>
-      </ion-list>
+      <div *ngIf="section1Data">
+        <ion-list class="inline-ion-list inline-ion-list-border">
+          <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
+            <ion-label class="inline-list_title"> {{ template.title | translate }} </ion-label>
+            <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
+          </ion-item>
+        </ion-list>
+      </div>
     </div>
   </ion-col>
 </ion-row>

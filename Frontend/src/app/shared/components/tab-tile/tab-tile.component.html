@@ -1,55 +1,11 @@
-<ion-row>
-  <ion-col size="12" class="states-main-container">
-    <!-- Wizard Flow Start -->
-    <div class="wizard-main-container">
-      <div class="wizard-inner_container">
-        <div class="states">
-          <div class="default-state state">
-            <img src="/assets/images/network-map-icons/icon_smartphone_default.svg" alt="Smart Phone Default State">
-          </div>
-          <ion-label>
-            abc
-          </ion-label>
-        </div>
-        <div class="wizard-line default-line"></div>
-        <div class="states">
-          <div class="okay-state state">
-            <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
-          </div>
-          <ion-label>
-            abc
-          </ion-label>
-        </div> 
-        <!-- <div class="states wizard-line okay-line">
-          <div class="okay-state state">
-            <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
-          </div>
-          <ion-label>
-            abc
-          </ion-label>
-        </div> 
-         <div class="states wizard-line error-line">
-          <div class="error-state state">
-            <img src="/assets/images/network-map-icons/icon_smartphone_error.svg" alt="Smart Phone Default State">
-          </div>
-          <ion-label>
-            abc
-          </ion-label>
-        </div>-->
-       <!-- <div class="states wizard-line pending-line">
-          <div class="pending-state state">
-            <img src="/assets/images/network-map-icons/icon_smartphone_error.svg" alt="Smart Phone Default State">
-          </div>
-          <ion-label>
-            abc
-          </ion-label>
-        </div> -->
-      </div>
-    </div>
-    <!-- Wizard Flow End -->
+<div class="states">
+  <div [class]="tileConfig?.className + '-state state'">
+    <img [src]="tileConfig?.url" alt="tab-tile" />
+  </div>
+  <ion-label>{{ tileConfig?.title }}</ion-label>
+</div>
 
-    <!-- Slider Start -->
-    <div class="states-inner_container">
+<!-- <div class="states-inner_container">
       <div class="arrow-container left">
         <img
           [src]="!arrow_left ? 'assets/images/action-icons/icon_networkmap_arrow_left.svg' : 'assets/images/action-icons/icon_arrow_left_grey.svg'"
@@ -77,7 +33,4 @@
           (click)="!arrow_right ? prev() : ''"
         />
       </div>
-    </div>
-    <!-- Slider End -->
-  </ion-col>
-</ion-row>
+    </div> -->

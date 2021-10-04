@@ -21,8 +21,9 @@ import { TabTileComponent } from './shared/components/tab-tile/tab-tile.componen
 import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 import { EIssueFlow, IssueListDialog } from './shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { GenericErrorComponent } from './shared/components/generic-error/generic-error.component';
+
 const routes: Routes = [
-  // REFACTORED LOGIC
   {
     path: 'issues/internet',
     loadChildren: () => import('./issues/internet/internet.module').then((m) => m.InternetModule),
@@ -65,20 +66,23 @@ const routes: Routes = [
     path: 'all-links',
     loadChildren: () => import('./all-services/all-services.module').then((m) => m.AllServicesModule),
   },
-
-  // REFACTORED LOGIC
   {
-    path: '',
+    path: 'unknown-error',
+    component: GenericErrorComponent,
+  },
+  {
+    path: 'landing',
     component: LandingComponent,
   },
   {
-    path: 'thanks',
-    component: ThankyouScreenComponent,
+    path: 'quick-links-all',
+    component: QuickLinksAllComponent,
   },
   {
-    path: 'terms',
-    component: TermsConditionsComponent,
+    path: '**',
+    redirectTo: 'landing',
   },
+
   // {
   //   path: 'loader',
   //   component: LoaderComponent,
@@ -158,17 +162,9 @@ const routes: Routes = [
   // { path: 'ont-restart-required-manually', component: RestartInstructionComponent, data: { id: ERoutingIds.ontRestartRequiredManually } },
   // { path: 'ont-restart-required-device-care', component: DeviceCareComponent, data: { id: ERoutingIds.ontRestartRequiredDeviceCare } },
 
-  // //Quick Links all
-  // { path: 'quick-links-all', component: QuickLinksAllComponent, data: { id: ERoutingIds.quickLinksAll } },
   // // { path: '', component: TransferPackageComponent, data: { id: ERoutingIds.packagetransfer } },
 
   // { path: 'install-new-router-reset-internet-password', component: ResetPinComponent, data: { id: ERoutingIds.installNewRouterResetInternetPassword } },
-
-  /////All Services
-
-  // For Demo
-  { path: 'tab-tiles', component: TabTileComponent },
-  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

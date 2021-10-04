@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { IMotiveButton, IPageHeader } from '../../constants/types';
+import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from '../../constants/types';
 
 @Component({
   selector: 'app-diagnose-issue',
@@ -29,6 +29,11 @@ export class DiagnoseIssueComponent implements OnInit {
   section1Template;
   @Input()
   section1Data;
+  @Input()
+  ontConfig: IOntDetail;
+  @Input()
+  routerConfig: IRouterDetail;
+  @Input() etisalatConfig;
 
   myBtnSize;
 

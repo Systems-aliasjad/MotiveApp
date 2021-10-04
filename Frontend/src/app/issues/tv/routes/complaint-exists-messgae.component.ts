@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'move-elife-connection-message',
+  selector: 'complaint-exists-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
+export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -27,15 +27,12 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.YES_FOLLOW_UP',
-    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
+    title: 'BUTTONS.YES',
   };
-
   button2: IMotiveButton = {
-    title: 'BUTTONS.EXIT_TROUBLESHOOTING',
     type: 'link',
+    title: 'BUTTONS.NO_I_WANT_TO_REPORT_ANOTHER_ISSUE',
   };
-
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
@@ -53,19 +50,20 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase1;
-    this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
+    this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
+    this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
     this.Section2Data = {
-      reqNo: '436529873',
-      reqType: 'Xxxxx xxxxx xxxx',
+      complaintNo: '436529873',
       dateVisit: 'Jul 10 2019, 10:30 AM',
       status: 'Xxxxx xxxxx xxxx',
     };
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.router.navigate(['/issues/internet/router-install-successfully']);
+  }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['/bookComplaint']);
   }
 }

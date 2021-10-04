@@ -14,7 +14,6 @@ import { NumberOnlyDirective } from './directives/number-only.directive';
 import { BrMaskerModule } from 'br-mask';
 import { IssueTabsComponent } from './components/issue-tabs/issue-tabs.component';
 import { TabTileComponent } from './components/tab-tile/tab-tile.component';
-import { ServiceIssueComponent } from './components/service-issue/service-issue.component';
 import { RestartInstructionComponent } from './components/restart-instruction/restart-instruction.component';
 import { DeviceCareComponent } from './components/device-care/device-care.component';
 import { ButtonComponent } from './components/buttons/button.component';
@@ -27,6 +26,8 @@ import { ResetPinComponent } from './components/reset-pin/reset-pin.component';
 import { MotiveMessageBulletComponent } from './components/motive-message-bullet/motive-message-bullet.component';
 import { MotiveMessageFeedbackComponent } from './components/motive-message-feedback/motive-message-feedback.component';
 import { createTranslateLoader } from '../app.module';
+import { GenericErrorComponent } from './components/generic-error/generic-error.component';
+import { ThreeLayersComponent } from './components/network-diagrams/three-layers/three-layers.component';
 import { HeaderSingleLineComponent } from './components/header-single-line/header-single-line.component';
 import { HeaderMultiLineComponent } from './components/header-multi-line/header-multi-line.component';
 
@@ -40,8 +41,9 @@ import { HeaderMultiLineComponent } from './components/header-multi-line/header-
     BookComplaintComponent,
     NumberOnlyDirective,
     IssueTabsComponent,
+    GenericErrorComponent,
+    ThreeLayersComponent,
     TabTileComponent,
-    ServiceIssueComponent,
     RestartInstructionComponent,
     DeviceCareComponent,
     ButtonComponent,
@@ -78,7 +80,6 @@ import { HeaderMultiLineComponent } from './components/header-multi-line/header-
     MotiveMessageComponent,
     ThankyouScreenComponent,
     BookComplaintComponent,
-    ServiceIssueComponent,
     RestartInstructionComponent,
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,

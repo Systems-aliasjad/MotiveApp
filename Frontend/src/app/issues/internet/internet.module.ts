@@ -10,7 +10,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { MainComponent } from './routes/main.component';
 import { InternetRoutingModule } from './internet.routing';
 import { OutageComponent } from './routes/outage.component';
-import { OSRPComponent } from './routes/osrp.component';
 import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
 import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
@@ -81,6 +80,8 @@ import { InstallEtisalatRouterDialogComponent } from './dialogs/install-etisalat
 import { RestartRouterDialog } from './dialogs/restart-router-dialog/restart-router-dialog.component';
 import { PasswordResetDialog } from './dialogs/password-reset-dialog/password-reset-dialog.component';
 import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 
 @NgModule({
   declarations: [
@@ -103,9 +104,10 @@ import { ResetFactoryDefaultDialog } from './dialogs/reset-factory-default-dialo
     RouterRestartCareComponent,
     RouterNotRestartedCareComponent,
     OutageComponent,
-    OSRPComponent,
     RouterNotRestartedComponent,
     RouterRestartInstructionsComponent,
+    CancelElifeConnectionMessageComponent,
+    AccountTemporarilyDisconnectedMessageComponent,
     RouterRebootRequiredComponent,
     RouterResetRequiredComponent,
     IssueNotFixedComponent,

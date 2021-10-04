@@ -1,0 +1,16 @@
+<ion-row>
+  <ion-col size="12">
+  <div class="states-inner_container">
+    <div class="wizard-main-container">
+      <div class="wizard-inner_container">
+        <app-tab-tile [tileConfig]="etisalatConfig"></app-tab-tile>
+        <div [class]="ontConfig.className + '-line wizard-line'"></div>
+        <app-tab-tile [tileConfig]="ontConfig"></app-tab-tile>
+        <div [class]="routerConfig.className + '-line wizard-line'"></div>
+        <app-tab-tile [tileConfig]="routerConfig"></app-tab-tile>
+      </div>
+    </div>
+  </div>
+ </ion-col>
+</ion-row>
+

@@ -516,8 +516,8 @@ export class CustomerJourneyConstants {
   };
 
   public static thirdPartyRoutersuccessfullyCase = {
-    header: 'MESSAGES.NEW_ROUTER_REQUEST_WAS_RAISED_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.THANK_YOU_FOR_YOUR_REQUEST_WE_WILL_CALL_YOU_BACK_WITHIN_24_HRS'],
+    header: 'MESSAGES.FACING_SOME_ISSUE',
+    paragraphs: ['MESSAGES.TRY_AGAIN_LATER'],
   };
 
   public static resetWifiResetFirstsuccessfullyCase = {

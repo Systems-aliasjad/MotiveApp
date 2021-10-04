@@ -5,24 +5,14 @@
 
 export const environment = {
   production: false,
-  baseHref: '',
-  appRoot: 'https://localhost:4200/',
+  API_BASE_URL: 'http://10.51.106.150:7001/MOTIVE_APP_SELFCARE/',
+  appRoot: '',
   enableLog: true,
   disableConsoleLogs: false,
-
   About: {
-    version: '1.2.3',
-    database: 'Dev local',
-    serverName: 'Dev Server',
-    publishDate: '8/20/2021',
+    version: '1.0.0',
+    database: '',
+    serverName: '',
+    publishDate: '09/28/2021',
   },
-  app_environments: [
-    { name: 'dev', url: '', active: true },
-    { name: 'qa', url: '', active: false },
-    { name: 'prod', url: '', active: false },
-  ],
-  API_URL: '',
-  maxFileSize: 3000000,
-  agGridLicenseKey: '',
-  impersonateUser: '',
 };

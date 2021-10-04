@@ -5,7 +5,7 @@
 
 export const environment = {
   production: false,
-  baseHref: '',
+  API_BASE_URL: 'http://10.51.106.150:7001/MOTIVE_APP_SELFCARE/',
   appRoot: '',
   enableLog: true,
   disableConsoleLogs: false,
