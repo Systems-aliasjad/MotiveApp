@@ -2,18 +2,23 @@
   <ion-grid class="form-main-container">
     <ion-header>
       <ion-toolbar style="display: flex">
-        <div>
+        <ion-title>
           <h5>{{ 'MESSAGES.RESET_TO_FACTORY_DEFAULT' | translate }}</h5>
-        </div>
-        <div fill="outline" slot="end" class="transparent-btn" (click)="dismiss()">
-          <a> {{ 'BUTTONS.CLOSE' | translate }}</a>
-        </div>
+        </ion-title>                  
+        <!-- <div fill="outline" slot="end" class="transparent-btn" (click)="dismiss()"> -->
+          <ion-buttons slot="end">
+            <ion-button class="btn transparent-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
+          </ion-buttons>
+          <!-- <a> {{ 'BUTTONS.CLOSE' | translate }}</a> -->
+        <!-- </div> -->
       </ion-toolbar>
     </ion-header>
     <ion-row>
       <ion-col size="12">
-        <p>{{ 'MESSAGES.THE_ROUTERS_WIFI_WILL_BE_RESET_TO_DEFAULT_FACTORY_SETTINGS' | translate }}</p>
-        <p>{{ 'MESSAGES.NOTE_YOU_WILL_LOSE_ALL_SETTINGS_AFTER_THE_FACTORY_RESET' | translate }}</p>
+        <div class="messagebox">
+          <p>{{ 'MESSAGES.THE_ROUTERS_WIFI_WILL_BE_RESET_TO_DEFAULT_FACTORY_SETTINGS' | translate }}</p>
+          <p>{{ 'MESSAGES.NOTE_YOU_WILL_LOSE_ALL_SETTINGS_AFTER_THE_FACTORY_RESET' | translate }}</p>
+        </div>
       </ion-col>
     </ion-row>
     <!-- <ion-row>
@@ -29,7 +34,7 @@
   <ion-row class="footer-btns-container">
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
-        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center terms-col">
           <motive-button [type]="'terms'"></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
