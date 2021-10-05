@@ -314,7 +314,7 @@
     "PACKAGE_UPGRADE_REQUEST_WAS_RAISED_SUCCESSFULLY": "تم رفع طلب ترقية الراوتر بنجاح",
     "PARENTAL_CONTROL": "Parental control",
     "PASSWORD_ISSUES": "مشاكل كلمة المرور",
-    "PASSWORD_STRENGTH_SECTION": "Password strength section",
+    "PASSWORD_STRENGTH": "Password strength",
     "PHONE_ISSUE": "مشاكل الهاتف",
     "PHONE_ISSUES": "Phone Issues",
     "PHONE_SERVICE_IS_DOWN": "Phone service is down",

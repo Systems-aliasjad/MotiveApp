@@ -200,7 +200,7 @@
     "IF_YOU_WISH_TO_SUBSCRIBE_MORE_CHANNELS_PLEASE": "If you wish to subscribe more channels, please <a class='__clickhere'>click here.</a>",
     "DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST": "Do you want to follow-up the request?",
     "ARE_YOU_USING_THE_SAME_ROUTER": "Are you using the same router?",
-    "PASSWORD_STRENGTH_SECTION": "Password strength section",
+    "PASSWORD_STRENGTH": "Password strength",
     "MINIMUM_8_CHARACTERS": "Minimum 8 characters",
     "CONTAIN_AT_LEAST_1_NUMERIC_CHARCTER": "Contain at least 1 numeric character",
     "CONTAIN_AT_LEAST_1_SPECIAL_CHARCTER": "Contain at least 1 special character",
@@ -531,6 +531,9 @@
     "PLEASE_ENTER_A_VALID_CONTACT_NUMBER": "Please enter a valid contact number.",
     "THERE_WAS_A_PROBLEM_IN_COMPLETING_YOUR_REQUEST": "There was a problem in completing your request.",
     "WE_WILL_BOOK_AN_COMPLAINT_AND_SEND_YOU_THE_DETAILS_VIS_SMS_SOON": "We will book an complaint and send you the details vis SMS soon.",
-    "ROUTER_REBOOT_SUCCESSFUL": "Router reboot successful"
+    "ROUTER_REBOOT_SUCCESSFUL": "Router reboot successful",
+    "SERVER_TIMEOUT": "Server timeout!",
+    "WE_WILL_TRY_TO_RESET_THE_ROUTER_AGAIN_PLEASE_MAKE_SURE_THAT_THE_ROUTER_IS_SWITHCED_ON": "We will try to reset the router again. Please make sure that the router is swithced on.",
+    "TO_SEE_HOW_TO_RESET_THE_ROUTER_MANUALLY": "<a class='__clickhere'>click here</a> to see how to reset the router manually"
   }
 }

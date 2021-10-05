@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { SharedService } from '../../../../shared/shared.service';
@@ -9,6 +9,9 @@ import { SharedService } from '../../../../shared/shared.service';
   styleUrls: ['./restart-router-dialog.component.scss'],
 })
 export class RestartRouterDialog implements OnInit {
+  @Input()
+  isManualOpt: boolean = false;
+
   constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
 
   ngOnInit() {}
