@@ -68,6 +68,9 @@ import { UnableToMaleVideoCallComponent } from './routes/unable-to-make-video-ca
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-recommended-form.component';
+import { ComplaintBookingFailedInvalidContactComponent } from './routes/complaint-booking-failed-invalid-contact.component';
+import { ComplaintBookingFailedComponent } from './routes/complaint-booking-failed.component';
+import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
 
 const routes: Routes = [
   {
@@ -419,6 +422,18 @@ const routes: Routes = [
   {
     path: 'router-upgrade-recommended-form',
     component: RouterUpgradeRecommendedFormComponent,
+  },
+  {
+    path: 'complaint-booking-failed-invalid-contact',
+    component: ComplaintBookingFailedInvalidContactComponent,
+  },
+  {
+    path: 'complaint-booking-failed',
+    component: ComplaintBookingFailedComponent,
+  },
+  {
+    path: 'router-reboot-successful',
+    component: RouterRebootSuccessfulComponent,
   },
 ];
 

@@ -79,6 +79,10 @@ const routes: Routes = [
     component: QuickLinksAllComponent,
   },
   {
+    path: 'thanks',
+    component: ThankyouScreenComponent,
+  },
+  {
     path: '**',
     redirectTo: 'landing',
   },

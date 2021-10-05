@@ -44,7 +44,10 @@ ion-header{
     background-image: none;
   }
   ion-toolbar{
-    border-bottom: 2px dashed #d0d6da;
+    @media screen and (max-width:992px) {
+      border-bottom: 2px dashed #d0d6da;      
+    }
+    border-bottom: 2px solid #d0d6da;
     ion-title{
       padding-right:0;
       padding-left: 0;
@@ -57,6 +60,21 @@ ion-header{
   ion-buttons{
     padding-right: 0;
     padding-right: 0;
+    cursor: pointer;
+    .close-btn{
+      display: none;
+    }
+    .header-icons-close{
+      display: block;
+    }
+    @media  screen and (max-width:992px) {
+       .close-btn{
+         display: block;
+        }
+       .header-icons-close{
+         display: none;
+        }
+    }
   }
 }
 ion-list{

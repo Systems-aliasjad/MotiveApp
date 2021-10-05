@@ -1,16 +1,14 @@
 <ion-content padding>
   <ion-grid class="form-main-container">
     <ion-header>
-      <ion-toolbar style="display: flex">
+      <ion-toolbar>
         <ion-title>
           <h5>{{ 'MESSAGES.RESET_TO_FACTORY_DEFAULT' | translate }}</h5>
-        </ion-title>                  
-        <!-- <div fill="outline" slot="end" class="transparent-btn" (click)="dismiss()"> -->
+        </ion-title>                          
           <ion-buttons slot="end">
-            <ion-button class="btn transparent-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
+            <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
+            <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close">
           </ion-buttons>
-          <!-- <a> {{ 'BUTTONS.CLOSE' | translate }}</a> -->
-        <!-- </div> -->
       </ion-toolbar>
     </ion-header>
     <ion-row>

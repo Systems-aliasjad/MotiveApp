@@ -158,7 +158,8 @@
     "YES": "YES",
     "YES_FOLLOW_UP": "YES, FOLLOW-UP",
     "YES_I_AM": "YES I AM",
-    "YES_RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD"
+    "YES_RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
+    "NO_EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING"
   },
 
   "MESSAGES": {
@@ -524,6 +525,12 @@
     "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS": "You are subscribed for shared TV packages that can be viewed from all your STBs",
     "FACING_SOME_ISSUE": "Facing some issue",
     "TRY_AGAIN_LATER": "Try again later",
-    "CCB_PIN_RULES": "CCB PIN rules"
+    "CCB_PIN_RULES": "CCB PIN rules",
+    "COMPLAINT_BOOKING_FAILED": "Complaint booking failed",
+    "YOUR_COMPLAINT_COULDN'T_BE_BOOKED_BECAUSE_THE_CONTACT_NUMBER_YOU_ENTERED_WAS_INCORRECT": "Your complaint couldn't be booked because the contact number you entered was incorrect.",
+    "PLEASE_ENTER_A_VALID_CONTACT_NUMBER": "Please enter a valid contact number.",
+    "THERE_WAS_A_PROBLEM_IN_COMPLETING_YOUR_REQUEST": "There was a problem in completing your request.",
+    "WE_WILL_BOOK_AN_COMPLAINT_AND_SEND_YOU_THE_DETAILS_VIS_SMS_SOON": "We will book an complaint and send you the details vis SMS soon.",
+    "ROUTER_REBOOT_SUCCESSFUL": "Router reboot successful"
   }
 }
