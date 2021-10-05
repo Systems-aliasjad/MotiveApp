@@ -19,6 +19,15 @@ export const flowCodes = {
   issueNotFixed: 'CI71',
   CI72: 'CI72',
   CI73: 'CI73',
+  UPSEL1: 'UPSEL1',
+  UPSEL2: 'UPSEL2',
+  UPSEL3: 'UPSEL3',
+  UPSEL4: 'UPSEL4',
+  UPSEL5: 'UPSEL5',
+  UPSEL6: 'UPSEL6',
+  UPSEL7: 'UPSEL7',
+  UPSEL8: 'UPSEL8',
+  UPSEL9: 'UPSEL9',
 };
 
 export const ETISALAT = 'Etisalat';

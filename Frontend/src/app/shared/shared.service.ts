@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class SharedService {
   apiResponseData: any;
+  upsellOpportunity: string;
   headerConfigSubject: BehaviorSubject<IPageHeader>;
   headerConfig$: Observable<IPageHeader>;
 
@@ -33,6 +34,14 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setUpsellOpportunity(opportunityCode: string) {
+    this.upsellOpportunity = opportunityCode;
+  }
+
+  getUpsellOpportunity(): string {
+    return this.upsellOpportunity;
   }
 
   setApiResponseData(data: any) {
