@@ -403,7 +403,7 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
     body: [
       {
-        title: 'MESSAGES.TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT',
+        title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
       },
       {
         title: 'MESSAGES.PLEASE_RESTART_THE_TV_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN',
@@ -440,6 +440,18 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN',
+      },
+    ],
+  };
+
+  public static ontRestartInternetAllServices: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
+      },
+      {
+        title: 'MESSAGES.PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN',
       },
     ],
   };
@@ -719,7 +731,7 @@ export class CustomerJourneyConstants {
   };
 
   public static installNewRouterFlow7MessageCase = {
-    header: 'MESSAGES.INSTALL_NEW_THIRD-PARTY_ROUTER',
+    header: 'MESSAGES.INSTALL_NEW_THIRD_PARTY_ROUTER',
 
     paragraphs: [
       {
