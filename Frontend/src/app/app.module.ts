@@ -67,7 +67,7 @@ export function playerFactory() {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
-    { provide: APP_BASE_HREF, useValue: '' },
+    { provide: APP_BASE_HREF, useValue: '/html/motive-frontend/' },
   ],
   bootstrap: [AppComponent],
 })
