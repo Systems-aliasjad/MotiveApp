@@ -22,4 +22,8 @@ export class BackendService {
   nextSignal(signal: 'MandatoryOnly' | 'DontReboot') {
     return this.http.put(`motive/troubleshoot/next-step`, { signal: signal });
   }
+
+  bookComplaint(data) {
+    return this.http.put(`troubleshoot/book-complaint`, data);
+  }
 }
