@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../validators/validations';
@@ -14,6 +14,7 @@ import { IMotiveButton, IPageHeader } from '../../constants/types';
 })
 export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   //
+
   @Input()
   button1: IMotiveButton;
   @Output()
@@ -32,7 +33,7 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   @Input()
   headerConfig: IPageHeader;
   //
-  public segment: string = '1';
+  public segment: string = 'tab1';
   public routerSettingsForm: FormGroup;
   passwordShowIcon: string = eyeShow;
   passwordHideIcon: string = eyeHide;
@@ -46,7 +47,13 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscription.add(
+      this.sharedService.getTermsConditions().subscribe((config) => {
+        this.routerSettingsForm.controls['terms'].setValue(config);
+      })
+    );
+  }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -58,25 +65,27 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
 
   createForm() {
     this.routerSettingsForm = this.fb.group({
-      terms: [true, Validators.required],
+      terms: [false, Validators.required],
       tab1: this.fb.group(
         {
+          wifiName: [''],
           MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-          NewPassword: ['', Validators.required],
+          password: ['', Validators.required],
           ConfirmPassword: ['', Validators.required],
         },
         {
-          validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
+          validator: ConfirmedValidator('password', 'ConfirmPassword'),
         }
       ),
       tab2: this.fb.group(
         {
+          wifiName: [''],
           MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-          NewPassword: ['', Validators.required],
+          password: ['', Validators.required],
           ConfirmPassword: ['', Validators.required],
         },
         {
-          validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
+          validator: ConfirmedValidator('password', 'ConfirmPassword'),
         }
       ),
     });
@@ -100,11 +109,15 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.button2Click.emit(this.routerSettingsForm);
+    this.button2Click.emit({
+      wifiName: this.routerSettingsForm.controls[this.segment].value.wifiName,
+      password: this.routerSettingsForm.controls[this.segment].value.password,
+      type: this.segment === 'tab1' ? '2.5' : '5.0',
+    });
+    // this.button2Click.emit(this.resetRouterPassword);
   }
 
   button3Listener() {
     this.button3Click.emit();
   }
-  //
 }

@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
 import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
 import { SharedService } from '../../shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'motive-button',
@@ -30,7 +31,7 @@ export class ButtonComponent implements OnInit {
 
   terms: boolean = false;
   modal: any;
-  constructor(private modalCtrl: ModalController, private sharedService: SharedService) {}
+  constructor(private backendService: BackendService, private modalCtrl: ModalController, private sharedService: SharedService) {}
 
   ngOnInit() {}
 
@@ -44,6 +45,13 @@ export class ButtonComponent implements OnInit {
 
   termsChange() {
     this.sharedService.setTermsConditions(this.terms);
+    if (this.terms) {
+      this.sharedService.setLoader(true);
+      this.backendService.nextSignal('Agree').subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    }
   }
 
   async PopupTermsConditions() {
