@@ -74,7 +74,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     this.sharedService.setLoader(true);
-    this.backendService.nextSignal({ signal: 'MandatoryOnly' }).subscribe((data: any) => {
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
@@ -82,6 +82,11 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
     this.router.navigate(['/thanks']);
   }
 

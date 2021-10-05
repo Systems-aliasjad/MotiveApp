@@ -345,7 +345,7 @@ const routes: Routes = [
     //I want to install my new router
     //Flow 5 Message
 
-    path: 'install-new-router-flow5',
+    path: 'install-new-router/access-port-thirdparty-router',
     component: AccessPortThirdPartyRouterMessageComponent,
   },
 

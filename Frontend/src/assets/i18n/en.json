@@ -88,6 +88,8 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "I want to reset ELife on pin"
   },
   "BUTTONS": {
+    "RESTART_ONT_NOW": "RESTART ONT NOW",
+    "INSTALL_NEW_THIRD_PARTY_ROUTER": "INSTALL NEW THIRD-PARTY ROUTER",
     "BACK": "BACK",
     "BOOK_AN_APPOINTMENT": "BOOK AN APPOINTMENT",
     "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
@@ -163,6 +165,7 @@
   },
 
   "MESSAGES": {
+    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Please restart the wall-mounted fiber box and then try using the internet again.",
     "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "We couldn’t find any technical problem. Your phone should be working normally.",
     "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_PHONE_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "Tap ‘View details’ to take a closer look at your phone service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
     "SELECT_BRAND": "Select Brand",
@@ -343,7 +346,7 @@
     "FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION": "Follow these steps to complete the installation:",
     "CONNECT_THE_NEW_ROUTER_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "Connect the new router to the ‘X’ port of the wall-mounted fiber box",
     "YOU_ARE_CURRENTLY_USING_A_THIRD_PARTY_ROUTER": "You are currently using a third-party router.",
-    "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
+    "INSTALL_NEW_THIRD_PARTY_ROUTER": "Install new third-party router",
     "WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_INSTALL_AN_ETISALAT_ROUTER": "We can provide remote support if you install an Etisalat router.",
     "IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD": "If you choose the second option, you will need to wait 30 minutes and then reset your internet password.",
     "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "Make sure the cable from the phone is connected to “X” port of the Optical Network Terminal (ONT)",

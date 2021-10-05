@@ -1,13 +1,18 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
+import { HelperService } from '../../../shared/helper/helper.service';
 
 @Component({
   selector: 'app-issue-not-fixed',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -19,6 +24,9 @@ import { SharedService } from '../../../shared/shared.service';
 })
 export class IssueNotFixedComponent implements OnInit, OnDestroy {
   subscription: Subscription;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  ontConfig;
+  routerConfig;
   messageSection;
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN_LATER',
@@ -29,11 +37,12 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private helperService: HelperService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -59,5 +68,12 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     this.router.navigate(['/bookComplaint']);
+  }
+
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

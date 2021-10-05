@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { flowCodes, ONT, ROUTER } from '../constants/constants';
+import { flowCodes, networkDiagramClasses, ONT, ROUTER, SVGs } from '../constants/constants';
 import { IOntDetail, IRouterDetail } from '../constants/types';
 import { SharedService } from '../shared.service';
 
@@ -18,13 +18,19 @@ const temp1 = {
 const temp2 = {
   routerSerial: '109461043164',
   routerModel: 'DIR850',
-  isReachable: true,
+  isReachable: false,
   isRebootRequired: false,
   isUpgradeRequired: false,
   isManaged: false,
-  isResetRequired: true,
+  isResetRequired: false,
   url: '',
   className: '',
+};
+
+const temp3 = {
+  complaintNo: '1436529873',
+  dateVisit: 'Jul 10 2019, 10:30 AM',
+  status: 'Xxxxx xxxxx xxxx',
 };
 @Injectable({
   providedIn: 'root',
@@ -33,8 +39,8 @@ export class HelperService {
   constructor(private router: Router, private sharedService: SharedService) {}
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
-    ontConfig = { ...ontConfig, url: '/assets/images/network-map-icons/icon_desktop_default.svg', title: ONT };
-    routerConfig = { ...routerConfig, url: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg', title: ROUTER };
+    ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
+    routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
@@ -47,16 +53,20 @@ export class HelperService {
 
   networkDiagramStylingMapper(device: any, previousDeviceState?: string) {
     let tempClass = '';
-    if (['error', 'default'].includes(previousDeviceState)) {
-      tempClass = 'default';
+    if ([networkDiagramClasses.default, networkDiagramClasses.error].includes(previousDeviceState)) {
+      tempClass = networkDiagramClasses.default;
     } else {
       if (device?.isReachable) {
-        tempClass = 'okay';
+        tempClass = networkDiagramClasses.okay;
         if (device?.isRebootRequired || device?.isUpgradeRequired || device?.isResetRequired) {
-          tempClass = 'pending';
+          tempClass = networkDiagramClasses.pending;
         }
+      } else if (device?.isManaged && !device?.isReachable) {
+        tempClass = networkDiagramClasses.pending;
+      } else if (!device?.isManaged) {
+        tempClass = networkDiagramClasses.pending;
       } else {
-        tempClass = 'error';
+        tempClass = networkDiagramClasses.error;
       }
     }
     return {
@@ -85,23 +95,36 @@ export class HelperService {
       this.router.navigate(['issues/internet/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
-    } else if (CodeId === flowCodes.issueFixed) {
-      this.router.navigate(['issues/internet/no-issue']);
+    } else if (CodeId === flowCodes.CI72) {
+      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
+    } else if (CodeId === flowCodes.CI73) {
+      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
+    } else if (CodeId === flowCodes.openComplaint) {
+      this.router.navigate(['issues/internet/complaint-already-exists']);
+      // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
+      this.sharedService.setApiResponseData({ complaintDetails: temp3 });
     }
   }
 
   handleCI9Cases(routerDetails: IRouterDetail) {
-    console.log('==========routerDetails==============');
-    console.log(routerDetails);
-    console.log('====================================');
     if (routerDetails?.isRebootRequired) {
       this.router.navigate(['issues/internet/router-reboot-required']);
     } else if (routerDetails?.isResetRequired) {
       this.router.navigate(['issues/internet/router-reset-required']);
     } else if (routerDetails?.isManaged && !routerDetails?.isReachable) {
       this.router.navigate(['issues/internet/router-not-reachable']);
+    } else if (!routerDetails?.isManaged) {
+      this.router.navigate(['issues/internet/third-party-router']);
     } else if (routerDetails?.isUpgradeRequired) {
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
+    }
+  }
+
+  handleInternetPasswordResetCase(shouldReset) {
+    if (shouldReset) {
+      this.router.navigate(['/issues/internet/internet-password-reset']);
+    } else {
+      this.router.navigate(['issues/internet/no-issue']);
     }
   }
 }

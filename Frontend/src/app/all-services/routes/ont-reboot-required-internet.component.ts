@@ -52,7 +52,7 @@ export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.ontRestartTVAllServices;
+    this.messageSection = CustomerJourneyConstants.ontRestartInternetAllServices;
   }
 
   button1Listener() {

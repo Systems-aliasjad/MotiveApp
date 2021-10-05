@@ -22,9 +22,9 @@ export class ResetFactoryDefaultDialog implements OnInit {
   ) {}
 
   CloseMOdal() {
+    this.dismiss();
     this.sharedService.setLoader(true);
-    this.backendService.nextSignal({ signal: 'MandatoryOnly' }).subscribe((data: any) => {
-      this.dismiss();
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });

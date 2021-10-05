@@ -21,7 +21,7 @@ export class OntRebootRequiredTvComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
-    title: 'BUTTONS.RESTART_ONT_STB',
+    title: 'BUTTONS.RESTART_ONT_NOW',
     type: 'primary',
   };
   button2: IMotiveButton = {
