@@ -72,6 +72,7 @@ import { ComplaintBookingFailedComponent } from './routes/complaint-booking-fail
 import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
 import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
 import { ServerTimeOutComponent } from './routes/server-time-out.component';
+import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
 
 const routes: Routes = [
   {
@@ -447,6 +448,10 @@ const routes: Routes = [
   {
     path: 'server-timeout',
     component: ServerTimeOutComponent,
+  },
+  {
+    path: 'password-reset-success',
+    component: PasswordResetSuccessfullyComponent,
   },
 ];
 
