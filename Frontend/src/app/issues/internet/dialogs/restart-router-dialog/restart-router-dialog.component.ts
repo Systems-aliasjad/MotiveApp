@@ -10,27 +10,12 @@ import { SharedService } from '../../../../shared/shared.service';
 })
 export class RestartRouterDialog implements OnInit {
   constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
-  buttonsConfig: any[] = [
-    {
-      title: 'BUTTONS.EXIT_TROUBLESHOOTING',
-      clickListener: () => {
-        this.dismiss();
-        this.router.navigate(['/thanks']);
-      },
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.BACK',
-      clickListener: () => {
-        this.dismiss();
-      },
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-  ngOnInit() {
-    this.sharedService.setButtonConfig(this.buttonsConfig);
+
+  ngOnInit() {}
+
+  exitTroubleshoot() {
+    this.dismiss();
+    this.router.navigate(['/thanks']);
   }
 
   dismiss() {

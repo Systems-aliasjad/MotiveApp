@@ -22,7 +22,6 @@ import { RouterNotRestartedCareComponent } from './routes/router-not-restarted-c
 import { RouterFixedRestartRequiredComponent } from './routes/router-fixed-restart-required.component';
 import { RouterRestartCareComponent } from './routes/router-restart-care.component';
 import { RouterInstallSuccessfullyMessageComponent } from './routes/router-install-successfully-message.component';
-import { RoutingPaths } from 'src/app/shared/constants/constants';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
 import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
@@ -165,6 +164,10 @@ const routes: Routes = [
   {
     path: 'router-restart',
     component: RouterRestartInstructionsComponent,
+  },
+  {
+    path: 'router-restart/device-care',
+    component: RouterRestartCareComponent,
   },
   {
     //Router Reboot Required
