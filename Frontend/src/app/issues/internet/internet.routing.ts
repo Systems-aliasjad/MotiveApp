@@ -22,7 +22,6 @@ import { RouterNotRestartedCareComponent } from './routes/router-not-restarted-c
 import { RouterFixedRestartRequiredComponent } from './routes/router-fixed-restart-required.component';
 import { RouterRestartCareComponent } from './routes/router-restart-care.component';
 import { RouterInstallSuccessfullyMessageComponent } from './routes/router-install-successfully-message.component';
-import { RoutingPaths } from 'src/app/shared/constants/constants';
 import { RouterInstallationFailedMessageComponent } from './routes/router-installation-failed-message.component';
 import { RouterResetFactoryComponent } from './routes/router-reset-factory.component';
 import { RouterUpgradeSuccessComponent } from './routes/router-upgrade-success.component';
@@ -71,6 +70,8 @@ import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-r
 import { ComplaintBookingFailedInvalidContactComponent } from './routes/complaint-booking-failed-invalid-contact.component';
 import { ComplaintBookingFailedComponent } from './routes/complaint-booking-failed.component';
 import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
+import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
+import { ServerTimeOutComponent } from './routes/server-time-out.component';
 
 const routes: Routes = [
   {
@@ -165,6 +166,10 @@ const routes: Routes = [
   {
     path: 'router-restart',
     component: RouterRestartInstructionsComponent,
+  },
+  {
+    path: 'router-restart/device-care',
+    component: RouterRestartCareComponent,
   },
   {
     //Router Reboot Required
@@ -434,6 +439,14 @@ const routes: Routes = [
   {
     path: 'router-reboot-successful',
     component: RouterRebootSuccessfulComponent,
+  },
+  {
+    path: 'router-reset-successful',
+    component: RouterResetSuccessfulComponent,
+  },
+  {
+    path: 'server-timeout',
+    component: ServerTimeOutComponent,
   },
 ];
 

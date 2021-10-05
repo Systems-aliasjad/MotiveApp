@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { SharedService } from '../../../../shared/shared.service';
@@ -9,28 +9,16 @@ import { SharedService } from '../../../../shared/shared.service';
   styleUrls: ['./restart-router-dialog.component.scss'],
 })
 export class RestartRouterDialog implements OnInit {
+  @Input()
+  isManualOpt: boolean = false;
+
   constructor(private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {}
-  buttonsConfig: any[] = [
-    {
-      title: 'BUTTONS.EXIT_TROUBLESHOOTING',
-      clickListener: () => {
-        this.dismiss();
-        this.router.navigate(['/thanks']);
-      },
-      linkTo: '/thanks',
-      behaviour: 'primary',
-    },
-    {
-      title: 'BUTTONS.BACK',
-      clickListener: () => {
-        this.dismiss();
-      },
-      linkTo: '',
-      behaviour: 'link',
-    },
-  ];
-  ngOnInit() {
-    this.sharedService.setButtonConfig(this.buttonsConfig);
+
+  ngOnInit() {}
+
+  exitTroubleshoot() {
+    this.dismiss();
+    this.router.navigate(['/thanks']);
   }
 
   dismiss() {

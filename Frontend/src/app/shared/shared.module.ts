@@ -30,12 +30,17 @@ import { GenericErrorComponent } from './components/generic-error/generic-error.
 import { ThreeLayersComponent } from './components/network-diagrams/three-layers/three-layers.component';
 import { HeaderSingleLineComponent } from './components/header-single-line/header-single-line.component';
 import { HeaderMultiLineComponent } from './components/header-multi-line/header-multi-line.component';
+import { MultiLayerComponent } from './components/network-diagrams/multi-layer/multi-layer.component';
+import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
+import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 
 @NgModule({
   declarations: [
     DiagnoseIssueComponent,
     PageTopComponent,
     MotiveMessageComponent,
+    MultiLayerComponent,
+    SevenLayerComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
     BookComplaintComponent,
@@ -56,6 +61,7 @@ import { HeaderMultiLineComponent } from './components/header-multi-line/header-
     MotiveMessageFeedbackComponent,
     HeaderSingleLineComponent,
     HeaderMultiLineComponent,
+    TransferPackageComponent,
   ],
   imports: [
     CommonModule,
@@ -89,6 +95,7 @@ import { HeaderMultiLineComponent } from './components/header-multi-line/header-
     MotiveMessageFeedbackComponent,
     HeaderMultiLineComponent,
     HeaderSingleLineComponent,
+    TransferPackageComponent,
   ],
 
   entryComponents: [],

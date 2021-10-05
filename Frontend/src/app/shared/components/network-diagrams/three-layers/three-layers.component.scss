@@ -30,15 +30,7 @@ ion-item::part(native) {
     max-width: 650px;
     margin: auto;
     position: relative;
-    @media screen and (max-width: 281px) {
-      text-align: left;
-    }
     .wizard-main-container {
-     /*  text-align: center;
-      max-width: 685px;
-      margin: auto;
-      position: relative; */
-      overflow: hidden;
       .wizard-inner_container {
         display: -webkit-box;
         display: -ms-flexbox;

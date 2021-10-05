@@ -46,7 +46,7 @@ export class RouterRestartCareComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
-    this.careContent.header1 = 'SUBHEADER.HOW_TO_RESTART_YOUR_ROUTER';
+    this.careContent.header1 = 'SUBHEADER.SPECIFIC_DEVICE_GUIDES';
     this.careContent.body1 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
     this.careContent.body2 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
   }

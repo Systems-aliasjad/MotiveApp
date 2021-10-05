@@ -96,13 +96,39 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
+      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.CI73) {
+      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
       this.sharedService.setApiResponseData({ complaintDetails: temp3 });
+    } else if (CodeId === flowCodes.UPSEL2) {
+      //Upselling Identified for New Router
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL3) {
+      // Upselling Identified for Router Upgrade
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL4) {
+      // Upselling Identified for Router Upgrade / Router Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL5) {
+      // Upselling Identified for Bandwidth And Router Upgrade
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL6) {
+      // Upselling Identified for Bandwidth And Router Upgrade /Router  Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL7) {
+      // Upselling Identified for Bandwidth / Router  Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL8) {
+      // Upselling Identified for New Router /Router  Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL9) {
+      // Upselling Identified for Bandwidth
+      this.router.navigate(['']);
     }
   }
 

@@ -10,59 +10,10 @@ import { SharedService } from '../../shared.service';
 })
 export class TabTileComponent implements OnInit {
   @Input() tileConfig: any;
-  slideOpts = {
-    slidesPerView: 4,
-    spaceBetween: 1,
-    loop: false,
-    speed: 500,
-    grid: {
-      row: 2,
-    },
-    /*  navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    }, */
-    breakpoints: {
-      // when window width is >= 320px
-      320: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      // when window width is >= 480px
-      480: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-      // when window width is >= 640px
-      640: {
-        slidesPerView: 4,
-        spaceBetween: 40,
-      },
-    },
-  };
-  @ViewChild('slides') slides: IonSlides;
-  arrow_right: boolean = true;
-  arrow_left: boolean = false;
+
   constructor(private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {}
-
-  next() {
-    this.slides.slideNext();
-  }
-
-  prev() {
-    this.slides.slidePrev();
-  }
-
-  doCheck() {
-    this.slides.isBeginning().then((val) => {
-      this.arrow_right = val;
-    });
-    this.slides.isEnd().then((val) => {
-      this.arrow_left = val;
-    });
-  }
 }
 
 export class TabTiles {
