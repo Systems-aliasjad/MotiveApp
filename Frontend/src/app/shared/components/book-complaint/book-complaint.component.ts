@@ -53,7 +53,6 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   createForm() {
     this.formGroup = this.formBuilder.group({
       MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-      AlternateContactNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
       Remarks: [''],
     });
   }
