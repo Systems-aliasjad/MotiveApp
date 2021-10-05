@@ -32,6 +32,7 @@ import { HeaderSingleLineComponent } from './components/header-single-line/heade
 import { HeaderMultiLineComponent } from './components/header-multi-line/header-multi-line.component';
 import { MultiLayerComponent } from './components/network-diagrams/multi-layer/multi-layer.component';
 import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
+import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
     MotiveMessageFeedbackComponent,
     HeaderSingleLineComponent,
     HeaderMultiLineComponent,
+    TransferPackageComponent,
   ],
   imports: [
     CommonModule,
@@ -93,6 +95,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
     MotiveMessageFeedbackComponent,
     HeaderMultiLineComponent,
     HeaderSingleLineComponent,
+    TransferPackageComponent,
   ],
 
   entryComponents: [],

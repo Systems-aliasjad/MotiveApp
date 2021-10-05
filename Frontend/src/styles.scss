@@ -346,16 +346,6 @@ ion-radio::part(container) {
   }
 }
 // ------------IOS Header End-------------------
-// ------------Header bottom border Start-------------------
-ion-header{  
-  ion-toolbar{
-    @media screen and (max-width:992px) {
-      border-bottom: 2px dashed #d0d6da !important;      
-    }
-    border-bottom: 2px solid #d0d6da !important;
-  }
-}
-// ------------Header bottom border End-------------------
 
 // ------------Modal Start-------------------
 ion-modal,

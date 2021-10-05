@@ -537,6 +537,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN', 'MESSAGES.CONTINUE_TO_CONFIGURE_YOUR_WIFI_SETTINGS'],
   };
 
+  public static routerResetSuccess = {
+    header: 'MESSAGES.ROUTER_RESET_SUCCESSFUL',
+    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN'],
+  };
+
   public static resetWifiResetSecondsuccessfullyCase = {
     header: 'MESSAGES.WIFI_PASSWORD_UPDATED_SUCCESSFULLY',
     paragraphs: [
@@ -764,6 +769,11 @@ export class CustomerJourneyConstants {
   public static routerRebootSuccessful = {
     header: 'MESSAGES.ROUTER_REBOOT_SUCCESSFUL',
     paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN'],
+  };
+
+  public static serverTimeout = {
+    header: 'MESSAGES.SERVER_TIMEOUT',
+    paragraphs: ['MESSAGES.WE_WILL_TRY_TO_RESET_THE_ROUTER_AGAIN_PLEASE_MAKE_SURE_THAT_THE_ROUTER_IS_SWITHCED_ON'],
   };
   //#endregion Quick Links
 }
