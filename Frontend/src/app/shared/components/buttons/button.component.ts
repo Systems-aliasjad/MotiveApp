@@ -45,13 +45,6 @@ export class ButtonComponent implements OnInit {
 
   termsChange() {
     this.sharedService.setTermsConditions(this.terms);
-    if (this.terms) {
-      this.sharedService.setLoader(true);
-      this.backendService.nextSignal('Agree').subscribe((data: any) => {
-        this.sharedService.setLoader(false);
-        // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
-    }
   }
 
   async PopupTermsConditions() {
