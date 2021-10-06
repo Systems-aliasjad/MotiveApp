@@ -87,6 +87,7 @@ import { ComplaintBookingFailedComponent } from './routes/complaint-booking-fail
 import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
 import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
 import { ServerTimeOutComponent } from './routes/server-time-out.component';
+import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
 
 @NgModule({
   declarations: [
@@ -167,6 +168,7 @@ import { ServerTimeOutComponent } from './routes/server-time-out.component';
     RouterRebootSuccessfulComponent,
     RouterResetSuccessfulComponent,
     ServerTimeOutComponent,
+    PasswordResetSuccessfullyComponent,
   ],
   imports: [
     CommonModule,
