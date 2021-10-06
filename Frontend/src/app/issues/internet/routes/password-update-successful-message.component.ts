@@ -44,7 +44,7 @@ export class PasswordUpdateSuccessfulMessageComponent implements OnInit, OnDestr
   updateHeader() {}
 
   updatePageContent() {
-    this.Section1Data = CustomerJourneyConstants.resetWifiResetSecondsuccessfullyCase;
+    this.Section1Data = CustomerJourneyConstants.resetWifiSuccessfullyCase;
     this.imgSrc = successImgSrc;
   }
 

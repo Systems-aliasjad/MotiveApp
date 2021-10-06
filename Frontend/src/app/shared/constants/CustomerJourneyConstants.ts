@@ -555,6 +555,14 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static resetWifiSuccessfullyCase = {
+    header: 'MESSAGES.WIFI_PASSWORD_CHANGED_SUCCESSFULLY',
+    paragraphs: [
+      'MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN_YOUR_NEW_PASSWORD_IS_XXXX_MAKE_SURE_TO_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER',
+      'MESSAGES.PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER',
+    ],
+  };
+
   public static troubleshootComplete = {
     header: 'MESSAGES.TROUBLESHOOTING_COMPLETE',
     paragraphs: [

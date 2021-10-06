@@ -171,6 +171,8 @@
   },
 
   "MESSAGES": {
+    "WIFI_PASSWORD_CHANGED_SUCCESSFULLY": "Wi-Fi password changed successfully!",
+    "PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER": "Please use the new Wi-Fi password to connect to the router.",
     "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Please restart the wall-mounted fiber box and then try using the internet again.",
     "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW_UP_ON_THE_SAME_COMPLAINT": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
     "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY.": "We couldn’t find any technical problem. Your phone should be working normally.",
