@@ -21,11 +21,11 @@ export class LoaderComponent implements OnInit {
 
   //for loader
   successLoader: AnimationOptions = {
-    path: '/assets/images/loader/Green_Loader_app.json',
+    path: './assets/images/loader/Green_Loader_app.json',
   };
 
   warningLoader: AnimationOptions = {
-    path: '/assets/images/loader/Orange_Loader_app.json',
+    path: './assets/images/loader/Orange_Loader_app.json',
   };
 
   optionsLoader;

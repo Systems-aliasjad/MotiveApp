@@ -43,13 +43,13 @@ export const networkDiagramClasses = {
 
 export const SVGs = {
   etisalat: {
-    default: '/assets/images/network-map-icons/icon_home_default.svg',
+    default: './assets/images/network-map-icons/icon_home_default.svg',
   },
   ont: {
-    default: '/assets/images/network-map-icons/icon_desktop_default.svg',
+    default: './assets/images/network-map-icons/icon_desktop_default.svg',
   },
   router: {
-    default: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
+    default: './assets/images/network-map-icons/icon_smartphone_all_okay.svg',
   },
 };
 
