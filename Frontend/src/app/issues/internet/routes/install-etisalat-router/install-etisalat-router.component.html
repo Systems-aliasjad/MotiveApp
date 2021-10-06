@@ -14,22 +14,30 @@
     <ion-row class="form-inner_container">
       <ion-col size="12">
         <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
-          <ion-grid class="pr-0 pl-0">
+          <ion-grid class="pr-0 pl-0">            
             <ion-row>
+             <ion-col sizeLg="6" sizeMd="8" sizeSm="12">
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
-                <ion-list>
-                  <ion-item>
-                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(1)">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
+                <!-- <ion-list> -->
+                  <ion-item (click)="openInstallEtisalatRouterDialog(1)">
+                    <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
                     <ion-label position="stacked">{{ valueForBrand?.text }}</ion-label>
+                    <img
+                    src="assets/images/action-icons/icon_arrow_right_black.svg"                    
+                    class="show-icon"                    
+                    />
                   </ion-item>
-                </ion-list>
+                <!-- </ion-list> -->
               </ion-col>
-
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-list>
-                  <ion-item>
-                    <ion-label position="stacked" (click)="openInstallEtisalatRouterDialog(2)">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
+                  <ion-item (click)="openInstallEtisalatRouterDialog(2)">
+                    <ion-label position="stacked">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
                     <ion-label position="stacked">{{ valueForModel?.text }}</ion-label>
+                    <img
+                    src="assets/images/action-icons/icon_arrow_right_black.svg"                    
+                    class="show-icon"                    
+                    />
                     <!-- <ion-select placeholder="Select Brand" formControlName="Model">
                       <ion-select-option *ngFor="let model of modelList" [value]="model.value">{{ model.text }}</ion-select-option>
                     </ion-select> -->
@@ -71,6 +79,7 @@
                   </div>
                 </ion-item>
               </ion-col>
+             </ion-col>
             </ion-row>
           </ion-grid>
         </form>

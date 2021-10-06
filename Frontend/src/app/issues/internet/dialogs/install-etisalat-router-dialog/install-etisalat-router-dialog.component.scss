@@ -5,6 +5,7 @@
 
 :host {
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --background: transparent;
   ion-buttons{
     --min-height:auto;
   }
@@ -25,6 +26,17 @@ ion-item::part(native){
     padding-left: 1rem;
     padding-right: 1rem;
     --padding-start:1rem;
+    --inner-border-width: 0 0 0 0;
+    border-bottom: 1px solid #f1f1eb;
+    padding: 9px 0;
+    // margin: 0 16px;
+    --background-hover: transparent;
+}
+ion-list{
+    background: transparent;
+    ion-label{
+      color: $secondary-color;   
+    }
 }
 .header-ios {
 	ion-toolbar {
@@ -36,22 +48,74 @@ ion-item::part(native){
 	}
 }
 /*-------------------------------------------------*/
-ion-buttons{
-    padding-right: 0;
-    padding-right: 0;
-    cursor: pointer;
-    .close-btn{
-      display: none;
+ion-header{
+    --ion-background-color:  transparent;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    &:after{
+      background-image: none;
     }
-    .header-icons-close{
-      display: block;
-    }
-    @media  screen and (max-width:992px) {
-       .close-btn{
-         display: block;
+    ion-toolbar{
+      @media screen and (max-width:992px) {
+        border-bottom: 2px dashed transparent;      
+      }
+      border-bottom: 2px solid #e2e1da;
+      ion-title{
+        padding-right:0;
+        padding-left: 0;
+        h5{
+          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+          color:$primary-color;
         }
-       .header-icons-close{
-         display: none;
+        @media screen and (min-width:992px) {
+            text-align: center;
+        }
+      }
+    }
+    ion-buttons{
+        padding-right: 0;
+        padding-right: 0;
+        cursor: pointer;
+        .close-btn{
+        display: none;
+        }
+        .header-icons-close{
+        display: block;
+        }
+        @media  screen and (max-width:992px) {
+        .close-btn{
+            display: block;
+            }
+        .header-icons-close{
+            display: none;
+            }
+        }
+    }
+}
+ion-content{
+    ion-grid{
+        padding: 0 1rem;
+        @media screen and (min-width:992px) {
+            ion-radio-group{
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            ion-item{
+                width: 30%;
+            }
+        }
+    }
+}
+.footer{
+    @media screen and (min-width:992px) {
+        text-align: center;
+
+        .footer-btns-container{
+            ion-row{
+                justify-content: center;
+            }
         }
     }
 }
