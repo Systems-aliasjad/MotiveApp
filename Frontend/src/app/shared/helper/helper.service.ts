@@ -43,7 +43,7 @@ const temp5 = {
   interfaceType: '802.11',
 };
 
-const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5];
+const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5,temp5,temp5,temp5,temp5,temp5,temp5];
 @Injectable({
   providedIn: 'root',
 })

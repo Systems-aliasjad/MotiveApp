@@ -12,13 +12,15 @@ export class MultiLayerComponent implements OnInit {
   @Input()
   devices;
   slideOpts = {
-    slidesPerView: 3,
-    slidesPerColumn: 2,
-    // spaceBetween: 1,
-    // loop: false,
+    slidesPerView: 4, //auto
+    slidesPerColumn: 2, 
+    spaceBetween: 20,
+    /* centeredSlides: false,
+    loop: true, */
     speed: 500,
     grid: {
-      rows: 2,
+       rows:2, 
+      /* columns:3,  */
     },
     /*  navigation: {
       nextEl: ".swiper-button-next",
