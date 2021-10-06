@@ -96,6 +96,7 @@ import { TransferPackageComponent } from './components/transfer-package/transfer
     HeaderMultiLineComponent,
     HeaderSingleLineComponent,
     TransferPackageComponent,
+    MultiLayerComponent,
   ],
 
   entryComponents: [],

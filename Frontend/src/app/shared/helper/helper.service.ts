@@ -37,11 +37,35 @@ const temp7 = {
   referenceNo: '4365298739',
 };
 
+const temp5 = {
+  addressSource: 'DHCP',
+  isActive: '1',
+  ipAddress: '192.168.1.101',
+  leaseTimeRemaining: '21856',
+  hostName: '',
+  macAddress: 'a6:8d:22:64:e9:b3',
+  interfaceType: '802.11',
+};
+
+const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5];
 @Injectable({
   providedIn: 'root',
 })
 export class HelperService {
   constructor(private router: Router, private sharedService: SharedService) {}
+
+  connectedDeviceModifier(devices) {
+    return devices?.map((device) => {
+      return {
+        ...device,
+        className: networkDiagramClasses.okay,
+        url: SVGs.ont.default,
+        // title: device?.hostName ?? 'unnammed',
+        title: 'unnammed',
+        subTitle: device?.macAddress,
+      };
+    });
+  }
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
@@ -108,9 +132,11 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
+      this.sharedService.setApiResponseData({ connectedDevices: temp6 });
       this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.CI73) {
+      this.sharedService.setApiResponseData({ connectedDevices: temp6 });
       this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.openComplaint) {
