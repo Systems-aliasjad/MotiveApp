@@ -104,7 +104,6 @@ export class HelperService {
         tempClass = networkDiagramClasses.error;
       }
     }
-    console.log('aaaaaaaaaaaaaa', device, previousDeviceState);
 
     return {
       ...device,
@@ -206,6 +205,8 @@ export class HelperService {
   handleInternetPasswordResetCase(shouldReset) {
     if (shouldReset) {
       this.router.navigate(['/issues/internet/internet-password-reset']);
+    } else if (this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
+      this.router.navigate(['issues/internet/no-issue']);
     } else {
       this.flowIdentifier(this.sharedService.getUpsellOpportunity());
 

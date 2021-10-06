@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
         interfaceType: '802.11',
       },
     ],
-    upsellingOpportunity: 'UPSEL8',
+    upsellingOpportunity: 'UPSEL1',
     tsOutcome: 'No Issue Found',
   };
 
@@ -39,7 +39,7 @@ export class MainComponent implements OnInit {
       // this.backendService.getIssueDiagnositic('INTEvRNET').subscribe((data: any) => {
       this.shareService.setLoader(false);
       // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      this.helperService.flowIdentifier('CI73', this.hardData);
+      this.helperService.flowIdentifier('CI72', this.hardData);
       console.log('====ngOnInit INTERNET====');
       // console.log(data);
       console.log('====================================');
