@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'router-and-package-upgrade-successful-message',
+  selector: 'third-party-router-success-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -18,7 +18,7 @@ import { SharedService } from 'src/app/shared/shared.service';
     (button1Click)="button1Listener()"
   ></motive-message>`,
 })
-export class RouterAndPackageUpgradeSuccessMessageComponent implements OnInit, OnDestroy {
+export class ThirdPartyRouterSuccessMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   subHeaderSectionTemplate;
@@ -46,10 +46,10 @@ export class RouterAndPackageUpgradeSuccessMessageComponent implements OnInit, O
 
   updatePageContent() {
     const apiResponse = this.sharedService.getApiResponseData();
-    this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
-    this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
-    this.subHeaderSectionData = apiResponse?.routerPackageUpgrade;
     this.imgSrc = successImgSrc;
+    this.Section1Data = CustomerJourneyConstants.thirdPartyUpgradesuccessfullyCase;
+    this.subHeaderSectionTemplate = ApplicableCodes.thirdPartyUpgradeTemplate;
+    this.subHeaderSectionData = apiResponse?.thirdPartyUpgrade;
   }
 
   button1Listener() {

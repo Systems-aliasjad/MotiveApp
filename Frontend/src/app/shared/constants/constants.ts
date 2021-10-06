@@ -698,6 +698,14 @@ export class ApplicableCodes {
     },
   ];
 
+  public static thirdPartyUpgradeTemplate: ISection2Template[] = [
+    {
+      title: 'MESSAGES.REFERENCE_NO',
+      type: 'number',
+      objKeyNameEN: 'referenceNo',
+    },
+  ];
+
   public static routerUpgradeTemplate: ISection2Template[] = [
     {
       title: 'MESSAGES.REFERENCE_NO',

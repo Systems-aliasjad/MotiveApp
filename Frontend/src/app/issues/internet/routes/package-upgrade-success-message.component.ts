@@ -5,6 +5,7 @@ import { ApplicableCodes, successImgSrc } from 'src/app/shared/constants/constan
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'package-upgrade-success-message',
@@ -28,7 +29,7 @@ export class PackageUpgradeSuccessMessageComponent implements OnInit, OnDestroy 
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -44,15 +45,15 @@ export class PackageUpgradeSuccessMessageComponent implements OnInit, OnDestroy 
   updateHeader() {}
 
   updatePageContent() {
+    const apiResponse = this.sharedService.getApiResponseData();
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
     this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
-    this.subHeaderSectionData = {
-      referenceNo: '436529873',
-    };
+    this.subHeaderSectionData = apiResponse?.packageUpgrade;
   }
 
   button1Listener() {
-    this.router.navigate(['thanks']);
+    this.router.navigate(['issues/internet/no-issue']);
+    // this.router.navigate(['thanks']);
   }
 }

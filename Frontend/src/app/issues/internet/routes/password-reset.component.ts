@@ -64,6 +64,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
+    // this.helperService.flowIdentifier(this.sharedService.getUpsellOpportunity());
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);

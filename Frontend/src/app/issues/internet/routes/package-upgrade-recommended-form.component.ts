@@ -7,7 +7,7 @@ import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'third-party-router-form',
+  selector: 'package-upgrade-recommended-form',
   template: `<app-book-complaint
     [headerConfig]="headerConfig"
     [button1]="button1"
@@ -16,7 +16,7 @@ import { FormGroup } from '@angular/forms';
     (button2Click)="button2Listener()"
   ></app-book-complaint>`,
 })
-export class ThirdPartyRouterFormComponent implements OnInit, OnDestroy {
+export class PackageUpgradeRecommendedFormComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   button1: IMotiveButton = {
     type: 'primary',
@@ -44,18 +44,18 @@ export class ThirdPartyRouterFormComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    //this.sharedService.setHeaderConfig('HEADER.BUY_NEW_ROUTER', false);
+    // this.sharedService.setHeaderConfig('HEADER.ROUTER_UPGRADE', false);
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.BUY_NEW_ROUTER',
+    pageTitle: 'HEADER.PACKAGE_UPGRADE',
     showBackBtn: true,
   };
 
   button1Listener(_event) {
     this.formGroup = _event;
     console.log(this.formGroup.valid);
-    this.router.navigate(['/issues/internet/third-party-upgrade-success']);
+    this.router.navigate(['/issues/internet/package-upgrade-success']);
   }
 
   button2Listener() {

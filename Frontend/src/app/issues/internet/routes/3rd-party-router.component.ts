@@ -83,7 +83,7 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/third-party-router-form']);
+    this.router.navigate(['/issues/internet/third-party-router-form']);
   }
 
   button3Listener() {}

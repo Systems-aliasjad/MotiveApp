@@ -106,6 +106,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.THANK_YOU_FOR_YOUR_REQUEST_WE_WILL_CALL_YOU_BACK_WITHIN_24_HRS'],
   };
 
+  public static thirdPartyUpgradesuccessfullyCase = {
+    header: 'MESSAGES.NEW_ROUTER_REQUEST_WAS_RAISED_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.THANK_YOU_FOR_YOUR_REQUEST_WE_WILL_CALL_YOU_BACK_WITHIN_24_HRS'],
+  };
+
   public static resetCCBPinsuccessfullyCase = {
     header: 'MESSAGES.CCB_PIN_RESET_SUCCESSFULLY',
     paragraphs: ['MESSAGES.YOU_CAN_NOW_ENABLE_CALL_BARRING_USING_THE_NEW_PIN'],

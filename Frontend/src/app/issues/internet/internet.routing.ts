@@ -73,6 +73,8 @@ import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successf
 import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
 import { ServerTimeOutComponent } from './routes/server-time-out.component';
 import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
+import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade-recommended-form.component';
+import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
 
 const routes: Routes = [
   {
@@ -122,6 +124,11 @@ const routes: Routes = [
   {
     path: 'package-upgrade-success',
     component: PackageUpgradeSuccessMessageComponent,
+  },
+
+  {
+    path: 'third-party-upgrade-success',
+    component: ThirdPartyRouterSuccessMessageComponent,
   },
   {
     path: 'router-and-package-upgrade-success',
@@ -389,6 +396,12 @@ const routes: Routes = [
     path: 'router-package-upgrade-recommended-form',
     component: RouterPackageUpgradeRecommendedFormComponent,
   },
+
+  {
+    path: 'package-upgrade-recommended-form',
+    component: PackageUpgradeRecommendedFormComponent,
+  },
+
   {
     path: 'book-complaint',
     component: BookComplaintComponent,

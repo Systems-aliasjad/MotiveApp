@@ -5,6 +5,8 @@ import { ApplicableCodes, successImgSrc, warningImgSrc } from 'src/app/shared/co
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 /**
  * Router Upgrade Success
@@ -35,7 +37,7 @@ export class RouterUpgradeSuccessComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -51,15 +53,15 @@ export class RouterUpgradeSuccessComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
+    const apiResponse = this.sharedService.getApiResponseData();
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.routerUpgradesuccessfullyCase;
     this.subheaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
-    this.subheaderSectionData = {
-      referenceNo: '436529873',
-    };
+    this.subheaderSectionData = apiResponse?.routerUpgrade;
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['issues/internet/no-issue']);
+    // this.router.navigate(['/thanks']);
   }
 }
