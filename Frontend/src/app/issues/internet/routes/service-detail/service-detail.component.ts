@@ -62,19 +62,9 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
     });
     this.updatePageContent();
-    this.devices = this.helperService.connectedDeviceModifier([
-      {
-        addressSource: 'DHCP',
-        isActive: '1',
-        ipAddress: '192.168.1.101',
-        leaseTimeRemaining: '21856',
-        hostName: '',
-        macAddress: 'a6:8d:22:64:e9:b3',
-        interfaceType: '802.11',
-      },
-    ]);
   }
 
   ngOnDestroy(): void {
