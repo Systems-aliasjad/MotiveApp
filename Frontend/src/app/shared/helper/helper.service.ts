@@ -125,9 +125,9 @@ export class HelperService {
       this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.CI73) {
-      this.sharedService.setApiResponseData({ connectedDevices: temp6 });
-      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
+      // this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
+      this.router.navigate(['issues/internet/router-reset-required']);
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
@@ -160,16 +160,16 @@ export class HelperService {
   }
 
   handleCI9Cases(routerDetails: IRouterDetail) {
-    if (routerDetails?.isRebootRequired) {
-      this.router.navigate(['issues/internet/router-reboot-required']);
-    } else if (routerDetails?.isResetRequired) {
-      this.router.navigate(['issues/internet/router-reset-required']);
-    } else if (routerDetails?.isManaged && !routerDetails?.isReachable) {
-      this.router.navigate(['issues/internet/router-not-reachable']);
-    } else if (!routerDetails?.isManaged) {
+    if (routerDetails?.isManaged) {
+      if (routerDetails?.isRebootRequired) {
+        this.router.navigate(['issues/internet/router-reboot-required']);
+      } else if (!routerDetails?.isReachable) {
+        this.router.navigate(['issues/internet/router-not-reachable']);
+      } else if (routerDetails?.isUpgradeRequired) {
+        this.router.navigate(['issues/internet/router-upgrade-recommended']);
+      }
+    } else {
       this.router.navigate(['issues/internet/third-party-router']);
-    } else if (routerDetails?.isUpgradeRequired) {
-      this.router.navigate(['issues/internet/router-upgrade-recommended']);
     }
   }
 
