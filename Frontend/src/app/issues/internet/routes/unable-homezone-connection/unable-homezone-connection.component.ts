@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IPageHeader } from 'src/app/shared/constants/types';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -11,8 +12,8 @@ import { SharedService } from 'src/app/shared/shared.service';
 })
 export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-
-  constructor(private router: Router, public sharedService: SharedService, private activatedRoute: ActivatedRoute) {}
+  devices;
+  constructor(private helperService: HelperService, private router: Router, public sharedService: SharedService, private activatedRoute: ActivatedRoute) {}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -21,6 +22,7 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.params.subscribe(() => {
       this.updateHeader();
+      this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
     });
   }
 
