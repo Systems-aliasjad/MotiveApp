@@ -5,6 +5,7 @@ import { ApplicableCodes, warningImgSrc } from 'src/app/shared/constants/constan
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'complaint-exists-message',
@@ -33,30 +34,24 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
     type: 'link',
     title: 'BUTTONS.NO_I_WANT_TO_REPORT_ANOTHER_ISSUE',
   };
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
+      this.updatePageContent();
     });
-    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
-
   updatePageContent() {
+    const apiResponse = this.sharedService.getApiResponseData();
     this.imgSrc = warningImgSrc;
     this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
     this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
-    this.Section2Data = {
-      complaintNo: '436529873',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      status: 'Xxxxx xxxxx xxxx',
-    };
+    this.Section2Data = apiResponse?.complaintDetails;
   }
 
   button1Listener() {

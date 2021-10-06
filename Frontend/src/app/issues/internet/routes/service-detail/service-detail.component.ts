@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -14,6 +15,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class ServiceDetailComponent implements OnInit, OnDestroy {
   @Input()
   isPartialLoaded: boolean = false;
+  devices;
   modal: any;
   subscription: Subscription;
   cardList: any[] = [
@@ -49,11 +51,18 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private sharedService: SharedService,
+    private router: Router,
+    private modalCtrl: ModalController,
+    private activatedRoute: ActivatedRoute,
+    private helperService: HelperService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
     });
     this.updatePageContent();
   }

@@ -70,6 +70,9 @@ import { RouterUpgradeRecommendedFormComponent } from './routes/router-upgrade-r
 import { ComplaintBookingFailedInvalidContactComponent } from './routes/complaint-booking-failed-invalid-contact.component';
 import { ComplaintBookingFailedComponent } from './routes/complaint-booking-failed.component';
 import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
+import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
+import { ServerTimeOutComponent } from './routes/server-time-out.component';
+import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
 
 const routes: Routes = [
   {
@@ -342,7 +345,7 @@ const routes: Routes = [
     //I want to install my new router
     //Flow 5 Message
 
-    path: 'install-new-router-flow5',
+    path: 'install-new-router/access-port-thirdparty-router',
     component: AccessPortThirdPartyRouterMessageComponent,
   },
 
@@ -437,6 +440,18 @@ const routes: Routes = [
   {
     path: 'router-reboot-successful',
     component: RouterRebootSuccessfulComponent,
+  },
+  {
+    path: 'router-reset-successful',
+    component: RouterResetSuccessfulComponent,
+  },
+  {
+    path: 'server-timeout',
+    component: ServerTimeOutComponent,
+  },
+  {
+    path: 'password-reset-success',
+    component: PasswordResetSuccessfullyComponent,
   },
 ];
 

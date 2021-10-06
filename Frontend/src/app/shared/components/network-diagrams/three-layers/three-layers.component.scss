@@ -134,30 +134,3 @@ ion-list {
     }
   }
 }
-/*--- Arrows Slider Start ---*/
-.arrow-container {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  &.left {
-    left: -5px;
-    cursor: pointer;
-    @include transition(all 0.3s ease-in-out);
-    &:hover {
-      opacity: 0.4;
-    }
-  }
-  &.right {
-    right: -5px;
-    cursor: pointer;
-    @include transition(all 0.3s ease-in-out);
-    &:hover {
-      opacity: 0.4;
-    }
-  }
-  img {
-    width: 18px;
-  }
-}
-/*--- Arrows Slider End ---*/

@@ -1,4 +1,5 @@
 <ion-header class="header-wrapper">
+  
   <ion-toolbar *ngIf="headerConfig.singleLine; else multiLine">
     <div class="header-inner">
       <a href="javascript:void(0)" class="back-to-page" *ngIf="headerConfig.showBackBtn" (click)="back()">
@@ -9,6 +10,7 @@
       </div>
     </div>
   </ion-toolbar>
+
   <ng-template #multiLine>
     <div class="page-top-container">
       <ion-row class="page-top_back" *ngIf="headerConfig.pageTitle === ''">

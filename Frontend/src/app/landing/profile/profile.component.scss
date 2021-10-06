@@ -41,10 +41,6 @@
     align-items: flex-start;
   }
   .user-profile-inner_container {
-    /* -webkit-box-flex: 0;
-      -ms-flex: 0 0 66.666667%;
-      flex: 0 0 66.666667%;
-      max-width: 66.666667%; */
       -webkit-box-flex: 1;
       -ms-flex: 1;
       flex: 1;
@@ -91,12 +87,12 @@
         -ms-flex: 0 0 82px;
         flex: 0 0 82px;
         max-width: 82px;
-        @media screen and (max-width: 567px) {
+        /* @media screen and (max-width: 567px) {
           -webkit-box-flex: 0;
           -ms-flex: 0 0 30%;
           flex: 0 0 30%;
           max-width: 30%;
-        }
+        } */
         @media screen and (max-width: 376px) {
           -webkit-box-flex: 0;
           -ms-flex: 0 0 25%;
@@ -116,14 +112,14 @@
           -ms-flex-direction: column;
           flex-direction: column;
           position: $relative;
-          @media screen and (max-width: 567px) {
+          /* @media screen and (max-width: 567px) {
             width: 4.2rem;
             height: 4.2rem;
           }
           @media screen and (max-width: 376px) {
             width: 3.5rem;
             height: 3.5rem;
-          }
+          } */
           @media screen and (max-width: 352px) {
             width: 3.8rem;
             height: 3.8rem;
@@ -141,10 +137,6 @@
         }
       }
       .user-profile-info {
-        /* -webkit-box-flex: 0;
-          -ms-flex: 0 0 75%;
-          flex: 0 0 75%;
-          max-width: 75%; */
         -webkit-box-flex: 1;
         -ms-flex: 1;
         flex: 1;
@@ -210,7 +202,7 @@
               position:$relative;
               @media screen and (max-width: 767px) {
                 margin-left:0;
-                padding-left:0;
+               /*  padding-left:0; */
               }
               &:before{
                 content: "";
@@ -224,9 +216,9 @@
                 height: .5rem;
                 background-color: $secondary-color;
                 border-radius: 50%;
-                @media screen and (max-width: 767px) {
+                /* @media screen and (max-width: 767px) {
                   display:none;
-                }
+                } */
               }
              /*  @media screen and (min-width: 768px) {
                 margin-left: 1.5rem;
@@ -238,12 +230,7 @@
     }
   }
   .switch-container {
-    /*  -webkit-box-flex: 0;
-      -ms-flex: 0 0 33.333333%;
-      flex: 0 0 33.333333%;
-      max-width: 33.333333%; 
-      
-    -webkit-box-flex: 1;
+    /*-webkit-box-flex: 1;
     -ms-flex: 1;
     flex: 1;
     max-width: 100%;*/

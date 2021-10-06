@@ -19,7 +19,15 @@ export class BackendService {
     return this.http.get(`motive/troubleshoot/${forIssue}`);
   }
 
-  nextSignal(body) {
-    return this.http.put(`motive/troubleshoot/next-step`, body);
+  nextSignal(signal: 'MandatoryOnly' | 'DontReboot' | 'Agree') {
+    return this.http.put(`motive/troubleshoot/next-step`, { signal: signal });
+  }
+
+  bookComplaint(data) {
+    return this.http.put(`troubleshoot/book-complaint`, data);
+  }
+
+  resetWifiPassword(data) {
+    return this.http.put(`troubleshoot/wifi-password-reset`, { ...data });
   }
 }

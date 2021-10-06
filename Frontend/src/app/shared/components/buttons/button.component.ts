@@ -3,6 +3,7 @@ import { ModalController } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
 import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
 import { SharedService } from '../../shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'motive-button',
@@ -30,7 +31,7 @@ export class ButtonComponent implements OnInit {
 
   terms: boolean = false;
   modal: any;
-  constructor(private modalCtrl: ModalController, private sharedService: SharedService) {}
+  constructor(private backendService: BackendService, private modalCtrl: ModalController, private sharedService: SharedService) {}
 
   ngOnInit() {}
 

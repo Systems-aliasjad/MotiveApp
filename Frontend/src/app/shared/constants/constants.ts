@@ -11,21 +11,51 @@ export const flowCodes = {
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM14',
   CI9: 'CI9',
+  openComplaint: 'CI11',
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
-  outageInternet: 'E2EN121 ',
+  outageInternet: 'E2EN121',
   issueNotFixed: 'CI71',
-  issueFixed: 'CI72',
+  CI72: 'CI72',
+  CI73: 'CI73',
+  UPSEL1: 'UPSEL1',
+  UPSEL2: 'UPSEL2',
+  UPSEL3: 'UPSEL3',
+  UPSEL4: 'UPSEL4',
+  UPSEL5: 'UPSEL5',
+  UPSEL6: 'UPSEL6',
+  UPSEL7: 'UPSEL7',
+  UPSEL8: 'UPSEL8',
+  UPSEL9: 'UPSEL9',
 };
 
 export const ETISALAT = 'Etisalat';
 export const ONT = 'ONT';
 export const ROUTER = 'Router';
 
+export const networkDiagramClasses = {
+  default: 'default', //Gray
+  error: 'error', //Red
+  pending: 'pending', //Orange
+  okay: 'okay', //Green
+};
+
+export const SVGs = {
+  etisalat: {
+    default: '/assets/images/network-map-icons/icon_home_default.svg',
+  },
+  ont: {
+    default: '/assets/images/network-map-icons/icon_desktop_default.svg',
+  },
+  router: {
+    default: '/assets/images/network-map-icons/icon_smartphone_all_okay.svg',
+  },
+};
+
 export const ETISALAT_DEFAULT_CONFIG = {
-  url: '/assets/images/network-map-icons/icon_home_default.svg',
-  className: 'okay',
+  url: SVGs.etisalat.default,
+  className: networkDiagramClasses.okay,
   title: ETISALAT,
 };
 

@@ -92,6 +92,8 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "I want to reset ELife on pin"
   },
   "BUTTONS": {
+    "RESTART_ONT_NOW": "RESTART ONT NOW",
+    "INSTALL_NEW_THIRD_PARTY_ROUTER": "INSTALL NEW THIRD-PARTY ROUTER",
     "BACK": "خلف",
     "BOOK_AN_APPOINTMENT": "BOOK AN APPOINTMENT",
     "BOOK_A_COMPLAINT": "تقديم شكوى",
@@ -169,6 +171,7 @@
   },
 
   "MESSAGES": {
+    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Please restart the wall-mounted fiber box and then try using the internet again.",
     "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW_UP_ON_THE_SAME_COMPLAINT": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
     "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY.": "We couldn’t find any technical problem. Your phone should be working normally.",
     "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_PHONE_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "Tap ‘View details’ to take a closer look at your phone service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
@@ -261,7 +264,7 @@
     "INSTALLING_ETISALAT_ROUTER": "Installing Etisalat router",
     "INSTALLING_THIRD_PARTY_ROUTER": "Installing third-party router",
     "INSTALL_NEW_ROUTER": "Installing new router",
-    "INSTALL_NEW_THIRD-PARTY_ROUTER": "Install new third-party router",
+    "INSTALL_NEW_THIRD_PARTY_ROUTER": "Install new third-party router",
     "INSTALL_ROUTER": "Install router",
     "INTERNET": "INTERNET",
     "INTERNET_ISSUES": "مشاكل خدمة الإنترنت",
@@ -314,7 +317,7 @@
     "PACKAGE_UPGRADE_REQUEST_WAS_RAISED_SUCCESSFULLY": "تم رفع طلب ترقية الراوتر بنجاح",
     "PARENTAL_CONTROL": "Parental control",
     "PASSWORD_ISSUES": "مشاكل كلمة المرور",
-    "PASSWORD_STRENGTH_SECTION": "Password strength section",
+    "PASSWORD_STRENGTH": "Password strength",
     "PHONE_ISSUE": "مشاكل الهاتف",
     "PHONE_ISSUES": "Phone Issues",
     "PHONE_SERVICE_IS_DOWN": "Phone service is down",

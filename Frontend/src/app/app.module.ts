@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { CommonModule } from '@angular/common';
+import { CommonModule, APP_BASE_HREF } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -25,7 +25,6 @@ import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.compon
 import { httpInterceptorProviders } from './http-interceptor';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
-
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
@@ -68,6 +67,7 @@ export function playerFactory() {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
     },
+    { provide: APP_BASE_HREF, useValue: '/html/motive-frontend/' },
   ],
   bootstrap: [AppComponent],
 })

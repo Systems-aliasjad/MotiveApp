@@ -15,10 +15,10 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     this.activatedRoute.params.subscribe(() => {
       this.shareService.setLoader(true);
-      // this.backendService.getIssueDiagnositic('INTERNET').subscribe((data: any) => {
+      // this.backendService.getIssueDiagnositic('INTEvRNET').subscribe((data: any) => {
       this.shareService.setLoader(false);
       // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      this.helperService.flowIdentifier('CI9');
+      this.helperService.flowIdentifier('CI72');
       console.log('====ngOnInit INTERNET====');
       // console.log(data);
       console.log('====================================');

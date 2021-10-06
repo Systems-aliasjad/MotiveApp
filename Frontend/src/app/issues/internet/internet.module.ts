@@ -85,6 +85,9 @@ import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account
 import { ComplaintBookingFailedInvalidContactComponent } from './routes/complaint-booking-failed-invalid-contact.component';
 import { ComplaintBookingFailedComponent } from './routes/complaint-booking-failed.component';
 import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successful.component';
+import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
+import { ServerTimeOutComponent } from './routes/server-time-out.component';
+import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
 
 @NgModule({
   declarations: [
@@ -163,6 +166,9 @@ import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successf
     ComplaintBookingFailedInvalidContactComponent,
     ComplaintBookingFailedComponent,
     RouterRebootSuccessfulComponent,
+    RouterResetSuccessfulComponent,
+    ServerTimeOutComponent,
+    PasswordResetSuccessfullyComponent,
   ],
   imports: [
     CommonModule,

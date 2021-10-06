@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { ModalController } from '@ionic/angular';
 import { ITermsAndConditions } from '../../constants/types';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-terms-conditions',
@@ -40,7 +41,7 @@ export class TermsConditionsComponent implements OnInit {
       ],
     },
   ];
-  constructor(private sharedService: SharedService, private modalCtrl: ModalController) {
+  constructor(private backendService: BackendService, private sharedService: SharedService, private modalCtrl: ModalController) {
     this.sharedService.setHeaderConfig('HEADER.TERMS_AND_CONDITIONS', true);
   }
 
@@ -48,6 +49,12 @@ export class TermsConditionsComponent implements OnInit {
 
   AcceptContinue = (event: any) => {
     this.sharedService.setTermsConditions(true);
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('Agree').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+
     this.modalCtrl.dismiss(true);
   };
 }

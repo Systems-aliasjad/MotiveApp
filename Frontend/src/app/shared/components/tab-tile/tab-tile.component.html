@@ -2,35 +2,8 @@
   <div [class]="tileConfig?.className + '-state state'">
     <img [src]="tileConfig?.url" alt="tab-tile" />
   </div>
-  <ion-label>{{ tileConfig?.title }}</ion-label>
+  <ion-label>
+    {{ tileConfig?.title }}
+    <span>{{ tileConfig?.subTitle }}</span>
+  </ion-label>
 </div>
-
-<!-- <div class="states-inner_container">
-      <div class="arrow-container left">
-        <img
-          [src]="!arrow_left ? 'assets/images/action-icons/icon_networkmap_arrow_left.svg' : 'assets/images/action-icons/icon_arrow_left_grey.svg'"
-          alt="move left"
-          (click)="!arrow_left ? next() : ''"
-        />
-      </div>
-      <ion-slides [options]="slideOpts" #slides (ionSlideWillChange)="doCheck()">
-        <ion-slide *ngFor="let item of tilesList">
-          <div class="states">
-            <div class="{{ item.className }} state">
-              <img src="{{ item.imgPath }}" alt="{{ item.altText }}" />
-            </div>
-            <ion-label>
-              {{ item.text1 }}
-              <span>{{ item.text2 }}</span>
-            </ion-label>
-          </div>
-        </ion-slide>
-      </ion-slides>
-      <div class="arrow-container right">
-        <img
-          [src]="!arrow_right ? 'assets/images/action-icons/icon_networkmap_arrow_right.svg' : 'assets/images/action-icons/icon_arrow_right_grey.svg'"
-          alt="move right"
-          (click)="!arrow_right ? prev() : ''"
-        />
-      </div>
-    </div> -->

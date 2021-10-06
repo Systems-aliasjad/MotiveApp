@@ -25,10 +25,6 @@ const routes: Routes = [
   },
 
   {
-    path: '',
-    component: MainComponent,
-  },
-  {
     path: 'unable-to-process-request',
     component: RequestFailComponent,
   },
@@ -80,6 +76,10 @@ const routes: Routes = [
   {
     path: 'reset-ccb-pin',
     component: ResetCcbPinComponent,
+  },
+  {
+    path: '',
+    component: MainComponent,
   },
 ];
 

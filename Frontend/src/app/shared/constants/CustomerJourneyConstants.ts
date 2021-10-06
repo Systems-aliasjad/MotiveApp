@@ -403,7 +403,7 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
     body: [
       {
-        title: 'MESSAGES.TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT',
+        title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
       },
       {
         title: 'MESSAGES.PLEASE_RESTART_THE_TV_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN',
@@ -440,6 +440,18 @@ export class CustomerJourneyConstants {
       },
       {
         title: 'MESSAGES.PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN',
+      },
+    ],
+  };
+
+  public static ontRestartInternetAllServices: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
+      },
+      {
+        title: 'MESSAGES.PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN',
       },
     ],
   };
@@ -523,6 +535,11 @@ export class CustomerJourneyConstants {
   public static resetWifiResetFirstsuccessfullyCase = {
     header: 'MESSAGES.ROUTER_RESET_SUCCESSFUL',
     paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN', 'MESSAGES.CONTINUE_TO_CONFIGURE_YOUR_WIFI_SETTINGS'],
+  };
+
+  public static routerResetSuccess = {
+    header: 'MESSAGES.ROUTER_RESET_SUCCESSFUL',
+    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_BEFORE_USING_THE_INTERNET_AGAIN'],
   };
 
   public static resetWifiResetSecondsuccessfullyCase = {
@@ -719,7 +736,7 @@ export class CustomerJourneyConstants {
   };
 
   public static installNewRouterFlow7MessageCase = {
-    header: 'MESSAGES.INSTALL_NEW_THIRD-PARTY_ROUTER',
+    header: 'MESSAGES.INSTALL_NEW_THIRD_PARTY_ROUTER',
 
     paragraphs: [
       {
@@ -752,6 +769,19 @@ export class CustomerJourneyConstants {
   public static routerRebootSuccessful = {
     header: 'MESSAGES.ROUTER_REBOOT_SUCCESSFUL',
     paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN'],
+  };
+
+  public static serverTimeout = {
+    header: 'MESSAGES.SERVER_TIMEOUT',
+    paragraphs: ['MESSAGES.WE_WILL_TRY_TO_RESET_THE_ROUTER_AGAIN_PLEASE_MAKE_SURE_THAT_THE_ROUTER_IS_SWITHCED_ON'],
+  };
+
+  public static passwordResetSuccessfully = {
+    header: 'MESSAGES.PASSWORD_RESET_SUCCESSFULLY',
+    paragraphs: [
+      'MESSAGES.YOUR_INTERNET_PASSWORD_HAS_BEEN_RESET_SUCCESSFULLY_THE_ROUTER_WILL_BE_RECONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY',
+      'MESSAGES.RESTART_YOUR_ROUTER_AFTER_A_FEW_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN',
+    ],
   };
   //#endregion Quick Links
 }
