@@ -7,16 +7,17 @@
     />
   </div>
   <ion-slides [options]="slideOpts" #slides (ionSlideWillChange)="doCheck()">
-    <ion-slide *ngFor="let item of tilesList">
-      <div class="states">
-        <div class="{{ item.case }}-state state">
-          <img src="{{ item.imageSrc }}" alt="test" />
+    <ion-slide *ngFor="let device of devices">
+      <app-tab-tile [tileConfig]="device"></app-tab-tile>
+      <!-- <div class="states">
+        <div class="{{ item.className }}-state state">
+          <img src="{{ item.url }}" alt="test" />
         </div>
         <ion-label>
-          {{ item?.title }}
+          {{ 11 }}
           <span>abc</span>
         </ion-label>
-      </div>
+      </div> -->
     </ion-slide>
   </ion-slides>
   <div class="arrow-container right">

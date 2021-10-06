@@ -10,45 +10,15 @@ import { ITabTile } from 'src/app/shared/constants/types';
 })
 export class MultiLayerComponent implements OnInit {
   @Input()
-  tilesList: ITabTile[] = [
-    {
-      imageSrc: SVGs.etisalat.default,
-      case: networkDiagramClasses.okay,
-      title: 'ont',
-    },
-    {
-      imageSrc: SVGs.etisalat.default,
-      case: networkDiagramClasses.okay,
-      title: 'ont',
-    },
-    {
-      imageSrc: SVGs.etisalat.default,
-      case: networkDiagramClasses.okay,
-      title: 'ont',
-    },
-    {
-      imageSrc: SVGs.etisalat.default,
-      case: networkDiagramClasses.okay,
-      title: 'ont',
-    },
-    {
-      imageSrc: SVGs.etisalat.default,
-      case: networkDiagramClasses.okay,
-      title: 'ont',
-    },
-    {
-      imageSrc: SVGs.etisalat.default,
-      case: networkDiagramClasses.okay,
-      title: 'ont',
-    },
-  ];
+  devices;
   slideOpts = {
-    slidesPerView: 4,
-    spaceBetween: 1,
-    loop: false,
+    slidesPerView: 3,
+    slidesPerColumn: 2,
+    // spaceBetween: 1,
+    // loop: false,
     speed: 500,
     grid: {
-      row: 2,
+      rows: 2,
     },
     /*  navigation: {
       nextEl: ".swiper-button-next",

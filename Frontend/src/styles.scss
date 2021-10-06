@@ -89,26 +89,25 @@
       text-transform: uppercase;
     }
   }
-  
 }
-ion-radio.ios::part(mark){
+ion-radio.ios::part(mark) {
   -webkit-transition: -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   transition: -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   -o-transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
   transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s, -webkit-transform 280ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
 }
-ion-radio.ios.radio-checked::part(mark){
-    transform: none;
-    border: 0;
-    background-color: $etisalat-color;
-    border-radius: 50%;
-    width: 11px;
-    height: 11px;
-    -webkit-transform: scale3d(1, 1, 1);
-    transform: scale3d(1, 1, 1);
+ion-radio.ios.radio-checked::part(mark) {
+  transform: none;
+  border: 0;
+  background-color: $etisalat-color;
+  border-radius: 50%;
+  width: 11px;
+  height: 11px;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
 }
-ion-radio.radio-checked::part(mark){
+ion-radio.radio-checked::part(mark) {
   width: 11px;
   height: 11px;
 }
@@ -118,39 +117,39 @@ ion-radio.radio-checked::part(mark){
 @font-face {
   font-family: Neotech-light;
   font-weight: 300;
-  src: url('/assets/fonts/neotech-light.woff') format('woff');
+  src: url('~/assets/fonts/neotech-light.woff') format('woff');
 }
 @font-face {
   font-family: Neotech-regular;
   font-weight: 400;
-  src: url('/assets/fonts/neotech-regular.woff') format('woff');
+  src: url('~/assets/fonts/neotech-regular.woff') format('woff');
 }
 @font-face {
   font-family: Neotech-medium;
   font-weight: 700;
-  src: url('/assets/fonts/neotech-medium.woff') format('woff');
+  src: url('~/assets/fonts/neotech-medium.woff') format('woff');
 }
 /*------------------- Neotech Fonts End -------------------*/
 /*------------------- Neotech Fonts Start -------------------*/
 @font-face {
   font-family: Lato;
   font-weight: 900;
-  src: url('/assets/fonts/Lato-Black.ttf') format('ttf');
+  src: url('~/assets/fonts/Lato-Black.ttf') format('ttf');
 }
 @font-face {
   font-family: Lato;
   font-weight: 700;
-  src: url('/assets/fonts/Lato-Bold.ttf') format('ttf');
+  src: url('~/assets/fonts/Lato-Bold.ttf') format('ttf');
 }
 @font-face {
   font-family: Lato;
   font-weight: 300;
-  src: url('/assets/fonts/Lato-Light.ttf') format('ttf');
+  src: url('~/assets/fonts/Lato-Light.ttf') format('ttf');
 }
 @font-face {
   font-family: Lato;
   font-weight: 400;
-  src: url('/assets/fonts/Lato-Regular.ttf') format('ttf');
+  src: url('~/assets/fonts/Lato-Regular.ttf') format('ttf');
 }
 /*------------------- Neotech Fonts End -------------------*/
 * {
@@ -528,7 +527,7 @@ html {
     background-color: transparent;
   }
   .header-wrapper-wave {
-    background: transparent url(/assets/images/wave_graphic_bg.svg);
+    background: transparent url(~/assets/images/wave_graphic_bg.svg);
     background-repeat: no-repeat;
     background-size: contain;
     width: 134px;
@@ -642,13 +641,13 @@ app-ccb-pin-reset-form {
     display: block;
   }
 }
-app-header-multi-line{
+app-header-multi-line {
   display: block;
   @media screen and (max-width: 767px) {
-   display: none;
+    display: none;
   }
 }
-app-header-single-line{
+app-header-single-line {
   display: block;
   @media screen and (min-width: 767px) {
     display: none;

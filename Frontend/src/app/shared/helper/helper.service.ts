@@ -32,11 +32,36 @@ const temp3 = {
   dateVisit: 'Jul 10 2019, 10:30 AM',
   status: 'Xxxxx xxxxx xxxx',
 };
+
+const temp5 = {
+  addressSource: 'DHCP',
+  isActive: '1',
+  ipAddress: '192.168.1.101',
+  leaseTimeRemaining: '21856',
+  hostName: '',
+  macAddress: 'a6:8d:22:64:e9:b3',
+  interfaceType: '802.11',
+};
+
+const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5];
 @Injectable({
   providedIn: 'root',
 })
 export class HelperService {
   constructor(private router: Router, private sharedService: SharedService) {}
+
+  connectedDeviceModifier(devices) {
+    return devices?.map((device) => {
+      return {
+        ...device,
+        className: networkDiagramClasses.okay,
+        url: SVGs.ont.default,
+        // title: device?.hostName ?? 'unnammed',
+        title: 'unnammed',
+        subTitle: device?.macAddress,
+      };
+    });
+  }
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
@@ -96,13 +121,41 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
+      this.sharedService.setApiResponseData({ connectedDevices: temp6 });
+      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.CI73) {
+      this.sharedService.setApiResponseData({ connectedDevices: temp6 });
+      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
       this.sharedService.setApiResponseData({ complaintDetails: temp3 });
+    } else if (CodeId === flowCodes.UPSEL2) {
+      //Upselling Identified for New Router
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL3) {
+      // Upselling Identified for Router Upgrade
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL4) {
+      // Upselling Identified for Router Upgrade / Router Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL5) {
+      // Upselling Identified for Bandwidth And Router Upgrade
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL6) {
+      // Upselling Identified for Bandwidth And Router Upgrade /Router  Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL7) {
+      // Upselling Identified for Bandwidth / Router  Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL8) {
+      // Upselling Identified for New Router /Router  Out of Warranty
+      this.router.navigate(['']);
+    } else if (CodeId === flowCodes.UPSEL9) {
+      // Upselling Identified for Bandwidth
+      this.router.navigate(['']);
     }
   }
 
