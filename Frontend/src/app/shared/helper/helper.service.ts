@@ -38,6 +38,19 @@ const temp3 = {
 export class HelperService {
   constructor(private router: Router, private sharedService: SharedService) {}
 
+  connectedDeviceModifier(devices) {
+    return devices.map((device) => {
+      return {
+        ...device,
+        className: networkDiagramClasses.okay,
+        url: SVGs.ont.default,
+        // title: device?.hostName ?? 'unnammed',
+        title: 'unnammed',
+        subTitle: device?.macAddress,
+      };
+    });
+  }
+
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
     routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
