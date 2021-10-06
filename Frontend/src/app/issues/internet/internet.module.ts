@@ -88,6 +88,8 @@ import { RouterRebootSuccessfulComponent } from './routes/router-reboot-successf
 import { RouterResetSuccessfulComponent } from './routes/router-resest-successful.component';
 import { ServerTimeOutComponent } from './routes/server-time-out.component';
 import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
+import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade-recommended-form.component';
+import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
 
 @NgModule({
   declarations: [
@@ -169,6 +171,8 @@ import { PasswordResetSuccessfullyComponent } from './routes/password-reset-succ
     RouterResetSuccessfulComponent,
     ServerTimeOutComponent,
     PasswordResetSuccessfullyComponent,
+    PackageUpgradeRecommendedFormComponent,
+    ThirdPartyRouterSuccessMessageComponent,
   ],
   imports: [
     CommonModule,

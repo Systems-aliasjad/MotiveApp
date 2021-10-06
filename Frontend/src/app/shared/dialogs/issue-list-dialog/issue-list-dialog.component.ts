@@ -34,7 +34,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to connect to home zone',
-      route: 'device-connected-homezone',
+      route: 'issues/internet/unable-to-connect-to-homezone', //device-connected-homezone',
     },
     {
       issue: 'Unable to make video calls',
