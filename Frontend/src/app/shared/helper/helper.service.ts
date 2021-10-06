@@ -33,10 +33,6 @@ const temp3 = {
   status: 'Xxxxx xxxxx xxxx',
 };
 
-const temp7 = {
-  referenceNo: '4365298739',
-};
-
 const temp5 = {
   addressSource: 'DHCP',
   isActive: '1',
@@ -48,6 +44,11 @@ const temp5 = {
 };
 
 const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5];
+
+const temp7 = {
+  referenceNo: '4365298739',
+};
+
 @Injectable({
   providedIn: 'root',
 })
