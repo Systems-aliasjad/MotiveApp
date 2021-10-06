@@ -42,8 +42,7 @@ const temp5 = {
   macAddress: 'a6:8d:22:64:e9:b3',
   interfaceType: '802.11',
 };
-
-const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5];
+const temp6 = [temp5, temp5, temp5, temp5, temp5, temp5, temp5, temp5, temp5, temp5, temp5, temp5];
 
 const temp7 = {
   referenceNo: '4365298739',
