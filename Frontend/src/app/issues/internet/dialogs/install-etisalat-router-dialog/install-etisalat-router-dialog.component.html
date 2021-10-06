@@ -5,7 +5,7 @@
       <h5>{{ modelHeader | translate }}</h5>
     </ion-title>
     <ion-buttons slot="end">
-      <motive-button [title]="'BUTTONS.CLOSE'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>
+      <!-- <motive-button [title]="'BUTTONS.CLOSE'" [type]="'link'" (clickHandler)="dismiss()"></motive-button> -->
       <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
       <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close">
     </ion-buttons>
@@ -21,12 +21,12 @@
         <ion-col size="12" class="pb-0">
           <ion-list>
             <ion-radio-group allow-empty-selection="true" name="radio-group" formControlName="radioList">
-              <ion-list-header>
-                <!-- <ion-label>Name</ion-label> -->
-              </ion-list-header>
+              <!-- <ion-list-header>
+                <ion-label>Name</ion-label>
+              </ion-list-header> -->
 
               <ion-item *ngFor="let item of arrayList">
-                <ion-label>{{ item.text }}</ion-label>
+                <ion-label class="brand-name">{{ item.text }}</ion-label>
                 <ion-radio slot="start" name="radio-group" value="{{ item.value }}"></ion-radio>
               </ion-item>
             </ion-radio-group>
