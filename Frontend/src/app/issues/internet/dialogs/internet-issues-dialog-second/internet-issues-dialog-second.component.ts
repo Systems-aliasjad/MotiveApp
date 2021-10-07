@@ -36,15 +36,15 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
     this.showDialog1 = false;
   }
 
-  GoToMainFomr() {
+  GoToMainForm() {
     this.modalCtrl.dismiss();
 
     if (this.id === ERoutingIds.routerNotReachable) {
-      this.router.navigate(['/router-not-reachable-form']);
+      this.router.navigate(['/issues/internet/router-not-reachable-form']);
     } else if (this.id === ERoutingIds.routerNotReachableOwnRouter) {
-      this.router.navigate(['/router-not-reachable-form']);
+      this.router.navigate(['/issues/internet/router-not-reachable-form']);
     } else {
-      this.router.navigate(['/bookComplaint']);
+      this.router.navigate(['/issues/internet/book-complaint']);
     }
   }
 }

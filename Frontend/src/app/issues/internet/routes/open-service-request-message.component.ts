@@ -63,7 +63,9 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
     };
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.router.navigate(['/track-request/request-detail']);
+  }
 
   button2Listener() {}
 }

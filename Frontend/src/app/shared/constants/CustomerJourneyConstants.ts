@@ -250,6 +250,19 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static routerOutOfWarrantyMessageSection: IMessageIssue = {
+    header: 'MESSAGES.NO_ISSUES_FOUND',
+    body: [
+      { title: 'MESSAGES.WE_DIDNT_FIND_ANY_TECHNICAL_ISSUES' },
+      { title: 'MESSAGES.YOUR_INTERNET_SHOULD_WORK_NORMALLY' },
+      {
+        title: 'MESSAGES.HOWEVER_WE_NOTICED_THAT_YOUR_ROUTER_IS_OUT_OF_WARRANTY_WE_RECOMMEND_YOU_TO_PLEASE_UPGRADE_YOUR_ROUTER_FOR_BETTER_EXPERIENCE',
+      },
+      { title: 'MESSAGES.TAP_UPGRADE_ROUTER_IF_YOU_WISH_TO_UPGRADE_THE_ROUTER' },
+      { title: 'MESSAGES.TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE_OR_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_INTERNET_SERVICE' },
+    ],
+  };
+
   public static packageUpdradeRecomendedMessageSection: IMessageIssue = {
     header: 'MESSAGES.NO_ISSUES_FOUND',
     body: [

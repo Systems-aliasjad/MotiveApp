@@ -75,6 +75,7 @@ import { ServerTimeOutComponent } from './routes/server-time-out.component';
 import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
 import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade-recommended-form.component';
 import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
+import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
 
 const routes: Routes = [
   {
@@ -465,6 +466,10 @@ const routes: Routes = [
   {
     path: 'password-reset-success',
     component: PasswordResetSuccessfullyComponent,
+  },
+  {
+    path: 'router-out-of-warranty',
+    component: RouterOutOfWarrantyComponent,
   },
 ];
 

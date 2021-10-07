@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
@@ -26,11 +26,11 @@ export class ComplaintBookingFailedComponent implements OnInit, OnDestroy {
   imgSrc;
 
   button1: IMotiveButton = {
-    title: 'BUTTONS.BACK',
+    title: 'BUTTONS.CLOSE',
     type: 'secondary',
   };
 
-  constructor(private activatedRoute: ActivatedRoute, private location: Location) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -51,6 +51,7 @@ export class ComplaintBookingFailedComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.location.back();
+    this.router.navigate(['/thanks']);
+    //this.location.back();
   }
 }

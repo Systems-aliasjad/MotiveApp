@@ -2,13 +2,18 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-3rd-party-router-reset',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -23,6 +28,10 @@ import { SharedService } from '../../../shared/shared.service';
 export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',
     type: 'link',
@@ -37,11 +46,18 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
     type: 'secondary',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private modalCtrl: ModalController,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -72,6 +88,13 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.router.navigate(['/bookComplaint']);
+    this.router.navigate(['/issues/internet/book-complaint']);
+  }
+
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

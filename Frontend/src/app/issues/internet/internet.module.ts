@@ -90,6 +90,7 @@ import { ServerTimeOutComponent } from './routes/server-time-out.component';
 import { PasswordResetSuccessfullyComponent } from './routes/password-reset-successfully.component';
 import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade-recommended-form.component';
 import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
+import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
 
 @NgModule({
   declarations: [
@@ -173,6 +174,7 @@ import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-ro
     PasswordResetSuccessfullyComponent,
     PackageUpgradeRecommendedFormComponent,
     ThirdPartyRouterSuccessMessageComponent,
+    RouterOutOfWarrantyComponent,
   ],
   imports: [
     CommonModule,

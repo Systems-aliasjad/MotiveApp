@@ -8,12 +8,11 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
-  selector: 'app-wifi-alarm',
+  selector: 'app-router-out-of-warranty',
   template: `<app-diagnose-issue
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
-    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -25,20 +24,18 @@ import { SharedService } from '../../../shared/shared.service';
   >
   </app-diagnose-issue>`,
 })
-export class WifiAlarmComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
+export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig;
   routerConfig;
-  connectedDevices;
+  subscription: Subscription;
   messageSection;
-
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',
     type: 'link',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.CONFIGURE_WI_FI',
+    title: 'BUTTONS.UPGRADE_ROUTER_AND_PACKAGE',
     type: 'primary',
   };
   button3: IMotiveButton = {
@@ -60,9 +57,7 @@ export class WifiAlarmComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {
-    //  this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
-  }
+  updateHeader() {}
 
   headerConfig: IPageHeader = {
     pageTitle: 'MESSAGES.INTERNET_ISSUES',
@@ -70,7 +65,7 @@ export class WifiAlarmComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
+    this.messageSection = CustomerJourneyConstants.routerOutOfWarrantyMessageSection;
   }
 
   button1Listener() {
@@ -78,18 +73,15 @@ export class WifiAlarmComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/password/reset-router-password']);
+    this.router.navigate(['/issues/internet/router-upgrade-recommended-form']);
   }
 
-  button3Listener() {
-    this.router.navigate(['/issues/internet/no-issue']);
-  }
+  button3Listener() {}
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }
 }

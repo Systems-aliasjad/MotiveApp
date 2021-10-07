@@ -149,18 +149,15 @@ export class HelperService {
     //   //Upselling Identified for New Router
     //   this.router.navigate(['']);
     // }
-    else if (CodeId === flowCodes.UPSEL3 || CodeId === flowCodes.UPSEL4) {
+    else if (CodeId === flowCodes.UPSEL3) {
       this.sharedService.setApiResponseData({ routerUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
       // Upselling Identified for Router Upgrade
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
-    }
-
-    //Case Handle with UPSEL3
-    // else if (CodeId === flowCodes.UPSEL4) {
-    //   // Upselling Identified for Router Upgrade / Router Out of Warranty
-    //   this.router.navigate(['']);
-    // }
-    else if (CodeId === flowCodes.UPSEL5 || CodeId === flowCodes.UPSEL6) {
+    } else if (CodeId === flowCodes.UPSEL4) {
+      this.sharedService.setApiResponseData({ routerUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
+      // Upselling Identified for Router Upgrade / Router Out of Warranty
+      this.router.navigate(['issues/internet/router-out-of-warranty']);
+    } else if (CodeId === flowCodes.UPSEL5 || CodeId === flowCodes.UPSEL6) {
       this.sharedService.setApiResponseData({ routerPackageUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
       // Upselling Identified for Bandwidth And Router Upgrade
       this.router.navigate(['issues/internet/router-package-upgrade']);
