@@ -112,6 +112,13 @@
           -ms-flex-direction: column;
           flex-direction: column;
           position: $relative;
+          /* background: -webkit-gradient(linear,left top, left bottom,from(#ffffff),to(#e7e7e7)) padding-box, -webkit-gradient(linear, left top, right top, from(#90ca20), to(#87ad3d)) border-box;
+          background: -o-linear-gradient(#ffffff,#e7e7e7) padding-box, -o-linear-gradient(left, #90ca20, #87ad3d) border-box;
+          background: linear-gradient(#ffffff,#e7e7e7) padding-box, linear-gradient(to right, #90ca20, #87ad3d) border-box; */
+          border: 4px solid transparent;
+          background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#f3f3f3)) padding-box, -webkit-gradient(linear, left top, right top, from(#ebebeb), to(#e5e9dc)) border-box;
+          background: -o-linear-gradient(#ffffff, #f3f3f3) padding-box, -o-linear-gradient(left, #ebebeb, #e5e9dc) border-box;
+          background: linear-gradient(#ffffff, #f3f3f3) padding-box, linear-gradient(to right, #ebebeb, #e5e9dc) border-box;
           /* @media screen and (max-width: 567px) {
             width: 4.2rem;
             height: 4.2rem;
@@ -129,9 +136,9 @@
             top: 50%;
             right: 50%;
             margin: auto;
-            -webkit-transform: translate(50%, -50%);
-            -ms-transform: translate(50%, -50%);
-            transform: translate(50%, -50%);
+            -webkit-transform: translate(50%, -45%);
+            -ms-transform: translate(50%, -45%);
+            transform: translate(50%, -45%);
             max-width: 100%;
           }
         }
