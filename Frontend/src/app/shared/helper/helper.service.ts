@@ -131,7 +131,8 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
-      this.sharedService.setApiResponseData({ connectedDevices: temp6 });
+      this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
+      // this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, connectedDevices: data?.connectedDevices  });
       this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
     } else if (CodeId === flowCodes.CI73) {
