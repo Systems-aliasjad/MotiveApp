@@ -171,6 +171,8 @@
   },
 
   "MESSAGES": {
+    "HOWEVER_WE_NOTICED_THAT_YOUR_ROUTER_IS_OUT_OF_WARRANTY_WE_RECOMMEND_YOU_TO_PLEASE_UPGRADE_YOUR_ROUTER_FOR_BETTER_EXPERIENCE": "However we noticed that your router is out of warranty. We recommend you to please upgrade your router for better experience.",
+
     "WIFI_PASSWORD_CHANGED_SUCCESSFULLY": "Wi-Fi password changed successfully!",
     "PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER": "Please use the new Wi-Fi password to connect to the router.",
     "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Please restart the wall-mounted fiber box and then try using the internet again.",

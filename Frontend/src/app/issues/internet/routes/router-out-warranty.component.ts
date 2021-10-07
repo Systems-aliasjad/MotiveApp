@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
@@ -9,7 +8,7 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
-  selector: 'app-3rd-party-router-reset',
+  selector: 'app-router-out-of-warranty',
   template: `<app-diagnose-issue
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
@@ -25,34 +24,26 @@ import { SharedService } from '../../../shared/shared.service';
   >
   </app-diagnose-issue>`,
 })
-export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
-  messageSection;
+export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig;
   routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
-
+  subscription: Subscription;
+  messageSection;
   button1: IMotiveButton = {
-    title: 'BUTTONS.DEVICE_CARE',
+    title: 'BUTTONS.ISSUE_FIXED',
     type: 'link',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_FIXED',
+    title: 'BUTTONS.UPGRADE_ROUTER_AND_PACKAGE',
     type: 'primary',
   };
-
   button3: IMotiveButton = {
-    title: 'BUTTONS.BOOK_A_COMPLAINT',
-    type: 'secondary',
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    type: 'link',
   };
 
-  constructor(
-    private helperService: HelperService,
-    private sharedService: SharedService,
-    private router: Router,
-    private modalCtrl: ModalController,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -66,9 +57,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {
-    //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
-  }
+  updateHeader() {}
 
   headerConfig: IPageHeader = {
     pageTitle: 'MESSAGES.INTERNET_ISSUES',
@@ -76,20 +65,18 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
+    this.messageSection = CustomerJourneyConstants.routerOutOfWarrantyMessageSection;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/3rd-party-router-reset/device-care']);
-  }
-
-  button2Listener() {
     this.router.navigate(['/thanks']);
   }
 
-  button3Listener() {
-    this.router.navigate(['/issues/internet/book-complaint']);
+  button2Listener() {
+    this.router.navigate(['/issues/internet/router-upgrade-recommended-form']);
   }
+
+  button3Listener() {}
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();

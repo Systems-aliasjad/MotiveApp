@@ -8,7 +8,7 @@ import { SharedService } from '../../../shared/shared.service';
 import { HelperService } from '../../../shared/helper/helper.service';
 
 @Component({
-  selector: 'app-3rd-party-router',
+  selector: 'app-router-not-reachable-own-router',
   template: `<app-diagnose-issue
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
@@ -45,7 +45,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   };
 
   headerConfig: IPageHeader = {
-    pageTitle: '',
+    pageTitle: 'HEADER.INTERNET_ISSUES',
     showBackBtn: true,
   };
 

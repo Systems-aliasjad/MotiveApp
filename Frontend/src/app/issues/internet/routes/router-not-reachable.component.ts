@@ -10,7 +10,7 @@ import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/s
 import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
-  selector: 'app-3rd-party-router',
+  selector: 'app-router-not-reachable',
   template: `<app-diagnose-issue
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
