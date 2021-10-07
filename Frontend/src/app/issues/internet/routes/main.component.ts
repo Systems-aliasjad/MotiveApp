@@ -35,15 +35,15 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(() => {
-      this.shareService.setLoader(true);
-      // this.backendService.getIssueDiagnositic('INTEvRNET').subscribe((data: any) => {
-      this.shareService.setLoader(false);
-      // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      this.helperService.flowIdentifier('CI72', this.hardData);
-      console.log('====ngOnInit INTERNET====');
-      // console.log(data);
-      console.log('====================================');
-      // });
+      // this.shareService.setLoader(true);
+      // // this.backendService.getIssueDiagnositic('INTEvRNET').subscribe((data: any) => {
+      // this.shareService.setLoader(false);
+      // // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      // this.helperService.flowIdentifier('CI72', this.hardData);
+      // console.log('====ngOnInit INTERNET====');
+      // // console.log(data);
+      // console.log('====================================');
+      // // });
     });
   }
 }

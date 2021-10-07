@@ -110,9 +110,11 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     this.button2Click.emit({
-      wifiName: this.routerSettingsForm.controls[this.segment].value.wifiName,
-      password: this.routerSettingsForm.controls[this.segment].value.password,
-      type: this.segment === 'tab1' ? '2.5' : '5.0',
+      SSID24wifiName: this.routerSettingsForm.controls['tab1'].value.wifiName,
+      SSID24password: this.routerSettingsForm.controls['tab1'].value.password,
+
+      SSID5wifiName: this.routerSettingsForm.controls['tab2'].value.wifiName,
+      SSID5password: this.routerSettingsForm.controls['tab2'].value.password,
     });
     // this.button2Click.emit(this.resetRouterPassword);
   }
