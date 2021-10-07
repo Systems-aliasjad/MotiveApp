@@ -9,9 +9,14 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./issue-tabs.component.scss'],
 })
 export class IssueTabsComponent implements OnInit, OnDestroy {
-  @Input() ontConfig: IOntDetail;
-  @Input() routerConfig: IRouterDetail;
-  @Input() etisalatConfig;
+  @Input()
+  ontConfig: IOntDetail;
+  @Input()
+  routerConfig: IRouterDetail;
+  @Input()
+  etisalatConfig;
+  @Input()
+  connectedDevices;
   @Input()
   tabTiles: ITabTile[];
   @Input()

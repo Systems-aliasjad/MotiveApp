@@ -13,6 +13,7 @@ import { SharedService } from '../../../shared/shared.service';
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -26,10 +27,11 @@ import { SharedService } from '../../../shared/shared.service';
 })
 export class WifiAlarmComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  messageSection;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig;
   routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  connectedDevices;
+  messageSection;
 
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',
@@ -88,5 +90,6 @@ export class WifiAlarmComponent implements OnInit, OnDestroy {
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }
 }

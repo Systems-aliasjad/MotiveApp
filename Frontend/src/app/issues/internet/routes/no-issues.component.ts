@@ -15,6 +15,7 @@ import { SharedService } from '../../../shared/shared.service';
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -31,6 +32,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
 
   ontConfig;
   routerConfig;
+  connectedDevices;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
 
   button1: IMotiveButton = {
@@ -85,10 +87,12 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     });
     return await this.modal.present();
   }
+
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }
 }

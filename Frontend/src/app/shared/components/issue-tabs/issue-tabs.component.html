@@ -2,10 +2,14 @@
   <ion-col sizeLg="6" sizeMd="12" size="12" git class="issue-tabs_wizard two-col_left">
     <!-- Tabs Wizard Start -->
     <div class="tabs-wizard ion-text-center">
-      <app-three-layers [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
-      <!-- <app-seven-layer></app-seven-layer> -->
-     <!--  <app-multi-layer></app-multi-layer> -->
-      <!-- <app-tab-tile [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-tab-tile> -->
+      <app-three-layers *ngIf="!connectedDevices" [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
+      <app-seven-layer
+        *ngIf="connectedDevices"
+        [ontConfig]="ontConfig"
+        [routerConfig]="routerConfig"
+        [etisalatConfig]="etisalatConfig"
+        [devices]="connectedDevices"
+      ></app-seven-layer>
     </div>
     <!-- Tabs Wizard End -->
 

@@ -1,7 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import { networkDiagramClasses, SVGs } from 'src/app/shared/constants/constants';
-import { ITabTile } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-multi-layer',
@@ -11,15 +9,16 @@ import { ITabTile } from 'src/app/shared/constants/types';
 export class MultiLayerComponent implements OnInit {
   @Input()
   devices;
+
   slideOpts = {
     slidesPerView: 4, //auto
-    slidesPerColumn: 2, 
+    slidesPerColumn: 2,
     spaceBetween: 20,
     /* centeredSlides: false,
     loop: true, */
     speed: 500,
     grid: {
-       rows:2, 
+      rows: 2,
       /* columns:3,  */
     },
     /*  navigation: {

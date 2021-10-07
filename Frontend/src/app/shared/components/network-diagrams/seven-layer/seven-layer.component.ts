@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { IonSlides } from '@ionic/angular';
-import { ITabTile } from 'src/app/shared/constants/types';
+import { IOntDetail, IRouterDetail } from 'src/app/shared/constants/types';
 
 @Component({
   selector: 'app-seven-layer',
@@ -9,7 +9,14 @@ import { ITabTile } from 'src/app/shared/constants/types';
 })
 export class SevenLayerComponent implements OnInit {
   @Input()
-  tilesList: ITabTile[];
+  ontConfig: IOntDetail;
+  @Input()
+  routerConfig: IRouterDetail;
+  @Input()
+  etisalatConfig;
+  @Input()
+  devices;
+
   slideOpts = {
     slidesPerView: 4,
     spaceBetween: 1,
