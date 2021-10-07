@@ -14,6 +14,7 @@ import { SharedService } from '../../../shared/shared.service';
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -29,6 +30,7 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
   routerConfig: IRouterDetail;
+  connectedDevices;
   subscription: Subscription;
   messageSection;
   button1: IMotiveButton = {
@@ -91,6 +93,7 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
   }

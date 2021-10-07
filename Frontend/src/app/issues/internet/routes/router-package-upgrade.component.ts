@@ -13,6 +13,7 @@ import { SharedService } from '../../../shared/shared.service';
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -40,6 +41,7 @@ export class RouterPackageUpgradeRecommendedComponent implements OnInit, OnDestr
     type: 'link',
   };
   ontConfig;
+  connectedDevices;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -82,6 +84,7 @@ export class RouterPackageUpgradeRecommendedComponent implements OnInit, OnDestr
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
   }
