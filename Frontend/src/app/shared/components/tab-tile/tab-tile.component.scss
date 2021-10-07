@@ -62,7 +62,7 @@ ion-label {
   }
 }
 .state {
-  border-radius: 0.6rem;
+  border-radius: .8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -77,8 +77,8 @@ ion-label {
   -ms-flex-align: center;
   align-items: center;
   padding: 0.1rem;
-  width: 46px;
-  height: 46px;
+  width: 56px;
+  height: 56px;
   text-align: center;
   margin: 1rem 1rem 0.5rem;
   @media screen and (max-width: 281px) {
@@ -105,11 +105,14 @@ ion-label {
   box-shadow: 0 5px 10px rgb(113 158 25 / 31%);
   &:after {
     content: '';
-    width: 1rem;
-    height: 1rem;
+    width: 1.1rem;
+    height: 1.1rem;
     background: url('/assets/images/network-map-icons/all-okay-state.svg');
     background-repeat: no-repeat;
-    background-size: 1rem;
+    background-size: 1.1rem;
+    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    border-radius: 1rem;
     display: inline-block;
     position: absolute;
     right: -6px;
@@ -123,11 +126,14 @@ ion-label {
   box-shadow: 0 5px 10px rgb(190 18 24 /31%);
   &:after {
     content: '';
-    width: 1rem;
-    height: 1rem;
+    width: 1.1rem;
+    height: 1.1rem;
     background: url('/assets/images/network-map-icons/issue-error-state.svg');
     background-repeat: no-repeat;
-    background-size: 1rem;
+    background-size: 1.1rem;
+    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    border-radius: 1rem;
     display: inline-block;
     position: absolute;
     right: -6px;
@@ -141,11 +147,14 @@ ion-label {
   box-shadow: 0 5px 10px rgb(255 102 49/31%);
   &:after {
     content: '';
-    width: 1rem;
-    height: 1rem;
+    width: 1.1rem;
+    height: 1.1rem;
     background: url('/assets/images/network-map-icons/action-pending-state.svg');
     background-repeat: no-repeat;
-    background-size: 1rem;
+    background-size: 1.1rem;
+    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    border-radius: 1rem;
     display: inline-block;
     position: absolute;
     right: -6px;
