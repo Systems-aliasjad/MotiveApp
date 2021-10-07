@@ -27,5 +27,17 @@
   </ion-row> -->
 </ion-content>
 
-<motive-button [type]="'primary'" [title]="'BUTTONS.EXIT_TROUBLESHOOTING'" (clickHandler)="gotoMainForm()"></motive-button>
-<motive-button [type]="'link'" [title]="'BUTTONS.BACK'" (clickHandler)="dismiss()"></motive-button>
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'primary'" [title]="'BUTTONS.EXIT_TROUBLESHOOTING'" (clickHandler)="gotoMainForm()"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'link'" [title]="'BUTTONS.BACK'" (clickHandler)="dismiss()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>

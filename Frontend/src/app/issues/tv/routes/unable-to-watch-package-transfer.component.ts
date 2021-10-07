@@ -68,7 +68,7 @@ export class UnableToWatchPackageTransferComponent implements OnInit, OnDestroy 
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.UNABLE_TO_WATCH_SPECIFIC_CHANNEL_TRANSFER_PACKAGE',
+    pageTitle: 'HEADER.TRANSFER_PACKAGE',
     showBackBtn: true,
   };
 

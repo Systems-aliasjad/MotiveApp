@@ -2,15 +2,20 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'app-phone-no-issues',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -24,6 +29,10 @@ import { SharedService } from '../../../shared/shared.service';
 })
 export class NoIssuesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+
   messageSection;
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',
@@ -40,11 +49,18 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   };
 
   modal: any;
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private modalCtrl: ModalController,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -58,12 +74,12 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'MESSAGES.INTERNET_ISSUES',
+    pageTitle: 'MESSAGES.TV_ISSUES',
     showBackBtn: true,
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
+    this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
   }
 
   button1Listener() {
@@ -78,12 +94,20 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   async button3Listener() {
-    this.modal = await this.modalCtrl.create({
-      component: IssueListDialog,
-      componentProps: {
-        flow: EIssueFlow.tvIssue,
-      },
-    });
-    return await this.modal.present();
+    this.router.navigate(['/issues/tv/detail']);
+    // this.modal = await this.modalCtrl.create({
+    //   component: IssueListDialog,
+    //   componentProps: {
+    //     flow: EIssueFlow.tvIssue,
+    //   },
+    // });
+    // return await this.modal.present();
+  }
+
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

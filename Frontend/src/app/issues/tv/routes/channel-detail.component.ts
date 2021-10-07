@@ -10,8 +10,9 @@ import { SharedService } from 'src/app/shared/shared.service';
     [headerConfig]="headerConfig"
     [subHeader]="subHeader"
     [packages]="packages"
-    (button1Click)="(button1Listener)"
-    (button2Click)="(button2Listener)"
+    (button1Click)="button1Listener()"
+    (button2Click)="button2Listener()"
+    (cardClicked)="getCardClickedValue($event)"
   ></app-package-available>`,
 })
 export class ChannelDetailComponent implements OnInit {
@@ -60,10 +61,15 @@ export class ChannelDetailComponent implements OnInit {
   }
 
   button1Listener() {
+    this.router.navigate(['issues/tv/transfer-package/step1']);
     // SKIP_TO_NEXT_STEP
   }
 
   button2Listener() {
     //  CANCEL
+  }
+
+  getCardClickedValue(card) {
+    this.router.navigate(['issues/tv/unable-to-watch-package-transfer']);
   }
 }

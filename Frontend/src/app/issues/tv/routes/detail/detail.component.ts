@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class TvDetailComponent implements OnInit {
   @Input()
   isPartialLoaded: boolean = false;
   modal;
+  devices;
   cardList = [
     {
       header: 'STB SR#039838920',
@@ -37,8 +39,9 @@ export class TvDetailComponent implements OnInit {
     { title: 'Dangerous driving 2018', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
   ];
 
-  constructor(public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
+  constructor(private helperService: HelperService, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
   ngOnInit() {
+    this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
