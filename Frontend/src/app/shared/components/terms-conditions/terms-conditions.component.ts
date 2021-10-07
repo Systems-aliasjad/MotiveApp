@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { ModalController } from '@ionic/angular';
-import { ITermsAndConditions } from '../../constants/types';
+import { IPageHeader, ITermsAndConditions } from '../../constants/types';
 import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
@@ -11,6 +11,11 @@ import { BackendService } from 'src/app/services/backend.service';
 })
 export class TermsConditionsComponent implements OnInit {
   termsCheck: string = '';
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.TERMS_AND_CONDITIONS',
+    showBackBtn: false,
+  };
 
   TC: ITermsAndConditions[] = [
     {
