@@ -53,7 +53,9 @@ export class PackageTransferStep2Component implements OnInit, OnDestroy {
     this.careContent.body1 = 'MESSAGES.IF_YOU_ARE_STILL_UNABLE_TO_WATCH_TAP_RESET_TV_BOX_SO_THAT_WE_CAN_RESET_IT_REMOTELY';
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.router.navigate(['issues/tv/tvBox-reset-successfull']);
+  }
 
   button2Listener() {
     this.router.navigate(['/thanks']);

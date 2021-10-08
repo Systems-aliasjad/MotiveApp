@@ -141,6 +141,9 @@
     "RESET_WIFI_PASSWORD": "YES, RESET WI-FI PASSWORD",
     "RESET_WIFI_PASSWORD_SUCCESS": "تابع إلى إعدادات شبكة Wi-Fi.",
     "RESTART_NOW": "إعادة التشغيل",
+
+    "RESTART_STB_NOW": "RESTART STB NOW",
+
     "RESTART_NOW_STB": "إعادة التشغيل جهاز الاستقبال  ",
     "RESTART_ONT_STB": "إعادة التشغيل ",
     "SELECT": "SELECT",
@@ -170,6 +173,8 @@
 
   "MESSAGES": {
     "HOWEVER_WE_NOTICED_THAT_YOUR_ROUTER_IS_OUT_OF_WARRANTY_WE_RECOMMEND_YOU_TO_PLEASE_UPGRADE_YOUR_ROUTER_FOR_BETTER_EXPERIENCE": "However we noticed that your router is out of warranty. We recommend you to please upgrade your router for better experience.",
+    "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_TV_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "Tap ‘View details’ to take a closer look at your TV service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
+    "WE_COULD_NOT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY": "We could not find any technical problem. Your TV service should be working normally.",
     "WIFI_PASSWORD_CHANGED_SUCCESSFULLY": "Wi-Fi password changed successfully!",
     "PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER": "Please use the new Wi-Fi password to connect to the router.",
     "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Please restart the wall-mounted fiber box and then try using the internet again.",

@@ -40,6 +40,7 @@ import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-speci
 import { PackageTransferComponent } from './routes/package-transfer.component';
 import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-pin-reset-message.component';
 
 const routes: Routes = [
   {
@@ -204,6 +205,10 @@ const routes: Routes = [
   {
     path: 'complaint-exists',
     component: ComplaintExistsMessageComponent,
+  },
+  {
+    path: 'tv-admin-pin-reset-success',
+    component: TvAdminPinResetSuccessfullyMessageComponent,
   },
 ];
 

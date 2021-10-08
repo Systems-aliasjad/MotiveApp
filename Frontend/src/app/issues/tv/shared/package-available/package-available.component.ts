@@ -22,11 +22,15 @@ export class PackageAvailableComponent implements OnInit {
   @Input()
   headerConfig: IPageHeader;
 
+  @Output()
+  cardClicked = new EventEmitter();
+
   constructor(private router: Router) {}
 
   ngOnInit() {}
 
-  goToTransferPackage() {
+  goToTransferPackage(card) {
+    this.cardClicked.emit(card);
     // this.router.navigate(['/package-transfer']);
   }
 

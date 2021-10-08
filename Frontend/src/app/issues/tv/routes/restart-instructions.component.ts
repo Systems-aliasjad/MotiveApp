@@ -67,7 +67,7 @@ export class RestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/tvBox-restart-required-device-care']);
+    this.router.navigate(['/issues/tv/box-not-restarted-instructions/device-care']);
   }
 
   button2Listener() {

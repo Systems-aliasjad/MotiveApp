@@ -117,7 +117,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     if (value === '5') {
       this.openChannelNotListDialog();
     } else {
-      this.router.navigate(['/unable-to-watch-package-available']);
+      this.router.navigate(['/issues/tv/channel-detail']);
     }
   }
 

@@ -53,7 +53,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to log in to eLifeON',
-      route: 'reset-login-pin',
+      route: 'issues/tv/unable-to-login-elife',
     },
     {
       issue: 'Facing problems while playing a game',
@@ -61,7 +61,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Transfer channel to another TV box',
-      route: 'package-available',
+      route: 'issues/tv/transfer-channel-to-another-tvBox',
     },
     {
       issue: 'Unable to watch a specific channel',
@@ -69,7 +69,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Unable to watch any channel',
-      route: 'unable-to-watch-channel',
+      route: 'issues/tv/unable-watch-channel',
     },
   ];
   passwordIssueList: any[] = [

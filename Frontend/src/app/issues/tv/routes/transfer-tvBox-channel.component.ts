@@ -13,6 +13,7 @@ import { SharedService } from 'src/app/shared/shared.service';
     [packages]="packages"
     (button1Click)="(button1Listener)"
     (button2Click)="(button2Listener)"
+    (cardClicked)="getCardClickedValue($event)"
   ></app-package-available>`,
 })
 export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
@@ -66,5 +67,9 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     //  CANCEL
+  }
+
+  getCardClickedValue(card) {
+    this.router.navigate(['issues/tv/package-transfer']);
   }
 }

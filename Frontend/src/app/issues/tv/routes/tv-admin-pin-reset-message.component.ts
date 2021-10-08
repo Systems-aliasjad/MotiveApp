@@ -4,14 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
-import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
 
-/**
- * Tv Box Reset Success
- */
 @Component({
-  selector: 'box-reset-success',
+  selector: 'tv-admin-pin-reset-successfully-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -19,26 +15,20 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class TvBoxResetSuccessComponent implements OnInit, OnDestroy {
+export class TvAdminPinResetSuccessfullyMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.ISSUE_RESOLVED',
-  };
-  button2: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.STILL_FACING_AN_ISSUE',
+    title: 'BUTTONS.OK',
+    type: 'secondary',
   };
 
-  constructor(private router: Router, private location: Location, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,15 +44,11 @@ export class TvBoxResetSuccessComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
+    this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
     this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.tvBoxResetSuccessfullyCase;
   }
 
   button1Listener() {
-    this.router.navigate(['thanks']);
-  }
-
-  button2Listener() {
-    this.router.navigate(['issues/tv/troubleshoot-complete']);
+    this.router.navigate(['/thanks']);
   }
 }
