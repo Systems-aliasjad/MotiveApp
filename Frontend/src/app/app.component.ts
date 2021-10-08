@@ -25,20 +25,22 @@ export class AppComponent implements OnInit {
     // this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
   }
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params: Params) => {
+    this.activatedRoute.queryParams.subscribe((params: Params) => {
       this.Initialization(params);
     });
   }
 
   Initialization(params: Params) {
-    this.subscribeLoaderChanges();
     this.sharedService.setLoader(true);
-
+    if (!params?.token) {
+      return;
+    }
+    this.subscribeLoaderChanges();
     // TODO: REMOVE THIS
     // this.sharedService.setDefaultLanguage('en');
     // this.appDirection = 'ltr';
-
-    this.sharedService.setDefaultLanguage(params?.lang ?? 'ara');
+    // http://localhost:4200/html/motive-frontend/landing?token=dbsahfjknaidjf,kd%20idsjfomdsaiufhacvij&lang=en
+    this.sharedService.setDefaultLanguage(params?.lang || 'ara');
     this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
     this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
       this.authService.setAuthorizationToken(data?.result?.token);
