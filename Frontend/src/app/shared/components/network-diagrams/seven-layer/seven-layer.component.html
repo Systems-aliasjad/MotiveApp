@@ -1,29 +1,99 @@
-<div class="states-inner_container">
-  <div class="arrow-container left">
-    <img
-      [src]="!arrow_left ? 'assets/images/action-icons/icon_networkmap_arrow_left.svg' : 'assets/images/action-icons/icon_arrow_left_grey.svg'"
-      alt="move left"
-      (click)="!arrow_left ? next() : ''"
-    />
-  </div>
-  <ion-slides [options]="slideOpts" #slides (ionSlideWillChange)="doCheck()">
-    <!-- <ion-slide *ngFor="let item of tilesList">
-      <div class="states">
-        <div class="{{ item.className }} state">
-          <img src="{{ item.imgPath }}" alt="{{ item.altText }}" />
-        </div>
-        <ion-label>
-          {{ item.text1 }}
-          <span>{{ item.text2 }}</span>
-        </ion-label>
+<div class="three-flow-box-contaier">
+  <div class="flow-box flow-box_left">
+    <div class="line error-lines">
+      <div class="line-left"></div>
+      <div class="line-center"></div>
+      <div class="line-right"></div>
+    </div>
+    <div class="image-text-box">
+      <div class="state error-state">
+        <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
       </div>
-    </ion-slide> -->
-  </ion-slides>
-  <div class="arrow-container right">
-    <img
-      [src]="!arrow_right ? 'assets/images/action-icons/icon_networkmap_arrow_right.svg' : 'assets/images/action-icons/icon_arrow_right_grey.svg'"
-      alt="move right"
-      (click)="!arrow_right ? prev() : ''"
-    />
+      <span class="flow-box_label">
+        STB
+      </span>
+    </div>
+  </div>
+  <div class="flow-box flow-box_center">
+    <div class="line default-vline">
+      <div class="line-vcenter"></div>
+    </div>
+    <div class="image-text-box">
+      <div class=" state default-state">
+        <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+      </div>
+      <span class="flow-box_label">
+        STB
+      </span>
+    </div>
+  </div>
+  <div class="flow-box flow-box_right">
+    <div class="line pending-lines">
+      <div class="line-left"></div>
+      <div class="line-center"></div>
+      <div class="line-right"></div>
+    </div>
+    <div class="image-text-box states">
+      <div class=" state okay-state">
+        <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+      </div>
+      <span class="flow-box_label">
+        STB
+      </span>
+    </div>
   </div>
 </div>
+
+<!-- <div class="states-inner_container">
+  <div class="step-wizard-container ion-text-center">
+    <div class="steps-header">
+        <div class="steps">
+            <div class="box-design pending">
+              <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+                <span>Etisalat</span>
+            </div>
+        </div>
+        <div class="steps error">
+            <div class="box-design">
+                <div class="cirlce-icon"><i class="fa fa-check"></i></div>
+                <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+               <span>ONT</span> 
+            </div>
+        </div>
+        <div class="steps active">
+            <div class="box-design">
+                <div class="cirlce-icon"><i class="fa fa-check"></i></div>
+                <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+                <span> ONT 1</span>  
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="step-active-content">
+        <div class="step-tree-list">
+            <div class="tree-step active-inStep">
+                <div class="box-design">
+                    <div class="cirlce-icon"><i class="fa fa-check"></i></div>
+                    <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+                    <span>STB</span>
+                </div>
+            </div>
+            <div class="tree-step pending-inStep">
+                <div class="box-design">
+                    <div class="cirlce-icon"><i class="fa fa-check"></i></div>
+                    <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+                    <span>STB</span>
+                </div>
+            </div>
+            <div class="tree-step error-inStep">
+                <div class="box-design">
+                    <div class="cirlce-icon"><i class="fa fa-check"></i></div>
+                    <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+                    <span>STB</span>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div> -->
