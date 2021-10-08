@@ -14,7 +14,7 @@ export class AuthInterceptor implements HttpInterceptor {
      */
     if (req.url.includes('assets')) {
       return next.handle(req);
-    } else if (req.url.includes('MOTIVE_APP_SELFCARE/token')) {
+    } else if (req.url.includes('token')) {
       /**
        *  For First API call when Motive App loads form the CIT
        */
