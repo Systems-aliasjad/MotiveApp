@@ -2,7 +2,7 @@
 <app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
 <ion-content>
   <ion-row class="page-title mobile-web">
-    <ion-col class="pt-0 pb-0">
+    <ion-col class="pt-0 pb-0 main-title-container">
       <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
     </ion-col>
   </ion-row>
@@ -17,7 +17,7 @@
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER' | translate }}</ion-label>
-                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                   <img
                     [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                     (click)="hideShowPassword(NewPassword)"
@@ -25,7 +25,7 @@
                     alt="show password"
                   />
                   <!-- <button type="button" (click)="hideShowPassword()">Click to show</button> -->
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
+                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
                     {{ error.password }}
                   </div>
                 </ion-item>
@@ -33,14 +33,14 @@
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
-                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false"></ion-input>
+                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                   <img
                     [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                     (click)="hideShowPassword(ConfirmPassword)"
                     class="show-icon"
                     alt="show password"
                   />
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
+                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
                     {{ error.password }}
                   </div>
                 </ion-item>
@@ -49,9 +49,9 @@
 
             <ion-row>
               <ion-col size="12">
-                <p class="tag-title">{{ 'MESSAGES.ROWARDING_NUMBER_RULES' | translate }}</p>
+                <p class="tag-title bottom-heading">{{ 'MESSAGES.ROWARDING_NUMBER_RULES' | translate }}</p>
                 <div>
-                  <ion-item *ngFor="let m of rules">
+                  <ion-item *ngFor="let m of rules" class="checkpoints">
                     <img src="/assets/images/indicators-icons/icon_check.svg" alt="" /> &nbsp;
                     <label>{{ m | translate }}</label>
                   </ion-item>

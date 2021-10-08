@@ -29,7 +29,25 @@ ion-item::part(native){
         -webkit-transform: scale(0.90);
         -ms-transform: scale(0.90);
         transform: scale(0.90);
+        @media screen and (max-width:992px) {
+          -webkit-transform: scale(1);
+          -ms-transform: scale(1);
+          transform: scale(1);
+        }
       }
     }
+  }
+}
+.text-error{
+  padding-top: 0.2rem;
+  position: absolute;
+  @media screen and (min-width:767px) {    
+    right: 0;
+    font-size: 0.8rem;
+  }
+  @media screen and (max-width:767px) {    
+    right: 0;
+    top: 0.5rem;
+    font-size: 0.7rem;
   }
 }
