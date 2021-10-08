@@ -16,7 +16,8 @@ export class SevenLayerComponent implements OnInit {
   etisalatConfig;
   @Input()
   devices;
-
+  arrayPointer: number = -1;
+  onTile: number = 0;
   slideOpts = {
     slidesPerView: 4,
     spaceBetween: 1,
@@ -53,7 +54,11 @@ export class SevenLayerComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('====================================');
+    console.log('devices', this.devices);
+    console.log('====================================');
+  }
 
   next() {
     this.slides.slideNext();
@@ -70,5 +75,14 @@ export class SevenLayerComponent implements OnInit {
     this.slides.isEnd().then((val) => {
       this.arrow_left = val;
     });
+  }
+
+  getArrayPointer(forTile: number): number {
+    if (this.onTile === forTile) {
+      return this.arrayPointer;
+    } else {
+      this.onTile = forTile;
+      return ++this.arrayPointer;
+    }
   }
 }

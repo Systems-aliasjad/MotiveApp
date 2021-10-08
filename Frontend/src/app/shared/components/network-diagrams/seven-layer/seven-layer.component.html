@@ -1,45 +1,39 @@
 <div class="three-flow-box-contaier">
-  <div class="flow-box flow-box_left">
-    <div class="line error-lines">
+  <div class="flow-box flow-box_left" *ngIf="devices.length > 1">
+    <div [class]="devices[getArrayPointer(1)]?.className + '-lines line'">
       <div class="line-left"></div>
       <div class="line-center"></div>
       <div class="line-right"></div>
     </div>
     <div class="image-text-box">
-      <div class="state error-state">
-        <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+      <div [class]="devices[getArrayPointer(1)]?.className + '-state state'">
+        <img [src]="devices[getArrayPointer(1)].url" />
       </div>
-      <span class="flow-box_label">
-        STB
-      </span>
+      <span class="flow-box_label"> {{ devices[getArrayPointer(1)]?.title }} </span>
     </div>
   </div>
-  <div class="flow-box flow-box_center">
+  <div class="flow-box flow-box_center" *ngIf="devices.length === 1 || devices.length > 2">
     <div class="line default-vline">
       <div class="line-vcenter"></div>
     </div>
     <div class="image-text-box">
-      <div class=" state default-state">
-        <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+      <div class="state default-state">
+        <img src="/assets/images/network-map-icons/icon_home_default.svg" />
       </div>
-      <span class="flow-box_label">
-        STB
-      </span>
+      <span class="flow-box_label"> STB </span>
     </div>
   </div>
-  <div class="flow-box flow-box_right">
+  <div class="flow-box flow-box_right" *ngIf="devices.length > 1">
     <div class="line pending-lines">
       <div class="line-left"></div>
       <div class="line-center"></div>
       <div class="line-right"></div>
     </div>
     <div class="image-text-box states">
-      <div class=" state okay-state">
-        <img src="/assets/images/network-map-icons/icon_home_default.svg"/>
+      <div class="state okay-state">
+        <img src="/assets/images/network-map-icons/icon_home_default.svg" />
       </div>
-      <span class="flow-box_label">
-        STB
-      </span>
+      <span class="flow-box_label"> STB </span>
     </div>
   </div>
 </div>

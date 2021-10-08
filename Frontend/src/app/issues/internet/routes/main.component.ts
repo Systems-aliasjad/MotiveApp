@@ -29,17 +29,17 @@ export class MainComponent implements OnInit {
         interfaceType: '802.11',
       },
     ],
-    upsellingOpportunity: 'UPSEL1',
+    upsellingOpportunity: 'UPSEL2',
     tsOutcome: 'No Issue Found',
   };
 
   ngOnInit() {
     this.activatedRoute.params.subscribe(() => {
+      this.helperService.flowIdentifier('CI72', this.hardData);
       // this.shareService.setLoader(true);
       // // this.backendService.getIssueDiagnositic('INTEvRNET').subscribe((data: any) => {
       // this.shareService.setLoader(false);
       // // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      // this.helperService.flowIdentifier('CI72', this.hardData);
       // console.log('====ngOnInit INTERNET====');
       // // console.log(data);
       // console.log('====================================');

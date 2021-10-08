@@ -143,46 +143,22 @@ export class HelperService {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       // this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
       this.sharedService.setApiResponseData({ complaintDetails: temp3 });
-    }
-
-    // else if (CodeId === flowCodes.UPSEL2) {
-    //   //Upselling Identified for New Router
-    //   this.router.navigate(['']);
-    // }
-    else if (CodeId === flowCodes.UPSEL3) {
-      this.sharedService.setApiResponseData({ routerUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
+    } else if (CodeId === flowCodes.UPSEL3) {
       // Upselling Identified for Router Upgrade
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
     } else if (CodeId === flowCodes.UPSEL4) {
-      this.sharedService.setApiResponseData({ routerUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
       // Upselling Identified for Router Upgrade / Router Out of Warranty
       this.router.navigate(['issues/internet/router-out-of-warranty']);
     } else if (CodeId === flowCodes.UPSEL5 || CodeId === flowCodes.UPSEL6) {
-      this.sharedService.setApiResponseData({ routerPackageUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
       // Upselling Identified for Bandwidth And Router Upgrade
       this.router.navigate(['issues/internet/router-package-upgrade']);
-    }
-
-    //Case Handle with UPSEL5
-    // else if (CodeId === flowCodes.UPSEL6) {
-    //   // Upselling Identified for Bandwidth And Router Upgrade /Router  Out of Warranty
-    //   this.router.navigate(['']);
-    // }
-    else if (CodeId === flowCodes.UPSEL7 || CodeId === flowCodes.UPSEL9) {
-      this.sharedService.setApiResponseData({ packageUpgrade: temp7, ontDetails: temp1, routerDetails: temp2 });
+    } else if (CodeId === flowCodes.UPSEL7 || CodeId === flowCodes.UPSEL9) {
       // Upselling Identified for Bandwidth / Router  Out of Warranty
       this.router.navigate(['issues/internet/package-upgrade-recommended']);
     } else if (CodeId === flowCodes.UPSEL2 || CodeId === flowCodes.UPSEL8) {
-      this.sharedService.setApiResponseData({ thirdPartyUpgrade: temp7 });
       // Upselling Identified for New Router /Router  Out of Warranty
       this.router.navigate(['issues/internet/third-party-router']);
     }
-
-    // /////Case Handle with UPSEL7
-    // else if (CodeId === flowCodes.UPSEL9) {
-    //   // Upselling Identified for Bandwidth
-    //   this.router.navigate(['']);
-    // }
   }
 
   handleCI9Cases(routerDetails: IRouterDetail) {
