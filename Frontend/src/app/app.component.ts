@@ -3,7 +3,7 @@ import { CacheService } from './cache/cache.service';
 import { StorageType } from './cache/storages/storage-type.enum';
 import { environment } from '../environments/environment';
 import { SharedService } from './shared/shared.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BackendService } from './services/backend.service';
 import { AuthService } from './services/auth.service';
 
@@ -25,36 +25,35 @@ export class AppComponent implements OnInit {
     // this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
   }
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(() => {
-      this.Initialization();
+    this.activatedRoute.params.subscribe((params: Params) => {
+      this.Initialization(params);
     });
   }
 
-  Initialization() {
-    // TODO: ROMOVE this.router.navigate
-    // this.router.navigate(['landing'], {
-    //   state: {
-    //     user: {
-    //       accountId: '1234567890',
-    //       username: 'Mock data',
-    //     },
-    //   },
-    // });
-    // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
-    // this.sharedService.setLoader(true);
-    // this.backendService.getUserDetail('KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=', 'en').subscribe((data: any) => {
-    //   this.authService.setAuthorizationToken(data?.result?.token);
-    //   this.sharedService.setLoader(false);
-    //   this.router.navigate(['landing'], { state: { user: data?.result } });
-    // });
-    const selectedLang = this.sharedService.getDefaultLanguage();
-    this.appDirection = selectedLang === 'en' ? 'ltr' : 'rtl';
-    this.sharedService.setDefaultLanguage(selectedLang);
-    this.sharedService.getLoader().subscribe((loaderState) => {
-      this.showLoader = loaderState;
+  Initialization(params: Params) {
+    this.subscribeLoaderChanges();
+    this.sharedService.setLoader(true);
+
+    // TODO: REMOVE THIS
+    // this.sharedService.setDefaultLanguage('en');
+    // this.appDirection = 'ltr';
+
+    this.sharedService.setDefaultLanguage(params?.lang ?? 'ara');
+    this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
+    this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
+      this.authService.setAuthorizationToken(data?.result?.token);
+      this.sharedService.setLoader(false);
+      this.router.navigate(['landing'], { state: { user: data?.result } });
     });
+
     if (environment.production) {
       window.console.log = function () {}; // disable any console.log debugging statements in production mode
     }
+  }
+
+  subscribeLoaderChanges() {
+    this.sharedService.getLoader().subscribe((loaderState) => {
+      this.showLoader = loaderState;
+    });
   }
 }
