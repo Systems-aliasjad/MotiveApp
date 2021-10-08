@@ -29,7 +29,7 @@
                     [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
                   ></ion-input>
 
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
                     {{ error.phoneNumber }}
                   </div>
                 </ion-item>
