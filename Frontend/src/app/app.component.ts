@@ -39,7 +39,6 @@ export class AppComponent implements OnInit {
     // TODO: REMOVE THIS
     // this.sharedService.setDefaultLanguage('en');
     // this.appDirection = 'ltr';
-    // http://localhost:4200/html/motive-frontend/landing?token=dbsahfjknaidjf,kd%20idsjfomdsaiufhacvij&lang=en
     this.sharedService.setDefaultLanguage(params?.lang || 'ara');
     this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
     this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {

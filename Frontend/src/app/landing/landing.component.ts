@@ -41,12 +41,11 @@ export class LandingComponent implements OnInit, OnDestroy {
 
   initialization() {
     // TODO: REMOVE FOLLWOING
-    this.codeType = '3P';
-    this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+    // this.codeType = '3P';
+    // this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
 
     this.updateProfileData();
-    // TODO: UNCOMMENT THIS SECTION WHEN THE API IS LIVE
-    // this.getProductCode();
+    this.getProductCode();
 
     this.selectedLang = this.sharedService.getDefaultLanguage();
     //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
@@ -65,8 +64,7 @@ export class LandingComponent implements OnInit, OnDestroy {
       this.codeType = data?.result?.productCode;
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
-    //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
-    this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+    // this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }
 
   headerConfig: IPageHeader = {

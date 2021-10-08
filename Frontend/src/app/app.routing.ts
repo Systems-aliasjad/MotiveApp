@@ -82,10 +82,10 @@ const routes: Routes = [
     path: 'thanks',
     component: ThankyouScreenComponent,
   },
-  {
-    path: '**',
-    redirectTo: 'landing',
-  },
+  // {
+  //   path: '**',
+  //   redirectTo: 'landing',
+  // },
 
   // {
   //   path: 'loader',
