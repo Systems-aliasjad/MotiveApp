@@ -646,7 +646,7 @@ export class ApplicableCodes {
       objKeyNameEN: 'appointmentDate',
     },
     {
-      title: 'MESSAGES.APPOINTMENT_TIME',
+      title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
       type: 'time',
       objKeyNameEN: 'appointmentTime',
     },

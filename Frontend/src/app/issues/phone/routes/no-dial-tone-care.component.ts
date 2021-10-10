@@ -61,5 +61,7 @@ export class NoDailToneCareComponent implements OnInit {
     this.router.navigate(['/thanks']);
   }
 
-  button2Listener() {}
+  button2Listener() {
+    this.router.navigate(['issues/phone/book-complaint']);
+  }
 }

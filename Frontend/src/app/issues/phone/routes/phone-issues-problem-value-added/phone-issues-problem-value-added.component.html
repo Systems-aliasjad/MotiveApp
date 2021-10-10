@@ -13,6 +13,12 @@
     <!-- Page Heading End -->
 
     <ion-row class="my-subscriptions two-col_inner_container">
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tabs_wizard ion-text-center">
+        <div class="tabs-wizard">
+          <app-multi-layer [devices]="devices"></app-multi-layer>
+        </div>
+      </ion-col>
+
       <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_slider two-col_left">
         <!-- <h6 class="sub-title">{{ d.header | translate }}</h6> -->
         <app-tab-tile></app-tab-tile>

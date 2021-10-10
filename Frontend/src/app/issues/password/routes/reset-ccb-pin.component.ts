@@ -52,7 +52,7 @@ export class ResetCcbPinComponent implements OnInit, OnDestroy {
   };
 
   button1Listener(event) {
-    this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
+    this.router.navigate(['/issues/password/forgot-ccb-pin-message']);
   }
 
   button2Listener() {

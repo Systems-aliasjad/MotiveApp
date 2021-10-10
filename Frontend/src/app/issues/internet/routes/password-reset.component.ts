@@ -6,10 +6,14 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 import { BackendService } from '../../../services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-password-reset',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -22,6 +26,9 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
 export class PasswordResetComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
     title: 'BUTTONS.RESET_NOW',
     type: 'primary',
@@ -42,6 +49,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -78,5 +86,12 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(false);
       this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
+  }
+
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

@@ -91,6 +91,7 @@ import { PasswordResetSuccessfullyComponent } from './routes/password-reset-succ
 import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade-recommended-form.component';
 import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
 import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
+import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-network.component';
 
 @NgModule({
   declarations: [
@@ -175,6 +176,7 @@ import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.compo
     PackageUpgradeRecommendedFormComponent,
     ThirdPartyRouterSuccessMessageComponent,
     RouterOutOfWarrantyComponent,
+    UnableToConnnectWifiNetwork,
   ],
   imports: [
     CommonModule,

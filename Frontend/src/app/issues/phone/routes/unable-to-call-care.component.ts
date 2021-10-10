@@ -61,5 +61,7 @@ export class UnableToCallCareComponent implements OnInit, OnDestroy {
     this.router.navigate(['/thanks']);
   }
 
-  button2Listener() {}
+  button2Listener() {
+    this.router.navigate(['issues/phone/book-complaint']);
+  }
 }

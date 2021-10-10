@@ -4,10 +4,15 @@ import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'all-services-fiber-box-not-reachable',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -22,6 +27,9 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',
     type: 'link',
@@ -36,11 +44,12 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
     type: 'secondary',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -69,4 +78,10 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   button2Listener() {}
 
   button3Listener() {}
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
+  }
 }

@@ -29,6 +29,8 @@ import { ChangeCallForwardComponent } from './routes/change-call-forward/change-
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
 import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { createTranslateLoader } from 'src/app/app.module';
+import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message-component';
+import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-message.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,8 @@ import { createTranslateLoader } from 'src/app/app.module';
     BookComplaintComponent,
     BookAppointmentComponent,
     PhoneIssuesProblemValueAddedComponent,
+    ForgotCcbPinFailedMessageComponent,
+    CallForwardFailedMessageComponent,
   ],
   imports: [
     CommonModule,

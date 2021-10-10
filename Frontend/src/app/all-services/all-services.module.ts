@@ -17,9 +17,10 @@ import { CustomerNotSameRouterComponent } from './routes/customer-not-same-route
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { AllServicesRoutingModule } from './all-services.routing';
-import { InternetModule } from '../issues/internet/internet.module';
-import { TvModule } from '../issues/tv/tv.module';
-import { PhoneModule } from '../issues/phone/phone.module';
+// import { InternetModule } from '../issues/internet/internet.module';
+// import { TvModule } from '../issues/tv/tv.module';
+// import { PhoneModule } from '../issues/phone/phone.module';
+import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +33,13 @@ import { PhoneModule } from '../issues/phone/phone.module';
     OutageComponent,
     IssueNotFixedComponent,
     NoIssuesServiceDetailsComponent,
+    RouterRebootRequiredComponent,
   ],
   imports: [
     CommonModule,
-    InternetModule,
-    TvModule,
-    PhoneModule,
+    // InternetModule,
+    // TvModule,
+    // PhoneModule,
     AllServicesRoutingModule,
     SharedModule,
     IonicModule.forRoot(),

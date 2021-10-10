@@ -67,7 +67,8 @@ export class OntRestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/ont-restart-required-device-care']);
+    // this.router.navigate(['/ont-restart-required-device-care']);
+    this.router.navigate(['issues/phone/ont-not-restart-instructions']);
   }
 
   button2Listener() {

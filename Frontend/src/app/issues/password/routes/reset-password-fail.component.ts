@@ -58,7 +58,7 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    //this.router.navigate(['/thanks']);
   }
 
   button2Listener() {

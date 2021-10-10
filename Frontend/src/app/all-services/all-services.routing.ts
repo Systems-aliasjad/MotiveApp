@@ -1,7 +1,5 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InternetModule } from '../issues/internet/internet.module';
-import { InternetRoutingModule } from '../issues/internet/internet.routing';
 import { SharedModule } from '../shared/shared.module';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
@@ -12,6 +10,7 @@ import { OntRebootRequiredTvComponent } from './routes/ont-reboot-required-tv.co
 import { OutageComponent } from './routes/outage.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
+import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
 
 const routes: Routes = [
   // {
@@ -28,6 +27,7 @@ const routes: Routes = [
   { path: 'outage', component: OutageComponent },
   { path: 'issue-not-fixed', component: IssueNotFixedComponent },
   { path: 'no-issues-service-details', component: NoIssuesServiceDetailsComponent },
+  { path: 'router-reboot-required', component: RouterRebootRequiredComponent },
 ];
 
 @NgModule({

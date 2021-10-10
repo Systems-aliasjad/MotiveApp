@@ -18,8 +18,11 @@ export class ResetTvPinDialog implements OnInit {
   }
 
   async confirm() {
-    await this.modalCtrl.dismiss();
-    await this.modalCtrl.dismiss();
+    try {
+      await this.modalCtrl.dismiss();
+      await this.modalCtrl.dismiss();
+    } catch (ex) {}
+
     this.router.navigate(['issues/tv/tv-admin-pin-reset-success']);
   }
 }
