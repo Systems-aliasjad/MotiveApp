@@ -34,8 +34,8 @@ export class MainComponent implements OnInit {
   };
 
   ngOnInit() {
+    // this.helperService.flowIdentifier('CI72', this.hardData);
     this.activatedRoute.params.subscribe(() => {
-      // this.helperService.flowIdentifier('CI72', this.hardData);
       this.shareService.setLoader(true);
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data: any) => {
         this.shareService.setLoader(false);

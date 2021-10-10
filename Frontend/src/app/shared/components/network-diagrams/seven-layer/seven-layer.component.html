@@ -3,19 +3,19 @@
   <div class="three-boxes-config">
     <div class="box-1 three-boxes">
       <div class="image-text-box">
-        <div class="state error-state">
-          <img src="/assets/images/network-map-icons/icon_smartphone_default.svg" alt="Smart Phone Default State" />
+        <div [class]="etisalatConfig.className + '-state state'">
+          <img [src]="etisalatConfig.url" alt="Smart Phone Default State" />
         </div>
-        <span class="image_label">Etisalat</span>
+        <span class="image_label">{{ etisalatConfig.title }}</span>
       </div>
       <div class="straight-line default-line"></div>
     </div>
     <div class="box-2 three-boxes">
       <div class="image-text-box">
-        <div class="state default-state">
-          <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State" />
+        <div [class]="ontConfig.className + '-state state'">
+          <img [src]="ontConfig.url" alt="Smart Phone okay State" />
         </div>
-        <span class="image_label">ONT</span>
+        <span class="image_label">{{ ontConfig.title }}</span>
       </div>
     </div>
     <div class="box-3 three-boxes"></div>
@@ -25,40 +25,40 @@
   <!-- Three Flow Start -->
   <div class="three-flow-box-contaier">
     <div class="flow-box flow-box_left">
-      <div class="line okay-lines">
+      <div [class]="devices[0].className + '-lines line'">
         <div class="line-left"></div>
         <div class="line-center"></div>
         <div class="line-right"></div>
       </div>
       <div class="image-text-box">
-        <div class="state error-state">
-          <img src="/assets/images/network-map-icons/icon_home_default.svg" />
+        <div [class]="devices[0].className + '-state state'">
+          <img [src]="devices[0].url" />
         </div>
-        <span class="flow-box_label"> STB </span>
+        <span class="flow-box_label"> {{ devices[0].title }} </span>
       </div>
     </div>
     <div class="flow-box flow-box_center">
-      <div class="line default-vline">
+      <div [class]="devices[1].className + '-vline line'">
         <div class="line-vcenter"></div>
       </div>
       <div class="image-text-box">
-        <div class="state default-state">
-          <img src="/assets/images/network-map-icons/icon_home_default.svg" />
+        <div [class]="devices[1].className + '-state state'">
+          <img [src]="devices[1].url" />
         </div>
-        <span class="flow-box_label"> STB </span>
+        <span class="flow-box_label"> {{ devices[1].title }} </span>
       </div>
     </div>
     <div class="flow-box flow-box_right">
-      <div class="line pending-lines">
+      <div [class]="devices[2].className + '-lines line'">
         <div class="line-left"></div>
         <div class="line-center"></div>
         <div class="line-right"></div>
       </div>
       <div class="image-text-box">
-        <div class="state okay-state">
-          <img src="/assets/images/network-map-icons/icon_home_default.svg" />
+        <div [class]="devices[2].className + '-state state'">
+          <img [src]="devices[2].url" />
         </div>
-        <span class="flow-box_label"> STB </span>
+        <span class="flow-box_label"> {{ devices[2].title }} </span>
       </div>
     </div>
   </div>

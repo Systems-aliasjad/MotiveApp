@@ -13,7 +13,7 @@ import { AuthService } from './services/auth.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  appDirection: string = 'rtl';
+  appDirection: string;
   showLoader: boolean = false;
   constructor(
     public sharedService: SharedService,
