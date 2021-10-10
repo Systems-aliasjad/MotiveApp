@@ -64,6 +64,9 @@ export class LandingComponent implements OnInit, OnDestroy {
       this.codeType = data?.result?.productCode;
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
+
+    //TODO: Remove This
+    // this.codeType = '3P';
     // this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }
 

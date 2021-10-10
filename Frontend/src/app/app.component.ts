@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   Initialization(params: Params) {
+    //TODO: uncomment This
     this.sharedService.setLoader(true);
     if (!params?.token) {
       return;
@@ -39,6 +40,9 @@ export class AppComponent implements OnInit {
     // TODO: REMOVE THIS
     // this.sharedService.setDefaultLanguage('en');
     // this.appDirection = 'ltr';
+    // this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
+
+    //TODO: uncomment This
     this.sharedService.setDefaultLanguage(params?.lang || 'ara');
     this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
     this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {

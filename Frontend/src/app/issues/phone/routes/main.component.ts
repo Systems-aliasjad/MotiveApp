@@ -10,6 +10,7 @@ export class MainComponent implements OnInit {
   constructor(private shareService: SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
+    //TODO: uncomment This
     this.shareService.setLoader(true);
     this.backendService.getIssueDiagnositic('VOICE').subscribe((data) => {
       this.shareService.setLoader(false);
