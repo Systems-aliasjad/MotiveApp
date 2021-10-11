@@ -28,14 +28,14 @@
   <ion-row class="no-issue-segment-tabs">
     <ion-col size="12" class="ion-no-padding">
       <div *ngIf="segment === '1'" class="animate__animated animate__slideInUp animate__fast service-detail-tab">
-        <!-- <app-service-detail [isPartialLoaded]="true"></app-service-detail> -->
+        <app-service-detail [isPartialLoaded]="true"></app-service-detail>
       </div>
       <div *ngIf="segment === '2'" class="animate__animated animate__slideInUp animate__fast tv-detail-tab">
-        <!-- <app-tv-detail [isPartialLoaded]="true"></app-tv-detail> -->
+        <app-tv-detail [isPartialLoaded]="true"></app-tv-detail>
       </div>
 
       <div *ngIf="segment === '3'" class="animate__animated animate__slideInUp animate__fast phone-issues-tabs">
-        <!-- <app-phone-issues-problem-value-added [isPartialLoaded]="true"></app-phone-issues-problem-value-added> -->
+        <app-phone-issues-problem-value-added [isPartialLoaded]="true"></app-phone-issues-problem-value-added>
       </div>
     </ion-col>
   </ion-row>

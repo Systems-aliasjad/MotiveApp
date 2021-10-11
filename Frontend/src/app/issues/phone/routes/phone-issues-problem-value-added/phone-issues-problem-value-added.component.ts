@@ -22,7 +22,6 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
-  devices;
   constructor(
     private helperService: HelperService,
     private sharedService: SharedService,
@@ -37,7 +36,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   ngOnInit() {
     this.subscription = this.actRoute.data.subscribe(() => {
       this.updateHeader();
-      this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -131,5 +130,11 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
 
   button2Listener() {
     // this.button2Click.emit();
+  }
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

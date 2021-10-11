@@ -13,7 +13,8 @@
       <!-- Flow Chart Start -->
       <ion-col sizeLg="6" sizeMd="12" size="12" class="flow-chart_container">
         <div class="flow-chart">
-          <app-multi-layer [devices]="devices"></app-multi-layer>
+          <!-- <app-multi-layer [devices]="devices"></app-multi-layer> -->
+          <app-seven-layer [ontConfig]="ontConfig" [routerConfig]="routerConfig" [etisalatConfig]="etisalatConfig" [devices]="connectedDevices"></app-seven-layer>
         </div>
       </ion-col>
       <!-- Flow Chart End -->
