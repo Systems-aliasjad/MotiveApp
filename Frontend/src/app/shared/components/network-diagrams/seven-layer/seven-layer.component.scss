@@ -540,12 +540,12 @@ ion-item::part(native) {
     }
   }
   .okay-lines{
-    .line-left {
+    /* .line-left {
       background: url("/assets/images/lines/okay/okay-two-border-left.svg") top right no-repeat;
     }
     .line-right {
       background: url("/assets/images/lines/okay/okay-two-border-right.svg") bottom left no-repeat;
-    }
+    } */
     .line-right{
       &:after{
          border:3px solid rgba(113, 158, 25, 70%);
