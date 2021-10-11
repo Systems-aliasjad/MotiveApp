@@ -21,6 +21,9 @@ import { AllServicesRoutingModule } from './all-services.routing';
 // import { TvModule } from '../issues/tv/tv.module';
 // import { PhoneModule } from '../issues/phone/phone.module';
 import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
+import { InternetModule } from '../issues/internet/internet.module';
+import { TvModule } from '../issues/tv/tv.module';
+import { PhoneModule } from '../issues/phone/phone.module';
 
 @NgModule({
   declarations: [
@@ -37,9 +40,7 @@ import { RouterRebootRequiredComponent } from './routes/router-reboot-required.c
   ],
   imports: [
     CommonModule,
-    // InternetModule,
-    // TvModule,
-    // PhoneModule,
+
     AllServicesRoutingModule,
     SharedModule,
     IonicModule.forRoot(),
@@ -53,6 +54,9 @@ import { RouterRebootRequiredComponent } from './routes/router-reboot-required.c
       },
       defaultLanguage: 'en',
     }),
+    InternetModule,
+    TvModule,
+    PhoneModule,
   ],
 })
 export class AllServicesModule {}

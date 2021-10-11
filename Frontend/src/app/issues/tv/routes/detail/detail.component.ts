@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
@@ -17,6 +18,10 @@ export class TvDetailComponent implements OnInit {
   isPartialLoaded: boolean = false;
   modal;
   devices;
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  connectedDevices;
   cardList = [
     {
       header: 'STB SR#039838920',
@@ -41,7 +46,7 @@ export class TvDetailComponent implements OnInit {
 
   constructor(private helperService: HelperService, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
   ngOnInit() {
-    this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
+    this.getIssueTilesData();
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
@@ -64,5 +69,13 @@ export class TvDetailComponent implements OnInit {
 
   onIssueResolved() {
     this.router.navigate(['/thanks']);
+  }
+
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }
 }
