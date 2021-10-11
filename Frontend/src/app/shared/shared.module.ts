@@ -31,8 +31,9 @@ import { ThreeLayersComponent } from './components/network-diagrams/three-layers
 import { HeaderSingleLineComponent } from './components/header-single-line/header-single-line.component';
 import { HeaderMultiLineComponent } from './components/header-multi-line/header-multi-line.component';
 import { MultiLayerComponent } from './components/network-diagrams/multi-layer/multi-layer.component';
-import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
+import { FiveLayerComponent } from './components/network-diagrams/five-layer/five-layer.component';
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
+import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TransferPackageComponent } from './components/transfer-package/transfer
     PageTopComponent,
     MotiveMessageComponent,
     MultiLayerComponent,
+    FiveLayerComponent,
     SevenLayerComponent,
     ThankyouScreenComponent,
     TermsConditionsComponent,
