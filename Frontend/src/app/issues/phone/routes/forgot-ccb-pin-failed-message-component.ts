@@ -5,12 +5,10 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
-/**
- * Unable To Reset Password
- */
 @Component({
-  selector: 'reset-password-fail',
+  selector: 'forgot-ccb-pin-failed-message-phone',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -18,26 +16,21 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
+export class ForgotCcbPinFailedMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.BUY_ETISALAT_ROUTER',
-  };
-  button2: IMotiveButton = {
-    type: 'link',
+    type: 'secondary',
     title: 'BUTTONS.CLOSE',
+    explanatoryNote: '',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -50,18 +43,16 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    this.sharedService.setDefaultValues();
+  }
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.unableToResetPassword;
+    this.Section1Data = CustomerJourneyConstants.resetCCBPinFailedCase;
   }
 
   button1Listener() {
-    //this.router.navigate(['/thanks']);
-  }
-
-  button2Listener() {
     this.router.navigate(['/thanks']);
   }
 }

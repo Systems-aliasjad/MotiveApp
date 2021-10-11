@@ -17,6 +17,8 @@ import { Subscription } from 'rxjs';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
+    [button3]="button3"
+    (button3Click)="button3Listener()"
   ></motive-message>`,
 })
 export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDestroy {
@@ -25,13 +27,20 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   Section2Template;
   Section2Data;
   imgSrc;
+
   button1: IMotiveButton = {
+    type: 'link',
+    title: 'BUTTONS.CONFIGURE_ROUTER',
+    explanatoryNote: '',
+  };
+
+  button2: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     explanatoryNote: '',
   };
 
-  button2: IMotiveButton = {
+  button3: IMotiveButton = {
     type: 'link',
     title: 'BUTTONS.CLOSE',
     explanatoryNote: '',
@@ -62,6 +71,10 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   }
 
   button2Listener() {
+    this.router.navigate(['/issues/internet/install-new-router-care']);
+  }
+
+  button3Listener() {
     this.router.navigate(['/thanks']);
   }
 }

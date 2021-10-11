@@ -71,6 +71,6 @@ export class OntNotRestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/bookComplaint']);
+    this.router.navigate(['/issues/phone/book-complaint']);
   }
 }

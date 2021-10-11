@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { regExps, errorMessages } from '../../../../shared/validators/validations';
 import { SharedService } from '../../../../shared/shared.service';
 import { ConfirmedValidator, eyeHide, eyeShow } from '../../../../shared/constants/constants';
@@ -33,11 +33,18 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
-  constructor(private formBuilder: FormBuilder, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController, private location: Location) {
+  constructor(
+    private actRoute: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    public router: Router,
+    private sharedService: SharedService,
+    private modalCtrl: ModalController,
+    private location: Location
+  ) {
     //this.sharedService.setHeaderConfig('HEADER.RESET_INTERNET_PASSWORD', true);
 
-    this.subscription = this.sharedService.getTermsConditions().subscribe((config) => {
-      this.termsCheck = config;
+    this.subscription = actRoute.data.subscribe((data) => {
+      this.initialization();
     });
   }
   ngOnDestroy(): void {
@@ -45,21 +52,29 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.formGroup = this.formBuilder.group(
-      {
-        MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-        NewPassword: ['', [Validators.required]],
-        ConfirmPassword: ['', [Validators.required]],
-        terms: [true, Validators.required],
-      },
-      {
-        validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
-      }
+    this.subscription.add(
+      this.sharedService.getTermsConditions().subscribe((config) => {
+        this.formGroup.controls['terms'].setValue(config);
+      })
     );
   }
 
   get f() {
     return this.formGroup.controls;
+  }
+
+  initialization() {
+    this.formGroup = this.formBuilder.group(
+      {
+        MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+        NewPassword: ['', [Validators.required]],
+        ConfirmPassword: ['', [Validators.required]],
+        terms: [false, Validators.required],
+      },
+      {
+        validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
+      }
+    );
   }
 
   SubmitForm() {

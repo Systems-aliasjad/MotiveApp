@@ -114,11 +114,11 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Forgot Code Control Barring (CCB) PIN',
-      route: 'no-issue-phone-reset-ccb-pin',
+      route: 'issues/phone/forgot-ccb-pin',
     },
     {
       issue: 'Change call forwarding number',
-      route: 'no-issue-phone-phone-Change-call-forward',
+      route: 'issues/phone/no-issue-phone-phone-Change-call-forward',
     },
   ];
   issuesList: any[];

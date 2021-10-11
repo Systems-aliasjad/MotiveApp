@@ -49,5 +49,7 @@ export class RouterRebootSuccessfulComponent implements OnInit, OnDestroy {
     this.Section1Data = CustomerJourneyConstants.routerRebootSuccessful;
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.router.navigate(['thanks']);
+  }
 }

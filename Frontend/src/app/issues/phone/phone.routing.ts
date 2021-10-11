@@ -24,6 +24,8 @@ import { ChangeCallForwardComponent } from './routes/change-call-forward/change-
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
+import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message-component';
+import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-message.component';
 
 const routes: Routes = [
   {
@@ -69,10 +71,18 @@ const routes: Routes = [
     path: 'call-forward-message',
     component: CallForwardMessageComponent,
   },
+  {
+    path: 'call-forward-failed-message',
+    component: CallForwardFailedMessageComponent,
+  },
 
   {
     path: 'forgot-ccb-pin-message',
     component: ForgotCcbPinMessageComponent,
+  },
+  {
+    path: 'forgot-ccb-pin-failed-message',
+    component: ForgotCcbPinFailedMessageComponent,
   },
 
   {

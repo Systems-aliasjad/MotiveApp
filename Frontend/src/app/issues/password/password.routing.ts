@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
 
 import { MainComponent } from './routes/main.component';
 import { RequestFailComponent } from './routes/request-fail.component';
 import { ResetCcbPinComponent } from './routes/reset-ccb-pin.component';
 import { ResetElifeOnPinComponent } from './routes/reset-elife-on-pin.component';
+import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
 import { ResetInternetPasswordFailComponent } from './routes/reset-internet-password-fail.component';
 import { ResetInternetPasswordSuccessComponent } from './routes/reset-internet-password-success.component';
 import { ResetPasswordFailComponenet } from './routes/reset-password-fail.component';
@@ -76,6 +78,14 @@ const routes: Routes = [
   {
     path: 'reset-ccb-pin',
     component: ResetCcbPinComponent,
+  },
+  {
+    path: 'reset-elife-pin-success',
+    component: ResetElifePinSuccessMessageComponent,
+  },
+  {
+    path: 'forgot-ccb-pin-message',
+    component: ForgotCcbPinMessageComponent,
   },
   {
     path: '',

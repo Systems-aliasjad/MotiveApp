@@ -4,10 +4,15 @@ import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'all-services-ont-reboot-internet',
   template: `<app-diagnose-issue
+    [ontConfig]="ontConfig"
+    [etisalatConfig]="etisalatConfig"
+    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -20,8 +25,12 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+
   button1: IMotiveButton = {
-    title: 'BUTTONS.RESTART_ONT_STB',
+    title: 'BUTTONS.RESTART_ONT_NOW',
     type: 'primary',
   };
   button2: IMotiveButton = {
@@ -29,11 +38,12 @@ export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -61,5 +71,11 @@ export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     // this.router.navigate(['/issues/phone/ont-restart-instructions']);
+  }
+  getIssueTilesData() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.ontConfig = temp?.ontConfig;
+    this.routerConfig = temp?.routerConfig;
   }
 }

@@ -55,7 +55,7 @@ export class OutageMessageComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.complaintFormsuccessfullyCase;
+    this.Section1Data = CustomerJourneyConstants.complaintRaisedSuccessfullyCase;
     this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
     this.Section2Data = {
       referenceNo: '436529873',

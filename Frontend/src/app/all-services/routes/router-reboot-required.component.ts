@@ -8,7 +8,7 @@ import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
-  selector: 'all-services-outage',
+  selector: 'all-services-router-reboot-requred',
   template: `<app-diagnose-issue
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
@@ -22,18 +22,18 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   >
   </app-diagnose-issue>`,
 })
-export class OutageComponent implements OnInit, OnDestroy {
+export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
-    title: 'BUTTONS.OK',
+    title: 'BUTTONS.RESTART_NOW',
     type: 'primary',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.BOOK_A_COMPLAINT',
+    title: 'BUTTONS.CLOSE',
     type: 'link',
   };
 
@@ -52,11 +52,7 @@ export class OutageComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    //this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
-  }
-
-  updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.outageIssueMessageSection;
+    // this.sharedService.setHeaderConfig('HEADER.TV_ISSUES', false);
   }
 
   headerConfig: IPageHeader = {
@@ -64,12 +60,16 @@ export class OutageComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
+  updatePageContent() {
+    this.messageSection = CustomerJourneyConstants.rotuerRebootRequiredAllServices;
+  }
+
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['/issues/internet/router-reboot-successful']);
   }
 
   button2Listener() {
-    this.router.navigate(['issues/internet/book-complaint']);
+    this.router.navigate(['thanks']);
   }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();

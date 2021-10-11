@@ -2,7 +2,9 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { IPageHeader } from 'src/app/shared/constants/types';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from '../../../../shared/shared.service';
 
 @Component({
@@ -17,7 +19,17 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   @Input()
   isPartialLoaded: boolean = false;
 
-  constructor(private sharedService: SharedService, private modalCtrl: ModalController, public router: Router, private actRoute: ActivatedRoute) {}
+  ontConfig;
+  routerConfig;
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  devices;
+  constructor(
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private modalCtrl: ModalController,
+    public router: Router,
+    private actRoute: ActivatedRoute
+  ) {}
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
@@ -25,6 +37,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   ngOnInit() {
     this.subscription = this.actRoute.data.subscribe(() => {
       this.updateHeader();
+      this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
     });
     this.updatePageContent();
   }

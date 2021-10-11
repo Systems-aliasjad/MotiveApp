@@ -80,6 +80,10 @@ export class CustomerJourneyConstants {
     header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
     paragraphs: ['MESSAGES.WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON'],
   };
+  public static complaintRaisedSuccessfullyCase = {
+    header: 'MESSAGES.COMPLAINT_RAISED_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON'],
+  };
 
   public static tvBoxNotReachableFormsuccessfullyCase = {
     header: 'MESSAGES.COMPLAINT_BOOK_SUCCESSFULLY',
@@ -116,9 +120,22 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.YOU_CAN_NOW_ENABLE_CALL_BARRING_USING_THE_NEW_PIN'],
   };
 
+  public static resetCCBPinsuccessfullyPasswordCase = {
+    header: 'MESSAGES.CCB_PIN_RESET_SUCCESSFULLY',
+    paragraphs: ['MESSAGES.YOU_CAN_NOW_ENABLE_DISABLE_CALL_BARRING_USING_THE_NEW_PIN'],
+  };
+  public static resetCCBPinFailedCase = {
+    header: 'MESSAGES.CCB_PIN_RESET_FAILED',
+    paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
+  };
+
   public static changeCallForwardsuccessfullyCase = {
     header: 'MESSAGES.CALL_FORWARDING_NUMBER_CHANGED_SUCCESSFULLY',
     paragraphs: ['MESSAGES.YOUR_CALLS_WILL_NOW_BE_FORWARDED_TO_THE_NEW_NUMBER'],
+  };
+  public static changeCallForwardFailedCase = {
+    header: 'MESSAGES.CALL_FORWARDING_NUMBER_CHANGE_FAILED',
+    paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
   };
 
   public static tvBoxResetSuccessfullyCase = {
@@ -470,6 +487,15 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static rotuerRebootRequiredAllServices: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      {
+        title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN',
+      },
+    ],
+  };
+
   public static ontRestartInternetAllServices: IMessageIssue = {
     header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
     body: [
@@ -713,6 +739,11 @@ export class CustomerJourneyConstants {
   public static unableToProcessRequest = {
     header: 'MESSAGES.UNABLE_TO_PROCESS_REQUEST',
     paragraphs: ['MESSAGES.IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_ELIFEON'],
+  };
+
+  public static unableToConnectWifiNetwork = {
+    header: 'MESSAGES.MAKE_SURE_TO_SELECT_YOUR_WIFI_NETWORK_NAME_USE_THE_CORRECT_WIFI_PASSWORD_WHILE_CONNECTING_TO_YOUR_WIFI_NETWORK',
+    paragraphs: ['MESSAGES.WE_CAN_HELP_YOU_TO_RESET_WIFI_SETTINGS_IF_YOU_FORGOT_YOUR_WIFI_PASSWORD'],
   };
 
   //#region  Quick Links

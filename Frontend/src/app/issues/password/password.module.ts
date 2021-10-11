@@ -18,6 +18,8 @@ import { ResetElifeOnPinComponent } from './routes/reset-elife-on-pin.component'
 import { ResetTvAdminPinComponent } from './routes/reset-tv-admin-pin.component';
 import { ResetRouterPasswordComponent } from './routes/reset-router-password.component';
 import { ResetCcbPinComponent } from './routes/reset-ccb-pin.component';
+import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
+import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,8 @@ import { ResetCcbPinComponent } from './routes/reset-ccb-pin.component';
     ResetTvAdminPinComponent,
     ResetRouterPasswordComponent,
     ResetCcbPinComponent,
+    ResetElifePinSuccessMessageComponent,
+    ForgotCcbPinMessageComponent,
   ],
   imports: [CommonModule, PasswordRoutingModule, SharedModule],
 })

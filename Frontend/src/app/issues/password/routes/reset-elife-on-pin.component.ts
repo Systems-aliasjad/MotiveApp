@@ -60,7 +60,7 @@ export class ResetElifeOnPinComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     console.log(this.formValue);
-    this.router.navigate(['/reset-login-pin-success']);
+    this.router.navigate(['issues/password/reset-elife-pin-success']);
   }
 
   button2Listener() {

@@ -7,10 +7,10 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 
 /**
- * Unable To Reset Password
+ * Unable To Process Request
  */
 @Component({
-  selector: 'reset-password-fail',
+  selector: 'unable-to-connect-wifi-network',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
+export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -30,8 +30,9 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.BUY_ETISALAT_ROUTER',
+    title: 'BUTTONS.YES_RESET_WIFI_PASSWORD',
   };
+
   button2: IMotiveButton = {
     type: 'link',
     title: 'BUTTONS.CLOSE',
@@ -54,11 +55,11 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.unableToResetPassword;
+    this.Section1Data = CustomerJourneyConstants.unableToConnectWifiNetwork;
   }
 
   button1Listener() {
-    //this.router.navigate(['/thanks']);
+    this.router.navigate(['/issues/internet/reset-wifi-password']);
   }
 
   button2Listener() {

@@ -1,16 +1,13 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { warningImgSrc } from 'src/app/shared/constants/constants';
+import { ApplicableCodes, successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 
-/**
- * Unable To Reset Password
- */
 @Component({
-  selector: 'reset-password-fail',
+  selector: 'unable-elife-login-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -18,23 +15,17 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
+export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.BUY_ETISALAT_ROUTER',
-  };
-  button2: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.CLOSE',
+    title: 'BUTTONS.DONE',
+    type: 'secondary',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -53,15 +44,15 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
-    this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.unableToResetPassword;
+    this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
+    this.imgSrc = successImgSrc;
+    this.Section2Template = ApplicableCodes.userCredentialsTemplate;
+    this.Section2Data = {
+      userId: '<XXX>',
+      pin: '1111@eLife',
+    };
   }
-
   button1Listener() {
-    //this.router.navigate(['/thanks']);
-  }
-
-  button2Listener() {
     this.router.navigate(['/thanks']);
   }
 }
