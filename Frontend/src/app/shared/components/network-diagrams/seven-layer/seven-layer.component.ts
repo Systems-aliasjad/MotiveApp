@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-seven-layer',
@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./seven-layer.component.scss'],
 })
 export class SevenLayerComponent implements OnInit {
-
-  constructor() { }
+  @Input()
+  devices;
+  constructor() {}
 
   ngOnInit() {}
-
 }
