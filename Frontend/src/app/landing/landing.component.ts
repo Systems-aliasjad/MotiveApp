@@ -60,14 +60,14 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   getProductCode() {
-    // this.backendService.getLandingPageData().subscribe((data: any) => {
-    //   this.codeType = data?.result?.productCode;
-    //   this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
-    // });
+    this.backendService.getLandingPageData().subscribe((data: any) => {
+      this.codeType = data?.result?.productCode;
+      this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+    });
 
     //TODO: Remove This
-    this.codeType = '3P';
-    this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+    // this.codeType = '3P';
+    // this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }
 
   headerConfig: IPageHeader = {
