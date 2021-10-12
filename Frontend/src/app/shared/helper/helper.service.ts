@@ -7,7 +7,7 @@ import { SharedService } from '../shared.service';
 
 const temp1 = {
   ontSerial: '485754431E91C19B',
-  ontType: 'I-240G-Ab',
+  ontType: 'I-240G-A',
   isReachable: true,
   isRebootRequired: false,
   isUpgradeRequired: false,
@@ -69,7 +69,7 @@ export class HelperService {
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: `./assets/images/ont/${ontConfig?.ontType}.jpg`, title: ONT };
-    routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
+    routerConfig = { ...routerConfig, url: `./assets/images/router/${routerConfig?.routerModel}.png`, title: ROUTER };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
