@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build:prod": "ng build --configuration=production  --base-href /html/Motive-Frontend/",
-    "build:uat": "ng build --configuration=dev --base-href /html/Motive-Frontend/",
+    "build:prod": "ng build --configuration=production  --base-href /html/motive-frontend/",
+    "build:uat": "ng build --configuration=dev --base-href /html/motive-frontend/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
