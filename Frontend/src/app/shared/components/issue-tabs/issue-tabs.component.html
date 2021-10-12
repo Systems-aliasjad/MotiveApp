@@ -3,15 +3,16 @@
     <!-- Tabs Wizard Start -->
     <div class="tabs-wizard ion-text-center">
       <app-three-layers *ngIf="!connectedDevices" [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
-      <!-- <app-five-layer
+      <app-five-layer
         *ngIf="connectedDevices"
         [ontConfig]="ontConfig"
         [routerConfig]="routerConfig"
         [etisalatConfig]="etisalatConfig"
         [devices]="connectedDevices"
-      ></app-five-layer> -->
+      ></app-five-layer>
       <app-seven-layer [devices]="connectedDevices"></app-seven-layer>
       <!--  <app-multi-layer [devices]="connectedDevices"></app-multi-layer> -->
+      
     </div>
     <!-- Tabs Wizard End -->
 
