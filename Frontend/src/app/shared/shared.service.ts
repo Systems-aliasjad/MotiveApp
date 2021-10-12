@@ -86,11 +86,9 @@ export class SharedService {
   }
 
   setLoader(loaderState: boolean): void {
-    if (loaderState) {
-      this.setHeaderConfig('', false, false);
-    }
     this.loaderSubject.next(loaderState);
   }
+
   getLoader(): Observable<boolean> {
     return this.loader$;
   }

@@ -7,7 +7,7 @@ import { SharedService } from '../shared.service';
 
 const temp1 = {
   ontSerial: '485754431E91C19B',
-  ontType: 'HG8240H',
+  ontType: '2424',
   isReachable: true,
   isRebootRequired: false,
   isUpgradeRequired: false,
