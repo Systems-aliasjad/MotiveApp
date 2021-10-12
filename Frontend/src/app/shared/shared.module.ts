@@ -92,6 +92,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
     CcbPinResetFormComponent,
     ResetRouterPasswordComponent,
     ResetPinComponent,
+    FiveLayerComponent,
     MotiveMessageBulletComponent,
     TabTileComponent,
     MotiveMessageFeedbackComponent,
