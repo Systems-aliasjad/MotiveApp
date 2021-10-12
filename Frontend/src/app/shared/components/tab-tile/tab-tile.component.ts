@@ -1,6 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IonSlides } from '@ionic/angular';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -14,6 +13,10 @@ export class TabTileComponent implements OnInit {
   constructor(private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {}
+
+  onImgError(event) {
+    event.target.src = './assets/images/ont/2424.jpg';
+  }
 }
 
 export class TabTiles {

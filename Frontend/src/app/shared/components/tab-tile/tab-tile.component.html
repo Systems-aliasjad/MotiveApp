@@ -1,6 +1,6 @@
 <div class="states">
   <div [class]="tileConfig?.className + '-state state'">
-    <img [src]="tileConfig?.url" alt="tab-tile" />
+    <img [src]="tileConfig?.url" alt="tab-tile" (error)="onImgError($event)" />
   </div>
   <ion-label>
     {{ tileConfig?.title }}
