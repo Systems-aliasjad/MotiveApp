@@ -1,9 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { successImgSrc } from '../../constants/constants';
+import { warningImgSrc } from '../../constants/constants';
 import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
-import { IMotiveButton } from '../../constants/types';
 
 @Component({
   selector: 'app-generic-error',
@@ -37,8 +36,11 @@ export class GenericErrorComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
-    this.imgSrc = successImgSrc;
-    this.Section1Data = CustomerJourneyConstants.thirdPartyRoutersuccessfullyCase;
+    this.imgSrc = warningImgSrc;
+    this.Section1Data = {
+      header: 'MESSAGES.YOUR_OLD_SESSION_IS_CURRENTLY_IN_PROGRESS',
+      paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
+    };
   }
 
   // button1Listener() {

@@ -28,6 +28,6 @@ export class ThankyouScreenComponent implements OnInit, OnDestroy {
   }
 
   goToLandingScreen = () => {
-    this.router.navigate(['/']);
+    this.router.navigate(['/landing']);
   };
 }

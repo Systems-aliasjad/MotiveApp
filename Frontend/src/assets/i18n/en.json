@@ -171,7 +171,7 @@
     "UNABLE_TO_CONNECT_TO_WIFI_NETWORK": "Unable to connect to Wi-Fi network",
     "YOU_CAN_NOW_ENABLE_DISABLE_CALL_BARRING_USING_THE_NEW_PIN": "You can now enable/disable Call Barring using the new PIN.",
     "CALL_FORWARDING_NUMBER_CHANGE_FAILED": "Call forwarding number change failed",
-    "PLEASE_TRY_AGAIN_LATER": "Please try again later.",
+    "PLEASE_TRY_AGAIN_LATER": "Please try again later",
     "CCB_PIN_RESET_FAILED": "CCB PIN reset failed",
     "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_TV_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "Tap ‘View details’ to take a closer look at your TV service or tap 'Continue to troubleshooting' if there is a specific technical issue.",
     "WE_COULD_NOT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY": "We could not find any technical problem. Your TV service should be working normally.",
@@ -302,7 +302,7 @@
     "DATE_CREATED": "Date created:",
     "APPOINTMENT_DATE": "Appointment Date",
     "APPOINTMENT_TIME": "Appointment Time",
-
+    "YOUR_OLD_SESSION_IS_CURRENTLY_IN_PROGRESS": "Your old session is currently in progress",
     "DATE": "Date",
     "TIME": "Time",
     "EXPECTED_DATE_OF_COMPLETION": "Expected date of completion:",
