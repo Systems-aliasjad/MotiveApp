@@ -74,6 +74,7 @@ const routes: Routes = [
     path: 'landing',
     component: LandingComponent,
   },
+
   {
     path: 'quick-links-all',
     component: QuickLinksAllComponent,
@@ -81,6 +82,11 @@ const routes: Routes = [
   {
     path: 'thanks',
     component: ThankyouScreenComponent,
+  },
+
+  {
+    path: 'other',
+    loadChildren: () => import('./issues/other/other.module').then((m) => m.OtherModule),
   },
   // {
   //   path: '**',

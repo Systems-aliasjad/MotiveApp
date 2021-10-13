@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ICard, IPageHeader } from '../shared/constants/types';
@@ -8,13 +8,13 @@ import { Subscription } from 'rxjs';
 import { ModalController } from '@ionic/angular';
 import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { BackendService } from '../services/backend.service';
-
+import { Location } from '@angular/common';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
-export class LandingComponent implements OnInit, OnDestroy {
+export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   codeType: string;
   selectedLang: string;
   landingPageCards: ICard[];
@@ -27,8 +27,13 @@ export class LandingComponent implements OnInit, OnDestroy {
     public router: Router,
     private modalCtrl: ModalController,
     private backendService: BackendService,
-    private activcatedRoute: ActivatedRoute
+    private activcatedRoute: ActivatedRoute,
+    private location: Location
   ) {}
+  ngAfterViewInit(): void {
+    let encText = this.sharedService.getEncryptedID();
+    this.location.replaceState('?token=' + encText + '&lang=en');
+  }
 
   ngOnInit(): void {
     this.activcatedRoute.params.subscribe(() => {

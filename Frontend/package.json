@@ -38,6 +38,7 @@
     "ag-grid-community": "^25.0.1",
     "ag-grid-enterprise": "^25.0.1",
     "br-mask": "0.0.10",
+    "crypto-js": "^4.1.1",
     "lottie-web": "^5.7.13",
     "moment": "^2.29.1",
     "ngx-dropzone": "^3.0.0",

@@ -20,6 +20,8 @@ export class SharedService {
   loaderSubject: BehaviorSubject<boolean>;
   loader$: Observable<boolean>;
 
+  encryptedID: string = '';
+
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
     singleLine: false,
@@ -109,5 +111,13 @@ export class SharedService {
     this.setHeaderConfig('', false, false);
     this.setTermsConditions(false);
     this.setLoader(false);
+  }
+
+  setEncryptedID(text) {
+    this.encryptedID = text;
+  }
+
+  getEncryptedID() {
+    return this.encryptedID;
   }
 }
