@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-device-list-dialog',
@@ -18,12 +19,13 @@ export class DeviceListDialog implements OnInit {
     },
   ];
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(private modalCtrl: ModalController, private backendService: BackendService) {}
 
   ngOnInit() {}
 
   dismiss() {
     this.modalCtrl.dismiss();
   }
+
   ondeviceClick(val) {}
 }
