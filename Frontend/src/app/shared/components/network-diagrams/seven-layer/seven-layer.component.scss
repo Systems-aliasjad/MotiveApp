@@ -542,12 +542,12 @@ ion-item::part(native) {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        @media screen and (max-width: 769px) {
+        @media screen and (max-width: 992px) {
           width: 65px;
-          background-color: #fcfdfa;
-          background-image: -webkit-linear-gradient(top, #fdfefb 15%, #fcfdfa 100%); /* Chrome10-25,Safari5.1-6 */
-          background-image: -moz-linear-gradient(top, #fdfefb 15%, #fcfdfa 100%); /* FF3.6-15 */
-          background-image: linear-gradient(to bottom, #fdfefb 15%, #fcfdfa 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          background-color: #fbfcf7;
+          background-image: -webkit-linear-gradient(top, #fdfefb 15%, #fbfcf7 100%); /* Chrome10-25,Safari5.1-6 */
+          background-image: -moz-linear-gradient(top, #fdfefb 15%, #fbfcf7 100%); /* FF3.6-15 */
+          background-image: linear-gradient(to bottom, #fdfefb 15%, #fbfcf7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
           /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfefb', endColorstr='#fcfdfa',GradientType=0 ); */
         }
         @media screen and (max-width: 567px) {
