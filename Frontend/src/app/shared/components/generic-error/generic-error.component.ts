@@ -2,7 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { warningImgSrc } from '../../constants/constants';
-import { CustomerJourneyConstants } from '../../constants/CustomerJourneyConstants';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-generic-error',
@@ -20,11 +20,12 @@ export class GenericErrorComponent implements OnInit, OnDestroy {
   //   title: 'BUTTONS.BOOK_A_COMPLAINT',
   // };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      this.sharedService.setLoader(false);
     });
     this.updatePageContent();
   }
