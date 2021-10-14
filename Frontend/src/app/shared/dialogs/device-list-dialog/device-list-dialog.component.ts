@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-device-list-dialog',
@@ -11,15 +13,19 @@ export class DeviceListDialog implements OnInit {
   devicesList: any[] = [
     {
       device: 'Reboot all devices',
-      route: '/',
+      API_PARAM: 'ALL',
     },
     {
       device: 'Reboot internet device',
-      route: '/',
+      API_PARAM: 'ROUTER',
+    },
+    {
+      device: 'Reboot ONT',
+      API_PARAM: 'ONT',
     },
   ];
 
-  constructor(private modalCtrl: ModalController, private backendService: BackendService) {}
+  constructor(private modalCtrl: ModalController, private backendService: BackendService, private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {}
 
@@ -27,5 +33,12 @@ export class DeviceListDialog implements OnInit {
     this.modalCtrl.dismiss();
   }
 
-  ondeviceClick(val) {}
+  ondeviceClick(forDevice) {
+    this.dismiss();
+    this.sharedService.setLoader(true);
+    this.backendService.rebootMyDevice(forDevice).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['issues/internet/service-detail']);
+    });
+  }
 }

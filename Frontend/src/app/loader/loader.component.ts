@@ -66,6 +66,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
     clearInterval(this.percentInterval);
     this.minuteInterval = 0;
     this.percentInterval = 0;
+    this.percentageLoaded = 0;
   }
 
   ngOnDestroy() {
