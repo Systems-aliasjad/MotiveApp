@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { NetWorkDiagramIds } from '../../constants/constants';
 import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from '../../constants/types';
 
 @Component({
@@ -7,6 +8,9 @@ import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from '../../con
   styleUrls: ['./diagnose-issue.component.scss'],
 })
 export class DiagnoseIssueComponent implements OnInit {
+  @Input()
+  networkDiagram: NetWorkDiagramIds;
+
   @Input()
   button1: IMotiveButton;
   @Output()

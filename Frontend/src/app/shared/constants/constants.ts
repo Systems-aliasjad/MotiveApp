@@ -64,6 +64,12 @@ export enum ERoutingIds {
   routerNotReachableOwnRouter,
 }
 
+export enum NetWorkDiagramIds {
+  ThreeLayer = 1,
+  FiveLayer,
+  SevenLayer,
+}
+
 // const P3: string = '3P';
 // const P2: string = '2P';
 // const P1: string = '1P';

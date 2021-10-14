@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -12,6 +12,7 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-no-issues',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -29,6 +30,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   modal: HTMLIonModalElement;
+  networkDiagram = NetWorkDiagramIds.SevenLayer;
 
   ontConfig;
   routerConfig;
@@ -112,6 +114,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     //   }
     // );
     const apiResponse = this.sharedService.getApiResponseData();
+
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;

@@ -70,7 +70,6 @@ export class HelperService {
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     // ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
     // routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
-
     ontConfig = { ...ontConfig, url: `./assets/images/ont/${ontConfig?.ontType}.jpg`, title: ONT };
     routerConfig = { ...routerConfig, url: `./assets/images/router/EA8500EB.png`, title: ROUTER };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
@@ -137,8 +136,8 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
+      //this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6, hsiUploadDownload: '50Mbps,250Mbps'.split(',') });
       // this.router.navigate(['issues/internet/no-issue']);
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6, hsiUploadDownload: '50Mbps,250Mbps'.split(',') });
       this.sharedService.setApiResponseData({
         ontDetails: data?.ontDetails,
         routerDetails: data?.routerDetails,

@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { IMessageIssue, IOntDetail, IRouterDetail, ITabTile } from '../../constants/types';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { NetWorkDiagramIds } from '../../constants/constants';
 
 @Component({
   selector: 'app-issue-tabs',
@@ -9,6 +10,9 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./issue-tabs.component.scss'],
 })
 export class IssueTabsComponent implements OnInit, OnDestroy {
+  @Input()
+  networkDiagram: NetWorkDiagramIds;
+
   @Input()
   ontConfig: IOntDetail;
   @Input()
