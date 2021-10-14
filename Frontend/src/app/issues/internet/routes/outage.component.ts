@@ -7,7 +7,7 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 
 @Component({
-  selector: 'app-tv-outage',
+  selector: 'app-internet-outage',
   template: `<app-diagnose-issue
     [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"

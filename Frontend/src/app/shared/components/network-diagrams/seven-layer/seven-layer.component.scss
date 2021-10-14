@@ -638,9 +638,9 @@ ion-item::part(native) {
    margin: 0;
    width: 100%;
    height: 100%;
-   border-top: 3px solid #febaba;
+   border-top: 3px solid #ffffff;
    border-bottom: 0 solid transparent;
-   border-left: 0px;
+   border-left: 0;
    border-right: 0;
   }
 }
@@ -677,7 +677,7 @@ ion-item::part(native) {
       width:1rem;
       height: 100%;
       border-top-left-radius: .7rem;
-      border:3px solid rgba(190, 18, 24, 0.6);
+      border:3px solid #ffffff;
       border-bottom:transparent;
       border-right:transparent;
     }
@@ -687,72 +687,64 @@ ion-item::part(native) {
       right: 0;
     }
   } 
-  .default-lines{
-    .curve-line{
-      &:after {
-        border:3px solid #F1F1EB;
-        border-right:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 3px solid #F1F1EB;
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
+  .default-curve-line{
+    &:after {
+      border:3px solid #F1F1EB;
+      border-right:transparent;
+      border-bottom:transparent;
     }
   }
-  .error-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(190, 18, 24, 0.6);
-        border-right:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 2.5px solid rgba(190, 18, 24, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-      }
+  .default-horizontal-line{
+    &:before{
+      border-top: 3px solid #F1F1EB;
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
   }
-  .pending-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(255, 102, 49, 0.6);
-        border-right:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 2.5px solid rgba(255, 102, 49, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-      }
+  .error-curve-line{
+    &:after {
+      border:3px solid rgba(190, 18, 24, 0.6);
+      border-right:transparent;
+      border-bottom:transparent;
     }
   }
-  .okay-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(113, 158, 25, 70%);
-        border-right:transparent;
-        border-bottom:transparent;
-      }
+  .error-horizontal-line{
+    &:before{
+      border-top: 2.5px solid rgba(190, 18, 24, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
-    .horizontal-line{
-     &:before{
-        border-top:2.5px solid rgba(113, 158, 25, 70%);
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
+  }
+  .pending-curve-line{
+    &:after {
+      border:3px solid rgba(255, 102, 49, 0.6);
+      border-right:transparent;
+      border-bottom:transparent;
+    }
+  }
+  .pending-horizontal-line{
+    &:before{
+      border-top: 2.5px solid rgba(255, 102, 49, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0px;
+      border-right: 0;
+    }
+  }
+  .okay-curve-line{
+    &:after {
+      border:3px solid rgba(113, 158, 25, 70%);
+      border-right:transparent;
+      border-bottom:transparent;
       }
+  }
+  .okay-horizontal-line{
+    &:before{
+      border-top:2.5px solid rgba(113, 158, 25, 70%);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
   }
 }
@@ -776,9 +768,71 @@ ion-item::part(native) {
       width:1rem;
       height: 100%;
       border-top-right-radius: .7rem;
-      border:3px solid rgba(190, 18, 24, 0.6);
+      border:3px solid #ffffff;
       border-bottom:transparent;
       border-left:transparent;
+    }
+  }
+  .default-curve-line{
+    &:after {
+      content:"";
+      display:block;
+      border:3px solid #F1F1EB;
+      border-left:transparent;
+      border-bottom:transparent;
+    }
+  }
+  .default-horizontal-line{
+    &:before{
+       border-top: 3px solid #F1F1EB;
+       border-bottom: 0 solid transparent;
+       border-left: 0px;
+       border-right: 0;
+     }
+   }
+  .error-curve-line{
+    &:after {
+      border:3px solid rgba(190, 18, 24, 0.6);
+      border-left:transparent;
+      border-bottom:transparent;
+    }
+  }
+  .error-horizontal-line{
+   &:before{
+      border-top: 3px solid rgba(190, 18, 24, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0px;
+      border-right: 0;
+    }
+  }
+  .pending-curve-line{
+    &:after {
+      border:3px solid rgba(255, 102, 49, 0.6);
+      border-left:transparent;
+      border-bottom:transparent;
+    }
+  }
+  .pending-horizontal-line{
+    &:before{
+      border-top:2.5px solid rgba(255, 102, 49, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+  .okay-curve-lines{
+    &:after {
+      border:3px solid rgba(113, 158, 25, 70%);
+      border-left:transparent;
+      border-bottom:transparent;
+    }
+  }
+  .okay-horizontal-line{
+    &:before{
+      border-top:2.5px solid rgba(113, 158, 25, 70%);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
   }
   .box-big{
@@ -792,74 +846,5 @@ ion-item::part(native) {
       left: 0;
     }
   } 
-  .default-lines{
-    .curve-line{
-      &:after {
-        border:3px solid #F1F1EB;
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 3px solid #F1F1EB;
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-        
-      }
-    }
-  }
-  .error-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(190, 18, 24, 0.6);
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 3px solid rgba(190, 18, 24, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-      }
-    }
-  }
-  .pending-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(255, 102, 49, 0.6);
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top:2.5px solid rgba(255, 102, 49, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
-    }
-  }
-  .okay-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(113, 158, 25, 70%);
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top:2.5px solid rgba(113, 158, 25, 70%);
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
-    }
-  }
 }
 //-------------------- Right Box Color Lines End ----------------------

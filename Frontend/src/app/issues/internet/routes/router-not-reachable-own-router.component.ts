@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -10,6 +10,7 @@ import { HelperService } from '../../../shared/helper/helper.service';
 @Component({
   selector: 'app-router-not-reachable-own-router',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
@@ -29,6 +30,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   ontConfig: IOntDetail;
   routerConfig: IRouterDetail;
   subscription: Subscription;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   messageSection;
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',

@@ -6,11 +6,12 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 import { BackendService } from '../../../services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-password-reset',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -28,6 +29,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   messageSection;
   ontConfig;
   routerConfig;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
     title: 'BUTTONS.RESET_NOW',
