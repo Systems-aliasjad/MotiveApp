@@ -34,6 +34,7 @@ import { MultiLayerComponent } from './components/network-diagrams/multi-layer/m
 import { FiveLayerComponent } from './components/network-diagrams/five-layer/five-layer.component';
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
+import { GenericErrorIssuesComponent } from './components/generic-error-issues/generic-error-issues.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
     HeaderSingleLineComponent,
     HeaderMultiLineComponent,
     TransferPackageComponent,
+    GenericErrorIssuesComponent,
   ],
   imports: [
     CommonModule,

@@ -22,6 +22,7 @@ import { ResetPinComponent } from './shared/components/reset-pin/reset-pin.compo
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 import { EIssueFlow, IssueListDialog } from './shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { GenericErrorComponent } from './shared/components/generic-error/generic-error.component';
+import { GenericErrorIssuesComponent } from './shared/components/generic-error-issues/generic-error-issues.component';
 
 const routes: Routes = [
   {
@@ -69,6 +70,10 @@ const routes: Routes = [
   {
     path: 'unknown-error',
     component: GenericErrorComponent,
+  },
+  {
+    path: 'unknown-issue',
+    component: GenericErrorIssuesComponent,
   },
   {
     path: 'landing',
