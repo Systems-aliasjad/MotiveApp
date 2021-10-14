@@ -2,7 +2,7 @@
   <ion-col sizeLg="6" sizeMd="12" size="12" git class="issue-tabs_wizard two-col_left">
     <!-- Tabs Wizard Start -->
     <div class="tabs-wizard ion-text-center">
-      <app-three-layers [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
+      <app-three-layers *ngIf="!connectedDevices" [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
       <!-- <app-five-layer
         *ngIf="connectedDevices"
         [ontConfig]="ontConfig"
@@ -10,7 +10,7 @@
         [etisalatConfig]="etisalatConfig"
         [devices]="connectedDevices"
       ></app-five-layer> -->
-      <!-- <app-seven-layer [devices]="connectedDevices"></app-seven-layer> -->
+      <app-seven-layer [devices]="connectedDevices"></app-seven-layer>
       <!--  <app-multi-layer [devices]="connectedDevices"></app-multi-layer> -->
     </div>
     <!-- Tabs Wizard End -->
