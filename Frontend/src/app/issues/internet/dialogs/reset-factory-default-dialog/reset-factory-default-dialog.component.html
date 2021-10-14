@@ -4,11 +4,11 @@
       <ion-toolbar>
         <ion-title>
           <h5>{{ 'MESSAGES.RESET_TO_FACTORY_DEFAULT' | translate }}</h5>
-        </ion-title>                          
-          <ion-buttons slot="end">
-            <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-            <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close">
-          </ion-buttons>
+        </ion-title>
+        <ion-buttons slot="end">
+          <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
+          <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close" />
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-row>
@@ -36,7 +36,7 @@
           <motive-button [type]="'terms'"></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-          <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'primary'" (clickHandler)="CloseMOdal()"></motive-button>
+          <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'primary'" (clickHandler)="CloseModal()"></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
           <motive-button [title]="'BUTTONS.CANCEL'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>

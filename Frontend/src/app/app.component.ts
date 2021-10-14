@@ -48,6 +48,7 @@ export class AppComponent implements OnInit {
     this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
       this.authService.setAuthorizationToken(data?.result?.token);
       this.sharedService.setLoader(false);
+      localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
       this.router.navigate(['landing'], { state: { user: data?.result } });
     });
 
