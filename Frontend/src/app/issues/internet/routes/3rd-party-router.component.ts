@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -11,6 +11,7 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-3rd-party-router',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
@@ -32,6 +33,7 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
   routerConfig: IRouterDetail;
   connectedDevices;
   subscription: Subscription;
+  networkDiagram = NetWorkDiagramIds.SevenLayer;
   messageSection;
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',

@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -12,6 +12,7 @@ import { BackendService } from 'src/app/services/backend.service';
 @Component({
   selector: 'app-router-reboot-required',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
@@ -30,6 +31,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   routerConfig: IRouterDetail;
   subscription: Subscription;
   messageSection;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   button1: IMotiveButton = {
     title: 'BUTTONS.RESTART_NOW',
     type: 'primary',

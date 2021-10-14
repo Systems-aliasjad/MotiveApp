@@ -29,12 +29,12 @@ export class MainComponent implements OnInit {
         interfaceType: '802.11',
       },
     ],
-    upsellingOpportunity: 'UPSEL1',
+    upsellingOpportunity: 'UPSEL2',
     tsOutcome: 'No Issue Found',
   };
 
   ngOnInit() {
-    // this.helperService.flowIdentifier('CI72', this.hardData);
+    // // this.helperService.flowIdentifier('CI72', this.hardData);
     this.activatedRoute.params.subscribe(() => {
       this.shareService.setLoader(true);
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data: any) => {
