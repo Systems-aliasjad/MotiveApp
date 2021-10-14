@@ -59,7 +59,7 @@
           </div>
         </div>
         <div class="image-text-boxes-container">
-          <div class="image-text-boxes left-box-one">
+          <div class="image-text-boxes left-box-one" *ngIf="connectedDevices[0]">
             <div class="image-text-box">
               <div [class]="connectedDevices[0]?.className + '-state state'">
                 <img [src]="connectedDevices[0]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
@@ -67,7 +67,7 @@
               <span class="image_label">{{ connectedDevices[0]?.title }}</span>
             </div>
           </div>
-          <div class="image-text-boxes left-box-two">
+          <div class="image-text-boxes left-box-two" *ngIf="connectedDevices[1]">
             <div class="image-text-box">
               <div [class]="connectedDevices[1]?.className + '-state state'">
                 <img [src]="connectedDevices[1]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
@@ -91,7 +91,7 @@
           </div>
         </div>
         <div class="image-text-boxes-container">
-          <div class="image-text-boxes right-box-one">
+          <div class="image-text-boxes right-box-one" *ngIf="connectedDevices[2]">
             <div class="image-text-box">
               <div [class]="connectedDevices[2]?.className + '-state state'">
                 <img [src]="connectedDevices[2]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
@@ -99,7 +99,7 @@
               <span class="image_label">{{ connectedDevices[2]?.title }}</span>
             </div>
           </div>
-          <div class="image-text-boxes right-box-two">
+          <div class="image-text-boxes right-box-two" *ngIf="connectedDevices[3]">
             <div class="image-text-box">
               <div [class]="connectedDevices[3]?.className + '-state state'">
                 <img [src]="connectedDevices[3]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
