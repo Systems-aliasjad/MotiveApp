@@ -24,6 +24,8 @@ import { SharedService } from '../../../shared/shared.service';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
+    [button3]="button3"
+    (button3Click)="button3Listener()"
   >
   </app-diagnose-issue>`,
 })
@@ -45,7 +47,6 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.REBOOT_MY_DEVICES',
     type: 'secondary',
   };
-
   button3: IMotiveButton = {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     type: 'link',
@@ -86,7 +87,11 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', isCI7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   async button2Listener() {
@@ -97,8 +102,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', isCI7: true });
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['issues/internet/service-detail']);
   }
 
   getIssueTilesData() {

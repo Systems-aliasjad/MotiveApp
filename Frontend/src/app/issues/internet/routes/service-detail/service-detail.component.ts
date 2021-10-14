@@ -62,8 +62,11 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', isCI7: true });
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', isCI7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   async button2Listener() {
