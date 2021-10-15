@@ -1,14 +1,14 @@
-<ion-content padding>
+<ion-content padding malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
   <ion-grid class="form-main-container">
     <ion-header>
       <ion-toolbar>
         <ion-title>
           <h5>{{ 'MESSAGES.RESET_TO_FACTORY_DEFAULT' | translate }}</h5>
-        </ion-title>                          
-          <ion-buttons slot="end">
-            <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-            <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close">
-          </ion-buttons>
+        </ion-title>
+        <ion-buttons slot="end">
+          <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
+          <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close" />
+        </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-row>
