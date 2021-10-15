@@ -51,12 +51,22 @@ ion-item::part(native){
   -ms-flex-align: center;
   align-items: center;
   margin-top: 5rem;
-  @media screen and (max-width: 767px) {
-    margin-top: 6rem;
+  max-width: 450px;
+  @media screen and (max-width: 1024px){
+    margin-top: 8rem;
+  }
+  .info-container_icon{
+    img{
+        width: 110px;
+    }
   }
   h4 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
+    font-weight: 600;
+    @media screen and (max-width: 767px){
+      font-size: 16px;
+    }
   }
   .content {
     p {
@@ -65,6 +75,9 @@ ion-item::part(native){
       color: #848789;
       text-align: center;
       word-break: break-word;
+      @media screen and (max-width: 767px){
+        font-size: 14px;
+      }
     }
   }
   .info-container_detail_followup {
