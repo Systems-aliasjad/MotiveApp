@@ -94,6 +94,11 @@ ion-item::part(native){
       @media screen and (max-width: 376px) {
         margin-bottom: 2rem;
       }
+      ion-label{
+        @media screen and (max-width: 767px){
+          font-size: 14px;
+        }
+      }
     }
   }
   .info-container_follow {
@@ -130,6 +135,9 @@ ion-item::part(native){
     ion-label{
       color: $primary-color;
       font-size: 1.1rem;
+      @media screen and (max-width: 767px){
+        font-size: 14px;
+      }
       @media screen and (max-width: 321px) {
         margin-bottom: 1rem;
       }
