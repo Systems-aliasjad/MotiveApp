@@ -209,6 +209,9 @@ ion-item::part(native) {
         @media screen and (max-width: 992px) {
           padding-bottom: 0;
         }
+        @media screen and (max-width: 767px) {
+          padding-top: 0;
+        }
       }
       &:last-child {
         margin-bottom: 0;
