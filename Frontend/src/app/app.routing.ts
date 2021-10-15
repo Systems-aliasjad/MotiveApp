@@ -92,10 +92,10 @@ const routes: Routes = [
   //   redirectTo: 'landing',
   // },
 
-  // {
-  //   path: 'loader',
-  //   component: LoaderComponent,
-  // },
+ {
+    path: 'loader',
+     component: LoaderComponent,
+  },
   // {
   //   path: 'router-restart',
   //   component: RestartInstructionComponent,

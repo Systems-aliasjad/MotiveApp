@@ -22,6 +22,7 @@ ion-item::part(native) {
   --border-width: 0;
   --inner-border-width: 0;
 }
+//------------------------------------------------------------------
 
 .service-detail_slider {
   .service-states-container {
@@ -194,6 +195,10 @@ ion-item::part(native) {
         }
         .sub-title {
           letter-spacing: 0;
+          @media screen and (max-width: 767px) {
+            font-size:15px;
+          }
+         
         }
       }
       margin-bottom: 1rem;
@@ -253,6 +258,9 @@ ion-item::part(native) {
           span {
             margin-left: 0.5rem;
             color: $secondary-color;
+            @media screen and (max-width: 767px) {
+              font-size:14px;
+            }
           }
         }
       }
@@ -268,6 +276,9 @@ ion-item::part(native) {
         color: $secondary-color;
         margin-top: 0;
         margin-bottom: 0.5rem;
+        @media screen and (max-width: 767px) {
+          font-size:14px;
+        }
         &:last-child {
           margin-bottom: 0;
         }
@@ -296,11 +307,18 @@ ion-item::part(native) {
         margin-top: 0;
         margin-bottom: 0;
         color: $secondary-color;
+        @media screen and (max-width: 767px) {
+          font-size:14px;
+        }
       }
       span {
         display: block;
         color: $primary-color;
         font-weight: 700;
+        @media screen and (max-width: 767px) {
+          font-size:14px;
+        }
+       
       }
     }
     .devices-list-container {
@@ -330,7 +348,7 @@ ion-item::part(native) {
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
-          @media screen and (max-width: 361px) {
+          @media screen and (max-width: 281px) {
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
             -ms-flex-direction: column;
@@ -348,7 +366,10 @@ ion-item::part(native) {
           .sub-title {
             margin-bottom: 0;
             margin-left: 1rem;
-            @media screen and (max-width: 361px) {
+            @media screen and (max-width: 767px) {
+              font-size:15px;
+            }
+            @media screen and (max-width: 281x) {
               margin-top: 1rem;
               margin-left: 0rem;
             }
@@ -357,6 +378,9 @@ ion-item::part(native) {
         ion-card-content {
           p {
             margin-bottom: 0.5rem;
+            @media screen and (max-width: 767px) {
+             font-size:14px;
+            }
           }
         }
       }
