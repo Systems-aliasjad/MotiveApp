@@ -36,6 +36,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css",
               {
                 "input": "node_modules/@ionic/angular/css/core.css"
               },
@@ -70,7 +71,7 @@
                 "input": "src/theme/variables.scss"
               }
             ],
-            "scripts": [],
+            "scripts": ["node_modules/jquery/dist/jquery.min.js", "node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"],
             "vendorChunk": true,
             "extractLicenses": false,
             "buildOptimizer": false,

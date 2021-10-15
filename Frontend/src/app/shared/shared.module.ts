@@ -35,7 +35,7 @@ import { FiveLayerComponent } from './components/network-diagrams/five-layer/fiv
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
 import { GenericErrorIssuesComponent } from './components/generic-error-issues/generic-error-issues.component';
-
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 @NgModule({
   declarations: [
     DiagnoseIssueComponent,
@@ -81,6 +81,7 @@ import { GenericErrorIssuesComponent } from './components/generic-error-issues/g
       },
       defaultLanguage: 'en',
     }),
+    MalihuScrollbarModule.forRoot(),
   ],
   exports: [
     DiagnoseIssueComponent,
