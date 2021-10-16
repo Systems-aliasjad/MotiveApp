@@ -28,7 +28,11 @@ export class BackendService {
   }
 
   resetWifiPassword(data) {
-    return this.http.put(`motive/troubleshoot/wifi-password-reset`, { ...data });
+    return this.http.put(`motive/troubleshoot/reset-wifi-password`, { ...data });
+  }
+
+  resetRouter(data) {
+    return this.http.put(`motive/troubleshoot/next-step`, data);
   }
 
   rebootMyDevice(DeviceToReeboot: string) {

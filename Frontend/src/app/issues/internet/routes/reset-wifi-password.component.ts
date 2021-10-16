@@ -61,11 +61,17 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
-  button1Listener() {}
+  button1Listener() {
+    this.sharedService.setLoader(true);
+    this.backendService.resetRouter({ signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+  }
 
   button2Listener(_event) {
     this.sharedService.setLoader(true);
-    this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
+    this.backendService.resetRouter({ data: { ..._event }, signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });

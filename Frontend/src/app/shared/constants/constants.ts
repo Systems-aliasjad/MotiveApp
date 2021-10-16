@@ -46,10 +46,10 @@ export const SVGs = {
     default: './assets/images/network-map-icons/icon_home_default.svg',
   },
   ont: {
-    default: './assets/images/ont/default_ont.png',
+    default: './assets/images/ont/default_ont.PNG',
   },
   router: {
-    default: './assets/images/router/default_router.png',
+    default: './assets/images/router/default_router.PNG',
   },
 };
 

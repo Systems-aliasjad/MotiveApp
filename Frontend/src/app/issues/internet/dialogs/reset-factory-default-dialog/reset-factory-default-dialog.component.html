@@ -36,7 +36,7 @@
           <motive-button [type]="'terms'"></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-          <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'primary'" (clickHandler)="CloseModal()"></motive-button>
+          <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'primary'" (clickHandler)="CloseModal()" [disable]="!terms"></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
           <motive-button [title]="'BUTTONS.CANCEL'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>

@@ -63,7 +63,7 @@ export class ThirdPartyRouterFormComponent implements OnInit, OnDestroy {
     this.formGroup = _event;
     // console.log(this.formGroup.valid);
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, CI7: true }).subscribe((data: any) => {
+    this.backendService.bookComplaint({ ...this.formGroup.value, isCI7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
     });
 

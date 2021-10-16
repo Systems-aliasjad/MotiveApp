@@ -63,9 +63,9 @@ export class InstallNewRouterComplaintSuccessfullyMessageComponent implements On
     this.Section1Data = CustomerJourneyConstants.InstallNewRouterComplaintRaisedSuccessfully;
     this.Section2Template = ApplicableCodes.installNewRouterComplaintBookSuccessfullyTemplate;
     this.Section2Data = {
-      referenceNo: '436529873',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      location: 'Xxxxx xxxxx xxxx',
+      referenceNo: '-',
+      dateVisit: '-',
+      location: '-',
     };
   }
 
