@@ -135,7 +135,7 @@ export class HelperService {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
       //this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6, hsiUploadDownload: '50Mbps,250Mbps'.split(',') });
-      // this.router.navigate(['issues/internet/no-issue']);
+      //this.router.navigate(['issues/internet/no-issue']);
       this.sharedService.setApiResponseData({
         ontDetails: data?.ontDetails,
         routerDetails: data?.routerDetails,

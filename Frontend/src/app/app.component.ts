@@ -38,9 +38,9 @@ export class AppComponent implements OnInit {
     }
     this.subscribeLoaderChanges();
     // TODO: REMOVE THIS
-    //   this.sharedService.setDefaultLanguage('en');
-    //  this.appDirection = 'ltr';
-    //  this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
+    // this.sharedService.setDefaultLanguage('en');
+    // this.appDirection = 'ltr';
+    // this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
 
     //TODO: uncomment This
     this.sharedService.setDefaultLanguage(params?.lang || 'ara');

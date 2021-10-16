@@ -48,13 +48,13 @@
       <div class="boxes left-box">
         <div class="box-curve-lines curve-lines-left">
           <div class="box-big">
-            <div class="box-curve-line">
-              <div class="curve-line okay-curve-line"></div>
-              <div class="horizontal-line okay-horizontal-line"></div>
+            <div class="box-curve-line" *ngIf="connectedDevices[0]">
+              <div [class]="connectedDevices[0]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[0]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
-            <div class="box-small">
-              <div class="curve-line okay-curve-line"></div>
-              <div class="horizontal-line okay-horizontal-line"></div>
+            <div class="box-small" *ngIf="connectedDevices[1]">
+              <div [class]="connectedDevices[1]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[1]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
           </div>
         </div>
@@ -77,9 +77,17 @@
           </div>
         </div>
       </div>
-      <div class="boxes right-box">
+      <div class="boxes right-box" *ngIf="connectedDevices[2] || connectedDevices[3]">
         <div class="box-curve-lines curve-lines-right">
           <div class="box-big">
+            <!-- <div class="box-curve-line" *ngIf="connectedDevices[3]">
+              <div [class]="connectedDevices[3]?.className + 'oaky-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[3]?.className + '-horizontal-line horizontal-line'"></div>
+            </div>
+            <div class="box-small" *ngIf="connectedDevices[2]">
+              <div [class]="connectedDevices[2]?.className + '-horizontal-line horizontal-line'"></div>
+              <div [class]="connectedDevices[2]?.className + '-curve-line curve-line'"></div>
+            </div> -->
             <div class="box-curve-line">
               <div class="curve-line default-curve-line"></div>
               <div class="horizontal-line default-horizontal-line"></div>
