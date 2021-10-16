@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from '../../constants/constants';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -36,9 +37,13 @@ export class DeviceListDialog implements OnInit {
   ondeviceClick(forDevice) {
     this.dismiss();
     this.sharedService.setLoader(true);
-    this.backendService.rebootMyDevice(forDevice).subscribe(() => {
+    this.backendService.rebootMyDevice(forDevice).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.router.navigate(['issues/internet/service-detail']);
+      if (data?.result?.screenCode === flowCodes.genericError) {
+        this.router.navigate(['/unknown-error']);
+      } else {
+        this.router.navigate(['issues/internet/service-detail']);
+      }
     });
   }
 }
