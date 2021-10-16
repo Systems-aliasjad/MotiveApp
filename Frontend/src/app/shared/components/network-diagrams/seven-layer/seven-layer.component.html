@@ -80,21 +80,13 @@
       <div class="boxes right-box" *ngIf="connectedDevices[2] || connectedDevices[3]">
         <div class="box-curve-lines curve-lines-right">
           <div class="box-big">
-            <!-- <div class="box-curve-line" *ngIf="connectedDevices[3]">
-              <div [class]="connectedDevices[3]?.className + 'oaky-curve-line curve-line'"></div>
+            <div class="box-curve-line" *ngIf="connectedDevices[3]">
+              <div [class]="connectedDevices[3]?.className + '-curve-line curve-line'"></div>
               <div [class]="connectedDevices[3]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
             <div class="box-small" *ngIf="connectedDevices[2]">
               <div [class]="connectedDevices[2]?.className + '-horizontal-line horizontal-line'"></div>
               <div [class]="connectedDevices[2]?.className + '-curve-line curve-line'"></div>
-            </div> -->
-            <div class="box-curve-line">
-              <div class="curve-line default-curve-line"></div>
-              <div class="horizontal-line default-horizontal-line"></div>
-            </div>
-            <div class="box-small">
-              <div class="horizontal-line default-horizontal-line"></div>
-              <div class="curve-line default-curve-line"></div>
             </div>
           </div>
         </div>
