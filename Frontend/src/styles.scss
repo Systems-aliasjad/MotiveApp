@@ -536,6 +536,9 @@ ion-modal,
 .tag-title {
   color: $primary-color;
   font-weight: 600;
+  @media screen and (max-width: 767px) {
+    font-size:14px;
+  }
 }
 html {
   --background: var(--ion-background-color, #f4f7eb);
