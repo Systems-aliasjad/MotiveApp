@@ -351,19 +351,53 @@ ion-radio::part(container) {
 ion-modal,
 .sc-ion-modal-md-h,
 .sc-ion-modal-ios-h {
-  --border-radius: 1rem;
+ /*  --border-radius: 1rem;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0; */
   --width: 100%;
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
   @media screen and (max-width: 767px) {
     --height: 70%;
-    --border-radius: 0;
+    /* --border-radius: 0; */
   }
   @media screen and (max-width: 281px) {
     --height: 100%;
   }
 }
+.modal-wrapper,
+.modal-wrapper.sc-ion-modal-md,
+.modal-wrapper.sc-ion-modal-ios{
+  border-top-left-radius: 0.6rem;
+  border-top-right-radius: 0.6rem;
+}
+.mCS-dark-3.mCSB_scrollTools{
+  .mCSB_dragger{
+    &:active{
+      .mCSB_dragger_bar{
+        background-color:$etisalat-color !important;
+      }
+    }
+    .mCSB_dragger_bar{
+      background-color:$etisalat-color !important;
+    }
+  }
+  .mCSB_dragger_onDrag{
+    .mCSB_dragger_bar{
+      background-color:$etisalat-color !important;
+    }
+  }
+  .mCSB_draggerRail{
+    background-color: $white !important;
+  }
+} 
+.mCS-light-3.mCSB_scrollTools{
+  .mCSB_draggerRail{
+    background-color: $white !important;
+  }
+} 
+
 // ------------Modal End-------------------
 
 // ------------Bullet List Start-------------------
@@ -474,7 +508,9 @@ ion-modal,
   align-items: center;
   letter-spacing: 0.14285714em;
   text-decoration: none;
-
+  @media screen and (max-width: 767px) {
+    font-size:15px;
+  }
   &:hover {
     text-decoration: underline;
     color: $primary-color;
@@ -545,15 +581,24 @@ html {
     margin-bottom: 0;
   }
 }
+.web-title{
+  @media screen and (max-width: 767px) {
+    display:none;
+  }
+}
 .transparent-btn {
   a {
     display: inline-block;
     text-decoration: none;
     color: $etisalat-color;
     text-transform: $text-uppercase;
-    letter-spacing: 0.14285714em;
+    /* letter-spacing: 0.14285714em; */
+    letter-spacing: .1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    @media screen and (max-width: 767px)  {
+      font-size:13px;
+    }
     @include transition(all 0.3s ease-in-out);
     &:hover,
     &:focus,
@@ -561,9 +606,9 @@ html {
       text-decoration: none;
       color: $primary-color;
     }
-    @media screen and (max-width: 320px) {
+    /* @media screen and (max-width: 320px) {
       font-size: 0.9rem;
-    }
+    } */
   }
 }
 .two-col-container,
@@ -661,6 +706,8 @@ app-header-single-line {
   @media screen and (max-width: 992px) {
     box-shadow: none;
     background-color: transparent;
+    padding-right: 0.5rem;
+    padding-left: 0.3rem;
   }
   .footer-btns-container {
     margin-top: 0.5rem;

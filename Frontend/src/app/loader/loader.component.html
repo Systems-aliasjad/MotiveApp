@@ -1,4 +1,6 @@
+<!-- <ion-content *ngIf="shouldShow"></ion-content> -->
 <ion-content *ngIf="shouldShow">
+  <span class="header-wrapper-wave"></span>
   <div class="loader-main-container">
     <ion-grid class="info-container">
       <ion-row>
@@ -12,8 +14,10 @@
       <ion-row class="content">
         <ion-col size="12">
           <h4>{{ 'HEADER.ALMOST_THERE' | translate }}</h4>
-          <P *ngFor="let message of messages"> {{ message | translate }}</P>
-        </ion-col>
+          <div class="content_detail">
+            <P *ngFor="let message of messages"> {{ message | translate }}</P>
+          </div>
+         </ion-col>
       </ion-row>
     </ion-grid>
   </div>

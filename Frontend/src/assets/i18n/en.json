@@ -167,6 +167,9 @@
   },
 
   "MESSAGES": {
+    "THANK_YOU_FOR_USING_SELF_CARE": "Thank you for using Self-care.",
+    "HOPE_WE_COULD_MAKE_YOUR_EXPERIENCE_BETTER": "Hope we could make your experience better.",
+
     "WE_ARE_FACING_SOME_ISSUES": "We are facing some issues",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "We have fixed the technical issues.  Please reset the router and TV box and then try using the internet again.",
     "UNABLE_TO_CONNECT_TO_WIFI_NETWORK": "Unable to connect to Wi-Fi network",

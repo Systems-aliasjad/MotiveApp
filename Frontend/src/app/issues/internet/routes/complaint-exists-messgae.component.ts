@@ -55,10 +55,10 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.router.navigate(['/track-complaint/complaint-details-message']);
   }
 
   button2Listener() {
-    this.router.navigate(['/bookComplaint']);
+    this.router.navigate(['/issues/internet/book-complaint']);
   }
 }
