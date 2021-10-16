@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
@@ -23,6 +24,8 @@ import { SharedService } from '../../../shared/shared.service';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
+    [button3]="button3"
+    (button3Click)="button3Listener()"
   >
   </app-diagnose-issue>`,
 })
@@ -44,13 +47,18 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.REBOOT_MY_DEVICES',
     type: 'secondary',
   };
+  button3: IMotiveButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    type: 'link',
+  };
 
   constructor(
     private helperService: HelperService,
     private sharedService: SharedService,
     private router: Router,
     private modalCtrl: ModalController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
   ) {}
 
   ngOnInit() {
@@ -79,7 +87,11 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/service-detail']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', isCI7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   async button2Listener() {
@@ -87,6 +99,10 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
       component: DeviceListDialog,
     });
     return await this.modal.present();
+  }
+
+  button3Listener() {
+    this.router.navigate(['issues/internet/service-detail']);
   }
 
   getIssueTilesData() {

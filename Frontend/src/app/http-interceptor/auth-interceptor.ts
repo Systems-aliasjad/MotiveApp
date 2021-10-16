@@ -37,8 +37,8 @@ export class AuthInterceptor implements HttpInterceptor {
       map((event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
           console.log('response--->>>', event);
+          this.logRequest(started, req, 'ok');
         }
-        this.logRequest(started, req, 'ok');
         return event;
       }),
       catchError((error: HttpErrorResponse) => {
