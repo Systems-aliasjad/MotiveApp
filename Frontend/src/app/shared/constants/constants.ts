@@ -501,12 +501,12 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.REQUEST_TYPE',
       type: 'text',
-      objKeyNameEN: 'reqType',
+      objKeyNameEN: 'requestType',
     },
     {
       title: 'MESSAGES.DATE_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.STATUS',
@@ -524,7 +524,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.STATUS',
@@ -542,7 +542,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.APPOINTMENT_DETAILS',
@@ -600,7 +600,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.LOCATION',
@@ -618,12 +618,12 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
-      title: 'MESSAGES.LOCATION',
+      title: 'MESSAGES.STATUS',
       type: 'text',
-      objKeyNameEN: 'location',
+      objKeyNameEN: 'status',
     },
   ];
 
@@ -687,7 +687,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.LOCATION',

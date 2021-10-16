@@ -62,10 +62,11 @@ export class BookAppointmentComponent implements OnInit, OnDestroy {
   button1Listener(_event) {
     this.formGroup = _event;
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, isCI7: true }).subscribe((data: any) => {
+    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.sharedService.setApiResponseData({ ...data?.result?.responseData });
+      this.router.navigate(['/issues/internet/appointment-successful']);
     });
-    this.router.navigate(['/issues/internet/appointment-successful']);
   }
 
   button2Listener() {
