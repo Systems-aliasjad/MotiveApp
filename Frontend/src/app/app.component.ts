@@ -32,25 +32,25 @@ export class AppComponent implements OnInit {
 
   Initialization(params: Params) {
     //TODO: uncomment This
-    /* this.sharedService.setLoader(true); */
+    this.sharedService.setLoader(true);
     if (!params?.token) {
       return;
     }
     this.subscribeLoaderChanges();
-    // // TODO: REMOVE THIS
-      this.sharedService.setDefaultLanguage('en');
-     this.appDirection = 'ltr';
-     this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
+    // TODO: REMOVE THIS
+    //   this.sharedService.setDefaultLanguage('en');
+    //  this.appDirection = 'ltr';
+    //  this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
 
     //TODO: uncomment This
-    /* this.sharedService.setDefaultLanguage(params?.lang || 'ara');
+    this.sharedService.setDefaultLanguage(params?.lang || 'ara');
     this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
     this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
       this.authService.setAuthorizationToken(data?.result?.token);
       this.sharedService.setLoader(false);
       localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
       this.router.navigate(['landing'], { state: { user: data?.result } });
-    }); */
+    });
 
     if (environment.production) {
       window.console.log = function () {}; // disable any console.log debugging statements in production mode
