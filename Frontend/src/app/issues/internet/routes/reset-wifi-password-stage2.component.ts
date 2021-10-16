@@ -3,13 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
-import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
-  selector: 'reset-wifi-password',
+  selector: 'reset-wifi-password-stage2',
   template: `<app-reset-router-password
     [headerConfig]="headerConfig"
     [button1]="button1"
@@ -18,7 +17,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     (button2Click)="button2Listener($event)"
   ></app-reset-router-password>`,
 })
-export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
+export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
   subscription: Subscription;
   button1: IMotiveButton = {
     type: 'terms',
@@ -36,10 +35,9 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
   constructor(
     private backendService: BackendService,
     private sharedService: SharedService,
-    private router: Router,
     private activatedRoute: ActivatedRoute,
-    private location: Location,
-    private helperService: HelperService
+    private helperService: HelperService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -61,20 +59,14 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
-  button1Listener() {
-    // this.sharedService.setLoader(true);
-    // this.backendService.resetRouter({ signal: 'Factory_Reset_Not_Agreed' }).subscribe((data: any) => {
-    //   this.sharedService.setLoader(false);
-    //   this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    // });
-  }
+  button1Listener() {}
 
   button2Listener(_event) {
     this.sharedService.setLoader(true);
-    this.backendService.resetRouter({ data: { ..._event }, signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
+    this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.router.navigate(['/thanks']);
     });
-    // this.router.navigate(['/issues/internet/password-update-success']);
   }
 }

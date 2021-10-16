@@ -93,6 +93,7 @@ import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-ro
 import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
 import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-network.component';
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
+import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
 
 @NgModule({
   declarations: [
@@ -116,6 +117,7 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
     RouterNotRestartedCareComponent,
     OutageComponent,
     RouterNotRestartedComponent,
+    ResetWIFIPasswordStage2Component,
     RouterRestartInstructionsComponent,
     CancelElifeConnectionMessageComponent,
     AccountTemporarilyDisconnectedMessageComponent,
