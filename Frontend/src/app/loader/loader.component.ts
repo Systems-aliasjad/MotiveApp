@@ -45,18 +45,16 @@ export class LoaderComponent implements OnInit, OnDestroy {
 
   initialize() {
     if (this.percentInterval === undefined || this.percentInterval === 0) {
-      this.messages = this.successMessages;
-      this.optionsLoader = this.successLoader;
-
+      this.showGreenLoader();
       this.percentInterval = setInterval(() => {
         this.percentageLoaded++;
+        if (this.percentageLoaded === 100) {
+          this.showOrangeLoader();
+        }
       }, this.oneMinutePart100);
 
       this.minuteInterval = setInterval(() => {
-        this.percentageLoaded = 0;
-        this.lateResponse = true;
-        this.messages = this.faliureMessages;
-        this.optionsLoader = this.warningLoader;
+        this.showOrangeLoader();
       }, this.oneMinute);
     }
   }
@@ -71,5 +69,17 @@ export class LoaderComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.clearIntervals();
+  }
+
+  showOrangeLoader() {
+    this.percentageLoaded = 0;
+    this.lateResponse = true;
+    this.messages = this.faliureMessages;
+    this.optionsLoader = this.warningLoader;
+  }
+
+  showGreenLoader() {
+    this.messages = this.successMessages;
+    this.optionsLoader = this.successLoader;
   }
 }

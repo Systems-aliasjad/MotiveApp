@@ -68,10 +68,8 @@ export class HelperService {
   }
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
-    // ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
-    // routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
-    ontConfig = { ...ontConfig, url: `./assets/images/ont/${ontConfig?.ontType}.jpg`, title: ONT };
-    routerConfig = { ...routerConfig, url: `./assets/images/router/EA8500EB.png`, title: ROUTER };
+    ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
+    routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
