@@ -3,7 +3,9 @@ export class Validations {}
 export const regExps: { [key: string]: RegExp } = {
   alphabets: /^[a-zA-Z \-\']+/,
   phoneNumber: /^(\+971)[0-9]{10}$/,
-  password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+
+  //Minimum eight characters, at least one letter, one number and one special character:
+  password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[A-Za-z\d !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,}$/,
 };
 
 export const errorMessages: { [key: string]: string } = {
