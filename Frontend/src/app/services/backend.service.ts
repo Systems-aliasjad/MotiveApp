@@ -11,6 +11,10 @@ export class BackendService {
     return this.http.get(`token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
   }
 
+  getUserDetailFromAccountId(accountId) {
+    return this.http.get(`?accountId=${accountId}`);
+  }
+
   getLandingPageData() {
     return this.http.get(`motive/landing-screen`);
   }

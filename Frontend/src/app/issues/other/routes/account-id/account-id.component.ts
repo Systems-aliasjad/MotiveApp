@@ -56,7 +56,7 @@ export class AccountIdComponent implements OnInit {
     // this.sharedService.setEncryptedID(this.conversionEncryptOutput);
 
     this.sharedService.setLoader(true);
-    this.backendService.getUserDetail(this.formGroup.controls['AccountID'].value, '').subscribe((data: any) => {
+    this.backendService.getUserDetailFromAccountId(this.formGroup.controls['AccountID'].value).subscribe((data: any) => {
       this.authService.setAuthorizationToken(data?.result?.token);
       this.sharedService.setLoader(false);
       localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
