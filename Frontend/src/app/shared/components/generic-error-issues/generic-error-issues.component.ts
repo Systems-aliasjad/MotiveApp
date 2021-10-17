@@ -5,11 +5,11 @@ import { warningImgSrc } from '../../constants/constants';
 import { SharedService } from '../../shared.service';
 
 @Component({
-  selector: 'app-generic-error',
-  templateUrl: './generic-error.component.html',
-  styleUrls: ['./generic-error.component.scss'],
+  selector: 'app-generic-error-issues',
+  templateUrl: './generic-error-issues.component.html',
+  styleUrls: ['./generic-error-issues.component.scss'],
 })
-export class GenericErrorComponent implements OnInit, OnDestroy {
+export class GenericErrorIssuesComponent implements OnInit {
   subscription: Subscription;
   Section1Data;
   subHeaderSectionTemplate;
@@ -39,7 +39,7 @@ export class GenericErrorComponent implements OnInit, OnDestroy {
   updatePageContent() {
     this.imgSrc = warningImgSrc;
     this.Section1Data = {
-      header: 'MESSAGES.YOUR_OLD_SESSION_IS_CURRENTLY_IN_PROGRESS',
+      header: 'MESSAGES.WE_ARE_FACING_SOME_ISSUES',
       paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
     };
   }

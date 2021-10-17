@@ -1,9 +1,42 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
+//----------------------------------------------------
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+}
+ion-item::part(native){
+  @media screen and (max-width: 992px)  {
+    padding-left: 2px;
+  }
+}
+ion-checkbox {
+  width: 22px;
+  height: 22px;
+  @media screen and (max-width: 992px)  {
+    width: 26px;
+    height: 26px;
+    /* margin-top: 0;
+    margin-bottom: 0; */
+  }
+  
+}
+/* .checkbox-icon path::part(mark){
+
+  width: 11px;
+  height: 11px;
+} */
+ion-radio.radio-checked::part(mark) {
+  width: 11px;
+  height: 11px;
+}
+//-----------------------------------------------------
 
 ion-button,
 .btn {
   width: 100%;
+  @media screen and (max-width: 767px) {
+    font-size:13px;
+  }
 } 
 .transparent-btn{
   margin-top: 0;
@@ -27,13 +60,13 @@ ion-button,
       height: 100%;
     }
     @media screen and (max-width: 992px)  {
-      margin-bottom: 1rem;
+      margin-bottom: .8rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
     }
     ion-item{
       -webkit-box-align: center;
@@ -50,7 +83,10 @@ ion-button,
         margin-right: 0;
         margin-left: .8rem;
         margin-bottom: 0;
-        color: $secondary-color;      
+        color: $secondary-color;
+        @media screen and (max-width: 767px)  {
+          font-size:14px;
+        }      
         a{
           color: $etisalat-color;
           display: inline-block;

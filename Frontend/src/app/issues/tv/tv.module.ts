@@ -51,6 +51,7 @@ import { PackageTransferComponent } from './routes/package-transfer.component';
 import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-pin-reset-message.component';
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-p
       },
       defaultLanguage: 'en',
     }),
+    MalihuScrollbarModule.forRoot(),
   ],
   exports: [TvDetailComponent, ResetTvPinDialog],
 })

@@ -18,7 +18,7 @@ ion-item::part(native) {
   --inner-border-width: 0;
 }
 // --------------------------------------------------------------
-.main-wizard-container{
+.main-wizard-container {
   max-width: 550px;
   margin: 0 auto;
   display: -webkit-box;
@@ -34,7 +34,7 @@ ion-item::part(native) {
   .three-flow-box-contaier,
   .two-boxes-config,
   .five-boxes-config,
-  .parent-box{
+  .parent-box {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -42,10 +42,10 @@ ion-item::part(native) {
     -ms-flex-positive: 1;
     flex-grow: 1;
   }
-  
+
   .two-boxes,
-  .box-1, 
-  .box-2, 
+  .box-1,
+  .box-2,
   .box-3 {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -60,22 +60,22 @@ ion-item::part(native) {
     width: 100%;
   }
 }
-.five-boxes-config{
-  .boxes{
+.five-boxes-config {
+  .boxes {
     width: 50%;
     position: relative;
-    display:-webkit-box;
-    display:-ms-flexbox;
-    display:flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
-      flex-direction: column;
+    flex-direction: column;
     -webkit-box-flex: 1;
     -ms-flex: 1;
-      flex: 1;
+    flex: 1;
   }
-  .box-line{
+  .box-line {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -84,7 +84,7 @@ ion-item::part(native) {
     -ms-flex-direction: column;
     flex-direction: column;
   }
-  .box-big{
+  .box-big {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -96,18 +96,18 @@ ion-item::part(native) {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     position: relative;
-    .box-curve-line{
+    .box-curve-line {
       width: 100%;
     }
   }
-  .curve-lines-left{
+  .curve-lines-left {
     padding-bottom: 12px;
     padding-left: 32px;
     @media screen and (max-width: 281px) {
       padding-left: 20px;
     }
   }
-  .curve-lines-right{
+  .curve-lines-right {
     padding-bottom: 12px;
     padding-right: 32px;
     @media screen and (max-width: 281px) {
@@ -128,12 +128,12 @@ ion-item::part(native) {
     flex-direction: row;
     /* -ms-flex-pack: distribute;
     justify-content: space-around; */
-}
+  }
 }
 .two-boxes-config {
-  margin-bottom: .8rem;
-  .box-1, 
-  .box-2, 
+  margin-bottom: 0.8rem;
+  .box-1,
+  .box-2,
   .box-3 {
     position: relative;
   }
@@ -164,10 +164,9 @@ ion-item::part(native) {
     /* border-bottom: 3px solid #ddd; */
     width: calc(100% - 100px);
   }
- 
 }
 
-.five-boxes-config{
+.five-boxes-config {
   .image-text-box {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -197,23 +196,23 @@ ion-item::part(native) {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-	height: 107px;
-	box-sizing: border-box;
-	.line-left {
-		width: 13px;
-		height: 50px;
-	}
-	.line-center {
+  height: 107px;
+  box-sizing: border-box;
+  .line-left {
+    width: 13px;
+    height: 50px;
+  }
+  .line-center {
     width: calc(100% - 50px);
   }
-	.line-right {
-		width: 13px;
-		height: 50px;
-	}
-	.line-vcenter {
-		/* width: 100%; */
-		/* background: url("/assets/images/lines/default-bg-v-center.svg") top center repeat-y; */
-    width:.15rem;
+  .line-right {
+    width: 13px;
+    height: 50px;
+  }
+  .line-vcenter {
+    /* width: 100%; */
+    /* background: url("/assets/images/lines/default-bg-v-center.svg") top center repeat-y; */
+    width: 0.15rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -221,14 +220,14 @@ ion-item::part(native) {
   }
 }
 //-------------------- Box Left Right center line Start ----------------------
-.default-lines{
+.default-lines {
   /* .line-center {
     background: url("/assets/images/lines/default-line-center.svg") center center repeat-x;
   } */
-  .line-center{
-    position:relative;
-    &:after{
-      content: "";
+  .line-center {
+    position: relative;
+    &:after {
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -244,17 +243,17 @@ ion-item::part(native) {
       @-moz-document url-prefix() {
         height: 44.5px !important;
       }
-    }  
+    }
   }
 }
-.okay-lines{
+.okay-lines {
   /* .line-center {
     background: url("/assets/images/lines/okay-line-center.svg") center center repeat-x;
   } */
-  .line-center{
-    position:relative;
-    &:after{
-      content: "";
+  .line-center {
+    position: relative;
+    &:after {
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -270,17 +269,17 @@ ion-item::part(native) {
       @-moz-document url-prefix() {
         height: 44.5px !important;
       }
-    }  
+    }
   }
 }
-.error-lines{
+.error-lines {
   /* .line-center {
     background: url("/assets/images/lines/error-line-center.svg") center center repeat-x;
   } */
-  .line-center{
-    position:relative;
-    &:after{
-      content: "";
+  .line-center {
+    position: relative;
+    &:after {
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -296,17 +295,17 @@ ion-item::part(native) {
       @-moz-document url-prefix() {
         height: 44.5px !important;
       }
-    }  
+    }
   }
 }
-.pending-lines{
+.pending-lines {
   /* .line-center {
     background: url("/assets/images/lines/pending-line-center.svg") center center repeat-x;
   } */
-  .line-center{
-    position:relative;
-    &:after{
-      content: "";
+  .line-center {
+    position: relative;
+    &:after {
+      content: '';
       display: block;
       position: absolute;
       top: 0;
@@ -322,27 +321,22 @@ ion-item::part(native) {
       @-moz-document url-prefix() {
         height: 44.5px !important;
       }
-    }  
+    }
   }
 }
 //-------------------- Box Left Right center line End ----------------------
 
-
-
-
-
-
 .flow-box_label,
 .image_label {
-	width: 100%;
+  width: 100%;
   display: inline-block;
-	text-align: center;
+  text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .state {
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -466,28 +460,28 @@ ion-item::part(native) {
   background-color: rgb(255 102 49 / 60%);
 }
 
-.five-boxes-container{
+.five-boxes-container {
   margin-top: 5.5rem;
   padding-right: 1.5rem;
   padding-left: 1.5rem;
   position: relative;
-  .arrow{
+  .arrow {
     position: absolute;
     bottom: 54px;
     z-index: 1;
     cursor: pointer;
-    @include transition(all 0.3s ease-in-out); 
-    &:hover{
+    @include transition(all 0.3s ease-in-out);
+    &:hover {
       opacity: 0.5;
     }
-    img{
+    img {
       display: block;
     }
   }
-  .right-arrow{
-    right:0;
+  .right-arrow {
+    right: 0;
   }
-  .left-arrow{
+  .left-arrow {
     left: 0;
   }
   .one-box-container {
@@ -517,7 +511,7 @@ ion-item::part(native) {
       margin: auto;
       .one-box-vline {
         height: 56px;
-        width: .25rem;
+        width: 0.25rem;
         margin-bottom: 1rem;
         border-top-right-radius: 1rem;
         border-top-left-radius: 1rem;
@@ -563,7 +557,6 @@ ion-item::part(native) {
       }
     }
   }
-  
 }
 .box-small {
   position: absolute;
@@ -575,14 +568,14 @@ ion-item::part(native) {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-  width:calc(100% - 125.5px);
-/*   @media screen and (min-width: 800px) and (max-width: 1024px) {
+  width: calc(100% - 125.5px);
+  /*   @media screen and (min-width: 800px) and (max-width: 1024px) {
     width: calc(100% - 112.25px);
   } */
   @media screen and (min-width: 769px) and (max-width: 1024px) {
     width: calc(100% - 112.25px);
   }
- /*  @media screen and (min-width: 359px) and (max-width: 640px)  {
+  /*  @media screen and (min-width: 359px) and (max-width: 640px)  {
     width: calc(100% - 85px);
   } */
   @media screen and (min-width: 377px) and (max-width: 415px) {
@@ -597,7 +590,7 @@ ion-item::part(native) {
   @media screen and (max-width: 321px) {
     width: calc(100% - 48px);
   }
- /*  @media screen and (max-width: 1024px) {
+  /*  @media screen and (max-width: 1024px) {
     width: calc(100% - 124.25px);
   } */
 }
@@ -619,7 +612,7 @@ ion-item::part(native) {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-.horizontal-line{
+.horizontal-line {
   -webkit-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
@@ -627,21 +620,21 @@ ion-item::part(native) {
   position: relative;
   height: 100%;
 }
-.horizontal-line{
-  &:before{
-   content: "";
-   display: block;
-   position: absolute;
-   top: 0;
-   right: 0;
-   left: 0;
-   margin: 0;
-   width: 100%;
-   height: 100%;
-   border-top: 3px solid #febaba;
-   border-bottom: 0 solid transparent;
-   border-left: 0px;
-   border-right: 0;
+.horizontal-line {
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-top: 3px solid #ffffff;
+    border-bottom: 0 solid transparent;
+    border-left: 0;
+    border-right: 0;
   }
 }
 .box-curve-line {
@@ -660,129 +653,183 @@ ion-item::part(native) {
   }
 }
 //-------------------- Left Box Lines Start ----------------------
-.left-box{
+.left-box {
   .left-box-one,
-  .left-box-two{
+  .left-box-two {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
     justify-content: start;
-  }  
-  .curve-line{
-    &:after{
-      content:"";
-      display:block;
-      position:absolute;
+  }
+  .curve-line {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
       top: 0;
       right: 0;
-      width:1rem;
+      width: 1rem;
       height: 100%;
-      border-top-left-radius: .7rem;
-      border:3px solid rgba(190, 18, 24, 0.6);
-      border-bottom:transparent;
-      border-right:transparent;
+      border-top-left-radius: 0.7rem;
+      border: 3px solid #ffffff;
+      border-bottom: transparent;
+      border-right: transparent;
     }
   }
-  .box-big{
+  .box-big {
     .box-small {
       right: 0;
     }
-  } 
-  .default-lines{
-    .curve-line{
-      &:after {
-        border:3px solid #F1F1EB;
-        border-right:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 3px solid #F1F1EB;
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
+  }
+  .default-curve-line {
+    &:after {
+      border: 3px solid #f1f1eb;
+      border-right: transparent;
+      border-bottom: transparent;
     }
   }
-  .error-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(190, 18, 24, 0.6);
-        border-right:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 2.5px solid rgba(190, 18, 24, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-      }
+  .default-horizontal-line {
+    &:before {
+      border-top: 3px solid #f1f1eb;
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
   }
-  .pending-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(255, 102, 49, 0.6);
-        border-right:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 2.5px solid rgba(255, 102, 49, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-      }
+  .error-curve-line {
+    &:after {
+      border: 3px solid rgba(190, 18, 24, 0.6);
+      border-right: transparent;
+      border-bottom: transparent;
     }
   }
-  .okay-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(113, 158, 25, 70%);
-        border-right:transparent;
-        border-bottom:transparent;
-      }
+  .error-horizontal-line {
+    &:before {
+      border-top: 2.5px solid rgba(190, 18, 24, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
-    .horizontal-line{
-     &:before{
-        border-top:2.5px solid rgba(113, 158, 25, 70%);
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
+  }
+  .pending-curve-line {
+    &:after {
+      border: 3px solid rgba(255, 102, 49, 0.6);
+      border-right: transparent;
+      border-bottom: transparent;
+    }
+  }
+  .pending-horizontal-line {
+    &:before {
+      border-top: 2.5px solid rgba(255, 102, 49, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0px;
+      border-right: 0;
+    }
+  }
+  .okay-curve-line {
+    &:after {
+      border: 3px solid rgba(113, 158, 25, 70%);
+      border-right: transparent;
+      border-bottom: transparent;
+    }
+  }
+  .okay-horizontal-line {
+    &:before {
+      border-top: 2.5px solid rgba(113, 158, 25, 70%);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
     }
   }
 }
 //-------------------- Left Box Lines End ----------------------
 
 //-------------------- Right Box Lines Start ----------------------
-.right-box{
+.right-box {
   .right-box-one,
-  .right-box-two{
+  .right-box-two {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: end;
-  }  
-  .curve-line{
-    &:after{
-      content:"";
-      display:block;
-      position:absolute;
+  }
+  .curve-line {
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
       top: 0;
       left: 0;
-      width:1rem;
+      width: 1rem;
       height: 100%;
-      border-top-right-radius: .7rem;
-      border:3px solid rgba(190, 18, 24, 0.6);
-      border-bottom:transparent;
-      border-left:transparent;
+      border-top-right-radius: 0.7rem;
+      border: 3px solid #ffffff;
+      border-bottom: transparent;
+      border-left: transparent;
     }
   }
-  .box-big{
-    .box-curve-line{
+  .default-curve-line {
+    &:after {
+      content: '';
+      display: block;
+      border: 3px solid #f1f1eb;
+      border-left: transparent;
+      border-bottom: transparent;
+    }
+  }
+  .default-horizontal-line {
+    &:before {
+      border-top: 3px solid #f1f1eb;
+      border-bottom: 0 solid transparent;
+      border-left: 0px;
+      border-right: 0;
+    }
+  }
+  .error-curve-line {
+    &:after {
+      border: 3px solid rgba(190, 18, 24, 0.6);
+      border-left: transparent;
+      border-bottom: transparent;
+    }
+  }
+  .error-horizontal-line {
+    &:before {
+      border-top: 2.5px solid rgba(190, 18, 24, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0px;
+      border-right: 0;
+    }
+  }
+  .pending-curve-line {
+    &:after {
+      border: 3px solid rgba(255, 102, 49, 0.6);
+      border-left: transparent;
+      border-bottom: transparent;
+    }
+  }
+  .pending-horizontal-line {
+    &:before {
+      border-top: 2.5px solid rgba(255, 102, 49, 0.6);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+  .okay-curve-line {
+    &:after {
+      border: 3px solid rgba(113, 158, 25, 70%);
+      border-left: transparent;
+      border-bottom: transparent;
+    }
+  }
+  .okay-horizontal-line {
+    &:before {
+      border-top: 2.5px solid rgba(113, 158, 25, 70%);
+      border-bottom: 0 solid transparent;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+  .box-big {
+    .box-curve-line {
       -webkit-box-orient: horizontal;
       -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
@@ -790,75 +837,6 @@ ion-item::part(native) {
     }
     .box-small {
       left: 0;
-    }
-  } 
-  .default-lines{
-    .curve-line{
-      &:after {
-        border:3px solid #F1F1EB;
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 3px solid #F1F1EB;
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-        
-      }
-    }
-  }
-  .error-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(190, 18, 24, 0.6);
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top: 3px solid rgba(190, 18, 24, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0px;
-        border-right: 0;
-      }
-    }
-  }
-  .pending-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(255, 102, 49, 0.6);
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top:2.5px solid rgba(255, 102, 49, 0.6);
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
-    }
-  }
-  .okay-lines{
-    .curve-line{
-      &:after {
-        border:3px solid rgba(113, 158, 25, 70%);
-        border-left:transparent;
-        border-bottom:transparent;
-      }
-    }
-    .horizontal-line{
-     &:before{
-        border-top:2.5px solid rgba(113, 158, 25, 70%);
-        border-bottom: 0 solid transparent;
-        border-left: 0;
-        border-right: 0;
-      }
     }
   }
 }

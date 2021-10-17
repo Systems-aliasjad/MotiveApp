@@ -34,7 +34,8 @@ import { MultiLayerComponent } from './components/network-diagrams/multi-layer/m
 import { FiveLayerComponent } from './components/network-diagrams/five-layer/five-layer.component';
 import { TransferPackageComponent } from './components/transfer-package/transfer-package.component';
 import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
-
+import { GenericErrorIssuesComponent } from './components/generic-error-issues/generic-error-issues.component';
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 @NgModule({
   declarations: [
     DiagnoseIssueComponent,
@@ -64,6 +65,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
     HeaderSingleLineComponent,
     HeaderMultiLineComponent,
     TransferPackageComponent,
+    GenericErrorIssuesComponent,
   ],
   imports: [
     CommonModule,
@@ -79,6 +81,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
       },
       defaultLanguage: 'en',
     }),
+    MalihuScrollbarModule.forRoot(),
   ],
   exports: [
     DiagnoseIssueComponent,

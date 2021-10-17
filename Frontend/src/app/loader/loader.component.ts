@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { SharedService } from '../shared/shared.service';
 
@@ -7,7 +7,7 @@ import { SharedService } from '../shared/shared.service';
   templateUrl: './loader.component.html',
   styleUrls: ['./loader.component.scss'],
 })
-export class LoaderComponent implements OnInit {
+export class LoaderComponent implements OnInit, OnDestroy {
   percentageLoaded: number = 0;
   shouldShow: boolean = false;
   lateResponse: boolean = false;
@@ -44,22 +44,42 @@ export class LoaderComponent implements OnInit {
   }
 
   initialize() {
-    this.messages = this.successMessages;
-    this.optionsLoader = this.successLoader;
+    if (this.percentInterval === undefined || this.percentInterval === 0) {
+      this.showGreenLoader();
+      this.percentInterval = setInterval(() => {
+        this.percentageLoaded++;
+        if (this.percentageLoaded === 100) {
+          this.showOrangeLoader();
+        }
+      }, this.oneMinutePart100);
 
-    this.percentInterval = setInterval(() => {
-      this.percentageLoaded++;
-    }, this.oneMinutePart100);
-
-    this.minuteInterval = setInterval(() => {
-      this.percentageLoaded = 0;
-      this.lateResponse = true;
-      this.messages = this.faliureMessages;
-      this.optionsLoader = this.warningLoader;
-    }, this.oneMinute);
+      this.minuteInterval = setInterval(() => {
+        this.showOrangeLoader();
+      }, this.oneMinute);
+    }
   }
+
   clearIntervals() {
     clearInterval(this.minuteInterval);
     clearInterval(this.percentInterval);
+    this.minuteInterval = 0;
+    this.percentInterval = 0;
+    this.percentageLoaded = 0;
+  }
+
+  ngOnDestroy() {
+    this.clearIntervals();
+  }
+
+  showOrangeLoader() {
+    this.percentageLoaded = 0;
+    this.lateResponse = true;
+    this.messages = this.faliureMessages;
+    this.optionsLoader = this.warningLoader;
+  }
+
+  showGreenLoader() {
+    this.messages = this.successMessages;
+    this.optionsLoader = this.successLoader;
   }
 }

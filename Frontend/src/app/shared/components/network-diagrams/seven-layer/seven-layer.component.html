@@ -1,122 +1,121 @@
-
 <div class="main-wizard-container">
-
-  <!-- Upper Flow Start -->  
+  <!-- Upper Flow Start -->
   <div class="two-boxes-config">
     <div class="box-1 two-boxes">
       <div class="image-text-box">
-        <div class="state error-state">
-          <img src="/assets/images/network-map-icons/icon_smartphone_default.svg" alt="Smart Phone Default State">
+        <div [class]="etisalatConfig?.className + '-state state'">
+          <img [src]="etisalatConfig?.url" alt="Smart Phone Default State" />
         </div>
-        <span class="image_label">Etisalat</span>
+        <span class="image_label">{{ etisalatConfig?.title }}</span>
       </div>
-      <div class="straight-line default-line"></div>
+      <div [class]="ontConfig?.className + '-line straight-line'"></div>
     </div>
     <div class="box-2 two-boxes">
       <div class="image-text-box">
-        <div class=" state default-state">
-          <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+        <div [class]="ontConfig?.className + '-state state'">
+          <img [src]="ontConfig?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
         </div>
-        <span class="image_label">ONT</span>
+        <span class="image_label">{{ ontConfig?.title }}</span>
       </div>
     </div>
     <div class="box-3 two-boxes"></div>
   </div>
-   <!-- Upper Flow End --> 
-
+  <!-- Upper Flow End -->
 
   <div class="five-boxes-container">
+    <!-- One Box Start -->
     <div class="one-box-container">
       <div class="one-box">
-        <div class="one-box-vline default-line"></div>
+        <div [class]="routerConfig?.className + '-line one-box-vline'"></div>
         <div class="image-text-box">
-          <div class=" state pending-state">
-            <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+          <div [class]="routerConfig?.className + '-state state'">
+            <img [src]="routerConfig?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
           </div>
-          <span class="image_label">ONT</span>
+          <span class="image_label">{{ routerConfig?.title }}</span>
         </div>
       </div>
     </div>
+    <!-- One Box End -->
+
     <!-- Left Arrow Start -->
-    <div class="arrow left-arrow">
-      <img src="/assets/images/action-icons/icon_networkmap_arrow_left.svg" alt="">
+    <div class="arrow left-arrow" *ngIf="connectedDevices">
+      <img src="/assets/images/action-icons/icon_networkmap_arrow_left.svg" alt="" (error)="onImgError($event)" />
     </div>
     <!-- Left Arrow End -->
 
     <!-- Five Boxes Start -->
-    <div class="five-boxes-config">
+    <div class="five-boxes-config" *ngIf="connectedDevices">
       <div class="boxes left-box">
-        <div class="box-curve-lines curve-lines-left pending-lines">
+        <div class="box-curve-lines curve-lines-left">
           <div class="box-big">
-            <div class="box-curve-line ">
-              <div class="curve-line"></div>
-              <div class="horizontal-line"></div>
+            <div class="box-curve-line" *ngIf="connectedDevices[0]">
+              <div [class]="connectedDevices[0]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[0]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
-            <div class="box-small">
-              <div class="curve-line"></div>
-              <div class="horizontal-line"></div>
+            <div class="box-small" *ngIf="connectedDevices[1]">
+              <div [class]="connectedDevices[1]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[1]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
           </div>
         </div>
         <div class="image-text-boxes-container">
-          <div class="image-text-boxes left-box-one">
+          <div class="image-text-boxes left-box-one" *ngIf="connectedDevices[0]">
             <div class="image-text-box">
-              <div class=" state pending-state">
-                <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+              <div [class]="connectedDevices[0]?.className + '-state state'">
+                <img [src]="connectedDevices[0]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">ONT</span>
+              <span class="image_label">{{ connectedDevices[0]?.title }}</span>
             </div>
           </div>
-          <div class="image-text-boxes left-box-two">
+          <div class="image-text-boxes left-box-two" *ngIf="connectedDevices[1]">
             <div class="image-text-box">
-              <div class=" state pending-state">
-                <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+              <div [class]="connectedDevices[1]?.className + '-state state'">
+                <img [src]="connectedDevices[1]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">ONT</span>
+              <span class="image_label">{{ connectedDevices[1]?.title }}</span>
             </div>
           </div>
         </div>
       </div>
       <div class="boxes right-box">
-        <div class="box-curve-lines curve-lines-right okay-lines">
+        <div class="box-curve-lines curve-lines-right">
           <div class="box-big">
-            <div class="box-curve-line">
-              <div class="curve-line"></div>
-              <div class="horizontal-line"></div>
+            <div class="box-curve-line" *ngIf="connectedDevices[3]">
+              <div [class]="connectedDevices[3]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[3]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
-            <div class="box-small">
-              <div class="horizontal-line"></div>
-              <div class="curve-line"></div>
+            <div class="box-small" *ngIf="connectedDevices[2]">
+              <div [class]="connectedDevices[2]?.className + '-horizontal-line horizontal-line'"></div>
+              <div [class]="connectedDevices[2]?.className + '-curve-line curve-line'"></div>
             </div>
           </div>
         </div>
         <div class="image-text-boxes-container">
-          <div class="image-text-boxes right-box-one">
+          <div class="image-text-boxes right-box-one" *ngIf="connectedDevices[2]">
             <div class="image-text-box">
-              <div class=" state okay-state">
-                <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+              <div [class]="connectedDevices[2]?.className + '-state state'">
+                <img [src]="connectedDevices[2]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">ONT</span>
+              <span class="image_label">{{ connectedDevices[2]?.title }}</span>
             </div>
           </div>
-          <div class="image-text-boxes right-box-two">
+          <div class="image-text-boxes right-box-two" *ngIf="connectedDevices[3]">
             <div class="image-text-box">
-              <div class=" state okay-state">
-                <img src="/assets/images/network-map-icons/icon_smartphone_all_okay.svg" alt="Smart Phone okay State">
+              <div [class]="connectedDevices[3]?.className + '-state state'">
+                <img [src]="connectedDevices[3]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">ONT</span>
+              <span class="image_label">{{ connectedDevices[3]?.title }}</span>
             </div>
           </div>
         </div>
-    </div>
+      </div>
     </div>
     <!-- Five Boxes End -->
 
     <!-- Right Arrow Start -->
-    <div class="arrow right-arrow">
-      <img src="/assets/images/action-icons/icon_networkmap_arrow_right.svg" alt="">
+    <div class="arrow right-arrow" *ngIf="connectedDevices">
+      <img src="/assets/images/action-icons/icon_networkmap_arrow_right.svg" alt="" (error)="onImgError($event)" />
     </div>
     <!-- Right Arrow End -->
   </div>
-
 </div>

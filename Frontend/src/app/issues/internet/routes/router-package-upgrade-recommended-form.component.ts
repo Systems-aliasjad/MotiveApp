@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'router-package-upgrade-recommended-form',
@@ -31,7 +32,13 @@ export class RouterPackageUpgradeRecommendedFormComponent implements OnInit, OnD
   };
 
   formGroup: FormGroup;
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {}
+  constructor(
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private location: Location
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,7 +61,11 @@ export class RouterPackageUpgradeRecommendedFormComponent implements OnInit, OnD
 
   button1Listener(_event) {
     this.formGroup = _event;
-    console.log(this.formGroup.valid);
+    // console.log(this.formGroup.valid);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+    });
     this.router.navigate(['/issues/internet/router-and-package-upgrade-success']);
   }
 

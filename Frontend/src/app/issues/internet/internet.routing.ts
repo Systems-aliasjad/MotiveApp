@@ -77,6 +77,7 @@ import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade
 import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
 import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
 import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-network.component';
+import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
 
 const routes: Routes = [
   {
@@ -431,6 +432,11 @@ const routes: Routes = [
     path: 'reset-wifi-password',
     component: ResetWIFIPasswordComponent,
   },
+  {
+    path: 'stage2/reset-wifi-password',
+    component: ResetWIFIPasswordStage2Component,
+  },
+
   {
     path: 'unable-connect-newDevice',
     component: UnableToConnectNewDeviceWiFiComponent,

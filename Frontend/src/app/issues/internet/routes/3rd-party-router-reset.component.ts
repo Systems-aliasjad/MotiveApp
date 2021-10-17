@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -11,6 +11,7 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-3rd-party-router-reset',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -30,6 +31,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   messageSection;
   ontConfig;
   routerConfig;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
 
   button1: IMotiveButton = {

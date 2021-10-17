@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ApplicableCodes, ERoutingIds, ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ApplicableCodes, ERoutingIds, ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { InternetIssuesDialog } from 'src/app/issues/internet/dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -12,6 +12,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
 @Component({
   selector: 'app-router-not-reachable',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
@@ -31,6 +32,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   ontConfig: IOntDetail;
   routerConfig: IRouterDetail;
   subscription: Subscription;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   messageSection;
   section1Template;
   section1Data;

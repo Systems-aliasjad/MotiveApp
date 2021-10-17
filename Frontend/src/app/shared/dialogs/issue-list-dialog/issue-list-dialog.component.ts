@@ -22,7 +22,7 @@ export class IssueListDialog implements OnInit {
   internetIssuesList: any[] = [
     {
       issue: 'Unable to connect Wi-Fi',
-      route: 'issues/internet/reset-wifi-password',
+      route: 'issues/internet/stage2/reset-wifi-password',
     },
     {
       issue: 'Unable to browse the internet',
@@ -30,7 +30,7 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Forgot my Wi-Fi password',
-      route: 'issues/internet/reset-wifi-password',
+      route: 'issues/internet/stage2/reset-wifi-password',
     },
     {
       issue: 'Unable to connect to home zone',

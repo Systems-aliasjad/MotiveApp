@@ -51,7 +51,11 @@ ion-item::part(native){
   
 }
 // --------------------------------------------------------------
-
+.two-col_right{
+  @media screen and (max-width: 992px) {
+    margin-top:4.5rem;
+  }
+}
 /* .issue-tabs_title{
   @media screen and (min-width: 992px) {
     display:none;
@@ -84,6 +88,9 @@ ion-item::part(native){
       margin-bottom:0;
       color: $secondary-color;
       line-height: 1.5;
+      @media screen and (max-width: 767px) {
+        font-size:14px;
+      }
     }
     .inline-list{
       margin-top: 1.5rem;

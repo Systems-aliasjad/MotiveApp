@@ -24,10 +24,18 @@ export class BackendService {
   }
 
   bookComplaint(data) {
-    return this.http.put(`troubleshoot/book-complaint`, data);
+    return this.http.put(`motive/troubleshoot/book-complaint`, data);
   }
 
   resetWifiPassword(data) {
-    return this.http.put(`troubleshoot/wifi-password-reset`, { ...data });
+    return this.http.put(`motive/troubleshoot/reset-wifi-password`, { ...data });
+  }
+
+  resetRouter(data) {
+    return this.http.put(`motive/troubleshoot/next-step`, data);
+  }
+
+  rebootMyDevice(DeviceToReeboot: string) {
+    return this.http.get(`motive/troubleshoot/reboot/${DeviceToReeboot}`);
   }
 }

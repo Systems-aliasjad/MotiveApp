@@ -7,13 +7,13 @@
     <ion-buttons slot="end">
       <!-- <motive-button [title]="'BUTTONS.CLOSE'" [type]="'link'" (clickHandler)="dismiss()"></motive-button> -->
       <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-      <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close">
+      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close" />
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <!-- Modal Header End -->
 
-<ion-content>
+<ion-content malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
   <ion-grid class="ion-no-padding">
     <!-- Dialog Internet Issues List Start -->
     <form [formGroup]="formGroup">

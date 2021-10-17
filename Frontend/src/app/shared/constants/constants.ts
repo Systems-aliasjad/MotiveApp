@@ -46,10 +46,10 @@ export const SVGs = {
     default: './assets/images/network-map-icons/icon_home_default.svg',
   },
   ont: {
-    default: './assets/images/network-map-icons/icon_desktop_default.svg',
+    default: './assets/images/ont/default_ont.PNG',
   },
   router: {
-    default: './assets/images/network-map-icons/icon_smartphone_all_okay.svg',
+    default: './assets/images/router/default_router.PNG',
   },
 };
 
@@ -62,6 +62,12 @@ export const ETISALAT_DEFAULT_CONFIG = {
 export enum ERoutingIds {
   routerNotReachable,
   routerNotReachableOwnRouter,
+}
+
+export enum NetWorkDiagramIds {
+  ThreeLayer = 1,
+  FiveLayer,
+  SevenLayer,
 }
 
 // const P3: string = '3P';
@@ -495,12 +501,12 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.REQUEST_TYPE',
       type: 'text',
-      objKeyNameEN: 'reqType',
+      objKeyNameEN: 'requestType',
     },
     {
       title: 'MESSAGES.DATE_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.STATUS',
@@ -518,7 +524,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.STATUS',
@@ -536,7 +542,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.APPOINTMENT_DETAILS',
@@ -594,7 +600,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.LOCATION',
@@ -612,12 +618,12 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
-      title: 'MESSAGES.LOCATION',
+      title: 'MESSAGES.STATUS',
       type: 'text',
-      objKeyNameEN: 'location',
+      objKeyNameEN: 'status',
     },
   ];
 
@@ -681,7 +687,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.DATE_OF_VISIT',
       type: 'date',
-      objKeyNameEN: 'dateVisit',
+      objKeyNameEN: 'dateOfVisit',
     },
     {
       title: 'MESSAGES.LOCATION',

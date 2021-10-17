@@ -1,6 +1,6 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
-
+//----------------------------------------------------------------
 :host {
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
@@ -9,6 +9,7 @@ ion-item::part(native){
   padding-inline-start:0; 
   --inner-padding-end:0;
 }
+//---------------------------------------------------------------
 .form-main-container{
   font-family:Lato,Roboto,Arial,sans-serif;
   .form-inner_container{
@@ -24,7 +25,8 @@ ion-item::part(native){
   form{
     ion-item{
       ion-label{
-        color: $secondary-color;
+        /* color: $secondary-color; */
+        color:#6b6b6b;
         font-size: 1rem;
         -webkit-transform: scale(0.90);
         -ms-transform: scale(0.90);
@@ -34,9 +36,17 @@ ion-item::part(native){
           -ms-transform: scale(1);
           transform: scale(1);
         }
+        @media screen and (max-width:767px) {
+          font-size:14px;
+        }
       }
     }
   }
+}
+ion-input{
+  @media screen and (max-width: 767px) {
+    font-size:14px;
+   }
 }
 .text-error{
   padding-top: 0.2rem;

@@ -48,6 +48,7 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.sharedService.setDefaultValues();
     this.subscription.add(
       this.sharedService.getTermsConditions().subscribe((config) => {
         this.routerSettingsForm.controls['terms'].setValue(config);
@@ -110,11 +111,10 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     this.button2Click.emit({
-      SSID24wifiName: this.routerSettingsForm.controls['tab1'].value.wifiName,
-      SSID24password: this.routerSettingsForm.controls['tab1'].value.password,
-
-      SSID5wifiName: this.routerSettingsForm.controls['tab2'].value.wifiName,
-      SSID5password: this.routerSettingsForm.controls['tab2'].value.password,
+      ci6SSID_24: this.routerSettingsForm.controls['tab1'].value.wifiName,
+      ci6Password_24: this.routerSettingsForm.controls['tab1'].value.password,
+      ci6SSID_5: this.routerSettingsForm.controls['tab2'].value.wifiName,
+      ci6Password_5: this.routerSettingsForm.controls['tab2'].value.password,
     });
     // this.button2Click.emit(this.resetRouterPassword);
   }

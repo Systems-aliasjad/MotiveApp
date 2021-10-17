@@ -62,10 +62,14 @@ export class InstallNewRouterComplaintSuccessfullyMessageComponent implements On
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.InstallNewRouterComplaintRaisedSuccessfully;
     this.Section2Template = ApplicableCodes.installNewRouterComplaintBookSuccessfullyTemplate;
+    const temp = this.sharedService.getApiResponseData();
+    console.log('========getApiResponseData==========');
+    console.log(temp);
+    console.log('====================================');
     this.Section2Data = {
-      referenceNo: '436529873',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      location: 'Xxxxx xxxxx xxxx',
+      referenceNo: temp?.referenceNo ?? '-',
+      dateOfVisit: temp?.dateOfVisit ?? '-',
+      status: temp?.status ?? '-',
     };
   }
 

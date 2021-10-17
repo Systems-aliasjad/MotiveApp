@@ -25,6 +25,7 @@ import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.compon
 import { httpInterceptorProviders } from './http-interceptor';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
 };
@@ -58,6 +59,7 @@ export function playerFactory() {
       defaultLanguage: 'en',
     }),
     LottieModule.forRoot({ player: playerFactory }),
+    MalihuScrollbarModule.forRoot(),
   ],
 
   entryComponents: [],

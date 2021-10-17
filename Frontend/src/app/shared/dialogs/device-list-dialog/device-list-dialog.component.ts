@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from '../../constants/constants';
+import { SharedService } from '../../shared.service';
 
 @Component({
   selector: 'app-device-list-dialog',
@@ -10,20 +14,36 @@ export class DeviceListDialog implements OnInit {
   devicesList: any[] = [
     {
       device: 'Reboot all devices',
-      route: '/',
+      API_PARAM: 'ALL',
     },
     {
       device: 'Reboot internet device',
-      route: '/',
+      API_PARAM: 'ROUTER',
+    },
+    {
+      device: 'Reboot ONT',
+      API_PARAM: 'ONT',
     },
   ];
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(private modalCtrl: ModalController, private backendService: BackendService, private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {}
 
   dismiss() {
     this.modalCtrl.dismiss();
   }
-  ondeviceClick(val) {}
+
+  ondeviceClick(forDevice) {
+    this.dismiss();
+    this.sharedService.setLoader(true);
+    this.backendService.rebootMyDevice(forDevice).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.genericError) {
+        this.router.navigate(['/unknown-error']);
+      } else {
+        this.router.navigate(['issues/internet/service-detail']);
+      }
+    });
+  }
 }

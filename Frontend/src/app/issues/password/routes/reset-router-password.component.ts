@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
+import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'reset-wifi-password',
@@ -37,7 +39,14 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   };
 
   formGroup: FormGroup;
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private location: Location) {}
+  constructor(
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private location: Location,
+    private helperService: HelperService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -62,8 +71,13 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
 
   button2Listener(_event) {
     this.formGroup = _event;
-    console.log(this.formGroup.valid);
-    this.router.navigate(['/issues/password/reset-router-password-success']);
+    //console.log(this.formGroup.valid);//
+    this.sharedService.setLoader(true);
+    this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+    // this.router.navigate(['/issues/password/reset-router-password-success']);
   }
 
   button3Listener() {

@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -16,30 +17,9 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   @Input()
   isPartialLoaded: boolean = false;
   devices;
+  hsiUploadDownload;
   modal: any;
   subscription: Subscription;
-  cardList: any[] = [
-    {
-      heading: 'UNNAMED PHONE',
-      IP: '192.168.1.125',
-    },
-    {
-      heading: 'UNNAMED COMPUTER',
-      IP: '192.168.1.125',
-    },
-    {
-      heading: 'UNNAMED SMART WATCH',
-      IP: '192.168.1.125',
-    },
-    {
-      heading: 'UNNAMED TABLET',
-      IP: '192.168.1.125',
-    },
-    {
-      heading: 'UNNAMED PHONE',
-      IP: '192.168.1.125',
-    },
-  ];
 
   button1: IMotiveButton = {
     type: 'primary',
@@ -51,41 +31,42 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
   };
 
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.SERVICE_DEATAIL',
+    showBackBtn: true,
+  };
+
   constructor(
     private sharedService: SharedService,
     private router: Router,
     private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute,
-    private helperService: HelperService
+    private helperService: HelperService,
+    private backendService: BackendService
   ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
-      this.devices = this.helperService.connectedDeviceModifier(this.sharedService.getApiResponseData()?.connectedDevices);
+      this.updatePageContent();
     });
-    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {
-    if (!this.isPartialLoaded) {
-      //this.sharedService.setHeaderConfig('HEADER.SERVICE_DEATAIL', false);
-    }
+  updatePageContent() {
+    const apiResponse = this.sharedService.getApiResponseData();
+    this.devices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
+    this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
   }
 
-  headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.SERVICE_DEATAIL',
-    showBackBtn: true,
-  };
-
-  updatePageContent() {}
-
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   async button2Listener() {

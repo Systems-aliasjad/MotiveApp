@@ -92,6 +92,8 @@ import { PackageUpgradeRecommendedFormComponent } from './routes/package-upgrade
 import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-router-success-message.component';
 import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
 import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-network.component';
+import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
+import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
 
 @NgModule({
   declarations: [
@@ -115,6 +117,7 @@ import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-networ
     RouterNotRestartedCareComponent,
     OutageComponent,
     RouterNotRestartedComponent,
+    ResetWIFIPasswordStage2Component,
     RouterRestartInstructionsComponent,
     CancelElifeConnectionMessageComponent,
     AccountTemporarilyDisconnectedMessageComponent,
@@ -194,6 +197,7 @@ import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-networ
       defaultLanguage: 'en',
     }),
     BrMaskerModule,
+    MalihuScrollbarModule.forRoot(),
   ],
   exports: [ServiceDetailComponent],
 })

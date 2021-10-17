@@ -3,31 +3,31 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
-import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
-  selector: 'router-not-reachable-form',
-  template: `<app-book-complaint
+  selector: 'reset-wifi-password-stage2',
+  template: `<app-reset-router-password
     [headerConfig]="headerConfig"
     [button1]="button1"
-    (button1Click)="button1Listener($event)"
+    (button1Click)="button1Listener()"
     [button2]="button2"
-    (button2Click)="button2Listener()"
-  ></app-book-complaint>`,
+    (button2Click)="button2Listener($event)"
+  ></app-reset-router-password>`,
 })
-export class RouterNotReachableFormComponent implements OnInit, OnDestroy {
+export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
   subscription: Subscription;
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.BOOK_A_COMPLAINT',
+    type: 'terms',
+    title: 'BUTTONS.TERMS',
     explanatoryNote: '',
   };
 
   button2: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.BACK',
+    type: 'primary',
+    title: 'BUTTONS.NEXT',
     explanatoryNote: '',
   };
 
@@ -35,9 +35,9 @@ export class RouterNotReachableFormComponent implements OnInit, OnDestroy {
   constructor(
     private backendService: BackendService,
     private sharedService: SharedService,
-    private router: Router,
     private activatedRoute: ActivatedRoute,
-    private location: Location
+    private helperService: HelperService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -51,25 +51,22 @@ export class RouterNotReachableFormComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    //this.sharedService.setHeaderConfig('HEADER.BOOK_A_COMPLAINT', false);
+    //this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true, true);
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.BOOK_A_COMPLAINT',
+    pageTitle: 'HEADER.RESET_WIFI_PASSWORD',
     showBackBtn: true,
   };
 
-  button1Listener(_event) {
-    this.formGroup = _event;
-    // console.log(this.formGroup.valid);
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/issues/internet/compalint-successful']);
-  }
+  button1Listener() {}
 
-  button2Listener() {
-    this.location.back();
+  button2Listener(_event) {
+    this.sharedService.setLoader(true);
+    this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.router.navigate(['/thanks']);
+    });
   }
 }
