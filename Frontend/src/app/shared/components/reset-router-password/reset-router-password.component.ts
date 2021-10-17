@@ -71,8 +71,8 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
         {
           wifiName: [''],
           MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-          password: ['', Validators.required],
-          ConfirmPassword: ['', Validators.required],
+          password: ['', [Validators.required, Validators.pattern(regExps.password)]],
+          ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         },
         {
           validator: ConfirmedValidator('password', 'ConfirmPassword'),
@@ -82,8 +82,8 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
         {
           wifiName: [''],
           MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-          password: ['', Validators.required],
-          ConfirmPassword: ['', Validators.required],
+          password: ['', [Validators.required, Validators.pattern(regExps.password)]],
+          ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         },
         {
           validator: ConfirmedValidator('password', 'ConfirmPassword'),

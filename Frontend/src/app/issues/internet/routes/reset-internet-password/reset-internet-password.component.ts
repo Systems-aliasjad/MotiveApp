@@ -67,8 +67,8 @@ export class ResetInternetPasswordComponent implements OnInit, OnDestroy {
     this.formGroup = this.formBuilder.group(
       {
         MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-        NewPassword: ['', [Validators.required]],
-        ConfirmPassword: ['', [Validators.required]],
+        NewPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
+        ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         terms: [false, Validators.required],
       },
       {
