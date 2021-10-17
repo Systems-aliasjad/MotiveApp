@@ -65,6 +65,7 @@
                 <img [src]="connectedDevices[0]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
               <span class="image_label">{{ connectedDevices[0]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[0]?.subTitle }}</span>
             </div>
           </div>
           <div class="image-text-boxes left-box-two" *ngIf="connectedDevices[1]">
@@ -73,6 +74,7 @@
                 <img [src]="connectedDevices[1]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
               <span class="image_label">{{ connectedDevices[1]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[1]?.subTitle }}</span>
             </div>
           </div>
         </div>
@@ -97,6 +99,7 @@
                 <img [src]="connectedDevices[2]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
               <span class="image_label">{{ connectedDevices[2]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[2]?.subTitle }}</span>
             </div>
           </div>
           <div class="image-text-boxes right-box-two" *ngIf="connectedDevices[3]">
@@ -105,6 +108,7 @@
                 <img [src]="connectedDevices[3]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
               <span class="image_label">{{ connectedDevices[3]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[3]?.subTitle }}</span>
             </div>
           </div>
         </div>

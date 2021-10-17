@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ICard, IPageHeader } from '../shared/constants/types';
@@ -14,7 +14,7 @@ import { Location } from '@angular/common';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
-export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
+export class LandingComponent implements OnInit, OnDestroy {
   codeType: string;
   selectedLang: string;
   landingPageCards: ICard[];
@@ -30,10 +30,6 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
     private activcatedRoute: ActivatedRoute,
     private location: Location
   ) {}
-  ngAfterViewInit(): void {
-    let encText = this.sharedService.getEncryptedID();
-    this.location.replaceState('?token=' + encText + '&lang=en');
-  }
 
   ngOnInit(): void {
     this.activcatedRoute.params.subscribe(() => {
@@ -45,15 +41,9 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {}
 
   initialization() {
-    // TODO: REMOVE FOLLWOING
-    // this.codeType = '3P';
-    // this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
-
     this.updateProfileData();
     this.getProductCode();
-
     this.selectedLang = this.sharedService.getDefaultLanguage();
-    //  this.sharedService.setHeaderConfig('HEADER.TECHNICAL_SUPPORT', false, false);
   }
 
   updateProfileData() {
@@ -72,8 +62,8 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
     //TODO: Remove This
-    //  this.codeType = '3P';
-    //  this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+    // this.codeType = '3P';
+    // this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
   }
 
   headerConfig: IPageHeader = {

@@ -112,12 +112,4 @@ export class SharedService {
     this.setTermsConditions(false);
     this.setLoader(false);
   }
-
-  setEncryptedID(text) {
-    this.encryptedID = text;
-  }
-
-  getEncryptedID() {
-    return this.encryptedID;
-  }
 }

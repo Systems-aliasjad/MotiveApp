@@ -1,12 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
 import { BackendService } from '../../../services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-password-reset',
@@ -27,8 +27,8 @@ import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/const
 export class PasswordResetComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
-  ontConfig;
-  routerConfig;
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
+  routerConfig: IRouterDetail = { url: SVGs.router.default, className: networkDiagramClasses.pending, title: ROUTER };
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
@@ -51,7 +51,6 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
-      this.getIssueTilesData();
     });
     this.updatePageContent();
   }
@@ -88,12 +87,5 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(false);
       this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
-  }
-
-  getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
-    this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
   }
 }

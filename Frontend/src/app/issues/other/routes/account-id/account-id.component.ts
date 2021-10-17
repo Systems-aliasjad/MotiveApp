@@ -60,10 +60,7 @@ export class AccountIdComponent implements OnInit {
       this.authService.setAuthorizationToken(data?.result?.token);
       this.sharedService.setLoader(false);
       localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
-      // this.router.navigate(['landing'], { state: { user: data?.result } });
-
-      this.sharedService.setEncryptedID(this.formGroup.controls['AccountID'].value);
-      this.router.navigate(['landing']);
+      this.router.navigate(['landing'], { state: { user: data?.result } });
     });
   }
 }
