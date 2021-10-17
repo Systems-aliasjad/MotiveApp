@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { BackendService } from 'src/app/services/backend.service';
 import { IPageHeader } from 'src/app/shared/constants/types';
-import * as CryptoJS from 'crypto-js';
+// import * as CryptoJS from 'crypto-js';
 import { SharedService } from 'src/app/shared/shared.service';
 @Component({
   selector: 'app-account-id',
@@ -18,7 +20,14 @@ export class AccountIdComponent implements OnInit {
   };
   formGroup: FormGroup;
 
-  constructor(private router: Router, private formBuilder: FormBuilder, private actRoute: ActivatedRoute, private sharedService: SharedService) {
+  constructor(
+    private authService: AuthService,
+    private backendService: BackendService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private actRoute: ActivatedRoute,
+    private sharedService: SharedService
+  ) {
     this.initialization();
   }
 
@@ -43,8 +52,18 @@ export class AccountIdComponent implements OnInit {
 
   SubmitForm() {
     //https://morioh.com/p/bbe2434acaa9
-    this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.formGroup.controls['AccountID'].value, this.plainText);
-    this.sharedService.setEncryptedID(this.conversionEncryptOutput);
-    this.router.navigate(['landing']);
+    // this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.formGroup.controls['AccountID'].value, this.plainText);
+    // this.sharedService.setEncryptedID(this.conversionEncryptOutput);
+
+    this.sharedService.setLoader(true);
+    this.backendService.getUserDetail(this.formGroup.controls['AccountID'].value, '').subscribe((data: any) => {
+      this.authService.setAuthorizationToken(data?.result?.token);
+      this.sharedService.setLoader(false);
+      localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
+      // this.router.navigate(['landing'], { state: { user: data?.result } });
+
+      this.sharedService.setEncryptedID(this.formGroup.controls['AccountID'].value);
+      this.router.navigate(['landing']);
+    });
   }
 }

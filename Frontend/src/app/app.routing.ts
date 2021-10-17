@@ -90,7 +90,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'other',
+    path: '',
     loadChildren: () => import('./issues/other/other.module').then((m) => m.OtherModule),
   },
   // {
@@ -98,9 +98,9 @@ const routes: Routes = [
   //   redirectTo: 'landing',
   // },
 
- {
+  {
     path: 'loader',
-     component: LoaderComponent,
+    component: LoaderComponent,
   },
   // {
   //   path: 'router-restart',
