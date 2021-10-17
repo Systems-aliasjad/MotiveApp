@@ -59,9 +59,8 @@ export class HelperService {
       return {
         ...device,
         className: networkDiagramClasses.okay,
-        url: SVGs.ont.default,
-        // title: device?.hostName ?? 'unnammed',
-        title: 'unnammed',
+        url: SVGs.phone.default,
+        title: device.hostName ? device.hostName : 'unnammed',
         subTitle: device?.macAddress,
       };
     });
@@ -137,8 +136,6 @@ export class HelperService {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6, hsiUploadDownload: '50Mbps,250Mbps'.split(',') });
       // this.router.navigate(['issues/internet/no-issue']);
       this.sharedService.setApiResponseData({
-        ontDetails: data?.ontDetails,
-        routerDetails: data?.routerDetails,
         connectedDevices: data?.connectedDevices,
         hsiUploadDownload: data?.hsiUploadDownload?.split(','),
       });

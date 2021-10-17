@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -27,8 +27,8 @@ import { SharedService } from '../../../shared/shared.service';
 })
 export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
-  ontConfig;
-  routerConfig;
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
+  routerConfig: IRouterDetail = { url: SVGs.router.default, className: networkDiagramClasses.okay, title: ROUTER };
   subscription: Subscription;
   networkDiagram = NetWorkDiagramIds.SevenLayer;
   messageSection;
@@ -83,9 +83,6 @@ export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
-    this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
     this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }
 }

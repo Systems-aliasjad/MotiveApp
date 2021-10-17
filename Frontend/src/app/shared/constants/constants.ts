@@ -51,6 +51,9 @@ export const SVGs = {
   router: {
     default: './assets/images/router/default_router.PNG',
   },
+  phone: {
+    default: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
+  },
 };
 
 export const ETISALAT_DEFAULT_CONFIG = {
