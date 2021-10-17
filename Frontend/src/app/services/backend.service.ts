@@ -12,7 +12,7 @@ export class BackendService {
   }
 
   getUserDetailFromAccountId(accountId) {
-    return this.http.get(`?accountId=${accountId}`);
+    return this.http.get(`token?lang=en&account-id=${accountId}`, { headers: { Authorization: `Bearer KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=` } });
   }
 
   getLandingPageData() {
