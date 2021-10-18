@@ -14,52 +14,51 @@
     <ion-row class="form-inner_container animate__animated animate__slideInUp animate__fast">
       <ion-col size="12">
         <form [formGroup]="formGroup">
-          <ion-grid class="pr-0 pl-0">
-            <ion-row>
-              <ion-col size="12">
-                <ion-item>
-                  <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
-                  <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
-                  <img
-                    [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
-                    (click)="hideShowPassword(NewPassword)"
-                    class="show-icon"
-                    alt="show password"
-                  />
-                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
-                    {{ error.password }}
-                  </div>
-                </ion-item>
-              </ion-col>
-              <ion-col size="12">
-                <ion-item>
-                  <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
-                  <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
-                  <img
-                    [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
-                    (click)="hideShowPassword(ConfirmPassword)"
-                    class="show-icon"
-                    alt="show password"
-                  />
-                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
-                    {{ error.password }}
-                  </div>
-                </ion-item>
-              </ion-col>
+          <ion-row>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
+                <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
+                <img
+                  [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
+                  (click)="hideShowPassword(NewPassword)"
+                  class="show-icon"
+                  alt="show password"
+                />
+              </ion-item>
+              <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
+                {{ error.password }}
+              </div>
+            </ion-col>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
+                <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
+                <img
+                  [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
+                  (click)="hideShowPassword(ConfirmPassword)"
+                  class="show-icon"
+                  alt="show password"
+                />
+                
+              </ion-item>
+              <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
+                {{ error.password }}
+              </div>
+            </ion-col>
 
-              <ion-row>
-                <ion-col size="12" *ngIf="rulesList?.length > 0">
-                  <p class="tag-title">{{ 'MESSAGES.CCB_PIN_RULES' | translate }}:</p>
-                  <ion-list class="check-list">
-                    <ion-item *ngFor="let rule of rulesList">
-                      <img src="./assets/images/indicators-icons/icon_check.svg" alt="" /> &nbsp;
-                      <ion-label>{{ rule }}</ion-label>
-                    </ion-item>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
+            <ion-row>
+              <ion-col size="12" *ngIf="rulesList?.length > 0">
+                <p class="tag-title">{{ 'MESSAGES.CCB_PIN_RULES' | translate }}:</p>
+                <ion-list class="check-list">
+                  <ion-item *ngFor="let rule of rulesList">
+                    <img src="./assets/images/indicators-icons/icon_check.svg" alt="" /> &nbsp;
+                    <ion-label>{{ rule }}</ion-label>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
             </ion-row>
-          </ion-grid>
+          </ion-row>
         </form>
       </ion-col>
     </ion-row>
