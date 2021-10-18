@@ -351,7 +351,7 @@ ion-radio::part(container) {
 ion-modal,
 .sc-ion-modal-md-h,
 .sc-ion-modal-ios-h {
- /*  --border-radius: 1rem;
+  /*  --border-radius: 1rem;
   border-bottom-left-radius:0;
   border-bottom-right-radius:0; */
   --width: 100%;
@@ -368,35 +368,35 @@ ion-modal,
 }
 .modal-wrapper,
 .modal-wrapper.sc-ion-modal-md,
-.modal-wrapper.sc-ion-modal-ios{
+.modal-wrapper.sc-ion-modal-ios {
   border-top-left-radius: 0.6rem;
   border-top-right-radius: 0.6rem;
 }
-.mCS-dark-3.mCSB_scrollTools{
-  .mCSB_dragger{
-    &:active{
-      .mCSB_dragger_bar{
-        background-color:$etisalat-color !important;
+.mCS-dark-3.mCSB_scrollTools {
+  .mCSB_dragger {
+    &:active {
+      .mCSB_dragger_bar {
+        background-color: $etisalat-color !important;
       }
     }
-    .mCSB_dragger_bar{
-      background-color:$etisalat-color !important;
+    .mCSB_dragger_bar {
+      background-color: $etisalat-color !important;
     }
   }
-  .mCSB_dragger_onDrag{
-    .mCSB_dragger_bar{
-      background-color:$etisalat-color !important;
+  .mCSB_dragger_onDrag {
+    .mCSB_dragger_bar {
+      background-color: $etisalat-color !important;
     }
   }
-  .mCSB_draggerRail{
+  .mCSB_draggerRail {
     background-color: $white !important;
   }
-} 
-.mCS-light-3.mCSB_scrollTools{
-  .mCSB_draggerRail{
+}
+.mCS-light-3.mCSB_scrollTools {
+  .mCSB_draggerRail {
     background-color: $white !important;
   }
-} 
+}
 
 // ------------Modal End-------------------
 
@@ -509,7 +509,7 @@ ion-modal,
   letter-spacing: 0.14285714em;
   text-decoration: none;
   @media screen and (max-width: 767px) {
-    font-size:15px;
+    font-size: 15px;
   }
   &:hover {
     text-decoration: underline;
@@ -537,7 +537,7 @@ ion-modal,
   color: $primary-color;
   font-weight: 600;
   @media screen and (max-width: 767px) {
-    font-size:14px;
+    font-size: 14px;
   }
 }
 html {
@@ -584,11 +584,19 @@ html {
     margin-bottom: 0;
   }
 }
-.web-title{
-  @media screen and (max-width: 767px) {
-    display:none;
+app-device-care {
+  .web-title {
+    display: none;
+    /* @media screen and (max-width: 767px) {
+      display: none;
+    } */
   }
 }
+// .web-title {
+//   @media screen and (max-width: 767px) {
+//     display: none;
+//   }
+// }
 .transparent-btn {
   a {
     display: inline-block;
@@ -596,11 +604,11 @@ html {
     color: $etisalat-color;
     text-transform: $text-uppercase;
     /* letter-spacing: 0.14285714em; */
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    @media screen and (max-width: 767px)  {
-      font-size:13px;
+    @media screen and (max-width: 767px) {
+      font-size: 13px;
     }
     @include transition(all 0.3s ease-in-out);
     &:hover,
@@ -692,9 +700,9 @@ app-ccb-pin-reset-form {
 }
 app-header-multi-line {
   display: block;
-  @media screen and (max-width: 767px) {
+  /* @media screen and (max-width: 767px) {
     display: none;
-  }
+  } */
 }
 app-header-single-line {
   display: block;
