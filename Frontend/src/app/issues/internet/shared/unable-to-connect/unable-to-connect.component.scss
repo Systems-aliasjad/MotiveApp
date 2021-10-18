@@ -46,13 +46,18 @@ ul.bullet-list{
     color: $secondary-color;
     margin: 18px 0;    
     list-style: none;
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+    } 
     &:first-of-type{
       margin-top: 0;
     }
     ul{
       padding-left: 30px;
       li{
-        margin: 18px 0;          
+        margin-top: .3rem;
+        margin-bottom: 0;
+                 
       }
     }
   }
@@ -75,7 +80,7 @@ ul.bullet-list{
   }
 }
 .image {
-  margin-top: 2rem;
+  margin-top: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,18 +91,20 @@ ul.bullet-list{
   overflow: hidden;
   height: auto;
  /* margin: 2rem auto 0; */
+ @media screen and (max-width: 992px) {
+  margin-top: 1rem;
+  }
   img {
     width: 100%;
   }
 }
 .content {
   max-width: 550px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-right: auto;
   margin-left: auto;
   @media screen and (max-width: 992px) {
     max-width: 100%;
-
   }
 }
 p {

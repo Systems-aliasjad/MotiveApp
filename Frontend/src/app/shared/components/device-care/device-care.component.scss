@@ -54,14 +54,25 @@ ion-grid {
     margin: 0;
     .sub-title{
       margin-top: 1rem;
+      margin-bottom: 1rem;
+      @media screen and (min-width: 767px) and (max-width: 992px) {
+        margin-top: 0;
+      }
+      @media screen and (max-width: 767px) {
+        font-size: 15px;
+      }
     }
   }
   .image {
     max-width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   p {
     margin: 0;
+    @media screen and (max-width: 767px) {
+      font-size: 14px
+    }
+    
   }
 }
 
@@ -91,18 +102,23 @@ ion-grid {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
-  max-width: 472px;
+  /* max-width: 472px; 
   height: auto;
-  margin: 2rem auto 0;
+  margin: 2rem auto 0;*/
+  margin-top: 1rem;
   img {
     width: 100%;
+    height: 100%;;
   }
 }
 .content {
   max-width: 550px;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-right: auto;
-  margin-bottom: 0;
+  margin-left: auto;
+  @media screen and (max-width: 992px) {
+    max-width: 100%;
+  }
 }
 p {
   color: $secondary-color;
