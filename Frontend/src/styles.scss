@@ -237,6 +237,9 @@ p {
     margin-bottom: 0;
     line-height: 50px;
     text-transform: capitalize;
+    @media screen and (max-width: 767px) {
+      font-size: 1.5rem;
+    }
   }
 }
 .sub-title {
@@ -284,9 +287,13 @@ p {
 
 .text-error {
   color: $error-color;
+  /* color:$secondary-color; */
 }
 .field-error {
   border-bottom-color: $error-color;
+}
+.etisalat-gray-color{
+  color:$etisalat-gray-color;
 }
 // ------------Help classes Styling End-------------------
 

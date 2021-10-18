@@ -3,7 +3,7 @@
   <ion-grid class="form-main-container">
     <!-- Page Title and Sub Title Start -->
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12" class="pt-0 pb-0">
         <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p class="tag-title">{{ 'MESSAGES.PLEASE_FILL_THE_BELOW_INFORMATION' | translate }}</p>
       </ion-col>
@@ -16,7 +16,7 @@
         <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
           <ion-grid class="pr-0 pl-0">
             <ion-row>
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="6" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ACCOUNT_ID' | translate }}</ion-label>
                   <ion-input maxlength="100" type="text" formControlName="AccountID"></ion-input>

@@ -23,22 +23,40 @@ ion-item::part(native) {
   }
   form {
     ion-item {
+      -webkit-box-align: end;
+      -ms-flex-align: end;
+      align-items: end;
       ion-label {
-        color: $secondary-color;
+        /* color: $secondary-color; */
+        color:#6b6b6b;
         font-size: 1rem;
         -webkit-transform: scale(0.9);
         -ms-transform: scale(0.9);
         transform: scale(0.9);
-        @media screen and (max-width: 992px) {
-          -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-          transform: scale(1);
+        @media screen and (max-width: 1024px) {
+          transform: inherit;
+          font-size:14px;
         }
       }
+      ion-icon {
+        margin-right: 0;
+      }
+      
     }
   }
 }
-.text-error {
+.text-error{
+  position: relative;
+  top: -12px;
+  font-size: 0.8rem;
+}
+ion-input{
+  /* --padding-end:1.7rem; */
+  @media screen and (max-width: 767px) {
+    font-size:14px;
+   }
+}
+/* .text-error {
   padding-top: 0.2rem;
   position: absolute;
   @media screen and (min-width: 767px) {
@@ -50,4 +68,4 @@ ion-item::part(native) {
     top: 0.5rem;
     font-size: 0.7rem;
   }
-}
+} */

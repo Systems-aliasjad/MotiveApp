@@ -1,12 +1,13 @@
 @import 'src/assets/scss/base/variables';
 @import 'src/assets/scss/base/mixins';
 
+//-------------------------------------------------------
 :host {
   ion-header {
     --ion-background-color: transparent;
   }
 }
-
+//-------------------------------------------------------
 .header-wrapper {
   position: $relative;
   .header-wrapper-wave {
@@ -72,7 +73,8 @@ ion-toolbar {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  min-height: 60px;
+  min-height: 35px;
+  margin-top: 0.8rem;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;

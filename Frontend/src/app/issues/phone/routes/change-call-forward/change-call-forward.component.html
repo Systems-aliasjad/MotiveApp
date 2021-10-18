@@ -25,10 +25,10 @@
                     alt="show password"
                   />
                   <!-- <button type="button" (click)="hideShowPassword()">Click to show</button> -->
-                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
-                    {{ error.password }}
-                  </div>
                 </ion-item>
+                <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
+                  {{ error.password }}
+                </div>
               </ion-col>
               <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
                 <ion-item>
@@ -40,10 +40,10 @@
                     class="show-icon"
                     alt="show password"
                   />
-                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
-                    {{ error.password }}
-                  </div>
                 </ion-item>
+                <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
+                  {{ error.password }}
+                </div>
               </ion-col>
             </ion-row>
 
@@ -56,8 +56,8 @@
                     <label>{{ m | translate }}</label>
                   </ion-item>
                 </div>
-              </ion-col></ion-row
-            >
+              </ion-col>
+            </ion-row>
           </ion-grid>
         </form>
       </ion-col>

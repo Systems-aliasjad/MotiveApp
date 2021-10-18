@@ -3,52 +3,48 @@
   <ion-grid class="form-main-container">
     <!-- Page Title and Sub Title Start -->
     <ion-row>
-      <ion-col size="12">
+      <ion-col size="12" class="pt-0 pb-0">
         <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
         <p *ngIf="!formGroup.valid" class="tag-title">{{ 'SUBHEADER.PLEASE_FILL_YOUR_COMPLETE_DETAILS' | translate }}</p>
-        <p *ngIf="formGroup.valid" class="tag-title">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
+        <p *ngIf="formGroup.valid" class="tag-title etisalat-gray-color">{{ 'SUBHEADER.REVIEW_YOUR_CONTACT_DETAILS' | translate }}</p>
       </ion-col>
     </ion-row>
     <!-- Page Title and Sub Title End -->
 
     <!-- Form Start -->
     <ion-row class="form-inner_container">
-      <ion-col size="12">
+      <ion-col sizeLg="5" sizeMd="6" size="12">
         <form [formGroup]="formGroup" (ngSubmit)="button1Listener()">
-          <ion-grid class="pr-0 pl-0">
-            <ion-row>
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
-                <ion-item>
-                  <ion-label position="stacked">{{ 'MESSAGES.MOBILE_NO' | translate }}</ion-label>
+          <ion-row>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="stacked">{{ 'MESSAGES.MOBILE_NO' | translate }}</ion-label>
+                <ion-input
+                  type="text"
+                  [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                  placeholder="+971xxxxxxxxx"
+                  formControlName="mobileNo"
+                  [ngClass]="{ 'is-invalid': f.mobileNo.errors && f.mobileNo.errors.pattern }">
+                </ion-input>
+              </ion-item>
+              <div class="text-error" *ngIf="formGroup.hasError('pattern', 'mobileNo') && f.mobileNo.touched">
+                {{ error.mobileNo }}
+              </div>
+            </ion-col>
 
-                  <ion-input
-                    type="text"
-                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                    placeholder="+971xxxxxxxxx"
-                    formControlName="mobileNo"
-                    [ngClass]="{ 'is-invalid': f.mobileNo.errors && f.mobileNo.errors.pattern }"
-                  ></ion-input>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="stacked">{{ 'MESSAGES.REMARKS' | translate }}</ion-label>
+                <ion-input maxlength="100" type="text" formControlName="remarks"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
 
-                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'mobileNo') && f.mobileNo.touched">
-                    {{ error.mobileNo }}
-                  </div>
-                </ion-item>
-              </ion-col>
+          <!-- Reset Book A Complaint Buttons -->
+          <!-- <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button> -->
+          <!-- <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
 
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
-                <ion-item>
-                  <ion-label position="stacked">{{ 'MESSAGES.REMARKS' | translate }}</ion-label>
-                  <ion-input maxlength="100" type="text" formControlName="remarks"></ion-input>
-                </ion-item>
-              </ion-col>
-            </ion-row>
-
-            <!-- Reset Book A Complaint Buttons -->
-            <!-- <motive-button [title]="buttonText" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="SubmitForm()"></motive-button> -->
-            <!-- <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
-
-            <!-- Reset Book A Complaint Buttons -->
-          </ion-grid>
+          <!-- Reset Book A Complaint Buttons -->
         </form>
       </ion-col>
     </ion-row>

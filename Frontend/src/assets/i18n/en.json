@@ -1,6 +1,6 @@
 {
   "HEADER": {
-    "ACCOUNT_DETAILS": "ACCOUNT DETAILS",
+    "ACCOUNT_DETAILS": "Account details",
     "TV_DETAILS": "TV details",
     "ALMOST_THERE": "Almost there",
     "SERVICE_DETAILS": "Service details",
@@ -168,7 +168,7 @@
   },
 
   "MESSAGES": {
-    "ACCOUNT_ID": "ACCOUNT ID",
+    "ACCOUNT_ID": "Account ID",
     "PLEASE_FILL_THE_BELOW_INFORMATION": "Please fill the below information",
     "THANK_YOU_FOR_USING_SELF_CARE": "Thank you for using Self-care.",
     "HOPE_WE_COULD_MAKE_YOUR_EXPERIENCE_BETTER": "Hope we could make your experience better.",
