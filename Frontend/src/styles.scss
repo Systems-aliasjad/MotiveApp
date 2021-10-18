@@ -584,6 +584,23 @@ html {
     margin-bottom: 0;
   }
 }
+app-reset-router-password{
+  app-header-single-line{
+    @media screen and (min-width: 767px) {
+      display: none;
+    }
+  }
+  app-header-multi-line{
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+  .web-title{
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+  }
+}
 app-device-care {
   .web-title {
     display: none;
