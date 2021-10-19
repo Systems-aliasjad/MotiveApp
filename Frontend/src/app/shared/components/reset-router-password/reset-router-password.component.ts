@@ -92,10 +92,6 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
     });
   }
 
-  get f() {
-    return this.routerSettingsForm.controls;
-  }
-
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
   }

@@ -21,8 +21,7 @@
               {{ i + 1 }}.
               {{ bullet.text | translate }}
               <ul no-lines *ngIf="bullet?.children" class="bullet-list">
-                <li *ngFor="let item of bullet?.children; let j = index">
-                  {{ i + 1 }}.{{ j + 1 }}.
+                <li *ngFor="let item of bullet?.children; let j = index" class="small-alpha-bullets">
                   {{ item.text | translate }}
                 </li>
               </ul>
