@@ -559,5 +559,10 @@
     "FACING_SOME_ISSUE": "Facing some issue",
     "TRY_AGAIN_LATER": "Try again later",
     "CCB_PIN_RULES": "CCB PIN rules"
+  },
+  "Errors": {
+    "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must start with 971",
+    "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "Password & Confirm Password Must Be Matched",
+    "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "Password must match the crietaria as per given below"
   }
 }

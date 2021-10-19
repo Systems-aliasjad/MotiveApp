@@ -28,11 +28,11 @@
                     formControlName="MobileNo"
                     [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
                   ></ion-input>
-
-                  <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
-                    {{ 'MESSAGES.PLEASE_ENTER_A_VALID_MOBILE_NUMBER' | translate }}
-                  </div>
                 </ion-item>
+
+                <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                  {{ 'Errors.MOBILE_NO_MUST_START_WITH_971' | translate }}
+                </div>
               </ion-col>
             </ion-row>
           </ion-grid>

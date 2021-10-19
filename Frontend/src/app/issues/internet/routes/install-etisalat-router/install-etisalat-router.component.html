@@ -1,4 +1,5 @@
 <app-header-single-line [headerConfig]="headerConfig"></app-header-single-line>
+<app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
 
 <ion-content>
   <ion-grid class="form-main-container">
@@ -16,8 +17,8 @@
         <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
           <ion-grid class="pr-0 pl-0">            
             <ion-row>
-             <ion-col sizeLg="6" sizeMd="8" size="12">
-              <ion-col sizeLg="6" sizeMd="12" size="12">
+             <ion-col sizeLg="6" sizeMd="8"  size="12">
+              <ion-col sizeLg="6" sizeMd="12"  size="12">
                 <!-- <ion-list> -->
                   <ion-item (click)="openInstallEtisalatRouterDialog(1)">
                     <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>

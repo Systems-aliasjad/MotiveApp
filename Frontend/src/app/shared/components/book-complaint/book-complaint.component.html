@@ -24,11 +24,12 @@
                   [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
                   placeholder="+971xxxxxxxxx"
                   formControlName="mobileNo"
-                  [ngClass]="{ 'is-invalid': f.mobileNo.errors && f.mobileNo.errors.pattern }">
+                  [ngClass]="{ 'is-invalid': f.mobileNo.errors && f.mobileNo.errors.pattern }"
+                >
                 </ion-input>
               </ion-item>
               <div class="text-error" *ngIf="formGroup.hasError('pattern', 'mobileNo') && f.mobileNo.touched">
-                {{ error.mobileNo }}
+                {{ 'Errors.MOBILE_NO_MUST_START_WITH_971' | translate }}
               </div>
             </ion-col>
 
