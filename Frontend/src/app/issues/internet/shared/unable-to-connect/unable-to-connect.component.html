@@ -20,8 +20,8 @@
             <li *ngFor="let bullet of unableToConnectContent?.listItems; let i = index">
               {{ i + 1 }}.
               {{ bullet.text | translate }}
-              <ul no-lines *ngIf="bullet?.children" class="bullet-list">
-                <li *ngFor="let item of bullet?.children; let j = index" class="small-alpha-bullets">
+              <ul no-lines *ngIf="bullet?.children" class="bullet-list small-alpha-bullets">
+                <li *ngFor="let item of bullet?.children; let j = index" >
                   {{ item.text | translate }}
                 </li>
               </ul>
