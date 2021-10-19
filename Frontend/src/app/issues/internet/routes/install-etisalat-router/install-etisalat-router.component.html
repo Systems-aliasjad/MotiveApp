@@ -13,76 +13,72 @@
 
     <!-- Form Start -->
     <ion-row class="form-inner_container">
-      <ion-col size="12">
-        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
-          <ion-grid class="pr-0 pl-0">            
-            <ion-row>
-             <ion-col sizeLg="6" sizeMd="8"  size="12">
-              <ion-col sizeLg="6" sizeMd="12"  size="12">
-                <!-- <ion-list> -->
-                  <ion-item (click)="openInstallEtisalatRouterDialog(1)">
-                    <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
-                    <ion-label position="stacked">{{ valueForBrand?.text }}</ion-label>
-                    <img
-                    src="assets/images/action-icons/icon_arrow_right_black.svg"                    
-                    class="show-icon"                    
-                    />
-                  </ion-item>
-                <!-- </ion-list> -->
-              </ion-col>
-              <ion-col sizeLg="6" sizeMd="12" size="12">
-                <ion-list>
-                  <ion-item (click)="openInstallEtisalatRouterDialog(2)">
-                    <ion-label position="stacked">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
-                    <ion-label position="stacked">{{ valueForModel?.text }}</ion-label>
-                    <img
-                    src="assets/images/action-icons/icon_arrow_right_black.svg"                    
-                    class="show-icon"                    
-                    />
-                    <!-- <ion-select placeholder="Select Brand" formControlName="Model">
-                      <ion-select-option *ngFor="let model of modelList" [value]="model.value">{{ model.text }}</ion-select-option>
-                    </ion-select> -->
-
-                    <!-- <ion-select value="notifications" interface="action-sheet" ok-text="Okay" cancel-text="Nah">
-                      <ion-select-option value="enable">Enable</ion-select-option>
-                      <ion-select-option value="mute">Mute</ion-select-option>
-                      <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-                      <ion-select-option value="mute_year">Mute for a year</ion-select-option>
-                    </ion-select> -->
-
-                    <!-- <ion-select interface="popover" placeholder="Select One">
-                      <ion-select-option value="brown">Brown</ion-select-option>
-                      <ion-select-option value="blonde">Blonde</ion-select-option>
-                      <ion-select-option value="black">Black</ion-select-option>
-                      <ion-select-option value="red">Red</ion-select-option>
-                    </ion-select> -->
-
-                    <!-- <ion-select interface="popover" placeholder="Select One">
-                      <ion-label>ghg</ion-label>
-                      <ion-radio slot="start" value="fsfef"></ion-radio>
-                    </ion-select> -->
-                  </ion-item>
-                </ion-list>
-              </ion-col>
-
-              <ion-col sizeLg="6" sizeMd="12" size="12">
-                <ion-item>
-                  <ion-label position="stacked">{{ 'MESSAGES.ALTERNATE_CONTACT_NO' | translate }}</ion-label>
-                  <ion-input
-                    type="text"
-                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                    placeholder="+971xxxxxxxxx"
-                    formControlName="MobileNo"
-                    [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
-                  ></ion-input>
+      <ion-col sizeLg="5" sizeMd="6" size="12">
+        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">          
+          <ion-row>
+            <ion-col size="12">
+              <!-- <ion-list> -->
+                <ion-item (click)="openInstallEtisalatRouterDialog(1)">
+                  <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ valueForBrand?.text }}</ion-label>
+                  <img
+                  src="assets/images/action-icons/icon_arrow_right_black.svg"                    
+                  class="show-icon"                    
+                  />
                 </ion-item>
-                <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
-                  {{ error.phoneNumber }}
-                </div>
-              </ion-col>
-             </ion-col>
-            </ion-row>
-          </ion-grid>
+              <!-- </ion-list> -->
+            </ion-col>
+            <ion-col size="12">
+              <ion-list>
+                <ion-item (click)="openInstallEtisalatRouterDialog(2)">
+                  <ion-label position="stacked">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
+                  <ion-label position="stacked">{{ valueForModel?.text }}</ion-label>
+                  <img
+                  src="assets/images/action-icons/icon_arrow_right_black.svg"                    
+                  class="show-icon"                    
+                  />
+                  <!-- <ion-select placeholder="Select Brand" formControlName="Model">
+                    <ion-select-option *ngFor="let model of modelList" [value]="model.value">{{ model.text }}</ion-select-option>
+                  </ion-select> -->
+
+                  <!-- <ion-select value="notifications" interface="action-sheet" ok-text="Okay" cancel-text="Nah">
+                    <ion-select-option value="enable">Enable</ion-select-option>
+                    <ion-select-option value="mute">Mute</ion-select-option>
+                    <ion-select-option value="mute_week">Mute for a week</ion-select-option>
+                    <ion-select-option value="mute_year">Mute for a year</ion-select-option>
+                  </ion-select> -->
+
+                  <!-- <ion-select interface="popover" placeholder="Select One">
+                    <ion-select-option value="brown">Brown</ion-select-option>
+                    <ion-select-option value="blonde">Blonde</ion-select-option>
+                    <ion-select-option value="black">Black</ion-select-option>
+                    <ion-select-option value="red">Red</ion-select-option>
+                  </ion-select> -->
+
+                  <!-- <ion-select interface="popover" placeholder="Select One">
+                    <ion-label>ghg</ion-label>
+                    <ion-radio slot="start" value="fsfef"></ion-radio>
+                  </ion-select> -->
+                </ion-item>
+              </ion-list>
+            </ion-col>
+
+            <ion-col  size="12">
+              <ion-item>
+                <ion-label position="stacked">{{ 'MESSAGES.ALTERNATE_CONTACT_NO' | translate }}</ion-label>
+                <ion-input
+                  type="text"
+                  [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
+                  placeholder="+971xxxxxxxxx"
+                  formControlName="MobileNo"
+                  [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
+                ></ion-input>
+              </ion-item>
+              <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                {{ error.phoneNumber }}
+              </div>
+            </ion-col>
+          </ion-row>
         </form>
       </ion-col>
     </ion-row>
