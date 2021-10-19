@@ -237,7 +237,7 @@ p {
     margin-bottom: 0;
     line-height: 50px;
     text-transform: capitalize;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 992px) {
       font-size: 1.5rem;
     }
   }
@@ -436,6 +436,13 @@ ion-modal,
   }
 }
 // ------------Bullet List End-------------------
+ul.bullet-list{
+  li{
+    @media screen and (max-width: 992px) {
+      font-size: 14px;
+    } 
+  }
+}
 
 // ------------Inline List Start-------------------
 .inline-ion-list-border {
@@ -479,6 +486,9 @@ ion-modal,
     cursor: pointer;
   }
 }
+.small-alpha-bullets {
+  list-style-type: lower-alpha;
+}
 .quick-links_all,
 .arrow-link,
 .arrow-btn,
@@ -515,7 +525,7 @@ ion-modal,
   align-items: center;
   letter-spacing: 0.14285714em;
   text-decoration: none;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 992px) {
     font-size: 15px;
   }
   &:hover {
@@ -543,7 +553,7 @@ ion-modal,
 .tag-title {
   color: $primary-color;
   font-weight: 600;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 992px) {
     font-size: 14px;
   }
 }
@@ -591,6 +601,7 @@ html {
     margin-bottom: 0;
   }
 }
+app-ccb-pin-reset-form,
 app-reset-internet-password,
 app-device-care,
 app-reset-router-password{
@@ -635,7 +646,7 @@ app-device-care{
     letter-spacing: 0.1rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 992px) {
       font-size: 13px;
     }
     @include transition(all 0.3s ease-in-out);
@@ -808,3 +819,4 @@ motive-button {
     height: 100%;
   }
 }
+

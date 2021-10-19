@@ -195,7 +195,7 @@ ion-item::part(native) {
         }
         .sub-title {
           letter-spacing: 0;
-          @media screen and (max-width: 767px) {
+          @media screen and (max-width: 992px) {
             font-size:15px;
           }
          
@@ -261,7 +261,7 @@ ion-item::part(native) {
           span {
             margin-left: 0.5rem;
             color: $secondary-color;
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 992px) {
               font-size:14px;
             }
           }
@@ -279,7 +279,7 @@ ion-item::part(native) {
         color: $secondary-color;
         margin-top: 0;
         margin-bottom: 0.5rem;
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 992px) {
           font-size:14px;
         }
         &:last-child {
@@ -310,7 +310,7 @@ ion-item::part(native) {
         margin-top: 0;
         margin-bottom: 0;
         color: $secondary-color;
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width:992px) {
           font-size:14px;
         }
       }
@@ -318,7 +318,7 @@ ion-item::part(native) {
         display: block;
         color: $primary-color;
         font-weight: 700;
-        @media screen and (max-width: 767px) {
+        @media screen and (max-width: 992px) {
           font-size:14px;
         }
        
@@ -369,7 +369,7 @@ ion-item::part(native) {
           .sub-title {
             margin-bottom: 0;
             margin-left: 1rem;
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 992px) {
               font-size:15px;
             }
             @media screen and (max-width: 281x) {
@@ -381,7 +381,7 @@ ion-item::part(native) {
         ion-card-content {
           p {
             margin-bottom: 0.5rem;
-            @media screen and (max-width: 767px) {
+            @media screen and (max-width: 992px) {
              font-size:14px;
             }
           }

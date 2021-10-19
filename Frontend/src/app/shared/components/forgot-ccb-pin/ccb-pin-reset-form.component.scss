@@ -34,10 +34,15 @@ ion-item::part(native){
   padding-inline-start: 0;
 }
 /* --------------------------------------------------------------*/
-
+.page-title {
+  margin-bottom: 0;
+}
 .form-main-container{
   font-family:Lato,Roboto,Arial,sans-serif;
   .form-inner_container{
+    @media screen and (max-width: 767px)  {
+      margin-top: 1rem;
+    }
     ion-item{
       margin-bottom: 1rem;
     }
@@ -66,11 +71,10 @@ ion-item::part(native){
         ion-icon {
           margin-right: 0;
         }
-        
       }
-      .check-list {
+      .check-list{
         padding-top: 0;
-        ion-item {
+        ion-item{
           -webkit-box-align: start;
           -ms-flex-align: start;
           align-items: flex-start;
@@ -78,13 +82,16 @@ ion-item::part(native){
           --border-width: 0;
           --inner-border-width: 0;
           margin-bottom: .5rem;
-          /* @media screen and (max-width: 767px) {
-            margin-bottom: .5rem;
-          } */
-          img {
+          img{
             display: inline-block;
             height: 1.4rem;
           }
+          /* ion-label{
+            transform:none;
+            margin-top: 0;
+            margin-left: .5rem;
+            margin-bottom: 0;
+          } */
           ion-label {
             transform: none;
             margin-top: .2rem;
@@ -92,7 +99,7 @@ ion-item::part(native){
             margin-bottom: 0;
             text-transform:lowercase;
             font-size:14px;
-            /* @media screen and (max-width: 767px) {
+           /*  @media screen and (max-width: 767px) {
               margin-top: .2rem;
              font-size:14px;
             } */
@@ -139,7 +146,6 @@ ion-item::part(native){
       z-index: 2;
     }
   }
-  
   .text-error{
     position: relative;
     top: -12px;
@@ -150,5 +156,32 @@ ion-item::part(native){
     @media screen and (max-width: 767px) {
       font-size:14px;
      }
+  }
+  .check-list-container{
+    .tag-title {
+      @media screen and (max-width:992px) {
+        margin-top: 0;
+      }
+    }
+  } 
+}
+.footer{
+  .footer-btns-container{
+    ion-col{
+      ion-row{
+        ion-col{
+          &:first-child{
+            -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+            order:2;
+            @media screen and (max-width: 992px) {
+            -webkit-box-ordinal-group:inherit;
+            -ms-flex-order:inherit;
+            order:inherit;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -51,11 +51,11 @@ export class SharedService {
   }
 
   getApiResponseData(): any {
-    if (this.apiResponseData) {
+    /* if (this.apiResponseData) {
       return this.apiResponseData;
     } else {
       this.router.navigate(['landing']);
-    }
+    } */
   }
 
   setHeaderConfig(pageTitle: string, oneLine: boolean, _showBackBtn: boolean = true) {

@@ -1,56 +1,57 @@
 <app-header-multi-line [headerConfig]="headerConfig"></app-header-multi-line>
-<ion-grid>
-  <ion-row class="page-title web-title">
-    <ion-col class="pt-0 pb-0">
-      <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
-    </ion-col>
-  </ion-row>
+<ion-content>
+  <ion-grid class="two-col-container">
+    <ion-row class="page-title web-title">
+      <ion-col class="pt-0 pb-0">
+        <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
+      </ion-col>
+    </ion-row>
 
-  <ion-row class="device-detail-inner_container">
-    <!-- Router Image Start -->
-    <ion-col sizeLg="6" sizeMd="12" size="12" class="device pt-0 pb-0">
-      <picture>
-        <source [srcset]="ImgSrc" media="(max-width: 414px)" />
-        <source [srcset]="ImgSrc" media="(max-width: 768px)" />
-        <source [srcset]="ImgSrc" media="(max-width: 1024px)" />
-        <source [srcset]="ImgSrc" media="(max-width: 1366px)" />
-        <source [srcset]="ImgSrc" media="(max-width: 1440px)" />
-        <source [srcset]="ImgSrc" media="(max-width: 1920px)" />
-        <img [src]="ImgSrc" class="cover lazyloaded" alt="" />
-      </picture>
-    </ion-col>
-    <!-- Router Image End -->
+    <ion-row class="device-detail-inner_container two-col_inner_container">
+      <!-- Router Image Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="device pt-0 pb-0 two-col_left">
+        <picture>
+          <source [srcset]="ImgSrc" media="(max-width: 414px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 768px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1024px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1366px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1440px)" />
+          <source [srcset]="ImgSrc" media="(max-width: 1920px)" />
+          <img [src]="ImgSrc" class="cover lazyloaded" alt="" />
+        </picture>
+      </ion-col>
+      <!-- Router Image End -->
 
-    <!-- Router Instruction Start -->
-    <ion-col sizeLg="6" sizeMd="12" size="12" class="instruction-container pt-0 pb-0">
-      <div class="instruction">
-        <ion-row class="instruction_steps">
-          <ion-col size="12" class="pb-0">
-            <p class="tag-title">{{ instruction1.title | translate }}</p>
-            <ion-list *ngFor="let ins of instruction1.steps; let i = index">
-              <ion-item>
-                <ion-label>{{ i + 1 }}. {{ ins | translate }}</ion-label>
-              </ion-item>
-            </ion-list>
-          </ion-col>
-        </ion-row>
-        <ion-row class="instruction_view" *ngIf="instruction2">
-          <ion-col size="12">
-            <ion-item-divider>
-              <ion-label>
-                <span>{{ 'MESSAGES.OR' | translate }}</span>
-              </ion-label>
-            </ion-item-divider>
-            <p class="tag-title">{{ instruction2.title | translate }}</p>
-            <p>{{ instruction2.body | translate }}</p>
-          </ion-col>
-        </ion-row>
-      </div>
-    </ion-col>
-    <!-- Router Instruction End -->
-  </ion-row>
+      <!-- Router Instruction Start -->
+      <ion-col sizeLg="6" sizeMd="12" size="12" class="instruction-container pt-0 pb-0 two-col_right">
+        <div class="instruction">
+          <ion-row class="instruction_steps">
+            <ion-col size="12" class="pb-0">
+              <p class="tag-title">{{ instruction1.title | translate }}</p>
+              <ion-list *ngFor="let ins of instruction1.steps; let i = index">
+                <ion-item>
+                  <ion-label>{{ i + 1 }}. {{ ins | translate }}</ion-label>
+                </ion-item>
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row class="instruction_view" *ngIf="instruction2">
+            <ion-col size="12">
+              <ion-item-divider>
+                <ion-label>
+                  <span>{{ 'MESSAGES.OR' | translate }}</span>
+                </ion-label>
+              </ion-item-divider>
+              <p class="tag-title">{{ instruction2.title | translate }}</p>
+              <p>{{ instruction2.body | translate }}</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+      <!-- Router Instruction End -->
+    </ion-row>
 </ion-grid>
-
+</ion-content>
 <div class="footer">
   <ion-row class="footer-btns-container">
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">

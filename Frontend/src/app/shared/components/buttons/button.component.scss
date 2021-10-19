@@ -34,7 +34,7 @@ ion-radio.radio-checked::part(mark) {
 ion-button,
 .btn {
   width: 100%;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 992px) {
     font-size:13px;
   }
 } 
@@ -84,7 +84,7 @@ ion-button,
         margin-left: .8rem;
         margin-bottom: 0;
         color: $secondary-color;
-        @media screen and (max-width: 767px)  {
+        @media screen and (max-width: 992px)  {
           font-size:14px;
         }      
         a{

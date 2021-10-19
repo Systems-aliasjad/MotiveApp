@@ -16,8 +16,8 @@
         <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
           <ion-grid class="pr-0 pl-0">            
             <ion-row>
-             <ion-col sizeLg="6" sizeMd="8" sizeSm="12">
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+             <ion-col sizeLg="6" sizeMd="8" size="12">
+              <ion-col sizeLg="6" sizeMd="12" size="12">
                 <!-- <ion-list> -->
                   <ion-item (click)="openInstallEtisalatRouterDialog(1)">
                     <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
@@ -29,7 +29,7 @@
                   </ion-item>
                 <!-- </ion-list> -->
               </ion-col>
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="12" size="12">
                 <ion-list>
                   <ion-item (click)="openInstallEtisalatRouterDialog(2)">
                     <ion-label position="stacked">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
@@ -64,7 +64,7 @@
                 </ion-list>
               </ion-col>
 
-              <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+              <ion-col sizeLg="6" sizeMd="12" size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ 'MESSAGES.ALTERNATE_CONTACT_NO' | translate }}</ion-label>
                   <ion-input
@@ -74,10 +74,10 @@
                     formControlName="MobileNo"
                     [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
                   ></ion-input>
-                  <div style="color: red; padding-top: 0.2rem" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
-                    {{ error.phoneNumber }}
-                  </div>
                 </ion-item>
+                <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                  {{ error.phoneNumber }}
+                </div>
               </ion-col>
              </ion-col>
             </ion-row>

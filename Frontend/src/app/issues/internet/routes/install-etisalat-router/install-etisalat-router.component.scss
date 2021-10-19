@@ -131,8 +131,8 @@ ion-item::part(native){
     }
     
     .text-error{
-      position: absolute;
-      top: 12px;
+      position: relative;
+      top: -12px;
       font-size: 0.8rem;
     }
   }
