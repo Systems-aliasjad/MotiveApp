@@ -376,8 +376,11 @@ ion-modal,
 .modal-wrapper,
 .modal-wrapper.sc-ion-modal-md,
 .modal-wrapper.sc-ion-modal-ios {
-  border-top-left-radius: 0.6rem;
-  border-top-right-radius: 0.6rem;
+  @media screen and (max-width: 767px) {
+    border-top-left-radius: 0.6rem;
+    border-top-right-radius: 0.6rem;
+  }
+  
 }
 .mCS-dark-3.mCSB_scrollTools {
   .mCSB_dragger {
@@ -604,6 +607,19 @@ html {
     margin-bottom: 0;
   }
 }
+.sub-title-content {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  @media screen and (max-width: 992px)  {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 767px)  {
+    display: none;
+  }
+}
+app-change-call-forward,
 app-reset-pin,
 app-install-etisalat-router,
 app-ccb-pin-reset-form,

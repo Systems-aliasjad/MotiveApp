@@ -150,16 +150,16 @@ ion-item::part(native){
         opacity: 0.3;
       }
     }
-    ion-input{
-      /* --padding-end:1.7rem; */
-      @media screen and (max-width: 992px) {
-        font-size:14px;
-       }
-    }
-    .text-error{
-      position: relative;
-      top: -12px;
-      font-size: 0.8rem;
-    }
+    
   }
-  
+  ion-input{
+    /* --padding-end:1.7rem; */
+    @media screen and (max-width: 992px) {
+      font-size:14px;
+     }
+  }
+  .text-error{
+    position: relative;
+    top: -12px;
+    font-size: 0.8rem;
+  }

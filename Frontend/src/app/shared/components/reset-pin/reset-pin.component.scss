@@ -131,17 +131,17 @@ ion-item::part(native) {
       z-index: 2;
     }
   }
-  text-error{
-    position: relative;
-    top: -12px;
-    font-size: 0.8rem;
-  }
-  ion-input{
-    /* --padding-end:1.7rem; */
-    @media screen and (max-width: 767px) {
-      font-size:14px;
-     }
-  }
+}
+.text-error{
+  position: relative;
+  top: -12px;
+  font-size: 0.8rem;
+}
+ion-input{
+  --padding-end:0;
+  @media screen and (max-width: 767px) {
+    font-size:14px;
+   }
 }
 /* .native-input{
   padding-right: 1.7rem;
