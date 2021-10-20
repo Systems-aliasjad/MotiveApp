@@ -144,3 +144,23 @@ p {
     }
   }
 }
+.footer{
+  .footer-btns-container{
+    ion-col{
+      ion-row{
+        ion-col{
+          &:first-child{
+            -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+            order:2;
+            @media screen and (max-width: 992px) {
+            -webkit-box-ordinal-group:inherit;
+            -ms-flex-order:inherit;
+            order:inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}

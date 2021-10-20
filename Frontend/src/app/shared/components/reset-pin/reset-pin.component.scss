@@ -43,10 +43,27 @@ ion-item::part(native) {
   padding-inline-start: 0;
 }
 /* --------------------------------------------------------------*/
-
+.page-title {
+  margin-bottom: 0;
+}
+.sub-title-content {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  @media screen and (max-width: 992px)  {
+    font-size: 1rem;
+  }
+  @media screen and (max-width: 767px)  {
+    display: none;
+  }
+}
 .form-main-container {
   font-family: Lato, Roboto, Arial, sans-serif;
   .form-inner_container {
+    @media screen and (max-width: 767px)  {
+      margin-top: 1rem;
+    }
     ion-item {
       margin-bottom: 1rem;
     }
@@ -56,19 +73,20 @@ ion-item::part(native) {
         -ms-flex-align: end;
         align-items: end;
         ion-label {
-          color: $secondary-color;
+          /* color: $secondary-color; */
+          color:#6b6b6b;
           font-size: 1rem;
           -webkit-transform: scale(0.9);
           -ms-transform: scale(0.9);
           transform: scale(0.9);
           @media screen and (max-width: 1024px) {
             transform: inherit;
+            font-size: 14px;
           }
         }
         ion-icon {
           margin-right: 0;
         }
-        
       }
       .check-list {
         padding-top: 0;
@@ -79,15 +97,25 @@ ion-item::part(native) {
           --min-height: auto;
           --border-width: 0;
           --inner-border-width: 0;
+          margin-bottom: .5rem;
+          /* @media screen and (max-width: 767px) {
+            margin-bottom: .5rem;
+          } */
           img {
             display: inline-block;
             height: 1.4rem;
           }
           ion-label {
             transform: none;
-            margin-top: 0;
-            margin-left: 0.8rem;
+            margin-top: .2rem;
+            margin-left: 0.4rem;
             margin-bottom: 0;
+            text-transform:lowercase;
+            font-size:14px;
+            /* @media screen and (max-width: 767px) {
+              margin-top: .2rem;
+             font-size:14px;
+            } */
           }
         }
       }
@@ -103,13 +131,18 @@ ion-item::part(native) {
       z-index: 2;
     }
   }
-  .text-error{
+  text-error{
+    position: relative;
+    top: -12px;
     font-size: 0.8rem;
-    width: 100%;
-    text-align: left;
-    margin-bottom: 0.5rem;
+  }
+  ion-input{
+    /* --padding-end:1.7rem; */
+    @media screen and (max-width: 767px) {
+      font-size:14px;
+     }
   }
 }
-.native-input{
+/* .native-input{
   padding-right: 1.7rem;
-}
+} */

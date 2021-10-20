@@ -286,8 +286,8 @@ p {
 }
 
 .text-error {
-  color: $error-color;
-  /* color:$secondary-color; */
+  /* color: $error-color; */
+  color:$secondary-color;
 }
 .field-error {
   border-bottom-color: $error-color;
@@ -604,6 +604,7 @@ html {
     margin-bottom: 0;
   }
 }
+app-reset-pin,
 app-install-etisalat-router,
 app-ccb-pin-reset-form,
 app-reset-internet-password,
