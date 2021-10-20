@@ -12,7 +12,7 @@ export class BackendService {
   }
 
   getUserDetailFromAccountId(accountId) {
-    return this.http.get(`token?lang=en&account-id=${accountId}`, { headers: { Authorization: `Bearer KKnKASBiRKMbsHvOMzcEwQjGjqeN7iscdkoft/AGsMI=` } });
+    return this.http.get(`token?lang=en&account-id=${accountId}`, { headers: { Authorization: `Bearer KKnKASBiRKMbsHvOMzcEwYmDLDnuPQnDzIHH5U1T358=` } });
   }
 
   getLandingPageData() {
@@ -29,6 +29,10 @@ export class BackendService {
 
   bookComplaint(data) {
     return this.http.put(`motive/troubleshoot/book-complaint`, data);
+  }
+
+  upsellRequest(data) {
+    return this.http.put(`motive/troubleshoot/upsell`, data);
   }
 
   resetWifiPassword(data) {
