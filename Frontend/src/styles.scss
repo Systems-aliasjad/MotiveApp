@@ -487,7 +487,10 @@ ul.bullet-list{
   }
 }
 ul.small-alpha-bullets {
-  list-style-type: lower-alpha;
+  li{
+    list-style-type: lower-alpha !important;
+  }
+ 
 }
 .quick-links_all,
 .arrow-link,
