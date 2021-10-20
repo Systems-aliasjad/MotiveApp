@@ -79,7 +79,9 @@ export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
     this.router.navigate(['/issues/internet/router-upgrade-recommended-form']);
   }
 
-  button3Listener() {}
+  button3Listener() {
+    this.router.navigate(['/issues/internet/no-issue']);
+  }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
