@@ -14,11 +14,10 @@
 
     <!-- Form Start -->
     <ion-row class="form-inner_container">
-      <ion-col size="12">
+      <ion-col sizeLg="5" sizeMd="6" size="12">
         <form [formGroup]="formGroup" (ngSubmit)="button1Listener()">
-          <ion-grid class="pr-0 pl-0">
-            <ion-row>
-              <ion-col sizeLg="6" sizeMd="12" size="12">
+          <ion-row>
+              <ion-col size="12">
                 <ion-item>
                   <ion-label position="stacked">{{ resetPinContent.inputLablel | translate }}</ion-label>
                   <ion-input
@@ -34,8 +33,7 @@
                   {{ 'Errors.MOBILE_NO_MUST_START_WITH_971' | translate }}
                 </div>
               </ion-col>
-            </ion-row>
-          </ion-grid>
+          </ion-row>
         </form>
       </ion-col>
     </ion-row>
