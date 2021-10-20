@@ -33,23 +33,20 @@ export class ThirdPartyRouterSuccessMessageComponent implements OnInit, OnDestro
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
+      this.updatePageContent();
     });
-    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
-
   updatePageContent() {
-    const apiResponse = this.sharedService.getApiResponseData();
+    const navigation = this.router.getCurrentNavigation();
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.thirdPartyUpgradesuccessfullyCase;
     this.subHeaderSectionTemplate = ApplicableCodes.thirdPartyUpgradeTemplate;
-    this.subHeaderSectionData = apiResponse?.thirdPartyUpgrade;
+    this.subHeaderSectionData = { referenceNo: navigation?.extras?.state?.referenceNo };
   }
 
   button1Listener() {

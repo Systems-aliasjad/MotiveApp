@@ -5,7 +5,7 @@ export const regExps: { [key: string]: RegExp } = {
   phoneNumber: /^(\+971)[0-9]{10}$/,
 
   //Minimum eight characters, at least one letter, one number and one special character:
-  password: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[A-Za-z\d !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,}$/,
+  password: /^(?=.*[A-Za-z\d])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[A-Za-z\d !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,}$/,
 };
 
 export const errorMessages: { [key: string]: string } = {

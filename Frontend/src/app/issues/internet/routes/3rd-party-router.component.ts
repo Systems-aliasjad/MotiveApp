@@ -90,7 +90,9 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
     this.router.navigate(['/issues/internet/third-party-router-form']);
   }
 
-  button3Listener() {}
+  button3Listener() {
+    this.router.navigate(['/issues/internet/no-issue']);
+  }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
