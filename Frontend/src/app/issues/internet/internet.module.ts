@@ -94,6 +94,7 @@ import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.compo
 import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-network.component';
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
+import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 
 @NgModule({
   declarations: [
@@ -112,6 +113,7 @@ import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-s
     OpenServiceRequestMessageComponent,
     PackageUpgradeSuccessMessageComponent,
     RouterAndPackageUpgradeSuccessMessageComponent,
+    InternetTroubleshootCompleteMessageComponent,
     AccountNotActiveMessageComponent,
     RouterRestartCareComponent,
     RouterNotRestartedCareComponent,

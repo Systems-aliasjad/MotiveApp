@@ -78,6 +78,7 @@ import { ThirdPartyRouterSuccessMessageComponent } from './routes/third-party-ro
 import { RouterOutOfWarrantyComponent } from './routes/router-out-warranty.component';
 import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-network.component';
 import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
+import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 
 const routes: Routes = [
   {
@@ -95,6 +96,14 @@ const routes: Routes = [
   {
     path: 'unable-to-browse-internet/step2',
     component: BrowsingUnableStep2Component,
+  },
+  {
+    path: 'unable-to-browse-internet/step3',
+    component: BrowsingUnableStep3Component,
+  },
+  {
+    path: 'unable-to-browse-internet/issue-not-fixed',
+    component: InternetTroubleshootCompleteMessageComponent,
   },
   {
     path: 'service-detail',
@@ -144,10 +153,6 @@ const routes: Routes = [
   {
     path: 'unable-to-connect-to-homezone',
     component: UnableHomezoneConnectionComponent,
-  },
-  {
-    path: 'unable-to-browse-internet/step3',
-    component: BrowsingUnableStep3Component,
   },
   {
     path: 'password-update-success',
