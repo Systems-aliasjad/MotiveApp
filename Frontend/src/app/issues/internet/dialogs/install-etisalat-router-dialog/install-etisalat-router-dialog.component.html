@@ -2,12 +2,13 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <h5>{{ modelHeader | translate }}</h5>
+      <h3>{{ modelHeader | translate }}</h3>
     </ion-title>
     <ion-buttons slot="end">
       <!-- <motive-button [title]="'BUTTONS.CLOSE'" [type]="'link'" (clickHandler)="dismiss()"></motive-button> -->
-      <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close" />
+      <!-- <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button> -->
+      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="cross-icon" />
+      <ion-button class="btn transparent-btn close-btn cancel-btn" (click)="dismiss()">Cancel</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -15,16 +16,11 @@
 
 <ion-content malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
   <ion-grid class="ion-no-padding">
-    <!-- Dialog Internet Issues List Start -->
     <form [formGroup]="formGroup">
       <ion-row>
         <ion-col size="12" class="pb-0">
           <ion-list>
             <ion-radio-group allow-empty-selection="true" name="radio-group" formControlName="radioList">
-              <!-- <ion-list-header>
-                <ion-label>Name</ion-label>
-              </ion-list-header> -->
-
               <ion-item *ngFor="let item of arrayList">
                 <ion-label class="brand-name">{{ item.text }}</ion-label>
                 <ion-radio slot="start" name="radio-group" value="{{ item.value }}"></ion-radio>
@@ -33,11 +29,26 @@
           </ion-list>
         </ion-col>
       </ion-row>
+      <!--Large Screen Button Start -->
+      <ion-row class="popup-btn-lg">
+        <div class="footer">
+          <ion-row class="footer-btns-container">
+            <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+              <ion-row>
+                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+                  <motive-button [title]="'BUTTONS.SELECT'" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="dismiss()"></motive-button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-row>
+      <!--Large Screen Button End -->
     </form>
   </ion-grid>
 </ion-content>
-
-<div class="footer">
+ <!-- Small Screen Button Start -->
+<div class="footer popup-btn-sm">
   <ion-row class="footer-btns-container">
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
@@ -48,3 +59,4 @@
     </ion-col>
   </ion-row>
 </div>
+ <!-- Small Screen Button End -->
