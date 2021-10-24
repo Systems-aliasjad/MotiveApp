@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
+import { DEVICE_CARE_URL } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-tvbox-restart-instruction',
@@ -67,7 +68,8 @@ export class RestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/tv/box-not-restarted-instructions/device-care']);
+    window.location.href = DEVICE_CARE_URL;
+    // this.router.navigate(['/issues/tv/box-not-restarted-instructions/device-care']);
   }
 
   button2Listener() {

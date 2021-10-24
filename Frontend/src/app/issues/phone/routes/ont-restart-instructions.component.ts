@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
+import { DEVICE_CARE_URL } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-ont-restart-instruction',
@@ -67,8 +68,9 @@ export class OntRestartInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
+    window.location.href = DEVICE_CARE_URL;
     // this.router.navigate(['/ont-restart-required-device-care']);
-    this.router.navigate(['issues/phone/ont-not-restart-instructions']);
+    // this.router.navigate(['issues/phone/ont-not-restart-instructions']);
   }
 
   button2Listener() {
