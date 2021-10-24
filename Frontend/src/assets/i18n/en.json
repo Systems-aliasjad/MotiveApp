@@ -168,6 +168,10 @@
   },
 
   "MESSAGES": {
+    "PLEASE_ENTER_BELOW_DETAILS_TO_CHANGE": "Please enter below details to change ",
+    "CALL_FORWARDING_NUMBER": "call forwarding number",
+    "PLEASE_ENTER_BELOW_DETAILS_TO_RESET_YOUR": "Please enter below details to reset your",
+    "WIFI_PASSWORD": "Wi-Fi  password",
     "ACCOUNT_ID": "Account ID",
     "PLEASE_FILL_THE_BELOW_INFORMATION": "Please fill the below information",
     "THANK_YOU_FOR_USING_SELF_CARE": "Thank you for using Self-care.",

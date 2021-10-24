@@ -1,5 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, Subscriber } from 'rxjs';
+
+import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +32,12 @@ export class BackendService {
   }
 
   bookComplaint(data) {
-    return this.http.put(`motive/troubleshoot/book-complaint`, data);
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/book-complaint`, data);
+    } else {
+      const response = { result: { responseData: { referenceNo: '4365298739', dateOfVisit: 'Jul 10 2019, 10:30 AM', status: '--' } } };
+      return new Observable<object>((subscriber: Subscriber<object>) => subscriber.next(new Object())).pipe(map((o) => response));
+    }
   }
 
   upsellRequest(data) {
