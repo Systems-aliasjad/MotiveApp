@@ -56,7 +56,7 @@ export class SharedService {
       return this.apiResponseData;
     }
     //if (environment.shouldCallAPI)
-    else {
+    else if (environment.shouldCallAPI) {
       this.router.navigate(['landing']);
     }
   }
