@@ -6,6 +6,7 @@ import { SharedService } from '../../../shared/shared.service';
 import { ConfirmedValidator, eyeHide, eyeShow } from '../../../shared/constants/constants';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { IPageHeader } from 'src/app/shared/constants/types';
 @Component({
   selector: 'app-no-issues-service-details',
   templateUrl: './no-issues-service-details.component.html',
@@ -36,8 +37,8 @@ export class NoIssuesServiceDetailsComponent implements OnInit {
   ngOnInit() {}
 
   initialization() {
-    this.sharedService.setDefaultValues();
-    this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', true);
+    //  this.sharedService.setDefaultValues();
+    //this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', true);
   }
 
   get f() {
@@ -52,4 +53,9 @@ export class NoIssuesServiceDetailsComponent implements OnInit {
   segmentChanged(ev: any) {
     this.segment = ev.detail.value;
   }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.SERVICE_DETAILS',
+    showBackBtn: true,
+  };
 }
