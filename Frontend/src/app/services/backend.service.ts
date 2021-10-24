@@ -11,6 +11,30 @@ import { map } from 'rxjs/operators';
 export class BackendService {
   constructor(public http: HttpClient) {}
 
+  hardData = {
+    screenCode: 'CI72',
+    responseData: {
+      hsiPasswordReset: false,
+      ppoeConnected: 'true',
+      wifiEnabled: 'true',
+      hsiUploadDownload: '50Mbps,250Mbps',
+      noOfConnectedDevices: 1,
+      connectedDevices: [
+        {
+          addressSource: 'DHCP',
+          isActive: '1',
+          ipAddress: '192.168.1.101',
+          leaseTimeRemaining: '21856',
+          hostName: '',
+          macAddress: 'a6:8d:22:64:e9:b3',
+          interfaceType: '802.11',
+        },
+      ],
+      upsellingOpportunity: 'UPSEL2',
+      tsOutcome: 'No Issue Found',
+    },
+  };
+
   getUserDetail(token: string, lang: string) {
     return this.http.get(`token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
   }
@@ -20,15 +44,30 @@ export class BackendService {
   }
 
   getLandingPageData() {
-    return this.http.get(`motive/landing-screen`);
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/landing-screen`);
+    } else {
+      const response = { result: { productCode: '3P' } };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   getIssueDiagnositic(forIssue: string) {
-    return this.http.get(`motive/troubleshoot/${forIssue}`);
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/${forIssue}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   nextSignal(signal: 'MandatoryOnly' | 'DontReboot' | 'Agree') {
-    return this.http.put(`motive/troubleshoot/next-step`, { signal: signal });
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, { signal: signal });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   bookComplaint(data) {
@@ -36,23 +75,48 @@ export class BackendService {
       return this.http.put(`motive/troubleshoot/book-complaint`, data);
     } else {
       const response = { result: { responseData: { referenceNo: '4365298739', dateOfVisit: 'Jul 10 2019, 10:30 AM', status: '--' } } };
-      return new Observable<object>((subscriber: Subscriber<object>) => subscriber.next(new Object())).pipe(map((o) => response));
+      // return new Observable<object>((subscriber: Subscriber<object>) => subscriber.next(new Object())).pipe(map((o) => response));
+      return this.hardCoadedResponse(response);
     }
   }
 
   upsellRequest(data) {
-    return this.http.put(`motive/troubleshoot/upsell`, data);
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/upsell`, data);
+    } else {
+      const response = { result: { referenceNo: '4365298739' } };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   resetWifiPassword(data) {
-    return this.http.put(`motive/troubleshoot/reset-wifi-password`, { ...data });
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/reset-wifi-password`, { ...data });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   resetRouter(data) {
-    return this.http.put(`motive/troubleshoot/next-step`, data);
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, data);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   rebootMyDevice(DeviceToReeboot: string) {
-    return this.http.get(`motive/troubleshoot/reboot/${DeviceToReeboot}`);
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/reboot/${DeviceToReeboot}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  hardCoadedResponse(response) {
+    return new Observable<object>((subscriber: Subscriber<object>) => subscriber.next(new Object())).pipe(map((o) => response));
   }
 }
