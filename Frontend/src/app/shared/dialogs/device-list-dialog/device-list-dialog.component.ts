@@ -21,7 +21,7 @@ export class DeviceListDialog implements OnInit {
       API_PARAM: 'ROUTER',
     },
     {
-      device: 'Reboot ONT',
+      device: 'Reboot Fiber Box',
       API_PARAM: 'ONT',
     },
   ];

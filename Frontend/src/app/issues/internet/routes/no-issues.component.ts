@@ -65,8 +65,8 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
+      this.updatePageContent();
     });
-    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
