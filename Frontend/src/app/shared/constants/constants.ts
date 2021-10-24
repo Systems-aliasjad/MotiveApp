@@ -43,8 +43,6 @@ export const networkDiagramClasses = {
   okay: 'okay', //Green
 };
 
-export const DEVICE_CARE_URL = 'https://www.etisalat.ae/en/generic/device-care.jsp';
-
 export const SVGs = {
   etisalat: {
     default: './assets/images/network-map-icons/icon_home_default.svg',

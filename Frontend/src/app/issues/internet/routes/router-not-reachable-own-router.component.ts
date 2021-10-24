@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { DEVICE_CARE_URL, ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -73,10 +73,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
     this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
   }
 
-  button1Listener() {
-    window.location.href = DEVICE_CARE_URL;
-    // this.router.navigate(['issues/internet/router-not-reachable-own-care']);
-  }
+  button1Listener() {}
 
   button2Listener() {
     this.router.navigate(['/thanks']);

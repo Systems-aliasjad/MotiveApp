@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { DEVICE_CARE_URL, ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -82,8 +82,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    window.location.href = DEVICE_CARE_URL;
-    // this.router.navigate(['/issues/internet/3rd-party-router-reset/device-care']);
+    this.router.navigate(['/issues/internet/3rd-party-router-reset/device-care']);
   }
 
   button2Listener() {
