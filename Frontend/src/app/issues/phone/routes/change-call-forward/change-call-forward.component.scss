@@ -31,37 +31,21 @@ ion-item::part(native){
   --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
   padding-inline-end: 0;
   --inner-padding-end: 0;
-  padding-inline-start: 0;  
+  padding-inline-start: 0;
 }
 /* --------------------------------------------------------------*/
-.main-title-container{
-    @media screen and (min-width:992px) {
-        padding: 0 0 0 0.8rem;
-    }    
-}
-.page-title{
-    @media screen and (max-width:992px) {
-        display: none;
-    }
+.page-title {
+  margin-bottom: 0;
 }
 .form-main-container{
   font-family:Lato,Roboto,Arial,sans-serif;
   .form-inner_container{
+    @media screen and (max-width: 767px)  {
+      margin-top: 1rem;
+    }
     ion-item{
-        color: $secondary-color;
-        &.checkpoints{
-           --inner-border-width: 0 0 0 0;
-        }
+      margin-bottom: 1rem;
     }
-    .tag-title.bottom-heading{
-        margin-top: 1.6rem;
-        margin-bottom: 0;
-    }
-   /*  @media screen and (max-width: 992px)  {
-      ion-item{
-        margin-bottom: 1rem;
-      }
-    } */
     form{
       ion-item {
         -webkit-box-align: end;
@@ -97,12 +81,6 @@ ion-item::part(native){
             display: inline-block;
             height: 1.4rem;
           }
-          /* ion-label{
-            transform:none;
-            margin-top: 0;
-            margin-left: .5rem;
-            margin-bottom: 0;
-          } */
           ion-label {
             transform: none;
             margin-top: .2rem;
@@ -110,10 +88,7 @@ ion-item::part(native){
             margin-bottom: 0;
             text-transform:lowercase;
             font-size:14px;
-           /*  @media screen and (max-width: 767px) {
-              margin-top: .2rem;
-             font-size:14px;
-            } */
+            color:#6b6b6b;
           }
         }
       }
@@ -158,15 +133,42 @@ ion-item::part(native){
     }
   }
   
-  .text-error{
-    position: relative;
-    top: -12px;
-    font-size: 0.8rem;
+}
+.text-error{
+  position: relative;
+  top: -12px;
+  font-size: 0.8rem;
+}
+ion-input{
+  --padding-end:1.7rem;
+  @media screen and (max-width: 767px) {
+    font-size:14px;
+   }
+}
+.check-list-container{
+  .tag-title {
+    @media screen and (max-width:992px) {
+      margin-top: 0;
+    }
   }
-  ion-input{
-    /* --padding-end:1.7rem; */
-    @media screen and (max-width: 767px) {
-      font-size:14px;
-     }
+} 
+.footer{
+  .footer-btns-container{
+    ion-col{
+      ion-row{
+        ion-col{
+          &:first-child{
+            -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+            order:2;
+            @media screen and (max-width: 992px) {
+            -webkit-box-ordinal-group:inherit;
+            -ms-flex-order:inherit;
+            order:inherit;
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -146,25 +146,26 @@ ion-item::part(native){
       z-index: 2;
     }
   }
-  .text-error{
-    position: relative;
-    top: -12px;
-    font-size: 0.8rem;
-  }
-  ion-input{
-    --padding-end:1.7rem;
-    @media screen and (max-width: 767px) {
-      font-size:14px;
-     }
-  }
-  .check-list-container{
-    .tag-title {
-      @media screen and (max-width:992px) {
-        margin-top: 0;
-      }
-    }
-  } 
+  
 }
+.text-error{
+  position: relative;
+  top: -12px;
+  font-size: 0.8rem;
+}
+ion-input{
+  --padding-end:1.7rem;
+  @media screen and (max-width: 767px) {
+    font-size:14px;
+   }
+}
+.check-list-container{
+  .tag-title {
+    @media screen and (max-width:992px) {
+      margin-top: 0;
+    }
+  }
+} 
 .footer{
   .footer-btns-container{
     ion-col{
