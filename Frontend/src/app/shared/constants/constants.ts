@@ -12,6 +12,8 @@ export const flowCodes = {
   accountNotActive: 'E2ECRM14',
   CI9: 'CI9',
   openComplaint: 'CI11',
+  routerRebootSuccess: 'CI12',
+  routerRebootFaliure: 'CI121',
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',

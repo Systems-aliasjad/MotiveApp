@@ -20,7 +20,6 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   hsiUploadDownload;
   modal: any;
   subscription: Subscription;
-
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.ISSUE_FIXED',

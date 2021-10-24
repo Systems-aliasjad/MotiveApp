@@ -84,6 +84,13 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+    const navigation = this.router.getCurrentNavigation();
+    const showRebootButton = navigation?.extras?.state?.showRebootButton;
+    if (showRebootButton === false) {
+      this.button2 = this.button3;
+      this.button2Listener = this.button3Listener;
+      this.button3 = undefined;
+    }
   }
 
   button1Listener() {
@@ -101,7 +108,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     return await this.modal.present();
   }
 
-  button3Listener() {
+  async button3Listener() {
     this.router.navigate(['issues/internet/service-detail']);
   }
 

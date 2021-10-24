@@ -41,8 +41,10 @@ export class DeviceListDialog implements OnInit {
       this.sharedService.setLoader(false);
       if (data?.result?.screenCode === flowCodes.genericError) {
         this.router.navigate(['/unknown-error']);
-      } else {
-        this.router.navigate(['issues/internet/service-detail']);
+      } else if (data?.result?.screenCode === flowCodes.routerRebootSuccess) {
+        this.router.navigate(['/issues/internet/router-reboot-successful']);
+      } else if (data?.result?.screenCode === flowCodes.routerRebootFaliure) {
+        this.router.navigate(['/issues/internet/router-not-restarted']);
       }
     });
   }

@@ -50,6 +50,6 @@ export class RouterRebootSuccessfulComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['thanks']);
+    this.router.navigate(['issues/internet/no-issue'], { state: { showRebootButton: false } });
   }
 }
