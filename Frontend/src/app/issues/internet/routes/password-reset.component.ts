@@ -73,11 +73,11 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    // this.helperService.flowIdentifier(this.sharedService.getUpsellOpportunity());
+    // this.helperService.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }
 
@@ -85,7 +85,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }
 }

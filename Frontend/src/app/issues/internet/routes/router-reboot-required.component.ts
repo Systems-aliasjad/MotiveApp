@@ -78,7 +78,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
     // this.router.navigate(['/router-restart']);
   }
@@ -87,7 +87,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
     this.router.navigate(['/thanks']);
   }

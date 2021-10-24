@@ -57,7 +57,7 @@ export class TermsConditionsComponent implements OnInit {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('Agree').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      // this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
 
     this.modalCtrl.dismiss(true);

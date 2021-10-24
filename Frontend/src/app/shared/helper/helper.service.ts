@@ -109,7 +109,7 @@ export class HelperService {
     };
   }
 
-  public flowIdentifier(CodeId: string, data?: any) {
+  public InternetFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
@@ -187,7 +187,7 @@ export class HelperService {
     } else if (this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
       this.router.navigate(['issues/internet/no-issue']);
     } else {
-      this.flowIdentifier(this.sharedService.getUpsellOpportunity());
+      this.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
 
       // this.router.navigate(['issues/internet/no-issue']);
     }

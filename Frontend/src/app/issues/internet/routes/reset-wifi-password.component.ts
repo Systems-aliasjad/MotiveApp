@@ -65,7 +65,7 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     // this.sharedService.setLoader(true);
     // this.backendService.resetRouter({ signal: 'Factory_Reset_Not_Agreed' }).subscribe((data: any) => {
     //   this.sharedService.setLoader(false);
-    //   this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     // });
   }
 
@@ -73,7 +73,7 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.resetRouter({ data: { ..._event }, signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
     // this.router.navigate(['/issues/internet/password-update-success']);
   }
