@@ -31,7 +31,7 @@ export const flowCodes = {
 };
 
 export const ETISALAT = 'Etisalat';
-export const ONT = 'ONT';
+export const ONT = 'Fiber Box';
 export const ROUTER = 'Router';
 
 export const networkDiagramClasses = {
