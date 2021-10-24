@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { IUnableToConnectContent } from '../shared/unable-to-connect/unable-to-connect.component';
@@ -30,7 +31,7 @@ export class UnableToConnectNewDeviceWiFiComponent implements OnInit, OnDestroy 
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.updatePageContent();
@@ -64,7 +65,11 @@ export class UnableToConnectNewDeviceWiFiComponent implements OnInit, OnDestroy 
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   button2Listener() {

@@ -45,15 +45,15 @@ export class RouterAndPackageUpgradeSuccessMessageComponent implements OnInit, O
   updateHeader() {}
 
   updatePageContent() {
-    const apiResponse = this.sharedService.getApiResponseData();
+    const navigation = this.router.getCurrentNavigation();
+    this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.routerPackageUpgradesuccessfullyCase;
     this.subHeaderSectionTemplate = ApplicableCodes.routerPackageUpgradeTemplate;
-    this.subHeaderSectionData = apiResponse?.routerPackageUpgrade;
-    this.imgSrc = successImgSrc;
+    this.subHeaderSectionData = { referenceNo: navigation?.extras?.state?.referenceNo };
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/no-issue']);
-    // this.router.navigate(['thanks']);
+    // this.router.navigate(['issues/internet/no-issue']);
+    this.router.navigate(['thanks']);
   }
 }

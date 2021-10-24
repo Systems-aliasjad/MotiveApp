@@ -81,7 +81,9 @@ export class RouterPackageUpgradeRecommendedComponent implements OnInit, OnDestr
     this.router.navigate(['/issues/internet/router-package-upgrade-recommended-form']);
   }
 
-  button3Listener() {}
+  button3Listener() {
+    this.router.navigate(['/issues/internet/no-issue']);
+  }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();

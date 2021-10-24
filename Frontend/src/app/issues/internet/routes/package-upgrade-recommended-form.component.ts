@@ -63,10 +63,10 @@ export class PackageUpgradeRecommendedFormComponent implements OnInit, OnDestroy
     this.formGroup = _event;
     // console.log(this.formGroup.valid);
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
+    this.backendService.upsellRequest({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.router.navigate(['/issues/internet/package-upgrade-success'], { state: { referenceNo: data?.result?.referenceNo } });
     });
-    this.router.navigate(['/issues/internet/package-upgrade-success']);
   }
 
   button2Listener() {

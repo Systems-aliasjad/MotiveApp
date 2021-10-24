@@ -45,15 +45,15 @@ export class PackageUpgradeSuccessMessageComponent implements OnInit, OnDestroy 
   updateHeader() {}
 
   updatePageContent() {
-    const apiResponse = this.sharedService.getApiResponseData();
+    const navigation = this.router.getCurrentNavigation();
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.packageUpgradesuccessfullyCase;
     this.subHeaderSectionTemplate = ApplicableCodes.packageUpgradeTemplate;
-    this.subHeaderSectionData = apiResponse?.packageUpgrade;
+    this.subHeaderSectionData = { referenceNo: navigation?.extras?.state?.referenceNo };
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/no-issue']);
-    // this.router.navigate(['thanks']);
+    // this.router.navigate(['issues/internet/no-issue']);
+    this.router.navigate(['thanks']);
   }
 }

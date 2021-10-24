@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -13,7 +14,13 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   devices;
-  constructor(private helperService: HelperService, private router: Router, public sharedService: SharedService, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private helperService: HelperService,
+    private router: Router,
+    public sharedService: SharedService,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -36,10 +43,14 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/reset-wifi-password']);
+    this.router.navigate(['issues/internet/stage2/reset-wifi-password']);
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 }

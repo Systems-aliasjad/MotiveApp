@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -25,7 +26,7 @@ export class BrowsingUnableStep3Component implements OnInit, OnDestroy {
     title: 'BUTTONS.BOOK_A_COMPLAINT',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,11 +55,14 @@ export class BrowsingUnableStep3Component implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    // TODO: troubleshoot-complete
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/internet/book-complaint']);
+    this.router.navigate(['/issues/internet/unable-to-browse-internet/issue-not-fixed']);
   }
 }

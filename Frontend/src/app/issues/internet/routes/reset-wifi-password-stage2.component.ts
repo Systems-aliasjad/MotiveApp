@@ -65,8 +65,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.flowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      this.router.navigate(['/thanks']);
+      this.router.navigate(['/issues/internet/password-update-success']);
     });
   }
 }
