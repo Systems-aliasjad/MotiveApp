@@ -4,6 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -53,7 +54,9 @@ export class SharedService {
   getApiResponseData(): any {
     if (this.apiResponseData) {
       return this.apiResponseData;
-    } else {
+    }
+    //if (environment.shouldCallAPI)
+    else {
       this.router.navigate(['landing']);
     }
   }
