@@ -9,7 +9,7 @@ export class RoutingPaths {
 
 export const flowCodes = {
   genericError: 'G11E24',
-  accountNotActive: 'E2ECRM14',
+  accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
   openComplaint: 'CI11',
   routerRebootSuccess: 'CI12',
