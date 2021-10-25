@@ -46,44 +46,45 @@
               <p>{{ instruction2.body | translate }}</p>
             </ion-col>
           </ion-row>
+          <ion-row class="ion-text-center lg-screen ion-margin-top">
+            <ion-col size="12" class="pt-0 pb-0">
+              <ion-row>
+                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+                  <motive-button
+                    *ngIf="button1"
+                    [type]="button1.type"
+                    [title]="button1.title"
+                    [explanatoryNote]="button1.explanatoryNote"
+                    [SM]="button1.SM"
+                    [MD]="button1.MD"
+                    [LG]="button1.LG"
+                    (click)="button1Listener()"
+                  ></motive-button>
+                </ion-col>
+                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+                  <motive-button
+                    *ngIf="button2"
+                    [type]="button2.type"
+                    [title]="button2.title"
+                    [explanatoryNote]="button2.explanatoryNote"
+                    [SM]="button2.SM"
+                    [MD]="button2.MD"
+                    [LG]="button2.LG"
+                    (click)="button2Listener()"
+                  ></motive-button>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
         </div>
       </ion-col>
       <!-- Router Instruction End -->
     </ion-row>
 
-    <ion-row class="ion-text-center lg-screen ion-margin-top">
-      <ion-col size="12" class="pt-0 pb-0">
-        <ion-row>
-          <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-            <motive-button
-              *ngIf="button1"
-              [type]="button1.type"
-              [title]="button1.title"
-              [explanatoryNote]="button1.explanatoryNote"
-              [SM]="button1.SM"
-              [MD]="button1.MD"
-              [LG]="button1.LG"
-              (click)="button1Listener()"
-            ></motive-button>
-          </ion-col>
-          <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-            <motive-button
-              *ngIf="button2"
-              [type]="button2.type"
-              [title]="button2.title"
-              [explanatoryNote]="button2.explanatoryNote"
-              [SM]="button2.SM"
-              [MD]="button2.MD"
-              [LG]="button2.LG"
-              (click)="button2Listener()"
-            ></motive-button>
-          </ion-col>
-        </ion-row>
-      </ion-col>
-    </ion-row>
+    
   </ion-grid>
 </ion-content>
-<div class="footer sm-screen">
+<!-- <div class="footer sm-screen">
   <ion-row class="footer-btns-container">
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
@@ -114,4 +115,4 @@
       </ion-row>
     </ion-col>
   </ion-row>
-</div>
+</div> -->
