@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { flowCodes, networkDiagramClasses, ONT, ROUTER, SVGs } from '../constants/constants';
-import { IOntDetail, IRouterDetail } from '../constants/types';
+import { flowCodes, networkDiagramClasses, ONT, ROUTER, STB, SVGs } from '../constants/constants';
+import { IOntDetail, IRouterDetail, IStbDetail } from '../constants/types';
 import { SharedService } from '../shared.service';
 
 const temp1 = {
@@ -109,6 +109,24 @@ export class HelperService {
     };
   }
 
+  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: any) {
+    ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
+    stbConfig = { ...stbConfig, url: SVGs.stb.default, title: STB };
+    ontConfig = this.networkDiagramStylingMapper(ontConfig);
+    if (ontConfig?.isReachable) {
+      stbConfig = this.networkDiagramStylingMapper(stbConfig, ontConfig.className);
+    } else {
+      stbConfig = {
+        ...stbConfig,
+        className: networkDiagramClasses.default,
+      };
+    }
+    return {
+      ontConfig,
+      stbConfig,
+    };
+  }
+
   public InternetFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
       this.router.navigate(['/unknown-error']);
@@ -128,7 +146,7 @@ export class HelperService {
       this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
-    } else if (CodeId === flowCodes.outageInternet) {
+    } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/internet/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
@@ -168,46 +186,46 @@ export class HelperService {
   }
 
   public IptvFlowIdentifier(CodeId: string, data?: any) {
-    debugger;
     if (CodeId === flowCodes.genericError) {
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
-      this.router.navigate(['issues/internet/account-not-active']);
-    } else if (CodeId === flowCodes.CI9) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/router-reboot-required']);
-
-      // this.handleCI9Cases(data?.routerDetails);
-
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
-      // this.handleCI9Cases(temp2);
+      this.router.navigate(['issues/tv/account-not-active']);
     } else if (CodeId === flowCodes.movingElifeConnection) {
-      this.router.navigate(['issues/internet/osrp/move-elife-connection']);
+      this.sharedService.setApiResponseData(data?.result?.responseData);
+      this.router.navigate(['issues/tv/osrp/move-elife-connection']); ///////OS
     } else if (CodeId === flowCodes.ElifeCancellationRequest) {
-      this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
+      this.sharedService.setApiResponseData(data?.result?.responseData);
+      this.router.navigate(['issues/tv/osrp/cancel-elife-connection']);
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
-      this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
-    } else if (CodeId === flowCodes.outageInternet) {
+      this.router.navigate(['issues/tv/osrp/account-temporarily-disconnected']);
+    } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/tv/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
-      this.router.navigate(['issues/tv/issues-not-fixed']);
+      this.router.navigate(['issues/tv/issues-not-fixed']); ///No need to save api response as its CI9
+    } else if (CodeId === flowCodes.openComplaint) {
+      this.router.navigate(['issues/tv/complaint-already-exists']);
+      this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
+      // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
+    } else if (CodeId === flowCodes.CI9) {
+      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, connectedDevices: data?.connectedDevices });
+
+      if (data?.stbDetails?.length > 0) this.handleCI9CasesIPTV(data?.stbDetails[0]);
+
+      // this.handleCI9CasesIPTV(data?.stbDetails);
+      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
+      // this.handleCI9Cases(temp2);
     } else if (CodeId === flowCodes.CI72) {
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6, hsiUploadDownload: '50Mbps,250Mbps'.split(',') });
-      // this.router.navigate(['issues/internet/no-issue']);
-      this.sharedService.setApiResponseData({
-        connectedDevices: data?.connectedDevices,
-        hsiUploadDownload: data?.hsiUploadDownload?.split(','),
-      });
-      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
-    } else if (CodeId === flowCodes.CI73) {
+      this.router.navigate(['issues/tv/tvBox-restart-required-successfully']);
+    } else if (CodeId === flowCodes.CI71) {
+      this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7
+    }
+
+    //////////////////End of Handles cases
+    else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
       this.router.navigate(['issues/internet/router-reset-required']);
-    } else if (CodeId === flowCodes.openComplaint) {
-      this.router.navigate(['issues/internet/complaint-already-exists']);
-      this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
-      // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
     } else if (CodeId === flowCodes.UPSEL3) {
       // Upselling Identified for Router Upgrade
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
@@ -237,6 +255,15 @@ export class HelperService {
       }
     } else {
       this.router.navigate(['issues/internet/third-party-router']);
+    }
+  }
+
+  handleCI9CasesIPTV(stbDetails: IStbDetail) {
+    if (stbDetails?.isRebootRequired) {
+      this.router.navigate(['issues/tv/box-restart-required']);
+    } else if (!stbDetails?.isReachable) {
+      // (!stbDetails?.isReachable) {
+      this.router.navigate(['issues/tv/box-not-reachable']);
     }
   }
 

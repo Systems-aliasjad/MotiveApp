@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, STB, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -40,7 +41,13 @@ export class OutageComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private backendService: BackendService,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -68,7 +75,13 @@ export class OutageComponent implements OnInit, OnDestroy {
   };
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    //  this.router.navigate(['/thanks']);
+
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   button2Listener() {

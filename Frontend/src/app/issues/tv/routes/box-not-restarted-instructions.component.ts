@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-box-not-restarted-instruction',
@@ -37,7 +38,7 @@ export class BoxNotRestartedInstructionsComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -71,6 +72,12 @@ export class BoxNotRestartedInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    //this.router.navigate(['/thanks']);
+
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 }

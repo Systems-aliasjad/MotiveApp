@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { BackendService } from 'src/app/services/backend.service';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -10,10 +11,12 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-tvBox-restart-required',
   template: `<app-diagnose-issue
-    [ontConfig]="ontConfig"
+    [networkDiagram]="networkDiagram"
     [etisalatConfig]="etisalatConfig"
+    [ontConfig]="ontConfig"
     [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
+    [connectedDevices]="connectedDevices"
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
@@ -28,7 +31,8 @@ export class TvBoxRestartRequiredComponent implements OnInit, OnDestroy {
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
-
+  networkDiagram = NetWorkDiagramIds.FiveLayer;
+  connectedDevices;
   button1: IMotiveButton = {
     title: 'BUTTONS.RESTART_STB_NOW',
     type: 'primary',
@@ -38,10 +42,15 @@ export class TvBoxRestartRequiredComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private backendService: BackendService,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
       this.getIssueTilesData();
     });
     this.updatePageContent();
@@ -49,10 +58,6 @@ export class TvBoxRestartRequiredComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
-
-  updateHeader() {
-    // this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
 
   headerConfig: IPageHeader = {
@@ -65,7 +70,12 @@ export class TvBoxRestartRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/tv/tvBox-restart-required-successfully']);
+    //  this.router.navigate(['/issues/tv/tvBox-restart-required-successfully']);
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
   }
 
   button2Listener() {
@@ -74,8 +84,9 @@ export class TvBoxRestartRequiredComponent implements OnInit, OnDestroy {
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
+    this.routerConfig = temp?.stbConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }
 }
