@@ -218,7 +218,7 @@ const routes: Routes = [
   },
   {
     //3rd party router requires configuration
-    path: '3rd-party-router-reset/device-care',
+    path: 'device-care',
     component: ThirdPartyRouterResetCareComponent,
   },
 

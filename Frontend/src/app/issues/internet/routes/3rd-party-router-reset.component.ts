@@ -82,7 +82,8 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/3rd-party-router-reset/device-care']);
+    this.router.navigate(['/issues/internet/device-care']);
+    // this.router.navigate(['/issues/internet/3rd-party-router-reset/device-care']);
   }
 
   button2Listener() {

@@ -72,6 +72,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
+    this.router.navigate(['/issues/internet/device-care']);
     //this.router.navigate(['/thanks']);
   }
 

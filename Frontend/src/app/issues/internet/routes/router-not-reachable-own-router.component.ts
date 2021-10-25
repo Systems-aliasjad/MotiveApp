@@ -73,7 +73,9 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
     this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.router.navigate(['/issues/internet/device-care']);
+  }
 
   button2Listener() {
     this.router.navigate(['/thanks']);

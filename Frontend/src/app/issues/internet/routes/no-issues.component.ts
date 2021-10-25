@@ -38,6 +38,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   routerConfig: IRouterDetail = { url: SVGs.router.default, className: networkDiagramClasses.okay, title: ROUTER };
   connectedDevices;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  isThirdParty: boolean = false;
 
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',
@@ -86,6 +87,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
     const navigation = this.router.getCurrentNavigation();
     const showRebootButton = navigation?.extras?.state?.showRebootButton;
+    this.isThirdParty = navigation?.extras?.state?.isThirdParty;
     if (showRebootButton === false) {
       this.button2 = this.button3;
       this.button2Listener = this.button3Listener;
@@ -104,6 +106,9 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   async button2Listener() {
     this.modal = await this.modalCtrl.create({
       component: DeviceListDialog,
+      componentProps: {
+        isThirdParty: this.isThirdParty,
+      },
     });
     return await this.modal.present();
   }
