@@ -52,6 +52,8 @@ import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-pin-reset-message.component';
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
+import { BookComplaintComponent } from './routes/book-complaint.component';
+import { ComplaintRaisedSuccessfullyMessageComponent } from './routes/complaint-raised-successfully-message.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +100,8 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
     UnableToWatchPackageTransferComponent,
     ComplaintExistsMessageComponent,
     TvAdminPinResetSuccessfullyMessageComponent,
+    BookComplaintComponent,
+    ComplaintRaisedSuccessfullyMessageComponent,
   ],
   imports: [
     CommonModule,

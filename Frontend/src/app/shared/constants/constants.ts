@@ -35,6 +35,7 @@ export const flowCodes = {
 export const ETISALAT = 'Etisalat';
 export const ONT = 'Fiber Box';
 export const ROUTER = 'Router';
+export const STB = 'STB';
 
 export const networkDiagramClasses = {
   default: 'default', //Gray
@@ -55,6 +56,9 @@ export const SVGs = {
   },
   phone: {
     default: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
+  },
+  stb: {
+    default: '/assets/images/STB/DWI211ETI.png', //To do set it to svc as others
   },
 };
 
