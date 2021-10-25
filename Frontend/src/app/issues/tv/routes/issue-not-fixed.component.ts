@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -10,6 +10,7 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-issue-not-fixed',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -27,6 +28,7 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   messageSection;
   ontConfig;
   routerConfig;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN_LATER',
@@ -67,7 +69,7 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   button1Listener() {}
 
   button2Listener() {
-    this.router.navigate(['/issues/internet/book-complaint']);
+    this.router.navigate(['/issues/tv/book-complaint']);
   }
 
   getIssueTilesData() {

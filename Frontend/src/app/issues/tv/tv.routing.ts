@@ -41,6 +41,8 @@ import { PackageTransferComponent } from './routes/package-transfer.component';
 import { UnableToWatchPackageTransferComponent } from './routes/unable-to-watch-package-transfer.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-pin-reset-message.component';
+import { BookComplaintComponent } from './routes/book-complaint.component';
+import { ComplaintRaisedSuccessfullyMessageComponent } from './routes/complaint-raised-successfully-message.component';
 
 const routes: Routes = [
   {
@@ -209,6 +211,14 @@ const routes: Routes = [
   {
     path: 'tv-admin-pin-reset-success',
     component: TvAdminPinResetSuccessfullyMessageComponent,
+  },
+  {
+    path: 'book-complaint',
+    component: BookComplaintComponent,
+  },
+  {
+    path: 'complaint-raised-successfull',
+    component: ComplaintRaisedSuccessfullyMessageComponent,
   },
 ];
 
