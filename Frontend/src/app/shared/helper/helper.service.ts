@@ -209,7 +209,7 @@ export class HelperService {
     } else if (codeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/phone/issue-not-fixed']);
     } else if (codeId === flowCodes.CI9) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
       this.router.navigate(['issues/phone/ont-reboot']); //todo:
     } else if (codeId === flowCodes.CI72) {
       // this.sharedService.setApiResponseData({

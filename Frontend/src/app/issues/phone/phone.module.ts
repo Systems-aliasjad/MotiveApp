@@ -35,6 +35,7 @@ import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connect
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { AppointmentSuccessfulMessageComponent } from './routes/appointment-succ
     UnableToCallCareComponent,
     OntRebootComponent,
     NoIssuesComponent,
+    FiberBoxRestartCareComponent,
     OutageMessageComponent,
     IssueNotFixedMessageComponent,
     OntRebootMessageComponent,

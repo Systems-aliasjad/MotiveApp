@@ -29,6 +29,7 @@ import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connect
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 
 const routes: Routes = [
   {
@@ -109,6 +110,10 @@ const routes: Routes = [
     //ont reboot manually instructions
     path: 'ont-restart-instructions',
     component: OntRestartInstructionsComponent,
+  },
+  {
+    path: 'ont-restart-instructions/device-care',
+    component: FiberBoxRestartCareComponent,
   },
   {
     //ont not reboot manually instructions
