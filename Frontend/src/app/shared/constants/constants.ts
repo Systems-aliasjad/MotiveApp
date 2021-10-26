@@ -37,6 +37,7 @@ export const ETISALAT = 'Etisalat';
 export const ONT = 'Fiber Box';
 export const ROUTER = 'Router';
 export const STB = 'STB';
+export const PHONE = 'phone';
 
 export const networkDiagramClasses = {
   default: 'default', //Gray
@@ -56,7 +57,8 @@ export const SVGs = {
     default: './assets/images/router/default_router.PNG',
   },
   phone: {
-    default: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
+    default: '/assets/images/network-map-icons/icon_phone_default.svg',
+    okay: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
   },
   stb: {
     default: '/assets/images/STB/DWI211ETI.png', //To do set it to svc as others
@@ -613,9 +615,9 @@ export class ApplicableCodes {
       objKeyNameEN: 'dateOfVisit',
     },
     {
-      title: 'MESSAGES.LOCATION',
+      title: 'MESSAGES.STATUS',
       type: 'text',
-      objKeyNameEN: 'location',
+      objKeyNameEN: 'status',
     },
   ];
 

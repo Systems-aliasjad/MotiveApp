@@ -65,8 +65,9 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.sharedService.setApiResponseData(data?.result?.responseData);
+      this.router.navigate(['/issues/phone/outage-message']);
     });
-    this.router.navigate(['/issues/phone/outage-message']);
   }
 
   button2Listener() {
