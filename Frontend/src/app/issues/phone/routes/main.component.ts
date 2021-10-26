@@ -12,7 +12,7 @@ export class MainComponent implements OnInit {
   constructor(private shareService: SharedService, private backendService: BackendService, private helperService: HelperService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-    // this.helperService.voiceFlowIdentifier('CI9');
+    // this.helperService.voiceFlowIdentifier('CI72');
     this.activatedRoute.params.subscribe(() => {
       this.shareService.setLoader(true);
       this.backendService.getIssueDiagnositic('VOICE').subscribe((data: any) => {
