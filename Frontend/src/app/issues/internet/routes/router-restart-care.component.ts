@@ -15,8 +15,7 @@ import { BackendService } from 'src/app/services/backend.service';
 export class RouterRestartCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   careContent: IDeviceCareContent = {
-    imgSrc:
-      'https://simulator-devicecare.etisalat.ae/WebApp/main.aspx?Acct1ist=ITD7q4iSsXbgcpqEgP4LSw%3D%3D&Channel=FHj818icaAfGVGUkzCpHmGLKFRHOSiTSYvP5WBZBCUY%3D&expirydt=O96eTgHmx2B6TZmuFSK%2BzBTR2BASndvBPVSWEuKodMY%3D&locale=en_US',
+    imgSrc: 'https://simulator-devicecare.etisalat.ae/WebApp/Main.aspx?locale=en_US',
     header1: 'SUBHEADER.SPECIFIC_DEVICE_GUIDES',
     body1: 'MESSAGES.PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCIONS_TO_CONFIGURE_YOUR_ROUTER',
     body2: 'MESSAGES.MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER',

@@ -184,6 +184,41 @@ export class HelperService {
       this.router.navigate(['issues/internet/third-party-router']);
     }
   }
+  public voiceFlowIdentifier(codeId: string, data?: any) {
+    if (codeId === flowCodes.genericError) {
+      this.router.navigate(['/unknown-error']);
+    } else if (codeId === flowCodes.movingElifeConnection) {
+      this.sharedService.setApiResponseData({
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
+        status: data?.status,
+      });
+      this.router.navigate(['issues/phone/osrp/move-elife-connection']);
+    } else if (codeId === flowCodes.ElifeCancellationRequest) {
+      this.sharedService.setApiResponseData({
+        reqNo: data?.referenceNo,
+        reqType: data?.requestType,
+        status: data?.status,
+      });
+      this.router.navigate(['issues/phone/osrp/cancel-elife-connection']);
+    } else if (codeId === flowCodes.accountTemporarilyDisconnected) {
+      this.router.navigate(['issues/phone/osrp/account-temporarily-disconnected']);
+    } else if (codeId === flowCodes.outage) {
+      this.router.navigate(['issues/phone/outage']);
+    } else if (codeId === flowCodes.issueNotFixed) {
+      this.router.navigate(['issues/phone/issue-not-fixed']);
+    } else if (codeId === flowCodes.CI9) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.router.navigate(['issues/phone/ont-reboot']); //todo:
+    } else if (codeId === flowCodes.CI72) {
+      // this.sharedService.setApiResponseData({
+      //   connectedDevices: data?.connectedDevices,
+      //   hsiUploadDownload: data?.hsiUploadDownload?.split(','),
+      // });
+      this.router.navigate(['issues/phone/no-issues']);
+    }
+  }
 
   public IptvFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {

@@ -22,15 +22,29 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
-import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message-component';
 import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-message.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+  },
+  {
+    path: 'osrp/move-elife-connection',
+    component: MoveElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/cancel-elife-connection',
+    component: CancelElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/account-temporarily-disconnected',
+    component: AccountTemporarilyDisconnectedMessageComponent,
   },
   {
     path: 'outage',
