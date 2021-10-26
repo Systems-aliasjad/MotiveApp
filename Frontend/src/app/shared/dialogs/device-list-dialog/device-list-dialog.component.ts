@@ -43,7 +43,8 @@ export class DeviceListDialog implements OnInit {
   ondeviceClick(forDevice) {
     this.dismiss();
     if (forDevice === 'ROUTER' && this.isThirdParty) {
-      this.router.navigate(['/issues/internet/device-care']);
+      // http://localhost:4200/issues/internet/device-care
+      this.router.navigate(['/issues/internet/router-restart']);
     } else {
       this.sharedService.setLoader(true);
       this.backendService.rebootMyDevice(forDevice).subscribe((data: any) => {

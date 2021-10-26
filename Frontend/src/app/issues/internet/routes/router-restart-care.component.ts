@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { RestartRouterDialog } from 'src/app/issues/internet/dialogs/restart-router-dialog/restart-router-dialog.component';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-router-restart-care',
@@ -14,9 +15,11 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class RouterRestartCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   careContent: IDeviceCareContent = {
-    imgSrc: 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg',
-    header1: '',
-    body1: '',
+    imgSrc:
+      'https://simulator-devicecare.etisalat.ae/WebApp/main.aspx?Acct1ist=ITD7q4iSsXbgcpqEgP4LSw%3D%3D&Channel=FHj818icaAfGVGUkzCpHmGLKFRHOSiTSYvP5WBZBCUY%3D&expirydt=O96eTgHmx2B6TZmuFSK%2BzBTR2BASndvBPVSWEuKodMY%3D&locale=en_US',
+    header1: 'SUBHEADER.SPECIFIC_DEVICE_GUIDES',
+    body1: 'MESSAGES.PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCIONS_TO_CONFIGURE_YOUR_ROUTER',
+    body2: 'MESSAGES.MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER',
   };
   button1: IMotiveButton = {
     type: 'primary',
@@ -27,28 +30,20 @@ export class RouterRestartCareComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private modalCtrl: ModalController, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private sharedService: SharedService,
+    private router: Router,
+    private modalCtrl: ModalController,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit() {
-    this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
-    });
-    this.updatePageContent();
+    // this.subscription = this.activatedRoute.data.subscribe(() => {});
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
-  }
-
-  updateHeader() {
-    // this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
-  }
-
-  updatePageContent() {
-    this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
-    this.careContent.header1 = 'SUBHEADER.SPECIFIC_DEVICE_GUIDES';
-    this.careContent.body1 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-    this.careContent.body2 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
   }
 
   headerConfig: IPageHeader = {
@@ -57,7 +52,11 @@ export class RouterRestartCareComponent implements OnInit, OnDestroy {
   };
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   async button2Listener() {
