@@ -124,15 +124,15 @@ export interface IRouterDetail {
 }
 
 export interface IStbDetail {
-  isReachable: boolean;
+  isReachable?: boolean;
 
-  isRebootRequired: boolean;
+  isRebootRequired?: boolean;
 
-  stbSerialNumber: string;
+  stbSerialNumber?: string;
 
-  stbModel: string;
+  stbModel?: string;
 
-  stbMac: string;
+  stbMac?: string;
 
   url: string;
 
