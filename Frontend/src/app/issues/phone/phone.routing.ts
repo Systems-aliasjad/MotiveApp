@@ -28,6 +28,7 @@ import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-
 import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
 
 const routes: Routes = [
   {
@@ -133,6 +134,10 @@ const routes: Routes = [
   {
     path: 'no-issue-phone-phone-reset-ccb-pin-successfully',
     component: ResetCCBPINSuccessComponent,
+  },
+  {
+    path: 'appointment-successful',
+    component: AppointmentSuccessfulMessageComponent,
   },
   {
     path: 'book-complaint',

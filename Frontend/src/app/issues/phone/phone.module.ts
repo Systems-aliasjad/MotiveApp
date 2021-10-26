@@ -34,11 +34,13 @@ import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-
 import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     OutageComponent,
+    AppointmentSuccessfulMessageComponent,
     IssueNotFixedComponent,
     NoDailToneCareComponent,
     ChangeCallForwardComponent,
