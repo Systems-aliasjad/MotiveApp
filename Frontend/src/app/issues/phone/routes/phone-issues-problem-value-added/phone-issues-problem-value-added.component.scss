@@ -23,20 +23,6 @@ ion-item::part(native) {
   --inner-border-width: 0;
 }
 /*------------------------------------------------------------------*/ 
-
-// .tv-detail-container{
-//   .my-subscriptions{
-//       .content-sub_title{
-           
-//       }
-//       .subscriptions-box{
-//           .sub-title{
-//               color: $secondary-color;
-//           } 
-//       }
-//   }
-// }
-
 .service-detail_slider {
   .service-states-container {
     text-align: center;
@@ -186,6 +172,7 @@ ion-item::part(native) {
     .sub-title {
       @media screen and (max-width: 992px) {
         display: block;
+        font-size:15px;
       }
       &.grey{
         color: $secondary-color;
@@ -328,6 +315,7 @@ ion-item::part(native) {
       .sub-title{
         @media screen and (max-width: 992px) {
           margin-bottom: 0rem;
+          font-size: 15px;
         }
         &:nth-child(2){
           @media screen and (max-width: 992px) {
@@ -339,6 +327,9 @@ ion-item::part(native) {
         margin-top: 0;
         margin-bottom: 0;
         color: $secondary-color;
+        @media screen and (max-width: 992px) {
+          font-size: 14px;
+        }
       }
       span {
         display: block;
@@ -375,11 +366,11 @@ ion-item::part(native) {
           -ms-flex-align: center;
           align-items: center;
           justify-content: space-between;          
-          @media screen and (max-width: 361px) {
+          @media screen and (max-width: 281px) {
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
             -ms-flex-direction: column;
-            flex-direction: column;
+            flex-direction: column; 
             -webkit-box-pack: start;
             -ms-flex-pack: start;
             justify-content: flex-start;
@@ -396,16 +387,21 @@ ion-item::part(native) {
             font-weight: inherit;
             letter-spacing: inherit;
             color: $secondary-color;
-            @media screen and (max-width: 361px) {
-              margin-top: 1rem;
-              margin-left: 0rem;
+            @media screen and (max-width: 992px) {
+              font-size: 15px;
+            }
+            @media screen and (max-width: 281px) {
+              margin-bottom: 1rem;
+              margin-left: 0;
             }
           }
-          p{
+          span{
             font-size: 1rem;
             font-weight: 600;
             color: $primary-color;
-            margin: 0 0;
+            @media screen and (max-width: 992px) {
+              font-size: 14px;
+            }
           }
         }
         ion-card-content {
@@ -420,8 +416,20 @@ ion-item::part(native) {
           -ms-flex-align: center;
           align-items: center;
           justify-content: space-between;
+          @media screen and (max-width: 281px) {
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column; 
+          -webkit-box-align: start;
+          -ms-flex-align: start;
+          align-items: flex-start;
+          }
           p {
             margin-bottom: 0.5rem;
+            @media screen and (max-width: 992px) {
+              font-size: 14px;
+            }
           }
         }
       }
