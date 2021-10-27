@@ -61,7 +61,7 @@ const routes: Routes = [
     component: IssueNotFixedComponent,
   },
   {
-    path: 'no-issues-service-details',
+    path: 'service-detail',
     component: NoIssuesServiceDetailsComponent,
   },
   {

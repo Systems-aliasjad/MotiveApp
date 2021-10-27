@@ -35,7 +35,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   networkDiagram = NetWorkDiagramIds.sixLayer;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   connectedDevices = [];
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
   isThirdParty: boolean = false;
 
   button1: IMotiveButton = {
@@ -112,7 +112,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   async button3Listener() {
-    this.router.navigate(['issues/internet/service-detail']);
+    this.router.navigate(['issues/other/service-detail']);
   }
 
   getIssueTilesData() {
