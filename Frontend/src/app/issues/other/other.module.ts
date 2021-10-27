@@ -23,10 +23,12 @@ import { RouterRebootRequiredComponent } from './routes/router-reboot-required.c
 import { InternetModule } from '../internet/internet.module';
 import { TvModule } from '../tv/tv.module';
 import { PhoneModule } from '../phone/phone.module';
+import { NoIssuesComponent } from './routes/no-issues.component';
 
 @NgModule({
   declarations: [
     MainComponent,
+    NoIssuesComponent,
     AccountIdComponent,
     ResetPinFailedMessageComponent,
     FiberBoxNotReachableComponent,

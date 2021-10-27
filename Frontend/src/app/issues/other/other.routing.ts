@@ -6,6 +6,7 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { MainComponent } from './routes/main.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
+import { NoIssuesComponent } from './routes/no-issues.component';
 import { OntRebootRequiredInternetComponent } from './routes/ont-reboot-required-internet.component';
 import { OntRebootRequiredTvComponent } from './routes/ont-reboot-required-tv.component';
 import { OutageComponent } from './routes/outage.component';
@@ -21,7 +22,7 @@ const routes: Routes = [
 
   {
     path: '',
-    component: AccountIdComponent,
+    component: MainComponent,
   },
   {
     path: 'reset-pin-failed',
@@ -50,6 +51,10 @@ const routes: Routes = [
   {
     path: 'outage',
     component: OutageComponent,
+  },
+  {
+    path: 'no-issue',
+    component: NoIssuesComponent,
   },
   {
     path: 'issue-not-fixed',
