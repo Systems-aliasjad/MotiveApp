@@ -37,6 +37,7 @@ import { SevenLayerComponent } from './components/network-diagrams/seven-layer/s
 import { GenericErrorIssuesComponent } from './components/generic-error-issues/generic-error-issues.component';
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { SafePipe } from './pipe/safePipe';
+import { SixLayerComponent } from './components/network-diagrams/six-layer/six-layer.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { SafePipe } from './pipe/safePipe';
     ThankyouScreenComponent,
     TermsConditionsComponent,
     BookComplaintComponent,
+    SixLayerComponent,
     NumberOnlyDirective,
     IssueTabsComponent,
     GenericErrorComponent,

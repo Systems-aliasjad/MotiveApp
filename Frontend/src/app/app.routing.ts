@@ -67,14 +67,17 @@ const routes: Routes = [
     path: 'thanks',
     component: ThankyouScreenComponent,
   },
-
   {
-    path: '',
+    path: 'issues/other/account-id',
     loadChildren: () => import('./issues/other/other.module').then((m) => m.OtherModule),
   },
   {
     path: 'loader',
     component: LoaderComponent,
+  },
+  {
+    path: '**',
+    redirectTo: 'issues/other/account-id',
   },
 ];
 

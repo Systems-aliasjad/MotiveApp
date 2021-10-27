@@ -80,6 +80,7 @@ export enum NetWorkDiagramIds {
   ThreeLayer = 1,
   FiveLayer,
   SevenLayer,
+  sixLayer,
 }
 
 // const P3: string = '3P';
