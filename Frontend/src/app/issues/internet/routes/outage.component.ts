@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds, networkDiagramClasses, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -38,7 +39,7 @@ export class OutageComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -65,10 +66,14 @@ export class OutageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/internet/book-complaint']);
+    this.router.navigate(['/issues/internet/book-complaint'], { state: { notCI7: true } });
   }
 }
