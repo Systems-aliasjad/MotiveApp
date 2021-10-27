@@ -30,7 +30,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.BACK',
     explanatoryNote: '',
   };
-
+  CI7check: boolean = true;
   formGroup: FormGroup;
   constructor(
     private backendService: BackendService,
@@ -43,6 +43,8 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      const navigation = this.router.getCurrentNavigation();
+      this.CI7check = navigation?.extras?.state?.notCI7;
     });
   }
 
@@ -62,7 +64,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   button1Listener(_event) {
     this.formGroup = _event;
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
+    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: this.CI7check === true ? false : true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData({ ...data?.result?.responseData, status: 'open' });
       this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);

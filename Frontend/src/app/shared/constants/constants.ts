@@ -17,7 +17,7 @@ export const flowCodes = {
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
-  outage: 'E2EN121',
+  outage: 'E2ENI21',
   issueNotFixed: 'CI71',
   CI72: 'CI72',
   CI73: 'CI73',

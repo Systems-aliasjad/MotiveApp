@@ -32,6 +32,8 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   };
 
   formGroup: FormGroup;
+  CI7check: boolean = true;
+
   constructor(
     private backendService: BackendService,
     private sharedService: SharedService,
@@ -43,6 +45,8 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
+      const navigation = this.router.getCurrentNavigation();
+      this.CI7check = navigation?.extras?.state?.notCI7;
     });
   }
 
@@ -63,7 +67,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
     this.formGroup = _event;
     // console.log(this.formGroup.valid);
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
+    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: this.CI7check === true ? false : true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData(data?.result?.responseData);
       this.router.navigate(['/issues/phone/outage-message']);

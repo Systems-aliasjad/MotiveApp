@@ -1,9 +1,9 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { regExps, errorMessages } from '../../../shared/validators/validations';
-import { SharedService } from '../../../shared/shared.service';
-import { ConfirmedValidator, eyeHide, eyeShow } from '../../../shared/constants/constants';
+import { regExps, errorMessages } from 'src/app/shared/validators/validations';
+import { SharedService } from 'src/app/shared/shared.service';
+import { ConfirmedValidator, eyeHide, eyeShow } from 'src/app/shared/constants/constants';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { IPageHeader } from 'src/app/shared/constants/types';

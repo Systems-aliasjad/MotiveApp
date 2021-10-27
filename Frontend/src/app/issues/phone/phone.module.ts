@@ -15,7 +15,7 @@ import { OutageMessageComponent } from './routes/outage-message.component';
 import { IssueNotFixedMessageComponent } from './routes/issue-not-fixed-message.component';
 import { OntRebootMessageComponent } from './routes/ont-reboot-message.component';
 import { CallForwardMessageComponent } from './routes/call-forward-message.component';
-import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
+import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message.component';
 import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
 import { OntNotRestartInstructionsComponent } from './routes/ont-not-restart-instructions.component';
 import { OntRestartSuccessComponent } from './routes/ont-restart-success.component';
@@ -29,7 +29,7 @@ import { ChangeCallForwardComponent } from './routes/change-call-forward/change-
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
 import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
 import { createTranslateLoader } from 'src/app/app.module';
-import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message-component';
+import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message.component';
 import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-message.component';
 import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
