@@ -30,7 +30,7 @@ export class BackendService {
           interfaceType: '802.11',
         },
       ],
-      upsellingOpportunity: 'UPSEL2',
+      upsellingOpportunity: 'UPSEL1',
       tsOutcome: 'No Issue Found',
     },
   };
