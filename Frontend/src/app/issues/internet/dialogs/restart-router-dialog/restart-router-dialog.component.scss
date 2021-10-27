@@ -9,9 +9,13 @@
   }
   ion-header{
     ion-toolbar{
-      border-bottom: 2px dashed #d0d6da;
-      @media screen and (max-width: 992px) {
-
+      border-bottom: 2px solid #e2e1da;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @media screen and (max-width:992px) {
+        padding-top: 0;
+        padding-bottom:0;
+        border-bottom: 0;      
       }
       ion-title{
         padding-right:0;
@@ -67,6 +71,67 @@ ion-header{
   &:after{
     background-image: none;
   }
+  ion-toolbar{
+    ion-title{
+      padding-right:0;
+      padding-left: 0;
+      @media screen and (min-width:992px) {
+        text-align: center;
+      }
+      .lg-screen-title{
+        display: none;
+        @media screen and (min-width:992px) {
+          display: block;
+        }
+      }
+      .sm-screen-title{
+        display: block;
+        @media screen and (min-width:992px) {
+          display:none;
+        }
+      }
+      h3{
+        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        color:$primary-color;
+        font-weight: normal;
+        margin-left: 2rem;
+        @media screen and (max-width:992px) {
+          margin-left: 0;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+      }
+      
+    }
+  }
+ ion-buttons{
+    padding-right: 0;
+    cursor: pointer;
+    @media screen and (max-width:992px) {
+      margin-top: 0.5rem;
+      margin-right: 0;
+      display: none;
+    }
+    .close-btn{
+      display: none;
+      @media  screen and (max-width:992px) {
+        display: block;
+      }
+    }
+    .cross-icon{
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      @include transition(all 0.3s ease-in-out);
+      @media  screen and (max-width:992px) {
+        display: none;
+      }
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+  
 }
 ion-list{
   padding-top: 0;
@@ -76,6 +141,37 @@ ion-list{
     font-weight: 600;
   }
 }
+.dialog-content {
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
+  @media  screen and (max-width:992px) {
+    margin: 0;
+    padding-right: .6rem;
+    padding-left: .6rem;
+    text-align: left;
+    max-width: none;
+  }
+  h4{
+    color:$secondary-color;
+    margin-top: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-family: Lato,Roboto,Arial,sans-serif;
+    font-weight: 700;
+    @media  screen and (max-width:992px) {
+      margin-top:0;
+      margin-bottom:0;
+      display: none;
+    }
+  }
+  p{
+    margin-top: 0;
+    @media  screen and (max-width:992px) {
+      font-size: 14px;
+    }
+  }
+}
+    
 .check-guidlines-container {
   background-color: #f7f8f4;
   padding-bottom: 1rem;
@@ -118,3 +214,44 @@ ion-list{
     }
   }
 }
+.popup-btn-lg{
+  display: none;
+  @media screen and (min-width:992px) {
+    display: block;
+   }
+  .footer{
+    margin-top: 2rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.popup-btn-sm{
+  display: block;
+  @media screen and (min-width:992px) {
+    display: none;
+  }
+}
+.footer{
+  box-shadow: none;
+  background-color: transparent;
+  @media screen and (min-width:992px) {
+      text-align: center;
+  }
+  .footer-btns-container{
+    ion-row{
+      @media screen and (min-width:992px) {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+      }
+      motive-button{
+        @media screen and (min-width: 992px) and (max-width: 1024px){
+          min-width: 250px;
+          width: auto;
+        }
+      } 
+    }
+  }
+}
+
+
