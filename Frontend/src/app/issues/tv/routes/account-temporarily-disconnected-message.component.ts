@@ -5,22 +5,21 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
-import { SharedService } from '../../../shared/shared.service';
 
 @Component({
-  selector: 'account-not-active-message',
+  selector: 'account-temporarily-disconnected-message',
   template: `<motive-message [imgSrc]="imgSrc" [Section1Data]="Section1Data" [button1]="button1" (button1Click)="button1Listener()"></motive-message>`,
 })
-export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
+export class AccountTemporarilyDisconnectedMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'secondary',
     title: 'BUTTONS.CLOSE',
+    type: 'secondary',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -36,20 +35,8 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
-    let url;
-    const accountNo = localStorage.getItem('CUS_MOBILE_NO');
-    const lang: string = this.sharedService.getDefaultLanguage();
-    if (lang === 'ara') {
-      url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID&locale=ar`;
-    } else {
-      url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID`;
-    }
-
-    this.Section1Data = CustomerJourneyConstants.accountNotActive;
-    this.Section1Data.spanListener = () => {
-      window.location.href = url;
-    };
     this.imgSrc = warningImgSrc;
+    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase2;
   }
 
   button1Listener() {

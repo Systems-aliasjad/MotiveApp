@@ -72,7 +72,8 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/router-not-reachable-own-router-care']);
+    this.router.navigate(['/issues/internet/device-care']);
+    // this.router.navigate(['/router-not-reachable-own-router-care']);
   }
 
   button2Listener() {

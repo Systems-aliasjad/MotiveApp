@@ -43,6 +43,10 @@ import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messg
 import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-pin-reset-message.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
 import { ComplaintRaisedSuccessfullyMessageComponent } from './routes/complaint-raised-successfully-message.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
 
 const routes: Routes = [
   {
@@ -219,6 +223,27 @@ const routes: Routes = [
   {
     path: 'complaint-raised-successfull',
     component: ComplaintRaisedSuccessfullyMessageComponent,
+  },
+
+  {
+    path: 'osrp/move-elife-connection',
+    component: MoveElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/cancel-elife-connection',
+    component: CancelElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/account-temporarily-disconnected',
+    component: AccountTemporarilyDisconnectedMessageComponent,
+  },
+  {
+    path: 'complaint-already-exists',
+    component: ComplaintExistsMessageComponent,
+  },
+  {
+    path: 'account-not-active',
+    component: AccountNotActiveMessageComponent,
   },
 ];
 

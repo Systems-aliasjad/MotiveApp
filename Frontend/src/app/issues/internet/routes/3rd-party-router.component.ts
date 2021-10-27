@@ -97,7 +97,7 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.router.navigate(['/issues/internet/no-issue']);
+    this.router.navigate(['/issues/internet/no-issue'], { state: { isThirdParty: true } });
   }
 
   getIssueTilesData() {

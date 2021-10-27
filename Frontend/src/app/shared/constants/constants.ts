@@ -9,7 +9,7 @@ export class RoutingPaths {
 
 export const flowCodes = {
   genericError: 'G11E24',
-  accountNotActive: 'E2ECRM14',
+  accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
   openComplaint: 'CI11',
   routerRebootSuccess: 'CI12',
@@ -17,10 +17,11 @@ export const flowCodes = {
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
-  outageInternet: 'E2EN121',
+  outage: 'E2EN121',
   issueNotFixed: 'CI71',
   CI72: 'CI72',
   CI73: 'CI73',
+  CI71: 'CI71',
   UPSEL1: 'UPSEL1',
   UPSEL2: 'UPSEL2',
   UPSEL3: 'UPSEL3',
@@ -36,6 +37,7 @@ export const ETISALAT = 'Etisalat';
 export const ONT = 'Fiber Box';
 export const ROUTER = 'Router';
 export const STB = 'STB';
+export const PHONE = 'phone';
 
 export const networkDiagramClasses = {
   default: 'default', //Gray
@@ -55,7 +57,8 @@ export const SVGs = {
     default: './assets/images/router/default_router.PNG',
   },
   phone: {
-    default: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
+    default: '/assets/images/network-map-icons/icon_phone_default.svg',
+    okay: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
   },
   stb: {
     default: '/assets/images/STB/DWI211ETI.png', //To do set it to svc as others
@@ -612,9 +615,9 @@ export class ApplicableCodes {
       objKeyNameEN: 'dateOfVisit',
     },
     {
-      title: 'MESSAGES.LOCATION',
+      title: 'MESSAGES.STATUS',
       type: 'text',
-      objKeyNameEN: 'location',
+      objKeyNameEN: 'status',
     },
   ];
 

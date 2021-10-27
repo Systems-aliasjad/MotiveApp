@@ -122,3 +122,21 @@ export interface IRouterDetail {
   isManaged?: boolean;
   isResetRequired?: boolean;
 }
+
+export interface IStbDetail {
+  isReachable?: boolean;
+
+  isRebootRequired?: boolean;
+
+  stbSerialNumber?: string;
+
+  stbModel?: string;
+
+  stbMac?: string;
+
+  url: string;
+
+  title?: string;
+
+  className: string;
+}

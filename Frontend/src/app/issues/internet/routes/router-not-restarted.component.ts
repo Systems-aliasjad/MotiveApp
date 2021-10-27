@@ -67,7 +67,8 @@ export class RouterNotRestartedComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/router-not-restarted/device-care']);
+    this.router.navigate(['/issues/internet/device-care']);
+    // this.router.navigate(['issues/internet/router-not-restarted/device-care']);
   }
 
   button2Listener() {

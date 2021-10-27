@@ -31,11 +31,17 @@ import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-pro
 import { createTranslateLoader } from 'src/app/app.module';
 import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message-component';
 import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-message.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 
 @NgModule({
   declarations: [
     MainComponent,
     OutageComponent,
+    AppointmentSuccessfulMessageComponent,
     IssueNotFixedComponent,
     NoDailToneCareComponent,
     ChangeCallForwardComponent,
@@ -43,6 +49,7 @@ import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-
     UnableToCallCareComponent,
     OntRebootComponent,
     NoIssuesComponent,
+    FiberBoxRestartCareComponent,
     OutageMessageComponent,
     IssueNotFixedMessageComponent,
     OntRebootMessageComponent,
@@ -58,6 +65,9 @@ import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-
     PhoneIssuesProblemValueAddedComponent,
     ForgotCcbPinFailedMessageComponent,
     CallForwardFailedMessageComponent,
+    MoveElifeConnectionMessageComponent,
+    CancelElifeConnectionMessageComponent,
+    AccountTemporarilyDisconnectedMessageComponent,
   ],
   imports: [
     CommonModule,

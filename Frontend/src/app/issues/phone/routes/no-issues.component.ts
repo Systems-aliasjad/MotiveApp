@@ -2,8 +2,9 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { BackendService } from 'src/app/services/backend.service';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, SVGs } from 'src/app/shared/constants/constants';
+import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -12,6 +13,7 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-phone-no-issues',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -29,9 +31,10 @@ import { SharedService } from '../../../shared/shared.service';
 export class NoIssuesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
-  ontConfig;
-  routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
+  routerConfig: IRouterDetail = { url: SVGs.phone.default, className: networkDiagramClasses.okay, title: PHONE };
 
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',
@@ -53,7 +56,8 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     private sharedService: SharedService,
     private router: Router,
     private modalCtrl: ModalController,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
   ) {}
 
   ngOnInit() {
@@ -82,24 +86,24 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
-  }
-  button2Listener() {}
-
-  async button3Listener() {
-    this.modal = await this.modalCtrl.create({
-      component: IssueListDialog,
-      componentProps: {
-        flow: EIssueFlow.phoneIssue,
-      },
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
     });
+  }
+  button2Listener() {
+    // rebootMyDevice
+    this.sharedService.setLoader(true);
+    this.backendService.rebootMyDevice('ONT').subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
+    });
+  }
 
-    return await this.modal.present();
+  button3Listener() {
+    this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
   }
-  getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
-    this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
-  }
+
+  getIssueTilesData() {}
 }

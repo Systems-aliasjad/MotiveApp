@@ -54,6 +54,10 @@ import { TvAdminPinResetSuccessfullyMessageComponent } from './routes/tv-admin-p
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { BookComplaintComponent } from './routes/book-complaint.component';
 import { ComplaintRaisedSuccessfullyMessageComponent } from './routes/complaint-raised-successfully-message.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +106,10 @@ import { ComplaintRaisedSuccessfullyMessageComponent } from './routes/complaint-
     TvAdminPinResetSuccessfullyMessageComponent,
     BookComplaintComponent,
     ComplaintRaisedSuccessfullyMessageComponent,
+    MoveElifeConnectionMessageComponent,
+    CancelElifeConnectionMessageComponent,
+    AccountTemporarilyDisconnectedMessageComponent,
+    AccountNotActiveMessageComponent,
   ],
   imports: [
     CommonModule,

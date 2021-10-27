@@ -74,8 +74,8 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
+    this.routerConfig = temp?.stbConfig;
   }
 }

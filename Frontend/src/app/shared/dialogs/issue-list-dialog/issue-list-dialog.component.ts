@@ -156,4 +156,9 @@ export class IssueListDialog implements OnInit {
   dismiss() {
     this.modalCtrl.dismiss();
   }
+
+  openDeviceCare() {
+    this.dismiss();
+    this.router.navigate(['/issues/internet/device-care']);
+  }
 }

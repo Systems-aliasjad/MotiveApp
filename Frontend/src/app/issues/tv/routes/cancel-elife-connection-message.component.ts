@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
-  selector: 'complaint-exists-message',
+  selector: 'cancel-elife-connection-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -21,7 +21,7 @@ import { BackendService } from 'src/app/services/backend.service';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
+export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -29,12 +29,15 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.YES',
+    title: 'BUTTONS.YES_FOLLOW_UP',
+    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
   };
+
   button2: IMotiveButton = {
+    title: 'BUTTONS.NO_EXIT_TROUBLESHOOTING',
     type: 'link',
-    title: 'BUTTONS.NO_I_WANT_TO_REPORT_ANOTHER_ISSUE',
   };
+
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
@@ -52,21 +55,25 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
-    this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
+    this.Section1Data = CustomerJourneyConstants.openServiceRequestCase3;
+    this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
     const temp = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      // complaintNo: '436529873',
+      // reqNo: '436529873',
+      // reqType: 'Xxxxx xxxxx xxxx',
       // dateVisit: 'Jul 10 2019, 10:30 AM',
       // status: 'Xxxxx xxxxx xxxx',
 
-      complaintNo: temp?.referenceNo ?? '-',
+      reqNo: temp?.referenceNo ?? '-',
+      reqType: temp?.requestType ?? '-',
       dateVisit: temp?.dateOfVisit ?? '-',
       status: temp?.status ?? '-',
     };
   }
 
-  button1Listener() {
+  button1Listener() {}
+
+  button2Listener() {
     // this.router.navigate(['/thanks']);
     this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
@@ -74,6 +81,4 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
       this.router.navigate(['/thanks']);
     });
   }
-
-  button2Listener() {}
 }

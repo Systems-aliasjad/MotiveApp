@@ -7,7 +7,7 @@
       </div>
       <div class="__desc-wrapper">
         <p>{{ 'MESSAGES.THE_CHANNEL_IS_NOT_AVAILABLE_AS_PART_OF_THE_TV_PACKAGE_YOU_HAVE_SUBSCRIBED' | translate }}</p>
-        <p [innerHTML]="'MESSAGES.IF_YOU_WISH_TO_SUBSCRIBE_MORE_CHANNELS_PLEASE' | translate"></p>
+        <p>{{ 'MESSAGES.IF_YOU_WISH_TO_SUBSCRIBE_MORE_CHANNELS_PLEASE' | translate }} <a class="__clickhere" (click)="getMoreChannels()">click here.</a></p>
       </div>
     </ion-col>
 

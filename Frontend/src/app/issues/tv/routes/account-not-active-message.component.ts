@@ -5,7 +5,6 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
-import { SharedService } from '../../../shared/shared.service';
 
 @Component({
   selector: 'account-not-active-message',
@@ -20,7 +19,7 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -36,18 +35,9 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
-    let url;
-    const accountNo = localStorage.getItem('CUS_MOBILE_NO');
-    const lang: string = this.sharedService.getDefaultLanguage();
-    if (lang === 'ara') {
-      url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID&locale=ar`;
-    } else {
-      url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID`;
-    }
-
     this.Section1Data = CustomerJourneyConstants.accountNotActive;
     this.Section1Data.spanListener = () => {
-      window.location.href = url;
+      console.log('Span Click Listener');
     };
     this.imgSrc = warningImgSrc;
   }

@@ -6,8 +6,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-3rd-party-router-reset-care',
-  template:
-    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+  template: '<iframe src="https://www.etisalat.ae/en/generic/device-care.jsp" height="100%"></iframe>',
 })
 export class ThirdPartyRouterResetCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;

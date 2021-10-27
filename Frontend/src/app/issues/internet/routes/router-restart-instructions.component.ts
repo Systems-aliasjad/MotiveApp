@@ -75,6 +75,7 @@ export class RouterRestartInstructionsComponent implements OnInit, OnDestroy {
   };
 
   button1Listener() {
+    // this.router.navigate(['/issues/internet/device-care']);
     this.router.navigate(['issues/internet/router-restart/device-care']);
   }
 
