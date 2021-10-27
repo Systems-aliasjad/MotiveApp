@@ -16,7 +16,6 @@ import { SharedService } from '../../../shared/shared.service';
     [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
-    [routerConfig]="routerConfig"
     [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
@@ -35,8 +34,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   modal: HTMLIonModalElement;
   networkDiagram = NetWorkDiagramIds.sixLayer;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
-  routerConfig: IRouterDetail = { url: SVGs.router.default, className: networkDiagramClasses.okay, title: ROUTER };
-  connectedDevices;
+  connectedDevices = [];
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   isThirdParty: boolean = false;
 
@@ -118,29 +116,25 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   getIssueTilesData() {
-    // const temp = this.helperService.networkDiagramStylingWrapper(
-    //   {
-    //     ontSerial: '485754431E91C19B',
-    //     ontType: 'I-240G-A',
-    //     isReachable: true,
-    //     isRebootRequired: false,
-    //     isUpgradeRequired: false,
-    //     url: '',
-    //     className: '',
-    //   },
-    //   {
-    //     routerSerial: '109461043164',
-    //     routerModel: 'DIR850',
-    //     isReachable: true,
-    //     isRebootRequired: false,
-    //     isUpgradeRequired: false,
-    //     isManaged: true,
-    //     isResetRequired: false,
-    //     url: '',
-    //     className: '',
-    //   }
-    // );
     const apiResponse = this.sharedService.getApiResponseData();
     this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
+    if (this.connectedDevices) {
+      this.connectedDevices = [
+        {
+          className: networkDiagramClasses.okay,
+          url: SVGs.router.default,
+          title: ROUTER,
+        },
+        ...this.connectedDevices,
+      ];
+    } else {
+      this.connectedDevices = [
+        {
+          className: networkDiagramClasses.okay,
+          url: SVGs.router.default,
+          title: ROUTER,
+        },
+      ];
+    }
   }
 }

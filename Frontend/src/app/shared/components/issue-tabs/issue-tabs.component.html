@@ -38,9 +38,9 @@
 
   <ion-col sizeLg="6" sizeMd="12" size="12" class="issue-tab_content two-col_right">
     <div class="content">
-      <h4 class="sub-title letter-space-none">{{ messageSection.header | translate }}</h4>
-      <div *ngFor="let message of messageSection.body">
-        <p>{{ message.title | translate }}</p>
+      <h4 class="sub-title letter-space-none">{{ messageSection?.header | translate }}</h4>
+      <div *ngFor="let message of messageSection?.body">
+        <p>{{ message?.title | translate }}</p>
         <ion-list *ngIf="message.children" class="bullet-list">
           <ion-item *ngFor="let item of message.children">
             <ion-label> {{ item | translate }}</ion-label>
@@ -51,7 +51,7 @@
       <div *ngIf="section1Data">
         <ion-list class="inline-ion-list inline-ion-list-border">
           <ion-item lines="none" class="ion-no-padding" *ngFor="let template of section1Template">
-            <ion-label class="inline-list_title"> {{ template.title | translate }} </ion-label>
+            <ion-label class="inline-list_title"> {{ template?.title | translate }} </ion-label>
             <ion-label class="inline-list_value"> {{ section1Data[template.objKeyNameEN] }} </ion-label>
           </ion-item>
         </ion-list>
