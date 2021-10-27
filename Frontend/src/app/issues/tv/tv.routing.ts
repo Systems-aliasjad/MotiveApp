@@ -34,7 +34,7 @@ import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
-import { ResetPinFailedMessageComponent } from 'src/app/all-services/routes/reset-pin-failed-message.component';
+
 import { ChannelDetailComponent } from './routes/channel-detail.component';
 import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { PackageTransferComponent } from './routes/package-transfer.component';
@@ -47,6 +47,7 @@ import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connect
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { ResetPinFailedMessageComponent } from '../other/routes/reset-pin-failed-message.component';
 
 const routes: Routes = [
   {
