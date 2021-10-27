@@ -2,20 +2,21 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <h5>{{ 'MESSAGES.RESTART_ROUTER' | translate }}</h5>
+      <h3>{{ 'MESSAGES.RESTART_ROUTER' | translate }}</h3>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
+      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="cross-icon" />
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <!-- Modal Header End -->
 
 <ion-content malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
-  <ion-grid class="form-main-container">
+  <ion-grid>
     <ion-row>
       <ion-col size="12">
-        <div>
+        <div class="dialog-content">
           <p>{{ 'MESSAGES.PLEASE_NOTE_THAT_THE_ISSUE_WONT_BE_FIXED_UNTIL_YOU_RESTART_YOUR_ROUTER' | translate }}</p>
           <p>{{ 'MESSAGES.YOU_CAN_ALSO_RESTART_YOUR_ROUTER_MANUALLY' | translate }}</p>
           <p>{{ 'MESSAGES.ONCE_YOU_RESTART_YOUR_ROUTER_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN' | translate }}</p>
