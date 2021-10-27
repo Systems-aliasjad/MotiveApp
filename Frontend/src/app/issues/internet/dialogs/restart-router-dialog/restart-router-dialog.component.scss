@@ -13,6 +13,7 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
       @media screen and (max-width:992px) {
+        padding-top: 0;
         padding-bottom:0;
         border-bottom: 0;      
       }
@@ -77,6 +78,18 @@ ion-header{
       @media screen and (min-width:992px) {
         text-align: center;
       }
+      .lg-screen-title{
+        display: none;
+        @media screen and (min-width:992px) {
+          display: block;
+        }
+      }
+      .sm-screen-title{
+        display: block;
+        @media screen and (min-width:992px) {
+          display:none;
+        }
+      }
       h3{
         font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
         color:$primary-color;
@@ -84,6 +97,8 @@ ion-header{
         margin-left: 2rem;
         @media screen and (max-width:992px) {
           margin-left: 0;
+          margin-bottom: 0;
+          font-size: 18px;
         }
       }
       
@@ -95,6 +110,7 @@ ion-header{
     @media screen and (max-width:992px) {
       margin-top: 0.5rem;
       margin-right: 0;
+      display: none;
     }
     .close-btn{
       display: none;
@@ -130,9 +146,11 @@ ion-list{
   max-width: 450px;
   margin: 0 auto;
   @media  screen and (max-width:992px) {
+    margin: 0;
+    padding-right: .6rem;
+    padding-left: .6rem;
     text-align: left;
     max-width: none;
-    margin: 0;
   }
   h4{
     color:$secondary-color;
@@ -143,6 +161,13 @@ ion-list{
     @media  screen and (max-width:992px) {
       margin-top:0;
       margin-bottom:0;
+      display: none;
+    }
+  }
+  p{
+    margin-top: 0;
+    @media  screen and (max-width:992px) {
+      font-size: 14px;
     }
   }
 }
