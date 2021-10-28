@@ -56,6 +56,7 @@ export class TvDetailComponent implements OnInit {
     private modalCtrl: ModalController
   ) {}
   ngOnInit() {
+    this.getIssueTilesData();
     this.sharedService.setLoader(true);
     this.backendService.serviceDetailsSTB().subscribe((data: any) => {
       this.sharedService.setLoader(false);
@@ -78,7 +79,6 @@ export class TvDetailComponent implements OnInit {
       console.log('data new api', data);
     });
 
-    this.getIssueTilesData();
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
