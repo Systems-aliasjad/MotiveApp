@@ -21,14 +21,14 @@
               </div>
             </ion-item>
           </ion-radio-group> -->
-
+          <!-- {{ cardList.length }} -->
           <ion-radio-group name="radio-group" value="0">
             <ion-item lines="none" *ngFor="let d of cardList; let i = index">
               <ion-card>
                 <ion-card-header>
                   <ion-card-title>
                     <ion-label class="sub-title">{{ d.title }}</ion-label>
-                    <ion-radio name="radioButton" value="{{ i }}"></ion-radio>
+                    <ion-radio name="radioButton" value="d.ID"></ion-radio>
                     <p>{{ d.description }}</p>
                   </ion-card-title>
                 </ion-card-header>

@@ -38,10 +38,10 @@
       </div>
     </div>
     <div class="flow-box flow-box_center">
-      <div [class]="devices[1]?.className + '-vline line'">
+      <div [class]="devices[1]?.className + '-vline line'" *ngIf="devices[1]">
         <div class="line-vcenter"></div>
       </div>
-      <div class="image-text-box">
+      <div class="image-text-box" *ngIf="devices[1]">
         <div [class]="devices[1]?.className + '-state state'">
           <img [src]="devices[1]?.url" />
         </div>
@@ -49,12 +49,12 @@
       </div>
     </div>
     <div class="flow-box flow-box_right">
-      <div [class]="devices[2]?.className + '-lines line'">
+      <div [class]="devices[2]?.className + '-lines line'" *ngIf="devices[2]">
         <div class="line-left"></div>
         <div class="line-center"></div>
         <div class="line-right"></div>
       </div>
-      <div class="image-text-box">
+      <div class="image-text-box" *ngIf="devices[2]">
         <div [class]="devices[2]?.className + '-state state'">
           <img [src]="devices[2]?.url" />
         </div>

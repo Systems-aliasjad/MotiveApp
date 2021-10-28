@@ -4,6 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { SharedService } from '../../../../shared/shared.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-restart-tvbox-dialog',
@@ -12,7 +13,14 @@ import { Subscription } from 'rxjs';
 })
 export class RestartTvboxDialog implements OnInit, OnDestroy {
   subscription: Subscription;
-  constructor(private location: Location, private actRoute: ActivatedRoute, private modalCtrl: ModalController, public router: Router, private sharedService: SharedService) {
+  constructor(
+    private backendService: BackendService,
+    private location: Location,
+    private actRoute: ActivatedRoute,
+    private modalCtrl: ModalController,
+    public router: Router,
+    private sharedService: SharedService
+  ) {
     this.subscription = this.actRoute.data.subscribe((data) => {
       this.initialization();
     });
@@ -31,6 +39,12 @@ export class RestartTvboxDialog implements OnInit, OnDestroy {
 
   gotoMainForm() {
     this.dismiss();
-    this.router.navigate(['/thanks']);
+    //  this.router.navigate(['/thanks']);
+
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 }

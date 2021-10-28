@@ -58,6 +58,10 @@ import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connect
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialog.component';
+import { UnableTvAdminPinResetMessageComponent } from './routes/unable-tv-admin-pin-reset-message.component';
+import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin-reset-message.component';
+import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +114,10 @@ import { AccountNotActiveMessageComponent } from './routes/account-not-active-me
     CancelElifeConnectionMessageComponent,
     AccountTemporarilyDisconnectedMessageComponent,
     AccountNotActiveMessageComponent,
+    DeviceListDialog,
+    UnableTvAdminPinResetMessageComponent,
+    UnableElifeOnPinResetMessageComponent,
+    ResetAdminPinPackageTransferComponent,
   ],
   imports: [
     CommonModule,

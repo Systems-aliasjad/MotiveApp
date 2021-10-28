@@ -47,6 +47,9 @@ import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connect
 import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AccountNotActiveMessageComponent } from './routes/account-not-active-message.component';
+import { UnableTvAdminPinResetMessageComponent } from './routes/unable-tv-admin-pin-reset-message.component';
+import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin-reset-message.component';
+import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
 
 const routes: Routes = [
   {
@@ -244,6 +247,18 @@ const routes: Routes = [
   {
     path: 'account-not-active',
     component: AccountNotActiveMessageComponent,
+  },
+  {
+    path: 'unable-tv-admin-pin',
+    component: UnableTvAdminPinResetMessageComponent,
+  },
+  {
+    path: 'unable_elifeon-pin',
+    component: UnableElifeOnPinResetMessageComponent,
+  },
+  {
+    path: 'reset-admin-pin-package-transfer',
+    component: ResetAdminPinPackageTransferComponent,
   },
 ];
 

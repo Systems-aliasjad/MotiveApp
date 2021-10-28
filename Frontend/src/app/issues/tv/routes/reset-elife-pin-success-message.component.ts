@@ -5,6 +5,8 @@ import { ApplicableCodes, successImgSrc } from 'src/app/shared/constants/constan
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'unable-elife-login-message',
@@ -28,7 +30,9 @@ export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
     type: 'secondary',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  UserID: string = '';
+
+  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -44,15 +48,23 @@ export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
+    const navigation = this.router.getCurrentNavigation();
+    this.UserID = navigation?.extras?.state?.userID;
+
     this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
     this.imgSrc = successImgSrc;
     this.Section2Template = ApplicableCodes.userCredentialsTemplate;
     this.Section2Data = {
-      userId: '<XXX>',
+      userId: this.UserID, //'<XXX>',
       pin: '1111@eLife',
     };
   }
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
+    // this.router.navigate(['/thanks']);
   }
 }

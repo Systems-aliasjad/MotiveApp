@@ -66,6 +66,19 @@ export class HelperService {
     });
   }
 
+  connectedDeviceModifierSTB(devices) {
+    return devices?.map((device) => {
+      return {
+        ...device,
+        className: networkDiagramClasses.okay,
+        url: SVGs.stb.default,
+        title: 'STB',
+        subTitle: device?.stbMac,
+        list: [],
+      };
+    });
+  }
+
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
     routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
@@ -109,7 +122,7 @@ export class HelperService {
     };
   }
 
-  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: any) {
+  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: IStbDetail) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
     stbConfig = { ...stbConfig, url: SVGs.stb.default, title: STB };
     ontConfig = this.networkDiagramStylingMapper(ontConfig);
@@ -215,8 +228,25 @@ export class HelperService {
       // this.handleCI9CasesIPTV(data?.stbDetails);
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
       // this.handleCI9Cases(temp2);
-    } else if (CodeId === flowCodes.CI72) {
-      this.router.navigate(['issues/tv/tvBox-restart-required-successfully']);
+    }
+
+    //////////////////First Check
+    // else if (CodeId === flowCodes.CI72) {
+    //   this.router.navigate(['issues/tv/tvBox-restart-required-successfully']);
+    // }
+    /////End of First Check No changed to no issues
+    else if (CodeId === flowCodes.CI72) {
+      this.sharedService.setApiResponseDataNoIssuesSTB({
+        ontDetails: data?.ontDetails,
+        stbDetails: data?.stbDetails,
+        connectedDevices: data?.responseData?.stbDetails,
+      });
+      this.sharedService.setApiResponseData({
+        ontDetails: data?.ontDetails,
+        stbDetails: data?.stbDetails,
+        connectedDevices: data?.responseData?.stbDetails,
+      });
+      this.router.navigate(['issues/tv/no-issues']);
     } else if (CodeId === flowCodes.CI71) {
       this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7
     }

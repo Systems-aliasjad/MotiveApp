@@ -572,6 +572,16 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static tvAdminPinResetError = {
+    header: 'MESSAGES.UNABLE_TO_RESET_TV_ADMIN_PIN',
+    paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
+  };
+
+  public static ElfieOnPinResetError = {
+    header: 'MESSAGES.UNABLE_TO_RESET_ELFIE_ON_PIN',
+    paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
+  };
+
   public static accountNotActive = {
     header: 'MESSAGES.YOUR_ACCOUNT_IS_DISCONNECTED_TEMPORARILY',
     span: 'MESSAGES.CLICK_HERE',

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { GameSessionDialog } from 'src/app/issues/tv/dialogs/game-session-dialog/game-session-dialog.component';
+import { BackendService } from 'src/app/services/backend.service';
 import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -25,7 +26,14 @@ export class GameSessionComponent implements OnInit, OnDestroy {
     },
   ];
 
-  constructor(private router: Router, private sharedService: SharedService, public activatedRoute: ActivatedRoute, private modalCtrl: ModalController, private location: Location) {
+  constructor(
+    private backendService: BackendService,
+    private router: Router,
+    private sharedService: SharedService,
+    public activatedRoute: ActivatedRoute,
+    private modalCtrl: ModalController,
+    private location: Location
+  ) {
     this.subscription = this.activatedRoute.params.subscribe(() => {
       this.updateHeader();
     });
@@ -58,6 +66,11 @@ export class GameSessionComponent implements OnInit, OnDestroy {
   }
 
   goToThanks() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
+    //  this.router.navigate(['/thanks']);
   }
 }

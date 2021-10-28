@@ -19,6 +19,7 @@ export class ChannelDetailComponent implements OnInit {
   subscription: Subscription;
   subHeader;
   packages;
+  selectedChannel;
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
@@ -42,6 +43,9 @@ export class ChannelDetailComponent implements OnInit {
   };
 
   updatePageContent() {
+    const navigation = this.router.getCurrentNavigation();
+    this.selectedChannel = navigation?.extras?.state?.selectedChannel;
+
     this.subHeader = 'SUBHEADER.THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX';
     this.packages = [
       {

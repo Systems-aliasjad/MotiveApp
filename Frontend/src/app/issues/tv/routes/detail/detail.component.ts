@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { BackendService } from 'src/app/services/backend.service';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
-import { IPageHeader } from 'src/app/shared/constants/types';
+import { IOntDetail, IPageHeader, IStbDetail } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -18,34 +19,65 @@ export class TvDetailComponent implements OnInit {
   isPartialLoaded: boolean = false;
   modal;
   devices;
-  ontConfig;
-  routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  ontConfig: IOntDetail;
+  routerConfig: IStbDetail;
+  networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
-  cardList = [
-    {
-      header: 'STB SR#039838920',
-      subHeader: 'MAC: ABC12345',
-      list: ['Package 1', 'Package 2', 'Package 3'],
-    },
-    {
-      header: 'STB SR#039838920',
-      subHeader: 'MAC: ABC12345',
-      list: ['Package 1', 'Package 2', 'Package 3'],
-    },
-    {
-      header: 'STB SR#039838920',
-      subHeader: 'MAC: ABC12345',
-      list: ['Package 1', 'Package 2', 'Package 3'],
-    },
-  ];
+  // cardList = [
+  //   {
+  //     header: 'STB SR#039838920',
+  //     subHeader: 'MAC: ABC12345',
+  //     list: ['Package 1', 'Package 2', 'Package 3'],
+  //   },
+  //   {
+  //     header: 'STB SR#039838920',
+  //     subHeader: 'MAC: ABC12345',
+  //     list: ['Package 1', 'Package 2', 'Package 3'],
+  //   },
+  //   {
+  //     header: 'STB SR#039838920',
+  //     subHeader: 'MAC: ABC12345',
+  //     list: ['Package 1', 'Package 2', 'Package 3'],
+  //   },
+  // ];
+  cardList: any = [];
+  eLifeStatus: string = 'Disabled';
   eLifegames = [
     { title: 'Call of Duty: Modern Warfare', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
     { title: 'Dangerous driving 2018', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
   ];
 
-  constructor(private helperService: HelperService, public router: Router, private sharedService: SharedService, private modalCtrl: ModalController) {}
+  constructor(
+    private backendService: BackendService,
+    private helperService: HelperService,
+    public router: Router,
+    private sharedService: SharedService,
+    private modalCtrl: ModalController
+  ) {}
   ngOnInit() {
+    this.sharedService.setLoader(true);
+    this.backendService.serviceDetailsSTB().subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.eLifeStatus = data.result.responseData.elifeGameStatus;
+
+      for (var index = 0; index < data.result.responseData.sharedPackages.length; index++) {
+        for (var i = 0; i < this.connectedDevices.length; i++) {
+          this.connectedDevices[i].list.push(data.result.responseData.sharedPackages[index].packageName);
+        }
+      }
+
+      for (var index = 0; index < data.result.responseData.stbList.length; index++) {
+        var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data.result.responseData.stbList[index].stbSerialNumber);
+        if (selectedStb != null) {
+          for (var i = 0; i < data.result.responseData.stbList[index].packages.length; i++) {
+            selectedStb.list.push(data.result.responseData.stbList[index].packages[i].packageName);
+          }
+        }
+      }
+      console.log('data new api', data);
+    });
+
     this.getIssueTilesData();
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
@@ -68,14 +100,19 @@ export class TvDetailComponent implements OnInit {
   }
 
   onIssueResolved() {
-    this.router.navigate(['/thanks']);
+    // this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
+    this.routerConfig = temp?.stbConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
   }
 }

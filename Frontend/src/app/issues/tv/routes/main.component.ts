@@ -29,6 +29,56 @@ export class MainComponent implements OnInit {
     tsOutcome: 'No Issue Found',
   };
 
+  Ci72Case = {
+    code: 200,
+
+    message: 'success',
+
+    result: {
+      screenCode: 'CI72',
+
+      statusMessage: 'Network reachability diagram',
+
+      responseData: {
+        stbDetails: [
+          {
+            isReachable: true,
+
+            isRebootRequired: false,
+
+            stbSerialNumber: '123',
+
+            stbModel: 'Model 1',
+
+            stbMac: 'Mac 1',
+          },
+          {
+            isReachable: true,
+
+            isRebootRequired: false,
+
+            stbSerialNumber: '456',
+
+            stbModel: 'Model 2',
+
+            stbMac: 'Mac 2',
+          },
+          {
+            isReachable: true,
+
+            isRebootRequired: false,
+
+            stbSerialNumber: '789',
+
+            stbModel: 'Model 3',
+
+            stbMac: 'Mac 3',
+          },
+        ],
+      },
+    },
+  };
+
   constructor(private helperService: HelperService, private shareService: SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
@@ -38,6 +88,7 @@ export class MainComponent implements OnInit {
     this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
       this.shareService.setLoader(false);
       console.log('Response For TV: ' + data);
+      //data = this.Ci72Case;
       this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }

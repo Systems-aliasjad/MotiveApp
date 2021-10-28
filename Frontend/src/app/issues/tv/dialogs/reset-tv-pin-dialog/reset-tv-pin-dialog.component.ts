@@ -1,6 +1,9 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
+import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-reset-tv-pin-dialog',
@@ -9,7 +12,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class ResetTvPinDialog implements OnInit {
   modal;
-  constructor(public router: Router, public modalCtrl: ModalController) {}
+  constructor(private sharedService: SharedService, private backendService: BackendService, public router: Router, public modalCtrl: ModalController) {}
 
   ngOnInit() {}
 
@@ -23,6 +26,8 @@ export class ResetTvPinDialog implements OnInit {
       await this.modalCtrl.dismiss();
     } catch (ex) {}
 
-    this.router.navigate(['issues/tv/tv-admin-pin-reset-success']);
+    this.router.navigate(['/issues/tv/reset-admin-pin-package-transfer']);
+
+    // this.router.navigate(['issues/tv/tv-admin-pin-reset-success']);
   }
 }

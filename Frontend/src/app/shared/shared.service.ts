@@ -29,6 +29,8 @@ export class SharedService {
     showBackBtn: true,
   };
 
+  apiResponseDataNoIssuesSTB;
+
   constructor(private translate: TranslateService, private router: Router) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
@@ -54,6 +56,19 @@ export class SharedService {
   getApiResponseData(): any {
     if (this.apiResponseData) {
       return this.apiResponseData;
+    }
+    //if (environment.shouldCallAPI)
+    else if (environment.shouldCallAPI) {
+      this.router.navigate(['landing']);
+    }
+  }
+  setApiResponseDataNoIssuesSTB(data: any) {
+    this.apiResponseDataNoIssuesSTB = data;
+  }
+
+  getApiResponseDataNoIssuesSTB(): any {
+    if (this.apiResponseDataNoIssuesSTB) {
+      return this.apiResponseDataNoIssuesSTB;
     }
     //if (environment.shouldCallAPI)
     else if (environment.shouldCallAPI) {

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { flowCodes, warningImgSrc } from 'src/app/shared/constants/constants';
+import { successImgSrc, warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
-  selector: 'reset-elife-pin-success-message',
+  selector: 'unable-elife-pin-reset-message',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -17,23 +17,17 @@ import { BackendService } from 'src/app/services/backend.service';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
+export class UnableElifeOnPinResetMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.RESET_PIN',
-  };
-  button2: IMotiveButton = {
-    title: 'BUTTONS.CANCEL',
-    type: 'link',
+    title: 'BUTTONS.OK',
+    type: 'secondary',
   };
 
   constructor(private sharedService: SharedService, private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -52,25 +46,11 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
-    this.Section1Data = CustomerJourneyConstants.restELifeLoginPin;
+    this.Section1Data = CustomerJourneyConstants.ElfieOnPinResetError;
     this.imgSrc = warningImgSrc;
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.elifeOnReset().subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
-        this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
-      } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-        this.router.navigate(['issues/tv/unable-to-login-elife']);
-      }
-    });
-
-    //this.router.navigate(['issues/tv/reset-elife-pin-success']);
-  }
-
-  button2Listener() {
     // this.router.navigate(['/thanks']);
 
     this.sharedService.setLoader(true);

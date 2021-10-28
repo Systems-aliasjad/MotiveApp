@@ -2,12 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IStbDetail } from 'src/app/shared/constants/types';
-import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
+import { DeviceListDialog } from '../dialogs/device-list-dialog/device-list-dialog.component';
 
 @Component({
   selector: 'app-phone-no-issues',
@@ -35,7 +36,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   routerConfig: IStbDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
-
+  isThirdParty: boolean = false;
   messageSection;
   button1: IMotiveButton = {
     title: 'BUTTONS.ISSUE_FIXED',
@@ -53,6 +54,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
 
   modal: any;
   constructor(
+    private backendService: BackendService,
     private helperService: HelperService,
     private sharedService: SharedService,
     private router: Router,
@@ -81,17 +83,36 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
+  // updatePageContent() {
+  //   this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
+  // }
+
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
+    const navigation = this.router.getCurrentNavigation();
+    const showRebootButton = navigation?.extras?.state?.showRebootButton;
+    this.isThirdParty = navigation?.extras?.state?.isThirdParty;
+    if (showRebootButton === false) {
+      this.button2 = this.button3;
+      this.button2Listener = this.button3Listener;
+      this.button3 = undefined;
+    }
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   async button2Listener() {
     this.modal = await this.modalCtrl.create({
       component: DeviceListDialog,
+      componentProps: {
+        isThirdParty: this.isThirdParty,
+      },
     });
     return await this.modal.present();
   }
@@ -112,6 +133,6 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
   }
 }

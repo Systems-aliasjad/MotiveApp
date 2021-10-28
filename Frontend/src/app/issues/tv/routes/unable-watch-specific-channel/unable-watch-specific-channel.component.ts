@@ -21,6 +21,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   channelListTitle;
   channelListContent;
+  radio_list: any = [];
   constructor(
     private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute,
@@ -50,6 +51,57 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     this.channelListTitle = 'MESSAGES.CHANNEL_LIST';
     this.channelListContent = 'MESSAGES.PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW';
     this.buttonText = 'BUTTONS.CONTINUE';
+
+    // const apiRespnse = this.sharedService.getApiResponseData();
+
+    const dummy = [
+      {
+        serialNo: 'SSID1',
+
+        packageId: 'laksjld',
+
+        packageName: 'SSID2',
+
+        channels: ['defdssa', 'defdssa'],
+      },
+
+      {
+        serialNo: 'SSID1',
+
+        packageId: 'laksjld',
+
+        packageName: 'SSID2',
+
+        channels: ['defdssa', 'defdssa'],
+      },
+    ];
+
+    const responseData = dummy;
+    responseData.forEach((element) => {
+      // apiRespnse?.responseData;
+      var channelListIndex = element?.channels;
+
+      channelListIndex.forEach((row) => {
+        if (this.radio_list.length === 0) {
+          this.radio_list.push({
+            id: row,
+            name: 'ChannelList',
+            value: row,
+            text: row,
+          });
+        } else {
+          var alreadyAdded = this.radio_list.find((x) => x.value === row);
+          if (alreadyAdded.length === 0) {
+            this.radio_list.push({
+              id: row,
+              name: 'ChannelList',
+              value: row,
+              text: row,
+            });
+          }
+        }
+      });
+    });
   }
 
   headerConfig: IPageHeader = {
@@ -61,55 +113,55 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     return this.formGroup.controls;
   }
 
-  radio_list = [
-    {
-      id: '1',
-      name: 'ChannelList',
-      value: 'radio_1',
-      text: 'Channel 1',
-      disabled: false,
-      checked: false,
-      color: 'primary',
-    },
-    {
-      id: '2',
-      name: 'ChannelList',
-      value: 'radio_2',
-      text: 'Channel 2',
-      disabled: false,
-      checked: false,
-      color: 'primary',
-    },
-    {
-      id: '3',
-      name: 'ChannelList',
-      value: 'radio_3',
-      text: 'Channel 3',
-      disabled: false,
-      checked: false,
-      color: 'primary',
-    },
+  // radio_list = [
+  //   {
+  //     id: '1',
+  //     name: 'ChannelList',
+  //     value: 'radio_1',
+  //     text: 'Channel 1',
+  //     disabled: false,
+  //     checked: false,
+  //     color: 'primary',
+  //   },
+  //   {
+  //     id: '2',
+  //     name: 'ChannelList',
+  //     value: 'radio_2',
+  //     text: 'Channel 2',
+  //     disabled: false,
+  //     checked: false,
+  //     color: 'primary',
+  //   },
+  //   {
+  //     id: '3',
+  //     name: 'ChannelList',
+  //     value: 'radio_3',
+  //     text: 'Channel 3',
+  //     disabled: false,
+  //     checked: false,
+  //     color: 'primary',
+  //   },
 
-    {
-      id: '4',
-      name: 'ChannelList',
-      value: 'radio_4',
-      text: 'Channel 4',
-      disabled: false,
-      checked: false,
-      color: 'primary',
-    },
+  //   {
+  //     id: '4',
+  //     name: 'ChannelList',
+  //     value: 'radio_4',
+  //     text: 'Channel 4',
+  //     disabled: false,
+  //     checked: false,
+  //     color: 'primary',
+  //   },
 
-    {
-      id: '5',
-      name: 'ChannelList',
-      value: '5',
-      text: 'Channel is not on the list',
-      disabled: false,
-      checked: false,
-      color: 'primary',
-    },
-  ];
+  //   {
+  //     id: '5',
+  //     name: 'ChannelList',
+  //     value: '5',
+  //     text: 'Channel is not on the list',
+  //     disabled: false,
+  //     checked: false,
+  //     color: 'primary',
+  //   },
+  // ];
 
   SubmitForm() {
     let value = this.formGroup.controls['ChannelList'].value;
@@ -117,7 +169,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
     if (value === '5') {
       this.openChannelNotListDialog();
     } else {
-      this.router.navigate(['/issues/tv/channel-detail']);
+      this.router.navigate(['/issues/tv/channel-detail'], { state: { selectedChannel: value } });
     }
   }
 

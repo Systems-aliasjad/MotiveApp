@@ -6,6 +6,8 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Tv Box Reset Required Success
@@ -32,7 +34,13 @@ export class TvBoxResetRequiredSuccessComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private location: Location, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private sharedService: SharedService,
+    private backendService: BackendService,
+    private router: Router,
+    private location: Location,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -53,6 +61,12 @@ export class TvBoxResetRequiredSuccessComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    //  this.router.navigate(['/thanks']);
+
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 }

@@ -63,10 +63,10 @@ export class IssueListDialog implements OnInit {
       issue: 'Transfer channel to another TV box',
       route: 'issues/tv/transfer-channel-to-another-tvBox',
     },
-    {
-      issue: 'Unable to watch a specific channel',
-      route: 'issues/tv/unable-to-watch-specific-channel',
-    },
+    // {
+    //   issue: 'Unable to watch a specific channel',
+    //   route: 'issues/tv/unable-to-watch-specific-channel',
+    // },
     {
       issue: 'Unable to watch any channel',
       route: 'issues/tv/unable-watch-channel',

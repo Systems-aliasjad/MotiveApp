@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
@@ -38,7 +38,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
 
   formGroup: FormGroup;
   subscription: Subscription;
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.initialization();
     });
@@ -48,15 +48,18 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log('init', this.cardList);
+  }
 
   initialization() {
-    this.formGroup = new FormGroup({
-      radioButton: new FormControl(),
+    this.formGroup = this.formBuilder.group({
+      radioButton: [''],
     });
   }
 
   button1Listener() {
+    console.log('form group', this.formGroup);
     this.button1Click.emit(this.formGroup);
   }
 

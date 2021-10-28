@@ -20,7 +20,7 @@
                 <ion-radio-group allow-empty-selection="true" formControlName="ChannelList" name="ChannelList">
                   <ion-item *ngFor="let item of radio_list" class="channel-list-items">
                     <ion-label>{{ item.text }}</ion-label>
-                    <ion-radio slot="start" name="{{ item.name }}" value="{{ item.value }}" disabled="{{ item.disabled }}"></ion-radio>
+                    <ion-radio slot="start" name="{{ item.name }}" value="{{ item.value }}"></ion-radio>
                   </ion-item>
                 </ion-radio-group>
               </ion-list>

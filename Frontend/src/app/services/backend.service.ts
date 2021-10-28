@@ -116,6 +116,70 @@ export class BackendService {
     }
   }
 
+  rebootDeviceSTB(DeviceToReeboot) {
+    if (environment.shouldCallAPI) {
+      console.log('DeviceToReeboot', DeviceToReeboot);
+      return this.http.put(`motive/troubleshoot/reboot-devices`, DeviceToReeboot);
+    } else {
+      const response = null; // { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  stbAdminPinReset(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/stb-admin-pin-reset/${data}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  elifeOnReset() {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/elife-password-reset`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  problemPlayingGame() {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/session-release`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  stbDetails() {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/stb-details`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  transferPackage(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, data);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  serviceDetailsSTB() {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/continue`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   hardCoadedResponse(response) {
     return new Observable<object>((subscriber: Subscriber<object>) => subscriber.next(new Object())).pipe(map((o) => response));
   }

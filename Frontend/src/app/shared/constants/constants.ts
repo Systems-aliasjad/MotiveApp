@@ -31,6 +31,15 @@ export const flowCodes = {
   UPSEL7: 'UPSEL7',
   UPSEL8: 'UPSEL8',
   UPSEL9: 'UPSEL9',
+
+  CI122: 'CI122',
+  CI123: 'CI123',
+
+  QAIPTVPIN: 'QA-IPTV-PIN', //Forgot TV Admin Pin Success
+  QAIPTVPIN1: 'QA-IPTV-PIN1', //Forgot TV Admin Pin Failure
+
+  QAIPTVELON: 'QA-IPTV-EL-ON', //  unable to login to elife on Success
+  QAIPTVELON1: 'QA-IPTV-EL-ON1', //  unable to login to elife on Failure
 };
 
 export const ETISALAT = 'Etisalat';

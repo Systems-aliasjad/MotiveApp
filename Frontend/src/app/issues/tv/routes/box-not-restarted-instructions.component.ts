@@ -68,8 +68,8 @@ export class BoxNotRestartedInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/device-care']);
-    // this.router.navigate(['/issues/tv/box-not-restarted-instructions/device-care']);
+    //this.router.navigate(['/issues/internet/device-care']);
+    this.router.navigate(['/issues/tv/box-not-restarted-instructions/device-care']);
   }
 
   button2Listener() {
