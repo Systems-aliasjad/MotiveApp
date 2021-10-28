@@ -13,7 +13,7 @@
     <ion-row class="device-care_inner_container device-care-lg">
       <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_image_lg">
         <div class="image">
-          <img [src]="deviceCareContent.imgSrc" alt="Picture placeholder" />
+          <iframe src="https://simulator-devicecare.etisalat.ae/WebApp/Main.aspx?locale=en_US" height="100%"></iframe>
         </div>
       </ion-col>
       <ion-col sizeLg="6" sizeMd="12" size="12" class="device-care_content">
@@ -60,7 +60,7 @@
         </div>
         <!-- Image -->
         <div class="image">
-          <img [src]="deviceCareContent.imgSrc" alt="Picture placeholder" />
+          <iframe src="https://simulator-devicecare.etisalat.ae/WebApp/Main.aspx?locale=en_US" height="100%"></iframe>
         </div>
         <!-- Content Below Image -->
         <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''" *ngIf="deviceCareContent.header2">

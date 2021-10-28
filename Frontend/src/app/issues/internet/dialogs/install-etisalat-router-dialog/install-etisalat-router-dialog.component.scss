@@ -53,58 +53,62 @@ ion-list{
 }
 /*-------------------------------------------------*/
 ion-header{
-    --ion-background-color:  transparent;
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
-    &:after{
-      background-image: none;
+  --ion-background-color:  transparent;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  &:after{
+    background-image: none;
+  }
+  ion-toolbar{
+    border-bottom: 2px solid #e2e1da;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    @media screen and (max-width:992px) {
+      padding-bottom:0;
+      border-bottom: 0;      
     }
-    ion-toolbar{
-      border-bottom: 2px solid #e2e1da;
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+    ion-title{
+      padding-right:0;
+      padding-left: 0;
+      text-align: center;
       @media screen and (max-width:992px) {
-        padding-bottom:0;
-        border-bottom: 0;      
+        text-align: left;
       }
-      ion-title{
-        padding-right:0;
-        padding-left: 0;
-        h3{
-          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-          color:$primary-color;
-          font-weight: normal;
-        }
-        @media screen and (min-width:992px) {
-            text-align: center;
+      h3{
+        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        color:$primary-color;
+        font-weight: normal;
+        @media screen and (max-width:992px) {
+          font-size: 18px;
         }
       }
     }
-    ion-buttons{
-      padding-right: 0;
-      cursor: pointer;
-      @media screen and (max-width:992px) {
-        margin-top: 0.5rem;
-        margin-right: 0;
-      }
-      .close-btn{
-        display: none;
-        @media  screen and (max-width:992px) {
-          display: block;
-        }
-      }
-      .cross-icon{
+  }
+  ion-buttons{
+    padding-right: 0;
+    cursor: pointer;
+    @media screen and (max-width:992px) {
+      margin-top: 0.5rem;
+      margin-right: 0;
+    }
+    .close-btn{
+      display: none;
+      @media  screen and (max-width:992px) {
         display: block;
-        width: 2rem;
-        height: 2rem;
-        @include transition(all 0.3s ease-in-out);
-        @media  screen and (max-width:992px) {
-          display: none;
-        }
-        &:hover{
-          opacity: 0.5;
-        }
       }
+    }
+    .cross-icon{
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      @include transition(all 0.3s ease-in-out);
+      @media  screen and (max-width:992px) {
+        display: none;
+      }
+      &:hover{
+        opacity: 0.5;
+      }
+    }
   }
 }
 ion-list{

@@ -2,8 +2,10 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
-import { IPageHeader } from 'src/app/shared/constants/types';
+import { BackendService } from 'src/app/services/backend.service';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, ONT, PHONE, SVGs } from 'src/app/shared/constants/constants';
+import { IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
+import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from '../../../../shared/shared.service';
 
@@ -18,16 +20,19 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   cardList;
   @Input()
   isPartialLoaded: boolean = false;
+  modal;
 
-  ontConfig;
-  routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
+  routerConfig: IRouterDetail = { url: SVGs.phone.default, className: networkDiagramClasses.okay, title: PHONE };
+
   constructor(
     private helperService: HelperService,
     private sharedService: SharedService,
     private modalCtrl: ModalController,
     public router: Router,
-    private actRoute: ActivatedRoute
+    private actRoute: ActivatedRoute,
+    private backendService: BackendService
   ) {}
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
@@ -75,36 +80,18 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
             description2: 'Change',
             link: true,
           },
-          {
-            title: 'Call waiting',
-            description: 'Issue fixed',
-            title2: '',
-            description2: '',
-          },
+          // {
+          //   title: 'Call waiting',
+          //   description: 'Issue fixed',
+          //   title2: '',
+          //   description2: '',
+          // },
           {
             title: 'CBB',
             description: 'Active  & Enabled',
             title2: '',
             description2: 'Reset pin',
             link: true,
-          },
-          {
-            title: 'Name',
-            description: 'Status',
-            title2: '',
-            description2: '',
-          },
-          {
-            title: 'Name',
-            description: 'Status',
-            title2: '',
-            description2: '',
-          },
-          {
-            title: 'Name',
-            description: 'Status',
-            title2: '',
-            description2: '',
           },
         ],
       },
@@ -124,17 +111,26 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
-    // this.button1Click.emit();
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
-  button2Listener() {
-    // this.button2Click.emit();
+  async button2Listener() {
+    this.modal = await this.modalCtrl.create({
+      component: IssueListDialog,
+      componentProps: {
+        flow: EIssueFlow.phoneIssue,
+      },
+    });
+    return await this.modal.present();
   }
   getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
-    this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
+    // const apiResponse = this.sharedService.getApiResponseData();
+    // const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    // this.ontConfig = temp?.ontConfig;
+    // this.routerConfig = temp?.routerConfig;
   }
 }

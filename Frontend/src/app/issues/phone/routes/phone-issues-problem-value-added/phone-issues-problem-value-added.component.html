@@ -31,7 +31,7 @@
                   <ion-card-header [ngClass]="{ 'card-head-small': item?.title2 === '' }">
                     <ion-card-title>
                       <h5 class="sub-title">{{ item.title }}</h5>
-                      <p>{{ item.description }}</p>
+                      <span>{{ item.description }}</span>
                     </ion-card-title>
                   </ion-card-header>
                   <ion-card-content class="pt-0" *ngIf="item.title2">
@@ -63,7 +63,7 @@
           <motive-button [type]="'primary'" [title]="'BUTTONS.ISSUE_FIXED'" (click)="button1Listener()"></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-          <motive-button [type]="'link'" [title]="'BUTTONS.REQUEST_SUPPORT'" (click)="button2Listener()"></motive-button>
+          <motive-button [type]="'link'" [title]="'BUTTONS.CONTINUE_TO_TROUBLESHOOTING'" (click)="button2Listener()"></motive-button>
         </ion-col>
       </ion-row>
     </ion-col>

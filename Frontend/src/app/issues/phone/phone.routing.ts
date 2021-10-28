@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CallForwardMessageComponent } from './routes/call-forward-message.component';
 import { ChangeCallForwardSuccessComponent } from './routes/change-call-forward-success.component';
-import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
+import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message.component';
 import { IssueNotFixedMessageComponent } from './routes/issue-not-fixed-message.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 
@@ -22,15 +22,31 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
 import { BookAppointmentComponent } from './routes/book-appointment.component';
 import { ChangeCallForwardComponent } from './routes/change-call-forward/change-call-forward.component';
 import { ForgotCcbPinComponent } from './routes/forgot-ccb-pin.component';
-import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { PhoneIssuesProblemValueAddedComponent } from './routes/phone-issues-problem-value-added/phone-issues-problem-value-added.component';
-import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message-component';
+import { ForgotCcbPinFailedMessageComponent } from './routes/forgot-ccb-pin-failed-message.component';
 import { CallForwardFailedMessageComponent } from './routes/call-forward-failed-message.component';
+import { MoveElifeConnectionMessageComponent } from './routes/move-elife-connection-message.component';
+import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-connection-message.component';
+import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
+import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
+import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 
 const routes: Routes = [
   {
     path: '',
     component: MainComponent,
+  },
+  {
+    path: 'osrp/move-elife-connection',
+    component: MoveElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/cancel-elife-connection',
+    component: CancelElifeConnectionMessageComponent,
+  },
+  {
+    path: 'osrp/account-temporarily-disconnected',
+    component: AccountTemporarilyDisconnectedMessageComponent,
   },
   {
     path: 'outage',
@@ -96,6 +112,10 @@ const routes: Routes = [
     component: OntRestartInstructionsComponent,
   },
   {
+    path: 'ont-restart-instructions/device-care',
+    component: FiberBoxRestartCareComponent,
+  },
+  {
     //ont not reboot manually instructions
     path: 'ont-not-restart-instructions',
     component: OntNotRestartInstructionsComponent,
@@ -119,6 +139,10 @@ const routes: Routes = [
   {
     path: 'no-issue-phone-phone-reset-ccb-pin-successfully',
     component: ResetCCBPINSuccessComponent,
+  },
+  {
+    path: 'appointment-successful',
+    component: AppointmentSuccessfulMessageComponent,
   },
   {
     path: 'book-complaint',

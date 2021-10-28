@@ -34,7 +34,7 @@ import { NoAdditionalSTBComponent } from './routes/no-additional-stb.component';
 import { NoNonSharedPackageComponent } from './routes/no-non-shared-package.component';
 import { ERoutingIds } from 'src/app/shared/constants/constants';
 import { TransferTvboxChannelComponent } from './routes/transfer-tvBox-channel.component';
-import { ResetPinFailedMessageComponent } from 'src/app/all-services/routes/reset-pin-failed-message.component';
+
 import { ChannelDetailComponent } from './routes/channel-detail.component';
 import { UnableWatchSpecificChannelComponent } from './routes/unable-watch-specific-channel/unable-watch-specific-channel.component';
 import { PackageTransferComponent } from './routes/package-transfer.component';
@@ -50,6 +50,7 @@ import { AccountNotActiveMessageComponent } from './routes/account-not-active-me
 import { UnableTvAdminPinResetMessageComponent } from './routes/unable-tv-admin-pin-reset-message.component';
 import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin-reset-message.component';
 import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
+import { ResetPinFailedMessageComponent } from '../other/routes/reset-pin-failed-message.component';
 
 const routes: Routes = [
   {

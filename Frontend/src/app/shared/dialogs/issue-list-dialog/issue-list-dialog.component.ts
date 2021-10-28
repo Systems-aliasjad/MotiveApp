@@ -116,10 +116,10 @@ export class IssueListDialog implements OnInit {
       issue: 'Forgot Code Control Barring (CCB) PIN',
       route: 'issues/phone/forgot-ccb-pin',
     },
-    {
-      issue: 'Change call forwarding number',
-      route: 'issues/phone/no-issue-phone-phone-Change-call-forward',
-    },
+    // {
+    //   issue: 'Change call forwarding number',
+    //   route: 'issues/phone/no-issue-phone-phone-Change-call-forward',
+    // },
   ];
   issuesList: any[];
   constructor(private modalCtrl: ModalController, private router: Router) {}
@@ -158,6 +158,7 @@ export class IssueListDialog implements OnInit {
   }
 
   openDeviceCare() {
+    this.dismiss();
     this.router.navigate(['/issues/internet/device-care']);
   }
 }

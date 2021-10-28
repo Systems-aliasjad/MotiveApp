@@ -3,25 +3,25 @@
 
 // --------------------------------------------------------------
 :host {
-  ion-list{
-    --ion-background-color:transparent;
+  ion-list {
+    --ion-background-color: transparent;
     padding-bottom: 0;
   }
-  ion-item{
-    --min-height: auto; 
-    ion-label{
-      color:$secondary-color;
+  ion-item {
+    --min-height: auto;
+    ion-label {
+      color: $secondary-color;
     }
   }
 }
-ion-item::part(native){
+ion-item::part(native) {
   --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
   padding-inline-end: 0;
   --inner-padding-end: 0;
   padding-inline-start: 0;
-  --border-radius:0;
+  --border-radius: 0;
   --border-width: 0;
-  --inner-border-width: 0
+  --inner-border-width: 0;
 }
 // --------------------------------------------------------------
 
@@ -52,7 +52,7 @@ ion-grid {
   .content {
     max-width: 100%;
     margin: 0;
-    .sub-title{
+    .sub-title {
       margin-top: 1rem;
       margin-bottom: 1rem;
       @media screen and (min-width: 767px) and (max-width: 992px) {
@@ -70,9 +70,8 @@ ion-grid {
   p {
     margin: 0;
     @media screen and (max-width: 767px) {
-      font-size: 14px
+      font-size: 14px;
     }
-    
   }
 }
 
@@ -102,13 +101,17 @@ ion-grid {
   -ms-flex-direction: column;
   flex-direction: column;
   overflow: hidden;
-  /* max-width: 472px; 
+  height: calc(100% - 75px);
+   /* max-width: 472px; 
   height: auto;
   margin: 2rem auto 0;*/
   margin-top: 1rem;
+  @media screen and (max-width: 992px) {
+    height:300px;
+  }
   img {
     width: 100%;
-    height: 100%;;
+    height: 100%;
   }
 }
 .content {

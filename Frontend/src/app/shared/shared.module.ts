@@ -36,6 +36,9 @@ import { TransferPackageComponent } from './components/transfer-package/transfer
 import { SevenLayerComponent } from './components/network-diagrams/seven-layer/seven-layer.component';
 import { GenericErrorIssuesComponent } from './components/generic-error-issues/generic-error-issues.component';
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
+import { SafePipe } from './pipe/safePipe';
+import { SixLayerComponent } from './components/network-diagrams/six-layer/six-layer.component';
+
 @NgModule({
   declarations: [
     DiagnoseIssueComponent,
@@ -47,6 +50,7 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
     ThankyouScreenComponent,
     TermsConditionsComponent,
     BookComplaintComponent,
+    SixLayerComponent,
     NumberOnlyDirective,
     IssueTabsComponent,
     GenericErrorComponent,
@@ -66,6 +70,7 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
     HeaderMultiLineComponent,
     TransferPackageComponent,
     GenericErrorIssuesComponent,
+    SafePipe,
   ],
   imports: [
     CommonModule,

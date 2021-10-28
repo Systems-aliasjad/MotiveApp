@@ -139,6 +139,28 @@ export class HelperService {
       stbConfig,
     };
   }
+  public otherFlowIdentifier(CodeId: string, data?: any) {
+    if (CodeId === flowCodes.genericError) {
+      this.router.navigate(['/unknown-error']);
+    } else if (CodeId === flowCodes.outage) {
+      this.router.navigate(['issues/other/outage']);
+    } else if (CodeId === flowCodes.issueNotFixed) {
+      this.router.navigate(['issues/other/issue-not-fixed']);
+    } else if (CodeId === flowCodes.CI9) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.router.navigate(['issues/internet/router-reboot-required']);
+    } else if (CodeId === flowCodes.CI73) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.router.navigate(['issues/internet/router-reset-required']);
+    } else if (CodeId === flowCodes.CI72) {
+      this.sharedService.setApiResponseData({
+        connectedDevices: data?.connectedDevices,
+        hsiUploadDownload: data?.hsiUploadDownload?.split(','),
+      });
+      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
+      this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'other');
+    }
+  }
 
   public InternetFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
@@ -171,7 +193,7 @@ export class HelperService {
         hsiUploadDownload: data?.hsiUploadDownload?.split(','),
       });
       this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-      this.handleInternetPasswordResetCase(data?.hsiPasswordReset);
+      this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
@@ -195,6 +217,41 @@ export class HelperService {
     } else if (CodeId === flowCodes.UPSEL2 || CodeId === flowCodes.UPSEL8) {
       // Upselling Identified for New Router /Router  Out of Warranty
       this.router.navigate(['issues/internet/third-party-router']);
+    }
+  }
+  public voiceFlowIdentifier(codeId: string, data?: any) {
+    if (codeId === flowCodes.genericError) {
+      this.router.navigate(['/unknown-error']);
+    } else if (codeId === flowCodes.movingElifeConnection) {
+      this.sharedService.setApiResponseData({
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
+        status: data?.status,
+      });
+      this.router.navigate(['issues/phone/osrp/move-elife-connection']);
+    } else if (codeId === flowCodes.ElifeCancellationRequest) {
+      this.sharedService.setApiResponseData({
+        reqNo: data?.referenceNo,
+        reqType: data?.requestType,
+        status: data?.status,
+      });
+      this.router.navigate(['issues/phone/osrp/cancel-elife-connection']);
+    } else if (codeId === flowCodes.accountTemporarilyDisconnected) {
+      this.router.navigate(['issues/phone/osrp/account-temporarily-disconnected']);
+    } else if (codeId === flowCodes.outage) {
+      this.router.navigate(['issues/phone/outage']);
+    } else if (codeId === flowCodes.issueNotFixed) {
+      this.router.navigate(['issues/phone/issue-not-fixed']);
+    } else if (codeId === flowCodes.CI9) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
+      this.router.navigate(['issues/phone/ont-reboot']); //todo:
+    } else if (codeId === flowCodes.CI72) {
+      // this.sharedService.setApiResponseData({
+      //   connectedDevices: data?.connectedDevices,
+      //   hsiUploadDownload: data?.hsiUploadDownload?.split(','),
+      // });
+      this.router.navigate(['issues/phone/no-issues']);
     }
   }
 
@@ -297,11 +354,11 @@ export class HelperService {
     }
   }
 
-  handleInternetPasswordResetCase(shouldReset) {
+  handleInternetPasswordResetCase(shouldReset, flowCase: 'internet' | 'other') {
     if (shouldReset) {
       this.router.navigate(['/issues/internet/internet-password-reset']);
     } else if (this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
-      this.router.navigate(['issues/internet/no-issue']);
+      this.router.navigate([`issues/${flowCase}/no-issue`]);
     } else {
       this.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
 

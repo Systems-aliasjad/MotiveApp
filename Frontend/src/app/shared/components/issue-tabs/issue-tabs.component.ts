@@ -31,14 +31,16 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   section1Template;
   @Input()
   section1Data;
-  constructor(private activatedRoute: ActivatedRoute) {
-    this.subscription = this.activatedRoute.data.subscribe((data) => {
-      this.codeType = data.id;
-    });
-  }
+
+  constructor(private activatedRoute: ActivatedRoute) {}
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.subscription = this.activatedRoute.data.subscribe((data) => {
+      this.codeType = data.id;
+    });
+  }
 }
