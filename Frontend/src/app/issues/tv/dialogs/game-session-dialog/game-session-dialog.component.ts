@@ -23,7 +23,7 @@ export class GameSessionDialog implements OnInit {
 
     this.backendService.problemPlayingGame().subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.result?.code === 200) {
+      if (data?.code === 200) {
         this.router.navigate(['issues/tv/game-session-cancel']);
       } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
         this.router.navigate(['/unknown-issue']);
