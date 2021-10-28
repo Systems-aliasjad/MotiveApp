@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 import { IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -65,26 +66,36 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.stbDetails().subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.sharedService.setApiResponseData(data);
-      var packagesResponse = data?.result?.responseData;
 
-      packagesResponse.forEach((element) => {
-        var index = {
-          title: element?.packageName,
-          description: 'STB SR#' + element?.serialNo,
-          ID: element?.serialNo,
-          PackageID: element?.packageId,
-        };
-
-        if (this.packages.length === 0) {
-          this.packages.push(index);
-        } else {
-          var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
-          if (alreadyAdded === undefined) {
-            this.packages.push(index);
-          }
+      if (data?.result?.screenCode === flowCodes.QAIPTVPT3) {
+        this.sharedService.setApiResponseData(data);
+        var packagesResponse: any[] = data?.result?.responseData;
+        if (packagesResponse.length === 1) {
+          this.router.navigate(['issues/tv/single-stb-found']);
         }
-      });
+
+        packagesResponse.forEach((element) => {
+          element?.packages.forEach((packages) => {
+            var index = {
+              title: packages?.packageName,
+              description: 'STB SR#' + element?.stbSerialNumber,
+              ID: element?.stbSerialNumber,
+              PackageID: packages?.packageId,
+            };
+
+            if (this.packages.length === 0) {
+              this.packages.push(index);
+            } else {
+              var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
+              if (alreadyAdded === undefined) {
+                this.packages.push(index);
+              }
+            }
+          });
+        });
+      } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+        this.router.navigate(['/unknown-error']);
+      }
     });
 
     // var data = {
@@ -148,6 +159,107 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
     //       this.packages.push(index);
     //     }
     //   }
+    // });
+
+    // var data2 = {
+    //   code: 200,
+
+    //   message: 'success',
+
+    //   result: {
+    //     screenCode: 'QA-IPTV-PT3',
+
+    //     statusMessage: 'Stb Detailed View',
+
+    //     responseData: [
+    //       {
+    //         stbSerialNumber: '1111111',
+
+    //         packages: [
+    //           {
+    //             packageId: '1111111',
+
+    //             packageName: 'TTYG H1111111',
+
+    //             channels: ['qwq', '324e'],
+    //           },
+
+    //           {
+    //             packageId: '111111122222222',
+
+    //             packageName: 'TTYG H111111232222222',
+
+    //             channels: ['qwq', '324e'],
+    //           },
+    //         ],
+    //       },
+
+    //       {
+    //         stbSerialNumber: '222222',
+
+    //         packages: [
+    //           {
+    //             packageId: '2222222111111',
+
+    //             packageName: 'TTYG H222221111',
+
+    //             channels: ['qwq', '324e'],
+    //           },
+
+    //           {
+    //             packageId: '2222222222',
+
+    //             packageName: 'TTYG H22222222222',
+
+    //             channels: ['qwq', '324e'],
+    //           },
+    //         ],
+    //       },
+    //       {
+    //         stbSerialNumber: '3333333333333',
+
+    //         packages: [
+    //           {
+    //             packageId: '33333333331111111',
+
+    //             packageName: 'TTYG 333333331111111',
+
+    //             channels: ['qwq', '324e'],
+    //           },
+
+    //           {
+    //             packageId: '333333333332222222',
+
+    //             packageName: 'TTYG 333333322222222',
+
+    //             channels: ['qwq', '324e'],
+    //           },
+    //         ],
+    //       },
+    //     ],
+    //   },
+    // };
+
+    // this.sharedService.setApiResponseData(data2);
+    // var packagesResponse: any[] = data2?.result?.responseData;
+    // packagesResponse.forEach((element) => {
+    //   element?.packages.forEach((packages) => {
+    //     var index = {
+    //       title: packages?.packageName,
+    //       description: 'STB SR#' + element?.stbSerialNumber,
+    //       ID: element?.stbSerialNumber,
+    //       PackageID: packages?.packageId,
+    //     };
+
+    //     if (this.packages.length === 0) {
+    //       this.packages.push(index);
+    //     } else {
+    //       var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
+    //       if (alreadyAdded === undefined) {
+    //         this.packages.push(index);
+    //       }
+    //     }
+    //   });
     // });
   }
 

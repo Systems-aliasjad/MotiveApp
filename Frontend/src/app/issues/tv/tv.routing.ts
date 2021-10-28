@@ -51,6 +51,7 @@ import { UnableTvAdminPinResetMessageComponent } from './routes/unable-tv-admin-
 import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin-reset-message.component';
 import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
 import { ResetPinFailedMessageComponent } from '../other/routes/reset-pin-failed-message.component';
+import { SingleSTBFoundComponent } from './routes/single-stb-found-error.component';
 
 const routes: Routes = [
   {
@@ -260,6 +261,10 @@ const routes: Routes = [
   {
     path: 'reset-admin-pin-package-transfer',
     component: ResetAdminPinPackageTransferComponent,
+  },
+  {
+    path: 'single-stb-found',
+    component: SingleSTBFoundComponent,
   },
 ];
 

@@ -62,6 +62,7 @@ import { DeviceListDialog } from './dialogs/device-list-dialog/device-list-dialo
 import { UnableTvAdminPinResetMessageComponent } from './routes/unable-tv-admin-pin-reset-message.component';
 import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin-reset-message.component';
 import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
+import { SingleSTBFoundComponent } from './routes/single-stb-found-error.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-
     UnableTvAdminPinResetMessageComponent,
     UnableElifeOnPinResetMessageComponent,
     ResetAdminPinPackageTransferComponent,
+    SingleSTBFoundComponent,
   ],
   imports: [
     CommonModule,
