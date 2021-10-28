@@ -5,10 +5,10 @@ import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
-import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
+import { DeviceListDialog } from '../../tv/dialogs/device-list-dialog/device-list-dialog.component';
 
 @Component({
   selector: 'app-no-issues',
@@ -105,7 +105,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     this.modal = await this.modalCtrl.create({
       component: DeviceListDialog,
       componentProps: {
-        isThirdParty: this.isThirdParty,
+        showRouterReboot: true,
       },
     });
     return await this.modal.present();

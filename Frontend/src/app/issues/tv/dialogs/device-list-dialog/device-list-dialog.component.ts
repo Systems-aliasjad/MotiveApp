@@ -12,7 +12,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 })
 export class DeviceListDialog implements OnInit {
   @Input()
-  isThirdParty: boolean;
+  showRouterReboot: boolean;
   devicesList: any[] = [
     { device: 'Reboot all devices', API_PARAM: 'ALL' },
     {
@@ -26,6 +26,12 @@ export class DeviceListDialog implements OnInit {
   constructor(private modalCtrl: ModalController, private backendService: BackendService, private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {
+    if (this.showRouterReboot) {
+      this.devicesList.push({
+        device: 'Reboot internet device',
+        API_PARAM: 'ROUTER',
+      });
+    }
     const apiResponse = this.sharedService.getApiResponseData();
     this.StbList = apiResponse.stbDetails;
     if (this.StbList) {
