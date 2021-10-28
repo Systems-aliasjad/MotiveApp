@@ -59,6 +59,24 @@ ion-item::part(native) {
     flex-grow: 1;
     width: 100%;
   }
+  .one-box-config{
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom:1rem;
+    .one-boxes{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+    }
+  }
 }
 .five-boxes-config {
   .boxes {
@@ -358,6 +376,8 @@ ion-item::part(native) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: $primary-color;
+  font-size: 0.9375rem;
 }
 .state {
   border-radius: 0.8rem;
@@ -380,6 +400,7 @@ ion-item::part(native) {
   height: 56px;
   text-align: center;
   @media screen and (max-width: 281px) {
+    border-radius: 0.5rem;
     width: 42px;
     height: 42px;
   }
@@ -535,7 +556,8 @@ ion-item::part(native) {
       margin: auto;
       .one-box-vline {
         height: 56px;
-        width: 0.25rem;
+        width: 0.2rem;
+        /* width: 0.25rem; */
         margin-bottom: 1rem;
         border-top-right-radius: 1rem;
         border-top-left-radius: 1rem;

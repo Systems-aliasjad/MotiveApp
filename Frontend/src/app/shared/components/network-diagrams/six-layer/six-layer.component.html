@@ -1,16 +1,17 @@
 <div class="main-wizard-container">
   <!-- Upper Flow Start -->
-  <div class="two-boxes-config">
-    <div class="box-1 two-boxes">
+  <div class="two-boxes-config one-box-config">
+    <!-- <div class="box-1 two-boxes"></div> -->
+    <div class="one-boxes">
       <div class="image-text-box">
         <div [class]="etisalatConfig?.className + '-state state'">
           <img [src]="etisalatConfig?.url" alt="Smart Phone Default State" />
         </div>
         <span class="image_label">{{ etisalatConfig?.title }}</span>
       </div>
-      <div [class]="ontConfig?.className + '-line straight-line'"></div>
+      <!-- <div [class]="ontConfig?.className + '-line straight-line'"></div> -->
     </div>
-    <div class="box-2 two-boxes">
+    <!-- <div class="box-2 two-boxes">
       <div class="image-text-box">
         <div [class]="ontConfig?.className + '-state state'">
           <img [src]="ontConfig?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
@@ -18,7 +19,7 @@
         <span class="image_label">{{ ontConfig?.title }}</span>
       </div>
     </div>
-    <div class="box-3 two-boxes"></div>
+    <div class="box-3 two-boxes"></div> -->
   </div>
   <!-- Upper Flow End -->
 
@@ -26,12 +27,12 @@
     <!-- One Box Start -->
     <div class="one-box-container">
       <div class="one-box">
-        <div [class]="routerConfig?.className + '-line one-box-vline'"></div>
+        <div [class]="ontConfig?.className + '-line one-box-vline'"></div>
         <div class="image-text-box">
-          <div [class]="routerConfig?.className + '-state state'">
-            <img [src]="routerConfig?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
+          <div [class]="ontConfig?.className + '-state state'">
+            <img [src]="ontConfig?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
           </div>
-          <span class="image_label">{{ routerConfig?.title }}</span>
+          <span class="image_label">{{ ontConfig?.title }}</span>
         </div>
       </div>
     </div>
