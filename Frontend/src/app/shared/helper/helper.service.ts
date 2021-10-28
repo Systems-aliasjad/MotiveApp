@@ -164,6 +164,25 @@ export class HelperService {
     }
   }
 
+  public handleUpsellCases(codeId) {
+    if (codeId === flowCodes.UPSEL3) {
+      // Upselling Identified for Router Upgrade
+      this.router.navigate(['issues/internet/router-upgrade-recommended']);
+    } else if (codeId === flowCodes.UPSEL4) {
+      // Upselling Identified for Router Upgrade / Router Out of Warranty
+      this.router.navigate(['issues/internet/router-out-of-warranty']);
+    } else if (codeId === flowCodes.UPSEL5 || codeId === flowCodes.UPSEL6) {
+      // Upselling Identified for Bandwidth And Router Upgrade
+      this.router.navigate(['issues/internet/router-package-upgrade']);
+    } else if (codeId === flowCodes.UPSEL7 || codeId === flowCodes.UPSEL9) {
+      // Upselling Identified for Bandwidth / Router  Out of Warranty
+      this.router.navigate(['issues/internet/package-upgrade-recommended']);
+    } else if (codeId === flowCodes.UPSEL2 || codeId === flowCodes.UPSEL8) {
+      // Upselling Identified for New Router /Router  Out of Warranty
+      this.router.navigate(['issues/internet/third-party-router']);
+    }
+  }
+
   public InternetFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
       this.router.navigate(['/unknown-error']);
@@ -172,11 +191,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/router-reboot-required']);
-
       // this.handleCI9Cases(data?.routerDetails);
-
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
-      // this.handleCI9Cases(temp2);
     } else if (CodeId === flowCodes.movingElifeConnection) {
       this.router.navigate(['issues/internet/osrp/move-elife-connection']);
     } else if (CodeId === flowCodes.ElifeCancellationRequest) {
@@ -188,8 +203,6 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6, hsiUploadDownload: '50Mbps,250Mbps'.split(',') });
-      // this.router.navigate(['issues/internet/no-issue']);
       this.sharedService.setApiResponseData({
         connectedDevices: data?.connectedDevices,
         hsiUploadDownload: data?.hsiUploadDownload?.split(','),
@@ -198,29 +211,13 @@ export class HelperService {
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
       this.router.navigate(['issues/internet/router-reset-required']);
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
-      // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
-    } else if (CodeId === flowCodes.UPSEL3) {
-      // Upselling Identified for Router Upgrade
-      this.router.navigate(['issues/internet/router-upgrade-recommended']);
-    } else if (CodeId === flowCodes.UPSEL4) {
-      // Upselling Identified for Router Upgrade / Router Out of Warranty
-      this.router.navigate(['issues/internet/router-out-of-warranty']);
-    } else if (CodeId === flowCodes.UPSEL5 || CodeId === flowCodes.UPSEL6) {
-      // Upselling Identified for Bandwidth And Router Upgrade
-      this.router.navigate(['issues/internet/router-package-upgrade']);
-    } else if (CodeId === flowCodes.UPSEL7 || CodeId === flowCodes.UPSEL9) {
-      // Upselling Identified for Bandwidth / Router  Out of Warranty
-      this.router.navigate(['issues/internet/package-upgrade-recommended']);
-    } else if (CodeId === flowCodes.UPSEL2 || CodeId === flowCodes.UPSEL8) {
-      // Upselling Identified for New Router /Router  Out of Warranty
-      this.router.navigate(['issues/internet/third-party-router']);
     }
   }
+
   public voiceFlowIdentifier(codeId: string, data?: any) {
     if (codeId === flowCodes.genericError) {
       this.router.navigate(['/unknown-error']);
@@ -249,10 +246,6 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
       this.router.navigate(['issues/phone/ont-reboot']); //todo:
     } else if (codeId === flowCodes.CI72) {
-      // this.sharedService.setApiResponseData({
-      //   connectedDevices: data?.connectedDevices,
-      //   hsiUploadDownload: data?.hsiUploadDownload?.split(','),
-      // });
       this.router.navigate(['issues/phone/no-issues']);
     }
   }
@@ -362,8 +355,7 @@ export class HelperService {
     } else if (!this.sharedService.getUpsellOpportunity() || this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
       this.router.navigate([`issues/${flowCase}/no-issue`]);
     } else {
-      this.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
-
+      this.handleUpsellCases(this.sharedService.getUpsellOpportunity());
       // this.router.navigate(['issues/internet/no-issue']);
     }
   }
