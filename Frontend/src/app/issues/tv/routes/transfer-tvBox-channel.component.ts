@@ -70,13 +70,15 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
       packagesResponse.forEach((element) => {
         var index = {
           title: element?.packageName,
-          description: element?.serialNo,
+          description: 'STB SR#' + element?.serialNo,
+          ID: element?.serialNo,
+          PackageID: element?.packageId,
         };
 
         if (this.packages.length === 0) {
           this.packages.push(index);
         } else {
-          var alreadyAdded = this.packages.find((x) => x.title == index.title && x.description == index.description);
+          var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
           if (alreadyAdded.length === 0) {
             this.packages.push(index);
           }

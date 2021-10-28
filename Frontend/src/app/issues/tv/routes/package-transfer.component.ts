@@ -71,21 +71,23 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
 
       ListStbDetails.forEach((element) => {
         var index = {
-          title: element?.packageName,
-          description: element?.serialNo,
+          title: 'STB SR#' + element?.serialNo,
+          description: element?.packageName,
+          ID: element?.serialNo,
+          PackageID: element?.packageId,
         };
 
         if (this.filteredList.length === 0) {
           this.filteredList.push(index);
         } else {
-          var alreadyAdded = this.filteredList.find((x) => x.title == index.title && x.description == index.description);
+          var alreadyAdded = this.filteredList.find((x) => x.description == index.description && x.ID == index.ID);
           if (alreadyAdded.length === 0) {
             this.filteredList.push(index);
           }
         }
       });
 
-      this.cardList = this.filteredList.filter((x) => x.title != this.selectedCard.title && x.description != this.selectedCard.description);
+      this.cardList = this.filteredList.filter((x) => x.description != this.selectedCard.description && x.ID != this.selectedCard.ID);
     });
   }
 
@@ -106,9 +108,9 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
   button1Listener(_event) {
     this.formGroup = _event;
     var data = {
-      sourceSTB: this.selectedCard.description,
+      sourceSTB: this.selectedCard.ID,
       destSTB: this.formGroup.controls['radioButton'].value,
-      pkgID: this.selectedCard.description,
+      pkgID: this.selectedCard.PackageID,
       signal: 'next',
     };
 
