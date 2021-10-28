@@ -22,13 +22,14 @@
             </ion-item>
           </ion-radio-group> -->
           <!-- {{ cardList.length }} -->
-          <ion-radio-group name="radio-group" value="0">
-            <ion-item lines="none" *ngFor="let d of cardList; let i = index">
+
+          <ion-radio-group (ionChange)="radioGroupChange($event)" #radioButton>
+            <ion-item lines="none" *ngFor="let d of cardList">
               <ion-card>
                 <ion-card-header>
                   <ion-card-title>
                     <ion-label class="sub-title">{{ d.title }}</ion-label>
-                    <ion-radio name="radioButton" value="d.ID"></ion-radio>
+                    <ion-radio lot="start" name="{{ d.ID }}" value="{{ d.ID }}"></ion-radio>
                     <p>{{ d.description }}</p>
                   </ion-card-title>
                 </ion-card-header>
@@ -59,7 +60,7 @@
             [MD]="button1.MD"
             [LG]="button1.LG"
             (clickHandler)="button1Listener()"
-            [disable]="!formGroup.valid"
+            [disable]="selectedRadioItem === ''"
           ></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">

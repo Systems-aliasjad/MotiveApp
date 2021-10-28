@@ -35,7 +35,7 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
 
   @Input()
   headerConfig: IPageHeader;
-
+  selectedRadioItem: string = '';
   formGroup: FormGroup;
   subscription: Subscription;
   constructor(private formBuilder: FormBuilder, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {
@@ -69,5 +69,10 @@ export class TransferPackageComponent implements OnInit, OnDestroy {
 
   button3Listener() {
     this.button3Click.emit();
+  }
+
+  radioGroupChange(event) {
+    this.selectedRadioItem = event.detail.value;
+    this.formGroup.controls['radioButton'].setValue(event.detail.value);
   }
 }

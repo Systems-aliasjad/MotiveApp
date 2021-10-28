@@ -61,11 +61,12 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
     //   },
     // ];
 
+    ///ToDO Uncomment this
     this.sharedService.setLoader(true);
     this.backendService.stbDetails().subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData(data);
-      var packagesResponse = data?.responseData;
+      var packagesResponse = data?.result?.responseData;
 
       packagesResponse.forEach((element) => {
         var index = {
@@ -79,12 +80,75 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
           this.packages.push(index);
         } else {
           var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
-          if (alreadyAdded.length === 0) {
+          if (alreadyAdded === undefined) {
             this.packages.push(index);
           }
         }
       });
     });
+
+    // var data = {
+    //   code: 200,
+
+    //   message: 'success',
+
+    //   result: {
+    //     screenCode: 'QA-IPTV-PT3',
+
+    //     statusMessage: 'Stb Detailed View',
+
+    //     responseData: [
+    //       {
+    //         serialNo: 'SSID1',
+
+    //         packageId: 'laksjld1',
+
+    //         packageName: 'SSID1',
+
+    //         channels: ['defdssa', 'defdssa'],
+    //       },
+
+    //       {
+    //         serialNo: 'SSID2',
+
+    //         packageId: 'laksjld2',
+
+    //         packageName: 'SSID2',
+
+    //         channels: ['defdssa', 'defdssa'],
+    //       },
+    //       {
+    //         serialNo: 'SSID3',
+
+    //         packageId: 'laksjld3',
+
+    //         packageName: 'SSID3',
+
+    //         channels: ['defdssa', 'defdssa'],
+    //       },
+    //     ],
+    //   },
+    // };
+    // this.sharedService.setApiResponseData(data);
+    // var response = this.sharedService.getApiResponseData();
+    // var packagesResponse = response?.result?.responseData;
+    // packagesResponse.forEach((element) => {
+    //   var index = {
+    //     title: element?.packageName,
+    //     description: 'STB SR#' + element?.serialNo,
+    //     ID: element?.serialNo,
+    //     PackageID: element?.packageId,
+    //   };
+
+    //   if (this.packages.length === 0) {
+    //     this.packages.push(index);
+    //   } else {
+    //     var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
+    //     if (alreadyAdded === undefined) {
+    //       this.packages.push(index);
+    //     }
+    //   }
+    // });
   }
 
   button1Listener() {
