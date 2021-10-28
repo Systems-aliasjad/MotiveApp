@@ -168,6 +168,7 @@
   },
 
   "MESSAGES": {
+    "SINGLE_STB_FOUND": "Single STB found",
     "RESET_STB_PIN": "Reset STB pin",
     "CHOOSE_THE_STB_YOU_WANT_TO_RESET": "Choose the sTB you want to reset",
     "UNABLE_TO_RESET_ELFIE_ON_PIN": "Unable to reset tv elife on pin",

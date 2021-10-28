@@ -606,6 +606,8 @@ ion-item::part(native) {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: $primary-color;
+  font-size: 0.9375rem;
 }
 .state {
   border-radius: .8rem;

@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
 import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -26,7 +27,13 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
     title: 'BUTTONS.ISSUE_RESOLVED',
   };
 
-  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private helperService: HelperService,
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -55,7 +62,13 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['issues/tv/box-restart-required']);
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+
+    // this.router.navigate(['issues/tv/tvBox-reset-successfull']);
   }
 
   button2Listener() {
