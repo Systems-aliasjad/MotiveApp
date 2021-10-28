@@ -67,7 +67,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       const navigation = this.router.getCurrentNavigation();
       this.selectedCard = navigation?.extras?.state?.selectedCard;
       var apiResponse = this.sharedService.getApiResponseData();
-      var ListStbDetails = apiResponse?.responseData;
+      var ListStbDetails = apiResponse?.result?.responseData;
 
       ListStbDetails.forEach((element) => {
         var index = {
@@ -81,7 +81,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
           this.filteredList.push(index);
         } else {
           var alreadyAdded = this.filteredList.find((x) => x.description == index.description && x.ID == index.ID);
-          if (alreadyAdded.length === 0) {
+          if (alreadyAdded === undefined) {
             this.filteredList.push(index);
           }
         }
@@ -113,7 +113,6 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       pkgID: this.selectedCard.PackageID,
       signal: 'next',
     };
-
     this.backendService.transferPackage(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.code === 200) {
