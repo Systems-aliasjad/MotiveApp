@@ -21,7 +21,6 @@ export const flowCodes = {
   issueNotFixed: 'CI71',
   CI72: 'CI72',
   CI73: 'CI73',
-  CI71: 'CI71',
   UPSEL1: 'UPSEL1',
   UPSEL2: 'UPSEL2',
   UPSEL3: 'UPSEL3',

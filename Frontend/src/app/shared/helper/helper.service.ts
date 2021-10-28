@@ -149,8 +149,6 @@ export class HelperService {
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/router-reboot-required']);
-    } else if (CodeId === flowCodes.CI71) {
-      this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/router-reset-required']);
@@ -299,9 +297,10 @@ export class HelperService {
         connectedDevices: data?.responseData?.stbDetails,
       });
       this.router.navigate(['issues/tv/no-issues']);
-    } else if (CodeId === flowCodes.CI71) {
-      this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7
     }
+    // else if (CodeId === flowCodes.issueNotFixed) {
+    //   this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7
+    // }
 
     //////////////////End of Handles cases
     else if (CodeId === flowCodes.CI73) {
