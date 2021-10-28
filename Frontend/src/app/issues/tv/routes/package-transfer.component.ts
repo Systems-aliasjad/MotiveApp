@@ -71,8 +71,8 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
 
       ListStbDetails.forEach((element) => {
         var index = {
-          title: element?.packageName,
-          description: element?.serialNo,
+          title: 'STB SR#' + element?.serialNo,
+          description: element?.packageName,
           ID: element?.serialNo,
           PackageID: element?.packageId,
         };
@@ -80,14 +80,14 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
         if (this.filteredList.length === 0) {
           this.filteredList.push(index);
         } else {
-          var alreadyAdded = this.filteredList.find((x) => x.title == index.title && x.ID == index.ID);
+          var alreadyAdded = this.filteredList.find((x) => x.description == index.description && x.ID == index.ID);
           if (alreadyAdded.length === 0) {
             this.filteredList.push(index);
           }
         }
       });
 
-      this.cardList = this.filteredList.filter((x) => x.title != this.selectedCard.title && x.ID != this.selectedCard.ID);
+      this.cardList = this.filteredList.filter((x) => x.description != this.selectedCard.description && x.ID != this.selectedCard.ID);
     });
   }
 
