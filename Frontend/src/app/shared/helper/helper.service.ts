@@ -149,15 +149,17 @@ export class HelperService {
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/router-reboot-required']);
+    } else if (CodeId === flowCodes.CI71) {
+      this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
       this.sharedService.setApiResponseData({
-        connectedDevices: data?.connectedDevices,
+        stbDetails: data?.stbDetails,
         hsiUploadDownload: data?.hsiUploadDownload?.split(','),
       });
-      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
+      // this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'other');
     }
   }
@@ -357,7 +359,7 @@ export class HelperService {
   handleInternetPasswordResetCase(shouldReset, flowCase: 'internet' | 'other') {
     if (shouldReset) {
       this.router.navigate(['/issues/internet/internet-password-reset']);
-    } else if (this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
+    } else if (!this.sharedService.getUpsellOpportunity() || this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
       this.router.navigate([`issues/${flowCase}/no-issue`]);
     } else {
       this.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
