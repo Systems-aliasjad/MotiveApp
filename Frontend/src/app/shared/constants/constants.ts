@@ -40,6 +40,9 @@ export const flowCodes = {
 
   QAIPTVELON: 'QA-IPTV-EL-ON', //  unable to login to elife on Success
   QAIPTVELON1: 'QA-IPTV-EL-ON1', //  unable to login to elife on Failure
+  QAIPTVPT3: 'QA-IPTV-PT3', //QA-IPTV-PT3 (stb-detail success screencode)
+  QAIPTVPT: 'QA-IPTV-PT', //QA-IPTV-PT (next-step confirm transfer success)
+  QAIPTVPT1: 'QA-IPTV-PT1', //QA-IPTV-PT1 (stb-detail and next-step confirm failure)
 };
 
 export const ETISALAT = 'Etisalat';

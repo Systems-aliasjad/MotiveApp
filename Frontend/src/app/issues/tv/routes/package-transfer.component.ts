@@ -6,6 +6,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'package-transfer',
@@ -67,27 +68,33 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       const navigation = this.router.getCurrentNavigation();
       this.selectedCard = navigation?.extras?.state?.selectedCard;
       var apiResponse = this.sharedService.getApiResponseData();
-      var ListStbDetails = apiResponse?.result?.responseData;
+      var ListStbDetails: any[] = apiResponse?.result?.responseData;
+      var listFinal = ListStbDetails.filter((x) => x.stbSerialNumber != this.selectedCard.ID);
+      listFinal.forEach((element) => {
+        element?.packages.forEach((packages) => {
+          var index = {
+            title: 'STB SR#' + element?.stbSerialNumber,
+            description: packages?.packageName,
+            ID: element?.stbSerialNumber,
+            PackageID: packages?.packageId,
+          };
 
-      ListStbDetails.forEach((element) => {
-        var index = {
-          title: 'STB SR#' + element?.serialNo,
-          description: element?.packageName,
-          ID: element?.serialNo,
-          PackageID: element?.packageId,
-        };
-
-        if (this.filteredList.length === 0) {
           this.filteredList.push(index);
-        } else {
-          var alreadyAdded = this.filteredList.find((x) => x.description == index.description && x.ID == index.ID);
-          if (alreadyAdded === undefined) {
-            this.filteredList.push(index);
-          }
-        }
+
+          // if (this.filteredList.length === 0) {
+          //   this.filteredList.push(index);
+          // } else {
+          //   var alreadyAdded = this.filteredList.find((x) => x.ID === index.ID);
+          //   if (alreadyAdded === undefined) {
+          //     this.filteredList.push(index);
+          //   }
+          // }
+        });
       });
 
-      this.cardList = this.filteredList.filter((x) => x.description != this.selectedCard.description && x.ID != this.selectedCard.ID);
+      this.cardList = this.filteredList;
+
+      // this.cardList = this.filteredList.filter((x) => x.ID != this.selectedCard.ID);
     });
   }
 
@@ -115,9 +122,9 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
     };
     this.backendService.transferPackage(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.code === 200) {
+      if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
         this.router.navigate(['issues/tv/package-transfer-success']);
-      } else {
+      } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
         this.router.navigate(['/unknown-error']);
       }
     });

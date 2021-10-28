@@ -90,6 +90,11 @@ export class CustomerJourneyConstants {
     paragraphs: ['MESSAGES.WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON'],
   };
 
+  public static singleSTBFountError = {
+    header: 'MESSAGES.SINGLE_STB_FOUND',
+    paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
+  };
+
   public static tvBoxRestartssuccessfullyCase = {
     header: 'MESSAGES.TV_BOX_RESTARTED_SUCCESSFULLY',
     paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN'],
