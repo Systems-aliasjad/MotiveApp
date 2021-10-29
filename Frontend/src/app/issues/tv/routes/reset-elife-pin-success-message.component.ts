@@ -51,7 +51,7 @@ export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
     const navigation = this.router.getCurrentNavigation();
     // this.UserID = navigation?.extras?.state?.userID;
 
-    const resp = this.sharedService.getApiResponseDataNoIssuesSTB();
+    const resp = this.sharedService.getApiResponseDataSTBContinue();
 
     this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
     this.imgSrc = successImgSrc;

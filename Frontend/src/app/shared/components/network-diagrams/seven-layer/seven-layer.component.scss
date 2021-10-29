@@ -359,7 +359,7 @@ ion-item::part(native) {
   overflow: hidden;
   text-overflow: ellipsis;
   color: $primary-color;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
 }
 .state {
   border-radius: 0.8rem;
@@ -537,7 +537,7 @@ ion-item::part(native) {
       margin: auto;
       .one-box-vline {
         height: 56px;
-        width: 0.25rem;
+        width: 0.2rem;
         margin-bottom: 1rem;
         border-top-right-radius: 1rem;
         border-top-left-radius: 1rem;
