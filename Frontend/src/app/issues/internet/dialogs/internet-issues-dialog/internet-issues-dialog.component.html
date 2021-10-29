@@ -5,7 +5,7 @@
       <h3>{{ 'MESSAGES.INTERNET_ISSUES' | translate }}</h3>
     </ion-title>
     <ion-buttons slot="end">
-      <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
+      <ion-button class="btn transparent-btn close-btn" (click)="dismiss()"> Close </ion-button>
       <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="cross-icon" />
     </ion-buttons>
   </ion-toolbar>
@@ -30,10 +30,27 @@
         </div>
       </ion-col>
     </ion-row>
+    <!--Large Screen Button Start -->
+    <ion-row class="popup-btn-lg">
+      <ion-row class="footer-btns-container">
+        <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+          <ion-row>
+            <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+              <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
+            </ion-col>
+            <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+              <motive-button [title]="'BUTTONS.EXIT_TROUBLESHOOTING'" [type]="'secondary'" (clickHandler)="ExitTroubleshoot()"></motive-button>
+            </ion-col>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+     </ion-row>
+     <!--Large Screen Button End -->
   </ion-grid>
 </ion-content>
 
-<div class="footer">
+<!-- Small Screen Button Start -->
+<div class="footer popup-btn-sm">
   <ion-row class="footer-btns-container">
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
@@ -47,3 +64,4 @@
     </ion-col>
   </ion-row>
 </div>
+<!-- Small Screen Button End -->
