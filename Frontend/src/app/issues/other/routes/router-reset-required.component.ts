@@ -7,7 +7,6 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { IMotiveButton, IOntDetail, IPageHeader } from 'src/app/shared/constants/types';
-import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, SVGs } from 'src/app/shared/constants/constants';
 import { ResetFactoryDefaultDialog } from 'src/app/issues/internet/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 
@@ -69,7 +68,10 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
   }
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.routerResetRequiredMessageSection;
+    this.messageSection = {
+      header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+      body: [{ title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN' }],
+    };
   }
 
   headerConfig: IPageHeader = {
