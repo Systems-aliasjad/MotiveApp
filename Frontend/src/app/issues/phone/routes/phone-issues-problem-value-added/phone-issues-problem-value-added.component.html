@@ -20,18 +20,26 @@
       </ion-col>
       <ion-col sizeLg="6" sizeMd="12" size="12" class="service-detail_content two-col_right subscriptions-box">
         <div class="content">
-          <div class="data-traffic-container" *ngFor="let d of cardList">
+          <div class="data-traffic-container">
             <div class="data-traffic ion-text-left">
               <div class="devices-network">
-                <h6 class="sub-title letter-space-none">{{ d.header | translate }}</h6>
-                <h6 class="sub-title grey letter-space-none">{{ d.subHeader }}</h6>
+                <h6 class="sub-title letter-space-none">{{ 'MESSAGES.LANDLINE_STATUS' | translate }}</h6>
+                <h6 class="sub-title grey letter-space-none">{{ accountDetails?.landLineConnectionStatus | translate }}</h6>
+              </div>
+            </div>
+          </div>
+          <div class="data-traffic-container">
+            <div class="data-traffic ion-text-left">
+              <div class="devices-network">
+                <h6 class="sub-title letter-space-none">{{ 'MESSAGES.VALUE_ADDED_SERVICES' | translate }}</h6>
+                <h6 class="sub-title grey letter-space-none">{{ cardList?.length }}</h6>
               </div>
               <div class="devices-list-container">
-                <ion-card *ngFor="let item of d.list">
+                <ion-card *ngFor="let item of cardList">
                   <ion-card-header [ngClass]="{ 'card-head-small': item?.title2 === '' }">
                     <ion-card-title>
                       <h5 class="sub-title">{{ item.title }}</h5>
-                      <span>{{ item.description }}</span>
+                      <span>{{ item.description | translate }}</span>
                     </ion-card-title>
                   </ion-card-header>
                   <ion-card-content class="pt-0" *ngIf="item.title2">
@@ -40,7 +48,7 @@
                       <span>{{ item.description2 }}</span>
                       <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
                     </a>
-                    {{ !item.link ? d.list.description2 : '' }}
+                    {{ !item.link ? item.description2 : '' }}
                   </ion-card-content>
                 </ion-card>
               </div>

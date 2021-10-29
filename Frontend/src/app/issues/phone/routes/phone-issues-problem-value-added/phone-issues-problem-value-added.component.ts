@@ -17,7 +17,34 @@ import { SharedService } from '../../../../shared/shared.service';
 export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy {
   codeType;
   subscription: Subscription;
-  cardList;
+  cardList = [
+    {
+      title: 'Clip',
+      description: '',
+      title2: '',
+      description2: '',
+    },
+    {
+      title: 'Call forwarding',
+      description: '',
+      title2: 'Call Forwarded to : *****',
+      description2: 'Change',
+      link: true,
+    },
+    {
+      title: 'Call waiting',
+      description: '',
+      title2: '',
+      description2: '',
+    },
+    {
+      title: 'CBB',
+      description: '',
+      title2: '',
+      description2: 'Reset pin',
+      link: true,
+    },
+  ];
   @Input()
   isPartialLoaded: boolean = false;
   modal;
@@ -25,6 +52,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   routerConfig: IRouterDetail = { url: SVGs.phone.default, className: networkDiagramClasses.okay, title: PHONE };
+  accountDetails;
 
   constructor(
     private helperService: HelperService,
@@ -34,6 +62,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     private actRoute: ActivatedRoute,
     private backendService: BackendService
   ) {}
+
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
@@ -56,47 +85,6 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
       this.sharedService.setDefaultValues();
       //this.sharedService.setHeaderConfig('HEADER.SERVICE_DETAILS', false);
     }
-
-    this.cardList = [
-      {
-        header: 'Landline status',
-        subHeader: 'working',
-        list: [],
-      },
-      {
-        header: 'Value added services',
-        subHeader: '7 subsribed',
-        list: [
-          {
-            title: 'Clip',
-            description: 'Working',
-            title2: '',
-            description2: '',
-          },
-          {
-            title: 'Call forwarding',
-            description: 'Active  & Enabled',
-            title2: 'Call Forwarded to : *****1234',
-            description2: 'Change',
-            link: true,
-          },
-          // {
-          //   title: 'Call waiting',
-          //   description: 'Issue fixed',
-          //   title2: '',
-          //   description2: '',
-          // },
-          {
-            title: 'CBB',
-            description: 'Active  & Enabled',
-            title2: '',
-            description2: 'Reset pin',
-            link: true,
-          },
-        ],
-      },
-    ];
-    //#endregion Module 3
   }
 
   updateHeader() {
@@ -127,10 +115,16 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     });
     return await this.modal.present();
   }
+
   getIssueTilesData() {
-    // const apiResponse = this.sharedService.getApiResponseData();
-    // const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
-    // this.ontConfig = temp?.ontConfig;
-    // this.routerConfig = temp?.routerConfig;
+    const apiResponse = this.sharedService.getApiResponseData();
+    this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING';
+    this.cardList[1].description = apiResponse?.accountDetails?.callForwarded ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
+    this.cardList[1].title2 += apiResponse?.accountDetails?.callForwardedTo || '';
+    this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.ISSUE_FIXED' : 'MESSAGES.ISSUE_NOT_FIXED';
+    this.cardList[3].description = apiResponse?.accountDetails?.optionToResetPin ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
+    this.accountDetails = {
+      landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING',
+    };
   }
 }
