@@ -142,13 +142,13 @@ export class MainComponent implements OnInit {
 
   ngOnInit() {
     // this.shareService.setApiResponseData(this.hardData);
-    this.helperService.IptvFlowIdentifier('CI9', this.hardData?.responseData);
-    // this.shareService.setLoader(true);
-    // this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
-    //   this.shareService.setLoader(false);
-    //   console.log('Response For TV: ' + data);
-    //   //data = this.Ci72Case;
-    //   this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    // });
+    //  this.helperService.IptvFlowIdentifier('CI9', this.hardData?.responseData);
+    this.shareService.setLoader(true);
+    this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
+      this.shareService.setLoader(false);
+      // console.log('Response For TV: ' + data);
+      //data = this.Ci72Case;
+      this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
   }
 }

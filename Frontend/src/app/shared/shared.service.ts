@@ -30,6 +30,7 @@ export class SharedService {
   };
 
   apiResponseDataNoIssuesSTB;
+  apiResponseDataContinueSTB;
 
   constructor(private translate: TranslateService, private router: Router) {
     this.loaderSubject = new BehaviorSubject(false);
@@ -74,6 +75,20 @@ export class SharedService {
     else if (environment.shouldCallAPI) {
       this.router.navigate(['landing']);
     }
+  }
+
+  setApiResponseDataSTBContinue(data: any) {
+    this.apiResponseDataContinueSTB = data;
+  }
+
+  getApiResponseDataSTBContinue(): any {
+    if (this.apiResponseDataContinueSTB) {
+      return this.apiResponseDataContinueSTB;
+    }
+    //if (environment.shouldCallAPI)
+    // else if (environment.shouldCallAPI) {
+    //   this.router.navigate(['landing']);
+    // }
   }
 
   setHeaderConfig(pageTitle: string, oneLine: boolean, _showBackBtn: boolean = true) {
