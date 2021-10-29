@@ -5,28 +5,6 @@ import { flowCodes, networkDiagramClasses, ONT, ROUTER, STB, SVGs } from '../con
 import { IOntDetail, IRouterDetail, IStbDetail } from '../constants/types';
 import { SharedService } from '../shared.service';
 
-const temp1 = {
-  ontSerial: '485754431E91C19B',
-  ontType: 'I-240G-A',
-  isReachable: true,
-  isRebootRequired: false,
-  isUpgradeRequired: false,
-  url: '',
-  className: '',
-};
-
-const temp2 = {
-  routerSerial: '109461043164',
-  routerModel: 'DIR850',
-  isReachable: false,
-  isRebootRequired: true,
-  isUpgradeRequired: false,
-  isManaged: true,
-  isResetRequired: true,
-  url: '',
-  className: '',
-};
-
 const temp3 = {
   complaintNo: '1436529873',
   dateVisit: 'Jul 10 2019, 10:30 AM',
@@ -82,7 +60,7 @@ export class HelperService {
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
     routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
-    ontConfig = this.networkDiagramStylingMapper(ontConfig);
+    ontConfig = this.networkDiagramStylingMapper(ontConfig, null, true);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
     } else {
@@ -97,7 +75,7 @@ export class HelperService {
     };
   }
 
-  networkDiagramStylingMapper(device: any, previousDeviceState?: string) {
+  networkDiagramStylingMapper(device: any, previousDeviceState?: string, isOnt?: boolean) {
     let tempClass = '';
     if ([networkDiagramClasses.default, networkDiagramClasses.error].includes(previousDeviceState)) {
       tempClass = networkDiagramClasses.default;
@@ -109,7 +87,7 @@ export class HelperService {
         }
       } else if (device?.isManaged && !device?.isReachable) {
         tempClass = networkDiagramClasses.pending;
-      } else if (!device?.isManaged) {
+      } else if (!device?.isManaged && !isOnt) {
         tempClass = networkDiagramClasses.pending;
       } else {
         tempClass = networkDiagramClasses.error;
@@ -125,7 +103,7 @@ export class HelperService {
   networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: IStbDetail) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
     stbConfig = { ...stbConfig, url: SVGs.stb.default, title: STB };
-    ontConfig = this.networkDiagramStylingMapper(ontConfig);
+    ontConfig = this.networkDiagramStylingMapper(ontConfig, null, true);
     if (ontConfig?.isReachable) {
       stbConfig = this.networkDiagramStylingMapper(stbConfig, ontConfig.className);
     } else {
@@ -188,8 +166,11 @@ export class HelperService {
       this.router.navigate(['issues/internet/account-not-active']);
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/router-reboot-required']);
-      // this.handleCI9Cases(data?.routerDetails);
+      if (!data?.ontDetails?.isReachable || data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+        this.router.navigate(['issues/internet/ont-reboot-required']);
+      } else {
+        this.handleCI9RouterCases(data?.routerDetails);
+      }
     } else if (CodeId === flowCodes.movingElifeConnection) {
       this.router.navigate(['issues/internet/osrp/move-elife-connection']);
     } else if (CodeId === flowCodes.ElifeCancellationRequest) {
@@ -273,11 +254,9 @@ export class HelperService {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, connectedDevices: data?.connectedDevices });
 
-      if (data?.stbDetails?.length > 0) this.handleCI9CasesIPTV(data?.stbDetails[0]);
+      if (data?.stbDetails?.length > 0) this.handleCI9RouterCasesIPTV(data?.stbDetails[0]);
 
-      // this.handleCI9CasesIPTV(data?.stbDetails);
-      // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
-      // this.handleCI9Cases(temp2);
+      // this.handleCI9RouterCasesIPTV(data?.stbDetails);
     }
 
     //////////////////First Check
@@ -325,7 +304,7 @@ export class HelperService {
     }
   }
 
-  handleCI9Cases(routerDetails: IRouterDetail) {
+  handleCI9RouterCases(routerDetails: IRouterDetail) {
     if (routerDetails?.isManaged) {
       if (routerDetails?.isRebootRequired) {
         this.router.navigate(['issues/internet/router-reboot-required']);
@@ -339,7 +318,7 @@ export class HelperService {
     }
   }
 
-  handleCI9CasesIPTV(stbDetails: IStbDetail) {
+  handleCI9RouterCasesIPTV(stbDetails: IStbDetail) {
     if (stbDetails?.isRebootRequired) {
       this.router.navigate(['issues/tv/box-restart-required']);
     } else if (!stbDetails?.isReachable) {

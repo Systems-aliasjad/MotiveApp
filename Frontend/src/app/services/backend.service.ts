@@ -10,15 +10,38 @@ import { map } from 'rxjs/operators';
 })
 export class BackendService {
   constructor(public http: HttpClient) {}
+  temp1 = {
+    ontSerial: '485754431E91C19B',
+    ontType: 'I-240G-A',
+    isReachable: false,
+    isRebootRequired: false,
+    isUpgradeRequired: false,
+    url: '',
+    className: '',
+  };
+
+  temp2 = {
+    routerSerial: '109461043164',
+    routerModel: 'DIR850',
+    isReachable: false,
+    isRebootRequired: true,
+    isUpgradeRequired: false,
+    isManaged: true,
+    isResetRequired: true,
+    url: '',
+    className: '',
+  };
 
   hardData = {
-    screenCode: 'CI72',
+    screenCode: 'CI71',
     responseData: {
       hsiPasswordReset: false,
       ppoeConnected: 'true',
       wifiEnabled: 'true',
       hsiUploadDownload: '50Mbps,250Mbps',
       noOfConnectedDevices: 1,
+      routerDetails: this.temp2,
+      ontDetails: this.temp1,
       connectedDevices: [
         {
           addressSource: 'DHCP',
@@ -30,7 +53,7 @@ export class BackendService {
           interfaceType: '802.11',
         },
       ],
-      upsellingOpportunity: 'UPSEL1',
+      upsellingOpportunity: 'UPSEL3',
       tsOutcome: 'No Issue Found',
     },
   };

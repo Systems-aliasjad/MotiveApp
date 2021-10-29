@@ -14,7 +14,6 @@ import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-messag
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { OntRebootRequiredTvComponent } from './routes/ont-reboot-required-tv.component';
-import { OntRebootRequiredInternetComponent } from './routes/ont-reboot-required-internet.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
@@ -34,7 +33,6 @@ import { NoIssuesComponent } from './routes/no-issues.component';
     FiberBoxNotReachableComponent,
     PhoneNotReachableComponent,
     OntRebootRequiredTvComponent,
-    OntRebootRequiredInternetComponent,
     CustomerNotSameRouterComponent,
     OutageComponent,
     IssueNotFixedComponent,

@@ -95,6 +95,7 @@ import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-networ
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
 import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
+import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 
 @NgModule({
   declarations: [
@@ -102,6 +103,7 @@ import { InternetTroubleshootCompleteMessageComponent } from './routes/troublesh
     BrowsingUnableStep1Component,
     BrowsingUnableStep2Component,
     BrowsingUnableStep3Component,
+    OntRebootRequiredComponent,
     ComplaintExistsMessageComponent,
     RouterFixedRestartRequiredComponent,
     MoveElifeConnectionMessageComponent,

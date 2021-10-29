@@ -4,12 +4,14 @@ import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, flowCodes, networkDiagramClasses, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
-  selector: 'all-services-ont-reboot-internet',
+  selector: 'ont-reboot-required',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -22,12 +24,13 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   >
   </app-diagnose-issue>`,
 })
-export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
+export class OntRebootRequiredComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   ontConfig;
   routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
 
   button1: IMotiveButton = {
     title: 'BUTTONS.RESTART_ONT_NOW',
@@ -38,7 +41,13 @@ export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private backendService: BackendService,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -66,11 +75,21 @@ export class OntRebootRequiredInternetComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    //this.router.navigate(['/issues/phone/ont-reboot-message']);
+    this.sharedService.setLoader(true);
+    this.backendService.rebootMyDevice('ONT').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.genericError) {
+        this.router.navigate(['/unknown-error']);
+      } else if (data?.result?.screenCode === flowCodes.routerRebootSuccess) {
+        this.router.navigate(['/issues/phone/ont-reboot-message']);
+      } else if (data?.result?.screenCode === flowCodes.routerRebootFaliure) {
+        this.router.navigate(['/issues/internet/router-not-restarted']);
+      }
+    });
   }
 
   button2Listener() {
-    // this.router.navigate(['/issues/phone/ont-restart-instructions']);
+    this.router.navigate(['/issues/phone/ont-restart-instructions']);
   }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();

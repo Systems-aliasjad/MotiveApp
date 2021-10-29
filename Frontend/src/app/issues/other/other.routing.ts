@@ -7,7 +7,6 @@ import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { MainComponent } from './routes/main.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
-import { OntRebootRequiredInternetComponent } from './routes/ont-reboot-required-internet.component';
 import { OntRebootRequiredTvComponent } from './routes/ont-reboot-required-tv.component';
 import { OutageComponent } from './routes/outage.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
@@ -39,10 +38,6 @@ const routes: Routes = [
   {
     path: 'ont-reboot-required-tv',
     component: OntRebootRequiredTvComponent,
-  },
-  {
-    path: 'ont-reboot-required-internet',
-    component: OntRebootRequiredInternetComponent,
   },
   {
     path: 'customer-not-using-same-router',
