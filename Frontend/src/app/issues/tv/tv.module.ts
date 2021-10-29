@@ -63,6 +63,7 @@ import { UnableTvAdminPinResetMessageComponent } from './routes/unable-tv-admin-
 import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin-reset-message.component';
 import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
 import { SingleSTBFoundComponent } from './routes/single-stb-found-error.component';
+import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { SingleSTBFoundComponent } from './routes/single-stb-found-error.compone
     TroubleshootCompleteMessageComponent,
     ResetElifePinSuccessMessageComponent,
     UnableElifeLoginMessageComponent,
+    OntRebootRequiredComponent,
     IssueNotFixedComponent,
     OutageComponent,
     PackageAvailableComponent,

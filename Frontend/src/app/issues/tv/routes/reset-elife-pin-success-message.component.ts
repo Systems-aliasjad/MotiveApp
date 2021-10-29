@@ -49,19 +49,21 @@ export class ResetElifePinSuccessMessageComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     const navigation = this.router.getCurrentNavigation();
-    this.UserID = navigation?.extras?.state?.userID;
+    // this.UserID = navigation?.extras?.state?.userID;
+
+    const resp = this.sharedService.getApiResponseDataNoIssuesSTB();
 
     this.Section1Data = CustomerJourneyConstants.restELifeLoginPinResetSuccess;
     this.imgSrc = successImgSrc;
     this.Section2Template = ApplicableCodes.userCredentialsTemplate;
     this.Section2Data = {
-      userId: this.UserID, //'<XXX>',
+      userId: resp?.result?.responseData?.username, //'<XXX>',
       pin: '1111@eLife',
     };
   }
   button1Listener() {
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/thanks']);
     });

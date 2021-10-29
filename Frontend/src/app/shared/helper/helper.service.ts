@@ -123,6 +123,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/other/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
@@ -132,6 +133,8 @@ export class HelperService {
       this.router.navigate(['issues/internet/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
       this.sharedService.setApiResponseData({
+        ontDetails: data?.ontDetails,
+        routerDetails: data?.routerDetails,
         stbDetails: data?.stbDetails,
         hsiUploadDownload: data?.hsiUploadDownload?.split(','),
       });
@@ -180,6 +183,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/internet/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
       this.sharedService.setApiResponseData({
@@ -253,7 +257,9 @@ export class HelperService {
     } else if (CodeId === flowCodes.CI9) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, connectedDevices: data?.connectedDevices });
-
+      if (!data?.ontDetails?.isReachable || data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+        this.router.navigate(['issues/tv/ont-reboot-required']);
+      }
       if (data?.stbDetails?.length > 0) this.handleCI9RouterCasesIPTV(data?.stbDetails[0]);
 
       // this.handleCI9RouterCasesIPTV(data?.stbDetails);

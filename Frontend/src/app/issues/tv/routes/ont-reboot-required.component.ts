@@ -8,7 +8,7 @@ import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
-  selector: 'all-services-ont-reboot-tv',
+  selector: 'ont-reboot-required-tv',
   template: `<app-diagnose-issue
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
@@ -22,7 +22,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   >
   </app-diagnose-issue>`,
 })
-export class OntRebootRequiredTvComponent implements OnInit, OnDestroy {
+export class OntRebootRequiredComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   ontConfig;

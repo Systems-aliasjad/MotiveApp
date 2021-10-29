@@ -13,7 +13,6 @@ import { IonicModule } from '@ionic/angular';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
-import { OntRebootRequiredTvComponent } from './routes/ont-reboot-required-tv.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
@@ -32,7 +31,6 @@ import { NoIssuesComponent } from './routes/no-issues.component';
     ResetPinFailedMessageComponent,
     FiberBoxNotReachableComponent,
     PhoneNotReachableComponent,
-    OntRebootRequiredTvComponent,
     CustomerNotSameRouterComponent,
     OutageComponent,
     IssueNotFixedComponent,

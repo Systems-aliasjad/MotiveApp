@@ -125,6 +125,11 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
         this.router.navigate(['issues/tv/package-transfer-success']);
       } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+        this.sharedService.setLoader(true);
+        this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+          this.sharedService.setLoader(false);
+          this.router.navigate(['/thanks']);
+        });
         this.router.navigate(['/unknown-error']);
       }
     });
@@ -134,7 +139,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/thanks']);
     });
