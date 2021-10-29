@@ -249,10 +249,12 @@ export class HelperService {
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/tv/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails });
       this.router.navigate(['issues/tv/issues-not-fixed']); ///No need to save api response as its CI9
     } else if (CodeId === flowCodes.openComplaint) {
-      this.router.navigate(['issues/tv/complaint-already-exists']);
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
+      this.router.navigate(['issues/tv/complaint-already-exists']);
+
       // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
     } else if (CodeId === flowCodes.CI9) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
