@@ -77,7 +77,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'MESSAGES.INTERNET_ISSUES',
+    pageTitle: 'MESSAGES.ALL_SERVICES',
     showBackBtn: true,
   };
 
@@ -112,21 +112,22 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   async button3Listener() {
-    this.router.navigate(['issues/other/service-detail']);
+    this.sharedService.setLoader(true);
+    this.backendService.getIssueDiagnositic('continue').subscribe((res) => {
+      this.sharedService.setApiResponseData({ hsiUploadDownload: [res?.result?.responseData?.upstream, res?.result?.responseData?.downstream] });
+      this.sharedService.setLoader(false);
+      this.router.navigate(['issues/other/service-detail']);
+    });
   }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const routerConfig = temp?.routerConfig;
+    this.ontConfig = temp?.ontConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
     if (this.connectedDevices) {
-      this.connectedDevices = [
-        {
-          className: networkDiagramClasses.okay,
-          url: SVGs.router.default,
-          title: ROUTER,
-        },
-        ...this.connectedDevices,
-      ];
+      this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
     } else {
       this.connectedDevices = [
         {

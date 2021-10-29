@@ -7,7 +7,6 @@ import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { MainComponent } from './routes/main.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
-import { OntRebootRequiredTvComponent } from './routes/ont-reboot-required-tv.component';
 import { OutageComponent } from './routes/outage.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
@@ -34,10 +33,6 @@ const routes: Routes = [
   {
     path: 'phone-not-reachable',
     component: PhoneNotReachableComponent,
-  },
-  {
-    path: 'ont-reboot-required-tv',
-    component: OntRebootRequiredTvComponent,
   },
   {
     path: 'customer-not-using-same-router',

@@ -52,6 +52,7 @@ import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin
 import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
 import { ResetPinFailedMessageComponent } from '../other/routes/reset-pin-failed-message.component';
 import { SingleSTBFoundComponent } from './routes/single-stb-found-error.component';
+import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 
 const routes: Routes = [
   {
@@ -89,6 +90,10 @@ const routes: Routes = [
   {
     path: 'channel-detail',
     component: ChannelDetailComponent,
+  },
+  {
+    path: 'ont-reboot-required',
+    component: OntRebootRequiredComponent,
   },
   {
     path: 'transfer-channel-to-another-tvBox',
