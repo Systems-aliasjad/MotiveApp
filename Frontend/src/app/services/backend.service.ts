@@ -10,38 +10,47 @@ import { map } from 'rxjs/operators';
 })
 export class BackendService {
   constructor(public http: HttpClient) {}
-  temp1 = {
+  ontDetail = {
     ontSerial: '485754431E91C19B',
     ontType: 'I-240G-A',
-    isReachable: false,
+    isReachable: true,
     isRebootRequired: false,
     isUpgradeRequired: false,
     url: '',
     className: '',
   };
 
-  temp2 = {
+  routerDetail = {
     routerSerial: '109461043164',
     routerModel: 'DIR850',
     isReachable: false,
     isRebootRequired: true,
-    isUpgradeRequired: false,
+    isUpgradeRequired: true,
     isManaged: true,
     isResetRequired: true,
     url: '',
     className: '',
   };
 
+  stbDetail = {
+    isReachable: true,
+    isRebootRequired: false,
+    sbSerialNumber: '130857101318',
+    stbMac: '2832C52E3612',
+    stbModel: 'NA',
+  };
+
   hardData = {
-    screenCode: 'CI71',
+    screenCode: 'CI9',
     responseData: {
       hsiPasswordReset: false,
       ppoeConnected: 'true',
       wifiEnabled: 'true',
       hsiUploadDownload: '50Mbps,250Mbps',
       noOfConnectedDevices: 1,
-      routerDetails: this.temp2,
-      ontDetails: this.temp1,
+      routerDetails: this.routerDetail,
+      ontDetails: this.ontDetail,
+      stbDetails: [this.stbDetail],
       connectedDevices: [
         {
           addressSource: 'DHCP',

@@ -126,10 +126,10 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI9) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/router-reboot-required']);
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+      this.router.navigate(['issues/other/router-reboot-required']);
     } else if (CodeId === flowCodes.CI73) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/internet/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
       this.sharedService.setApiResponseData({
