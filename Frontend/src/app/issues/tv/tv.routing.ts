@@ -53,6 +53,8 @@ import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-
 import { ResetPinFailedMessageComponent } from '../other/routes/reset-pin-failed-message.component';
 import { SingleSTBFoundComponent } from './routes/single-stb-found-error.component';
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
+import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
+import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 
 const routes: Routes = [
   {
@@ -270,6 +272,14 @@ const routes: Routes = [
   {
     path: 'single-stb-found',
     component: SingleSTBFoundComponent,
+  },
+  {
+    path: 'ont-restart-instructions',
+    component: OntRestartInstructionsComponent,
+  },
+  {
+    path: 'ont-restart-instructions/device-care',
+    component: FiberBoxRestartCareComponent,
   },
 ];
 
