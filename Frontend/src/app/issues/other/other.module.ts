@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
-import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
@@ -30,7 +29,6 @@ import { NoIssuesComponent } from './routes/no-issues.component';
     AccountIdComponent,
     ResetPinFailedMessageComponent,
     FiberBoxNotReachableComponent,
-    PhoneNotReachableComponent,
     CustomerNotSameRouterComponent,
     OutageComponent,
     IssueNotFixedComponent,

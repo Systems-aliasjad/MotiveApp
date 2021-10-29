@@ -9,7 +9,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
 import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 
 @Component({
-  selector: 'all-services-phone-not-reachable',
+  selector: 'phone-not-reachable',
   template: `<app-diagnose-issue
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"

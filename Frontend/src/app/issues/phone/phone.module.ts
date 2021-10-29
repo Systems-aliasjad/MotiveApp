@@ -36,6 +36,7 @@ import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-con
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
+import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.co
     NoDailToneCareComponent,
     ChangeCallForwardComponent,
     ForgotCcbPinComponent,
+    PhoneNotReachableComponent,
     UnableToCallCareComponent,
     OntRebootComponent,
     NoIssuesComponent,
