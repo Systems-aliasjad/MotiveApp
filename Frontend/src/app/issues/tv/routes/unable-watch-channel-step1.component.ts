@@ -65,17 +65,27 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      if (data?.code === 200) {
+        this.router.navigate(['issues/tv/tvBox-reset-successfull']);
+      } else {
+        this.sharedService.setLoader(true);
+        this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+          this.sharedService.setLoader(false);
+          this.router.navigate(['/unknown-error']);
+        });
+      }
+      // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
 
     // this.router.navigate(['issues/tv/tvBox-reset-successfull']);
   }
 
   button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    // this.sharedService.setLoader(true);
+    // this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    //   this.sharedService.setLoader(false);
+    //   this.router.navigate(['/thanks']);
+    // });
+    this.router.navigate(['/thanks']);
   }
 }

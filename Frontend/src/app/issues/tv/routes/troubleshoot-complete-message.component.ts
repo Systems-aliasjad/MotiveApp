@@ -55,10 +55,10 @@ export class TroubleshootCompleteMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/book-complaint']);
+    this.router.navigate(['issues/tv/book-complaint']);
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.router.navigate(['issues/tv/detail']);
   }
 }

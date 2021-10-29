@@ -101,7 +101,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/thanks']);
     });
@@ -118,7 +118,13 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   async button3Listener() {
-    this.router.navigate(['/issues/tv/detail']);
+    this.sharedService.setLoader(true);
+    this.backendService.serviceDetailsSTB().subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.sharedService.setApiResponseData(data);
+      this.router.navigate(['/issues/tv/detail']);
+    });
+
     // this.modal = await this.modalCtrl.create({
     //   component: IssueListDialog,
     //   componentProps: {
