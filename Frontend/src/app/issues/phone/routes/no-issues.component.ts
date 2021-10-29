@@ -102,7 +102,24 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
+    this.sharedService.setLoader(true);
+    this.backendService.getIssueDiagnositic('continue').subscribe((res) => {
+      this.sharedService.setApiResponseData({
+        accountDetails: {
+          callForwarded: res?.result?.responseData?.callForwarded,
+          callForwardedTo: res?.result?.responseData?.callForwardedTo,
+          codeControlBarring: res?.result?.responseData?.codeControlBarring,
+          clip: res?.result?.responseData?.clip,
+          callWaiting: res?.result?.responseData?.callWaiting,
+          landLineConnectionStatus: res?.result?.responseData?.landLineConnectionStatus,
+          optionToResetPin: res?.result?.responseData?.optionToResetPin,
+        },
+        ontDetails: res?.result?.responseData?.ontDetails,
+        routerDetails: res?.result?.responseData?.phoneDetails,
+      });
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
+    });
   }
 
   getIssueTilesData() {}
