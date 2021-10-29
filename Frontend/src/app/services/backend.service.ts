@@ -41,7 +41,7 @@ export class BackendService {
   };
 
   hardData = {
-    screenCode: 'CI72',
+    screenCode: 'CI9',
     responseData: {
       hsiPasswordReset: true,
       ppoeConnected: 'true',

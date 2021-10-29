@@ -23,6 +23,7 @@ import { PhoneModule } from '../phone/phone.module';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
+import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { InternetPasswordResetComponent } from './routes/internet-password-reset
     NoIssuesComponent,
     AccountIdComponent,
     IssueNotFixedComponent,
+    RouterNotReachableComponent,
     RouterResetRequiredComponent,
     FiberBoxNotReachableComponent,
     RouterRebootRequiredComponent,

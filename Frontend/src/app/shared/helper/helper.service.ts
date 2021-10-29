@@ -127,7 +127,7 @@ export class HelperService {
       this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
-      this.router.navigate(['issues/other/router-reboot-required']);
+      this.AllSevicesCI9RouterCases(data?.routerDetails);
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/other/router-reset-required']);
@@ -308,6 +308,18 @@ export class HelperService {
     } else if (CodeId === flowCodes.UPSEL2 || CodeId === flowCodes.UPSEL8) {
       // Upselling Identified for New Router /Router  Out of Warranty
       this.router.navigate(['issues/internet/third-party-router']);
+    }
+  }
+
+  AllSevicesCI9RouterCases(routerDetails: IRouterDetail) {
+    if (routerDetails?.isManaged) {
+      if (!routerDetails?.isReachable) {
+        this.router.navigate(['issues/other/router-not-reachable']);
+      } else {
+        this.router.navigate(['issues/other/router-reboot-required']);
+      }
+    } else {
+      this.router.navigate(['issues/other/third-party-router']);
     }
   }
 
