@@ -18,5 +18,5 @@ export const environment = {
     serverName: '',
     publishDate: '09/28/2021',
   },
-  shouldCallAPI: true,
+  shouldCallAPI: false,
 };

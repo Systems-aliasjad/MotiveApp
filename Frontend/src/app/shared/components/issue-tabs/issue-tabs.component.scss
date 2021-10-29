@@ -13,6 +13,10 @@
     --min-height: auto; 
     ion-label{
       color:$secondary-color;
+      @media screen and (max-width: 992px) {
+        font-size: 14px;
+      }
+      
     }
     .inline-list_value {
       color: $primary-color;
