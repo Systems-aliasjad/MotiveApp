@@ -122,6 +122,8 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     this.backendService.serviceDetailsSTB().subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData(data);
+      this.sharedService.setApiResponseDataSTBContinue(data);
+
       this.router.navigate(['/issues/tv/detail']);
     });
 
