@@ -57,27 +57,24 @@ export class TvDetailComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.getIssueTilesData();
-    this.sharedService.setLoader(true);
-    this.backendService.serviceDetailsSTB().subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.eLifeStatus = data.result.responseData.elifeGameStatus;
 
-      for (var index = 0; index < data.result.responseData.sharedPackages.length; index++) {
-        for (var i = 0; i < this.connectedDevices.length; i++) {
-          this.connectedDevices[i].list.push(data.result.responseData.sharedPackages[index].packageName);
+    const data = this.sharedService.getApiResponseData();
+    this.eLifeStatus = data.result.responseData.elifeGameStatus;
+
+    for (var index = 0; index < data.result.responseData.sharedPackages.length; index++) {
+      for (var i = 0; i < this.connectedDevices.length; i++) {
+        this.connectedDevices[i].list.push(data.result.responseData.sharedPackages[index].packageName);
+      }
+    }
+
+    for (var index = 0; index < data.result.responseData.stbList.length; index++) {
+      var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data.result.responseData.stbList[index].stbSerialNumber);
+      if (selectedStb != null) {
+        for (var i = 0; i < data.result.responseData.stbList[index].packages.length; i++) {
+          selectedStb.list.push(data.result.responseData.stbList[index].packages[i].packageName);
         }
       }
-
-      for (var index = 0; index < data.result.responseData.stbList.length; index++) {
-        var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data.result.responseData.stbList[index].stbSerialNumber);
-        if (selectedStb != null) {
-          for (var i = 0; i < data.result.responseData.stbList[index].packages.length; i++) {
-            selectedStb.list.push(data.result.responseData.stbList[index].packages[i].packageName);
-          }
-        }
-      }
-      console.log('data new api', data);
-    });
+    }
 
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
@@ -102,14 +99,14 @@ export class TvDetailComponent implements OnInit {
   onIssueResolved() {
     // this.router.navigate(['/thanks']);
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/thanks']);
     });
   }
 
   getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseData();
+    const apiResponse = this.sharedService.getApiResponseDataNoIssuesSTB();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.stbConfig;

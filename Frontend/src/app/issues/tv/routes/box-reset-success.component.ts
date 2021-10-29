@@ -6,6 +6,8 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 /**
  * Tv Box Reset Success
@@ -38,7 +40,13 @@ export class TvBoxResetSuccessComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.STILL_FACING_AN_ISSUE',
   };
 
-  constructor(private router: Router, private location: Location, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private location: Location,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -59,7 +67,11 @@ export class TvBoxResetSuccessComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
 
   button2Listener() {
