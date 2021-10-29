@@ -336,7 +336,7 @@ export class HelperService {
 
   handleInternetPasswordResetCase(shouldReset, flowCase: 'internet' | 'other') {
     if (shouldReset) {
-      this.router.navigate(['/issues/internet/internet-password-reset']);
+      this.router.navigate([`/issues/${flowCase}/internet-password-reset`]);
     } else if (!this.sharedService.getUpsellOpportunity() || this.sharedService.getUpsellOpportunity() === flowCodes.UPSEL1) {
       this.router.navigate([`issues/${flowCase}/no-issue`]);
     } else {

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AccountIdComponent } from './routes/account-id/account-id.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
+import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { MainComponent } from './routes/main.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'router-reset-required',
     component: RouterResetRequiredComponent,
+  },
+  {
+    path: 'internet-password-reset',
+    component: InternetPasswordResetComponent,
   },
   {
     path: 'no-issue',
