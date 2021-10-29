@@ -30,6 +30,7 @@ import { CancelElifeConnectionMessageComponent } from './routes/cancel-elife-con
 import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account-temporarily-disconnected-message.component';
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
+import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'osrp/account-temporarily-disconnected',
     component: AccountTemporarilyDisconnectedMessageComponent,
+  },
+  {
+    path: 'phone-not-reachable',
+    component: PhoneNotReachableComponent,
   },
   {
     path: 'outage',

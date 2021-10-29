@@ -12,7 +12,6 @@ import { HttpClient } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
-import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
@@ -22,20 +21,21 @@ import { InternetModule } from '../internet/internet.module';
 import { TvModule } from '../tv/tv.module';
 import { PhoneModule } from '../phone/phone.module';
 import { NoIssuesComponent } from './routes/no-issues.component';
+import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 
 @NgModule({
   declarations: [
     MainComponent,
+    OutageComponent,
     NoIssuesComponent,
     AccountIdComponent,
-    ResetPinFailedMessageComponent,
-    FiberBoxNotReachableComponent,
-    PhoneNotReachableComponent,
-    CustomerNotSameRouterComponent,
-    OutageComponent,
     IssueNotFixedComponent,
-    NoIssuesServiceDetailsComponent,
+    RouterResetRequiredComponent,
+    FiberBoxNotReachableComponent,
     RouterRebootRequiredComponent,
+    ResetPinFailedMessageComponent,
+    CustomerNotSameRouterComponent,
+    NoIssuesServiceDetailsComponent,
   ],
   imports: [
     CommonModule,

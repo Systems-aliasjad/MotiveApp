@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountIdComponent } from './routes/account-id/account-id.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
@@ -8,9 +8,9 @@ import { MainComponent } from './routes/main.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { OutageComponent } from './routes/outage.component';
-import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
 import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
+import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 
 const routes: Routes = [
   {
@@ -22,18 +22,14 @@ const routes: Routes = [
     path: '',
     component: MainComponent,
   },
-  {
-    path: 'reset-pin-failed',
-    component: ResetPinFailedMessageComponent,
-  },
-  {
-    path: 'fiber-box-not-reachable',
-    component: FiberBoxNotReachableComponent,
-  },
-  {
-    path: 'phone-not-reachable',
-    component: PhoneNotReachableComponent,
-  },
+  // {  // this should be in Quick Links
+  //   path: 'reset-pin-failed',
+  //   component: ResetPinFailedMessageComponent,
+  // },
+  // {
+  //   path: 'fiber-box-not-reachable',
+  //   component: FiberBoxNotReachableComponent,
+  // },
   {
     path: 'customer-not-using-same-router',
     component: CustomerNotSameRouterComponent,
@@ -41,6 +37,10 @@ const routes: Routes = [
   {
     path: 'outage',
     component: OutageComponent,
+  },
+  {
+    path: 'router-reset-required',
+    component: RouterResetRequiredComponent,
   },
   {
     path: 'no-issue',

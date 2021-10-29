@@ -126,11 +126,11 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI9) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/router-reboot-required']);
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+      this.router.navigate(['issues/other/router-reboot-required']);
     } else if (CodeId === flowCodes.CI73) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/router-reset-required']);
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+      this.router.navigate(['issues/other/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
       this.sharedService.setApiResponseData({
         ontDetails: data?.ontDetails,
@@ -256,11 +256,12 @@ export class HelperService {
       // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
     } else if (CodeId === flowCodes.CI9) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, connectedDevices: data?.connectedDevices });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, stbDetails: data?.stbDetails });
       if (!data?.ontDetails?.isReachable || data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/tv/ont-reboot-required']);
+      } else if (data?.stbDetails?.length > 0) {
+        this.handleCI9RouterCasesIPTV(data?.stbDetails[0]);
       }
-      if (data?.stbDetails?.length > 0) this.handleCI9RouterCasesIPTV(data?.stbDetails[0]);
 
       // this.handleCI9RouterCasesIPTV(data?.stbDetails);
     }

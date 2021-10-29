@@ -1,18 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { IMotiveButton, IOntDetail, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'all-services-router-reboot-requred',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
-    [routerConfig]="routerConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -25,9 +27,10 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
 export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
-  ontConfig;
-  routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  networkDiagram = NetWorkDiagramIds.sixLayer;
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
+  connectedDevices = [];
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
   button1: IMotiveButton = {
     title: 'BUTTONS.RESTART_NOW',
     type: 'primary',
@@ -37,7 +40,13 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -65,16 +74,32 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/router-reboot-successful']);
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+    // this.router.navigate(['/issues/internet/router-reboot-successful']);
   }
 
   button2Listener() {
-    this.router.navigate(['thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
+
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const routerConfig = temp?.routerConfig;
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    if (this.connectedDevices) {
+      this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
+    } else {
+      this.connectedDevices = [{ ...routerConfig }];
+    }
   }
 }
