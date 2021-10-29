@@ -99,13 +99,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     if (this.connectedDevices) {
       this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
     } else {
-      this.connectedDevices = [
-        {
-          className: networkDiagramClasses.okay,
-          url: SVGs.router.default,
-          title: ROUTER,
-        },
-      ];
+      this.connectedDevices = [{ ...routerConfig }];
     }
   }
 }

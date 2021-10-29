@@ -21,19 +21,21 @@ import { InternetModule } from '../internet/internet.module';
 import { TvModule } from '../tv/tv.module';
 import { PhoneModule } from '../phone/phone.module';
 import { NoIssuesComponent } from './routes/no-issues.component';
+import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 
 @NgModule({
   declarations: [
     MainComponent,
+    OutageComponent,
     NoIssuesComponent,
     AccountIdComponent,
-    ResetPinFailedMessageComponent,
-    FiberBoxNotReachableComponent,
-    CustomerNotSameRouterComponent,
-    OutageComponent,
     IssueNotFixedComponent,
-    NoIssuesServiceDetailsComponent,
+    RouterResetRequiredComponent,
+    FiberBoxNotReachableComponent,
     RouterRebootRequiredComponent,
+    ResetPinFailedMessageComponent,
+    CustomerNotSameRouterComponent,
+    NoIssuesServiceDetailsComponent,
   ],
   imports: [
     CommonModule,
