@@ -22,6 +22,8 @@ import { TvModule } from '../tv/tv.module';
 import { PhoneModule } from '../phone/phone.module';
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
+import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
+import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
 
 @NgModule({
   declarations: [
@@ -30,10 +32,12 @@ import { RouterResetRequiredComponent } from './routes/router-reset-required.com
     NoIssuesComponent,
     AccountIdComponent,
     IssueNotFixedComponent,
+    RouterNotReachableComponent,
     RouterResetRequiredComponent,
     FiberBoxNotReachableComponent,
     RouterRebootRequiredComponent,
     ResetPinFailedMessageComponent,
+    InternetPasswordResetComponent,
     CustomerNotSameRouterComponent,
     NoIssuesServiceDetailsComponent,
   ],

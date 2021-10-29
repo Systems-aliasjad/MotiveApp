@@ -1,18 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { BackendService } from 'src/app/services/backend.service';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, SVGs } from 'src/app/shared/constants/constants';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { IMotiveButton, IOntDetail, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'all-services-customer-not-using-router',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
-    [routerConfig]="routerConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -27,9 +29,10 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
-  ontConfig;
-  routerConfig;
-  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  networkDiagram = NetWorkDiagramIds.sixLayer;
+  ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
+  connectedDevices = [];
+  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
 
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',
@@ -44,7 +47,13 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.ISSUE_STILL_NOT_RESOLVED',
     type: 'link',
   };
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private backendService: BackendService,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -77,13 +86,30 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
   }
-  button3Listener() {}
+  button3Listener() {
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setLoader(false);
+      this.router.navigate(['/thanks']);
+    });
+  }
+
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const routerConfig = temp?.routerConfig;
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    if (this.connectedDevices) {
+      this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
+    } else {
+      this.connectedDevices = [{ ...routerConfig }];
+    }
   }
 }
