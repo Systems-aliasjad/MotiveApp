@@ -2,10 +2,11 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      <h5>{{ 'MESSAGES.INTERNET_ISSUES' | translate }}</h5>
+      <h3>{{ 'MESSAGES.INTERNET_ISSUES' | translate }}</h3>
     </ion-title>
     <ion-buttons slot="end">
       <ion-button class="btn transparent-btn" (click)="dismiss()"> Close </ion-button>
+      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="cross-icon" />
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

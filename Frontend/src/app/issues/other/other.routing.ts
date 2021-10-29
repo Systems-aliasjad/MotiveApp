@@ -10,6 +10,7 @@ import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-deta
 import { NoIssuesComponent } from './routes/no-issues.component';
 import { OutageComponent } from './routes/outage.component';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
+import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
 import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
 import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'router-reboot-required',
     component: RouterRebootRequiredComponent,
+  },
+  {
+    path: 'router-not-reachable',
+    component: RouterNotReachableComponent,
   },
 ];
 

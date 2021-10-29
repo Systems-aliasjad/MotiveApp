@@ -1,57 +1,57 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, SVGs } from 'src/app/shared/constants/constants';
-import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
-import { IMotiveButton, IOntDetail, IPageHeader } from 'src/app/shared/constants/types';
+import { ApplicableCodes, ERoutingIds, ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, SVGs } from 'src/app/shared/constants/constants';
+import { InternetIssuesDialog } from 'src/app/issues/internet/dialogs/internet-issues-dialog/internet-issues-dialog.component';
+import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
+import { SharedService } from '../../../shared/shared.service';
+import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'all-services-customer-not-using-router',
+  selector: 'app-router-not-reachable',
   template: `<app-diagnose-issue
     [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
+    [section1Data]="section1Data"
+    [section1Template]="section1Template"
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
   >
   </app-diagnose-issue>`,
 })
-export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
-  messageSection;
+export class RouterNotReachableComponent implements OnInit, OnDestroy {
   networkDiagram = NetWorkDiagramIds.sixLayer;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   connectedDevices = [];
   etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
 
+  subscription: Subscription;
+  messageSection;
+  section1Template;
+  section1Data;
   button1: IMotiveButton = {
-    title: 'BUTTONS.DEVICE_CARE',
-    type: 'link',
+    title: 'BUTTONS.YES_I_AM',
+    type: 'primary',
+    explanatoryNote: 'MESSAGES.ARE_YOU_USING_THE_SAME_ROUTER',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_FIXED',
-    type: 'primary',
-  };
-
-  button3: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_STILL_NOT_RESOLVED',
+    title: 'BUTTONS.NO_I_M_USING_MY_OWN_ROUTER',
     type: 'link',
   };
+
   constructor(
-    private router: Router,
-    private backendService: BackendService,
     private helperService: HelperService,
     private sharedService: SharedService,
+    private router: Router,
+    private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -68,7 +68,7 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    //this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 
   headerConfig: IPageHeader = {
@@ -77,33 +77,32 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.customerNotUsingSameRouterAllServicesSection;
+    this.messageSection = CustomerJourneyConstants.routerNotReachableMessageSection;
+    this.section1Template = ApplicableCodes.routerNotReachableTemplate;
   }
 
-  button1Listener() {
-    this.router.navigate(['/issues/internet/device-care']);
-    // this.router.navigate(['/router-not-reachable-own-router-care']);
+  async button1Listener() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
+      componentProps: {
+        id: ERoutingIds.routerNotReachable,
+      },
+    });
+    return await modal.present();
   }
 
   button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
-  }
-  button3Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    this.router.navigate(['/issues/other/customer-not-using-same-router']);
   }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     const routerConfig = temp?.routerConfig;
+    this.section1Data = {
+      routerModel: routerConfig?.routerModel,
+      routerName: routerConfig?.routerSerial,
+    };
     this.ontConfig = temp?.ontConfig;
     this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
     if (this.connectedDevices) {

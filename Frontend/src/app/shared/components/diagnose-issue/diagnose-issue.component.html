@@ -7,7 +7,6 @@
         <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
       </ion-col>
     </ion-row>
-
     <app-issue-tabs
       [networkDiagram]="networkDiagram"
       [ontConfig]="ontConfig"
@@ -51,28 +50,37 @@
       </ion-row>
     </ion-col>
     <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngIf="button3">
-      <motive-button
-        [type]="button3.type"
-        [title]="button3.title"
-        [explanatoryNote]="button3.explanatoryNote"
-        [SM]="button3.SM"
-        [MD]="button3.MD"
-        [LG]="button3.LG"
-        (click)="button3Listener()"
-      ></motive-button>
-    </ion-col>
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button
+            *ngIf="button4"
+            [type]="button4.type"
+            [title]="button4.title"
+            [explanatoryNote]="button4.explanatoryNote"
+            [SM]="button4.SM"
+            [MD]="button4.MD"
+            [LG]="button4.LG"
+            (click)="button4Listener()"
+          ></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <motive-button
+          [type]="button3.type"
+          [title]="button3.title"
+          [explanatoryNote]="button3.explanatoryNote"
+          [SM]="button3.SM"
+          [MD]="button3.MD"
+          [LG]="button3.LG"
+          (click)="button3Listener()"
+        ></motive-button>
+        </ion-col>
+       
+      </ion-row>
 
-    <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-      <motive-button
-        *ngIf="button4"
-        [type]="button4.type"
-        [title]="button4.title"
-        [explanatoryNote]="button4.explanatoryNote"
-        [SM]="button4.SM"
-        [MD]="button4.MD"
-        [LG]="button4.LG"
-        (click)="button4Listener()"
-      ></motive-button>
+      
+   
+
+    
     </ion-col>
   </ion-row>
 </div>

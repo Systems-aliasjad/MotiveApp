@@ -12,10 +12,41 @@
     --border-radius: 1rem;
   }
   ion-header{
-    ion-button{
-      margin-inline-start:0;
+    ion-toolbar{
+      border-bottom: 2px solid #e2e1da;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @media screen and (max-width:992px) {
+        padding-top: 0;
+        padding-bottom:0;
+        border-bottom: 0;      
+      }
+      ion-title{
+        padding-right:0;
+        padding-left: 0;
+        h5{
+          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+          color:$primary-color;
+          @media screen and (max-width: 281px) {
+            font-size: 1rem;
+          }
+        }
+      }
+    ion-buttons{
       margin-inline-end:0;
-    
+      margin-right:0;
+      --padding-end: 0;
+      padding-right: 0;
+      padding-right: 0;
+      ion-button{
+        margin-inline-start:0;
+        margin-inline-end:0;
+        height: auto;
+        @media screen and (max-width: 281px) {
+          font-size: .8rem;
+        }
+       }
+     }
     }
   }
   ion-list {
@@ -55,6 +86,42 @@ ion-header{
   &:after{
     background-image: none;
   }
+  ion-toolbar{
+    ion-title{
+      padding-right:0;
+      padding-left: 0;
+      text-align: left;
+      @media screen and (min-width:992px) {
+        text-align: center;
+      }
+      .lg-screen-title{
+        display: none;
+        @media screen and (min-width:992px) {
+          display: block;
+        }
+      }
+      .sm-screen-title{
+        display: block;
+        @media screen and (min-width:992px) {
+          display:none;
+        }
+      }
+      h3{
+        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        color:$primary-color;
+        font-weight: normal;
+        margin-left: 2rem;
+        @media screen and (max-width:992px) {
+          margin-left: 0;
+          margin-bottom: 0;
+          font-size: 18px;
+        }
+      }
+      
+    }
+  }
+
+
   ion-toolbar{
     border-bottom: 2px dashed #d0d6da;
     ion-title{
