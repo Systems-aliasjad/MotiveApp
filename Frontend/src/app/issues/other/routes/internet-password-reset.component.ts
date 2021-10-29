@@ -1,17 +1,16 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 
 import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { IMotiveButton, IOntDetail, IPageHeader } from 'src/app/shared/constants/types';
+import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
+import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, SVGs } from 'src/app/shared/constants/constants';
-import { ResetFactoryDefaultDialog } from 'src/app/issues/internet/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 
 @Component({
-  selector: 'app-router-reset-required',
+  selector: 'internet-password-reset-all',
   template: `<app-diagnose-issue
     [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
@@ -26,16 +25,13 @@ import { ResetFactoryDefaultDialog } from 'src/app/issues/internet/dialogs/reset
   >
   </app-diagnose-issue>`,
 })
-export class RouterResetRequiredComponent implements OnInit, OnDestroy {
+export class InternetPasswordResetComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
+  messageSection;
   networkDiagram = NetWorkDiagramIds.sixLayer;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   connectedDevices = [];
   etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
-  subscription: Subscription;
-  messageSection = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
-    body: [{ title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN' }],
-  };
   button1: IMotiveButton = {
     title: 'BUTTONS.RESET_NOW',
     type: 'primary',
@@ -47,11 +43,10 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
 
   constructor(
     private router: Router,
-    private modalCtrl: ModalController,
-    private sharedService: SharedService,
     private helperService: HelperService,
-    private activatedRoute: ActivatedRoute,
-    private backendService: BackendService
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit() {
@@ -59,6 +54,7 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
       this.updateHeader();
       this.getIssueTilesData();
     });
+    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
@@ -66,28 +62,16 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    // this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
+    //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'MESSAGES.INTERNET_ISSUES',
+    pageTitle: 'HEADER.ALL_SERVICES',
     showBackBtn: true,
   };
 
-  async button1Listener() {
-    const modal = await this.modalCtrl.create({
-      component: ResetFactoryDefaultDialog,
-    });
-    return await modal.present();
-  }
-
-  button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    });
-    // this.router.navigate(['/thanks']);
+  updatePageContent() {
+    this.messageSection = CustomerJourneyConstants.internetPasswordResetRequiredMessageSection;
   }
 
   getIssueTilesData() {
@@ -101,5 +85,22 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
     } else {
       this.connectedDevices = [{ ...routerConfig }];
     }
+  }
+
+  button1Listener() {
+    // this.helperService.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
+  }
+
+  button2Listener() {
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
   }
 }

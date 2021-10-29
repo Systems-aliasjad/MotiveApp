@@ -41,9 +41,9 @@ export class BackendService {
   };
 
   hardData = {
-    screenCode: 'CI73',
+    screenCode: 'CI72',
     responseData: {
-      hsiPasswordReset: false,
+      hsiPasswordReset: true,
       ppoeConnected: 'true',
       wifiEnabled: 'true',
       hsiUploadDownload: '50Mbps,250Mbps',
