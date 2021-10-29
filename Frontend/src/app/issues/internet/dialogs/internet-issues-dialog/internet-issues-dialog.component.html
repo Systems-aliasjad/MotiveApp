@@ -16,12 +16,18 @@
     <ion-row>
       <ion-col size="12" class="pb-0">
         <h5 class="sub-title modal-sub-title">{{ 'MESSAGES.ROUTER_IS_NOT_ACCESSIBLE' | translate }}</h5>
-        <div>
+        <div class="dialog-content">
           <p>Please check if:</p>
-          <p *ngFor="let ins of instructionList; let i = index"><b>.</b> {{ ins | translate }}</p>
+          <ion-list class="bullet-list">
+            <ion-item *ngFor="let ins of instructionList; let i = index">
+              <ion-label> {{ ins | translate }}</ion-label>
+            </ion-item>
+          </ion-list>
+          <!-- <p *ngFor="let ins of instructionList; let i = index"><b>.</b> {{ ins | translate }}</p> -->
+          <p>{{ 'MESSAGES.ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE' | translate }}</p>
+          <p>{{ 'MESSAGES.IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIST_TROUBLESHOOTING' | translate }}</p>
         </div>
-        <p>{{ 'MESSAGES.ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE' | translate }}</p>
-        <p>{{ 'MESSAGES.IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIST_TROUBLESHOOTING' | translate }}</p>
+        
       </ion-col>
     </ion-row>
   </ion-grid>

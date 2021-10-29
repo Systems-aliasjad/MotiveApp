@@ -18,13 +18,25 @@
     
     }
   }
+  ion-list {
+    --ion-background-color: transparent;
+    padding-bottom: 0;
+  }
+  ion-item {
+    --min-height: auto;
+    ion-label {
+      color: $secondary-color;
+    }
+  } 
 }
-ion-item::part(native){
-    /* padding-inline-end: .8rem;  */
-    --inner-padding-end: 0;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    --padding-start:1rem;
+ion-item::part(native) {
+  --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
+  padding-inline-end: 0;
+  --inner-padding-end: 0;
+  padding-inline-start: 0;
+  --border-radius: 0;
+  --border-width: 0;
+  --inner-border-width: 0;
 }
 .header-ios {
 	ion-toolbar {
