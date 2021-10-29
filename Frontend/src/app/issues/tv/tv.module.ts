@@ -64,6 +64,8 @@ import { UnableElifeOnPinResetMessageComponent } from './routes/unable-elife-pin
 import { ResetAdminPinPackageTransferComponent } from './routes/reset-admin-pin-package-transfer.component';
 import { SingleSTBFoundComponent } from './routes/single-stb-found-error.component';
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
+import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
+import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 
 @NgModule({
   declarations: [
@@ -122,6 +124,9 @@ import { OntRebootRequiredComponent } from './routes/ont-reboot-required.compone
     ComplaintRaisedSuccessfullyMessageComponent,
     UnableToWatchPackageTransferSuccessComponent,
     AccountTemporarilyDisconnectedMessageComponent,
+    SingleSTBFoundComponent,
+    OntRestartInstructionsComponent,
+    FiberBoxRestartCareComponent,
   ],
   imports: [
     CommonModule,
