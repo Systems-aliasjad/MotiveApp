@@ -25,6 +25,8 @@ import { SharedService } from '../../../shared/shared.service';
     (button2Click)="button2Listener()"
     [button3]="button3"
     (button3Click)="button3Listener()"
+    [button4]="button4"
+    (button4Click)="button4Listener()"
   >
   </app-diagnose-issue>`,
 })
@@ -49,7 +51,10 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     type: 'link',
   };
-
+  button4: IMotiveButton = {
+    title: 'BUTTONS.RESET_ROUTER',
+    type: 'primary',
+  };
   constructor(
     private helperService: HelperService,
     private sharedService: SharedService,
@@ -98,6 +103,14 @@ export class ThirdPartyRouterComponent implements OnInit, OnDestroy {
 
   button3Listener() {
     this.router.navigate(['/issues/internet/no-issue'], { state: { isThirdParty: true } });
+  }
+
+  button4Listener() {
+    this.sharedService.setLoader(true);
+    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
   }
 
   getIssueTilesData() {
