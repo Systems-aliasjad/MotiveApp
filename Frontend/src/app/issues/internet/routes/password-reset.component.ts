@@ -30,6 +30,7 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   routerConfig: IRouterDetail = { url: SVGs.router.default, className: networkDiagramClasses.pending, title: ROUTER };
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
+  quickLinkNextSignal;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
     title: 'BUTTONS.RESET_NOW',
@@ -60,7 +61,8 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
   }
 
   headerConfig: IPageHeader = {
@@ -74,18 +76,28 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     // this.helperService.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
-    this.sharedService.setLoader(true);
-    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    });
+    if (this.quickLinkNextSignal) {
+      this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
+        this.router.navigate(['/unknown-issue']);
+      });
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    }
   }
 
   button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    });
+    if (this.quickLinkNextSignal) {
+      this.router.navigate(['landing']);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    }
   }
 }

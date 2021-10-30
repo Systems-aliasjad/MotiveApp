@@ -184,7 +184,7 @@ const ELIFE_ON_PIN_RESET = {
 
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.I_FORGOT_MY_INTERNET_PASSWORD',
-  linkTo: 'issues/internet/reset-internet-password',
+  linkTo: 'issues/internet/internet-password-reset',
   nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
 };
 const CONNECTION_ISSUE_ROUTER = {
@@ -449,16 +449,6 @@ export class ApplicableCodes {
       type: 'number',
       objKeyNameEN: 'referecneNo',
     },
-    {
-      title: 'MESSAGES.DATE_VISIT',
-      type: 'date',
-      objKeyNameEN: 'dateOfVisit',
-    },
-    {
-      title: 'MESSAGES.APPOINTMENT_DETAILS',
-      type: 'text',
-      objKeyNameEN: 'appointmentDetails',
-    },
   ];
 
   public static appointmentSetSuccessfullyTarckRequestTemplate: ISection2Template[] = [
@@ -547,11 +537,6 @@ export class ApplicableCodes {
       title: 'MESSAGES.DATE_CREATED',
       type: 'date',
       objKeyNameEN: 'dateCreated',
-    },
-    {
-      title: 'MESSAGES.APPOINTMENT_DETAILS',
-      type: 'text',
-      objKeyNameEN: 'details',
     },
   ];
 

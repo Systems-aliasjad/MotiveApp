@@ -13,8 +13,6 @@ import { Subscription } from 'rxjs';
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
     [button3]="button3"
@@ -27,10 +25,10 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
-  button1: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.CHANGE_APPOINTMENT',
-  };
+  // button1: IMotiveButton = {
+  //   type: 'link',
+  //   title: 'BUTTONS.CHANGE_APPOINTMENT',
+  // };
   button2: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.TRACK_COMPLAINT',
@@ -60,9 +58,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
     this.Section1Data = CustomerJourneyConstants.compliantDetailsTrackComplaint;
     this.Section2Template = ApplicableCodes.complaintDetailsTarckComplaintTemplate;
     this.Section2Data = {
-      referecneNo: '436529873',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      appointmentDetails: 'Lorem ipsum',
+      referecneNo: '43652',
     };
   }
 
@@ -75,6 +71,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
+    this.router.navigate(['/landing']);
     // this.router.navigate(['/bookComplaint']);
   }
 }

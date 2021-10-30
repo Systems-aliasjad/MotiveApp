@@ -17,8 +17,6 @@ import { SharedService } from 'src/app/shared/shared.service';
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
     [button3]="button3"
@@ -32,11 +30,11 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
   Section2Data;
   imgSrc;
 
-  button1: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.CHANGE_APPOINTMENT',
-    explanatoryNote: '',
-  };
+  // button1: IMotiveButton = {
+  //   type: 'link',
+  //   title: 'BUTTONS.CHANGE_APPOINTMENT',
+  //   explanatoryNote: '',
+  // };
 
   button2: IMotiveButton = {
     type: 'primary',
@@ -72,7 +70,6 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
     this.Section2Data = {
       referenceNo: '436529873',
       dateCreated: 'Jul 10 2019, 10:30 AM',
-      details: 'Lorem ipsum',
     };
   }
 
@@ -83,6 +80,6 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
     //this.router.navigate(['/']);
   }
   button3Listener() {
-    //this.router.navigate(['/']);
+    this.router.navigate(['/landing']);
   }
 }
