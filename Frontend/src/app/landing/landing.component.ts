@@ -72,7 +72,7 @@ export class LandingComponent implements OnInit, OnDestroy {
   };
 
   handleClick = (route) => {
-    this.router.navigate([route]);
+    // this.router.navigate([route]);
   };
 
   onCardClick(card) {

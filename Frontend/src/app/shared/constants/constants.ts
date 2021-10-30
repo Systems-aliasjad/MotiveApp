@@ -190,7 +190,7 @@ const FORGOT_PASSWORD_INTERNET = {
 const CONNECTION_ISSUE_ROUTER = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
   linkTo: 'unable-connect-newDevice',
-  // nextSignal: QUICK_ACTION., deviceCare
+  isDeviceCare: true,
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
@@ -220,12 +220,12 @@ const TRACK_REQUEST = {
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ROUTER',
   linkTo: 'issues/internet/router-upgrade',
-  // nextSignal: QUICK_ACTION, // deep linking
+  isDeepLink: true,
 };
 const UPGRADE_PACKAGE = {
   body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE',
   linkTo: 'issues/tv/eLife-upgrade',
-  // nextSignal: QUICK_ACTION, //deep linking
+  isDeepLink: true,
 };
 
 export const motiveSubscriptions: IMotvieSubscription = {

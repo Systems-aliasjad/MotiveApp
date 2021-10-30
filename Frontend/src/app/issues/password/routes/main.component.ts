@@ -3,7 +3,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-main',
-  template: `loader works`,
+  template: '',
 })
 export class MainComponent implements OnInit {
   constructor(private shareService: SharedService) {}

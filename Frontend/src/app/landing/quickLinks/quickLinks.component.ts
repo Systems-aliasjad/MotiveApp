@@ -66,11 +66,15 @@ export class QuickLinksComponent implements OnInit {
   }
 
   onCardClick(link) {
-    if (this.sharedService.getQuickLinksData()) {
+    if (link?.isDeepLink) {
+    } else if (link?.isDeviceCare) {
+      this.router.navigate(['/issues/internet/router-not-restarted/device-care']);
+    } else if (this.sharedService.getQuickLinksData()) {
       this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
     } else {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
       });

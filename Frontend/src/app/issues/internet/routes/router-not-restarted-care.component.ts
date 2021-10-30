@@ -10,7 +10,6 @@ import { SharedService } from 'src/app/shared/shared.service';
     '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
 export class RouterNotRestartedCareComponent implements OnInit, OnDestroy {
-  subscription: Subscription;
   careContent: IDeviceCareContent = {
     imgSrc: 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg',
     header1: '',
@@ -31,9 +30,7 @@ export class RouterNotRestartedCareComponent implements OnInit, OnDestroy {
     this.updatePageContent();
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   updateHeader() {
     //this.sharedService.setHeaderConfig('HEADER.DEVICE_CARE', true);
@@ -46,9 +43,7 @@ export class RouterNotRestartedCareComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
-    this.careContent.header1 = 'SUBHEADER.HOW_TO_RESTART_YOUR_ROUTER';
-    this.careContent.body1 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-    this.careContent.body2 = 'Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+    // this.careContent.header1 = 'SUBHEADER.HOW_TO_RESTART_YOUR_ROUTER';
   }
 
   button1Listener() {
