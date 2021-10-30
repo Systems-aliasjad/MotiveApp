@@ -6,9 +6,10 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
 import { flowCodes } from 'src/app/shared/constants/constants';
+import { ModalController } from '@ionic/angular';
 
 @Component({
-  selector: 'reset-admin-pin-packagetransfer',
+  selector: 'quick-reset-admin-pin-packagetransfer',
   template: `<app-transfer-package
     [headerConfig]="headerConfig"
     [pageContent]="pageContent"
@@ -36,22 +37,50 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
   cardList: any[] = [];
   formGroup: FormGroup;
 
-  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private modalCtr: ModalController,
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.updateHeader();
-
-    var apiResponse = this.sharedService.getApiResponseData();
-    var ListStbDetails = apiResponse?.stbList;
-    ListStbDetails.forEach((element) => {
-      var index = {
-        title: 'STB SR#' + element?.stbSerialNumber,
-        description: 'MAC ' + element?.stbMac,
-        ID: element?.stbSerialNumber,
-      };
-      this.cardList.push(index);
-      console.log(index);
-    });
+    debugger;
+    if (!this.sharedService.getQuickLinksData()) {
+      try {
+        this.modalCtr.dismiss();
+      } catch (ex) {}
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        let apiResponse = this.sharedService.setApiResponseData(res?.result?.responseData);
+        var ListStbDetails = res?.result?.responseData?.stbList;
+        ListStbDetails.forEach((element) => {
+          var index = {
+            title: 'STB SR#' + element?.stbSerialNumber,
+            description: 'MAC ' + element?.stbMac,
+            ID: element?.stbSerialNumber,
+          };
+          this.cardList.push(index);
+          console.log(index);
+        });
+      });
+    } else {
+      let apiResponse = this.sharedService.getApiResponseData();
+      var ListStbDetails = apiResponse?.stbList;
+      ListStbDetails.forEach((element) => {
+        var index = {
+          title: 'STB SR#' + element?.stbSerialNumber,
+          description: 'MAC ' + element?.stbMac,
+          ID: element?.stbSerialNumber,
+        };
+        this.cardList.push(index);
+        console.log(index);
+      });
+    }
   }
 
   ngOnDestroy(): void {}

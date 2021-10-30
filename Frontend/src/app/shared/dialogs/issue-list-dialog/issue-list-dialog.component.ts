@@ -86,7 +86,7 @@ export class IssueListDialog implements OnInit {
     {
       issue: 'Reset TV admin PIN',
       description: 'Find out how to reset your TV box PIN',
-      route: '/issues/password/reset-tv-admin-pin',
+      route: '/issues/tv/quick-reset-admin-pin-package-transfer',
     },
     {
       issue: 'Reset eLifeON PIN',
