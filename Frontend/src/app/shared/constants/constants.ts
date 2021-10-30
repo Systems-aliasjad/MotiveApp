@@ -6,6 +6,23 @@ export class RoutingPaths {
   public static readonly routerInstallSuccessfully: string = 'router-install-successfully';
   public static readonly installNewRouter: string = 'install-new-router';
 }
+export const QUICK_ACTION = {
+  RESET_INTERNET_PASSWORD: 'Reset Internet Password',
+  UPDATE_WIFI_CONFIGURATION: 'Update Wi Fi Configuration',
+  PORT_MIGRATION_AND_NEW_ROUTER_INSTALLATION: 'Port Migration/New Router Installation',
+  RESET_STB_ADMIN_PIN: 'Reset STB Admin Pin',
+  RESET_ELIFEON_PASSWORD: 'Reset eLifeOn Password',
+  TRANSFER_IPTV_PACKAGE: 'Transfer IPTV Package',
+  RESET_CCP_PIN_CODE: 'Reset CCP Pin Code',
+  SR_FOLLOWUP: 'SR FollowUp',
+  COMPLAINT_FOLLOWUP: 'Complaint FollowUp',
+  ONT_REBOOT: 'ONT Reboot',
+  ROUTER_REBOOT: 'Router Reboot',
+  PNP_FACTORY_RESET: 'PnP Factory Reset',
+  STB_REBOOT: 'STB Reboot',
+  HP_AP_REBOOT: 'HP AP Reboot',
+  STB_RESET: 'STB Reset',
+};
 
 export const flowCodes = {
   genericError: 'G11E24',
@@ -94,43 +111,6 @@ export enum NetWorkDiagramIds {
   sixLayer,
 }
 
-// const P3: string = '3P';
-// const P2: string = '2P';
-// const P1: string = '1P';
-// const P0: string = '0P';
-// const VO: string = 'VO';
-// const HI: string = 'HI';
-// const B1: string = 'B1';
-// const FD: string = 'FD';
-// const FH: string = 'FH';
-// const FT: string = 'FT';
-// const FV: string = 'FV';
-// const BSP: string = 'BSP';
-// const BTP: string = 'BTP';
-// const BDP: string = 'BDP';
-// const BFXI: string = 'BFXI';
-// const ALL_PRODUCT_CODES: string[] = [P3, P2, P1, P0, VO, HI, B1, FD, FH, FT, FV, BSP, BTP, BDP, BFXI];
-// //lANDING PAGE
-// const TV_ISSUES: string[] = [P3, BTP, FT, P1, P0, BSP];
-// const RESET_PIN: string[] = [P1, P0, BSP, VO, FV];
-// const PHONE_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD, VO, FV];
-// const OTHER_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD];
-// const INTERNET_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD, HI, B1, FH];
-// const PASSWORD_ISSUES: string[] = [P3, BTP, FT, P2, BDP, BFXI, FD, HI, B1, FH];
-// //QUICK LINKS
-// const INSTALL_NEW_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-// const FACTORY_RESET_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-// const FACTORY_RESET_TV: string[] = [P3, P1, BSP, BTP, FT];
-// const FORGOT_PASSWORD_INTERNET: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-// const CONNECTION_ISSUE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-// const FORGOT_PASSWORD_TV: string[] = [P3, P1, BSP, BTP, FT];
-// const TRANSFER_PACKAGE_TV: string[] = [P3, P1, BSP, BTP, FT];
-// const CONNECT_HOME_ZONE: string[] = ALL_PRODUCT_CODES; // TODO: need to change with all applicable rates
-// const TRACK_COMPLAINT: string[] = ALL_PRODUCT_CODES;
-// const TRACK_REQUEST: string[] = ALL_PRODUCT_CODES;
-// const UPGRADE_ROUTER: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-// const UPGRADE_PACKAGE: string[] = [P3, P2, HI, B1, BTP, BDP, BFXI, FD, FH, FT];
-
 export const MOTIVE_TOKEN = 'M_A_TOK'; //Motive Auth Token
 export const warningImgSrc: string = 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg';
 export const successImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
@@ -184,55 +164,68 @@ const RESET_PIN = {
 const INSTALL_NEW_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_INSTALL_MY_NEW_ROUTER',
   linkTo: '/issues/internet/install-new-router',
+  nextSignal: QUICK_ACTION.PORT_MIGRATION_AND_NEW_ROUTER_INSTALLATION,
 };
 const FACTORY_RESET_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_ROUTER',
   linkTo: '/issues/internet/router-reset-factory',
+  nextSignal: QUICK_ACTION.PNP_FACTORY_RESET,
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
   linkTo: 'issues/tv/tv-box-reset-factory',
+  nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
 };
 const ELIFE_ON_PIN_RESET = {
   body: 'QUICK_LINKS.I_WANT_TO_RESET_ELIFE_ON_PIN',
   linkTo: 'issues/tv/pin-reset-failed',
+  nextSignal: QUICK_ACTION.RESET_ELIFEON_PASSWORD,
 };
 
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.I_FORGOT_MY_INTERNET_PASSWORD',
   linkTo: 'issues/internet/reset-internet-password',
+  nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
 };
 const CONNECTION_ISSUE_ROUTER = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
   linkTo: 'unable-connect-newDevice',
+  // nextSignal: QUICK_ACTION., deviceCare
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
   linkTo: '/issues/password/reset-tv-admin-pin',
+  nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
 };
 const TRANSFER_PACKAGE_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_TRANSFER_ELIFE_TV_PACKAGE_TO_ANOTHER_TV_BOX',
   linkTo: 'issues/tv/no-additional-stb',
+  nextSignal: QUICK_ACTION.TRANSFER_IPTV_PACKAGE,
 };
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
   linkTo: 'device-connected-homezone',
+  nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
   linkTo: 'track-complaint/complaint-details-message',
+  nextSignal: QUICK_ACTION.COMPLAINT_FOLLOWUP,
 };
 const TRACK_REQUEST = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_MY_REQUEST',
   linkTo: 'track-request/request-detail',
+  nextSignal: QUICK_ACTION.SR_FOLLOWUP,
 };
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ROUTER',
   linkTo: 'issues/internet/router-upgrade',
+  // nextSignal: QUICK_ACTION, // deep linking
 };
 const UPGRADE_PACKAGE = {
   body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE',
   linkTo: 'issues/tv/eLife-upgrade',
+  // nextSignal: QUICK_ACTION, //deep linking
 };
 
 export const motiveSubscriptions: IMotvieSubscription = {
@@ -409,113 +402,6 @@ export const motiveSubscriptions: IMotvieSubscription = {
 };
 
 export class ApplicableCodes {
-  // public static landingPageCards: ICard[] = [
-  //   {
-  //     title: 'MESSAGES.INTERNET_ISSUES',
-  //     body: 'MESSAGES.MY_WIFI_IS_SLOW_OR_CAUSING_PROBLEMS',
-  //     img: 'assets/images/duo-tone-icons/icon_internet_issues.svg',
-  //     applicableCodes: INTERNET_ISSUES,
-  //     linkTo: 'info',
-  //   },
-  //   {
-  //     title: 'MESSAGES.TV_ISSUES',
-  //     body: 'MESSAGES.MY_TV_ISNT_WORKING_PROPERLY',
-  //     img: 'assets/images/duo-tone-icons/icon_tv_issues.svg',
-  //     applicableCodes: TV_ISSUES,
-  //     linkTo: '#',
-  //   },
-  //   {
-  //     title: 'MESSAGES.PHONE_ISSUE',
-  //     body: 'MESSAGES.I_CANT_MAKE_ANY_CALLS',
-  //     img: 'assets/images/duo-tone-icons/icon_telephone_issues.svg',
-  //     applicableCodes: PHONE_ISSUES,
-  //     linkTo: '#',
-  //   },
-  //   {
-  //     title: 'MESSAGES.OTHER_ISSUES',
-  //     body: 'MESSAGES.I_AM_FACING_ISSUES_WILL_ALL_SERVICE',
-  //     img: 'assets/images/duo-tone-icons/icon_service_issues.svg',
-  //     applicableCodes: OTHER_ISSUES,
-  //     linkTo: '#',
-  //   },
-  //   {
-  //     title: 'MESSAGES.PASSWORD_ISSUES',
-  //     body: 'MESSAGES.I_WANT_TO_CHANGE_OR_RESET_MY_PASSWORD',
-  //     img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
-  //     applicableCodes: PASSWORD_ISSUES,
-  //     linkTo: '#',
-  //   },
-  //   {
-  //     title: 'MESSAGES.RESET_PIN',
-  //     body: 'MESSAGES.I_WANT_TO_RESET_MY_PIN',
-  //     img: 'assets/images/duo-tone-icons/icon_password_issues.svg',
-  //     applicableCodes: RESET_PIN,
-  //     linkTo: '#',
-  //   },
-  // ];
-  // public static quickLinkCards: ICard[] = [
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_INSTALL_MY_NEW_ROUTER',
-  //     applicableCodes: INSTALL_NEW_ROUTER,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_ROUTER',
-  //     applicableCodes: FACTORY_RESET_ROUTER,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
-  //     applicableCodes: FACTORY_RESET_TV,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_FORGOT_MY_INTERNET_PASSWORD',
-  //     applicableCodes: FORGOT_PASSWORD_INTERNET,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
-  //     applicableCodes: CONNECTION_ISSUE_ROUTER,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
-  //     applicableCodes: FORGOT_PASSWORD_TV,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_TRANSFER_ELIFE_TV_PACKAGE_TO_ANOTHER_TV_BOX',
-  //     applicableCodes: TRANSFER_PACKAGE_TV,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
-  //     applicableCodes: CONNECT_HOME_ZONE,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
-  //     applicableCodes: TRACK_COMPLAINT,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_TRACK_MY_REQUEST',
-  //     applicableCodes: TRACK_REQUEST,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ROUTER',
-  //     applicableCodes: UPGRADE_ROUTER,
-  //     linkTo: '',
-  //   },
-  //   {
-  //     body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE',
-  //     applicableCodes: UPGRADE_PACKAGE,
-  //     linkTo: '',
-  //   },
-  // ];
-
   public static openServiceRequestTemplate: ISection2Template[] = [
     {
       title: 'MESSAGES.REQUEST_NO',

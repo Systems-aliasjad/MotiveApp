@@ -121,7 +121,7 @@ export class SharedService {
   }
 
   setQuickLinksData(data: any): void {
-    localStorage.setItem('quickLinks', data);
+    localStorage.setItem('quickLinks', JSON.stringify(data));
   }
 
   getDefaultLanguage(): string {

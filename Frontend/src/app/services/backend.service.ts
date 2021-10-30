@@ -214,7 +214,21 @@ export class BackendService {
 
   quickActionsInitialData() {
     if (environment.shouldCallAPI) {
-      return this.http.get(``);
+      return this.http.get(`motive/troubleshoot/QUICK_ACTIONS`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  quickActionsNextStep(forAction) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, {
+        data: {
+          customerQASelection: forAction,
+        },
+        signal: 'next',
+      });
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

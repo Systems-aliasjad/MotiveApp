@@ -31,6 +31,7 @@ export class AppComponent implements OnInit {
   }
 
   Initialization(params: Params) {
+    localStorage.clear();
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
     if (!params?.token) {
@@ -38,9 +39,9 @@ export class AppComponent implements OnInit {
     }
     this.subscribeLoaderChanges();
     // TODO: REMOVE THIS
-     this.sharedService.setDefaultLanguage('en');
-     this.appDirection = 'ltr';
-     this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
+    this.sharedService.setDefaultLanguage('en');
+    this.appDirection = 'ltr';
+    this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
 
     //TODO: uncomment This
     // this.sharedService.setDefaultLanguage(params?.lang || 'ara');

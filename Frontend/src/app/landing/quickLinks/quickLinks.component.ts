@@ -67,14 +67,17 @@ export class QuickLinksComponent implements OnInit {
 
   onCardClick(link) {
     if (this.sharedService.getQuickLinksData()) {
-      this.router.navigate([link.linkTo]);
+      this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
     } else {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
-        this.sharedService.setLoader(false);
-        this.router.navigate([link.linkTo]);
+        this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
       });
     }
   }
+
+  // this.backendService.quickActionsNextStep(link?.nextSignal).subscribe((res) => {
+  //   this.sharedService.setLoader(false);
+  // });
 }

@@ -29,6 +29,7 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
   messageSection;
   ontConfig;
   routerConfig;
+  quickLinkNextSignal;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
     title: 'BUTTONS.RESET_NOW',
@@ -51,8 +52,8 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
+      this.updatePageContent();
     });
-    this.updatePageContent();
   }
 
   ngOnDestroy(): void {
@@ -70,6 +71,8 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.routerResetFactorySection;
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
   }
 
   async button1Listener() {
