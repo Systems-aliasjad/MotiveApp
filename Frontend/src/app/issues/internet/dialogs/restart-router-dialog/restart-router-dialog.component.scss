@@ -232,6 +232,23 @@ ion-list{
     display: none;
   }
 }
+.popup-btn-lg{
+  display: none;
+  @media screen and (min-width:992px) {
+    display: block;
+   }
+  .footer{
+    margin-top: 2rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.popup-btn-sm{
+  display: block;
+  @media screen and (min-width:992px) {
+    display: none;
+  }
+}
 .footer{
   box-shadow: none;
   background-color: transparent;
