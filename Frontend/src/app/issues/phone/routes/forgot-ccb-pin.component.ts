@@ -45,10 +45,11 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   button1Listener(event) {
     this.backendService.updateCCBPin(event?.value?.NewPassword).subscribe((data) => {
       if (data?.result?.screenCode === 'QA-VOICE-CCB1') {
-        //Failure code
+        this.router.navigate(['/issues/phone/forgot-ccb-pin-failed-message']);
       } else if (data?.result?.screenCode === 'QA-VOICE-CCB') {
-        //Success code
-        this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
+        this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
+      } else {
+        this.router.navigate(['/unknown-issue']);
       }
     });
   }

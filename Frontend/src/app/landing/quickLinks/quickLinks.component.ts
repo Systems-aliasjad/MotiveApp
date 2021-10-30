@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { motiveSubscriptions } from 'src/app/shared/constants/constants';
 import { ICard } from 'src/app/shared/constants/types';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-quick-links',
@@ -23,7 +25,7 @@ export class QuickLinksComponent implements OnInit {
   width: number = window.innerWidth;
   mobileWidth: number = 760;
   subscription: Subscription;
-  constructor(private router: Router, private actRoute: ActivatedRoute) {
+  constructor(private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService, private sharedService: SharedService) {
     this.subscription = this.actRoute.data.subscribe((data) => {
       this.initialization();
     });
@@ -64,6 +66,15 @@ export class QuickLinksComponent implements OnInit {
   }
 
   onCardClick(link) {
-    this.router.navigate([link.linkTo]);
+    if (this.sharedService.getQuickLinksData()) {
+      this.router.navigate([link.linkTo]);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setLoader(false);
+        this.router.navigate([link.linkTo]);
+      });
+    }
   }
 }

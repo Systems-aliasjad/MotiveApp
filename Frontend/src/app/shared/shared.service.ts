@@ -116,6 +116,14 @@ export class SharedService {
     this.translate.use(language);
   }
 
+  getQuickLinksData(): string {
+    return localStorage.getItem('quickLinks') ? JSON.parse(localStorage.getItem('quickLinks')) : null;
+  }
+
+  setQuickLinksData(data: any): void {
+    localStorage.setItem('quickLinks', data);
+  }
+
   getDefaultLanguage(): string {
     return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
   }

@@ -150,7 +150,7 @@ export class BackendService {
 
   updateCCBPin(newPin) {
     if (environment.shouldCallAPI) {
-      return this.http.get(` motive/troubleshoot/ccb-pin-reset?pin=${newPin}`);
+      return this.http.get(`motive/troubleshoot/ccb-pin-reset?pin=${newPin}`);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);
@@ -206,6 +206,15 @@ export class BackendService {
   transferPackage(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/next-step`, data);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  quickActionsInitialData() {
+    if (environment.shouldCallAPI) {
+      return this.http.get(``);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

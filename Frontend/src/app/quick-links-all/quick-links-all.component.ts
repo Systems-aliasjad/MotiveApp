@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { motiveSubscriptions } from 'src/app/shared/constants/constants';
 import { ICard, IPageHeader } from 'src/app/shared/constants/types';
+import { BackendService } from '../services/backend.service';
 import { SharedService } from '../shared/shared.service';
 
 @Component({
@@ -18,7 +19,7 @@ export class QuickLinksAllComponent implements OnInit {
   mobileWidth: number = 760;
 
   subscription: Subscription;
-  constructor(private sharedService: SharedService, private router: Router, private actRoute: ActivatedRoute) {
+  constructor(private sharedService: SharedService, private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService) {
     this.subscription = this.actRoute.data.subscribe((data) => {
       this.initialization();
     });
@@ -40,9 +41,17 @@ export class QuickLinksAllComponent implements OnInit {
     showBackBtn: true,
   };
 
-  onCardClick(item) {
-    console.log(item.linkTo);
-    this.router.navigate([item.linkTo]);
+  onCardClick(link) {
+    if (this.sharedService.getQuickLinksData()) {
+      this.router.navigate([link.linkTo]);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setLoader(false);
+        this.router.navigate([link.linkTo]);
+      });
+    }
   }
 
   goToLanding() {
