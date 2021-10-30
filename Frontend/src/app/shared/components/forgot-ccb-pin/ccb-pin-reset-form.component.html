@@ -18,36 +18,34 @@
             <ion-col size="12">
               <ion-item>
                 <ion-label position="stacked">{{ 'MESSAGES.NEW_CCB_PIN' | translate }}</ion-label>
-                <ion-input formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
-                <img
-                  [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
-                  (click)="hideShowPassword(NewPassword)"
-                  class="show-icon"
-                  alt="show password"
-                />
+                <ion-input maxlength="4" appNumberOnly formControlName="NewPassword" #NewPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
+                <img [src]="NewPassword.type === 'password' ? passwordHideIcon : passwordShowIcon" (click)="hideShowPassword(NewPassword)" class="show-icon" alt="show password" />
               </ion-item>
               <div class="text-error" *ngIf="formGroup.hasError('pattern', 'NewPassword') && f.NewPassword.touched">
-                {{ error.password }}
+                {{ 'Errors.PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW' | translate }}
               </div>
             </ion-col>
             <ion-col size="12">
               <ion-item>
                 <ion-label position="stacked">{{ 'MESSAGES.ENTER_NEW_NUMBER_AGAIN' | translate }}</ion-label>
-                <ion-input formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
+                <ion-input maxlength="4" appNumberOnly formControlName="ConfirmPassword" #ConfirmPassword type="password" clearOnEdit="false" class="password-field"></ion-input>
                 <img
                   [src]="ConfirmPassword.type === 'password' ? passwordHideIcon : passwordShowIcon"
                   (click)="hideShowPassword(ConfirmPassword)"
                   class="show-icon"
                   alt="show password"
                 />
-                
               </ion-item>
               <div class="text-error" *ngIf="formGroup.hasError('pattern', 'ConfirmPassword') && f.ConfirmPassword.touched">
-                {{ error.password }}
+                {{ 'Errors.PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW' | translate }}
+              </div>
+
+              <div class="text-error" *ngIf="f.ConfirmPassword.touched && (f.ConfirmPassword.errors?.confirmedValidator || f.ConfirmPassword.errors?.mustMatch)">
+                {{ 'Errors.PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED' | translate }}
               </div>
             </ion-col>
           </ion-row>
-          <ion-row  class="check-list-container">
+          <ion-row class="check-list-container">
             <ion-col size="12" *ngIf="rulesList?.length > 0">
               <p class="tag-title">{{ 'MESSAGES.CCB_PIN_RULES' | translate }}:</p>
               <ion-list class="check-list">
@@ -58,7 +56,6 @@
               </ion-list>
             </ion-col>
           </ion-row>
-         
         </form>
       </ion-col>
     </ion-row>

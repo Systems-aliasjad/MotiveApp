@@ -6,6 +6,8 @@ export const regExps: { [key: string]: RegExp } = {
 
   //Minimum eight characters, at least one letter, one number and one special character:
   password: /^(?=.*[A-Za-z\d])(?=.*\d)(?=.*[ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~])[A-Za-z\d !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]{8,}$/,
+
+  ccbPin: /^\d{4}$/,
 };
 
 export const errorMessages: { [key: string]: string } = {

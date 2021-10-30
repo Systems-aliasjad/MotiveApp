@@ -1,10 +1,10 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { errorMessages } from '../../validators/validations';
+import { errorMessages, regExps } from '../../validators/validations';
 import { SharedService } from '../../shared.service';
 import { Subscription } from 'rxjs';
-import { eyeHide, eyeShow } from '../../constants/constants';
+import { ConfirmedValidator, eyeHide, eyeShow } from '../../constants/constants';
 import { IMotiveButton, IPageHeader } from '../../constants/types';
 
 @Component({
@@ -63,11 +63,11 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
     this.rulesList = this.rules;
     this.formGroup = this.formBuilder.group(
       {
-        NewPassword: ['', [Validators.required]],
-        ConfirmPassword: ['', [Validators.required]],
+        NewPassword: ['', [Validators.required, Validators.pattern(regExps.ccbPin)]],
+        ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.ccbPin)]],
       },
       {
-        //validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
+        validator: ConfirmedValidator('NewPassword', 'ConfirmPassword'),
       }
     );
   }
