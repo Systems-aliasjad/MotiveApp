@@ -284,7 +284,20 @@ export class HelperService {
         stbDetails: data?.stbDetails,
         connectedDevices: data?.responseData?.stbDetails,
       });
-      this.router.navigate(['issues/tv/no-issues']);
+      if (data?.tsOutcome === 'No Issue found') {
+        if (data?.stbDetails) {
+          var stb = data?.stbDetails[0];
+          if (!stb?.isReachable) {
+            this.router.navigate(['issues/tv/box-not-reachable']);
+
+            // this.router.navigate(['issues/tv/box-restart-required']);
+          } else if (stb?.isRebootRequired) {
+            this.router.navigate(['issues/tv/box-restart-required']);
+          } else if (stb?.isReachable && !stb?.isRebootRequired) {
+            this.router.navigate(['issues/tv/no-issues']);
+          }
+        }
+      } //end of if ts outcome
     }
     // else if (CodeId === flowCodes.issueNotFixed) {
     //   this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7

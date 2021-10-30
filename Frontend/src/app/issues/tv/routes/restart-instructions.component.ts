@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
-
+import { SVGs } from 'src/app/shared/constants/constants';
 @Component({
   selector: 'app-tvbox-restart-instruction',
   template: `<app-restart-instruction
@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
 })
 export class RestartInstructionsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  ImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
+  ImgSrc = SVGs.stb.default;
   instruction1: IRestartInstruction = {
     title: '',
     steps: [],

@@ -79,6 +79,6 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
   }
 }

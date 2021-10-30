@@ -80,7 +80,7 @@ export class OntRebootRequiredComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }
 
