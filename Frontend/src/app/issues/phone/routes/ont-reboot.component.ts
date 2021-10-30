@@ -28,7 +28,7 @@ export class OntRebootComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
-  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.pending, title: ONT };
   routerConfig: IRouterDetail = { url: SVGs.phone.default, className: networkDiagramClasses.default, title: PHONE };
   button1: IMotiveButton = {

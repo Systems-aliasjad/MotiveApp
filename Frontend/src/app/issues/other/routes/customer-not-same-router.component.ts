@@ -32,7 +32,7 @@ export class CustomerNotSameRouterComponent implements OnInit, OnDestroy {
   networkDiagram = NetWorkDiagramIds.sixLayer;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   connectedDevices = [];
-  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
 
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',

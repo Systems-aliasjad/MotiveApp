@@ -30,7 +30,7 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
   networkDiagram = NetWorkDiagramIds.sixLayer;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   connectedDevices = [];
-  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   subscription: Subscription;
   messageSection = {
     header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',

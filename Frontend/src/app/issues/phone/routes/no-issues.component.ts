@@ -32,7 +32,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
-  etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.default };
+  etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   routerConfig: IRouterDetail = { url: SVGs.phone.default, className: networkDiagramClasses.okay, title: PHONE };
 
