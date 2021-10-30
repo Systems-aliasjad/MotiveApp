@@ -21,8 +21,9 @@
                 <ion-label position="stacked">{{ 'MESSAGES.MOBILE_NO' | translate }}</ion-label>
                 <ion-input
                   type="text"
-                  [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                  placeholder="+971xxxxxxxxx"
+                  maxlength="10"
+                  appNumberOnly
+                  placeholder="xxxxxxxxxxxx"
                   formControlName="mobileNo"
                   [ngClass]="{ 'is-invalid': f.mobileNo.errors && f.mobileNo.errors.pattern }"
                 >

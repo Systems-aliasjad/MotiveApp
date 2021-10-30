@@ -14,18 +14,15 @@
     <!-- Form Start -->
     <ion-row class="form-inner_container">
       <ion-col sizeLg="4" sizeMd="6" size="12">
-        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">          
+        <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
           <ion-row>
             <ion-col size="12">
               <!-- <ion-list> -->
-                <ion-item (click)="openInstallEtisalatRouterDialog(1)">
-                  <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
-                  <ion-label position="stacked">{{ valueForBrand?.text }}</ion-label>
-                  <img
-                  src="assets/images/action-icons/icon_arrow_right_black.svg"                    
-                  class="show-icon"                    
-                  />
-                </ion-item>
+              <ion-item (click)="openInstallEtisalatRouterDialog(1)">
+                <ion-label position="stacked">{{ 'MESSAGES.SELECT_BRAND' | translate }}</ion-label>
+                <ion-label position="stacked">{{ valueForBrand?.text }}</ion-label>
+                <img src="assets/images/action-icons/icon_arrow_right_black.svg" class="show-icon" />
+              </ion-item>
               <!-- </ion-list> -->
             </ion-col>
             <ion-col size="12">
@@ -33,10 +30,7 @@
                 <ion-item (click)="openInstallEtisalatRouterDialog(2)">
                   <ion-label position="stacked">{{ 'MESSAGES.SELECT_MODEL' | translate }}</ion-label>
                   <ion-label position="stacked">{{ valueForModel?.text }}</ion-label>
-                  <img
-                  src="assets/images/action-icons/icon_arrow_right_black.svg"                    
-                  class="show-icon"                    
-                  />
+                  <img src="assets/images/action-icons/icon_arrow_right_black.svg" class="show-icon" />
                   <!-- <ion-select placeholder="Select Brand" formControlName="Model">
                     <ion-select-option *ngFor="let model of modelList" [value]="model.value">{{ model.text }}</ion-select-option>
                   </ion-select> -->
@@ -63,13 +57,14 @@
               </ion-list>
             </ion-col>
 
-            <ion-col  size="12">
+            <ion-col size="12">
               <ion-item>
                 <ion-label position="stacked">{{ 'MESSAGES.ALTERNATE_CONTACT_NO' | translate }}</ion-label>
                 <ion-input
                   type="text"
-                  [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                  placeholder="+971xxxxxxxxx"
+                  maxlength="10"
+                  appNumberOnly
+                  placeholder="xxxxxxxxxxxx"
                   formControlName="MobileNo"
                   [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
                 ></ion-input>
