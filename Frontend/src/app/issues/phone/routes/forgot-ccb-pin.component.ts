@@ -4,13 +4,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Forgot Code Control Barring (CCB) PIN
  */
 @Component({
   selector: 'forgot-ccb-pin',
-  template: `<app-ccb-pin-reset-form [headerConfig]="headerConfig" [button1]="button1" (button1Click)="button1Listener()" [rules]="rulesList"></app-ccb-pin-reset-form>`,
+  template: `<app-ccb-pin-reset-form [headerConfig]="headerConfig" [button1]="button1" (button1Click)="button1Listener($event)" [rules]="rulesList"></app-ccb-pin-reset-form>`,
 })
 export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -20,7 +21,7 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   };
 
   rulesList: string[] = ['4 random digits'];
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -41,7 +42,14 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
-  button1Listener() {
-    this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
+  button1Listener(event) {
+    this.backendService.updateCCBPin(event?.value?.NewPassword).subscribe((data) => {
+      if (data?.result?.screenCode === 'QA-VOICE-CCB1') {
+        //Failure code
+      } else if (data?.result?.screenCode === 'QA-VOICE-CCB') {
+        //Success code
+        this.router.navigate(['/issues/phone/forgot-ccb-pin-message']);
+      }
+    });
   }
 }

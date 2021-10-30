@@ -81,7 +81,7 @@ export class CcbPinResetFormComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.button1Click.emit();
+    this.button1Click.emit(this.formGroup);
   }
 
   button2Listener() {

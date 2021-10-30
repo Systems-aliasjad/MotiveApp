@@ -148,6 +148,15 @@ export class BackendService {
     }
   }
 
+  updateCCBPin(newPin) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(` motive/troubleshoot/ccb-pin-reset?pin=${newPin}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   rebootDeviceSTB(DeviceToReeboot) {
     if (environment.shouldCallAPI) {
       console.log('DeviceToReeboot', DeviceToReeboot);
