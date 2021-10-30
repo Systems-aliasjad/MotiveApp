@@ -55,6 +55,9 @@ import { SingleSTBFoundComponent } from './routes/single-stb-found-error.compone
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
+import { QuickResetAdminPinPackageTransferComponent } from './routes/quick-reset-admin-pin-package-transfer.component';
+import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
+import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
 
 const routes: Routes = [
   {
@@ -229,6 +232,10 @@ const routes: Routes = [
     component: TvAdminPinResetSuccessfullyMessageComponent,
   },
   {
+    path: 'quick-tv-admin-pin-reset-success',
+    component: QuickTvAdminPinResetSuccessfullyMessageComponent,
+  },
+  {
     path: 'book-complaint',
     component: BookComplaintComponent,
   },
@@ -262,12 +269,20 @@ const routes: Routes = [
     component: UnableTvAdminPinResetMessageComponent,
   },
   {
+    path: 'quick-unable-tv-admin-pin',
+    component: QuickUnableTvAdminPinResetMessageComponent,
+  },
+  {
     path: 'unable_elifeon-pin',
     component: UnableElifeOnPinResetMessageComponent,
   },
   {
     path: 'reset-admin-pin-package-transfer',
     component: ResetAdminPinPackageTransferComponent,
+  },
+  {
+    path: 'quick-reset-admin-pin-package-transfer',
+    component: QuickResetAdminPinPackageTransferComponent,
   },
   {
     path: 'single-stb-found',

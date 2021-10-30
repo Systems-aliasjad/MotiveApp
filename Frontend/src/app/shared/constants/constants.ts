@@ -173,7 +173,7 @@ const FACTORY_RESET_ROUTER = {
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
-  linkTo: 'issues/tv/tv-box-reset-factory',
+  linkTo: 'issues/tv/quick-reset-admin-pin-package-transfer',
   nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
 };
 const ELIFE_ON_PIN_RESET = {

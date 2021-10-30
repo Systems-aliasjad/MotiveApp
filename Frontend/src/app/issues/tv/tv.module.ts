@@ -66,6 +66,9 @@ import { SingleSTBFoundComponent } from './routes/single-stb-found-error.compone
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 import { OntRestartInstructionsComponent } from './routes/ont-restart-instructions.component';
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
+import { QuickResetAdminPinPackageTransferComponent } from './routes/quick-reset-admin-pin-package-transfer.component';
+import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
+import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
 
 @NgModule({
   declarations: [
@@ -127,6 +130,9 @@ import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.co
     SingleSTBFoundComponent,
     OntRestartInstructionsComponent,
     FiberBoxRestartCareComponent,
+    QuickResetAdminPinPackageTransferComponent,
+    QuickUnableTvAdminPinResetMessageComponent,
+    QuickTvAdminPinResetSuccessfullyMessageComponent,
   ],
   imports: [
     CommonModule,

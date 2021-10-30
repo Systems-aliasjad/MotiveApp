@@ -8,7 +8,7 @@ import { BackendService } from 'src/app/services/backend.service';
 import { flowCodes } from 'src/app/shared/constants/constants';
 
 @Component({
-  selector: 'reset-admin-pin--packagetransfer',
+  selector: 'reset-admin-pin-packagetransfer',
   template: `<app-transfer-package
     [headerConfig]="headerConfig"
     [pageContent]="pageContent"
@@ -19,7 +19,7 @@ import { flowCodes } from 'src/app/shared/constants/constants';
     (button2Click)="button2Listener()"
   ></app-transfer-package>`,
 })
-export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy {
+export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDestroy {
   pageContent: string;
   button1: IMotiveButton = {
     type: 'primary',
@@ -35,27 +35,26 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
   selectedCard;
   cardList: any[] = [];
   formGroup: FormGroup;
-  subscription: Subscription;
+
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.updateHeader();
-    var apiResponse = this.sharedService.getApiResponseDataNoIssuesSTB();
-    var ListStbDetails = apiResponse?.stbDetails;
+
+    var apiResponse = this.sharedService.getApiResponseData();
+    var ListStbDetails = apiResponse?.stbList;
     ListStbDetails.forEach((element) => {
       var index = {
-        title: 'STB SR#' + element?.sbSerialNumber,
+        title: 'STB SR#' + element?.stbSerialNumber,
         description: 'MAC ' + element?.stbMac,
-        ID: element?.sbSerialNumber,
+        ID: element?.stbSerialNumber,
       };
       this.cardList.push(index);
       console.log(index);
     });
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   updateHeader() {
     // this.sharedService.setHeaderConfig('HEADER.TRANSFER_PACKAGE', false, true);
@@ -78,21 +77,18 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
     //const data = '130857101318';
 
     this.sharedService.setLoader(true);
-    this.backendService.stbAdminPinReset(data).subscribe((data: any) => {
+    this.backendService.stbAdminPinResetQuickLinks(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.result?.screenCode === flowCodes.QAIPTVPIN) {
-        this.router.navigate(['issues/tv/tv-admin-pin-reset-success']);
-      } else if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
-        this.router.navigate(['/issues/tv/unable-tv-admin-pin']);
+        this.router.navigate(['issues/tv/quick-tv-admin-pin-reset-success']);
+      } else {
+        // if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
+        this.router.navigate(['/issues/tv/quick-unable-tv-admin-pin']);
       }
     });
   }
 
   button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    this.router.navigate(['landing']);
   }
 }
