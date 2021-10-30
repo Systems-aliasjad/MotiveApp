@@ -15,7 +15,6 @@ import { BackendService } from 'src/app/services/backend.service';
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [connectedDevices]="connectedDevices"
-    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -30,7 +29,6 @@ export class OntRebootRequiredComponent implements OnInit, OnDestroy {
   messageSection;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
-  routerConfig: IStbDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
 
@@ -80,7 +78,7 @@ export class OntRebootRequiredComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }
 
@@ -91,7 +89,8 @@ export class OntRebootRequiredComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    //  this.routerConfig = temp?.stbConfig;
+    // this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    this.connectedDevices = temp?.stbConfig;
   }
 }

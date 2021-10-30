@@ -33,7 +33,7 @@ export class BackendService {
   };
 
   stbDetail = {
-    isReachable: true,
+    isReachable: false,
     isRebootRequired: false,
     sbSerialNumber: '130857101318',
     stbMac: '2832C52E3612',
@@ -41,7 +41,7 @@ export class BackendService {
   };
 
   hardData = {
-    screenCode: 'CI72',
+    screenCode: 'CI9',
     responseData: {
       hsiPasswordReset: true,
       ppoeConnected: 'true',

@@ -8,7 +8,9 @@
         </div>
         <span class="image_label">{{ etisalatConfig.title }}</span>
       </div>
-      <div class="straight-line default-line"></div>
+
+      <!-- class="default-line" -->
+      <div [class]="ontConfig?.className + '-line straight-line'"></div>
     </div>
     <div class="box-2 three-boxes">
       <div class="image-text-box">

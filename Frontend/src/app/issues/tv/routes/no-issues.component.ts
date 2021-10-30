@@ -17,7 +17,6 @@ import { DeviceListDialog } from '../dialogs/device-list-dialog/device-list-dial
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [connectedDevices]="connectedDevices"
-    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -33,7 +32,6 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
-  routerConfig: IStbDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
   isThirdParty: boolean = false;
@@ -140,7 +138,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    //  this.routerConfig = temp?.stbConfig;
+    this.connectedDevices = temp?.stbConfig;
   }
 }

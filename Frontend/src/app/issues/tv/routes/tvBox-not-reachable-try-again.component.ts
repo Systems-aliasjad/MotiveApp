@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { IMotiveButton, IOntDetail, IPageHeader, IStbDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -10,9 +10,10 @@ import { SharedService } from '../../../shared/shared.service';
 @Component({
   selector: 'app-tvBox-not-reachable-try-again',
   template: `<app-diagnose-issue
-    [ontConfig]="ontConfig"
+    [networkDiagram]="networkDiagram"
     [etisalatConfig]="etisalatConfig"
-    [routerConfig]="routerConfig"
+    [ontConfig]="ontConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -25,9 +26,11 @@ import { SharedService } from '../../../shared/shared.service';
 export class TvBoxNotReachableTryAgainComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
-  ontConfig;
-  routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  ontConfig: IOntDetail;
+  routerConfig: IStbDetail;
+  networkDiagram = NetWorkDiagramIds.FiveLayer;
+  connectedDevices;
 
   button1: IMotiveButton = {
     title: 'BUTTONS.BOOK_AN_APPOINTMENT',
@@ -73,8 +76,10 @@ export class TvBoxNotReachableTryAgainComponent implements OnInit, OnDestroy {
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.routerConfig;
+    // this.routerConfig = temp?.stbConfig;
+    // this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    this.connectedDevices = temp?.stbConfig;
   }
 }

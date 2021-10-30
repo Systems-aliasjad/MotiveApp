@@ -100,17 +100,23 @@ export class HelperService {
     };
   }
 
-  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: IStbDetail) {
+  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: IStbDetail[]) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
-    stbConfig = { ...stbConfig, url: SVGs.stb.default, title: STB };
     ontConfig = this.networkDiagramStylingMapper(ontConfig, null, true);
+    console.log('stbConfig', stbConfig);
+
     if (ontConfig?.isReachable) {
-      stbConfig = this.networkDiagramStylingMapper(stbConfig, ontConfig.className);
+      stbConfig = stbConfig.map((stb) => {
+        return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default }, ontConfig.className, true);
+      });
     } else {
-      stbConfig = {
-        ...stbConfig,
-        className: networkDiagramClasses.default,
-      };
+      stbConfig = stbConfig.map((stb) => {
+        return {
+          ...stb,
+          url: SVGs.stb.default,
+          className: networkDiagramClasses.default,
+        };
+      });
     }
     return {
       ontConfig,
@@ -284,7 +290,20 @@ export class HelperService {
         stbDetails: data?.stbDetails,
         connectedDevices: data?.responseData?.stbDetails,
       });
-      this.router.navigate(['issues/tv/no-issues']);
+      if (data?.tsOutcome === 'No Issue found') {
+        if (data?.stbDetails) {
+          var stb = data?.stbDetails[0];
+          if (!stb?.isReachable) {
+            this.router.navigate(['issues/tv/box-not-reachable']);
+
+            // this.router.navigate(['issues/tv/box-restart-required']);
+          } else if (stb?.isRebootRequired) {
+            this.router.navigate(['issues/tv/box-restart-required']);
+          } else if (stb?.isReachable && !stb?.isRebootRequired) {
+            this.router.navigate(['issues/tv/no-issues']);
+          }
+        }
+      } //end of if ts outcome
     }
     // else if (CodeId === flowCodes.issueNotFixed) {
     //   this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7
