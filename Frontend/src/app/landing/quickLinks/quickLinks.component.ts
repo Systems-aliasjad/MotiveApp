@@ -76,6 +76,7 @@ export class QuickLinksComponent implements OnInit {
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
         this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
       });
     }

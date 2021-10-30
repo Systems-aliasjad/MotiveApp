@@ -176,6 +176,15 @@ export class BackendService {
     }
   }
 
+  stbAdminPinResetQuickLinks(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/stb-admin-pin-reset-qa/${data}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   elifeOnReset() {
     if (environment.shouldCallAPI) {
       return this.http.get(`motive/troubleshoot/elife-password-reset`);
