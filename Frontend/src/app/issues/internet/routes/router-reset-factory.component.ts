@@ -78,6 +78,9 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
   async button1Listener() {
     const modal = await this.modalCtrl.create({
       component: ResetFactoryDefaultDialog,
+      componentProps: {
+        quickLinkNextSignal: this.quickLinkNextSignal,
+      },
     });
     return await modal.present();
   }

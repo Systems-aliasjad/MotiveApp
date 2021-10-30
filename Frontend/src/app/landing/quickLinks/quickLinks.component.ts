@@ -76,8 +76,4 @@ export class QuickLinksComponent implements OnInit {
       });
     }
   }
-
-  // this.backendService.quickActionsNextStep(link?.nextSignal).subscribe((res) => {
-  //   this.sharedService.setLoader(false);
-  // });
 }
