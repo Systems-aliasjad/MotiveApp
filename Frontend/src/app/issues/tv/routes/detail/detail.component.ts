@@ -21,7 +21,6 @@ export class TvDetailComponent implements OnInit {
   devices;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
-  routerConfig: IStbDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
   // cardList = [
@@ -109,7 +108,8 @@ export class TvDetailComponent implements OnInit {
     const apiResponse = this.sharedService.getApiResponseDataNoIssuesSTB();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    // this.routerConfig = temp?.stbConfig;
+    // this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    this.connectedDevices = temp?.stbConfig;
   }
 }

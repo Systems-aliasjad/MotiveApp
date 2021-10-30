@@ -100,17 +100,23 @@ export class HelperService {
     };
   }
 
-  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: IStbDetail) {
+  networkDiagramStylingWrapperSTB(ontConfig?: IOntDetail, stbConfig?: IStbDetail[]) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
-    stbConfig = { ...stbConfig, url: SVGs.stb.default, title: STB };
     ontConfig = this.networkDiagramStylingMapper(ontConfig, null, true);
+    console.log('stbConfig', stbConfig);
+
     if (ontConfig?.isReachable) {
-      stbConfig = this.networkDiagramStylingMapper(stbConfig, ontConfig.className);
+      stbConfig = stbConfig.map((stb) => {
+        return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default }, ontConfig.className, true);
+      });
     } else {
-      stbConfig = {
-        ...stbConfig,
-        className: networkDiagramClasses.default,
-      };
+      stbConfig = stbConfig.map((stb) => {
+        return {
+          ...stb,
+          url: SVGs.stb.default,
+          className: networkDiagramClasses.default,
+        };
+      });
     }
     return {
       ontConfig,

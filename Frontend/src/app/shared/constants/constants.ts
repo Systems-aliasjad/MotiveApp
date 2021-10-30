@@ -78,7 +78,7 @@ export const SVGs = {
 
 export const ETISALAT_DEFAULT_CONFIG = {
   url: SVGs.etisalat.default,
-  className: networkDiagramClasses.okay,
+  className: networkDiagramClasses.default,
   title: ETISALAT,
 };
 

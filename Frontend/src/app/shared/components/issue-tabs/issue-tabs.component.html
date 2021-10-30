@@ -5,13 +5,7 @@
       <app-three-layers *ngIf="networkDiagram === 1" [etisalatConfig]="etisalatConfig" [ontConfig]="ontConfig" [routerConfig]="routerConfig"></app-three-layers>
 
       <!-- *ngIf="connectedDevices" -->
-      <app-five-layer
-        *ngIf="networkDiagram === 2"
-        [ontConfig]="ontConfig"
-        [routerConfig]="routerConfig"
-        [etisalatConfig]="etisalatConfig"
-        [devices]="connectedDevices"
-      ></app-five-layer>
+      <app-five-layer *ngIf="networkDiagram === 2" [ontConfig]="ontConfig" [etisalatConfig]="etisalatConfig" [devices]="connectedDevices"></app-five-layer>
       <app-seven-layer
         *ngIf="networkDiagram === 3"
         [ontConfig]="ontConfig"

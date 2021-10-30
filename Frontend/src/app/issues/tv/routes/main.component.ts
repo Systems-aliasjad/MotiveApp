@@ -146,9 +146,50 @@ export class MainComponent implements OnInit {
     this.shareService.setLoader(true);
     this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
       this.shareService.setLoader(false);
+
       // console.log('Response For TV: ' + data);
       //data = this.Ci72Case;
       this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }
+
+  newHardData = {
+    code: 200,
+    message: 'Success',
+    result: {
+      screenCode: 'CI72',
+      statusMessage: 'Issue Fixed',
+      validSignals: ['next'],
+      responseData: {
+        ontDetails: {
+          ontSerial: '485754437103B12E',
+          ontType: 'HG8240H',
+          isReachable: true,
+          isRebootRequired: false,
+          isUpgradeRequired: false,
+        },
+        routerDetails: {
+          routerSerial: '',
+          routerModel: '',
+          isReachable: true,
+          isRebootRequired: false,
+          isUpgradeRequired: false,
+          isManaged: true,
+          isResetRequired: false,
+        },
+        stbDetails: [
+          {
+            stbSerialNumber: '110551055759',
+            stbModel: 'DWI811ETI',
+            stbMac: 'B0C28748C46E',
+            isReachable: false,
+            isRebootRequired: false,
+          },
+        ],
+        hsiPasswordReset: false,
+        upsellingOpportunity: 'UPSEL1',
+        tsOutcome: 'No Issue found',
+      },
+    },
+  };
 }

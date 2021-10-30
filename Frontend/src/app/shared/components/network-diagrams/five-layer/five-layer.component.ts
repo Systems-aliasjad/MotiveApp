@@ -11,13 +11,11 @@ export class FiveLayerComponent implements OnInit {
   @Input()
   ontConfig: IOntDetail;
   @Input()
-  routerConfig: IRouterDetail;
-  @Input()
   etisalatConfig;
   @Input()
   devices;
   arrayPointer: number = -1;
-  onTile: number = 0;
+  // onTile: number = 0;
   slideOpts = {
     slidesPerView: 4,
     spaceBetween: 1,
@@ -56,7 +54,7 @@ export class FiveLayerComponent implements OnInit {
 
   ngOnInit() {
     console.log('====================================');
-    console.log('devices', this.devices);
+    console.log('devices', this.ontConfig);
     console.log('====================================');
   }
 
@@ -77,12 +75,12 @@ export class FiveLayerComponent implements OnInit {
     });
   }
 
-  getArrayPointer(forTile: number): number {
-    if (this.onTile === forTile) {
-      return this.arrayPointer;
-    } else {
-      this.onTile = forTile;
-      return ++this.arrayPointer;
-    }
-  }
+  // getArrayPointer(forTile: number): number {
+  //   if (this.onTile === forTile) {
+  //     return this.arrayPointer;
+  //   } else {
+  //     this.onTile = forTile;
+  //     return ++this.arrayPointer;
+  //   }
+  // }
 }

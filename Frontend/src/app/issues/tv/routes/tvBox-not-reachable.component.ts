@@ -14,7 +14,6 @@ import { SharedService } from '../../../shared/shared.service';
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [connectedDevices]="connectedDevices"
-    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -29,7 +28,6 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   messageSection;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
-  routerConfig: IStbDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
   button1: IMotiveButton = {
@@ -64,7 +62,17 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
+    const message = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
+    const apiResponse = this.sharedService.getApiResponseData();
+    let serials = '';
+    apiResponse?.stbDetails.forEach((element) => {
+      if (!element.isReachable) {
+        serials = element?.stbSerialNumber + ',';
+      }
+    });
+    // message.body[0].title = message.body[0].title.replace('53454534', serials);
+
+    this.messageSection = message; //CustomerJourneyConstants.tvBoxNotReachableMessageSection;
   }
 
   button1Listener() {
@@ -78,7 +86,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    // this.routerConfig = temp?.stbConfig;
+    this.connectedDevices = temp?.stbConfig;
   }
 }

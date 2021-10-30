@@ -14,7 +14,6 @@ import { SharedService } from '../../../shared/shared.service';
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [connectedDevices]="connectedDevices"
-    [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -79,7 +78,8 @@ export class TvBoxNotReachableTryAgainComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    // this.routerConfig = temp?.stbConfig;
+    // this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    this.connectedDevices = temp?.stbConfig;
   }
 }
