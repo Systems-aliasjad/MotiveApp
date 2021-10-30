@@ -22,7 +22,7 @@ export class TvDetailComponent implements OnInit {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   ontConfig: IOntDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
-  connectedDevices;
+  connectedDevices: any = [];
   // cardList = [
   //   {
   //     header: 'STB SR#039838920',
@@ -60,17 +60,18 @@ export class TvDetailComponent implements OnInit {
     const data = this.sharedService.getApiResponseData();
     this.eLifeStatus = data.result.responseData.elifeGameStatus;
 
-    for (var index = 0; index < data.result.responseData.sharedPackages.length; index++) {
+    for (var index = 0; index < data?.result?.responseData?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
-        this.connectedDevices[i].list.push(data.result.responseData.sharedPackages[index].packageName);
+        debugger;
+        this.connectedDevices[i].list.push(data?.result?.responseData?.sharedPackages[index]?.packageName);
       }
     }
 
     for (var index = 0; index < data.result.responseData.stbList.length; index++) {
-      var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data.result.responseData.stbList[index].stbSerialNumber);
+      var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.result?.responseData?.stbList[index]?.stbSerialNumber);
       if (selectedStb != null) {
-        for (var i = 0; i < data.result.responseData.stbList[index].packages.length; i++) {
-          selectedStb.list.push(data.result.responseData.stbList[index].packages[i].packageName);
+        for (var i = 0; i < data?.result?.responseData?.stbList[index]?.packages?.length; i++) {
+          selectedStb.list.push(data?.result?.responseData?.stbList[index]?.packages[i]?.packageName);
         }
       }
     }

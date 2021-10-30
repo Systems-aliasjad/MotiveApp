@@ -17,22 +17,23 @@
       <ion-col sizeLg="4" sizeMd="6" size="12">
         <form [formGroup]="formGroup" (ngSubmit)="button1Listener()">
           <ion-row>
-              <ion-col size="12">
-                <ion-item>
-                  <ion-label position="stacked">{{ resetPinContent.inputLablel | translate }}</ion-label>
-                  <ion-input
-                    type="text"
-                    [brmasker]="{ form: formGroup.get('mask'), mask: '+000000000000', type: 'num', len: 14 }"
-                    placeholder="+971xxxxxxxxx"
-                    formControlName="MobileNo"
-                    [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
-                  ></ion-input>
-                </ion-item>
+            <ion-col size="12">
+              <ion-item>
+                <ion-label position="stacked">{{ resetPinContent.inputLablel | translate }}</ion-label>
+                <ion-input
+                  type="text"
+                  maxlength="10"
+                  appNumberOnly
+                  placeholder="xxxxxxxxxxxx"
+                  formControlName="MobileNo"
+                  [ngClass]="{ 'is-invalid': f.MobileNo.errors && f.MobileNo.errors.pattern }"
+                ></ion-input>
+              </ion-item>
 
-                <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
-                  {{ 'Errors.MOBILE_NO_MUST_START_WITH_971' | translate }}
-                </div>
-              </ion-col>
+              <div class="text-error" *ngIf="formGroup.hasError('pattern', 'MobileNo') && f.MobileNo.touched">
+                {{ 'Errors.MOBILE_NO_MUST_START_WITH_971' | translate }}
+              </div>
+            </ion-col>
           </ion-row>
         </form>
       </ion-col>

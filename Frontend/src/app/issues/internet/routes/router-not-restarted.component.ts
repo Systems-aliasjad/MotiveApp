@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
 })
 export class RouterNotRestartedComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  ImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
+  ImgSrc: string = './assets/images/router/router-instructions.PNG';
   instruction1: IRestartInstruction = {
     title: '',
     steps: [],

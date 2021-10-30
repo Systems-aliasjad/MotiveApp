@@ -4,6 +4,7 @@ import { IExplainInstruction, IMotiveButton, IPageHeader, IRestartInstruction } 
 import { SharedService } from 'src/app/shared/shared.service';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
+import { SVGs } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-ont-not-restart-instruction',
@@ -19,7 +20,7 @@ import { BackendService } from 'src/app/services/backend.service';
 })
 export class OntNotRestartInstructionsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  ImgSrc: string = 'assets/images/super-icons/icon_supericon_consumer_success_success_consumer_regular.svg';
+  ImgSrc = SVGs.ont.default;
   instruction1: IRestartInstruction = {
     title: '',
     steps: [],
