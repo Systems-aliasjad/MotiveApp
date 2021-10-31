@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { flowCodes, networkDiagramClasses, ONT, ROUTER, STB, SVGs } from '../constants/constants';
+import { flowCodes, networkDiagramClasses, ONT, ROUTER, STB, SVGs, TS_OUTCOME_ISSUE_FOUND_NOT_FIXED, TS_OUTCOME_NO_ISSUE } from '../constants/constants';
 import { IOntDetail, IRouterDetail, IStbDetail } from '../constants/types';
 import { SharedService } from '../shared.service';
 
@@ -138,14 +138,19 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/other/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
-      this.sharedService.setApiResponseData({
-        ontDetails: data?.ontDetails,
-        routerDetails: data?.routerDetails,
-        stbDetails: data?.stbDetails,
-        hsiUploadDownload: data?.hsiUploadDownload?.split(','),
-      });
-      // this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-      this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'other');
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+        this.sharedService.setApiResponseData({
+          ontDetails: data?.ontDetails,
+          routerDetails: data?.routerDetails,
+          stbDetails: data?.stbDetails,
+          hsiUploadDownload: data?.hsiUploadDownload?.split(','),
+        });
+        this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'other');
+        // this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
+      } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
+        this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+        this.router.navigate(['issues/other/issue-not-fixed']);
+      }
     }
   }
 
@@ -192,12 +197,17 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
-      this.sharedService.setApiResponseData({
-        connectedDevices: data?.connectedDevices,
-        hsiUploadDownload: data?.hsiUploadDownload?.split(','),
-      });
-      this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-      this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+        this.sharedService.setApiResponseData({
+          connectedDevices: data?.connectedDevices,
+          hsiUploadDownload: data?.hsiUploadDownload?.split(','),
+        });
+        this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
+        this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
+      } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
+        this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+        this.router.navigate(['issues/internet/issue-not-fixed']);
+      }
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/router-reset-required']);
@@ -235,7 +245,11 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
       this.router.navigate(['issues/phone/ont-reboot']); //todo:
     } else if (codeId === flowCodes.CI72) {
-      this.router.navigate(['issues/phone/no-issues']);
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+        this.router.navigate(['issues/phone/no-issues']);
+      } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
+        this.router.navigate(['issues/phone/issue-not-fixed']);
+      }
     }
   }
 
@@ -290,7 +304,7 @@ export class HelperService {
         stbDetails: data?.stbDetails,
         connectedDevices: data?.responseData?.stbDetails,
       });
-      if (data?.tsOutcome === 'No Issue found') {
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
         if (data?.stbDetails) {
           var stb = data?.stbDetails[0];
           if (!stb?.isReachable) {
@@ -303,7 +317,10 @@ export class HelperService {
             this.router.navigate(['issues/tv/no-issues']);
           }
         }
-      } //end of if ts outcome
+      } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
+        this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails });
+        this.router.navigate(['issues/tv/issues-not-fixed']); ///No need to save api response as its CI9
+      }
     }
     // else if (CodeId === flowCodes.issueNotFixed) {
     //   this.router.navigate(['issues/tv/box-not-restarted-instructions']); /////////Screen  App.MotiveH&S.2.5.7

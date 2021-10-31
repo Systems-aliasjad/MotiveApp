@@ -6,6 +6,11 @@ export class RoutingPaths {
   public static readonly routerInstallSuccessfully: string = 'router-install-successfully';
   public static readonly installNewRouter: string = 'install-new-router';
 }
+
+export const TS_OUTCOME_NO_ISSUE = 'No Issue found';
+export const TS_OUTCOME_ISSUE_FOUND_FIXED = 'Issue found and fixed';
+export const TS_OUTCOME_ISSUE_FOUND_NOT_FIXED = 'Issue found and not fixed';
+
 export const QUICK_ACTION = {
   RESET_INTERNET_PASSWORD: 'Reset Internet Password',
   UPDATE_WIFI_CONFIGURATION: 'Update Wi Fi Configuration',
