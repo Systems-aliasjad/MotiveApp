@@ -95,7 +95,7 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     const routerConfig = temp?.routerConfig;
     this.ontConfig = temp?.ontConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
     if (this.connectedDevices) {
       this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
     } else {
