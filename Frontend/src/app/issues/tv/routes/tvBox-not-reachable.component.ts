@@ -11,6 +11,7 @@ import { SharedService } from '../../../shared/shared.service';
   selector: 'app-tvBox-not-reachable',
   template: `<app-diagnose-issue
     [networkDiagram]="networkDiagram"
+    [stbSerialNumber]="stbSerialNumber"
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [connectedDevices]="connectedDevices"
@@ -30,6 +31,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   ontConfig: IOntDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
+  stbSerialNumber: string = '';
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
@@ -62,17 +64,14 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    const message = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
     const apiResponse = this.sharedService.getApiResponseData();
-    let serials = '';
+
     apiResponse?.stbDetails.forEach((element) => {
       if (!element.isReachable) {
-        serials = element?.stbSerialNumber + ',';
+        this.stbSerialNumber = this.stbSerialNumber + element?.stbSerialNumber + ',';
       }
     });
-    // message.body[0].title = message.body[0].title.replace('53454534', serials);
-
-    this.messageSection = message; //CustomerJourneyConstants.tvBoxNotReachableMessageSection;
+    this.messageSection = CustomerJourneyConstants.tvBoxNotReachableMessageSection;
   }
 
   button1Listener() {

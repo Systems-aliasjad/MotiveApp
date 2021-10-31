@@ -9,6 +9,9 @@ import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from '../../con
 })
 export class DiagnoseIssueComponent implements OnInit {
   @Input()
+  stbSerialNumber: string;
+
+  @Input()
   networkDiagram: NetWorkDiagramIds;
 
   @Input()

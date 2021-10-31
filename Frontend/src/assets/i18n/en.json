@@ -489,7 +489,7 @@
     "WE_NOTICED_THAT_YOUR_WIFI_SETTINGS_ARE_NOT_TO_THE_STANDARDS_WE_CAN_HELP_YOU_TO_GET_YOUR_WIFI_CONFIGURATION_TO_THE_STANDARDS": "We noticed that your Wi-Fi settings are not to the standards. We can help you to get your Wi-Fi configuration to the standards.",
     "TAP_CONFIGURE_WIFI_IF_YOU_WISH_TO_SET_YOUR_WIFI_CONFIGURATION": "Tap “Configure Wi-Fi” if you wish to set your Wi-Fi configuration.",
     "WE_CANT_REACH_YOUR_TV_BOX": "We can’t reach your TV box",
-    "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": "The TV box SR No. 53454534 couldn’t be found.",
+    "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": "The TV box SR No. {{stbSerialNumber}} couldn’t be found.",
     "PLEASE_CHECK_IF": "Please check if:",
     "THE_TV_BOX_IS_TURNED_ON": "The TV box is turned on",
     "THE_CABLE_FROM_THE_TV_BOX_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "The cable from the TV box is connected to the 'X' port of the wall mounted fiber box",

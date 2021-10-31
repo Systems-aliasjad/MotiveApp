@@ -8,6 +8,7 @@
       </ion-col>
     </ion-row>
     <app-issue-tabs
+      [stbSerialNumber]="stbSerialNumber"
       [networkDiagram]="networkDiagram"
       [ontConfig]="ontConfig"
       [routerConfig]="routerConfig"
@@ -65,22 +66,16 @@
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
           <motive-button
-          [type]="button3.type"
-          [title]="button3.title"
-          [explanatoryNote]="button3.explanatoryNote"
-          [SM]="button3.SM"
-          [MD]="button3.MD"
-          [LG]="button3.LG"
-          (click)="button3Listener()"
-        ></motive-button>
+            [type]="button3.type"
+            [title]="button3.title"
+            [explanatoryNote]="button3.explanatoryNote"
+            [SM]="button3.SM"
+            [MD]="button3.MD"
+            [LG]="button3.LG"
+            (click)="button3Listener()"
+          ></motive-button>
         </ion-col>
-       
       </ion-row>
-
-      
-   
-
-    
     </ion-col>
   </ion-row>
 </div>

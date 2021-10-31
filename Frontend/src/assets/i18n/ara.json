@@ -486,7 +486,7 @@
     "THE_TV_BOX_IS_NOT_SWITCHED_ON": "The TV box is not switched on",
     "THE_TV_BOX_IS_SWITCHED_ON": "The TV Box is switched ON",
     "THE_TV_BOX_IS_TURNED_ON": "The TV box is turned on",
-    "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": "The TV box SR No. 53454534 couldn’t be found.",
+    "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": "The TV box SR No. {{stbSerialNumber}} couldn’t be found.",
     "THIS_ACTION_CANNOT_BE_UNDONE": "This action cannot be undone.",
     "THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON_OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE": "This service is coming to your area soon. Our team will contact you once it is available.",
     "THIS_WILL_TAKE_UP_TO_1_MINUTE": "يستغرق الأمر ما يصل إلى دقيقة واحدة",
