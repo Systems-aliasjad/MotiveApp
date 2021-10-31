@@ -52,18 +52,18 @@ export const flowCodes = {
   UPSEL7: 'UPSEL7',
   UPSEL8: 'UPSEL8',
   UPSEL9: 'UPSEL9',
-
   CI122: 'CI122',
   CI123: 'CI123',
-
   QAIPTVPIN: 'QA-IPTV-PIN', //Forgot TV Admin Pin Success
   QAIPTVPIN1: 'QA-IPTV-PIN1', //Forgot TV Admin Pin Failure
-
   QAIPTVELON: 'QA-IPTV-EL-ON', //  unable to login to elife on Success
   QAIPTVELON1: 'QA-IPTV-EL-ON1', //  unable to login to elife on Failure
   QAIPTVPT3: 'QA-IPTV-PT3', //QA-IPTV-PT3 (stb-detail success screencode)
   QAIPTVPT: 'QA-IPTV-PT', //QA-IPTV-PT (next-step confirm transfer success)
   QAIPTVPT1: 'QA-IPTV-PT1', //QA-IPTV-PT1 (stb-detail and next-step confirm failure)
+  QAHSIPnPFR: 'QA-HSI-PnPFR', // reset factory router (Success)
+  QAHSIPnPFR5: 'QA-HSI-PnPFR5', // reset factory router (intermediate)
+  QAHSIPnPFR1: 'QA-HSI-PnPFR1', // reset factory router (Failure)
 };
 
 export const ETISALAT = 'Etisalat';
