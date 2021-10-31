@@ -96,6 +96,7 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
 import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -184,6 +185,7 @@ import { OntRebootRequiredComponent } from './routes/ont-reboot-required.compone
     AccountTemporarilyDisconnectedMessageComponent,
     ContinueInstallingThirdPartyRouterMessageComponent,
     InstallNewRouterComplaintSuccessfullyMessageComponent,
+    TryAgainErrorComponent,
   ],
   imports: [
     CommonModule,
