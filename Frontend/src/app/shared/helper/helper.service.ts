@@ -306,16 +306,21 @@ export class HelperService {
       });
       if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
         if (data?.stbDetails) {
-          var stb = data?.stbDetails[0];
-          if (!stb?.isReachable) {
-            this.router.navigate(['issues/tv/box-not-reachable']);
+          let flag = false;
+          var stbList = data?.stbDetails;
+          stbList.forEach((element) => {
+            if (!element?.isReachable) {
+              this.router.navigate(['issues/tv/box-not-reachable']);
+              flag = true;
+            } else if (element?.isRebootRequired) {
+              this.router.navigate(['issues/tv/box-restart-required']);
+              flag = true;
+            }
+          });
 
-            // this.router.navigate(['issues/tv/box-restart-required']);
-          } else if (stb?.isRebootRequired) {
-            this.router.navigate(['issues/tv/box-restart-required']);
-          } else if (stb?.isReachable && !stb?.isRebootRequired) {
-            this.router.navigate(['issues/tv/no-issues']);
-          }
+          //  if (stb?.isReachable && !stb?.isRebootRequired) {
+          if (!flag) this.router.navigate(['issues/tv/no-issues']);
+          //}
         }
       } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
         this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails });

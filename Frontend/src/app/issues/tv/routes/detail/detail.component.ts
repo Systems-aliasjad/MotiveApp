@@ -62,7 +62,9 @@ export class TvDetailComponent implements OnInit {
 
     for (var index = 0; index < data?.result?.responseData?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
-        debugger;
+        if (!this.connectedDevices[i]?.list) {
+          this.connectedDevices[i].list = [];
+        }
         this.connectedDevices[i].list.push(data?.result?.responseData?.sharedPackages[index]?.packageName);
       }
     }
