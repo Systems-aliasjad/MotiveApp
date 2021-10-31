@@ -44,14 +44,14 @@ export class HelperService {
     });
   }
 
-  connectedDeviceModifierSTB(devices) {
+  connectedDeviceModifierSTB(devices, noSubTitle?: boolean) {
     return devices?.map((device) => {
       return {
         ...device,
         className: networkDiagramClasses.okay,
         url: SVGs.stb.default,
         title: 'STB',
-        subTitle: device?.stbMac,
+        subTitle: noSubTitle ? '' : device?.stbMac,
         list: [],
       };
     });

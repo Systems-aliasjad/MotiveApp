@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -20,16 +21,16 @@ export class ResetFactoryDefaultDialog implements OnInit {
     if (this?.quickLinkNextSignal) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
-        if (res?.result?.screenCode === 'QA-HSI-PnPFR') {
-          // (Success)
-        } else if (res?.result?.screenCode === 'QA-HSI-PnPFR5') {
+        this.sharedService.setLoader(false);
+        if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
+          this.router.navigate(['/thanks']);
+        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
           this.router.navigate(['/issues/internet/router-reset-successful']);
-          // (intermediate)
+        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
+          this.router.navigate(['/issues/internet/server-timeout']);
         } else {
-          // (Failure)
           this.router.navigate(['/unknown-issue']);
         }
-        this.sharedService.setLoader(false);
       });
     } else {
       this.router.navigate(['/issues/internet/reset-wifi-password']);

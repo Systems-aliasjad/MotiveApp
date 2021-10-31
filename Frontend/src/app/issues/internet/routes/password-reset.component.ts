@@ -6,7 +6,7 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 import { BackendService } from '../../../services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, flowCodes, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-password-reset',
@@ -77,8 +77,16 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   button1Listener() {
     // this.helperService.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
     if (this.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
-        this.router.navigate(['/unknown-issue']);
+        this.sharedService.setLoader(false);
+        if (res?.result?.screenCode === flowCodes.QAHSIPR) {
+          this.router.navigate(['/issues/internet/password-reset-success']);
+        } else if (res?.result?.screenCode === flowCodes.QAHSIPR1) {
+          this.router.navigate(['/issues/internet/password-reset-faliure']);
+        } else {
+          this.router.navigate(['/unknown-issue']);
+        }
       });
     } else {
       this.sharedService.setLoader(true);

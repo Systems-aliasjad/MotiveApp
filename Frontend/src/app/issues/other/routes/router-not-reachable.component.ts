@@ -104,7 +104,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
       routerName: routerConfig?.routerSerial,
     };
     this.ontConfig = temp?.ontConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
+    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
     if (this.connectedDevices) {
       this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
     } else {

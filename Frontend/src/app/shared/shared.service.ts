@@ -116,7 +116,7 @@ export class SharedService {
     this.translate.use(language);
   }
 
-  getQuickLinksData(): string {
+  getQuickLinksData() {
     return localStorage.getItem('quickLinks') ? JSON.parse(localStorage.getItem('quickLinks')) : null;
   }
 

@@ -78,13 +78,18 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
   }
 
   async button1Listener() {
-    const modal = await this.modalCtrl.create({
-      component: ResetFactoryDefaultDialog,
-      componentProps: {
-        quickLinkNextSignal: this.quickLinkNextSignal,
-      },
-    });
-    return await modal.present();
+    const quickLinksData = this.sharedService.getQuickLinksData();
+    if (quickLinksData?.pnpRouter) {
+      const modal = await this.modalCtrl.create({
+        component: ResetFactoryDefaultDialog,
+        componentProps: {
+          quickLinkNextSignal: this.quickLinkNextSignal,
+        },
+      });
+      return await modal.present();
+    } else {
+      this.router.navigate(['issues/internet/router-restart/device-care']);
+    }
   }
 
   button2Listener() {
@@ -93,7 +98,7 @@ export class RouterResetFactoryComponent implements OnInit, OnDestroy {
 
   getIssueTilesData() {
     if (this.quickLinkNextSignal) {
-      this.ontConfig = { url: SVGs.ont.default, className: networkDiagramClasses.default, title: ONT };
+      this.ontConfig = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
       this.routerConfig = { url: SVGs.stb.default, className: networkDiagramClasses.pending, title: ROUTER };
     } else {
       const apiResponse = this.sharedService.getApiResponseData();
