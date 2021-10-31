@@ -168,6 +168,8 @@
   },
 
   "MESSAGES": {
+    "PLEASE_WAIT_WHILE_WE_TRY_TO_RESET_IT_AGAIN": "Please wait while we try to reset it again.",
+    "WE_ARE_EXPERIENCING_A_DELAY_IN_RESETTING_YOUR_INTERNET_PASSWORD": "We are experiencing a delay in resetting your internet password.",
     "ISSUE_FIXED": "ISSUE FIXED",
     "ISSUE_NOT_FIXED": "ISSUE NOT FIXED",
     "VALUE_ADDED_SERVICES": "Value added services",

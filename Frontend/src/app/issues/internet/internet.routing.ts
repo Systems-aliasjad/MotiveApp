@@ -485,6 +485,10 @@ const routes: Routes = [
     component: PasswordResetSuccessfullyComponent,
   },
   {
+    path: 'password-reset-faliure',
+    component: PasswordResetSuccessfullyComponent,
+  },
+  {
     path: 'router-out-of-warranty',
     component: RouterOutOfWarrantyComponent,
   },

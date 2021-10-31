@@ -64,6 +64,8 @@ export const flowCodes = {
   QAHSIPnPFR: 'QA-HSI-PnPFR', // reset factory router (Success)
   QAHSIPnPFR5: 'QA-HSI-PnPFR5', // reset factory router (intermediate)
   QAHSIPnPFR1: 'QA-HSI-PnPFR1', // reset factory router (Failure)
+  QAHSIPR: 'QA-HSI-PR', // Internet Password Reset (Success)
+  QAHSIPR1: 'QA-HSI-PR1', // Internet Password Reset (Failure)
 };
 
 export const ETISALAT = 'Etisalat';
