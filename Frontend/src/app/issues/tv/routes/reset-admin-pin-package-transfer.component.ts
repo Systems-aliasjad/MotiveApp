@@ -8,7 +8,7 @@ import { BackendService } from 'src/app/services/backend.service';
 import { flowCodes } from 'src/app/shared/constants/constants';
 
 @Component({
-  selector: 'reset-admin-pin--packagetransfer',
+  selector: 'reset-admin-pin-packagetransfer',
   template: `<app-transfer-package
     [headerConfig]="headerConfig"
     [pageContent]="pageContent"
@@ -44,9 +44,9 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
     var ListStbDetails = apiResponse?.stbDetails;
     ListStbDetails.forEach((element) => {
       var index = {
-        title: 'STB SR#' + element?.sbSerialNumber,
+        title: 'STB SR#' + element?.stbSerialNumber,
         description: 'MAC ' + element?.stbMac,
-        ID: element?.sbSerialNumber,
+        ID: element?.stbSerialNumber,
       };
       this.cardList.push(index);
       console.log(index);
