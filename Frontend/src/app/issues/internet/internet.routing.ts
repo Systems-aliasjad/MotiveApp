@@ -80,6 +80,7 @@ import { UnableToConnnectWifiNetwork } from './routes/unable-connect-wifi-networ
 import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-stage2.component';
 import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 const routes: Routes = [
   {
@@ -495,6 +496,11 @@ const routes: Routes = [
   {
     path: 'unable-to-connnect-wifi-network',
     component: UnableToConnnectWifiNetwork,
+  },
+
+  {
+    path: 'error-occur-try-again-later',
+    component: TryAgainErrorComponent,
   },
 ];
 

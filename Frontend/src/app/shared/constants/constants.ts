@@ -30,6 +30,8 @@ export const QUICK_ACTION = {
 };
 
 export const flowCodes = {
+  QAHSIWIFI: 'QA-HSI-WIFI', //Update Wi Fi Configuration (Success)
+  QAHSIWIFI5: 'QA-HSI-WIFI5', //Update Wi Fi Configuration (Failure)
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
@@ -94,11 +96,11 @@ export const SVGs = {
     default: './assets/images/router/default_router.PNG',
   },
   phone: {
-    default: '/assets/images/network-map-icons/icon_phone_default.svg',
-    okay: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
+    default: './assets/images/network-map-icons/icon_phone_default.svg',
+    okay: './assets/images/network-map-icons/icon_phone_all_okay.svg',
   },
   stb: {
-    default: '/assets/images/STB/DWI211ETI.png', //To do set it to svc as others
+    default: './assets/images/STB/DWI211ETI.png', //To do set it to svc as others
   },
 };
 
@@ -213,7 +215,7 @@ const TRANSFER_PACKAGE_TV = {
 };
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
-  linkTo: 'device-connected-homezone',
+  linkTo: 'issues/internet/unable-to-connect-to-homezone',
   nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
 };
 const TRACK_COMPLAINT = {

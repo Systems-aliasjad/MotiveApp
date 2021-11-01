@@ -19,6 +19,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
 })
 export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
   subscription: Subscription;
+  quickLinkNextSignal;
   button1: IMotiveButton = {
     type: 'terms',
     title: 'BUTTONS.TERMS',
@@ -51,6 +52,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
     //this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true, true);
   }
 
@@ -62,10 +65,18 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
   button1Listener() {}
 
   button2Listener(_event) {
-    this.sharedService.setLoader(true);
-    this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/internet/password-update-success']);
-    });
+    if (this.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        this.router.navigate(['/issues/internet/password-update-success']);
+      });
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        this.router.navigate(['/issues/internet/password-update-success']);
+      });
+    }
   }
 }

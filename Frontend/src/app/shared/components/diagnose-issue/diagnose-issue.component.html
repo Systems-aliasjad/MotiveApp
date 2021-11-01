@@ -52,9 +52,8 @@
     </ion-col>
     <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngIf="button3">
       <ion-row>
-        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding" *ngIf="button4">
           <motive-button
-            *ngIf="button4"
             [type]="button4.type"
             [title]="button4.title"
             [explanatoryNote]="button4.explanatoryNote"
@@ -64,7 +63,7 @@
             (click)="button4Listener()"
           ></motive-button>
         </ion-col>
-        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+        <ion-col [sizeLg]="button4 ? 6 : 12" sizeMd="12" size="12" class="ion-no-padding">
           <motive-button
             [type]="button3.type"
             [title]="button3.title"

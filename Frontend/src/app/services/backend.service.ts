@@ -130,6 +130,15 @@ export class BackendService {
     }
   }
 
+  quickActionsResetWifiPassword(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/reset-wifi-config`, { ...data });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   resetRouter(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/next-step`, data);

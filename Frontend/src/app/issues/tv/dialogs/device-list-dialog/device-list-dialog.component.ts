@@ -33,15 +33,16 @@ export class DeviceListDialog implements OnInit {
       });
     }
     const apiResponse = this.sharedService.getApiResponseData();
+
     this.StbList = apiResponse.stbDetails;
     if (this.StbList) {
       this.StbList.forEach((element) => {
         var index = {
-          device: 'Reboot STB: ' + element?.stbMac,
+          device: 'Reboot STB: ' + element?.stbSerialNumber,
           API_PARAM: 'STB',
-          STB_ID: element?.stbMac,
+          STB_ID: element?.stbSerialNumber,
         };
-        this.AllSTB.push(element?.stbMac);
+        this.AllSTB.push(element?.stbSerialNumber);
         this.devicesList.push(index);
       });
     }
