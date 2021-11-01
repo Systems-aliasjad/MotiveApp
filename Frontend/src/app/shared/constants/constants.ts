@@ -36,6 +36,8 @@ export const flowCodes = {
   openComplaint: 'CI11',
   routerRebootSuccess: 'CI12',
   routerRebootFaliure: 'CI121',
+  ontRebootFaliure: 'CI122',
+  stbRebootFaliure: 'CI123',
   movingElifeConnection: 'E2ECRM231',
   ElifeCancellationRequest: 'E2ECRM232',
   accountTemporarilyDisconnected: 'E2ECRM141',
