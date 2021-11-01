@@ -1,8 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
-import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
+import { IMotiveButton, IOntDetail, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -11,9 +12,9 @@ import { SharedService } from '../../../shared/shared.service';
   selector: 'app-issue-not-fixed',
   template: `<app-diagnose-issue
     [networkDiagram]="networkDiagram"
-    [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
-    [routerConfig]="routerConfig"
+    [ontConfig]="ontConfig"
+    [connectedDevices]="connectedDevices"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
     [button1]="button1"
@@ -26,10 +27,10 @@ import { SharedService } from '../../../shared/shared.service';
 export class IssueNotFixedComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
-  ontConfig;
-  routerConfig;
-  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  ontConfig: IOntDetail;
+  networkDiagram = NetWorkDiagramIds.FiveLayer;
+  connectedDevices;
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN_LATER',
     type: 'primary',
@@ -39,7 +40,13 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private backendService: BackendService,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,6 +61,10 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+    if (this.sharedService.getTryAgainBoxNotReachableFlag() >= 3) {
+      this.button1.disable = true;
+      this.button1 = null;
+    }
     //this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
 
@@ -66,7 +77,19 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
     this.messageSection = CustomerJourneyConstants.issueNotFixedTVMessageSection;
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+
+    this.updateHeader();
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+      this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    });
+  }
 
   button2Listener() {
     this.router.navigate(['/issues/tv/book-complaint']);
@@ -76,6 +99,6 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
-    this.routerConfig = temp?.stbConfig;
+    this.connectedDevices = temp?.stbConfig;
   }
 }
