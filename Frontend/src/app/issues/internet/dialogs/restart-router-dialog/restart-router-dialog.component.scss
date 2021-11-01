@@ -215,7 +215,11 @@ ion-list{
     }
   }
 }
+
 .popup-btn-lg{
+  text-align: center;
+  max-width: 450px;
+  margin: 0 auto;
   display: none;
   @media screen and (min-width:992px) {
     display: block;
@@ -224,23 +228,16 @@ ion-list{
     margin-top: 2rem;
     padding-right: 0;
     padding-left: 0;
-  }
-}
-.popup-btn-sm{
-  display: block;
-  @media screen and (min-width:992px) {
-    display: none;
-  }
-}
-.popup-btn-lg{
-  display: none;
-  @media screen and (min-width:992px) {
-    display: block;
-   }
-  .footer{
-    margin-top: 2rem;
-    padding-right: 0;
-    padding-left: 0;
+    .footer-btns-container{
+      ion-col{
+        motive-button{
+          @media screen and (min-width: 769px) and (max-width: 1024px){
+            min-width: 250px;
+            width: auto;
+          }
+        }
+      }
+    }
   }
 }
 .popup-btn-sm{
