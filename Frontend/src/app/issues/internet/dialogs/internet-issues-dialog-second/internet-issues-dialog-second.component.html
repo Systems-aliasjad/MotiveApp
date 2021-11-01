@@ -11,8 +11,6 @@
   </ion-toolbar>
 </ion-header>
 <!-- Modal Header End -->
-
-
 <ion-content padding *ngIf="showDialog1" malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
   <ion-grid class="ion-no-padding">
     <ion-row>
@@ -41,11 +39,11 @@
           </ion-row>
         </div>
       </ion-col>
-     </ion-row>
-     <!--Large Screen Button End -->
+    </ion-row>
+    <!--Large Screen Button End -->
   </ion-grid>
 </ion-content>
-
+<!-- Small Screen Button Start -->
 <div class="footer popup-btn-sm">
   <ion-row class="footer-btns-container">
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
@@ -60,3 +58,4 @@
     </ion-col>
   </ion-row>
 </div>
+<!-- Small Screen Button End -->

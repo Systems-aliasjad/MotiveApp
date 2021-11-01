@@ -1,36 +1,51 @@
+<!-- Modal Header Start -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      <h3>{{ 'MESSAGES.RESET_TO_FACTORY_DEFAULT' | translate }}</h3>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="btn transparent-btn close-btn" (click)="dismiss()"> Close </ion-button>
+      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="cross-icon" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Modal Header End -->
 <ion-content padding malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
-  <ion-grid class="form-main-container">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>
-          <h5>{{ 'MESSAGES.RESET_TO_FACTORY_DEFAULT' | translate }}</h5>
-        </ion-title>
-        <ion-buttons slot="end">
-          <ion-button class="btn transparent-btn close-btn" (click)="dismiss()">{{ 'BUTTONS.CLOSE' | translate }}</ion-button>
-          <img src="assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="header-icons-close" />
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
+  <ion-grid class="ion-no-padding">
     <ion-row>
-      <ion-col size="12">
-        <div class="messagebox">
+      <ion-col size="12" class="pb-0">
+        <div class="dialog-content">
           <p>{{ 'MESSAGES.THE_ROUTERS_WIFI_WILL_BE_RESET_TO_DEFAULT_FACTORY_SETTINGS' | translate }}</p>
-          <p>{{ 'MESSAGES.NOTE_YOU_WILL_LOSE_ALL_SETTINGS_AFTER_THE_FACTORY_RESET' | translate }}</p>
+          <p class="note-text"><b>Note:</b> {{ 'MESSAGES.NOTE_YOU_WILL_LOSE_ALL_SETTINGS_AFTER_THE_FACTORY_RESET' | translate }}</p>
         </div>
       </ion-col>
     </ion-row>
-    <!-- <ion-row>
-      <ion-col size="12">
-        <ion-checkbox checked="true" color="primary"></ion-checkbox>
-        {{ 'MESSAGES.I_AGREE_TO' | translate }} <a>{{ 'MESSAGES.TERMS_AND_CONDITIONS' | translate }}</a>
+    <!--Large Screen Button Start -->
+    <ion-row class="popup-btn-lg">
+      <ion-col size="12" class="ion-no-padding">
+        <div class="footer">
+          <ion-row class="footer-btns-container">
+            <ion-col  size="12" class="ion-no-padding ion-text-center terms-col">
+              <motive-button [type]="'terms'"></motive-button>
+            </ion-col>
+            <ion-col  size="12" class="ion-no-padding ion-text-center">
+              <motive-button [title]="'BUTTONS.RESET_ROUTER'" [type]="'primary'" (clickHandler)="CloseModal()" [disable]="!terms"></motive-button>
+            </ion-col>
+            <ion-col size="12" class="ion-no-padding ion-text-center">
+              <motive-button [title]="'BUTTONS.CANCEL'" [type]="'link'" (clickHandler)="dismiss()"></motive-button>
+            </ion-col>
+          </ion-row>
+        </div>
       </ion-col>
-    </ion-row> -->
+    </ion-row>
+    <!--Large Screen Button End -->
   </ion-grid>
 </ion-content>
-
-<div class="footer">
+<!-- Small Screen Button Start -->
+<div class="footer popup-btn-sm">
   <ion-row class="footer-btns-container">
-    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+    <ion-col size="12" class="pt-0 pb-0">
       <ion-row>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center terms-col">
           <motive-button [type]="'terms'"></motive-button>
@@ -45,3 +60,4 @@
     </ion-col>
   </ion-row>
 </div>
+<!-- Small Screen Button End -->

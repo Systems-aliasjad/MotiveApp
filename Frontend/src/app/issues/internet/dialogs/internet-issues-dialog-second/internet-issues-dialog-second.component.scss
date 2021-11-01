@@ -17,17 +17,22 @@
       padding-top: 1rem;
       padding-bottom: 1rem;
       @media screen and (max-width: 992px) {
+        border-bottom-color: #f1f1eb;
         padding-top: .2rem;
         padding-bottom: .8rem;
       }
       ion-title{
         padding-right:0;
         padding-left: 0;
-        h5{
+        h3{
           font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
           color:$primary-color;
-          @media screen and (max-width: 281px) {
-            font-size: 1rem;
+          font-weight: normal;
+          margin-left: 2rem;
+          @media screen and (max-width:992px) {
+            margin-left: 0;
+            margin-bottom: 0;
+            font-size: 18px;
           }
         }
       }
