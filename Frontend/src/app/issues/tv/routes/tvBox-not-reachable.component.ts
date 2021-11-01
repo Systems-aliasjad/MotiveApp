@@ -65,7 +65,6 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   updateHeader() {
     if (this.sharedService.getTryAgainBoxNotReachableFlag() >= 3) {
       this.button1.disable = true;
-      this.button1 = null;
     }
     // this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
