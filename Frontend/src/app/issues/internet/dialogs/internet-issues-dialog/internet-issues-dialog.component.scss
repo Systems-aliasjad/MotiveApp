@@ -16,6 +16,10 @@
       border-bottom: 2px solid #e2e1da;
       padding-top: 1rem;
       padding-bottom: 1rem;
+      @media screen and (max-width: 992px) {
+        padding-top: .2rem;
+        padding-bottom: .8rem;
+      }
       ion-title{
         padding-right:0;
         padding-left: 0;
@@ -264,35 +268,26 @@ ion-buttons{
   }
 }
 .popup-btn-lg{
-  display: none;
-  @media screen and (min-width:992px) {
-    display: block;
-   }
-  .footer{
-    margin-top: 2rem;
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
-.popup-btn-sm{
-  display: block;
-  @media screen and (min-width:992px) {
+  @media screen and (max-width:992px) {
     display: none;
   }
-}
-.popup-btn-lg{
-  display: none;
-  @media screen and (min-width:992px) {
-    display: block;
-   }
   .footer{
-    margin-top: 2rem;
     padding-right: 0;
     padding-left: 0;
+    .footer-btns-container{
+      ion-col{
+        motive-button{
+          @media screen and (min-width: 769px) and (max-width: 1024px){
+            min-width: 250px;
+            width: auto;
+          }
+        }
+      }
+    }
+   
   }
 }
 .popup-btn-sm{
-  display: block;
   @media screen and (min-width:992px) {
     display: none;
   }

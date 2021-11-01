@@ -30,19 +30,17 @@
         </ion-col>
       </ion-row>
       <!--Large Screen Button Start -->
-      <ion-row class="popup-btn-lg">
-        <div class="footer">
-          <ion-row class="footer-btns-container">
-            <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
-              <ion-row>
-                <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-                  <motive-button [title]="'BUTTONS.SELECT'" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="dismiss()"></motive-button>
-                </ion-col>
-              </ion-row>
-            </ion-col>
-          </ion-row>
-        </div>
-      </ion-row>
+      <div class="footer popup-btn-lg">
+        <ion-row class="footer-btns-container">
+          <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+            <ion-row>
+              <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+                <motive-button [title]="'BUTTONS.SELECT'" [type]="'primary'" [disable]="!formGroup.valid" (clickHandler)="dismiss()"></motive-button>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+      </div>
       <!--Large Screen Button End -->
     </form>
   </ion-grid>
