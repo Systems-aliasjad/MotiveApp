@@ -23,6 +23,8 @@ export class SharedService {
 
   encryptedID: string = '';
 
+  tryAgainBoxNotReachableFlag: number = 0;
+
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
     singleLine: false,
@@ -40,6 +42,14 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setTryAgainBoxNotReachableFlag() {
+    this.tryAgainBoxNotReachableFlag++;
+  }
+
+  getTryAgainBoxNotReachableFlag() {
+    return this.tryAgainBoxNotReachableFlag;
   }
 
   setUpsellOpportunity(opportunityCode: string) {

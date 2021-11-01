@@ -63,6 +63,9 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+    if (this.sharedService.getTryAgainBoxNotReachableFlag() >= 3) {
+      this.button1.disable = true;
+    }
     // this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
   headerConfig: IPageHeader = {
@@ -84,6 +87,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   button1Listener() {
     this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
         this.sharedService.setLoader(false);
         this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

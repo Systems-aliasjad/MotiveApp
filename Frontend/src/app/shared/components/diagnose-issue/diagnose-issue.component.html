@@ -34,6 +34,7 @@
             [MD]="button1.MD"
             [LG]="button1.LG"
             (click)="button1Listener()"
+            [disable]="button1.disable"
           ></motive-button>
         </ion-col>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
@@ -46,6 +47,7 @@
             [MD]="button2.MD"
             [LG]="button2.LG"
             (click)="button2Listener()"
+            [disable]="button2.disable"
           ></motive-button>
         </ion-col>
       </ion-row>
@@ -61,6 +63,7 @@
             [MD]="button4.MD"
             [LG]="button4.LG"
             (click)="button4Listener()"
+            [disable]="button4.disable"
           ></motive-button>
         </ion-col>
         <ion-col [sizeLg]="button4 ? 6 : 12" sizeMd="12" size="12" class="ion-no-padding">
@@ -72,6 +75,7 @@
             [MD]="button3.MD"
             [LG]="button3.LG"
             (click)="button3Listener()"
+            [disable]="button3.disable"
           ></motive-button>
         </ion-col>
       </ion-row>
