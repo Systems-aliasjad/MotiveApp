@@ -228,6 +228,16 @@ ion-list{
     margin-top: 2rem;
     padding-right: 0;
     padding-left: 0;
+    .footer-btns-container{
+      ion-col{
+        motive-button{
+          @media screen and (min-width: 769px) and (max-width: 1024px){
+            min-width: 250px;
+            width: auto;
+          }
+        }
+      }
+    }
   }
 }
 .popup-btn-sm{
