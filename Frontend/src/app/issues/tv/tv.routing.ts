@@ -58,6 +58,7 @@ import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.co
 import { QuickResetAdminPinPackageTransferComponent } from './routes/quick-reset-admin-pin-package-transfer.component';
 import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
 import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
+import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
 
 const routes: Routes = [
   {
@@ -103,6 +104,10 @@ const routes: Routes = [
   {
     path: 'transfer-channel-to-another-tvBox',
     component: TransferTvboxChannelComponent,
+  },
+  {
+    path: 'quick-transfer-channel-to-another-tvBox',
+    component: QuickTransferTvboxChannelComponent,
   },
   {
     path: 'outage',

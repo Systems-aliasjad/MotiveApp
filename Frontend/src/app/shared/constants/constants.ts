@@ -208,7 +208,7 @@ const FORGOT_PASSWORD_TV = {
 };
 const TRANSFER_PACKAGE_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_TRANSFER_ELIFE_TV_PACKAGE_TO_ANOTHER_TV_BOX',
-  linkTo: 'issues/tv/no-additional-stb',
+  linkTo: 'issues/tv/quick-transfer-channel-to-another-tvBox',
   nextSignal: QUICK_ACTION.TRANSFER_IPTV_PACKAGE,
 };
 const CONNECT_HOME_ZONE = {

@@ -223,7 +223,16 @@ export class BackendService {
 
   transferPackage(data) {
     if (environment.shouldCallAPI) {
-      return this.http.put(`motive/troubleshoot/next-step`, data);
+      return this.http.put(`motive/troubleshoot/transfer-pkg`, data);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  quickTransferPackage(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/transfer-pkg-qa`, data);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);
