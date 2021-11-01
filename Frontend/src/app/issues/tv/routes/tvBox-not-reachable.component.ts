@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail, IStbDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -41,7 +42,13 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private router: Router,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -56,6 +63,9 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+    if (this.sharedService.getTryAgainBoxNotReachableFlag() >= 3) {
+      this.button1.disable = true;
+    }
     // this.sharedService.setHeaderConfig('MESSAGES.TV_ISSUES', false);
   }
   headerConfig: IPageHeader = {
@@ -75,7 +85,15 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/tv/box-not-reachable-try-again']);
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+      this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    });
+    // this.router.navigate(['/issues/tv/box-not-reachable-try-again']);
   }
 
   button2Listener() {

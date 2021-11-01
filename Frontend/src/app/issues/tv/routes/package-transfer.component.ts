@@ -120,28 +120,47 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       pkgID: this.selectedCard.PackageID,
       signal: 'next',
     };
-    this.backendService.transferPackage(data).subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
-        this.router.navigate(['issues/tv/package-transfer-success']);
-      } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
-        this.sharedService.setLoader(true);
-        this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-          this.sharedService.setLoader(false);
-          this.router.navigate(['/thanks']);
-        });
-        this.router.navigate(['/unknown-error']);
-      }
-    });
+
+    if (this.sharedService.getQuickLinksData()) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickTransferPackage(data).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
+          this.router.navigate(['issues/tv/package-transfer-success']);
+        } else {
+          //if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+          this.router.navigate(['/unknown-error']);
+        }
+      });
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.transferPackage(data).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
+          this.router.navigate(['issues/tv/package-transfer-success']);
+        } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+          this.sharedService.setLoader(true);
+          this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+            this.sharedService.setLoader(false);
+            this.router.navigate(['/unknown-error']);
+          });
+          // this.router.navigate(['/unknown-error']);
+        }
+      });
+    }
 
     //this.router.navigate(['issues/tv/package-transfer-success']);
   }
 
   button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    if (this.sharedService.getQuickLinksData()) {
+      this.router.navigate(['landing']);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+        this.sharedService.setLoader(false);
+        this.router.navigate(['thanks']);
+      });
+    }
   }
 }

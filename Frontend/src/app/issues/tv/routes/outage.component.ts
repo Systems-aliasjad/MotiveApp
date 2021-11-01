@@ -27,7 +27,8 @@ import { SharedService } from '../../../shared/shared.service';
 export class OutageComponent implements OnInit, OnDestroy {
   etisalatConfig = { ...ETISALAT_DEFAULT_CONFIG, className: networkDiagramClasses.error };
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.default, title: ONT };
-  routerConfig: IStbDetail = { url: SVGs.stb.default, className: networkDiagramClasses.default, title: STB };
+  routerConfig: IRouterDetail = { url: SVGs.stb.default, className: networkDiagramClasses.default, title: STB };
+
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
   subscription: Subscription;
   messageSection;

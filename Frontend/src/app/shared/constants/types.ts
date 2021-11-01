@@ -59,6 +59,7 @@ export interface IMotiveButton {
   SM?: string;
   MD?: string;
   LG?: string;
+  disable?: boolean;
 }
 
 export interface IMessageIssueBody {

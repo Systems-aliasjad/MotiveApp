@@ -106,7 +106,7 @@ export class HelperService {
     console.log('stbConfig', stbConfig);
 
     if (ontConfig?.isReachable) {
-      stbConfig = stbConfig.map((stb) => {
+      stbConfig = stbConfig?.map((stb) => {
         return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default }, ontConfig.className, true);
       });
     } else {

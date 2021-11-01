@@ -69,6 +69,7 @@ import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.co
 import { QuickResetAdminPinPackageTransferComponent } from './routes/quick-reset-admin-pin-package-transfer.component';
 import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
 import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
+import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +134,7 @@ import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick
     QuickResetAdminPinPackageTransferComponent,
     QuickUnableTvAdminPinResetMessageComponent,
     QuickTvAdminPinResetSuccessfullyMessageComponent,
+    QuickTransferTvboxChannelComponent,
   ],
   imports: [
     CommonModule,
