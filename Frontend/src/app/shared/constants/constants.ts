@@ -94,11 +94,11 @@ export const SVGs = {
     default: './assets/images/router/default_router.PNG',
   },
   phone: {
-    default: '/assets/images/network-map-icons/icon_phone_default.svg',
-    okay: '/assets/images/network-map-icons/icon_phone_all_okay.svg',
+    default: './assets/images/network-map-icons/icon_phone_default.svg',
+    okay: './assets/images/network-map-icons/icon_phone_all_okay.svg',
   },
   stb: {
-    default: '/assets/images/STB/DWI211ETI.png', //To do set it to svc as others
+    default: './assets/images/STB/DWI211ETI.png', //To do set it to svc as others
   },
 };
 
