@@ -29,7 +29,7 @@ ion-grid {
         } 
         motive-button{
           min-width: 240px;
-          /* width: 100%; */
+          width: auto;
         }
       }
       > ion-col{
@@ -43,3 +43,15 @@ ion-grid {
     } 
   } 
 }
+.footer{
+  .footer-btns-container{
+    ion-col{
+      motive-button{
+        @media screen and (max-width: 992px) {
+          min-width: 100%;
+          width: auto;
+        }
+      }
+    }
+  } 
+} 
