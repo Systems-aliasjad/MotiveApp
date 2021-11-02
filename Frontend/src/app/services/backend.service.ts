@@ -102,6 +102,15 @@ export class BackendService {
     }
   }
 
+  resetInternetPassword() {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/hsi-password-reset`, {});
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   bookComplaint(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/book-complaint`, data);
