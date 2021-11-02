@@ -21,7 +21,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.BOOK_AN_APPOINTMENT',
+    title: 'BUTTONS.BOOK_A_COMPLAINT',
     explanatoryNote: '',
   };
 
