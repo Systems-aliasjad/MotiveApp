@@ -26,8 +26,8 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   </app-diagnose-issue>`,
 })
 export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
-  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   subscription: Subscription;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   messageSection;
   ontConfig;
   routerConfig;
@@ -44,6 +44,11 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   button3: IMotiveButton = {
     title: 'BUTTONS.ISSUE_STILL_NOT_RESOLVED',
     type: 'secondary',
+  };
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.ISSUES',
+    showBackBtn: true,
   };
 
   constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
@@ -64,23 +69,18 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
     // this.sharedService.setHeaderConfig('HEADER.ISSUES', false);
   }
 
-  headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.ISSUES',
-    showBackBtn: true,
-  };
-
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.fiberBoxNotReachableBuilderSection;
   }
 
   button1Listener() {
     this.router.navigate(['/issues/internet/device-care']);
-    //this.router.navigate(['/thanks']);
   }
 
   button2Listener() {}
 
   button3Listener() {}
+
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);

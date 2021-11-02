@@ -26,8 +26,8 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   </app-diagnose-issue>`,
 })
 export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
-  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   subscription: Subscription;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   messageSection;
   ontConfig;
   routerConfig;

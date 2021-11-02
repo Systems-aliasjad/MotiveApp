@@ -31,6 +31,7 @@ import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
+import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 
 const routes: Routes = [
   {
@@ -160,6 +161,10 @@ const routes: Routes = [
   {
     path: 'no-issue-phone-value-added',
     component: PhoneIssuesProblemValueAddedComponent,
+  },
+  {
+    path: 'fiber-box-not-reachable',
+    component: FiberBoxNotReachableComponent,
   },
 ];
 

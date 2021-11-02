@@ -81,6 +81,7 @@ import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-s
 import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
+import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 
 const routes: Routes = [
   {
@@ -216,7 +217,10 @@ const routes: Routes = [
     path: 'internet-password-reset',
     component: PasswordResetComponent,
   },
-
+  {
+    path: 'fiber-box-not-reachable',
+    component: FiberBoxNotReachableComponent,
+  },
   {
     //3rd party router requires configuration
     path: '3rd-party-router-reset',

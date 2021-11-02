@@ -26,12 +26,12 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   </app-diagnose-issue>`,
 })
 export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
-  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   subscription: Subscription;
   messageSection;
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',
     type: 'link',

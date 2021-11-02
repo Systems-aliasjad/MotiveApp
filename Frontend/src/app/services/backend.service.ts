@@ -13,7 +13,7 @@ export class BackendService {
   ontDetail = {
     ontSerial: '485754431E91C19B',
     ontType: 'I-240G-A',
-    isReachable: true,
+    isReachable: false,
     isRebootRequired: false,
     isUpgradeRequired: false,
     url: '',

@@ -70,6 +70,7 @@ import { QuickResetAdminPinPackageTransferComponent } from './routes/quick-reset
 import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
 import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
 import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
+import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 @NgModule({
@@ -87,6 +88,8 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     ChannelDetailComponent,
     IssueNotFixedComponent,
     BookComplaintComponent,
+    TryAgainErrorComponent,
+    SingleSTBFoundComponent,
     SingleSTBFoundComponent,
     NoAdditionalSTBComponent,
     PackageTransferComponent,
@@ -100,20 +103,25 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     NoNonSharedPackageComponent,
     BoxNotRestartedCareComponent,
     RestartInstructionsComponent,
+    FiberBoxRestartCareComponent,
     ELifeUpgradeSuccessComponent,
     PackageTransferStep1Component,
     PackageTransferStep2Component,
     ChannelNotListDialogComponent,
+    FiberBoxNotReachableComponent,
     TransferTvboxChannelComponent,
     TvBoxRestartRequiredComponent,
     TVBoxNotReachableFormComponent,
     PackageTransferSuccessComponent,
     ComplaintExistsMessageComponent,
+    OntRestartInstructionsComponent,
     AccountNotActiveMessageComponent,
     UnableWatchChannelStep1Component,
     UnableElifeLoginMessageComponent,
     TvBoxNotReachableSuccessComponent,
     TvBoxResetRequiredSuccessComponent,
+    QuickTransferTvboxChannelComponent,
+    QuickTransferTvboxChannelComponent,
     TvBoxNotReachableTryAgainComponent,
     MoveElifeConnectionMessageComponent,
     UnableWatchSpecificChannelComponent,
@@ -125,18 +133,13 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     UnableTvAdminPinResetMessageComponent,
     UnableElifeOnPinResetMessageComponent,
     ResetAdminPinPackageTransferComponent,
+    QuickResetAdminPinPackageTransferComponent,
+    QuickUnableTvAdminPinResetMessageComponent,
     TvAdminPinResetSuccessfullyMessageComponent,
     ComplaintRaisedSuccessfullyMessageComponent,
     UnableToWatchPackageTransferSuccessComponent,
     AccountTemporarilyDisconnectedMessageComponent,
-    SingleSTBFoundComponent,
-    OntRestartInstructionsComponent,
-    FiberBoxRestartCareComponent,
-    QuickResetAdminPinPackageTransferComponent,
-    QuickUnableTvAdminPinResetMessageComponent,
     QuickTvAdminPinResetSuccessfullyMessageComponent,
-    QuickTransferTvboxChannelComponent,
-    TryAgainErrorComponent,
   ],
   imports: [
     CommonModule,
