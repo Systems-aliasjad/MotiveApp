@@ -269,7 +269,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/tv/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, stbDetails: data?.stbDetails, routerDetails: data?.stbDetails });
       this.router.navigate(['issues/tv/issues-not-fixed']); ///No need to save api response as its CI9
     } else if (CodeId === flowCodes.openComplaint) {
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });

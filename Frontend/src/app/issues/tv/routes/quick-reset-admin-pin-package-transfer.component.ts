@@ -36,7 +36,7 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
   selectedCard;
   cardList: any[] = [];
   formGroup: FormGroup;
-  quickLinkNextSignal;
+
   constructor(
     private modalCtr: ModalController,
     private backendService: BackendService,
@@ -80,10 +80,6 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
         console.log(index);
       });
     }
-
-    const navigation = this.router.getCurrentNavigation();
-
-    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
   }
 
   ngOnDestroy(): void {}
@@ -104,24 +100,18 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
     this.formGroup = _event;
     const data = this.formGroup.controls['radioButton'].value;
 
-    this.sharedService.setLoader(true);
-    this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
-      this.sharedService.setLoader(false);
-      if (res?.result?.screenCode === flowCodes.QAIPTVPIN) {
-        this.sharedService.setLoader(true);
-        this.backendService.stbAdminPinResetQuickLinks(data).subscribe((data: any) => {
-          this.sharedService.setLoader(false);
-          if (data?.result?.screenCode === flowCodes.QAIPTVPIN) {
-            this.router.navigate(['issues/tv/quick-tv-admin-pin-reset-success']);
-          } else {
-            // if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
+    // debugger;
+    //For api testing
+    //const data = '130857101318';
 
-            // this.router.navigate(['/issues/tv/quick-unable-tv-admin-pin']);
-            this.router.navigate(['/issues/tv/error-occur-try-again-later']);
-          }
-        });
+    this.sharedService.setLoader(true);
+    this.backendService.stbAdminPinResetQuickLinks(data).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.QAIPTVPIN) {
+        this.router.navigate(['issues/tv/quick-tv-admin-pin-reset-success']);
       } else {
-        this.router.navigate(['/unknown-issue']);
+        // if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
+        this.router.navigate(['/issues/tv/error-occur-try-again-later']);
       }
     });
   }

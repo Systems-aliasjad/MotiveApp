@@ -31,7 +31,7 @@
         <div class="footer">
           <ion-row class="footer-btns-container">
             <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-              <motive-button [title]="'BUTTONS.TRY_AGAIN_LATER'" [type]="'primary'"></motive-button>
+              <motive-button [disable]="disable" [title]="'BUTTONS.TRY_AGAIN_LATER'" [type]="'primary'" (clickHandler)="TryAgain()"></motive-button>
             </ion-col>
             <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
               <motive-button [title]="'BUTTONS.BOOK_A_COMPLAINT'" [type]="'secondary'" (clickHandler)="GoToMainForm()"></motive-button>

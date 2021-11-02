@@ -36,7 +36,7 @@
         <div class="footer">
           <ion-row class="footer-btns-container">
             <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
-              <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
+              <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" [disable]="disable" (clickHandler)="SubmitForm()"></motive-button>
             </ion-col>
             <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
               <motive-button [title]="'BUTTONS.EXIT_TROUBLESHOOTING'" [type]="'secondary'" (clickHandler)="ExitTroubleshoot()"></motive-button>

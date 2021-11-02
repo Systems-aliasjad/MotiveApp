@@ -63,7 +63,7 @@ export class TryAgainErrorComponent implements OnInit, OnDestroy {
     const navigation = this.router.getCurrentNavigation();
     this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
 
-    if (this.sharedService.getTryAgainResetSTBFlag() >= 3) {
+    if (this.sharedService.getTryAgainResetSTBFlag() > 3) {
       this.button1.disable = true;
       this.router.navigate(['issues/tv/unable-tv-admin-pin']);
     }
@@ -86,7 +86,7 @@ export class TryAgainErrorComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    if (this.quickLinkNextSignal) {
+    if (this.sharedService.getQuickLinksData()) {
       this.router.navigate(['/landing']);
     } else {
       this.sharedService.setLoader(true);
