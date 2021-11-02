@@ -59,13 +59,13 @@ ion-item::part(native) {
     flex-grow: 1;
     width: 100%;
   }
-  .one-box-config{
+  .one-box-config {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
     margin-top: 2rem;
-    margin-bottom:1rem;
-    .one-boxes{
+    margin-bottom: 1rem;
+    .one-boxes {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -252,8 +252,6 @@ ion-item::part(native) {
     height: 50px;
   }
   .line-vcenter {
-    /* width: 100%; */
-    /* background: url("/assets/images/lines/default-bg-v-center.svg") top center repeat-y; */
     width: 0.15rem;
     border-top-right-radius: 1rem;
     border-top-left-radius: 1rem;
@@ -263,9 +261,6 @@ ion-item::part(native) {
 }
 //-------------------- Box Left Right center line Start ----------------------
 .default-lines {
-  /* .line-center {
-    background: url("/assets/images/lines/default-line-center.svg") center center repeat-x;
-  } */
   .line-center {
     position: relative;
     &:after {
@@ -289,9 +284,6 @@ ion-item::part(native) {
   }
 }
 .okay-lines {
-  /* .line-center {
-    background: url("/assets/images/lines/okay-line-center.svg") center center repeat-x;
-  } */
   .line-center {
     position: relative;
     &:after {
@@ -315,9 +307,6 @@ ion-item::part(native) {
   }
 }
 .error-lines {
-  /* .line-center {
-    background: url("/assets/images/lines/error-line-center.svg") center center repeat-x;
-  } */
   .line-center {
     position: relative;
     &:after {
@@ -341,9 +330,6 @@ ion-item::part(native) {
   }
 }
 .pending-lines {
-  /* .line-center {
-    background: url("/assets/images/lines/pending-line-center.svg") center center repeat-x;
-  } */
   .line-center {
     position: relative;
     &:after {
@@ -425,7 +411,7 @@ ion-item::part(native) {
     content: '';
     width: 1.1rem;
     height: 1.1rem;
-    background: url('/assets/images/network-map-icons/all-okay-state.svg');
+    background: url('../../../../../assets/images/network-map-icons/all-okay-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
     -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
@@ -446,7 +432,7 @@ ion-item::part(native) {
     content: '';
     width: 1.1rem;
     height: 1.1rem;
-    background: url('/assets/images/network-map-icons/issue-error-state.svg');
+    background: url('../../../../../assets/images/network-map-icons/issue-error-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
     -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
@@ -467,7 +453,7 @@ ion-item::part(native) {
     content: '';
     width: 1.1rem;
     height: 1.1rem;
-    background: url('/assets/images/network-map-icons/action-pending-state.svg');
+    background: url('../../../../../assets/images/network-map-icons/action-pending-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
     -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);

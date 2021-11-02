@@ -50,7 +50,7 @@ ion-label {
   }
   ion-label {
     color: $primary-color;
-    font-size:0.875rem;
+    font-size: 0.875rem;
     span {
       margin-top: 0.4rem;
       display: block;
@@ -62,7 +62,7 @@ ion-label {
   }
 }
 .state {
-  border-radius: .8rem;
+  border-radius: 0.8rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -82,7 +82,7 @@ ion-label {
   text-align: center;
   margin: 1rem 1rem 0.5rem;
   @media screen and (max-width: 281px) {
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     width: 42px;
     height: 42px;
   }
@@ -108,7 +108,7 @@ ion-label {
     content: '';
     width: 1.1rem;
     height: 1.1rem;
-    background: url('/assets/images/network-map-icons/all-okay-state.svg');
+    background: url('../../../../assets/images/network-map-icons/all-okay-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
     -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
@@ -129,7 +129,7 @@ ion-label {
     content: '';
     width: 1.1rem;
     height: 1.1rem;
-    background: url('/assets/images/network-map-icons/issue-error-state.svg');
+    background: url('../../../../assets/images/network-map-icons/issue-error-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
     -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
@@ -150,7 +150,7 @@ ion-label {
     content: '';
     width: 1.1rem;
     height: 1.1rem;
-    background: url('/assets/images/network-map-icons/action-pending-state.svg');
+    background: url('../../../../assets/images/network-map-icons/action-pending-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
     -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
