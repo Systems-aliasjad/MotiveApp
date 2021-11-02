@@ -4,12 +4,13 @@ import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'all-services-fiber-box-not-reachable',
   template: `<app-diagnose-issue
+    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -30,6 +31,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   button1: IMotiveButton = {
     title: 'BUTTONS.DEVICE_CARE',
     type: 'link',
