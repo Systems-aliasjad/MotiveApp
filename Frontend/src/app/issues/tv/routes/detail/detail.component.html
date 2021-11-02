@@ -14,7 +14,7 @@
       <ion-col sizeLg="6" sizeMd="12" size="12" class="flow-chart_container">
         <div class="flow-chart">
           <!-- <app-multi-layer [devices]="devices"></app-multi-layer> -->
-          <app-five-layer [ontConfig]="ontConfig" [etisalatConfig]="etisalatConfig" [devices]="connectedDevices"></app-five-layer>
+          <app-five-layer [ontConfig]="ontConfig" [etisalatConfig]="etisalatConfig" [devices]="devices"></app-five-layer>
         </div>
       </ion-col>
       <!-- Flow Chart End -->
@@ -35,7 +35,7 @@
                 <ion-card-header>
                   <ion-card-title>
                     <img src="./assets/images/indicators-icons/icon_all_okay.svg" alt="" />
-                    <h5 class="sub-title">STB SR#{{ card?.sbSerialNumber }}</h5>
+                    <h5 class="sub-title">STB SR#{{ card?.stbSerialNumber }}</h5>
                   </ion-card-title>
                 </ion-card-header>
                 <ion-card-content>

@@ -71,6 +71,7 @@ import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unabl
 import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
 import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
     ChannelDetailComponent,
     IssueNotFixedComponent,
     BookComplaintComponent,
+    TryAgainErrorComponent,
     SingleSTBFoundComponent,
     SingleSTBFoundComponent,
     NoAdditionalSTBComponent,
@@ -118,6 +120,7 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
     UnableElifeLoginMessageComponent,
     TvBoxNotReachableSuccessComponent,
     TvBoxResetRequiredSuccessComponent,
+    QuickTransferTvboxChannelComponent,
     QuickTransferTvboxChannelComponent,
     TvBoxNotReachableTryAgainComponent,
     MoveElifeConnectionMessageComponent,

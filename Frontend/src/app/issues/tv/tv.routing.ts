@@ -60,6 +60,7 @@ import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick
 import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
 import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 const routes: Routes = [
   {
@@ -305,6 +306,11 @@ const routes: Routes = [
   {
     path: 'ont-restart-instructions/device-care',
     component: FiberBoxRestartCareComponent,
+  },
+
+  {
+    path: 'error-occur-try-again-later',
+    component: TryAgainErrorComponent,
   },
 ];
 

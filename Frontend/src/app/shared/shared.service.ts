@@ -24,6 +24,7 @@ export class SharedService {
   encryptedID: string = '';
 
   tryAgainBoxNotReachableFlag: number = 0;
+  tryAgainResetSTBFlag: number = 0;
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -50,6 +51,13 @@ export class SharedService {
 
   getTryAgainBoxNotReachableFlag() {
     return this.tryAgainBoxNotReachableFlag;
+  }
+  setTryAgainResetSTBFlag() {
+    this.tryAgainResetSTBFlag++;
+  }
+
+  getTryAgainResetSTBFlag() {
+    return this.tryAgainResetSTBFlag;
   }
 
   setUpsellOpportunity(opportunityCode: string) {
