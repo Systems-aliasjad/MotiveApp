@@ -31,7 +31,7 @@ export class PhoneNotReachableComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
 
   button1: IMotiveButton = {
-    title: 'BUTTONS.BOOK_AN_APPOINTMENT',
+    title: 'BUTTONS.BOOK_A_COMPLAINT',
     type: 'primary',
   };
   button2: IMotiveButton = {

@@ -33,7 +33,7 @@ export class TvBoxNotReachableTryAgainComponent implements OnInit, OnDestroy {
   connectedDevices;
 
   button1: IMotiveButton = {
-    title: 'BUTTONS.BOOK_AN_APPOINTMENT',
+    title: 'BUTTONS.BOOK_A_COMPLAINT',
     type: 'primary',
   };
   button2: IMotiveButton = {

@@ -19,8 +19,6 @@ import { SharedService } from 'src/app/shared/shared.service';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
 export class OutageMessageComponent implements OnInit, OnDestroy {
@@ -29,12 +27,12 @@ export class OutageMessageComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
+  // button1: IMotiveButton = {
+  //   type: 'link',
+  //   title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+  //   explanatoryNote: '',
+  // };
   button1: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
-    explanatoryNote: '',
-  };
-  button2: IMotiveButton = {
     type: 'secondary',
     title: 'BUTTONS.DONE',
   };
@@ -66,9 +64,9 @@ export class OutageMessageComponent implements OnInit, OnDestroy {
     };
   }
 
-  button1Listener() {}
+  // button1Listener() {}
 
-  button2Listener() {
+  button1Listener() {
     this.router.navigate(['/thanks']);
   }
 }

@@ -424,11 +424,11 @@ export class ApplicableCodes {
       type: 'text',
       objKeyNameEN: 'requestType',
     },
-    {
-      title: 'MESSAGES.DATE_VISIT',
-      type: 'date',
-      objKeyNameEN: 'dateOfVisit',
-    },
+    // {
+    //   title: 'MESSAGES.DATE_VISIT',
+    //   type: 'date',
+    //   objKeyNameEN: 'dateOfVisit',
+    // },
     {
       title: 'MESSAGES.STATUS',
       type: 'text',
@@ -442,11 +442,11 @@ export class ApplicableCodes {
       type: 'number',
       objKeyNameEN: 'complaintNo',
     },
-    {
-      title: 'MESSAGES.DATE_VISIT',
-      type: 'date',
-      objKeyNameEN: 'dateOfVisit',
-    },
+    // {
+    //   title: 'MESSAGES.DATE_VISIT',
+    //   type: 'date',
+    //   objKeyNameEN: 'dateOfVisit',
+    // },
     {
       title: 'MESSAGES.STATUS',
       type: 'text',
@@ -482,11 +482,11 @@ export class ApplicableCodes {
       objKeyNameEN: 'referecneNo',
     },
 
-    {
-      title: 'MESSAGES.RESOLVED_DATE',
-      type: 'date',
-      objKeyNameEN: 'resolvedDetails',
-    },
+    // {
+    //   title: 'MESSAGES.RESOLVED_DATE',
+    //   type: 'date',
+    //   objKeyNameEN: 'resolvedDetails',
+    // },
   ];
 
   public static routerNotReachableTemplate: ISection2Template[] = [
@@ -508,11 +508,11 @@ export class ApplicableCodes {
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
-    {
-      title: 'MESSAGES.DATE_OF_VISIT',
-      type: 'date',
-      objKeyNameEN: 'dateOfVisit',
-    },
+    // {
+    //   title: 'MESSAGES.DATE_OF_VISIT',
+    //   type: 'date',
+    //   objKeyNameEN: 'dateOfVisit',
+    // },
     {
       title: 'MESSAGES.STATUS',
       type: 'text',
@@ -526,11 +526,11 @@ export class ApplicableCodes {
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
-    {
-      title: 'MESSAGES.DATE_OF_VISIT',
-      type: 'date',
-      objKeyNameEN: 'dateOfVisit',
-    },
+    // {
+    //   title: 'MESSAGES.DATE_OF_VISIT',
+    //   type: 'date',
+    //   objKeyNameEN: 'dateOfVisit',
+    // },
     {
       title: 'MESSAGES.STATUS',
       type: 'text',
@@ -544,19 +544,19 @@ export class ApplicableCodes {
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
-    {
-      title: 'MESSAGES.DATE_CREATED',
-      type: 'date',
-      objKeyNameEN: 'dateCreated',
-    },
+    // {
+    //   title: 'MESSAGES.DATE_CREATED',
+    //   type: 'date',
+    //   objKeyNameEN: 'dateCreated',
+    // },
   ];
 
   public static requestAlreadyExistsTemplate: ISection2Template[] = [
-    {
-      title: 'MESSAGES.APPOINTMENT_DATE',
-      type: 'date',
-      objKeyNameEN: 'appointmentDate',
-    },
+    // {
+    //   title: 'MESSAGES.APPOINTMENT_DATE',
+    //   type: 'date',
+    //   objKeyNameEN: 'appointmentDate',
+    // },
     {
       title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
       type: 'time',
@@ -565,11 +565,11 @@ export class ApplicableCodes {
   ];
 
   public static appointmentChangedSuccessTemplate: ISection2Template[] = [
-    {
-      title: 'MESSAGES.DATE',
-      type: 'date',
-      objKeyNameEN: 'date',
-    },
+    // {
+    //   title: 'MESSAGES.DATE',
+    //   type: 'date',
+    //   objKeyNameEN: 'date',
+    // },
     {
       title: 'MESSAGES.TIME',
       type: 'time',
@@ -590,11 +590,11 @@ export class ApplicableCodes {
       type: 'number',
       objKeyNameEN: 'referenceNo',
     },
-    {
-      title: 'MESSAGES.DATE_OF_VISIT',
-      type: 'date',
-      objKeyNameEN: 'dateOfVisit',
-    },
+    // {
+    //   title: 'MESSAGES.DATE_OF_VISIT',
+    //   type: 'date',
+    //   objKeyNameEN: 'dateOfVisit',
+    // },
     {
       title: 'MESSAGES.LOCATION',
       type: 'text',

@@ -1,22 +1,21 @@
-@import '../../../../assets/scss/base/mixins';
-@import '../../../../assets/scss/base/variables';
+@import 'src/assets/scss/base/mixins';
+@import 'src/assets/scss/base/variables';
 
 // --------------------------------------------------------------
 :host {
-   --ion-font-family:Lato,Roboto,Arial,sans-serif;
-   ion-list{
-    --ion-background-color:transparent;
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  ion-list {
+    --ion-background-color: transparent;
     padding-top: 0;
     padding-bottom: 0;
   }
-  ion-item{
-    --min-height: auto; 
-    ion-label{
-      color:$secondary-color;
+  ion-item {
+    --min-height: auto;
+    ion-label {
+      color: $secondary-color;
       @media screen and (max-width: 992px) {
         font-size: 14px;
       }
-      
     }
     .inline-list_value {
       color: $primary-color;
@@ -27,14 +26,14 @@
   .inline-ion-list {
     margin-top: 1rem;
     margin-bottom: 1rem;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     ion-item {
       --min-height: 30px;
     }
   }
 }
-ion-item::part(native){
+ion-item::part(native) {
   padding-inline-end: 0;
   --inner-padding-end: 0;
   padding-inline-start: 0;
@@ -52,12 +51,11 @@ ion-item::part(native){
     -ms-flex-align: start;
     align-items: flex-start;
   }
-  
 }
 // --------------------------------------------------------------
-.two-col_right{
+.two-col_right {
   @media screen and (max-width: 992px) {
-    margin-top:4.5rem;
+    margin-top: 4.5rem;
   }
 }
 /* .issue-tabs_title{
@@ -66,11 +64,11 @@ ion-item::part(native){
   }
 } */
 .issue-tabs_wizard {
-  @media screen and  (max-width: 992px) {
+  @media screen and (max-width: 992px) {
     margin-bottom: 1rem;
   }
 }
-.issue-tab_content{
+.issue-tab_content {
   .content {
     width: 450px;
     margin: 0 auto;
@@ -78,32 +76,32 @@ ion-item::part(native){
       margin-top: 1rem;
       width: 100%;
     }
-    .sub-title{
+    .sub-title {
       @media screen and (max-width: 992px) {
         display: block;
         font-size: 16px;
       }
     }
-    app-page-top{
+    app-page-top {
       @media screen and (max-width: 992px) {
         display: none;
       }
     }
-    p{
-      margin-bottom:0;
+    p {
+      margin-bottom: 0;
       color: $secondary-color;
       line-height: 1.5;
       @media screen and (max-width: 992px) {
-        font-size:14px;
+        font-size: 14px;
       }
     }
-    .inline-list{
+    .inline-list {
       margin-top: 1.5rem;
-      ion-item{
-        padding-bottom: .5rem;
+      ion-item {
+        padding-bottom: 0.5rem;
       }
       padding-top: 1rem;
-      padding-bottom: .8rem;
+      padding-bottom: 0.8rem;
       .inline-list_title {
         color: #848789;
       }
@@ -111,7 +109,5 @@ ion-item::part(native){
         color: $primary-color;
       }
     }
-    
   }
 }
-

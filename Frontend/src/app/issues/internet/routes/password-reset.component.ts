@@ -80,20 +80,25 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
         this.sharedService.setLoader(false);
-        if (res?.result?.screenCode === flowCodes.QAHSIPR) {
-          this.router.navigate(['/issues/internet/password-reset-success']);
-        } else if (res?.result?.screenCode === flowCodes.QAHSIPR1) {
-          this.router.navigate(['/issues/internet/password-reset-faliure']);
-        } else {
-          this.router.navigate(['/unknown-issue']);
-        }
+        this.verifyResetResponse(res);
       });
     } else {
       this.sharedService.setLoader(true);
-      this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+      this.backendService.resetInternetPassword().subscribe((data: any) => {
         this.sharedService.setLoader(false);
-        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        this.verifyResetResponse(data);
+        // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
+    }
+  }
+
+  verifyResetResponse(res) {
+    if (res?.result?.screenCode === flowCodes.QAHSIPR) {
+      this.router.navigate(['/issues/internet/password-reset-success']);
+    } else if (res?.result?.screenCode === flowCodes.QAHSIPR1) {
+      this.router.navigate(['/issues/internet/password-reset-faliure']);
+    } else {
+      this.router.navigate(['/unknown-issue']);
     }
   }
 

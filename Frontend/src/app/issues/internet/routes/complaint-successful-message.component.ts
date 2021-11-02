@@ -15,8 +15,6 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
 export class ComplaintSuccessfulMessageComponent implements OnInit, OnDestroy {
@@ -25,12 +23,12 @@ export class ComplaintSuccessfulMessageComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
-  button1: IMotiveButton = {
-    type: 'link',
-    title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
-  };
+  // button1: IMotiveButton = {
+  //   type: 'link',
+  //   title: 'BUTTONS.TRACK_COMPLAINT_STATUS',
+  // };
 
-  button2: IMotiveButton = {
+  button1: IMotiveButton = {
     title: 'BUTTONS.DONE',
     type: 'secondary',
   };
@@ -61,9 +59,9 @@ export class ComplaintSuccessfulMessageComponent implements OnInit, OnDestroy {
     };
   }
 
-  button1Listener() {}
+  // button1Listener() {}
 
-  button2Listener() {
+  button1Listener() {
     this.router.navigate(['/thanks']);
   }
 }
