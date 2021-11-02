@@ -55,11 +55,8 @@ export class TvDetailComponent implements OnInit {
     private modalCtrl: ModalController
   ) {}
   ngOnInit() {
-    this.getIssueTilesData();
-
     const data = this.sharedService.getApiResponseData();
     this.eLifeStatus = data.result.responseData.elifeGameStatus;
-
     for (var index = 0; index < data?.result?.responseData?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
         if (!this.connectedDevices[i]?.list) {
@@ -68,7 +65,6 @@ export class TvDetailComponent implements OnInit {
         this.connectedDevices[i].list.push(data?.result?.responseData?.sharedPackages[index]?.packageName);
       }
     }
-
     for (var index = 0; index < data.result.responseData.stbList.length; index++) {
       var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.result?.responseData?.stbList[index]?.stbSerialNumber);
       if (selectedStb != null) {
@@ -77,7 +73,7 @@ export class TvDetailComponent implements OnInit {
         }
       }
     }
-
+    this.getIssueTilesData();
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
@@ -113,6 +109,6 @@ export class TvDetailComponent implements OnInit {
     this.ontConfig = temp?.ontConfig;
     // this.routerConfig = temp?.stbConfig;
     // this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
-    this.connectedDevices = temp?.stbConfig;
+    this.devices = temp?.stbConfig;
   }
 }

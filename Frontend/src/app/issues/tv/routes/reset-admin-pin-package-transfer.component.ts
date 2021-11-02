@@ -1,7 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
-import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
@@ -35,7 +34,6 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
   selectedCard;
   cardList: any[] = [];
   formGroup: FormGroup;
-  subscription: Subscription;
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
@@ -53,9 +51,7 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
     });
   }
 
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   updateHeader() {
     // this.sharedService.setHeaderConfig('HEADER.TRANSFER_PACKAGE', false, true);
@@ -83,7 +79,7 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
       if (data?.result?.screenCode === flowCodes.QAIPTVPIN) {
         this.router.navigate(['issues/tv/tv-admin-pin-reset-success']);
       } else if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
-        this.router.navigate(['/issues/tv/unable-tv-admin-pin']);
+        this.router.navigate(['/issues/tv/error-occur-try-again-later']);
       }
     });
   }

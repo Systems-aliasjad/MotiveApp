@@ -70,6 +70,7 @@ import { QuickResetAdminPinPackageTransferComponent } from './routes/quick-reset
 import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unable-tv-admin-pin-reset-message.component';
 import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick-tv-admin-pin-reset-message.component';
 import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -135,6 +136,7 @@ import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBo
     QuickUnableTvAdminPinResetMessageComponent,
     QuickTvAdminPinResetSuccessfullyMessageComponent,
     QuickTransferTvboxChannelComponent,
+    TryAgainErrorComponent,
   ],
   imports: [
     CommonModule,
