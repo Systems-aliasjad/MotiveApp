@@ -97,6 +97,7 @@ import { ResetWIFIPasswordStage2Component } from './routes/reset-wifi-password-s
 import { InternetTroubleshootCompleteMessageComponent } from './routes/troubleshoot-complete-message.component';
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
+import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 
 @NgModule({
   declarations: [
@@ -113,6 +114,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     RouterUpgradeComponent,
     BookComplaintComponent,
     ServerTimeOutComponent,
+    TryAgainErrorComponent,
     BookAppointmentComponent,
     UnableToConnectComponent,
     ResetFactoryDefaultDialog,
@@ -133,6 +135,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     ThirdPartyRouterFormComponent,
     RouterUpgradeSuccessComponent,
     InstallNewRouterCareComponent,
+    FiberBoxNotReachableComponent,
     ResetInternetPasswordComponent,
     UnableToMaleVideoCallComponent,
     InstallEtisalatRouterComponent,
@@ -185,7 +188,6 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     AccountTemporarilyDisconnectedMessageComponent,
     ContinueInstallingThirdPartyRouterMessageComponent,
     InstallNewRouterComplaintSuccessfullyMessageComponent,
-    TryAgainErrorComponent,
   ],
   imports: [
     CommonModule,

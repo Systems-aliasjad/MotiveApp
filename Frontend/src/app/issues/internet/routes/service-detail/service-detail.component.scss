@@ -118,7 +118,7 @@ ion-item::part(native) {
         content: '';
         width: 1rem;
         height: 1rem;
-        background: url('/assets/images/network-map-icons/all-okay-state.svg');
+        background: url('../../../../../assets/images/network-map-icons/all-okay-state.svg');
         background-repeat: no-repeat;
         background-size: 1rem;
         display: inline-block;
@@ -136,7 +136,7 @@ ion-item::part(native) {
         content: '';
         width: 1rem;
         height: 1rem;
-        background: url('/assets/images/network-map-icons/issue-error-state.svg');
+        background: url('../../../../../assets/images/network-map-icons/issue-error-state.svg');
         background-repeat: no-repeat;
         background-size: 1rem;
         display: inline-block;
@@ -154,7 +154,7 @@ ion-item::part(native) {
         content: '';
         width: 1rem;
         height: 1rem;
-        background: url('/assets/images/network-map-icons/action-pending-state.svg');
+        background: url('../../../../../assets/images/network-map-icons/action-pending-state.svg');
         background-repeat: no-repeat;
         background-size: 1rem;
         display: inline-block;

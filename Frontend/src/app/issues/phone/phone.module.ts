@@ -37,6 +37,7 @@ import { AccountTemporarilyDisconnectedMessageComponent } from './routes/account
 import { AppointmentSuccessfulMessageComponent } from './routes/appointment-successful-message.component';
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
+import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { PhoneNotReachableComponent } from './routes/phone-not-reachable.compone
     CallForwardMessageComponent,
     FiberBoxRestartCareComponent,
     ForgotCcbPinMessageComponent,
+    FiberBoxNotReachableComponent,
     IssueNotFixedMessageComponent,
     OntRestartInstructionsComponent,
     CallForwardFailedMessageComponent,

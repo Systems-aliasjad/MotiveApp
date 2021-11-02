@@ -24,6 +24,8 @@ export class SharedService {
   encryptedID: string = '';
 
   tryAgainBoxNotReachableFlag: number = 0;
+  tryAgainResetSTBFlag: number = 0;
+  tryAgainRouterNotReachableFlag: number = 0;
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -44,12 +46,26 @@ export class SharedService {
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
+  setTryAgainRouterNotReachableFlag() {
+    this.tryAgainRouterNotReachableFlag++;
+  }
+
+  getTryAgainRouterNotReachableFlag() {
+    return this.tryAgainRouterNotReachableFlag;
+  }
   setTryAgainBoxNotReachableFlag() {
     this.tryAgainBoxNotReachableFlag++;
   }
 
   getTryAgainBoxNotReachableFlag() {
     return this.tryAgainBoxNotReachableFlag;
+  }
+  setTryAgainResetSTBFlag() {
+    this.tryAgainResetSTBFlag++;
+  }
+
+  getTryAgainResetSTBFlag() {
+    return this.tryAgainResetSTBFlag;
   }
 
   setUpsellOpportunity(opportunityCode: string) {

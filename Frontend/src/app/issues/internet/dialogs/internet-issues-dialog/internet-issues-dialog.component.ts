@@ -2,6 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
+import { SharedService } from 'src/app/shared/shared.service';
 import { ERoutingIds } from '../../../../shared/constants/constants';
 import { InternetIssuesDialogSecondComponent } from '../internet-issues-dialog-second/internet-issues-dialog-second.component';
 
@@ -27,15 +30,22 @@ export class InternetIssuesDialog implements OnInit {
   showDialog1 = true;
   subscription: Subscription = new Subscription();
   codeType;
-  constructor(private modalCtrl: ModalController, public router: Router) {}
+  disable: boolean = false;
+  constructor(
+    private helperService: HelperService,
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private modalCtrl: ModalController,
+    public router: Router
+  ) {}
 
-  ngOnInit() {}
-
-  dismiss() {
-    this.modalCtrl.dismiss();
+  ngOnInit() {
+    if (this.sharedService.getTryAgainRouterNotReachableFlag() != 0) {
+      this.openSecondPopup();
+    }
   }
 
-  async SubmitForm() {
+  async openSecondPopup() {
     this.modalCtrl.dismiss();
     const modal = await this.modalCtrl.create({
       component: InternetIssuesDialogSecondComponent,
@@ -44,6 +54,21 @@ export class InternetIssuesDialog implements OnInit {
       },
     });
     return await modal.present();
+  }
+
+  dismiss() {
+    this.modalCtrl.dismiss();
+  }
+
+  async SubmitForm() {
+    this.sharedService.setTryAgainRouterNotReachableFlag();
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    });
   }
 
   ExitTroubleshoot() {

@@ -13,7 +13,7 @@ export class BackendService {
   ontDetail = {
     ontSerial: '485754431E91C19B',
     ontType: 'I-240G-A',
-    isReachable: true,
+    isReachable: false,
     isRebootRequired: false,
     isUpgradeRequired: false,
     url: '',
@@ -96,6 +96,15 @@ export class BackendService {
   nextSignal(signal: 'MandatoryOnly' | 'DontReboot' | 'Agree') {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/next-step`, { signal: signal });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  resetInternetPassword() {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/hsi-password-reset`, {});
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

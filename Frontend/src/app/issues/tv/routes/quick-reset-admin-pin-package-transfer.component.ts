@@ -47,7 +47,6 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
 
   ngOnInit() {
     this.updateHeader();
-    debugger;
     if (!this.sharedService.getQuickLinksData()) {
       try {
         this.modalCtr.dismiss();
@@ -112,7 +111,7 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
         this.router.navigate(['issues/tv/quick-tv-admin-pin-reset-success']);
       } else {
         // if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
-        this.router.navigate(['/issues/tv/quick-unable-tv-admin-pin']);
+        this.router.navigate(['/issues/tv/error-occur-try-again-later']);
       }
     });
   }

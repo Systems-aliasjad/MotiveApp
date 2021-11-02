@@ -268,18 +268,6 @@ export class QuickTransferTvboxChannelComponent implements OnInit, OnDestroy {
   }
 
   getCardClickedValue(card) {
-    const navigation = this.router.getCurrentNavigation();
-
-    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
-    this.sharedService.setLoader(true);
-    this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
-      this.sharedService.setLoader(false);
-      if (res?.result?.screenCode === flowCodes.QAIPTVPT) {
-        this.router.navigate(['issues/tv/package-transfer'], { state: { selectedCard: card } });
-      } else {
-        //if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
-        this.router.navigate(['/unknown-error']);
-      }
-    });
+    this.router.navigate(['issues/tv/package-transfer'], { state: { selectedCard: card } });
   }
 }

@@ -180,7 +180,9 @@ export class HelperService {
       this.router.navigate(['issues/internet/account-not-active']);
     } else if (CodeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      if (!data?.ontDetails?.isReachable || data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/internet/fiber-box-not-reachable']);
+      } else if (data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/internet/ont-reboot-required']);
       } else {
         this.handleCI9RouterCases(data?.routerDetails);
@@ -243,7 +245,11 @@ export class HelperService {
       this.router.navigate(['issues/phone/issue-not-fixed']);
     } else if (codeId === flowCodes.CI9) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
-      this.router.navigate(['issues/phone/ont-reboot']); //todo:
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/phone/fiber-box-not-reachable']);
+      } else if (data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+        this.router.navigate(['issues/phone/ont-reboot']);
+      }
     } else if (codeId === flowCodes.CI72) {
       if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
         this.router.navigate(['issues/phone/no-issues']);
@@ -269,7 +275,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/tv/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, stbDetails: data?.stbDetails, routerDetails: data?.stbDetails });
       this.router.navigate(['issues/tv/issues-not-fixed']); ///No need to save api response as its CI9
     } else if (CodeId === flowCodes.openComplaint) {
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
@@ -279,7 +285,9 @@ export class HelperService {
     } else if (CodeId === flowCodes.CI9) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, stbDetails: data?.stbDetails });
-      if (!data?.ontDetails?.isReachable || data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/tv/fiber-box-not-reachable']);
+      } else if (data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/tv/ont-reboot-required']);
       } else if (data?.stbDetails?.length > 0) {
         this.handleCI9RouterCasesIPTV(data?.stbDetails[0]);
