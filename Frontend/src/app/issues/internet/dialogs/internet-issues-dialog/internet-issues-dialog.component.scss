@@ -72,7 +72,7 @@ ion-item::part(native) {
 .header-ios {
 	ion-toolbar {
     ion-title{
-      h5{
+      h3{
         text-align: left;
       }
     }
@@ -120,21 +120,7 @@ ion-header{
       
     }
 }
-ion-toolbar{
-    border-bottom: 2px dashed #d0d6da;
-    ion-title{
-      padding-right:0;
-      padding-left: 0;
-      h5{
-        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-        color:$primary-color;
-      }
-    }
-  }
-  ion-buttons{
-    padding-right: 0;
-    padding-right: 0;
-  }
+
 }
 ion-list{
   padding-top: 0;

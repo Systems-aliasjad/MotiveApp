@@ -9,15 +9,30 @@
   }
   ion-header{
     ion-toolbar{
-      border-bottom: 2px dashed #d0d6da;
+      border-bottom: 2px solid #e2e1da;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      @media screen and (max-width: 992px) {
+        border-bottom: 2px dashed #d0d6da;
+        padding-top: .2rem;
+        padding-bottom: .8rem;
+      }
       ion-title{
         padding-right:0;
         padding-left: 0;
-        h5{
+        text-align: center;
+        @media screen and (max-width:992px) {
+          text-align: left;
+        }
+        h3{
           font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
           color:$primary-color;
-          @media screen and (max-width: 281px) {
-            font-size: 1rem;
+          font-weight: normal;
+          margin-left: 2rem;
+          @media screen and (max-width:992px) {
+            margin-left: 0;
+            margin-bottom: 0;
+            font-size: 18px;
           }
         }
       }
@@ -50,7 +65,7 @@ ion-item::part(native){
 .header-ios {
 	ion-toolbar {
     ion-title{
-      h5{
+      h3{
         text-align: left;
       }
     }
@@ -71,6 +86,35 @@ ion-list{
   ion-label{
     color:$primary-color;
     font-weight: 600;
+    @media screen and (max-width:992px) {
+      font-size: 14px;
+    }
+  }
+}
+ion-buttons{
+  padding-right: 0;
+  cursor: pointer;
+  @media screen and (max-width:992px) {
+    margin-top: 0.7rem;
+    margin-right: 0;
+  }
+  .close-btn{
+    display:none;
+    @media  screen and (max-width:992px) {
+      display: block;
+    }
+  }
+  .cross-icon{
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    @include transition(all 0.3s ease-in-out);
+    @media  screen and (max-width:992px) {
+      display: none;
+    }
+    &:hover{
+      opacity: 0.5;
+    }
   }
 }
 .check-guidlines-container {
@@ -113,5 +157,71 @@ ion-list{
         color:$secondary-color;
       }
     }
+  }
+}
+
+.cards-container {
+  margin-top: 1rem;
+  padding-right: .2rem;
+  padding-left: .2rem;
+  @media screen and (max-width: 992px) {
+    display: none;
+  }
+  ion-col{
+    ion-card {
+      cursor: pointer;
+      margin-right: 0;
+      margin-left: 0;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      min-height: 60px;
+      margin-right: 0.8rem;
+      margin-left: 0.8rem;
+      @include transition(all 0.3s ease-in-out);
+      &:hover {
+        background-color: #f9f8f8;
+        @include transform(translateY(-1px));
+        -webkit-box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+        box-shadow: rgb(2 8 20 / 10%) 0px 0.35em 1.175em;
+      }
+      ion-card-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        h4{
+          color: $primary-color;
+          font-size: 1rem;
+          font-weight: 600;
+          font-family:Lato,Roboto,Arial,sans-serif;
+        }
+        img{
+          width: 14px;
+          opacity: .7;
+        }
+      }
+    }
+  }
+}
+.list-container{
+  @media screen and (min-width: 992px) {
+   display: none;
   }
 }
