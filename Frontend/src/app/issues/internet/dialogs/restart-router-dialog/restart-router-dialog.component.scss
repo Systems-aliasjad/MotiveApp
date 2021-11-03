@@ -59,7 +59,9 @@ ion-item::part(native){
 	ion-toolbar {
     ion-title{
       h3{
-        text-align: left;
+        @media screen and (max-width:992px) {
+          text-align: left;
+        }
       }
     }
 	}

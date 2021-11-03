@@ -9,7 +9,7 @@
   }
   ion-header{
     ion-toolbar{
-      border-bottom: 2px solid #e2e1da;
+      /* border-bottom: 2px solid #e2e1da; */
       padding-top: 1rem;
       padding-bottom: 1rem;
       @media screen and (max-width: 992px) {
@@ -66,7 +66,9 @@ ion-item::part(native){
 	ion-toolbar {
     ion-title{
       h3{
-        text-align: left;
+        @media screen and (max-width:992px) {
+          text-align: left;
+        }
       }
     }
 	}
