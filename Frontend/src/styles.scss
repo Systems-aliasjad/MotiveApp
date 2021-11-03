@@ -366,7 +366,7 @@ ion-modal,
   -ms-flex-align: end;
   align-items: flex-end;
   @media screen and (max-width: 767px) {
-    --height: 70%;
+    --height: 450px;
     /* --border-radius: 0; */
   }
   @media screen and (max-width: 281px) {
@@ -380,7 +380,6 @@ ion-modal,
     border-top-left-radius: 0.6rem;
     border-top-right-radius: 0.6rem;
   }
-  
 }
 .mCS-dark-3.mCSB_scrollTools {
   .mCSB_dragger {
