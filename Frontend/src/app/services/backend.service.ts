@@ -175,6 +175,15 @@ export class BackendService {
     }
   }
 
+  updateCCBPinQuickLinks(newPin) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/ccb-pin-reset-qa?pin=${newPin}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   rebootDeviceSTB(DeviceToReeboot) {
     if (environment.shouldCallAPI) {
       console.log('DeviceToReeboot', DeviceToReeboot);
@@ -197,6 +206,15 @@ export class BackendService {
   stbAdminPinResetQuickLinks(data) {
     if (environment.shouldCallAPI) {
       return this.http.get(`motive/troubleshoot/stb-admin-pin-reset-qa/${data}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  stbRebootQuickLinks(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/reboot-devices-qa`, data);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

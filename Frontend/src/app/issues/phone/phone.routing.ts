@@ -32,6 +32,7 @@ import { AppointmentSuccessfulMessageComponent } from './routes/appointment-succ
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
+import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-error.component';
 
 const routes: Routes = [
   {
@@ -165,6 +166,11 @@ const routes: Routes = [
   {
     path: 'fiber-box-not-reachable',
     component: FiberBoxNotReachableComponent,
+  },
+
+  {
+    path: 'reset-ccb-error-occur-try-again-later',
+    component: ResetCcbTryAgainErrorComponent,
   },
 ];
 

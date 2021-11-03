@@ -29,6 +29,7 @@ export class TvBoxResetRequiredSuccessComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
+  quickLinkNextSignal;
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.DONE',
@@ -53,7 +54,10 @@ export class TvBoxResetRequiredSuccessComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+  }
 
   updatePageContent() {
     this.imgSrc = successImgSrc;
@@ -61,12 +65,14 @@ export class TvBoxResetRequiredSuccessComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    //  this.router.navigate(['/thanks']);
-
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    if (this?.quickLinkNextSignal) {
+      this.router.navigate(['landing']);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
+        this.sharedService.setLoader(false);
+        this.router.navigate(['/thanks']);
+      });
+    }
   }
 }

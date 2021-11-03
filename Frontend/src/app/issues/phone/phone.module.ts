@@ -38,6 +38,7 @@ import { AppointmentSuccessfulMessageComponent } from './routes/appointment-succ
 import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.component';
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
+import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
     PhoneIssuesProblemValueAddedComponent,
     CancelElifeConnectionMessageComponent,
     AccountTemporarilyDisconnectedMessageComponent,
+    ResetCcbTryAgainErrorComponent,
   ],
   imports: [
     CommonModule,

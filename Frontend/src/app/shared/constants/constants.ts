@@ -70,6 +70,12 @@ export const flowCodes = {
   QAHSIPnPFR1: 'QA-HSI-PnPFR1', // reset factory router (Failure)
   QAHSIPR: 'QA-HSI-PR', // Internet Password Reset (Success)
   QAHSIPR1: 'QA-HSI-PR1', // Internet Password Reset (Failure)
+
+  QAVOICECCB1: 'QA-VOICE-CCB1', // for ccb pin failed
+  QAVOICECCB: 'QA-VOICE-CCB', //for ccb pin success
+
+  QASTBR: 'QA_STBR', //FOR stb rebbot success
+  QASTBR1: 'QA_STBR1', //FOR stb rebbot success
 };
 
 export const ETISALAT = 'Etisalat';
@@ -184,8 +190,8 @@ const FACTORY_RESET_ROUTER = {
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
-  linkTo: 'issues/tv/quick-reset-admin-pin-package-transfer',
-  nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
+  linkTo: 'issues/tv/quick-tv-box-package-transfer',
+  nextSignal: QUICK_ACTION.STB_REBOOT,
 };
 const ELIFE_ON_PIN_RESET = {
   body: 'QUICK_LINKS.I_WANT_TO_RESET_ELIFE_ON_PIN',
@@ -205,7 +211,7 @@ const CONNECTION_ISSUE_ROUTER = {
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
-  linkTo: '/issues/password/reset-tv-admin-pin',
+  linkTo: 'issues/tv/quick-reset-admin-pin-package-transfer',
   nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
 };
 const TRANSFER_PACKAGE_TV = {
