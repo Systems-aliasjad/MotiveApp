@@ -6,6 +6,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'reset-wifi-password-stage2',
@@ -45,6 +46,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
   }
 
   ngOnDestroy(): void {
@@ -65,11 +68,33 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
   button1Listener() {}
 
   button2Listener(_event) {
-    if (this.quickLinkNextSignal) {
+    if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
-        this.router.navigate(['/issues/internet/password-update-success']);
+        if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+          this.router.navigate(['/issues/internet/password-update-success']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+          this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+        }
+      });
+    } else if (this?.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+
+        this.sharedService.setLoader(true);
+        this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
+          this.sharedService.setLoader(false);
+
+          if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+            this.router.navigate(['/issues/internet/password-update-success']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+            this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+          }
+        });
       });
     } else {
       this.sharedService.setLoader(true);

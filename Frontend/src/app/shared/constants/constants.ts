@@ -216,7 +216,7 @@ const TRANSFER_PACKAGE_TV = {
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
   linkTo: 'issues/internet/unable-to-connect-to-homezone',
-  nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
+  nextSignal: QUICK_ACTION.HP_AP_REBOOT,
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',

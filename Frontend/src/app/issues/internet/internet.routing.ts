@@ -82,6 +82,7 @@ import { InternetTroubleshootCompleteMessageComponent } from './routes/troublesh
 import { OntRebootRequiredComponent } from './routes/ont-reboot-required.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
+import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-error.component';
 
 const routes: Routes = [
   {
@@ -505,6 +506,10 @@ const routes: Routes = [
   {
     path: 'error-occur-try-again-later',
     component: TryAgainErrorComponent,
+  },
+  {
+    path: 'reset-wifi-error-occur-try-again-later',
+    component: ResetWifiTryAgainErrorComponent,
   },
 ];
 

@@ -26,6 +26,7 @@ export class SharedService {
   tryAgainBoxNotReachableFlag: number = 0;
   tryAgainResetSTBFlag: number = 0;
   tryAgainRouterNotReachableFlag: number = 0;
+  tryAgainResetWifiPasswordFlag: number = 0;
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -46,6 +47,13 @@ export class SharedService {
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
+  setTryAgainResetWifiPasswordFlag() {
+    this.tryAgainResetWifiPasswordFlag++;
+  }
+
+  getTryAgainResetWifiPasswordFlag() {
+    return this.tryAgainResetWifiPasswordFlag;
+  }
   setTryAgainRouterNotReachableFlag() {
     this.tryAgainRouterNotReachableFlag++;
   }
