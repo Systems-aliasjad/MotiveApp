@@ -34,9 +34,9 @@ export class AppComponent implements OnInit {
     localStorage.clear();
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
-    if (!params?.token) {
-      return;
-    }
+    // if (!params?.token) {
+    //   return;
+    // }
     this.subscribeLoaderChanges();
     // TODO: REMOVE THIS
     this.sharedService.setDefaultLanguage('en');
