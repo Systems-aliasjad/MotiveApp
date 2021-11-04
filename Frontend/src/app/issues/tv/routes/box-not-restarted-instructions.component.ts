@@ -22,6 +22,7 @@ import { SVGs } from 'src/app/shared/constants/constants';
 export class BoxNotRestartedInstructionsComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   ImgSrc = SVGs.stb.default;
+  quickLinkNextSignal;
   instruction1: IRestartInstruction = {
     title: '',
     steps: [],
@@ -42,6 +43,8 @@ export class BoxNotRestartedInstructionsComponent implements OnInit, OnDestroy {
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
@@ -74,12 +77,16 @@ export class BoxNotRestartedInstructionsComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    //this.router.navigate(['/thanks']);
+    if (this.sharedService.getQuickLinksData()) {
+      this.router.navigate(['/landing']);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+        this.sharedService.setLoader(false);
+        this.router.navigate(['/thanks']);
+      });
+    }
 
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    //this.router.navigate(['/thanks']);
   }
 }

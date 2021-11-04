@@ -13,6 +13,7 @@ import { BackendService } from 'src/app/services/backend.service';
 })
 export class RestartTvboxDialog implements OnInit, OnDestroy {
   subscription: Subscription;
+  quickLinkNextSignal;
   constructor(
     private backendService: BackendService,
     private location: Location,
@@ -31,7 +32,10 @@ export class RestartTvboxDialog implements OnInit, OnDestroy {
 
   initialization() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+  }
 
   dismiss() {
     this.modalCtrl.dismiss();
@@ -41,10 +45,14 @@ export class RestartTvboxDialog implements OnInit, OnDestroy {
     this.dismiss();
     //  this.router.navigate(['/thanks']);
 
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
-    });
+    if (this.sharedService.getQuickLinksData()) {
+      // this.router.navigate(['/landing']);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+        this.sharedService.setLoader(false);
+        this.router.navigate(['/thanks']);
+      });
+    }
   }
 }
