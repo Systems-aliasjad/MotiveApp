@@ -138,6 +138,9 @@ ion-item::part(native){
     @media screen and (max-width: 767px) {
       height: calc(100vh - 170px);
     }
+    @media screen and (max-width: 456px) {
+      height: calc(100vh - 104px);
+    }
   }
   app-tv-detail {
     height: calc(100vh - 176px);

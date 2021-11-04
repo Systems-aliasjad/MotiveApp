@@ -406,6 +406,11 @@ ion-modal,
     background-color: $white !important;
   }
 }
+.mCSB_inside {
+	& > .mCSB_container {
+		margin-right: 5px !important;
+	}
+}
 
 // ------------Modal End-------------------
 
@@ -618,6 +623,7 @@ html {
     display: none;
   }
 }
+app-no-issues-service-details,
 app-change-call-forward,
 app-reset-pin,
 app-install-etisalat-router,
