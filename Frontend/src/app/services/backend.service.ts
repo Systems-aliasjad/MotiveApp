@@ -4,6 +4,7 @@ import { Observable, Subscriber } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { TS_OUTCOME_ISSUE_FOUND_FIXED, TS_OUTCOME_ISSUE_FOUND_NOT_FIXED } from '../shared/constants/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -41,7 +42,7 @@ export class BackendService {
   };
 
   hardData = {
-    screenCode: 'CI9',
+    screenCode: 'CI72',
     responseData: {
       hsiPasswordReset: true,
       ppoeConnected: 'true',
@@ -62,8 +63,8 @@ export class BackendService {
           interfaceType: '802.11',
         },
       ],
-      upsellingOpportunity: 'UPSEL3',
-      tsOutcome: 'No Issue Found',
+      upsellingOpportunity: 'UPSEL1',
+      tsOutcome: TS_OUTCOME_ISSUE_FOUND_FIXED,
     },
   };
 
