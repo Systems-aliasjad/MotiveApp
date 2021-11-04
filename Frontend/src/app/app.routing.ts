@@ -7,6 +7,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.component';
 import { GenericErrorComponent } from './shared/components/generic-error/generic-error.component';
 import { GenericErrorIssuesComponent } from './shared/components/generic-error-issues/generic-error-issues.component';
+import { InstallNewRouterComponent } from './common-quick-links/install-new-router/install-new-router.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,11 @@ const routes: Routes = [
   {
     path: 'track-request',
     loadChildren: () => import('./common-quick-links/track-request/track-request.module').then((m) => m.TrackRequestModule),
+  },
+
+  {
+    path: 'install-new-router',
+    loadChildren: () => import('./common-quick-links/install-new-router/install-new-router.module').then((m) => m.InstallNewRouterModule),
   },
   {
     path: 'unknown-error',
