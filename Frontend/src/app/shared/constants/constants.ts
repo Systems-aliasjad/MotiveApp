@@ -32,6 +32,7 @@ export const QUICK_ACTION = {
 export const flowCodes = {
   QAHSIWIFI: 'QA-HSI-WIFI', //Update Wi Fi Configuration (Success)
   QAHSIWIFI5: 'QA-HSI-WIFI5', //Update Wi Fi Configuration (Failure)
+  QAHSIWIFI8: 'QA-HSI-WIFI8', //update wi fi configuration is input required
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM141',
   CI9: 'CI9',

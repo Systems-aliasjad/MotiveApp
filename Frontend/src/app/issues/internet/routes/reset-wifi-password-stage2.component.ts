@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
@@ -12,15 +12,17 @@ import { flowCodes } from 'src/app/shared/constants/constants';
   selector: 'reset-wifi-password-stage2',
   template: `<app-reset-router-password
     [headerConfig]="headerConfig"
+    [dualBandRequired]="dualBandRequired"
     [button1]="button1"
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener($event)"
   ></app-reset-router-password>`,
 })
-export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
+export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, AfterViewInit {
   subscription: Subscription;
   quickLinkNextSignal;
+  dualBandRequired: boolean = true;
   button1: IMotiveButton = {
     type: 'terms',
     title: 'BUTTONS.TERMS',
@@ -41,13 +43,42 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy {
     private helperService: HelperService,
     private router: Router
   ) {}
+  ngAfterViewInit(): void {
+    this.callNextStepApi();
+  }
 
   ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
-    const navigation = this.router.getCurrentNavigation();
-    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+  }
+
+  callNextStepApi() {
+    if (this?.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+
+        this.sharedService.setLoader(true);
+        this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((data) => {
+          this.sharedService.setLoader(false);
+          if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+            this.router.navigate(['/issues/internet/password-update-success']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+            this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
+            this.dualBandRequired = data?.result?.responseData?.dualBandRequired;
+          } else {
+            this.router.navigate(['/unknown-issue']);
+          }
+        });
+      });
+    } else {
+    }
   }
 
   ngOnDestroy(): void {
