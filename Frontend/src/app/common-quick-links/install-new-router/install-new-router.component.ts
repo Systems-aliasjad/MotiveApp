@@ -1,7 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { OWN_ROUTER, THIRD_PARTY_ROUTER } from 'src/app/shared/constants/constants';
+import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes, OWN_ROUTER, THIRD_PARTY_ROUTER } from 'src/app/shared/constants/constants';
 import { IPageHeader } from 'src/app/shared/constants/types';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-install-new-router',
@@ -20,27 +22,30 @@ export class InstallNewRouterComponent implements OnInit {
     },
   ];
   headerConfig: IPageHeader = {
-    pageTitle: 'BUTTONS.INSTALL_ROUTER',
+    pageTitle: 'MESSAGES.INSTALL_ROUTER',
     showBackBtn: true,
   };
-  selectedRadioItem;
-  constructor(private router: Router) {}
+  selectedRadioItem: string = '';
+  constructor(private router: Router, private backendService: BackendService, private sharedService: SharedService) {}
 
-  ngOnInit() {
-    console.log('====================================');
-    console.log('asdsad');
-    console.log('====================================');
-  }
-
-  radioGroupChange(card) {
-    // this.router.navigate(['/package-transfer']);
-  }
+  ngOnInit() {}
 
   button1Listener() {
-    // this.router.navigate(['/issues/tv/transfer-package/step1']);
+    this.backendService.installNewRouterRequest(this.selectedRadioItem).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.QANRINST) {
+        if (this.selectedRadioItem === OWN_ROUTER) {
+          this.router.navigate(['issues/internet/install-new-router']);
+        } else if (this.selectedRadioItem === THIRD_PARTY_ROUTER) {
+          this.router.navigate(['issues/internet/install-new-router-care']);
+        }
+      } else if (data?.result?.screenCode === flowCodes.QANRINST1) {
+        this.router.navigate(['issues/internet/router-installation-failed']);
+      }
+    });
   }
 
-  button2Listener() {
-    // this.router.navigate(['issues/tv/unable-to-watch-specific-channel']);
+  radioGroupChange(event) {
+    this.selectedRadioItem = event.detail.value;
   }
 }
