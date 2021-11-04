@@ -4,6 +4,7 @@ import { Observable, Subscriber } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import { map } from 'rxjs/operators';
+import { TS_OUTCOME_ISSUE_FOUND_FIXED, TS_OUTCOME_ISSUE_FOUND_NOT_FIXED } from '../shared/constants/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -41,9 +42,9 @@ export class BackendService {
   };
 
   hardData = {
-    screenCode: 'CI9',
+    screenCode: 'CI72',
     responseData: {
-      hsiPasswordReset: true,
+      hsiPasswordReset: false,
       ppoeConnected: 'true',
       wifiEnabled: 'true',
       hsiUploadDownload: '50Mbps,250Mbps',
@@ -62,8 +63,8 @@ export class BackendService {
           interfaceType: '802.11',
         },
       ],
-      upsellingOpportunity: 'UPSEL3',
-      tsOutcome: 'No Issue Found',
+      upsellingOpportunity: 'UPSEL1',
+      tsOutcome: TS_OUTCOME_ISSUE_FOUND_FIXED,
     },
   };
 
@@ -175,6 +176,15 @@ export class BackendService {
     }
   }
 
+  updateCCBPinQuickLinks(newPin) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/ccb-pin-reset-qa?pin=${newPin}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   rebootDeviceSTB(DeviceToReeboot) {
     if (environment.shouldCallAPI) {
       console.log('DeviceToReeboot', DeviceToReeboot);
@@ -203,6 +213,15 @@ export class BackendService {
     }
   }
 
+  stbRebootQuickLinks(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/reboot-devices-qa`, data);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   elifeOnReset() {
     if (environment.shouldCallAPI) {
       return this.http.get(`motive/troubleshoot/elife-password-reset`);
@@ -224,6 +243,15 @@ export class BackendService {
   stbDetails() {
     if (environment.shouldCallAPI) {
       return this.http.get(`motive/troubleshoot/stb-details`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  installNewRouterRequest(routerType) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/install-router/${routerType}`);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

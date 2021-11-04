@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { ResetTvPinDialog } from '../../../issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
+import { QUICK_ACTION } from '../../constants/constants';
 
 export enum EIssueFlow {
   internetIssue,
@@ -77,26 +78,31 @@ export class IssueListDialog implements OnInit {
       issue: 'Reset internet password',
       description: 'Find our how to change your password',
       route: '/issues/internet/internet-password-reset',
+      nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
     },
     {
       issue: "Reset router's Wi-Fi password",
       description: "Tap here if you forgot your router's Wi-Fi password",
-      route: '/issues/internet/reset-wifi-password',
+      route: '/issues/internet/stage2/reset-wifi-password',
+      nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
     },
     {
       issue: 'Reset TV admin PIN',
       description: 'Find out how to reset your TV box PIN',
       route: '/issues/tv/quick-reset-admin-pin-package-transfer',
+      nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
     },
     {
       issue: 'Reset eLifeON PIN',
       description: "Tap here if you're unable to log in to eLifeON",
-      route: '/issues/password/reset-eLifeON-pin',
+      route: '/issues/tv/unable-to-login-elife',
+      nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
     },
     {
       issue: 'Reset CCB PIN',
       description: 'Find out how to reset your Code Control Barring PIN',
-      route: 'issues/password/reset-ccb-pin',
+      route: 'issues/phone/forgot-ccb-pin',
+      nextSignal: QUICK_ACTION.RESET_CCP_PIN_CODE,
     },
   ];
   phoneIssuesList: any[] = [
@@ -147,7 +153,8 @@ export class IssueListDialog implements OnInit {
   onIssueClick(item) {
     if (item.route != '') {
       this.dismiss();
-      this.router.navigate([item.route]);
+      this.router.navigate([item?.route], { state: { quickLinkNextSignal: item?.nextSignal } });
+      //
     } else if (item.customEvent) {
       this[item.customEvent]();
     }

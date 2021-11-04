@@ -62,7 +62,7 @@
           <!-- Tv Boxes End -->
 
           <!-- My Subscriptions Start -->
-          <ion-row class="my-subscriptions">
+          <ion-row class="my-subscriptions" *ngIf="eLifeStatus != ''">
             <ion-col size="12" class="content-sub_title">
               <h6 class="sub-title">{{ 'SUBHEADER.MY_SUBSCRIPTIONS' | translate }}</h6>
             </ion-col>

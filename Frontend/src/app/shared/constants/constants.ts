@@ -32,6 +32,7 @@ export const QUICK_ACTION = {
 export const flowCodes = {
   QAHSIWIFI: 'QA-HSI-WIFI', //Update Wi Fi Configuration (Success)
   QAHSIWIFI5: 'QA-HSI-WIFI5', //Update Wi Fi Configuration (Failure)
+  QAHSIWIFI8: 'QA-HSI-WIFI8', //update wi fi configuration is input required
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
@@ -70,6 +71,15 @@ export const flowCodes = {
   QAHSIPnPFR1: 'QA-HSI-PnPFR1', // reset factory router (Failure)
   QAHSIPR: 'QA-HSI-PR', // Internet Password Reset (Success)
   QAHSIPR1: 'QA-HSI-PR1', // Internet Password Reset (Failure)
+
+  QAVOICECCB1: 'QA-VOICE-CCB1', // for ccb pin failed
+  QAVOICECCB: 'QA-VOICE-CCB', //for ccb pin success
+
+  QASTBR: 'QA_STBR', //FOR stb rebbot success
+  QASTBR1: 'QA_STBR1', //FOR stb rebbot success
+
+  QANRINST: 'QA-NR-INST', //Install new router  Success
+  QANRINST1: 'QA-NR-INST1', //Install new router failer
 };
 
 export const ETISALAT = 'Etisalat';
@@ -77,6 +87,8 @@ export const ONT = 'Fiber Box';
 export const ROUTER = 'Router';
 export const STB = 'STB';
 export const PHONE = 'phone';
+export const OWN_ROUTER = 'Etisalat Router';
+export const THIRD_PARTY_ROUTER = 'Third Party Router';
 
 export const networkDiagramClasses = {
   default: 'default', //Gray
@@ -184,8 +196,8 @@ const FACTORY_RESET_ROUTER = {
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
-  linkTo: 'issues/tv/quick-reset-admin-pin-package-transfer',
-  nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
+  linkTo: 'issues/tv/quick-tv-box-package-transfer',
+  nextSignal: QUICK_ACTION.STB_REBOOT,
 };
 const ELIFE_ON_PIN_RESET = {
   body: 'QUICK_LINKS.I_WANT_TO_RESET_ELIFE_ON_PIN',
@@ -205,7 +217,7 @@ const CONNECTION_ISSUE_ROUTER = {
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
-  linkTo: '/issues/password/reset-tv-admin-pin',
+  linkTo: 'issues/tv/quick-reset-admin-pin-package-transfer',
   nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
 };
 const TRANSFER_PACKAGE_TV = {
@@ -216,7 +228,7 @@ const TRANSFER_PACKAGE_TV = {
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
   linkTo: 'issues/internet/unable-to-connect-to-homezone',
-  nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
+  nextSignal: QUICK_ACTION.HP_AP_REBOOT,
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',

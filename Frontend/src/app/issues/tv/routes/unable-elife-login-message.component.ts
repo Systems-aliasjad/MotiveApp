@@ -27,6 +27,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
+  quickLinkNextSignal;
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.RESET_PIN',
@@ -49,7 +50,10 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+  }
 
   updatePageContent() {
     this.Section1Data = CustomerJourneyConstants.restELifeLoginPin;
@@ -57,25 +61,49 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.elifeOnReset().subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
-        this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
-      } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
+    if (this?.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+
         this.sharedService.setLoader(true);
-        this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+        this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((data) => {
           this.sharedService.setLoader(false);
-          this.router.navigate(['/unknown-issue']);
+          if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
+            this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
+          } else {
+            //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
+            this.router.navigate(['/unknown-issue']);
+          }
         });
-      }
-    });
+      });
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.elifeOnReset().subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
+          this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
+        } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
+          this.sharedService.setLoader(true);
+          this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+            this.sharedService.setLoader(false);
+            this.router.navigate(['/unknown-issue']);
+          });
+        }
+      });
+    }
 
     //this.router.navigate(['issues/tv/reset-elife-pin-success']);
   }
 
   button2Listener() {
-    this.router.navigate(['issues/tv/detail']);
+    if (this?.quickLinkNextSignal) {
+      this.router.navigate(['landing']);
+    } else {
+      this.router.navigate(['issues/tv/detail']);
+    }
 
     // this.sharedService.setLoader(true);
     // this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false }).subscribe(() => {

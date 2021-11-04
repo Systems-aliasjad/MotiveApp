@@ -5,6 +5,7 @@ import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 
 /**
  * Forgot Code Control Barring (CCB) PIN
@@ -15,6 +16,7 @@ import { BackendService } from 'src/app/services/backend.service';
 })
 export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   subscription: Subscription;
+  quickLinkNextSignal;
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.NEXT',
@@ -34,6 +36,8 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
     //this.sharedService.setHeaderConfig('HEADER.RESET_CCB_PIN', true);
   }
 
@@ -43,14 +47,48 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
   };
 
   button1Listener(event) {
-    this.backendService.updateCCBPin(event?.value?.NewPassword).subscribe((data) => {
-      if (data?.result?.screenCode === 'QA-VOICE-CCB1') {
-        this.router.navigate(['/issues/phone/forgot-ccb-pin-failed-message']);
-      } else if (data?.result?.screenCode === 'QA-VOICE-CCB') {
-        this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
-      } else {
-        this.router.navigate(['/unknown-issue']);
-      }
-    });
+    if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
+      this.sharedService.setLoader(true);
+      this.backendService.updateCCBPinQuickLinks(event?.value?.NewPassword).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAVOICECCB1) {
+          //  this.router.navigate(['/issues/phone/forgot-ccb-pin-failed-message']);
+          this.router.navigate(['/issues/phone/reset-ccb-error-occur-try-again-later']);
+        } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
+          this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
+        } else {
+          this.router.navigate(['/unknown-issue']);
+        }
+      });
+    } else if (this?.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+
+        this.sharedService.setLoader(true);
+        this.backendService.updateCCBPinQuickLinks(event?.value?.NewPassword).subscribe((data) => {
+          this.sharedService.setLoader(false);
+          if (data?.result?.screenCode === flowCodes.QAVOICECCB1) {
+            this.router.navigate(['/issues/phone/reset-ccb-error-occur-try-again-later']);
+          } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
+            this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
+          } else {
+            this.router.navigate(['/unknown-issue']);
+          }
+        });
+      });
+    } else {
+      this.backendService.updateCCBPin(event?.value?.NewPassword).subscribe((data) => {
+        if (data?.result?.screenCode === flowCodes.QAVOICECCB1) {
+          this.router.navigate(['/issues/phone/forgot-ccb-pin-failed-message']);
+        } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
+          this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
+        } else {
+          this.router.navigate(['/unknown-issue']);
+        }
+      });
+    }
   }
 }

@@ -16,6 +16,9 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   //
 
   @Input()
+  dualBandRequired: boolean = true;
+
+  @Input()
   button1: IMotiveButton;
   @Output()
   button1Click = new EventEmitter();

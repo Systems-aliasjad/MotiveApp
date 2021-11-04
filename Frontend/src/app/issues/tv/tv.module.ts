@@ -72,6 +72,7 @@ import { QuickTvAdminPinResetSuccessfullyMessageComponent } from './routes/quick
 import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
+import { QuickTvBoxPackageTransferComponent } from './routes/quick-tv-box-package-transfer.component';
 
 @NgModule({
   declarations: [
@@ -140,6 +141,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     UnableToWatchPackageTransferSuccessComponent,
     AccountTemporarilyDisconnectedMessageComponent,
     QuickTvAdminPinResetSuccessfullyMessageComponent,
+    QuickTvBoxPackageTransferComponent,
   ],
   imports: [
     CommonModule,

@@ -1,7 +1,17 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { flowCodes, networkDiagramClasses, ONT, ROUTER, STB, SVGs, TS_OUTCOME_ISSUE_FOUND_NOT_FIXED, TS_OUTCOME_NO_ISSUE } from '../constants/constants';
+import {
+  flowCodes,
+  networkDiagramClasses,
+  ONT,
+  ROUTER,
+  STB,
+  SVGs,
+  TS_OUTCOME_ISSUE_FOUND_FIXED,
+  TS_OUTCOME_ISSUE_FOUND_NOT_FIXED,
+  TS_OUTCOME_NO_ISSUE,
+} from '../constants/constants';
 import { IOntDetail, IRouterDetail, IStbDetail } from '../constants/types';
 import { SharedService } from '../shared.service';
 
@@ -138,7 +148,7 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.router.navigate(['issues/other/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
-      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         this.sharedService.setApiResponseData({
           ontDetails: data?.ontDetails,
           routerDetails: data?.routerDetails,
@@ -199,7 +209,7 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       this.router.navigate(['issues/internet/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI72) {
-      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         this.sharedService.setApiResponseData({
           connectedDevices: data?.connectedDevices,
           hsiUploadDownload: data?.hsiUploadDownload?.split(','),
@@ -251,7 +261,7 @@ export class HelperService {
         this.router.navigate(['issues/phone/ont-reboot']);
       }
     } else if (codeId === flowCodes.CI72) {
-      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         this.router.navigate(['issues/phone/no-issues']);
       } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
         this.router.navigate(['issues/phone/issue-not-fixed']);
@@ -312,7 +322,7 @@ export class HelperService {
         stbDetails: data?.stbDetails,
         connectedDevices: data?.responseData?.stbDetails,
       });
-      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE) {
+      if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         if (data?.stbDetails) {
           let flag = false;
           var stbList = data?.stbDetails;

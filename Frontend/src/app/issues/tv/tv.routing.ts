@@ -61,6 +61,7 @@ import { QuickUnableTvAdminPinResetMessageComponent } from './routes/quick-unabl
 import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBox-channel.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
+import { QuickTvBoxPackageTransferComponent } from './routes/quick-tv-box-package-transfer.component';
 
 const routes: Routes = [
   {
@@ -294,6 +295,10 @@ const routes: Routes = [
   {
     path: 'quick-reset-admin-pin-package-transfer',
     component: QuickResetAdminPinPackageTransferComponent,
+  },
+  {
+    path: 'quick-tv-box-package-transfer',
+    component: QuickTvBoxPackageTransferComponent,
   },
   {
     path: 'single-stb-found',
