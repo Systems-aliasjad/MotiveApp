@@ -44,7 +44,7 @@ export class BackendService {
   hardData = {
     screenCode: 'CI72',
     responseData: {
-      hsiPasswordReset: true,
+      hsiPasswordReset: false,
       ppoeConnected: 'true',
       wifiEnabled: 'true',
       hsiUploadDownload: '50Mbps,250Mbps',
@@ -243,6 +243,15 @@ export class BackendService {
   stbDetails() {
     if (environment.shouldCallAPI) {
       return this.http.get(`motive/troubleshoot/stb-details`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  installNewRouterRequest(routerType) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/install-router/${routerType}`);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

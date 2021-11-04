@@ -32,15 +32,15 @@ export class AppComponent implements OnInit {
 
   Initialization(params: Params) {
     localStorage.clear();
-    //TODO: uncomment This
-    //this.sharedService.setLoader(true);
-    // if (!params?.token) {
-    //   return;
-    // }
     this.subscribeLoaderChanges();
-    // TODO: REMOVE THIS
     this.sharedService.setDefaultLanguage('en');
     this.appDirection = 'ltr';
+    //TODO: uncomment This
+    //this.sharedService.setLoader(true);
+    if (!params?.token) {
+      return;
+    }
+    // TODO: REMOVE THIS
     this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
 
     //TODO: uncomment This

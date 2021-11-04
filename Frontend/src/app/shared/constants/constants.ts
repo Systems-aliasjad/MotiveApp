@@ -83,6 +83,8 @@ export const ONT = 'Fiber Box';
 export const ROUTER = 'Router';
 export const STB = 'STB';
 export const PHONE = 'phone';
+export const OWN_ROUTER = 'Etisalat Router';
+export const THIRD_PARTY_ROUTER = 'Third Party Router';
 
 export const networkDiagramClasses = {
   default: 'default', //Gray
