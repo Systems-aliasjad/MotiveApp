@@ -82,6 +82,7 @@ ion-item::part(native){
       color:$secondary-color;
       @media screen and (max-width: 992px) {
         margin-top: .8rem;
+        font-size: 14px;
       }
     }
   }
@@ -131,6 +132,9 @@ ion-item::part(native){
       .sub-title{
         margin-bottom: 0;
         margin-left: 1rem;
+        @media screen and (max-width: 992px) {
+          font-size:15px;
+        }
         @media screen and (max-width: 361px) {
           margin-top: 1rem;
           margin-left: 0rem;
@@ -142,6 +146,9 @@ ion-item::part(native){
         color:$secondary-color;
         font-size: 1rem;
         margin-bottom: .5rem;
+        @media screen and (max-width: 992px) {
+          font-size:15px;
+        }
       }
       .package{
         -webkit-box-align: end;
@@ -186,6 +193,9 @@ ion-item::part(native){
           ion-label{
             font-size: 1rem;
             color:$primary-color;
+            @media screen and (max-width: 992px) {
+              font-size:14px;
+            }
           }
           .status{
             font-weight: 600;
@@ -292,6 +302,9 @@ ion-item::part(native){
             max-width: 100%;
             font-size: 1rem;
             color:$secondary-color;
+            @media screen and (max-width: 992px) {
+              font-size: 14px;
+            }
             @media screen and (max-width: 361px) {
               margin-top: .5rem;
               margin-left: 0;
