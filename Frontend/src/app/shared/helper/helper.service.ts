@@ -386,10 +386,10 @@ export class HelperService {
 
   handleCI9RouterCases(routerDetails: IRouterDetail) {
     if (routerDetails?.isManaged) {
-      if (routerDetails?.isRebootRequired) {
-        this.router.navigate(['issues/internet/router-reboot-required']);
-      } else if (!routerDetails?.isReachable) {
+      if (!routerDetails?.isReachable) {
         this.router.navigate(['issues/internet/router-not-reachable']);
+      } else if (routerDetails?.isRebootRequired) {
+        this.router.navigate(['issues/internet/router-reboot-required']);
       } else if (routerDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/internet/router-upgrade-recommended']);
       }
