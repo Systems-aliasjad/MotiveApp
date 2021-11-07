@@ -55,6 +55,7 @@ export class TvDetailComponent implements OnInit {
     private modalCtrl: ModalController
   ) {}
   ngOnInit() {
+    this.getIssueTilesData();
     const data = this.sharedService.getApiResponseData();
     this.eLifeStatus = data.result.responseData.elifeGameStatus;
     for (var index = 0; index < data?.result?.responseData?.sharedPackages?.length; index++) {
@@ -73,7 +74,7 @@ export class TvDetailComponent implements OnInit {
         }
       }
     }
-    this.getIssueTilesData();
+
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
@@ -110,5 +111,6 @@ export class TvDetailComponent implements OnInit {
     // this.routerConfig = temp?.stbConfig;
     // this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails);
     this.devices = temp?.stbConfig;
+    this.connectedDevices = temp?.stbConfig;
   }
 }

@@ -77,6 +77,9 @@ export const flowCodes = {
 
   QASTBR: 'QA_STBR', //FOR stb rebbot success
   QASTBR1: 'QA_STBR1', //FOR stb rebbot success
+
+  QANRINST: 'QA-NR-INST', //Install new router  Success
+  QANRINST1: 'QA-NR-INST1', //Install new router failer
 };
 
 export const ETISALAT = 'Etisalat';

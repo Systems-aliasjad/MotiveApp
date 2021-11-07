@@ -14,7 +14,7 @@
 
 <ion-content malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
   <ion-grid class="ion-no-padding">
-
+    <div class="pop-content">
     <!-- Dialog Internet Issues Cards Start -->
     <ion-row class="cards-container">
       <ion-col size="6" *ngFor="let item of issuesList; let i = index">
@@ -42,7 +42,7 @@
       </ion-col>
     </ion-row>
     <!-- Dialog Internet Issues List End -->
-
+    </div>
     <!-- Check Guidlines Start -->
     <ion-row class="check-guidlines-container" *ngIf="showViewGuidline === true">
       <ion-col size="12" class="ion-no-padding">
