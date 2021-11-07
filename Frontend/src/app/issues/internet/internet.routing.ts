@@ -83,6 +83,7 @@ import { OntRebootRequiredComponent } from './routes/ont-reboot-required.compone
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-error.component';
+import { PasswordResetFaliureComponent } from './routes/password-reset-failure.component';
 
 const routes: Routes = [
   {
@@ -492,7 +493,7 @@ const routes: Routes = [
   },
   {
     path: 'password-reset-faliure',
-    component: PasswordResetSuccessfullyComponent,
+    component: PasswordResetFaliureComponent,
   },
   {
     path: 'router-out-of-warranty',

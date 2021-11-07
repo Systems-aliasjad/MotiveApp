@@ -99,6 +99,7 @@ import { OntRebootRequiredComponent } from './routes/ont-reboot-required.compone
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-error.component';
+import { PasswordResetFaliureComponent } from './routes/password-reset-failure.component';
 
 @NgModule({
   declarations: [
@@ -133,6 +134,7 @@ import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-e
     BrowsingUnableStep3Component,
     RouterResetRequiredComponent,
     RouterRebootRequiredComponent,
+    PasswordResetFaliureComponent,
     ThirdPartyRouterFormComponent,
     RouterUpgradeSuccessComponent,
     InstallNewRouterCareComponent,

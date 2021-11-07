@@ -5,10 +5,10 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'password-reset-successfully',
+  selector: 'password-reset-faliure',
   template: `<motive-message [imgSrc]="imgSrc" [Section1Data]="Section1Data" [button1]="button1" (button1Click)="button1Listener()"></motive-message>`,
 })
-export class PasswordResetSuccessfullyComponent implements OnInit {
+export class PasswordResetFaliureComponent implements OnInit {
   subscription: Subscription;
   imgSrc = warningImgSrc;
   Section1Data = {
