@@ -68,11 +68,11 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
       if (data?.code === 200) {
         this.router.navigate(['issues/tv/tvBox-reset-successfull']);
       } else {
-        this.sharedService.setLoader(true);
+        //  this.sharedService.setLoader(true);
         this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-          this.sharedService.setLoader(false);
-          this.router.navigate(['/unknown-error']);
+          //  this.sharedService.setLoader(false);
         });
+        this.router.navigate(['/unknown-error']);
       }
       // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });

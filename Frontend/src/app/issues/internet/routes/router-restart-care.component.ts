@@ -51,11 +51,11 @@ export class RouterRestartCareComponent implements OnInit, OnDestroy {
   };
 
   button1Listener() {
-    this.sharedService.setLoader(true);
+    // this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
+      //  this.sharedService.setLoader(false);
     });
+    this.router.navigate(['/thanks']);
   }
 
   async button2Listener() {

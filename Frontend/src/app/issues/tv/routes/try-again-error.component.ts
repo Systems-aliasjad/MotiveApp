@@ -89,11 +89,11 @@ export class TryAgainErrorComponent implements OnInit, OnDestroy {
     if (this.sharedService.getQuickLinksData()) {
       this.router.navigate(['/landing']);
     } else {
-      this.sharedService.setLoader(true);
+      // this.sharedService.setLoader(true);
       this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-        this.sharedService.setLoader(false);
-        this.router.navigate(['/thanks']);
+        // this.sharedService.setLoader(false);
       });
+      this.router.navigate(['/thanks']);
     }
   }
 }

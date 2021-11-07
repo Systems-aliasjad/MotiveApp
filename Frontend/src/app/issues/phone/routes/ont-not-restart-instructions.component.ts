@@ -71,11 +71,11 @@ export class OntNotRestartInstructionsComponent implements OnInit, OnDestroy {
   button1Listener() {
     //this.router.navigate(['/thanks']);
 
-    this.sharedService.setLoader(true);
+    // this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/thanks']);
+      // this.sharedService.setLoader(false);
     });
+    this.router.navigate(['/thanks']);
   }
 
   button2Listener() {

@@ -139,11 +139,11 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
         if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
           this.router.navigate(['issues/tv/package-transfer-success']);
         } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
-          this.sharedService.setLoader(true);
+          //  this.sharedService.setLoader(true);
           this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-            this.sharedService.setLoader(false);
-            this.router.navigate(['/unknown-error']);
+            //    this.sharedService.setLoader(false);
           });
+          this.router.navigate(['/unknown-error']);
           // this.router.navigate(['/unknown-error']);
         }
       });
@@ -156,11 +156,11 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
     if (this.sharedService.getQuickLinksData()) {
       this.router.navigate(['landing']);
     } else {
-      this.sharedService.setLoader(true);
+      // this.sharedService.setLoader(true);
       this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-        this.sharedService.setLoader(false);
-        this.router.navigate(['thanks']);
+        //  this.sharedService.setLoader(false);
       });
+      this.router.navigate(['thanks']);
     }
   }
 }
