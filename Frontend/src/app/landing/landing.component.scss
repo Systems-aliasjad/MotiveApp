@@ -72,7 +72,8 @@
   -webkit-box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
   box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
   @media screen and (max-width: 992px) {
-    min-height: 75px;
+    min-height: 70px;
+    height: 70px;
   }
   @include transition(all 0.3s ease-in-out);
   @media screen and (max-width: 281px) {
@@ -83,6 +84,7 @@
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
+    height: auto;
   }
   &:hover {
     text-decoration: none;
@@ -127,7 +129,7 @@
       @-moz-document url-prefix() {
         font-weight: 500 !important;
       }
-      @media screen and (max-width: 768px) {
+      @media screen and (max-width: 992px) {
         font-size: 0.9375rem;
       }
       @media screen and (max-width: 281px) {
