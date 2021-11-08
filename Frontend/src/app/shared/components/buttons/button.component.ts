@@ -50,6 +50,7 @@ export class ButtonComponent implements OnInit {
   async PopupTermsConditions() {
     this.modal = await this.modalCtrl.create({
       component: TermsConditionsComponent,
+      cssClass: 't-c-modal',
     });
     this.modal.onDidDismiss().then((d) => {
       this.sharedService.getTermsConditions().subscribe((_terms) => {
