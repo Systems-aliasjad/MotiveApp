@@ -76,8 +76,14 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
     this.sharedService.setLoader(true);
     this.backendService.stbAdminPinReset(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QAIPTVPIN) {
-        this.router.navigate(['issues/tv/tv-admin-pin-reset-success']);
+      if (
+        data?.result?.screenCode === flowCodes.QAIPTVPIN ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN3 ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN4 ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN5 ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN6
+      ) {
+        this.router.navigate(['issues/tv/tv-admin-pin-reset-success'], { state: { screenCode: data?.result?.screenCode } });
       } else if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
         this.router.navigate(['/issues/tv/error-occur-try-again-later']);
       }

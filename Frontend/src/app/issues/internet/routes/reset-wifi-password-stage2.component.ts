@@ -71,7 +71,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
             this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
-            this.dualBandRequired = data?.result?.responseData?.dualBandRequired;
+            this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
           } else {
             this.router.navigate(['/unknown-issue']);
           }

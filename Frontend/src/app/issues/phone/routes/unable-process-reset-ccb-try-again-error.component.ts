@@ -1,15 +1,19 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { flowCodes, successImgSrc } from 'src/app/shared/constants/constants';
+import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
+/**
+ * Try Again Error
+ */
 @Component({
-  selector: 'quick-tv-admin-pin-reset-successfully-message',
+  selector: 'unable-process-reset-ccb-error',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -19,23 +23,32 @@ import { BackendService } from 'src/app/services/backend.service';
     (button1Click)="button1Listener()"
   ></motive-message>`,
 })
-export class QuickTvAdminPinResetSuccessfullyMessageComponent implements OnInit, OnDestroy {
+export class UnableProcessResetCcbErrorComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
+  quickLinkNextSignal;
   button1: IMotiveButton = {
-    title: 'BUTTONS.OK',
+    title: 'BUTTONS.CLOSE',
     type: 'secondary',
   };
 
-  constructor(private sharedService: SharedService, private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute) {}
-
+  constructor(
+    private helperService: HelperService,
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+
     this.updatePageContent();
   }
 
@@ -46,21 +59,18 @@ export class QuickTvAdminPinResetSuccessfullyMessageComponent implements OnInit,
   updateHeader() {}
 
   updatePageContent() {
-    const navigation = this.router.getCurrentNavigation();
-    const screenCode = navigation?.extras?.state?.screenCode;
-
-    if (screenCode === flowCodes.QAIPTVPIN3 || screenCode === flowCodes.QAIPTVPIN4) {
-      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetFullSuccessfully;
-    } else if (screenCode === flowCodes.QAIPTVPIN5 || screenCode === flowCodes.QAIPTVPIN6) {
-      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
-    } else {
-      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
-    }
-
-    this.imgSrc = successImgSrc;
+    this.imgSrc = warningImgSrc;
+    this.Section1Data = {
+      header: 'MESSAGES.UNABLE_TO_PROCESS_REQUEST',
+      paragraphs: ['MESSAGES.IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_CODE_CONTROL_BARRING_SERVICE'],
+    };
   }
 
   button1Listener() {
-    this.router.navigate(['landing']);
+    if (this?.sharedService.getQuickLinksData()) {
+      this.router.navigate(['landing']);
+    } else {
+      this.router.navigate(['/thanks']);
+    }
   }
 }

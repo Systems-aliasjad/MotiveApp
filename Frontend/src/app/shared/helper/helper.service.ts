@@ -392,6 +392,8 @@ export class HelperService {
         this.router.navigate(['issues/internet/router-reboot-required']);
       } else if (routerDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/internet/router-upgrade-recommended']);
+      } else if (routerDetails.isResetRequired) {
+        this.router.navigate(['issues/internet/router-reset-required']);
       }
     } else {
       this.router.navigate(['issues/internet/third-party-router']);

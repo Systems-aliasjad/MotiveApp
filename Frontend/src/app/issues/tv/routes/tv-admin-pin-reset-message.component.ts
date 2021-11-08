@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { successImgSrc } from 'src/app/shared/constants/constants';
+import { flowCodes, successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
@@ -46,7 +46,16 @@ export class TvAdminPinResetSuccessfullyMessageComponent implements OnInit, OnDe
   updateHeader() {}
 
   updatePageContent() {
-    this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
+    const navigation = this.router.getCurrentNavigation();
+    const screenCode = navigation?.extras?.state?.screenCode;
+
+    if (screenCode === flowCodes.QAIPTVPIN3 || screenCode === flowCodes.QAIPTVPIN4) {
+      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetFullSuccessfully;
+    } else if (screenCode === flowCodes.QAIPTVPIN5 || screenCode === flowCodes.QAIPTVPIN6) {
+      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
+    } else {
+      this.Section1Data = CustomerJourneyConstants.tvAdminPinResetSuccessfully;
+    }
     this.imgSrc = successImgSrc;
   }
 

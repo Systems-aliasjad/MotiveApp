@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
+import { BackendService } from 'src/app/services/backend.service';
 import { ResetTvPinDialog } from '../../../issues/tv/dialogs/reset-tv-pin-dialog/reset-tv-pin-dialog.component';
-import { QUICK_ACTION } from '../../constants/constants';
+import { flowCodes, QUICK_ACTION } from '../../constants/constants';
+import { SharedService } from '../../shared.service';
 
 export enum EIssueFlow {
   internetIssue,
@@ -79,6 +81,7 @@ export class IssueListDialog implements OnInit {
       description: 'Find our how to change your password',
       route: '/issues/internet/internet-password-reset',
       nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
+      directCall: true,
     },
     {
       issue: "Reset router's Wi-Fi password",
@@ -96,7 +99,8 @@ export class IssueListDialog implements OnInit {
       issue: 'Reset eLifeON PIN',
       description: "Tap here if you're unable to log in to eLifeON",
       route: '/issues/tv/unable-to-login-elife',
-      nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
+      nextSignal: QUICK_ACTION.RESET_ELIFEON_PASSWORD,
+      directCall: true,
     },
     {
       issue: 'Reset CCB PIN',
@@ -128,7 +132,8 @@ export class IssueListDialog implements OnInit {
     // },
   ];
   issuesList: any[];
-  constructor(private modalCtrl: ModalController, private router: Router) {}
+
+  constructor(protected sharedService: SharedService, private backendService: BackendService, private modalCtrl: ModalController, private router: Router) {}
 
   ngOnInit() {
     if (this.flow === EIssueFlow.internetIssue) {
@@ -151,12 +156,55 @@ export class IssueListDialog implements OnInit {
   }
 
   onIssueClick(item) {
-    if (item.route != '') {
+    if (item.directCall) {
+      this.callDirectCallAPIs(item);
+    } else if (item.route != '') {
       this.dismiss();
       this.router.navigate([item?.route], { state: { quickLinkNextSignal: item?.nextSignal } });
       //
     } else if (item.customEvent) {
       this[item.customEvent]();
+    }
+  }
+  callDirectCallAPIs(item) {
+    this.dismiss();
+    if (item?.nextSignal === QUICK_ACTION.RESET_ELIFEON_PASSWORD) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+
+        this.sharedService.setLoader(true);
+        this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
+          this.sharedService.setLoader(false);
+          if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
+            this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
+          } else {
+            //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
+            this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+          }
+        });
+      });
+    } else if (item?.nextSignal === QUICK_ACTION.RESET_INTERNET_PASSWORD) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+
+        this.sharedService.setLoader(true);
+        this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
+          this.sharedService.setLoader(false);
+          if (data?.result?.screenCode === flowCodes.QAHSIPR) {
+            this.router.navigate(['/issues/internet/password-reset-success']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIPR1) {
+            this.router.navigate(['/issues/internet/password-reset-faliure']);
+          } else {
+            this.router.navigate(['/unknown-issue']);
+          }
+        });
+      });
     }
   }
 

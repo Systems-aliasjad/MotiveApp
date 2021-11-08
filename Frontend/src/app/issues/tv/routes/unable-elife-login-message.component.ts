@@ -75,7 +75,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
             this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
           } else {
             //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-            this.router.navigate(['/unknown-issue']);
+            this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
           }
         });
       });
@@ -90,7 +90,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
           this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
             //  this.sharedService.setLoader(false);
           });
-          this.router.navigate(['/unknown-issue']);
+          this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
         }
       });
     }
@@ -99,7 +99,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    if (this?.quickLinkNextSignal) {
+    if (this?.sharedService.getQuickLinksData()) {
       this.router.navigate(['landing']);
     } else {
       this.router.navigate(['issues/tv/detail']);
