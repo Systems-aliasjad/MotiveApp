@@ -13,7 +13,7 @@
   @media screen and (max-width: 992px){
     display:none;
   }
-  h3{
+  h2{
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     margin-left: 0.5rem;
   }
@@ -54,7 +54,7 @@
   margin-bottom: 0.7rem;
   padding: 1rem;
   border-radius: 0.5rem;
-  min-height: 90px;
+  min-height: 80px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -143,16 +143,16 @@
       overflow: hidden;
       text-overflow: ellipsis; */
       line-height: 1.2;
-      margin-top: .5rem;
+      margin-top: .4rem;
       margin-bottom: 0;
       color:$etisalat-gray-color;
-      font-size: 0.9rem;
+      font-size: 0.75rem;
       @media screen and (max-width: 992px) {
         color: $secondary-color;
       }
-      @media screen and (max-width: 768px) {
+      /* @media screen and (max-width: 768px) {
         font-size: 0.875rem;
-      }
+      } */
      
     }
   }
