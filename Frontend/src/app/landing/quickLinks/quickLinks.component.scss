@@ -86,7 +86,8 @@
   }
 }
 .sub-title {
-  @media screen and (max-width: 281px) {
-    font-size: 1rem;
+  text-transform: uppercase;
+  @media screen and (max-width: 992px) {
+    font-size:16px;
   }
 }
