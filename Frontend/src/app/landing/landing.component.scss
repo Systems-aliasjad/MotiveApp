@@ -71,6 +71,9 @@
   text-decoration: none;
   -webkit-box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
   box-shadow: 0 5px 10px rgb(25 0 0 / 16%);
+  @media screen and (max-width: 992px) {
+    min-height: 75px;
+  }
   @include transition(all 0.3s ease-in-out);
   @media screen and (max-width: 281px) {
     -webkit-box-orient: vertical;
@@ -124,8 +127,8 @@
       @-moz-document url-prefix() {
         font-weight: 500 !important;
       }
-      @media screen and (max-width: 992px) {
-        font-size: 16px;
+      @media screen and (max-width: 768px) {
+        font-size: 0.9375rem;
       }
       @media screen and (max-width: 281px) {
         margin-top:.8rem;
@@ -140,6 +143,9 @@
       margin-bottom: 0;
       color: $secondary-color;
       font-size: 0.9rem;
+      @media screen and (max-width: 768px) {
+        font-size: 0.875rem;
+      }
      
     }
   }
