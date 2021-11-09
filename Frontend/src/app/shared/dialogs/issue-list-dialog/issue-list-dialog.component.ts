@@ -198,11 +198,13 @@ export class IssueListDialog implements OnInit {
           this.sharedService.setLoader(false);
           if (data?.result?.screenCode === flowCodes.QAHSIPR) {
             this.router.navigate(['/issues/internet/password-reset-success']);
-          } else if (data?.result?.screenCode === flowCodes.QAHSIPR1) {
-            this.router.navigate(['/issues/internet/password-reset-faliure']);
           } else {
-            this.router.navigate(['/unknown-issue']);
+            //if (data?.result?.screenCode === flowCodes.QAHSIPR1) {
+            this.router.navigate(['/issues/internet/reset-internet-passowrd-error-occur-try-again-later']);
           }
+          // else {
+          //   this.router.navigate(['/unknown-issue']);
+          // }
         });
       });
     }

@@ -100,7 +100,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     if (this?.sharedService.getQuickLinksData()) {
-      this.router.navigate(['landing']);
+      this.router.navigate(['/thanks']);
     } else {
       this.router.navigate(['issues/tv/detail']);
     }

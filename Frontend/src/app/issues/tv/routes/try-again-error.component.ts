@@ -87,7 +87,7 @@ export class TryAgainErrorComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     if (this.sharedService.getQuickLinksData()) {
-      this.router.navigate(['/landing']);
+      this.router.navigate(['/thanks']);
     } else {
       // this.sharedService.setLoader(true);
       this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
