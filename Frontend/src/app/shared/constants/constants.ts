@@ -192,7 +192,8 @@ const RESET_PIN = {
 
 const INSTALL_NEW_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_INSTALL_MY_NEW_ROUTER',
-  linkTo: '/issues/internet/install-new-router',
+  //  linkTo: '/issues/internet/install-new-router',
+  linkTo: 'install-new-router',
   nextSignal: QUICK_ACTION.PORT_MIGRATION_AND_NEW_ROUTER_INSTALLATION,
 };
 const FACTORY_RESET_ROUTER = {
@@ -234,7 +235,7 @@ const TRANSFER_PACKAGE_TV = {
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
   linkTo: 'issues/internet/unable-to-connect-to-homezone',
-  nextSignal: QUICK_ACTION.HP_AP_REBOOT,
+  nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
