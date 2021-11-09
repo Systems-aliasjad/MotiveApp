@@ -47,3 +47,13 @@ ion-radio.ios{
 .channel-list-items{
   margin-bottom: 1rem;
 }
+ion-label{
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+}
+p{
+  @media screen and (max-width: 992px) {
+    font-size: 14px;
+  }
+}
