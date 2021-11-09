@@ -56,7 +56,7 @@ export class UnableTvAdminPinResetMessageComponent implements OnInit, OnDestroy 
 
   button1Listener() {
     // this.router.navigate(['/thanks']);
-    if (this.quickLinkNextSignal) {
+    if (this.sharedService.getQuickLinksData()) {
       this.router.navigate(['/thanks']);
     } else {
       // this.sharedService.setLoader(true);
