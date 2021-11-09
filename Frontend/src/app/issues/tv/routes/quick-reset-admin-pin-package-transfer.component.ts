@@ -107,8 +107,16 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
     this.sharedService.setLoader(true);
     this.backendService.stbAdminPinResetQuickLinks(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QAIPTVPIN) {
-        this.router.navigate(['issues/tv/quick-tv-admin-pin-reset-success']);
+      if (
+        data?.result?.screenCode === flowCodes.QAIPTVPIN ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN3 ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN4 ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN5 ||
+        data?.result?.screenCode === flowCodes.QAIPTVPIN6
+      ) {
+        // this.router.navigate(['issues/tv/quick-tv-admin-pin-reset-success']);
+
+        this.router.navigate(['/issues/tv/quick-tv-admin-pin-reset-success'], { state: { screenCode: data?.result?.screenCode } });
       } else {
         // if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
         this.router.navigate(['/issues/tv/error-occur-try-again-later']);

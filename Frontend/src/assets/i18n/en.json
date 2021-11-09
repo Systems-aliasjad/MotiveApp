@@ -168,6 +168,7 @@
   },
 
   "MESSAGES": {
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_CODE_CONTROL_BARRING_SERVICE": "It looks like you are not subscribed to Code Control Barring service.",
     "TV_BOX_WILL_BE_RESTARTED": "Tv box will be restarted",
     "PLEASE_SELECT_THE_ROUTER": "Please select the router",
     "PLEASE_WAIT_WHILE_WE_TRY_TO_RESET_IT_AGAIN": "Please wait while we try to reset it again.",
@@ -591,7 +592,7 @@
   },
 
   "Errors": {
-    "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must be a 10 digit number",
+    "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must be a 12 digit number",
     "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "Password & Confirm Password Must Be Matched",
     "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "Password must match the crietaria as per given below"
   }

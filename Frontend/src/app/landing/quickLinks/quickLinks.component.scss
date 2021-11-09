@@ -44,8 +44,7 @@
         @include transition(all 0.3s ease-in-out);
         display: block;
         ion-card {
-          min-height: 90px;
-          height: 90px;
+          height: 104px;
           background-color: $white;
           margin: 0;
           border-radius: 0.5rem;
@@ -65,19 +64,18 @@
           -ms-flex-align: center;
           align-items: center;
           @media screen and (max-width: 767px) {
-            min-height: 60px;
             height: 60px;
           }
           @media screen and (max-width: 281px) {
-            min-height: 85px;
             height: 85px;
           }
           p {
             margin-bottom: 0;
-            color: $primary-color;
-            font-size: .9rem;
+            color:$etisalat-gray-color;
+            font-size: 1rem;
             text-align: left;
-            @media screen and (max-width: 768px) {
+            @media screen and (max-width: 992px) {
+              color: $primary-color;
               width: 112px;
               word-break: break-word;
               font-size: 0.8125rem;
@@ -114,7 +112,9 @@
 .sub-title {
   text-transform: uppercase;
   letter-spacing: .1rem;
+  color:$etisalat-gray-color;
   @media screen and (max-width: 992px) {
+    color:$primary-color;
     font-size:0.9375rem;
   }
   @media screen and (max-width: 767px) {
@@ -123,13 +123,12 @@
 }
 .quick-links_all, 
 .arrow-link{
-  @media screen and (max-width: 992px) {
-    font-size: 0.875rem;
-  }
+  font-size: 0.875rem;
   @media screen and (max-width: 767px) {
     font-size: 0.82rem;
   }
   img{
+    margin-left: 0.3rem;
     @media screen and (max-width: 992px) {
       width: 0.7rem;
       height: 0.7rem;

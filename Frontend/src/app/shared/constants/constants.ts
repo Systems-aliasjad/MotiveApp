@@ -60,6 +60,10 @@ export const flowCodes = {
   CI122: 'CI122',
   CI123: 'CI123',
   QAIPTVPIN: 'QA-IPTV-PIN', //Forgot TV Admin Pin Success
+  QAIPTVPIN3: 'QA-IPTV-PIN3', //Forgot TV Admin Pin Success  //is not reachable, manual reboot is required
+  QAIPTVPIN4: 'QA-IPTV-PIN4', //Forgot TV Admin Pin Success // reboot has failed after STB PIN Code reset
+  QAIPTVPIN5: 'QA-IPTV-PIN5', //Forgot TV Admin Pin Success //PIN code reset successfully, SMS was not sent successfully
+  QAIPTVPIN6: 'QA-IPTV-PIN6', //Forgot TV Admin Pin Success // PIN code reset successfully, SMS was sent successfully
   QAIPTVPIN1: 'QA-IPTV-PIN1', //Forgot TV Admin Pin Failure
   QAIPTVELON: 'QA-IPTV-EL-ON', //  unable to login to elife on Success
   QAIPTVELON1: 'QA-IPTV-EL-ON1', //  unable to login to elife on Failure
@@ -73,6 +77,8 @@ export const flowCodes = {
   QAHSIPR1: 'QA-HSI-PR1', // Internet Password Reset (Failure)
 
   QAVOICECCB1: 'QA-VOICE-CCB1', // for ccb pin failed
+  QAVOICECCB2: 'QA-VOICE-CCB2', // for ccb pin failed
+  QAVOICECCB4: 'QA-VOICE-CCB4', // for ccb pin failed TRY AGAIN
   QAVOICECCB: 'QA-VOICE-CCB', //for ccb pin success
 
   QASTBR: 'QA_STBR', //FOR stb rebbot success

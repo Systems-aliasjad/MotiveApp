@@ -33,6 +33,7 @@ import { FiberBoxRestartCareComponent } from './routes/fiber-box-restart-care.co
 import { PhoneNotReachableComponent } from './routes/phone-not-reachable.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-error.component';
+import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-reset-ccb-try-again-error.component';
 
 const routes: Routes = [
   {
@@ -171,6 +172,10 @@ const routes: Routes = [
   {
     path: 'reset-ccb-error-occur-try-again-later',
     component: ResetCcbTryAgainErrorComponent,
+  },
+  {
+    path: 'unable-process-reset-ccb',
+    component: UnableProcessResetCcbErrorComponent,
   },
 ];
 
