@@ -20,6 +20,15 @@ export class BackendService {
     url: '',
     className: '',
   };
+  connectedDevice = {
+    addressSource: 'DHCP',
+    hostName: 'Unknown-d2:03:0d:8b:a0:fc',
+    interfaceType: 'Ethernet',
+    ipAddress: '192.168.1.47',
+    isActive: true,
+    leaseTimeRemaining: '81548',
+    macAddress: 'D2:03:0D:8B:A0:FC',
+  };
 
   routerDetail = {
     routerSerial: '109461043164',
@@ -53,15 +62,16 @@ export class BackendService {
       ontDetails: this.ontDetail,
       stbDetails: [this.stbDetail],
       connectedDevices: [
-        {
-          addressSource: 'DHCP',
-          hostName: 'Unknown-d2:03:0d:8b:a0:fc',
-          interfaceType: 'Ethernet',
-          ipAddress: '192.168.1.47',
-          isActive: true,
-          leaseTimeRemaining: '81548',
-          macAddress: 'D2:03:0D:8B:A0:FC',
-        },
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
+        this.connectedDevice,
       ],
       upsellingOpportunity: 'UPSEL1',
       tsOutcome: TS_OUTCOME_ISSUE_FOUND_FIXED,
