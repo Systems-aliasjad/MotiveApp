@@ -87,10 +87,11 @@ export class ResetInternetPasswordTryAgainErrorComponent implements OnInit, OnDe
   }
 
   button2Listener() {
-    if (this?.sharedService.getQuickLinksData()) {
-      this.router.navigate(['landing']);
-    } else {
-      this.router.navigate(['/thanks']);
-    }
+    this.router.navigate(['/thanks']);
+    // if (this?.sharedService.getQuickLinksData()) {
+    //   this.router.navigate(['landing']);
+    // } else {
+    //   this.router.navigate(['/thanks']);
+    // }
   }
 }
