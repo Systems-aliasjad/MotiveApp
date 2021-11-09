@@ -86,10 +86,11 @@ export class ResetCcbTryAgainErrorComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    if (this?.quickLinkNextSignal) {
-      this.router.navigate(['landing']);
-    } else {
-      this.router.navigate(['/thanks']);
-    }
+    this.router.navigate(['/thanks']);
+    // if (this?.quickLinkNextSignal) {
+    //   this.router.navigate(['landing']);
+    // } else {
+    //   this.router.navigate(['/thanks']);
+    // }
   }
 }

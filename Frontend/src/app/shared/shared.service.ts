@@ -29,6 +29,7 @@ export class SharedService {
   tryAgainResetWifiPasswordFlag: number = 0;
   tryAgainResetCCBFlag: number = 0;
   tryAgainUnableElifeFlag: number = 0;
+  tryResetInternetPasswordFlag: number = 0;
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -49,6 +50,13 @@ export class SharedService {
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
+  setTryResetInternetPasswordFlag() {
+    this.tryResetInternetPasswordFlag++;
+  }
+
+  getTryResetInternetPasswordFlag() {
+    return this.tryResetInternetPasswordFlag;
+  }
   setTryAgainUnableElifeFlag() {
     this.tryAgainUnableElifeFlag++;
   }

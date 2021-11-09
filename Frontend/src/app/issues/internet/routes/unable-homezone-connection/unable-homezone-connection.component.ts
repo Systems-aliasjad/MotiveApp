@@ -66,7 +66,7 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
 
   button2Listener() {
     if (this.quickLinkNextSignal) {
-      this.router.navigate(['landing']);
+      this.router.navigate(['/thanks']);
     } else {
       //  this.sharedService.setLoader(true);
       this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {

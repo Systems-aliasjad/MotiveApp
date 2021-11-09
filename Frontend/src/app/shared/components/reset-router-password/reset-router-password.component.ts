@@ -14,6 +14,7 @@ import { IMotiveButton, IPageHeader } from '../../constants/types';
 })
 export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   //
+  isDisabled: boolean = true;
 
   @Input()
   dualBandRequired: boolean = true;
@@ -73,7 +74,8 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
       tab1: this.fb.group(
         {
           wifiName: [''],
-          MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+          //  MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+          MobileNo: [''],
           password: ['', [Validators.required, Validators.pattern(regExps.password)]],
           ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         },
@@ -84,7 +86,8 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
       tab2: this.fb.group(
         {
           wifiName: [''],
-          MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+          // MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
+          MobileNo: [''],
           password: ['', [Validators.required, Validators.pattern(regExps.password)]],
           ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         },
@@ -109,12 +112,17 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.button2Click.emit({
-      ci6SSID_24: this.routerSettingsForm.controls['tab1'].value.wifiName,
-      ci6Password_24: this.routerSettingsForm.controls['tab1'].value.password,
-      ci6SSID_5: this.routerSettingsForm.controls['tab2'].value.wifiName,
-      ci6Password_5: this.routerSettingsForm.controls['tab2'].value.password,
-    });
+    if (this.dualBandRequired && this.segment === 'tab1') {
+      this.segment = 'tab2';
+    } else {
+      this.button2Click.emit({
+        ci6SSID_24: this.routerSettingsForm.controls['tab1'].value.wifiName,
+        ci6Password_24: this.routerSettingsForm.controls['tab1'].value.password,
+        ci6SSID_5: this.routerSettingsForm.controls['tab2'].value.wifiName,
+        ci6Password_5: this.routerSettingsForm.controls['tab2'].value.password,
+      });
+    }
+
     // this.button2Click.emit(this.resetRouterPassword);
   }
 

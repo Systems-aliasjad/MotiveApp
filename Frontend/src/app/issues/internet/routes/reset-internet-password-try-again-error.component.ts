@@ -13,7 +13,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
  * Try Again Error
  */
 @Component({
-  selector: 'unable-process-reset-ccb-error',
+  selector: 'reest-internet-password-try-again-error',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -21,9 +21,11 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     [Section2Template]="Section2Template"
     [button1]="button1"
     (button1Click)="button1Listener()"
+    [button2]="button2"
+    (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class UnableProcessResetCcbErrorComponent implements OnInit, OnDestroy {
+export class ResetInternetPasswordTryAgainErrorComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -31,8 +33,12 @@ export class UnableProcessResetCcbErrorComponent implements OnInit, OnDestroy {
   imgSrc;
   quickLinkNextSignal;
   button1: IMotiveButton = {
-    title: 'BUTTONS.CLOSE',
-    type: 'secondary',
+    title: 'BUTTONS.TRY_AGAIN',
+    type: 'primary',
+  };
+  button2: IMotiveButton = {
+    title: 'BUTTONS.ISSUE_RESOLVED',
+    type: 'link',
   };
 
   constructor(
@@ -56,17 +62,31 @@ export class UnableProcessResetCcbErrorComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    if (this.sharedService.getTryResetInternetPasswordFlag() > 3) {
+      this.button1.disable = true;
+      this.button1 = null;
+    }
+  }
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = {
-      header: 'MESSAGES.UNABLE_TO_PROCESS_REQUEST',
-      paragraphs: ['MESSAGES.IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_CODE_CONTROL_BARRING_SERVICE'],
-    };
+    this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
   }
 
   button1Listener() {
+    this.sharedService.setLoader(true);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      this.sharedService.setTryResetInternetPasswordFlag(); ///for try again button 3 times
+      this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+    });
+    // this.router.navigate(['/issues/tv/box-not-reachable-try-again']);
+  }
+
+  button2Listener() {
     this.router.navigate(['/thanks']);
     // if (this?.sharedService.getQuickLinksData()) {
     //   this.router.navigate(['landing']);
