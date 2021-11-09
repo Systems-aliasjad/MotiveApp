@@ -13,7 +13,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
  * Try Again Error
  */
 @Component({
-  selector: 'reest-wifi-try-again-error',
+  selector: 'reest-internet-password-try-again-error',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -25,7 +25,7 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class ResetWifiTryAgainErrorComponent implements OnInit, OnDestroy {
+export class ResetInternetPasswordTryAgainErrorComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
@@ -63,8 +63,9 @@ export class ResetWifiTryAgainErrorComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    if (this.sharedService.getTryAgainResetWifiPasswordFlag() > 3) {
+    if (this.sharedService.getTryResetInternetPasswordFlag() > 3) {
       this.button1.disable = true;
+      this.button1 = null;
     }
   }
 
@@ -76,7 +77,7 @@ export class ResetWifiTryAgainErrorComponent implements OnInit, OnDestroy {
   button1Listener() {
     this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      this.sharedService.setTryAgainResetWifiPasswordFlag(); ///for try again button 3 times
+      this.sharedService.setTryResetInternetPasswordFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
         this.sharedService.setLoader(false);
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

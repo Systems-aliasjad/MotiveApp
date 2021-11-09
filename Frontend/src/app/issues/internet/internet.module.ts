@@ -100,6 +100,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-error.component';
 import { PasswordResetFaliureComponent } from './routes/password-reset-failure.component';
+import { ResetInternetPasswordTryAgainErrorComponent } from './routes/reset-internet-password-try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -192,6 +193,7 @@ import { PasswordResetFaliureComponent } from './routes/password-reset-failure.c
     ContinueInstallingThirdPartyRouterMessageComponent,
     InstallNewRouterComplaintSuccessfullyMessageComponent,
     ResetWifiTryAgainErrorComponent,
+    ResetInternetPasswordTryAgainErrorComponent,
   ],
   imports: [
     CommonModule,
