@@ -18,6 +18,9 @@ ion-item::part(native) {
   --inner-border-width: 0;
 }
 // --------------------------------------------------------------
+ion-slides{
+  margin-bottom: 1.5rem;
+}
 .states-inner_container {
   text-align: center;
   max-width: 650px;

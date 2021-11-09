@@ -540,6 +540,9 @@ ion-item::part(native) {
   text-overflow: ellipsis;
   color: $primary-color;
   font-size: 0.875rem;
+  @media screen and (max-width: 767px) {
+    font-size: 0.75rem;
+  }
 }
 .state {
   border-radius: 0.8rem;

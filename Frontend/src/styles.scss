@@ -633,6 +633,12 @@ html {
     display: none;
   }
 }
+app-seven-layer {
+  display: block;
+  @media screen and (max-width: 768px) {
+    margin-top: 1rem;
+  }
+}
 app-no-issues-service-details,
 app-change-call-forward,
 app-reset-pin,

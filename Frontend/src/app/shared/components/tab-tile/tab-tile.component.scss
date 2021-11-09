@@ -51,6 +51,9 @@ ion-label {
   ion-label {
     color: $primary-color;
     font-size: 0.875rem;
+    @media screen and (max-width: 767px) {
+      font-size: 0.75rem;
+    }
     span {
       margin-top: 0.4rem;
       display: block;
@@ -81,6 +84,10 @@ ion-label {
   height: 56px;
   text-align: center;
   margin: 1rem 1rem 0.5rem;
+  @media screen and (max-width: 767px) {
+    width: 52px;
+    height: 52px;
+  }
   @media screen and (max-width: 281px) {
     border-radius: 0.5rem;
     width: 42px;
