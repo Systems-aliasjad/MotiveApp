@@ -577,6 +577,15 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static tvAdminPinResetFullSuccessfully = {
+    header: 'MESSAGES.TV_AMDIN_PIN_RESET_SUCCESSFULLY',
+    paragraphs: [
+      'MESSAGES.YOUR_PIN_HAS_BEEN_SUCCESSFULLY_RESET_TO_THE_DEFAULT_PIN_1111',
+      'MESSAGES.PLEASE_RESTART_ALL_YOUR_TV_BOXES_TO_ACTIVATE_THE_NEW_PIN',
+      'MESSAGES.NOTE_YOU_WILL_BE_REQUIRED_TO_CHANGE_THE_DEFAULT_PIN_WHEN_YOU_LOG_IN_TO_ANY_PAID_SERVICE',
+    ],
+  };
+
   public static tvAdminPinResetError = {
     header: 'MESSAGES.UNABLE_TO_RESET_TV_ADMIN_PIN',
     paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],

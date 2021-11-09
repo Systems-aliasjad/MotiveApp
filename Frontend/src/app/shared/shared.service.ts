@@ -28,6 +28,7 @@ export class SharedService {
   tryAgainRouterNotReachableFlag: number = 0;
   tryAgainResetWifiPasswordFlag: number = 0;
   tryAgainResetCCBFlag: number = 0;
+  tryAgainUnableElifeFlag: number = 0;
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -48,6 +49,13 @@ export class SharedService {
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
 
+  setTryAgainUnableElifeFlag() {
+    this.tryAgainUnableElifeFlag++;
+  }
+
+  getTryAgainUnableElifeFlag() {
+    return this.tryAgainUnableElifeFlag;
+  }
   setTryAgainResetCCBFlag() {
     this.tryAgainResetCCBFlag++;
   }

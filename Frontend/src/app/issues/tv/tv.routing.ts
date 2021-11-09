@@ -62,6 +62,7 @@ import { QuickTransferTvboxChannelComponent } from './routes/quick-transfer-tvBo
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { QuickTvBoxPackageTransferComponent } from './routes/quick-tv-box-package-transfer.component';
+import { UnableElifeTryAgainErrorComponent } from './routes/unable-elife-error-occur-try-again-later.component';
 
 const routes: Routes = [
   {
@@ -316,6 +317,11 @@ const routes: Routes = [
   {
     path: 'error-occur-try-again-later',
     component: TryAgainErrorComponent,
+  },
+
+  {
+    path: 'unable-elife-error-occur-try-again-later',
+    component: UnableElifeTryAgainErrorComponent,
   },
 ];
 
