@@ -235,7 +235,7 @@ p {
     font-size: 1.8rem;
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 50px;
+    line-height: 40px;
     text-transform: capitalize;
     @media screen and (max-width: 992px) {
       font-size: 1.5rem;
@@ -411,7 +411,17 @@ ion-modal,
 		margin-right: 5px !important;
 	}
 }
-
+.t-c-modal{
+  --height: 100%;
+  .modal-wrapper,
+  .modal-wrapper.sc-ion-modal-md,
+  .modal-wrapper.sc-ion-modal-ios {
+    @media screen and (max-width: 767px) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
 // ------------Modal End-------------------
 
 // ------------Bullet List Start-------------------
