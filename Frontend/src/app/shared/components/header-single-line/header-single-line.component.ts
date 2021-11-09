@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';
@@ -13,8 +13,6 @@ import { SharedService } from '../../shared.service';
 export class HeaderSingleLineComponent implements OnInit {
   @Input()
   headerConfig: IPageHeader;
-  @Output()
-  dismiss = new EventEmitter<any>();
 
   constructor(private sharedService: SharedService, public router: Router, private location: Location) {}
   ngOnDestroy(): void {}
@@ -22,10 +20,5 @@ export class HeaderSingleLineComponent implements OnInit {
 
   back(): void {
     this.location.back();
-    this.dismissDialog();
-  }
-
-  dismissDialog(): void{
-    this.dismiss.emit();
   }
 }

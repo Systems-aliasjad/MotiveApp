@@ -14,7 +14,7 @@ export class TermsConditionsComponent implements OnInit {
 
   headerConfig: IPageHeader = {
     pageTitle: 'HEADER.TERMS_AND_CONDITIONS',
-    showBackBtn: true,
+    showBackBtn: false,
   };
 
   TC: ITermsAndConditions[] = [
@@ -62,8 +62,4 @@ export class TermsConditionsComponent implements OnInit {
 
     this.modalCtrl.dismiss(true);
   };
-  
-  dismissDialog = () => {
-    this.modalCtrl.dismiss(true);
-  }
 }
