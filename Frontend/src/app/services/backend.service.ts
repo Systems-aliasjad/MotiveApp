@@ -55,12 +55,12 @@ export class BackendService {
       connectedDevices: [
         {
           addressSource: 'DHCP',
-          isActive: '1',
-          ipAddress: '192.168.1.101',
-          leaseTimeRemaining: '21856',
-          hostName: '',
-          macAddress: 'a6:8d:22:64:e9:b3',
-          interfaceType: '802.11',
+          hostName: 'Unknown-d2:03:0d:8b:a0:fc',
+          interfaceType: 'Ethernet',
+          ipAddress: '192.168.1.47',
+          isActive: true,
+          leaseTimeRemaining: '81548',
+          macAddress: 'D2:03:0D:8B:A0:FC',
         },
       ],
       upsellingOpportunity: 'UPSEL1',
