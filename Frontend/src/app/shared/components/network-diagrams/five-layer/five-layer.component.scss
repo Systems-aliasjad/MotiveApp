@@ -539,7 +539,7 @@ ion-item::part(native) {
   overflow: hidden;
   text-overflow: ellipsis;
   color: $primary-color;
-  font-size: 0.875rem;
+  font-size:0.875rem; //14px
   @media screen and (max-width: 767px) {
     font-size: 0.75rem;
   }
@@ -564,6 +564,11 @@ ion-item::part(native) {
   width: 56px;
   height: 56px;
   text-align: center;
+  @media screen and (max-width: 767px) {
+    font-size: 0.75rem;
+    width: 52px;
+    height: 52px;
+  }
   @media screen and (max-width: 281px) {
     width: 42px;
     height: 42px;

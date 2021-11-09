@@ -329,7 +329,7 @@ ion-item::part(native) {
         margin-top: 0;
         margin-right: 0;
         margin-left: 0;
-        min-height: 140px;
+        min-height: 113px;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -369,8 +369,10 @@ ion-item::part(native) {
           .sub-title {
             margin-bottom: 0;
             margin-left: 1rem;
+            font-size:1rem;
+            letter-spacing: .1rem;
             @media screen and (max-width: 992px) {
-              font-size:15px;
+              font-size:0.875rem; //14px
             }
             @media screen and (max-width: 281x) {
               margin-top: 1rem;
@@ -380,9 +382,10 @@ ion-item::part(native) {
         }
         ion-card-content {
           p {
-            margin-bottom: 0.5rem;
+            /* margin-bottom: 0.5rem; */
+            margin-bottom: 0;
             @media screen and (max-width: 992px) {
-             font-size:14px;
+             font-size:0.875rem; //14px
             }
           }
         }
