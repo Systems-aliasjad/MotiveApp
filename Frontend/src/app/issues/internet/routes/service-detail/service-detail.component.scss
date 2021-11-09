@@ -98,9 +98,11 @@ ion-item::part(native) {
       img {
         width: 2rem;
         height: 2rem;
+        @media screen and (max-width: 767px) {
+          width: 1.7rem;
+        }
         @media screen and (max-width: 281px) {
-          width: 1.8rem;
-          height: 1.8rem;
+          width: 1.5rem;
         }
       }
     }
@@ -384,8 +386,8 @@ ion-item::part(native) {
           p {
             /* margin-bottom: 0.5rem; */
             margin-bottom: 0;
-            @media screen and (max-width: 992px) {
-             font-size:0.875rem; //14px
+            @media screen and (max-width: 767px) {
+             font-size:0.75rem; //14px
             }
           }
         }
