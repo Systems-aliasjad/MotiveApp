@@ -20,7 +20,7 @@ export const QUICK_ACTION = {
   TRANSFER_IPTV_PACKAGE: 'Transfer IPTV Package',
   RESET_CCP_PIN_CODE: 'Reset CCP Pin Code',
   SR_FOLLOWUP: 'SR FollowUp',
-  COMPLAINT_FOLLOWUP: 'Complaint FollowUp',
+  COMPLAINT_FOLLOWUP: 'Complaint followup',
   ONT_REBOOT: 'ONT Reboot',
   ROUTER_REBOOT: 'Router Reboot',
   PNP_FACTORY_RESET: 'PnP Factory Reset',
@@ -33,6 +33,7 @@ export const flowCodes = {
   QAHSIWIFI: 'QA-HSI-WIFI', //Update Wi Fi Configuration (Success)
   QAHSIWIFI5: 'QA-HSI-WIFI5', //Update Wi Fi Configuration (Failure)
   QAHSIWIFI8: 'QA-HSI-WIFI8', //update wi fi configuration is input required
+  QAHSIWIFI1: 'QA-HSI-WIFI1',
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
@@ -86,6 +87,14 @@ export const flowCodes = {
 
   QANRINST: 'QA-NR-INST', //Install new router  Success
   QANRINST1: 'QA-NR-INST1', //Install new router failer
+
+  QACOMFU2: 'QA-COM-FU2', //Track a recent complaint SuCcess
+  QACOMFU1: 'QA-COM-FU1', //Track a recent complaint failure
+  QACOMFU: 'QA-COM-FU',
+  OPENED: 'OPENED', //Complain status opened
+
+  QASRFU2: 'QA_SR_FU2', // SR Followup success
+  //QACOMFU1: 'QA_COM_FU1', //SR followup failure
 };
 
 export const ETISALAT = 'Etisalat';
@@ -210,12 +219,14 @@ const ELIFE_ON_PIN_RESET = {
   body: 'QUICK_LINKS.I_WANT_TO_RESET_ELIFE_ON_PIN',
   linkTo: 'issues/tv/pin-reset-failed',
   nextSignal: QUICK_ACTION.RESET_ELIFEON_PASSWORD,
+  directCall: true,
 };
 
 const FORGOT_PASSWORD_INTERNET = {
   body: 'QUICK_LINKS.I_FORGOT_MY_INTERNET_PASSWORD',
-  linkTo: 'issues/internet/internet-password-reset',
+  linkTo: '/issues/internet/internet-password-reset',
   nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
+  directCall: true,
 };
 const CONNECTION_ISSUE_ROUTER = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
@@ -241,11 +252,13 @@ const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
   linkTo: 'track-complaint/complaint-details-message',
   nextSignal: QUICK_ACTION.COMPLAINT_FOLLOWUP,
+  directCall: true,
 };
 const TRACK_REQUEST = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_MY_REQUEST',
-  linkTo: 'track-request/request-detail',
+  linkTo: 'track-request/open-srs',
   nextSignal: QUICK_ACTION.SR_FOLLOWUP,
+  directCall: true,
 };
 const UPGRADE_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ROUTER',
@@ -478,6 +491,12 @@ export class ApplicableCodes {
       title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
       objKeyNameEN: 'referecneNo',
+    },
+
+    {
+      title: 'MESSAGES.APPOINTMENT_DETAILS',
+      type: 'text',
+      objKeyNameEN: 'appointmentDetails',
     },
   ];
 

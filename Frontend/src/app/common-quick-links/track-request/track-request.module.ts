@@ -13,6 +13,11 @@ import { AppointmentChangeSuccessComponent } from './routes/appointment-change-s
 import { ServiceUnavailableComponent } from './routes/service-unavailable.component';
 import { ActionRequiredComponent } from './routes/action-required.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
+import { OpenSrsComponent } from './routes/open-srs/open-srs.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { createTranslateLoader } from 'src/app/app.module';
+import { HttpClient } from '@angular/common/http';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,21 @@ import { BookComplaintComponent } from './routes/book-complaint.component';
     ServiceUnavailableComponent,
     ActionRequiredComponent,
     BookComplaintComponent,
+    OpenSrsComponent,
   ],
-  imports: [CommonModule, SharedModule, trackRequestRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    trackRequestRoutingModule,
+    IonicModule.forRoot(),
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient],
+      },
+      defaultLanguage: 'en',
+    }),
+  ],
 })
 export class TrackRequestModule {}

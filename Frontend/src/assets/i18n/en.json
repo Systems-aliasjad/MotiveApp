@@ -168,6 +168,8 @@
   },
 
   "MESSAGES": {
+    "SR_FOLLOW_UP": "SR follow up",
+    "PLEASE_SELECT_THE_SR_NO_TO_CONTUNUE": "Please select the SR# to continue",
     "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_CODE_CONTROL_BARRING_SERVICE": "It looks like you are not subscribed to Code Control Barring service.",
     "TV_BOX_WILL_BE_RESTARTED": "Tv box will be restarted",
     "PLEASE_SELECT_THE_ROUTER": "Please select the router",
@@ -184,6 +186,9 @@
     "SINGLE_STB_FOUND": "Single STB found",
     "RESET_STB_PIN": "Reset STB pin",
     "REBOOT_TV_BOX": "Reboot TV Box",
+    "PLEASE_WAIT_FOR_A_FEW_MINUTES":"Please wait for a few minutes",
+    "WE_ARE_RESETTING_YOUR_WIFI_PASSWORD": "We are resetting your Wi-Fi password",
+    "YOUR_TV_ADMIN_PIN_IS_BEING_RESET": "Your TV admin PIN is being reset.",
     "CHOOSE_THE_STB_YOU_WANT_TO_RESET": "Choose the STB you want to reset",
     "CHOOSE_THE_STB_YOU_WANT_TO_REBOOT": "Choose the STB you want to reboot",
     "UNABLE_TO_RESET_ELFIE_ON_PIN": "Unable to reset tv elife on pin",

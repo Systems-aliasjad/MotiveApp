@@ -61,6 +61,6 @@ export class QuickTvAdminPinResetSuccessfullyMessageComponent implements OnInit,
   }
 
   button1Listener() {
-    this.router.navigate(['landing']);
+    this.router.navigate(['thanks']);
   }
 }

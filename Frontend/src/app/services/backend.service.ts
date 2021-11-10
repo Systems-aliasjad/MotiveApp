@@ -268,6 +268,24 @@ export class BackendService {
     }
   }
 
+  complaintFollowupRemarks(remakrs) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/complaint-followup?remarks=/${remakrs}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  srFollowupRemarks(remakrs) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/sr-followup?srNo=/${remakrs}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   transferPackage(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/transfer-pkg`, data);

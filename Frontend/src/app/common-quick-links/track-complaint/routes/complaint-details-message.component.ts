@@ -5,6 +5,7 @@ import { ApplicableCodes, infoImgSrc } from 'src/app/shared/constants/constants'
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'complaint-details-message',
@@ -15,16 +16,17 @@ import { Subscription } from 'rxjs';
     [Section2Template]="Section2Template"
     [button2]="button2"
     (button2Click)="button2Listener()"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
   ></motive-message>`,
+
+  // [button3]="button3"
+  //   (button3Click)="button3Listener()"
 })
 export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
-  imgSrc;
+  imgSrc = infoImgSrc;
   // button1: IMotiveButton = {
   //   type: 'link',
   //   title: 'BUTTONS.CHANGE_APPOINTMENT',
@@ -38,7 +40,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
     type: 'link',
     title: 'BUTTONS.CANCEL_COMPLAINT',
   };
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,11 +56,13 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   updateHeader() {}
 
   updatePageContent() {
-    this.imgSrc = infoImgSrc;
+    const temp = this.sharedService.getApiResponseData();
     this.Section1Data = CustomerJourneyConstants.compliantDetailsTrackComplaint;
     this.Section2Template = ApplicableCodes.complaintDetailsTarckComplaintTemplate;
+
     this.Section2Data = {
-      referecneNo: '43652',
+      referecneNo: temp?.referecneNo || '-',
+      appointmentDetails: temp?.complaintNature || '-',
     };
   }
 
@@ -67,11 +71,11 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    // this.router.navigate(['/bookComplaint']);
+    this.router.navigate(['/track-complaint/complaint-already-message']);
   }
 
   button3Listener() {
-    this.router.navigate(['/landing']);
+    this.router.navigate(['thanks']);
     // this.router.navigate(['/bookComplaint']);
   }
 }

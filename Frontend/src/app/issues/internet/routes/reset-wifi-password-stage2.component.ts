@@ -72,6 +72,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
             this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
             this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+            this.router.navigate(['/issues/password/unable-to-reset-password']);
           } else {
             this.router.navigate(['/unknown-issue']);
           }
@@ -107,6 +109,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           this.router.navigate(['/issues/internet/password-update-success']);
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
           this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+          this.router.navigate(['/issues/password/unable-to-reset-password']);
         }
       });
     } else if (this?.quickLinkNextSignal) {
@@ -124,6 +128,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
             this.router.navigate(['/issues/internet/password-update-success']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
             this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+            this.router.navigate(['/issues/password/unable-to-reset-password']);
           }
         });
       });
