@@ -186,8 +186,13 @@ export class SharedService {
     return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
   }
 
-  setLoader(loaderState: boolean): void {
-    this.loaderSubject.next(loaderState);
+  setLoader(loaderState: boolean, messageMain? : String, messageSub? : String): void {
+    const loaderObject : any = {
+      loaderState,
+      messageMain: messageMain || null,
+      messageSub: messageSub || null
+    }
+    this.loaderSubject.next(loaderObject);
   }
 
   getLoader(): Observable<boolean> {
