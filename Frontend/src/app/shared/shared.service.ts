@@ -40,6 +40,8 @@ export class SharedService {
   apiResponseDataNoIssuesSTB;
   apiResponseDataContinueSTB;
 
+  apiResponseHomeZoneCall;
+
   constructor(private translate: TranslateService, private router: Router) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
@@ -48,6 +50,18 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setApiResponseHomeZoneCall(data) {
+    this.apiResponseHomeZoneCall = data;
+  }
+
+  getApiResponseHomeZoneCall() {
+    return this.apiResponseHomeZoneCall;
+  }
+
+  clearApiResponseHomeZoneCall() {
+    this.apiResponseHomeZoneCall = null;
   }
 
   setTryResetInternetPasswordFlag() {
