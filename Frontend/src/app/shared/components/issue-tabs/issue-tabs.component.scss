@@ -58,6 +58,11 @@ ion-item::part(native) {
     margin-top: 4.5rem;
   }
 }
+.two-col-three-layer {
+  @media screen and (max-width: 992px) {
+    margin-top: 0 ;
+ }
+}
 /* .issue-tabs_title{
   @media screen and (min-width: 992px) {
     display:none;
