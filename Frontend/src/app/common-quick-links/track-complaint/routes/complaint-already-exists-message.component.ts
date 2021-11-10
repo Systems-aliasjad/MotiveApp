@@ -1,10 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ApplicableCodes, infoImgSrc } from 'src/app/shared/constants/constants';
+import { ApplicableCodes, flowCodes, infoImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'complaint-details-message',
@@ -35,7 +37,7 @@ export class ComplaintAlreadyExistsMessageComponent implements OnInit, OnDestroy
 
   formValue;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -57,7 +59,16 @@ export class ComplaintAlreadyExistsMessageComponent implements OnInit, OnDestroy
 
   button1Listener() {
     console.log(this.formValue);
-    // this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.sharedService.setLoader(true);
+    this.backendService.complaintFollowupRemarks(this.formValue).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.QACOMFU2) {
+        this.router.navigate(['thanks']);
+      } else {
+        //if (data?.result?.screenCode === flowCodes.QACOMFU1) {
+        this.router.navigate(['unknown-issue']);
+      }
+    });
   }
 
   button2Listener() {

@@ -12,6 +12,7 @@ import { RequestAlreadyExistsComponent } from './routes/request-already-exists.c
 import { RequestDetailComponent } from './routes/request-detail.component';
 import { RequestUnderProcessComponent } from './routes/request-under-process.component';
 import { ServiceUnavailableComponent } from './routes/service-unavailable.component';
+import { OpenSrsComponent } from './routes/open-srs/open-srs.component';
 
 const routes: Routes = [
   {
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'book-complaint',
     component: BookComplaintComponent,
+  },
+  {
+    path: 'open-srs',
+    component: OpenSrsComponent,
   },
 ];
 

@@ -79,7 +79,10 @@ ion-card.ios {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    height: 56px;
+    height: 72px;
+    @media screen and (max-width: 768px) {
+      height: 56px;
+    }
     @include transition(all 0.3s ease-in-out);
     &:hover {
       background-color: #f9f8f8;
@@ -89,10 +92,10 @@ ion-card.ios {
     }
     ion-card-content{
       p{
-        color:$etisalat-gray-color;
-        font-size:0.875rem;
-        @media screen and (max-width: 767px) {
-          color:$primary-color;
+        color:$primary-color;
+        font-size:1rem;
+        @media screen and (max-width: 768px) {
+          font-size:0.875rem; //14px
         }
       }
     }

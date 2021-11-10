@@ -65,7 +65,7 @@ export class BoxNotRestartedCareComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     if (this.sharedService.getQuickLinksData()) {
-      this.router.navigate(['/landing']);
+      this.router.navigate(['/thanks']);
     } else {
       //this.router.navigate(['/thanks']);
       // this.sharedService.setLoader(true);

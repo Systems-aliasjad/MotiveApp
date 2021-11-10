@@ -55,10 +55,10 @@ export class ComplaintNotFoundMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    //this.router.navigate(['/issues/internet/router-install-successfully']);
+    this.router.navigate(['quick-links-all']);
   }
 
   button2Listener() {
-    // this.router.navigate(['/bookComplaint']);
+    this.router.navigate(['thanks']);
   }
 }

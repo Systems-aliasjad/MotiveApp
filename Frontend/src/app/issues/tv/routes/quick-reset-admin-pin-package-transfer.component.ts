@@ -125,6 +125,6 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
   }
 
   button2Listener() {
-    this.router.navigate(['landing']);
+    this.router.navigate(['thanks']);
   }
 }

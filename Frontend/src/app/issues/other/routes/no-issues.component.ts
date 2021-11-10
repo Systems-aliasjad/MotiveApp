@@ -77,7 +77,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'MESSAGES.ALL_SERVICES',
+    pageTitle: 'HEADER.ALL_SERVICES',
     showBackBtn: true,
   };
 

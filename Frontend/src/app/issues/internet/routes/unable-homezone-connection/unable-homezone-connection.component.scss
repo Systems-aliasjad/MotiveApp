@@ -75,7 +75,7 @@ ion-item::part(native) {
 }
 .issue-tab_content {
   @media screen and (max-width: 992px) {
-    border-top: 1px solid #ededed;
+    border-top: 2px dashed #d0d6da;
   }
   .content {
     width: 450px;
@@ -83,6 +83,10 @@ ion-item::part(native) {
     @media screen and (max-width: 992px) {
       margin-top: 1rem;
       width: 100%;
+    }
+    @media screen and (max-width: 767px) {
+      max-width: 450px;
+      text-align:center;
     }
     /*  border-top: 1px solid #f1f1eb;
     -webkit-box-shadow: 0 -1px 0 #f1f1eb;
@@ -97,10 +101,20 @@ ion-item::part(native) {
         display: none;
       }
     }
+    h3{
+      font-family: Neotech-regular;
+       @media screen and (max-width: 992px) {
+         font-size: 1.1rem;
+       }
+    }
     p {
       margin-bottom: 0;
-      color: $secondary-color;
+      color:$etisalat-gray-color;
       line-height: 1.5;
+      @media screen and (max-width: 992px) {
+        color: $secondary-color;
+        font-size: 14px;
+      }
     }
     .inline-list {
       margin-top: 1.5rem;

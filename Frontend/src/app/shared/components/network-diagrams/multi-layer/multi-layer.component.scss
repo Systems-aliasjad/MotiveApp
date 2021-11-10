@@ -18,6 +18,9 @@ ion-item::part(native) {
   --inner-border-width: 0;
 }
 // --------------------------------------------------------------
+ion-slides{
+  margin-bottom: 1.5rem;
+}
 .states-inner_container {
   text-align: center;
   max-width: 650px;
@@ -87,8 +90,11 @@ ion-item::part(native) {
   img {
     width: 2rem;
     height: 100%;
+    @media screen and (max-width: 767px) {
+      width: 1.7rem;
+    }
     @media screen and (max-width: 281px) {
-      width: 1.8rem;
+      width: 1.5rem;
     }
   }
 }

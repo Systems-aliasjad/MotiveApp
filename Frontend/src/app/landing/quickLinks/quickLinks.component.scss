@@ -64,7 +64,7 @@
           -ms-flex-align: center;
           align-items: center;
           @media screen and (max-width: 767px) {
-            height: 60px;
+            height: 72px;
           }
           @media screen and (max-width: 281px) {
             height: 85px;
@@ -123,7 +123,7 @@
 }
 .quick-links_all, 
 .arrow-link{
-  font-size: 0.875rem;
+  font-size:0.875rem; //14px
   @media screen and (max-width: 767px) {
     font-size: 0.82rem;
   }
