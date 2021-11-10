@@ -135,7 +135,7 @@ export class QuickLinksComponent implements OnInit {
     } else if (item?.nextSignal === QUICK_ACTION.SR_FOLLOWUP) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
-        this.sharedService.setApiResponseData({ status: data?.result?.responseData?.status, complaintNature: data?.result?.responseData?.complaintNature });
+        this.sharedService.setApiResponseData({ openSrs: data?.result?.responseData?.openSrs, data: data });
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QACOMFU2) {
           this.router.navigate(['/track-request/open-srs']);

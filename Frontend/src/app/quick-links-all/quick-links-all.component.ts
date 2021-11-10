@@ -95,7 +95,7 @@ export class QuickLinksAllComponent implements OnInit {
     } else if (item?.nextSignal === QUICK_ACTION.COMPLAINT_FOLLOWUP) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
-        this.sharedService.setApiResponseData({ openSrs: data?.result?.responseData?.openSrs, data: data });
+        this.sharedService.setApiResponseData({ status: data?.result?.responseData?.status, complaintNature: data?.result?.responseData?.complaintNature });
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QACOMFU2) {
           if (data?.result?.responseData?.status === flowCodes.OPENED) {
