@@ -56,7 +56,7 @@ export class QuickTvBoxPackageTransferComponent implements OnInit, OnDestroy {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         let apiResponse = this.sharedService.setApiResponseData(res?.result?.responseData);
         var ListStbDetails = res?.result?.responseData?.stbList;
-        ListStbDetails.forEach((element) => {
+        ListStbDetails?.forEach((element) => {
           var index = {
             title: 'STB SR#' + element?.stbSerialNumber,
             description: 'MAC ' + element?.stbMac,
@@ -69,7 +69,7 @@ export class QuickTvBoxPackageTransferComponent implements OnInit, OnDestroy {
     } else {
       let apiResponse = this.sharedService.getApiResponseData();
       var ListStbDetails = apiResponse?.stbList;
-      ListStbDetails.forEach((element) => {
+      ListStbDetails?.forEach((element) => {
         var index = {
           title: 'STB SR#' + element?.stbSerialNumber,
           description: 'MAC ' + element?.stbMac,
