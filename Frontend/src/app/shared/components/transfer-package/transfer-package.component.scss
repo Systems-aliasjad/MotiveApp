@@ -52,13 +52,10 @@ form{
         margin-left: 5px;
         min-height: 84px;
         @include transition(all 0.3s ease-in-out);
-        /* @media screen and (min-width: 992px) {
-            margin: 16px ​12px;
-        } */
         ion-card-header{
-            padding-top:1rem;
+            padding-top:1.4rem;
             padding-right:1rem;
-            padding-bottom:1.25rem;
+            padding-bottom:0;
             padding-left: 1rem;
             ion-card-title{
                 display: -webkit-box;
@@ -83,8 +80,8 @@ form{
                 }
                 ion-radio{
                     margin-top: 0;
-                    margin-right: 0;
-                    margin-bottom: 2px;
+                    margin-right: .18rem;
+                    margin-bottom: 0.125rem;
                 }
             }
         }
