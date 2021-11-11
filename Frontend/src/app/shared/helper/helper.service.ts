@@ -221,8 +221,7 @@ export class HelperService {
         this.router.navigate(['issues/internet/issue-not-fixed']);
       }
     } else if (CodeId === flowCodes.CI73) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/router-reset-required']);
+      this.router.navigate(['issues/internet/reset-wifi-password']);
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
@@ -351,9 +350,9 @@ export class HelperService {
 
     //////////////////End of Handles cases
     else if (CodeId === flowCodes.CI73) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      // this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
-      this.router.navigate(['issues/internet/router-reset-required']);
+      this.router.navigate(['issues/internet/reset-wifi-password']);
     } else if (CodeId === flowCodes.UPSEL3) {
       // Upselling Identified for Router Upgrade
       this.router.navigate(['issues/internet/router-upgrade-recommended']);

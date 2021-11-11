@@ -43,6 +43,8 @@ export class LoaderComponent implements OnInit, OnDestroy {
         }
         if(shouldShow.messageSub !== null){
           this.successMessages.push(shouldShow.messageSub)
+        } else {
+          this.successMessages.push('MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
         }
       } else {
         this.clearIntervals();

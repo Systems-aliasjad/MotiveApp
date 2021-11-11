@@ -6,7 +6,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { flowCodes } from 'src/app/shared/constants/constants';
+import { flowCodes, QUICK_ACTION } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'reset-wifi-password-stage2',
@@ -23,6 +23,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   subscription: Subscription;
   quickLinkNextSignal;
   dualBandRequired: boolean = true;
+  fromhomeZones: string = '';
   button1: IMotiveButton = {
     type: 'terms',
     title: 'BUTTONS.TERMS',
@@ -42,9 +43,19 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
     private activatedRoute: ActivatedRoute,
     private helperService: HelperService,
     private router: Router
-  ) {}
+  ) {
+    this.subscription = this.activatedRoute.data.subscribe(() => {
+      const navigation = this.router.getCurrentNavigation();
+      this.fromhomeZones = navigation?.extras?.state?.fromhomeZones;
+      if (this.fromhomeZones) {
+        this.callNextStepApi();
+      }
+    });
+  }
   ngAfterViewInit(): void {
-    this.callNextStepApi();
+    if (!this.fromhomeZones) {
+      this.callNextStepApi();
+    }
   }
 
   ngOnInit() {
@@ -56,7 +67,27 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   }
 
   callNextStepApi() {
-    if (this?.quickLinkNextSignal) {
+    if (this.fromhomeZones) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsJustNextStep().subscribe((data) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAHSIWIFI2) {
+          this.sharedService.setApiResponseHomeZoneCall({ homeZoneAPs: data?.result?.responseData?.homeZoneAPs });
+          ////Home Zone Scenario
+          this.router.navigate(['/issues/internet/quick-home-zone-reset-wifi']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+          this.router.navigate(['/issues/internet/password-update-success']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+          this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
+          this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+          this.router.navigate(['/issues/password/unable-to-reset-password']);
+        } else {
+          this.router.navigate(['/unknown-issue']);
+        }
+      });
+    } else if (this?.quickLinkNextSignal) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
@@ -64,9 +95,14 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
         this.sharedService.setLoader(true);
-        this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((data) => {
+        this.backendService.quickActionsNextStep(QUICK_ACTION.UPDATE_WIFI_CONFIGURATION).subscribe((data) => {
           this.sharedService.setLoader(false);
-          if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+
+          if (data?.result?.screenCode === flowCodes.QAHSIWIFI2) {
+            this.sharedService.setApiResponseHomeZoneCall({ homeZoneAPs: data?.result?.responseData?.homeZoneAPs });
+            ////Home Zone Scenario
+            this.router.navigate(['/issues/internet/quick-home-zone-reset-wifi']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
             this.router.navigate(['/issues/internet/password-update-success']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
             this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
@@ -101,7 +137,23 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   button1Listener() {}
 
   button2Listener(_event) {
-    if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
+    if (this.fromhomeZones) {
+      this.sharedService.setLoader(true);
+      var array: any = [];
+      array.push(this.fromhomeZones);
+      this.backendService.quickActionsResetWifiPasswordHomeZone(_event, array).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.clearApiResponseHomeZoneCall();
+        this.fromhomeZones = undefined;
+        if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+          this.router.navigate(['/issues/internet/password-update-success']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+          this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+          this.router.navigate(['/issues/password/unable-to-reset-password']);
+        }
+      });
+    } else if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);

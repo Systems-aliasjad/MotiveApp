@@ -101,6 +101,8 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
 import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-error.component';
 import { PasswordResetFaliureComponent } from './routes/password-reset-failure.component';
 import { ResetInternetPasswordTryAgainErrorComponent } from './routes/reset-internet-password-try-again-error.component';
+import { QuickHomeZoneResetWifiComponent } from './routes/quick-home-zone-reset-wifi/quick-home-zone-reset-wifi.component';
+// import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 @NgModule({
   declarations: [
@@ -194,6 +196,7 @@ import { ResetInternetPasswordTryAgainErrorComponent } from './routes/reset-inte
     InstallNewRouterComplaintSuccessfullyMessageComponent,
     ResetWifiTryAgainErrorComponent,
     ResetInternetPasswordTryAgainErrorComponent,
+    QuickHomeZoneResetWifiComponent,
   ],
   imports: [
     CommonModule,

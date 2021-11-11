@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
 import { flowCodes } from 'src/app/shared/constants/constants';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -14,7 +15,13 @@ export class ResetFactoryDefaultDialog implements OnInit {
   terms: boolean = false;
   @Input()
   quickLinkNextSignal;
-  constructor(private backendService: BackendService, private modalCtrl: ModalController, private router: Router, private sharedService: SharedService) {}
+  constructor(
+    private helperService: HelperService,
+    private backendService: BackendService,
+    private modalCtrl: ModalController,
+    private router: Router,
+    private sharedService: SharedService
+  ) {}
 
   CloseModal() {
     this.dismiss();
@@ -33,7 +40,14 @@ export class ResetFactoryDefaultDialog implements OnInit {
         }
       });
     } else {
-      this.router.navigate(['/issues/internet/reset-wifi-password']);
+      this.sharedService.setLoader(true);
+      this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+        console.log('====================================');
+        console.log(data);
+        console.log('====================================');
+        this.sharedService.setLoader(false);
+        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
     }
   }
 

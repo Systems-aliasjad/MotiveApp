@@ -34,6 +34,7 @@ export const flowCodes = {
   QAHSIWIFI5: 'QA-HSI-WIFI5', //Update Wi Fi Configuration (Failure)
   QAHSIWIFI8: 'QA-HSI-WIFI8', //update wi fi configuration is input required
   QAHSIWIFI1: 'QA-HSI-WIFI1',
+  QAHSIWIFI2: 'QA-HSI-WIFI2', // update wi fi configuration  Home zone
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
@@ -245,7 +246,8 @@ const TRANSFER_PACKAGE_TV = {
 };
 const CONNECT_HOME_ZONE = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_TO_HOME_ZONE',
-  linkTo: 'issues/internet/unable-to-connect-to-homezone',
+  // linkTo: 'issues/internet/unable-to-connect-to-homezone',
+  linkTo: '/issues/internet/stage2/reset-wifi-password',
   nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
 };
 const TRACK_COMPLAINT = {
