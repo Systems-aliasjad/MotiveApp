@@ -154,7 +154,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         }
       });
     } else if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
@@ -168,14 +168,10 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
     } else if (this?.quickLinkNextSignal) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsInitialData().subscribe((res) => {
-        this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
-
-        this.sharedService.setLoader(true);
         this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
           this.sharedService.setLoader(false);
-
           if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
             this.router.navigate(['/issues/internet/password-update-success']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
