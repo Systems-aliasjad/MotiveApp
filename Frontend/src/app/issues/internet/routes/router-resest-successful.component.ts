@@ -5,6 +5,7 @@ import { successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'router-reset-successful',
@@ -29,7 +30,7 @@ export class RouterResetSuccessfulComponent implements OnInit, OnDestroy {
     explanatoryNote: '',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -50,6 +51,7 @@ export class RouterResetSuccessfulComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/reset-wifi-password']);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
   }
 }

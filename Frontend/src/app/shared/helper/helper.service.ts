@@ -145,7 +145,7 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
       this.AllSevicesCI9RouterCases(data?.routerDetails);
     } else if (CodeId === flowCodes.CI73) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+      this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
       this.router.navigate(['issues/other/router-reset-required']);
     } else if (CodeId === flowCodes.CI72) {
       if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
@@ -221,7 +221,13 @@ export class HelperService {
         this.router.navigate(['issues/internet/issue-not-fixed']);
       }
     } else if (CodeId === flowCodes.CI73) {
+      this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
       this.router.navigate(['issues/internet/reset-wifi-password']);
+      // if (data?.routerConfigRequired) {
+      //   this.router.navigate(['issues/internet/router-reset-successfull-message']);
+      // } else {
+      //   this.router.navigate(['issues/internet/router-reset-successful']);
+      // }
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
@@ -352,6 +358,7 @@ export class HelperService {
     else if (CodeId === flowCodes.CI73) {
       // this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2 });
+      this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
       this.router.navigate(['issues/internet/reset-wifi-password']);
     } else if (CodeId === flowCodes.UPSEL3) {
       // Upselling Identified for Router Upgrade
