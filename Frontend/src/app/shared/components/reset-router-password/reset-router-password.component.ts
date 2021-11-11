@@ -14,7 +14,6 @@ import { IMotiveButton, IPageHeader } from '../../constants/types';
 })
 export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
   //
-  isDisabled: boolean = true;
 
   @Input()
   dualBandRequired: boolean = true;
@@ -75,7 +74,7 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
         {
           wifiName: [''],
           //  MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-          MobileNo: [''],
+          MobileNo: [{ value: '', disabled: true }],
           password: ['', [Validators.required, Validators.pattern(regExps.password)]],
           ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         },
@@ -87,7 +86,7 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
         {
           wifiName: [''],
           // MobileNo: ['', [Validators.required, Validators.pattern(regExps.phoneNumber)]],
-          MobileNo: [''],
+          MobileNo: [{ value: '', disabled: true }],
           password: ['', [Validators.required, Validators.pattern(regExps.password)]],
           ConfirmPassword: ['', [Validators.required, Validators.pattern(regExps.password)]],
         },
