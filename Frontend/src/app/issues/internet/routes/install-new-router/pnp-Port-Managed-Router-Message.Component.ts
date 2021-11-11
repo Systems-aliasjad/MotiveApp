@@ -1,11 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { infoImgSrc } from 'src/app/shared/constants/constants';
+import { flowCodes, infoImgSrc, THIRD_PARTY_ROUTER } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'app-pnp-port-managed-router-message',
@@ -37,7 +38,13 @@ export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.INSTALL_THIRD_PARTY_ROUTER',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedServices: SharedService) {}
+  constructor(
+    private backendService: BackendService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private sharedServices: SharedService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -60,9 +67,25 @@ export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/install-etisalat-router']);
+    //  this.router.navigate(['/issues/internet/install-etisalat-router']);
+    this.router.navigate(['thanks']);
   }
   button2Listener() {
-    this.router.navigate(['/issues/internet/install-new-router/install-new-thirdparty-router']);
+    //this.router.navigate(['/issues/internet/install-new-router/install-new-thirdparty-router']);
+
+    this.sharedService.setLoader(true);
+    this.backendService.installNewRouterRequest(THIRD_PARTY_ROUTER).subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+
+      var screenCode = data?.result?.screenCode;
+
+      if (screenCode === flowCodes.QANRINST) {
+        this.router.navigate(['issues/internet/router-install-successfully']);
+      } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2 || screenCode === flowCodes.QANRINST12) {
+        this.router.navigate(['issues/internet/install-new-router-care']);
+      } else {
+        this.router.navigate(['issues/internet/router-installation-failed']);
+      }
+    });
   }
 }

@@ -104,7 +104,7 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
     //For api testing
     //const data = '130857101318';
 
-    this.sharedService.setLoader(true, 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES', 'MESSAGES.YOUR_TV_ADMIN_PIN_IS_BEING_RESET');
+    this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_ADMIN_PIN_IS_BEING_RESET');
     this.backendService.stbAdminPinResetQuickLinks(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (
