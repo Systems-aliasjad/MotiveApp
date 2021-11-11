@@ -524,8 +524,6 @@ const routes: Routes = [
     path: 'quick-home-zone-reset-wifi',
     component: QuickHomeZoneResetWifiComponent,
   },
-
-  ,
 ];
 
 @NgModule({
