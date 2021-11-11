@@ -21,7 +21,7 @@ ion-item::part(native){
 }
 .sub-title-content{
   margin-top: 0.5rem;
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 768px) {
     margin-bottom: 0.5rem;
     display: block;
     font-size: 0.875rem;
@@ -38,9 +38,10 @@ ion-card{
       .sub-title{
         text-transform: uppercase;
         letter-spacing: 0.1rem;
-        font-size: 0.87rem;
-        @media screen and (max-width: 767px) {
+        font-size: 0.875rem;
+        @media screen and (max-width: 768px) {
           text-transform: capitalize;
+          letter-spacing: 0;
         }
       }
     }

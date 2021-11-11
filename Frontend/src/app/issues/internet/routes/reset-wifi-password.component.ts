@@ -7,11 +7,13 @@ import { Location } from '@angular/common';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'reset-wifi-password',
   template: `<app-reset-router-password
     [headerConfig]="headerConfig"
+    [dualBandRequired]="dualBandRequired"
     [button1]="button1"
     (button1Click)="button1Listener()"
     [button2]="button2"
@@ -19,32 +21,32 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
   ></app-reset-router-password>`,
 })
 export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
+  formGroup: FormGroup;
   subscription: Subscription;
+  dualBandRequired: boolean = true;
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.RESET_WIFI_PASSWORD',
+    showBackBtn: true,
+  };
   button1: IMotiveButton = {
     type: 'terms',
     title: 'BUTTONS.TERMS',
-    explanatoryNote: '',
   };
-
   button2: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.NEXT',
-    explanatoryNote: '',
   };
-
-  formGroup: FormGroup;
   constructor(
-    private backendService: BackendService,
-    private sharedService: SharedService,
     private router: Router,
+    private helperService: HelperService,
+    private sharedService: SharedService,
     private activatedRoute: ActivatedRoute,
-    private location: Location,
-    private helperService: HelperService
+    private backendService: BackendService
   ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
+      this.updateContent();
     });
   }
 
@@ -52,14 +54,10 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {
-    //this.sharedService.setHeaderConfig('HEADER.RESET_WIFI_PASSWORD', true, true);
+  updateContent() {
+    const temp = this.sharedService.getApiResponseData();
+    this.dualBandRequired = temp?.dualBandRouter;
   }
-
-  headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.RESET_WIFI_PASSWORD',
-    showBackBtn: true,
-  };
 
   button1Listener() {
     // this.sharedService.setLoader(true);
@@ -73,8 +71,14 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.resetRouter({ data: { ..._event }, signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+        this.router.navigate(['/issues/internet/password-update-success']);
+      } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+        this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+      } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+        this.router.navigate(['/issues/password/unable-to-reset-password']);
+      }
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
-    // this.router.navigate(['/issues/internet/password-update-success']);
   }
 }

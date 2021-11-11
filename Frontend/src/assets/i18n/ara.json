@@ -70,7 +70,7 @@
     "CHOOSE_THE_PLAN_PACKAGE_YOU_LIKE_TO_TRANSFER_TO_ANOTHER_TV_BOX": "اختر الباقة التي ترغب بنقلها إلى جهاز استقبال تلفزيوني آخر",
     "RESET_INTERNET_PASSWORD": "عادة تعيين كلمة المرور لخدمة الإنترنت",
     "BOOK_COMPLAINT": "Please fill your complete details",
-    "SSID_2_5_GHZ": "SSID 2.5 جيجا هرتز",
+    "SSID_2_4_GHZ": "SSID 2.4 جيجا هرتز",
     "SSID_5_0_GHZ": "SSID 5.0 ​​جيجاهرتز"
   },
 
@@ -182,7 +182,7 @@
     "PLEASE_SELECT_THE_ROUTER": "Please select the router",
     "CHOOSE_THE_STB_YOU_WANT_TO_REBOOT": "Choose the STB you want to reboot",
     "REBOOT_TV_BOX": "Reboot TV Box",
-    "PLEASE_WAIT_FOR_A_FEW_MINUTES":"Please wait for a few minutes",
+    "PLEASE_WAIT_FOR_A_FEW_MINUTES": "Please wait for a few minutes",
     "WE_ARE_RESETTING_YOUR_WIFI_PASSWORD": "We are resetting your Wi-Fi password",
     "YOUR_TV_ADMIN_PIN_IS_BEING_RESET": "Your TV admin PIN is being reset.",
     "PLEASE_WAIT_WHILE_WE_TRY_TO_RESET_IT_AGAIN": "Please wait while we try to reset it again.",
