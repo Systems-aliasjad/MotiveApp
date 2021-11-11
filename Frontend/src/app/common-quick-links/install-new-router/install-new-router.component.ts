@@ -31,18 +31,26 @@ export class InstallNewRouterComponent implements OnInit {
   ngOnInit() {}
 
   button1Listener() {
-    this.backendService.installNewRouterRequest(this.selectedRadioItem).subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QANRINST) {
-        if (this.selectedRadioItem === OWN_ROUTER) {
-          this.router.navigate(['issues/internet/install-new-router']);
-        } else if (this.selectedRadioItem === THIRD_PARTY_ROUTER) {
+    var apiResponeQuickAll = this.sharedService.getQuickLinksData();
+
+    if (apiResponeQuickAll.pnpRouter && this.selectedRadioItem === THIRD_PARTY_ROUTER) {
+      this.router.navigate(['issues/internet/install-new-route/pnp-port-managed-router']);
+    } else {
+      this.sharedService.setLoader(true);
+      this.backendService.installNewRouterRequest(this.selectedRadioItem).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+
+        var screenCode = data?.result?.screenCode;
+
+        if (screenCode === flowCodes.QANRINST) {
+          this.router.navigate(['issues/internet/router-install-successfully']);
+        } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2 || screenCode === flowCodes.QANRINST12) {
           this.router.navigate(['issues/internet/install-new-router-care']);
+        } else {
+          this.router.navigate(['issues/internet/router-installation-failed']);
         }
-      } else if (data?.result?.screenCode === flowCodes.QANRINST1) {
-        this.router.navigate(['issues/internet/router-installation-failed']);
-      }
-    });
+      });
+    }
   }
 
   radioGroupChange(event) {
