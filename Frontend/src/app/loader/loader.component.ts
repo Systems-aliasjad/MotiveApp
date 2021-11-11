@@ -13,7 +13,8 @@ export class LoaderComponent implements OnInit, OnDestroy {
   lateResponse: boolean = false;
   oneMinute: number = 60000;
   oneMinutePart100 = this.oneMinute / 100;
-  successMessages: string[] = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
+  // successMessages: string[] = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
+  successMessages: string[]
   faliureMessages: string[] = ['MESSAGES.IT_IS_TAKING_LONGER_THAN_EXPECTED_KINDLY_WAIT'];
   messages: string[] = [];
   minuteInterval;
@@ -36,16 +37,13 @@ export class LoaderComponent implements OnInit, OnDestroy {
     this.sharedService.getLoader().subscribe((shouldShow: any) => {
       this.shouldShow = shouldShow.loaderState;
       if (shouldShow.loaderState) {
-        this.initialize();
         if(shouldShow.messageMain !== null){
-          this.successMessages = []
-          this.successMessages.push(shouldShow.messageMain)
+          this.successMessages = [shouldShow.messageMain, 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES']
         }
-        if(shouldShow.messageSub !== null){
-          this.successMessages.push(shouldShow.messageSub)
-        } else {
-          this.successMessages.push('MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
+        else {
+          this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
         }
+        this.initialize();
       } else {
         this.clearIntervals();
       }

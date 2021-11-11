@@ -118,6 +118,25 @@ export class QuickLinksAllComponent implements OnInit {
           this.router.navigate(['/track-request/work-not-completed']);
         }
       });
+    } else if (item?.nextSignal === QUICK_ACTION.PNP_FACTORY_RESET) {
+      const quickLinksData = this.sharedService.getQuickLinksData();
+      if (quickLinksData?.pnpRouter) {
+        this.sharedService.setLoader(true);
+        this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((res) => {
+          this.sharedService.setLoader(false);
+          if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
+            this.router.navigate(['/thanks']);
+          } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
+            this.router.navigate(['/issues/internet/router-reset-successful']);
+          } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
+            this.router.navigate(['/issues/internet/server-timeout']);
+          } else {
+            this.router.navigate(['/unknown-issue']);
+          }
+        });
+      } else {
+        this.router.navigate(['issues/internet/router-restart/device-care']);
+      }
     }
   }
 
