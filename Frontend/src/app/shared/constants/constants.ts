@@ -210,6 +210,7 @@ const FACTORY_RESET_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_ROUTER',
   linkTo: '/issues/internet/router-reset-factory',
   nextSignal: QUICK_ACTION.PNP_FACTORY_RESET,
+  directCall: true,
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
