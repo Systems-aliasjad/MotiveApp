@@ -3,9 +3,9 @@
   <ion-grid>
     <!-- Page Title Start -->
     <ion-row class="page-title">
-      <ion-col size="12" class="pb-0">
+      <ion-col size="12" class="pt-0 pb-0">
         <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
-        <p>{{ subHeader | translate }}</p>
+        <p class="sub-title-content">{{ subHeader | translate }}</p>
       </ion-col>
     </ion-row>
     <!-- Page Title End-->
@@ -16,7 +16,7 @@
         <ion-card *ngFor="let card of packages">
           <ion-card-header>
             <ion-card-title>
-              <h5 class="sub-title letter-space-none">{{ card.title }}</h5>
+              <h5 class="sub-title">{{ card.title }}</h5>
             </ion-card-title>
           </ion-card-header>
           <ion-card-content>

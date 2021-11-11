@@ -169,13 +169,13 @@ export class IssueListDialog implements OnInit {
   callDirectCallAPIs(item) {
     this.dismiss();
     if (item?.nextSignal === QUICK_ACTION.RESET_ELIFEON_PASSWORD) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD', 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
-        this.sharedService.setLoader(true);
+        this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD', 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
         this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
           this.sharedService.setLoader(false);
           if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
@@ -187,13 +187,13 @@ export class IssueListDialog implements OnInit {
         });
       });
     } else if (item?.nextSignal === QUICK_ACTION.RESET_INTERNET_PASSWORD) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD', 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
-        this.sharedService.setLoader(true);
+        this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD', 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
         this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
           this.sharedService.setLoader(false);
           if (data?.result?.screenCode === flowCodes.QAHSIPR) {

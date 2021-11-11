@@ -33,10 +33,19 @@ export class LoaderComponent implements OnInit, OnDestroy {
   constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
-    this.sharedService.getLoader().subscribe((shouldShow: boolean) => {
-      this.shouldShow = shouldShow;
-      if (shouldShow) {
+    this.sharedService.getLoader().subscribe((shouldShow: any) => {
+      this.shouldShow = shouldShow.loaderState;
+      if (shouldShow.loaderState) {
         this.initialize();
+        if(shouldShow.messageMain !== null){
+          this.successMessages = []
+          this.successMessages.push(shouldShow.messageMain)
+        }
+        if(shouldShow.messageSub !== null){
+          this.successMessages.push(shouldShow.messageSub)
+        } else {
+          this.successMessages.push('MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
+        }
       } else {
         this.clearIntervals();
       }

@@ -158,6 +158,14 @@ export class BackendService {
       return this.hardCoadedResponse(response);
     }
   }
+  quickActionsResetWifiPasswordHomeZone(data, value) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/reset-hz-ap-config`, { ...data, value });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
 
   resetRouter(data) {
     if (environment.shouldCallAPI) {
@@ -319,6 +327,17 @@ export class BackendService {
         data: {
           customerQASelection: forAction,
         },
+        signal: 'next',
+      });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+  quickActionsJustNextStep() {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, {
         signal: 'next',
       });
     } else {

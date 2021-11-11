@@ -70,7 +70,7 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
   }
 
   button2Listener(_event) {
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD', 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES');
     this.backendService.resetRouter({ data: { ..._event }, signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
