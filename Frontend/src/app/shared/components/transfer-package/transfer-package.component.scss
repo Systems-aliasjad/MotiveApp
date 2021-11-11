@@ -27,39 +27,59 @@ ion-radio.ios.radio-checked::part(mark){
     transform: none;
 }
 /*------------------------------------------------------------------*/ 
-.page-top_title-container{
+/*.page-top_title-container{
     @media screen and (max-width:992px) {            
         margin-left: 5px;
     }
 }
-.page-top_sub-title{
+ .page-top_sub-title{
     @media screen and (max-width:992px) {            
         margin-left: 5px;
     }
-}
+} */
+.sub-title-content{
+    margin-top: 0.5rem;
+    @media screen and (max-width: 767px) {
+      margin-bottom: 0.5rem;
+      display: block;
+      font-size: 0.875rem;
+    }
+  }
 form{
     ion-card{
-        // max-width: 376px;
         width: 100%;
-        margin: 13px 5px;
+        margin-right: 5px;
+        margin-left: 5px;
+        min-height: 84px;
         @include transition(all 0.3s ease-in-out);
-        @media screen and (min-width: 992px) {
+        /* @media screen and (min-width: 992px) {
             margin: 16px ​12px;
-        }
+        } */
         ion-card-header{
-            padding: 16px 16px 20px 16px;
+            padding-top:1rem;
+            padding-right:1rem;
+            padding-bottom:1.25rem;
+            padding-left: 1rem;
             ion-card-title{
+                display: -webkit-box;
+                display: -ms-flexbox;
                 display: flex;
+                -webkit-box-pack: justify;
+                -ms-flex-pack: justify;
                 justify-content: space-between;
+                -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
                 .sub-title{
                     font-size: 1rem;
                     word-break: break-word;
                     width: calc(100% - 50px);
+                    letter-spacing: 0;
                 }
                 p{
-                    font-size: 1rem;
-                    margin: 0;
+                    margin-top: .3rem;
+                    margin-bottom: 0;
+                    font-size: 0.9375rem;
+                    
                     font-weight: 500;
                 }
                 ion-radio{
@@ -69,9 +89,9 @@ form{
                 }
             }
         }
-        ion-card-content{
+       /*  ion-card-content{
             padding: 0 16px 20px 16px;
-        }
+        } */
         
         &:hover {
             text-decoration: none;
