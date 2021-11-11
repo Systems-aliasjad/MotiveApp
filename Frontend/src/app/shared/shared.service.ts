@@ -200,11 +200,10 @@ export class SharedService {
     return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
   }
 
-  setLoader(loaderState: boolean, messageMain? : String, messageSub? : String): void {
+  setLoader(loaderState: boolean, messageMain? : String): void {
     const loaderObject : any = {
       loaderState,
-      messageMain: messageMain || null,
-      messageSub: messageSub || null
+      messageMain: messageMain || null
     }
     this.loaderSubject.next(loaderObject);
   }
