@@ -62,7 +62,7 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true, "MESSAGES.YOUR_TV_BOX_IS_BEING_RESET");
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.code === 200) {

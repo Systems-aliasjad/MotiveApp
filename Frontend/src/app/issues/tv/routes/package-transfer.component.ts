@@ -122,7 +122,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
     };
 
     if (this.sharedService.getQuickLinksData()) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.PACKAGE_TRANSFER_IN_PROGRESS');
       this.backendService.quickTransferPackage(data).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
@@ -133,7 +133,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
         }
       });
     } else {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.PACKAGE_TRANSFER_IN_PROGRESS');
       this.backendService.transferPackage(data).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAIPTVPT) {

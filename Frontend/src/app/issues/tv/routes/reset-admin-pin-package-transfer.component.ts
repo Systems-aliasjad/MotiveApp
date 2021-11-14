@@ -73,7 +73,7 @@ export class ResetAdminPinPackageTransferComponent implements OnInit, OnDestroy 
     //For api testing
     //const data = '130857101318';
 
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_ADMIN_PIN_IS_BEING_RESET');
     this.backendService.stbAdminPinReset(data).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (

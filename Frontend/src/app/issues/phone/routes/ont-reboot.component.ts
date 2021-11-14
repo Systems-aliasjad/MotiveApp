@@ -74,7 +74,7 @@ export class OntRebootComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS_BEING_RESTARTED');
     this.backendService.rebootMyDevice('ONT').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/issues/phone/ont-reboot-message']);

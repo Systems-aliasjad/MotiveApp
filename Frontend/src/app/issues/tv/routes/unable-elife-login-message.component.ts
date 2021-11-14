@@ -68,7 +68,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
-        this.sharedService.setLoader(true);
+        this.sharedService.setLoader(true, "MESSAGES.YOUR_ELIFEON_PIN_IS_BEING_RESET");
         this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((data) => {
           this.sharedService.setLoader(false);
           if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
@@ -80,7 +80,7 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
         });
       });
     } else {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, "MESSAGES.YOUR_ELIFEON_PIN_IS_BEING_RESET");
       this.backendService.elifeOnReset().subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
