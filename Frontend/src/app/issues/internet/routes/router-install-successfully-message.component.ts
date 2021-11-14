@@ -41,7 +41,8 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   };
 
   button3: IMotiveButton = {
-    type: 'link',
+    // type: 'link',
+    type: 'secondary',
     title: 'BUTTONS.CLOSE',
     explanatoryNote: '',
   };
@@ -53,6 +54,11 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
       this.updateHeader();
     });
     this.updatePageContent();
+
+    ////TO Remove This
+    ////When we get the clear picture of App.MotiveH&S.5.1.2
+    this.button1 = null;
+    this.button2 = null;
   }
 
   ngOnDestroy(): void {

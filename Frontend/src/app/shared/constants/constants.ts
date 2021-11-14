@@ -88,6 +88,9 @@ export const flowCodes = {
 
   QANRINST: 'QA-NR-INST', //Install new router  Success
   QANRINST1: 'QA-NR-INST1', //Install new router failer
+  DCSS1: 'DCSS1', //Install new router Device care
+  DCSS2: 'DCSS2', //Install new router Device care
+  QANRINST12: 'QA-NR-INST12', //		DCSS invokation for manual router installation    App.MotiveH&S.5.1.3
 
   QACOMFU2: 'QA-COM-FU2', //Track a recent complaint SuCcess
   QACOMFU1: 'QA-COM-FU1', //Track a recent complaint failure
@@ -210,6 +213,7 @@ const FACTORY_RESET_ROUTER = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_ROUTER',
   linkTo: '/issues/internet/router-reset-factory',
   nextSignal: QUICK_ACTION.PNP_FACTORY_RESET,
+  directCall: true,
 };
 const FACTORY_RESET_TV = {
   body: 'QUICK_LINKS.I_WANT_TO_FACTORY_RESET_MY_TV_BOX',
