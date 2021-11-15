@@ -47,31 +47,28 @@ export class FiveLayerComponent implements OnInit {
     },
   };
   @ViewChild('slides') slides: IonSlides;
-  arrow_right: boolean = true;
-  arrow_left: boolean = false;
+  arrow_right: boolean = false;
+  arrow_left: boolean = true;
 
   constructor() {}
 
   ngOnInit() {
-    console.log('====================================');
-    console.log('devices', this.ontConfig);
-    console.log('====================================');
   }
 
   next() {
-    this.slides.slideNext();
+    this.slides.slidePrev();
   }
 
   prev() {
-    this.slides.slidePrev();
+    this.slides.slideNext();
   }
 
   doCheck() {
     this.slides.isBeginning().then((val) => {
-      this.arrow_right = val;
+      this.arrow_left = val;
     });
     this.slides.isEnd().then((val) => {
-      this.arrow_left = val;
+      this.arrow_right = val;
     });
   }
 
