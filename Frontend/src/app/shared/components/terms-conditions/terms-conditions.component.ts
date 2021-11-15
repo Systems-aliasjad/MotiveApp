@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../../shared.service';
 import { ModalController } from '@ionic/angular';
-import { IPageHeader, ITermsAndConditions } from '../../constants/types';
+import { IMotiveButton, IPageHeader, ITermsAndConditions } from '../../constants/types';
 import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
@@ -16,6 +16,12 @@ export class TermsConditionsComponent implements OnInit {
     pageTitle: 'HEADER.TERMS_AND_CONDITIONS',
     showBackBtn: false,
   };
+  button3: IMotiveButton = {
+    type: 'primary',
+    title: 'BUTTONS.YES,_I_AGREE',
+    SM: '12',
+  };
+  termsAndCondition: boolean = true;
 
   TC: ITermsAndConditions[] = [
     {
@@ -59,7 +65,6 @@ export class TermsConditionsComponent implements OnInit {
       this.sharedService.setLoader(false);
       // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
-
     this.modalCtrl.dismiss(true);
   };
 }

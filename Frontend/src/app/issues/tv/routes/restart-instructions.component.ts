@@ -60,7 +60,7 @@ export class RestartInstructionsComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.instruction1.title = 'MESSAGES.FOLLOW_THESE_STEPS';
+    this.instruction1.title = 'MESSAGES.FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX';
     this.instruction1.steps = ['Unplug the TV box from power', 'Wait for 30 seconds', 'Plug the TV box back to the power', 'Wait for 5 minutes', 'Try to use the TV again'];
     this.instruction2.title = 'MESSAGES.VISIT_DEVICE_CARE';
     this.instruction2.body = 'MESSAGES.WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_TV_BOX';

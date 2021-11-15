@@ -100,6 +100,7 @@
     "BOOK_A_COMPLAINT": "BOOK A COMPLAINT",
     "BOOK_COMPLAINT": "Book complaint",
     "BUY_ETISALAT_ROUTER": "BUY ETISALAT ROUTER",
+    "YES,_I_AGREE": "Yes, I Agree",
     "BUY_NEW_ROUTER": "BUY NEW ROUTER",
     "CANCEL": "CANCEL",
     "CANCEL_COMPLAINT": "Cancel complaint",
@@ -119,7 +120,7 @@
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "FORGOT_PASSWORD": "Forgot password",
     "HOW_DO_I_RESTART": "How do I restart?",
-    "ILL_RESTART_IT_MANYALLY": "I'LL RESTART IT MANYALLY",
+    "ILL_RESTART_IT_MANYALLY": "I'LL RESTART IT MANUALLY",
     "INSTALLATION_COMPLETED": "Installation completed",
     "INSTALL_ROUTER": "Install router",
     "INSTALL_THIRD_PARTY_ROUTER": "Install third-party router",
@@ -171,6 +172,7 @@
   },
 
   "MESSAGES": {
+    "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX": "Follow these steps to restart your TV box:",
     "FIBER_BOX": "FIBER BOX",
     "INTERNET_CONNECTION_STATUS": "Internet Connection Status",
     "SPEED_TEST_RESULT": "Speed Test Result",
