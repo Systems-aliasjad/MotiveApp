@@ -32,7 +32,7 @@ export class TvBoxResetRequiredSuccessComponent implements OnInit, OnDestroy {
   quickLinkNextSignal;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.DONE',
+    title: 'BUTTONS.CONTINUE',
   };
 
   constructor(

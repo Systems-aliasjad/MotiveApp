@@ -65,6 +65,35 @@
               </div>
             </ion-col> -->
             <!-- Parental Control End -->
+
+            <ion-col size="12" class="shadow-box">
+              <div class="parental-control ion-text-left">
+                <h5 class="sub-title">{{ 'MESSAGES.INTERNET_CONNECTION_STATUS' | translate }}</h5>
+                <p>{{ 'Connected' }}</p>
+                <p>{{ 'IP Address: 215.213.97.88' }}</p>
+              </div>
+            </ion-col>
+
+            <ion-col size="12" class="shadow-box">
+              <div class="parental-control ion-text-left">
+                <h5 class="sub-title">{{ 'MESSAGES.SPEED_TEST_RESULT' | translate }}</h5>
+                <p>{{ 'Good' }}</p>
+              </div>
+            </ion-col>
+
+            <ion-col size="12" class="shadow-box">
+              <div class="parental-control ion-text-left">
+                <h5 class="sub-title">{{ 'MESSAGES.INTERNET_CALLING_PLAN' | translate }}</h5>
+                <p>{{ 'Active' | translate }}</p>
+              </div>
+            </ion-col>
+
+            <ion-col size="12" class="shadow-box">
+              <div class="parental-control ion-text-left">
+                <h5 class="sub-title">{{ 'MESSAGES.FULL_HOME_WIFI_SERVICE' | translate }}</h5>
+                <p>{{ 'Not subscribed' | translate }}</p>
+              </div>
+            </ion-col>
           </ion-row>
 
           <ion-row>
@@ -74,8 +103,66 @@
                 <span>{{ devices?.length || 0 }} devices</span>
               </div>
             </ion-col>
-            <!-- Device Network Card list Start -->
+
             <ion-col size="12" class="devices-list-container">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>
+                    <ion-row>
+                      <ion-col size="8">
+                        <img src="assets/images/indicators-icons/icon_all_okay.svg" alt="" />
+                        <h5 class="sub-title">{{ 'ROUTER D-LINK DIR 850' }}</h5>
+                      </ion-col>
+                      <ion-col size="4">
+                        <img [src]="routerDefault" alt="View Details" />
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-row>
+                    <ion-col size="6">
+                      <a href="javascript:void(0)" class="arrow-link">
+                        <span>{{ 'BUTTONS.REBOOT_ROUTER' | translate }}</span>
+                        <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+                      </a>
+                    </ion-col>
+                    <ion-col size="6">
+                      <a href="javascript:void(0)" class="arrow-link">
+                        <span>{{ 'BUTTONS.CHANGE_WIFI_PIN' | translate }}</span>
+                        <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" /> </a
+                    ></ion-col>
+                  </ion-row>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <ion-col size="12" class="devices-list-container">
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-title>
+                    <ion-row>
+                      <ion-col size="8">
+                        <img src="assets/images/indicators-icons/icon_all_okay.svg" alt="" />
+                        <h5 class="sub-title">{{ 'MESSAGES.FIBER_BOX' | translate }}</h5>
+                      </ion-col>
+                      <ion-col size="4">
+                        <img [src]="fiberBoxDefault" alt="View ont" />
+                      </ion-col>
+                    </ion-row>
+                  </ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <a href="javascript:void(0)" class="arrow-link">
+                    <span>{{ 'BUTTONS.REBOOT_FIBER_BOX' | translate }}</span>
+                    <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
+                  </a>
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+
+            <!-- Device Network Card list Start -->
+            <!-- <ion-col size="12" class="devices-list-container">
               <ion-card *ngFor="let d of devices">
                 <ion-card-header>
                   <ion-card-title>
@@ -85,13 +172,9 @@
                 </ion-card-header>
                 <ion-card-content>
                   <p>{{ d?.ipAddress }}</p>
-                  <!-- <a href="javascript:void(0)" class="arrow-link">
-                    <span>{{ 'BUTTONS.VIEW_DETAILS' | translate }}</span>
-                    <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
-                  </a> -->
                 </ion-card-content>
               </ion-card>
-            </ion-col>
+            </ion-col> -->
             <!-- Device Network Card list End -->
           </ion-row>
         </div>

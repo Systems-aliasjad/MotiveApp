@@ -89,6 +89,9 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "I want to reset ELife on pin"
   },
   "BUTTONS": {
+    "REBOOT_FIBER_BOX": "REBOOT FIBER BOX",
+    "REBOOT_ROUTER": "REBOOT ROUTER",
+    "CHANGE_WIFI_PIN": "CHANGE Wi-Fi PIN",
     "CONFIGURE_ROUTER": "Configure router",
     "RESTART_ONT_NOW": "RESTART ONT NOW",
     "INSTALL_NEW_THIRD_PARTY_ROUTER": "INSTALL NEW THIRD-PARTY ROUTER",
@@ -117,7 +120,7 @@
     "EXIT_TROUBLESHOOTING": "EXIT TROUBLESHOOTING",
     "FORGOT_PASSWORD": "Forgot password",
     "HOW_DO_I_RESTART": "How do I restart?",
-    "ILL_RESTART_IT_MANYALLY": "I'LL RESTART IT MANYALLY",
+    "ILL_RESTART_IT_MANYALLY": "I'LL RESTART IT MANUALLY",
     "INSTALLATION_COMPLETED": "Installation completed",
     "INSTALL_ROUTER": "Install router",
     "INSTALL_THIRD_PARTY_ROUTER": "Install third-party router",
@@ -169,6 +172,12 @@
   },
 
   "MESSAGES": {
+    "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX": "Follow these steps to restart your TV box:",
+    "FIBER_BOX": "FIBER BOX",
+    "INTERNET_CONNECTION_STATUS": "Internet Connection Status",
+    "SPEED_TEST_RESULT": "Speed Test Result",
+    "INTERNET_CALLING_PLAN": "Internet Calling Plan",
+    "FULL_HOME_WIFI_SERVICE": "Full Home Wi-Fi Service",
     "PLEASE_SELECT_THE_DEVICE_NO_TO_CONTUNUE": "Please select the device to continue",
     "SR_FOLLOW_UP": "SR follow up",
     "PLEASE_SELECT_THE_SR_NO_TO_CONTUNUE": "Please select the SR# to continue",
@@ -194,7 +203,7 @@
     "YOUR_ELIFEON_PIN_IS_BEING_RESET": "Your eLifeON PIN is being reset.",
     "PACKAGE_TRANSFER_IN_PROGRESS": "Package transfer in progress",
     "YOUR_TV_BOX_IS_BEING_RESET": "Your tv box is being reset",
-    "WE_ARE_RESETTING_YOUR_CCB_PIN":"We are resetting your ccb pin",
+    "WE_ARE_RESETTING_YOUR_CCB_PIN": "We are resetting your ccb pin",
     "PLEASE_WAIT_FOR_A_FEW_MINUTES": "Please wait for a few minutes",
     "WE_ARE_RESETTING_YOUR_WIFI_PASSWORD": "We are resetting your Wi-Fi password",
     "YOUR_TV_ADMIN_PIN_IS_BEING_RESET": "Your TV admin PIN is being reset.",
