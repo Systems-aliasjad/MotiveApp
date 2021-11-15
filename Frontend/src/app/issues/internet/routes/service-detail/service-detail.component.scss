@@ -197,8 +197,9 @@ ion-item::part(native) {
         }
         .sub-title {
           letter-spacing: 0;
+          font-size:1rem;
           @media screen and (max-width: 992px) {
-            font-size:15px;
+            font-size:0.9375rem;
           }
          
         }
@@ -264,7 +265,7 @@ ion-item::part(native) {
             margin-left: 0.5rem;
             color: $secondary-color;
             @media screen and (max-width: 992px) {
-              font-size:14px;
+              font-size:0.875rem;
             }
           }
         }
@@ -281,12 +282,20 @@ ion-item::part(native) {
         color: $secondary-color;
         margin-top: 0;
         margin-bottom: 0.5rem;
-        @media screen and (max-width: 992px) {
-          font-size:14px;
-        }
+        font-size:0.875rem;
+        /* @media screen and (max-width: 992px) {
+          font-size:0.875rem;
+        } */
         &:last-child {
           margin-bottom: 0;
         }
+      }
+      .active-result{
+        color: $etisalat-color;
+      }
+      
+      .error-result{
+        color: #be1218;
       }
     }
     .devices-network {
@@ -313,7 +322,7 @@ ion-item::part(native) {
         margin-bottom: 0;
         color: $secondary-color;
         @media screen and (max-width:992px) {
-          font-size:14px;
+          font-size:0.875rem;
         }
       }
       span {
@@ -321,7 +330,7 @@ ion-item::part(native) {
         color: $primary-color;
         font-weight: 700;
         @media screen and (max-width: 992px) {
-          font-size:14px;
+          font-size:0.875rem;
         }
        
       }
@@ -342,6 +351,16 @@ ion-item::part(native) {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
+        ion-card-header{
+          @media screen and (max-width: 412px) {
+            padding-right: 1rem;
+            padding-left: 1rem;
+           }
+          @media screen and (max-width: 321px) {
+            padding-right: 0.6rem;
+            padding-left: 0.6rem;
+          }
+        }
         ion-card-title {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -353,6 +372,7 @@ ion-item::part(native) {
           -webkit-box-align: center;
           -ms-flex-align: center;
           align-items: center;
+          width: 100%;
           @media screen and (max-width: 281px) {
             -webkit-box-orient: vertical;
             -webkit-box-direction: normal;
@@ -365,17 +385,108 @@ ion-item::part(native) {
             -ms-flex-align: start;
             align-items: flex-start;
           }
+          .device_img_title{
+            width: 100%;
+            margin-bottom: 0.8rem;
+            @media screen and (max-width: 281px) {
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+              flex-direction: column;
+              margin-bottom: 0;
+            }
+            .device_title{
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+              flex-direction: row;
+              -webkit-box-align: start;
+              -ms-flex-align: start;
+              align-items: flex-start;
+              -webkit-box-pack: start;
+              -ms-flex-pack: start;
+              justify-content: flex-start;
+              @media screen and (max-width: 281px) {
+                max-width: 100% !important;
+                width: 100% !important;
+                margin-bottom: 0.8rem;
+              }
+              .sub-title{
+                margin-top: 0.2rem;
+                @media screen and (max-width: 992px) {
+                  font-size: 0.9375rem;
+                }
+                @media screen and (max-width: 376px) {
+                  margin-top: 0;
+                }
+                @media screen and (max-width: 281px) {
+                  margin-top: 0.3rem;
+                  font-size: 0.85rem;
+
+                }
+              }
+            }
+            .device_image{
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+              -ms-flex-direction: row;
+              flex-direction: row;
+              -webkit-box-align: end;
+              -ms-flex-align: end;
+              align-items: flex-end;
+              -webkit-box-pack: end;
+              -ms-flex-pack: end;
+              justify-content: flex-end;
+              @media screen and (max-width: 281px) {
+                max-width: 100% !important;
+                width: 100% !important;
+                -webkit-box-pack: start;
+                -ms-flex-pack: start;
+                justify-content: flex-start;
+              }
+              .image{
+                border: 2px solid $etisalat-color;
+                background-color: #f4f7eb;
+                border-radius: 0.5rem;
+                width: 56px;
+                height: 56px;
+                position: relative;
+                overflow: hidden;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                flex-direction: row;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                img {
+                  width:38px;
+                  height:100%;
+                }
+              }
+            }
+          }
+          
           img {
             display: inline-block;
           }
           .sub-title {
             margin-bottom: 0;
-            margin-left: 1rem;
-            font-size:1rem;
-            letter-spacing: .1rem;
-            @media screen and (max-width: 992px) {
-              font-size:0.875rem; //14px
-            }
+            margin-left: 0.8rem;
+            font-size:0.875rem;
+            letter-spacing: 0.1rem;
             @media screen and (max-width: 281x) {
               margin-top: 1rem;
               margin-left: 0rem;
@@ -383,15 +494,92 @@ ion-item::part(native) {
           }
         }
         ion-card-content {
+          @media screen and (max-width: 412px) {
+            padding-right: 1rem;
+            padding-left: 1rem;
+          }
+          @media screen and (max-width: 321px) {
+            padding-right: 0.6rem;
+            padding-left: 0.6rem;
+          }
           p {
-            /* margin-bottom: 0.5rem; */
             margin-bottom: 0;
             @media screen and (max-width: 767px) {
-             font-size:0.75rem; //14px
+             font-size:0.75rem;
             }
           }
         }
       }
+    
     }
+    .links_container{
+      @media screen and (max-width: 281px) {
+       display: block;
+      }
+      ion-col{
+        margin-bottom: 0;
+        @media screen and (max-width: 281px) {
+          flex-basis: 100%;
+          width: 100%;
+        }
+        .arrow-link{
+          font-size: 0.875rem;
+          @media screen and (max-width: 767px) {
+            font-size: 0.75rem;
+          }
+          @media screen and (max-width: 321px) {
+            letter-spacing: .05rem;
+          }
+         
+          img{
+            margin-left:0.5rem;
+            @media screen and (max-width: 992px) {
+              width: 0.7rem;
+              height: 0.7rem;
+            }
+            @media screen and (max-width: 767px) {
+              width: 0.625rem;
+              height: 0.625rem;
+            }
+            @media screen and (max-width: 412px) {
+             margin-left:0.2rem;
+            }
+          }
+        }
+        &:last-child{
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+          flex-direction: row;
+          -webkit-box-align: end;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          -webkit-box-pack: end;
+          -ms-flex-pack: end;
+          justify-content: flex-end;
+          @media screen and (max-width: 281px) {
+            margin-top: 0.5em;
+            display: block;
+            max-width: 100% !important;
+            width: 100% !important;
+           }
+        }
+      }
+      
+    }
+    .link_container{
+      ion-col{
+        &:last-child{
+          -webkit-box-pack: start;
+          -ms-flex-pack: start;
+          justify-content: flex-start;
+        }
+      }
+     
+    }
+    
   }
 }
