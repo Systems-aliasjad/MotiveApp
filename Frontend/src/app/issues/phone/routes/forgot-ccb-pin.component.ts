@@ -48,7 +48,7 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
 
   button1Listener(event) {
     if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
       this.backendService.updateCCBPinQuickLinks(event?.value?.NewPassword).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAVOICECCB1 || data?.result?.screenCode === flowCodes.QAVOICECCB2) {
@@ -63,7 +63,7 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
         }
       });
     } else if (this?.quickLinkNextSignal) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);

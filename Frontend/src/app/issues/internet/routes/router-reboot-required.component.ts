@@ -75,7 +75,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS_BEING_RESTARTED');
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

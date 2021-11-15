@@ -35,6 +35,8 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   @Input()
   section1Data;
 
+  className: String;
+
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnDestroy(): void {
@@ -42,6 +44,10 @@ export class IssueTabsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.className = this.networkDiagram === 3 ? 'issue-tab_content two-col_right two-col-seven-layer': 
+                     this.networkDiagram === 1 ? 'issue-tab_content two-col_right two-col-three-layer' :
+                     this.networkDiagram === 2 ? 'issue-tab_content two-col_right two-col-five-layer' :
+                     this.networkDiagram === 4 ? 'issue-tab_content two-col_right two-col-six-layer' : 'issue-tab_content two-col_right two-col-multi-layer';
     this.subscription = this.activatedRoute.data.subscribe((data) => {
       this.codeType = data.id;
     });

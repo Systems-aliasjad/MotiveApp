@@ -26,7 +26,7 @@ export class ResetFactoryDefaultDialog implements OnInit {
   CloseModal() {
     this.dismiss();
     if (this?.quickLinkNextSignal) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, "MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING");
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
         this.sharedService.setLoader(false);
         if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
@@ -40,13 +40,10 @@ export class ResetFactoryDefaultDialog implements OnInit {
         }
       });
     } else {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, "MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING");
       this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
-        console.log('====================================');
-        console.log(data);
-        console.log('====================================');
-        this.sharedService.setLoader(false);
-        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     }
   }
