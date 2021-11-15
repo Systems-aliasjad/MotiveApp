@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
+import { SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -14,6 +15,9 @@ import { SharedService } from 'src/app/shared/shared.service';
   styleUrls: ['./service-detail.component.scss'],
 })
 export class ServiceDetailComponent implements OnInit, OnDestroy {
+  routerDefault = SVGs.router.default;
+  fiberBoxDefault = SVGs.ont.default;
+
   @Input()
   isPartialLoaded: boolean = false;
   devices;
