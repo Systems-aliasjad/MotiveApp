@@ -177,6 +177,7 @@
   },
 
   "MESSAGES": {
+    "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX": "Follow these steps to restart your TV box:",
     "FIBER_BOX": "FIBER BOX",
     "INTERNET_CONNECTION_STATUS": "Internet Connection Status",
     "SPEED_TEST_RESULT": "Speed Test Result",

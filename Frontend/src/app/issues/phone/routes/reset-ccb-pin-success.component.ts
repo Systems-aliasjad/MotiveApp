@@ -27,7 +27,7 @@ export class ResetCCBPINSuccessComponent implements OnInit, OnDestroy {
   Section2Data;
   imgSrc;
   button1: IMotiveButton = {
-    type: 'primary',
+    type: 'secondary',
     title: 'BUTTONS.DONE',
   };
 
