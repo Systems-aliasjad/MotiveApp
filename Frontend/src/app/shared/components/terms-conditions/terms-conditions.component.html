@@ -1,13 +1,26 @@
 <app-header-single-line [headerConfig]="headerConfig" [termsAndCondition] = "termsAndCondition"></app-header-single-line>
+
+<!-- Modal Header Start -->
+<ion-header class="lg-screen-header">
+  <ion-toolbar>
+    <ion-title>
+      <h3 class="lg-screen_title">Terms & Conditions</h3>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button class="btn transparent-btn close-btn" (click)="dismiss()"> Close </ion-button>
+      <img src="./assets/images/action-icons/icon_close.svg" alt="close" (click)="dismiss()" class="cross-icon" />
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<!-- Modal Header End -->
 <ion-content malihu-scrollbar [scrollbarOptions]="{ axis: 'y', theme: 'dark-3' }">
   <ion-grid class="terms-condition-container">
-    <ion-row class="page-title">
+    <!-- <ion-row class="page-title">
       <ion-col class="pt-0 pb-0">
         <app-page-top [headerTitle]="headerConfig.pageTitle"></app-page-top>
       </ion-col>
-    </ion-row>
-
-    <ion-row>
+    </ion-row> -->
+    <ion-row class="terms-condition_update pt-0 pb-0">
       <ion-col size="12">
         <div class="terms-condition_latest">
           <img src="./assets/images/indicators-icons/icon_calendar.svg" alt="calendar" />
@@ -15,8 +28,8 @@
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="12">
+    <ion-row class="terms-condition_content">
+      <ion-col size="12" class="pt-0 pb-0">
         <div *ngFor="let term of TC">
           <h4>{{ term.head | translate }}</h4>
           <p *ngFor="let text of term.body">{{ text | translate }}</p>
@@ -32,13 +45,21 @@
 </ion-content>
 <div class="footer">
   <ion-row class="footer-btns-container">
-    <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center">
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center lg-btn">
       <motive-button
         [type]="button3.type"
         [title]="button3.title"
         [SM]="button3.SM"
-        (clickHandler)="AcceptContinue($event)"
-      ></motive-button>
+        (clickHandler)="AcceptContinue($event)">
+      </motive-button>
+    </ion-col>
+    <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0 ion-text-center sm-btn">
+      <motive-button
+        [type]=" button4.type"
+        [title]=" button4.title"
+        [SM]=" button4.SM"
+        (clickHandler)="AcceptContinue($event)">
+      </motive-button>
     </ion-col>
   </ion-row>
 </div>

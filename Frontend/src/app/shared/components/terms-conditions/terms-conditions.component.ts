@@ -21,6 +21,11 @@ export class TermsConditionsComponent implements OnInit {
     title: 'BUTTONS.YES,_I_AGREE',
     SM: '12',
   };
+  button4: IMotiveButton = {
+    type: 'primary',
+    title: 'Accept & Continue',
+    SM: '12',
+  };
   termsAndCondition: boolean = true;
 
   TC: ITermsAndConditions[] = [
@@ -67,4 +72,7 @@ export class TermsConditionsComponent implements OnInit {
     });
     this.modalCtrl.dismiss(true);
   };
+  dismiss() {
+    this.modalCtrl.dismiss();
+  }
 }

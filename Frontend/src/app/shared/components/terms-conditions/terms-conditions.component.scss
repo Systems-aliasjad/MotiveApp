@@ -1,32 +1,161 @@
-@import '../../../../assets/scss/base/variables';
+@import '/src/assets/scss/base/variables';
+@import '/src/assets/scss/base/mixins';
 
-
+/*-------------------------------------------------*/
+:host {
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  ion-buttons{
+    --min-height:auto;
+  }
+  ion-header{
+    ion-buttons{
+      margin-inline-end:0;
+      margin-right:0;
+      --padding-end: 0;
+      padding-right: 0;
+      padding-right: 0;
+      ion-button{
+        margin-inline-start:0;
+        margin-inline-end:0;
+        height: auto;
+        @media screen and (max-width: 281px) {
+          font-size: .8rem;
+        }
+      }
+    }
+  }
+}
+ion-item::part(native){
+  /* padding-inline-end: .8rem;  */
+  --inner-padding-end: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  --padding-start:1rem;
+  --border-color:#ededed;
+}
+.header-ios {
+	ion-toolbar {
+    ion-title{
+      h3{
+        @media screen and (max-width:992px) {
+          text-align: left;
+        }
+      }
+    }
+	}
+}
+/*-------------------------------------------------*/
+ion-header{
+  --ion-background-color:  transparent;
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+  @media screen and (max-width:768px) {
+    display: none;
+  }
+  &:after{
+    background-image: none;
+  }
+  ion-toolbar{
+    border-bottom: 2px solid #e2e1da;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    ion-title{
+      padding-right:0;
+      padding-left: 0;
+      text-align: center;
+      h3{
+        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        color:$primary-color;
+        font-weight: normal;
+      }
+    }
+  }
+ ion-buttons{
+    padding-right: 0;
+    cursor: pointer;
+    @media screen and (max-width:768px) {
+      margin-top: 0.5rem;
+      margin-right: 0;
+      display: none;
+    }
+    .close-btn{
+      display: none;
+      @media  screen and (max-width:768px) {
+        display: block;
+      }
+    }
+    .cross-icon{
+      display: block;
+      width: 2rem;
+      height: 2rem;
+      @include transition(all 0.3s ease-in-out);
+      @media  screen and (max-width:768px) {
+        display: none;
+      }
+      &:hover{
+        opacity: 0.5;
+      }
+    }
+  }
+}
 .terms-condition-container{
   color:$secondary-color;
-  .terms-condition_latest {
-    margin-top: 1rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    ion-label{
-      margin-left: 1rem;
-      font-size: .8rem;
-      color:$secondary-color;
+  .terms-condition_update{
+    display: block;
+    @media  screen and (min-width:768px) {
+      display: none;
+    }
+    .terms-condition_latest {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      ion-label{
+        margin-left: 1rem;
+        font-size: .8rem;
+        color:$secondary-color;
+      }
+    }
+  }
+  .terms-condition_content{
+    @media  screen and (min-width:768px) {
+      margin-top: 1rem;
     }
   }
   h4 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-    font-size: 1.3125rem;
+    @media  screen and (max-width:768px) {
+      margin-top: 0;
+      font-size: 1rem;
+    }
   }
   p{
     line-height:1.5;
-    font-size:14px;
+    font-size:0.875rem;
+    @media  screen and (max-width:768px) {
+      color: $etisalat-gray-color;
+    }
+  }
+}
+.footer{
+  .footer-btns-container{
+    .lg-btn{
+      display: block;
+      @media  screen and (max-width:992px) {
+        display: none;
+      }
+    }
+    .sm-btn{
+      display: none;
+      @media  screen and (max-width:992px) {
+        display: block;
+      }
+    }
   }
 }
