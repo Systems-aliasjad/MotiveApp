@@ -73,6 +73,8 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
           this.sharedService.setLoader(false);
           if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
             this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
+          } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
+            this.router.navigate(['issues/password/unable-to-process-request'])
           } else {
             //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
             this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
@@ -86,11 +88,13 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
         if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
           this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
         } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-          //  this.sharedService.setLoader(true);
-          this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-            //  this.sharedService.setLoader(false);
-          });
-          this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+          this.router.navigate(['issues/password/unable-to-process-request'])
+        } else {
+            //  this.sharedService.setLoader(true);
+            this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+              //  this.sharedService.setLoader(false);
+            });
+            this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
         }
       });
     }
