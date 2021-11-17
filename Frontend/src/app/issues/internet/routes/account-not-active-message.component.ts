@@ -39,12 +39,15 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
     let url;
     const accountNo = localStorage.getItem('CUS_MOBILE_NO');
     const lang: string = this.sharedService.getDefaultLanguage();
-    if (lang === 'ara') {
-      url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID&locale=ar`;
+    if(this.sharedService.checkIfMobileDevice()){
+      url = 'https://etisalatmobileapp.page.link/ebill';
     } else {
-      url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID`;
+      if (lang === 'ara') {
+        url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID&locale=ar`;
+      } else {
+        url = `https://www.etisalat.ae/b2c/eLife-accounts-and-services.html?accountid=EDSACC${accountNo}&accounttype=POSTPAID`;
+      }  
     }
-
     this.Section1Data = CustomerJourneyConstants.accountNotActive;
     this.Section1Data.spanListener = () => {
       window.location.href = url;
