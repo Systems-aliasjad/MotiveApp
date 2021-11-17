@@ -95,8 +95,8 @@ ion-item::part(native){
         margin-bottom: 2rem;
       }
       ion-label{
-        @media screen and (max-width: 767px){
-          font-size: 14px;
+        @media screen and (max-width: 768px){
+          font-size: 0.875rem;
         }
       }
     }
@@ -130,13 +130,30 @@ ion-item::part(native){
     margin-bottom: 2rem;
   }
 }
+.info-container_content{
+  text-align: center;
+  p{
+    margin-bottom: 0;
+    @media screen and (max-width: 768px) {
+      font-size: 0.875rem;
+    }
+  }
+  span{
+    display: block;
+    font-weight: 800;
+    color: $secondary-color;
+    @media screen and (max-width: 768px) {
+      font-size: 0.9375rem;
+    }
+  }
+}
 .ion-list-capital{
   ion-item{
     ion-label{
       color: $primary-color;
       font-size: 1.1rem;
-      @media screen and (max-width: 767px){
-        font-size: 14px;
+      @media screen and (max-width: 768px){
+        font-size: 0.875rem;
       }
       @media screen and (max-width: 321px) {
         margin-bottom: 1rem;
