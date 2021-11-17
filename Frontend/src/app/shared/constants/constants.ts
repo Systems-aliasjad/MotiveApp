@@ -719,3 +719,18 @@ export function ConfirmedValidator(controlName: string, matchingControlName: str
     }
   };
 }
+
+export class LandingProductCodes {
+  public static readonly _3P = '3P';
+  public static readonly _2P = '2P';
+  public static readonly HI = 'HI';
+  public static readonly B1 = 'B1';
+  public static readonly BTP = 'BTP';
+  public static readonly BDP = 'BDP';
+  public static readonly BFXI = 'BFXI';
+  public static readonly FD = 'FD';
+  public static readonly FH = 'FH';
+  public static readonly FT = 'FT';
+  public static readonly _1P = '1P';
+  public static readonly BSP = 'BSP';
+}

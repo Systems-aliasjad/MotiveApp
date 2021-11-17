@@ -3,19 +3,20 @@
 
 // ------------Removed Ionic ion-item Styling start-------------------
 :host {
-  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  --ion-font-family:Lato,Roboto,Arial,sans-serif;
   ion-list {
     --ion-background-color: transparent;
   }
   ion-item {
     --min-height: 30px;
     @media screen and (max-width: 321px) {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
+      padding-top:.5rem;
+      padding-bottom: .5rem;
+
     }
   }
-}
-ion-item::part(native) {
+} 
+ion-item::part(native){
   padding-inline-end: 0;
   --inner-padding-end: 0;
   @media screen and (max-width: 321px) {
@@ -49,18 +50,23 @@ ion-item::part(native) {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 1rem;
-  /* .info-container_icon{
+  margin-top: 5rem;
+  max-width: 450px;
+  @media screen and (max-width: 1024px){
+    margin-top: 8rem;
+  }
+  .info-container_icon{
     img{
-      @media screen and (max-width: 476px) {
-        height: 90px;
-        width: 90px;
-      }
+        width: 110px;
     }
-  } */
+  }
   h4 {
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
+    font-weight: 600;
+    @media screen and (max-width: 767px){
+      font-size: 16px;
+    }
   }
   .content {
     p {
@@ -69,6 +75,9 @@ ion-item::part(native) {
       color: #848789;
       text-align: center;
       word-break: break-word;
+      @media screen and (max-width: 767px){
+        font-size: 14px;
+      }
     }
   }
   .info-container_detail_followup {
@@ -84,6 +93,11 @@ ion-item::part(native) {
       width: 100%;
       @media screen and (max-width: 376px) {
         margin-bottom: 2rem;
+      }
+      ion-label{
+        @media screen and (max-width: 768px){
+          font-size: 0.875rem;
+        }
       }
     }
   }
@@ -111,6 +125,43 @@ ion-item::part(native) {
     }
   }
 }
+.info-content{
+  @media screen and (min-width: 992px) {
+    margin-bottom: 2rem;
+  }
+}
+.info-container_content{
+  text-align: center;
+  p{
+    margin-bottom: 0;
+    @media screen and (max-width: 768px) {
+      font-size: 0.875rem;
+    }
+  }
+  span{
+    display: block;
+    font-weight: 800;
+    color: $secondary-color;
+    @media screen and (max-width: 768px) {
+      font-size: 0.9375rem;
+    }
+  }
+}
+.ion-list-capital{
+  ion-item{
+    ion-label{
+      color: $primary-color;
+      font-size: 1.1rem;
+      @media screen and (max-width: 768px){
+        font-size: 0.875rem;
+      }
+      @media screen and (max-width: 321px) {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
 .lg-screen {
   display: -webkit-box;
   display: -ms-flexbox;

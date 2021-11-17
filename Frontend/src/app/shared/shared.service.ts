@@ -5,6 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { LandingProductCodes } from './constants/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -41,6 +42,8 @@ export class SharedService {
   apiResponseDataContinueSTB;
 
   apiResponseHomeZoneCall;
+
+  productCodeLanding: string = '';
 
   constructor(private translate: TranslateService, private router: Router) {
     this.loaderSubject = new BehaviorSubject(false);
@@ -200,11 +203,11 @@ export class SharedService {
     return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
   }
 
-  setLoader(loaderState: boolean, messageMain? : String): void {
-    const loaderObject : any = {
+  setLoader(loaderState: boolean, messageMain?: String): void {
+    const loaderObject: any = {
       loaderState,
-      messageMain: messageMain || null
-    }
+      messageMain: messageMain || null,
+    };
     this.loaderSubject.next(loaderObject);
   }
 
@@ -236,5 +239,48 @@ export class SharedService {
     } else {
       return false;
     }
+  }
+
+  setProductCodeLanding(code) {
+    this.productCodeLanding = code;
+  }
+
+  getproductCodeLanding() {
+    return this.productCodeLanding;
+  }
+
+  createPasswrodIssuesDynamic(passwordIssueList: any[]) {
+    var newList = [];
+    passwordIssueList.forEach((element) => {
+      //for internet or IPTV
+      if (element?.ProductID === 1 || element?.ProductID === 2) {
+        switch (this.productCodeLanding) {
+          case LandingProductCodes._3P:
+          case LandingProductCodes._2P:
+          case LandingProductCodes.HI:
+          case LandingProductCodes.B1:
+          case LandingProductCodes.BTP:
+          case LandingProductCodes.BDP:
+          case LandingProductCodes.BFXI:
+          case LandingProductCodes.FD:
+          case LandingProductCodes.FH:
+          case LandingProductCodes.FT:
+            newList.push(element);
+        }
+      }
+      //for reset tv admin pin
+      else if (element?.ProductID === 3) {
+        switch (this.productCodeLanding) {
+          case LandingProductCodes._3P:
+          case LandingProductCodes._1P:
+          case LandingProductCodes.BSP:
+          case LandingProductCodes.BTP:
+          case LandingProductCodes.FT:
+            newList.push(element);
+        }
+      }
+    });
+
+    return newList;
   }
 }

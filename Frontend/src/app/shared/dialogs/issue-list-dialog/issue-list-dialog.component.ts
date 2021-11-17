@@ -82,18 +82,21 @@ export class IssueListDialog implements OnInit {
       route: '/issues/internet/internet-password-reset',
       nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
       directCall: true,
+      ProductID: 1,
     },
     {
       issue: "Reset router's Wi-Fi password",
       description: "Tap here if you forgot your router's Wi-Fi password",
       route: '/issues/internet/stage2/reset-wifi-password',
       nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
+      ProductID: 2,
     },
     {
       issue: 'Reset TV admin PIN',
       description: 'Find out how to reset your TV box PIN',
       route: '/issues/tv/quick-reset-admin-pin-package-transfer',
       nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
+      ProductID: 3,
     },
     {
       issue: 'Reset eLifeON PIN',
@@ -101,12 +104,14 @@ export class IssueListDialog implements OnInit {
       route: '/issues/tv/unable-to-login-elife',
       nextSignal: QUICK_ACTION.RESET_ELIFEON_PASSWORD,
       directCall: true,
+      ProductID: 4,
     },
     {
       issue: 'Reset CCB PIN',
       description: 'Find out how to reset your Code Control Barring PIN',
       route: 'issues/phone/forgot-ccb-pin',
       nextSignal: QUICK_ACTION.RESET_CCP_PIN_CODE,
+      ProductID: 5,
     },
   ];
   phoneIssuesList: any[] = [
@@ -141,7 +146,8 @@ export class IssueListDialog implements OnInit {
     } else if (this.flow === EIssueFlow.tvIssue) {
       this.issuesList = this.tvIssuesList;
     } else if (this.flow === EIssueFlow.passwordIssue) {
-      this.issuesList = this.passwordIssueList;
+      this.issuesList = this.sharedService.createPasswrodIssuesDynamic(this.passwordIssueList);
+      //this.issuesList = this.passwordIssueList;
       this.showViewGuidline = false;
     } else if (this.flow === EIssueFlow.phoneIssue) {
       this.issuesList = this.phoneIssuesList;
@@ -181,7 +187,7 @@ export class IssueListDialog implements OnInit {
           if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
             this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
           } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-            this.router.navigate(['issues/password/unable-to-process-request'])
+            this.router.navigate(['issues/password/unable-to-process-request']);
           } else {
             //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
             this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
@@ -14,7 +14,7 @@ import { flowCodes } from 'src/app/shared/constants/constants';
   selector: 'forgot-ccb-pin',
   template: `<app-ccb-pin-reset-form [headerConfig]="headerConfig" [button1]="button1" (button1Click)="button1Listener($event)" [rules]="rulesList"></app-ccb-pin-reset-form>`,
 })
-export class ForgotCcbPinComponent implements OnInit, OnDestroy {
+export class ForgotCcbPinComponent implements OnInit, AfterViewInit, OnDestroy {
   subscription: Subscription;
   quickLinkNextSignal;
   button1: IMotiveButton = {
@@ -24,6 +24,36 @@ export class ForgotCcbPinComponent implements OnInit, OnDestroy {
 
   rulesList: string[] = ['4 random digits'];
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  ngAfterViewInit(): void {
+    // if (this?.quickLinkNextSignal) {
+    //   this.callAPI();
+    // }
+  }
+  callAPI() {
+    if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
+      this.backendService.updateCCBPinQuickLinks(null).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAVOICECCB1 || data?.result?.screenCode === flowCodes.QAVOICECCB2) {
+          this.router.navigate(['/issues/phone/unable-process-reset-ccb']);
+        }
+      });
+    } else if (this?.quickLinkNextSignal) {
+      this.sharedService.setLoader(true);
+      this.backendService.quickActionsInitialData().subscribe((res) => {
+        this.sharedService.setLoader(false);
+        this.sharedService.setQuickLinksData(res?.result?.responseData);
+        this.sharedService.setApiResponseData(res?.result?.responseData);
+        this.sharedService.setLoader(true);
+        this.backendService.updateCCBPinQuickLinks(null).subscribe((data) => {
+          this.sharedService.setLoader(false);
+          if (data?.result?.screenCode === flowCodes.QAVOICECCB1 || data?.result?.screenCode === flowCodes.QAVOICECCB2) {
+            this.router.navigate(['/issues/phone/unable-process-reset-ccb']);
+          }
+        });
+      });
+    }
+  }
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
