@@ -9,16 +9,43 @@
   }
   ion-item {
     --min-height: 30px;
+    @media screen and (max-width: 768px){
+      border-radius:0.25rem;
+    }
     @media screen and (max-width: 321px) {
       padding-top:.5rem;
       padding-bottom: .5rem;
-
     }
   }
-} 
+  ion-textarea {
+    margin: 0 auto;
+    width: 384px;
+    height: 180px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-top: .2rem;
+    border:1px solid $secondary-color;
+    margin-top: 0 !important;
+    color:$secondary-color;
+    --placeholder-color:#848789;
+    --placeholder-opacity:1;
+    @media screen and (max-width: 768px){
+      width: 318px;
+      font-size: 0.875rem;
+      height: 120px;
+      border-radius:0.25rem;
+    }
+    /* @media screen and (max-width: 768px){
+      width: 325px;
+    } */
+  }
+   
+}
+  
 ion-item::part(native){
   padding-inline-end: 0;
   --inner-padding-end: 0;
+  --padding-start:0;
   @media screen and (max-width: 321px) {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -64,35 +91,37 @@ ion-item::part(native){
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
     font-weight: 600;
-    @media screen and (max-width: 767px){
-      font-size: 16px;
+    @media screen and (max-width: 768px){
+      font-size: 1rem;
     }
   }
   .content {
+    max-width: 300px;
+    text-align: center;
     p {
-      line-height: 1.2;
+      line-height: 1.5;
       margin-bottom: 0;
       color: #848789;
       text-align: center;
       word-break: break-word;
-      @media screen and (max-width: 767px){
-        font-size: 14px;
+      @media screen and (max-width: 768px){
+        font-size: 0.875rem;
       }
     }
   }
   .info-container_detail_followup {
     font-family: Lato, Roboto, Arial, sans-serif;
-    width: 350px;
+    /* width: 350px;
     margin: 0 auto;
     @media screen and (max-width: 767px) {
       width: 100%;
-    }
+    } */
     .info-container_detail_list {
       margin-top: 1.5rem;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
       width: 100%;
-      @media screen and (max-width: 376px) {
-        margin-bottom: 2rem;
+      @media screen and (max-width:  768px) {
+        margin-top: 0.8rem;
       }
       ion-label{
         @media screen and (max-width: 768px){
@@ -170,6 +199,8 @@ ion-item::part(native){
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  width: 350px;
+  margin: 0 auto;
   @media screen and (max-width: 992px) {
     display: none;
   }

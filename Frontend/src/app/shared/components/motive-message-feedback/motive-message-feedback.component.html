@@ -33,20 +33,41 @@
         <ion-col size="12" class="pt-0 pb-0">
           <div class="info-container_detail_list">
             <form [formGroup]="formGroup" (ngSubmit)="SubmitForm()">
-              <ion-grid class="pr-0 pl-0">
                 <ion-row>
-                  <ion-col sizeLg="6" sizeMd="12" sizeSm="12" size="12">
+                  <ion-col size="12">
                     <ion-item>
-                      <ion-textarea formControlName="Feedback" placeholder="your Feedback"></ion-textarea>
+                      <ion-textarea formControlName="Feedback" placeholder="Your feedback"></ion-textarea>
                     </ion-item>
                   </ion-col>
                 </ion-row>
-
-                <!-- <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
-            <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
-              </ion-grid>
+              <!-- <motive-button [title]="'BUTTONS.CONTINUE'" [type]="'primary'" (clickHandler)="SubmitForm()"></motive-button>
+              <motive-button [title]="'BUTTONS.BACK'" [type]="'link'" (clickHandler)="onBackClick()"></motive-button> -->
             </form>
           </div>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-text-center lg-screen ion-margin-top">
+        <ion-col size="12" class="pt-0 pb-0">
+          <motive-button
+            *ngIf="button1"
+            [type]="button1.type"
+            [title]="button1.title"
+            [explanatoryNote]="button1.explanatoryNote"
+            [SM]="button1.SM"
+            [MD]="button1.MD"
+            [LG]="button1.LG"
+            (clickHandler)="button1Listener()">
+          </motive-button>
+          <motive-button
+            *ngIf="button2"
+            [type]="button2.type"
+            [title]="button2.title"
+            [explanatoryNote]="button2.explanatoryNote"
+            [SM]="button2.SM"
+            [MD]="button2.MD"
+            [LG]="button2.LG"
+            (clickHandler)="button2Listener()" >
+          </motive-button>
         </ion-col>
       </ion-row>
     </div>
