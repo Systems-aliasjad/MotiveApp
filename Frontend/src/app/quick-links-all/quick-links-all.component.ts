@@ -73,6 +73,8 @@ export class QuickLinksAllComponent implements OnInit {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
           this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
+        } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
+          this.router.navigate(['issues/password/unable-to-process-request'])
         } else {
           //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
           this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
