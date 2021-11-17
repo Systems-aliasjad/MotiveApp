@@ -25,9 +25,9 @@ export class ForgotCcbPinComponent implements OnInit, AfterViewInit, OnDestroy {
   rulesList: string[] = ['4 random digits'];
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
   ngAfterViewInit(): void {
-    if (this?.quickLinkNextSignal) {
-      this.callAPI();
-    }
+    // if (this?.quickLinkNextSignal) {
+    //   this.callAPI();
+    // }
   }
   callAPI() {
     if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
