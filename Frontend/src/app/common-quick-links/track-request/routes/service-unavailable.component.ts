@@ -54,9 +54,10 @@ export class ServiceUnavailableComponent implements OnInit, OnDestroy {
     this.imgSrc = warningImgSrc;
     this.Section1Data = CustomerJourneyConstants.serviceUnavailable;
     this.Section2Template = ApplicableCodes.serviceUnavailableTemplate;
-    this.Section2Data = {
-      expecDateOfCompletion: 'xx/xx/xxxx',
-    };
+    this.Section1Data?.paragraphs.push('xx/xx/xxxx');
+    // this.Section2Data = {
+    //   expecDateOfCompletion: 'xx/xx/xxxx',
+    // };
   }
 
   button1Listener() {

@@ -701,7 +701,7 @@ export class CustomerJourneyConstants {
 
   public static serviceUnavailable = {
     header: 'MESSAGES.SERVICE_UNAVAILABLE',
-    paragraphs: ['MESSAGES.THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON_OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE'],
+    paragraphs: ['MESSAGES.THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON_OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE', 'MESSAGES.EXPECTED_DATE_OF_COMPLETION'],
   };
 
   public static actionRequired = {
