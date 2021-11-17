@@ -97,7 +97,18 @@ export class PackageUpgradeRecommendedComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/internet/package-upgrade-recommended-form']);
+    if(this.sharedService.checkIfMobileDevice()){
+      //true if mobile device
+      window.location.href = 'https://etisalatmobileapp.page.link/addons';
+    }else{
+      // false if not a mobile device
+      if(this.sharedService.getDefaultLanguage() === 'ara'){
+        window.location.href = 'https://www.etisalat.ae/b2c/eshop/viewProducts?category=homeAddons&subCategory=cat550030&catName=TV_add-on&listVal=TV_add-on&filtersParam=N%3D1303117285%2B2026559889%26Nr%3Dproduct.language%253Aen-AE&locale=AR';
+      } else {
+        window.location.href = 'https://www.etisalat.ae/b2c/eshop/viewProducts?category=homeAddons&subCategory=cat550030&catName=TV_add-on&listVal=TV_add-on&filtersParam=N%3D1303117285%2B2026559889%26Nr%3Dproduct.language%253Aen-AE';
+      }   
+     }
+    // this.router.navigate(['/issues/internet/package-upgrade-recommended-form']);
   }
 
   button3Listener() {
