@@ -59,6 +59,7 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.backendService.getLandingPageData().subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.codeType = data?.result?.productCode;
+      this.sharedService.setProductCodeLanding(this.codeType ?? '');
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
     //TODO: Remove This
