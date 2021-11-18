@@ -20,16 +20,16 @@ export class GameSessionDialog implements OnInit {
 
   confirm() {
     this.dismiss();
-
+    this.sharedService.setLoader(true);
     this.backendService.problemPlayingGame().subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.code === 200) {
         this.router.navigate(['issues/tv/game-session-cancel']);
       } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-        this.router.navigate(['issues/password/unable-to-process-request'])
+        this.router.navigate(['issues/password/unable-to-process-request']);
       } else {
-         //this.sharedService.setLoader(true);
-         this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+        //this.sharedService.setLoader(true);
+        this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
           // this.sharedService.setLoader(false);
         });
         this.router.navigate(['/unknown-issue']);
