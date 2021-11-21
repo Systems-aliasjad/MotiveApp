@@ -280,7 +280,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/tv/account-not-active']);
     } else if (CodeId === flowCodes.movingElifeConnection) {
-      this.sharedService.setApiResponseData(data?.result?.responseData);
+      this.sharedService.setApiResponseData(data);
       this.router.navigate(['issues/tv/osrp/move-elife-connection']); ///////OS
     } else if (CodeId === flowCodes.ElifeCancellationRequest) {
       this.sharedService.setApiResponseData(data?.result?.responseData);

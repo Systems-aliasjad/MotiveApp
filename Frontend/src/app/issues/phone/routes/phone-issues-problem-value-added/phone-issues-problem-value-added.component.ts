@@ -118,10 +118,10 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING';
+    this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
     this.cardList[1].description = apiResponse?.accountDetails?.callForwarded ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
     this.cardList[1].title2 += apiResponse?.accountDetails?.callForwardedTo || '';
-    this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.ISSUE_FIXED' : 'MESSAGES.ISSUE_NOT_FIXED';
+    this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
     this.cardList[3].description = apiResponse?.accountDetails?.optionToResetPin ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
     this.accountDetails = {
       landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING',

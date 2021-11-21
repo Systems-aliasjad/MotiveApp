@@ -20,6 +20,8 @@ export enum EIssueFlow {
 export class IssueListDialog implements OnInit {
   @Input()
   flow: number;
+  @Input()
+  eLifeGameStatus: boolean = false;
   showViewGuidline: boolean = true;
   modal;
   internetIssuesList: any[] = [
@@ -61,6 +63,25 @@ export class IssueListDialog implements OnInit {
     {
       issue: 'Facing problems while playing a game',
       route: 'issues/tv/game-session',
+    },
+    {
+      issue: 'Transfer channel to another TV box',
+      route: 'issues/tv/transfer-channel-to-another-tvBox',
+    },
+    // {
+    //   issue: 'Unable to watch a specific channel',
+    //   route: 'issues/tv/unable-to-watch-specific-channel',
+    // },
+    {
+      issue: 'Unable to watch any channel',
+      route: 'issues/tv/unable-watch-channel',
+    },
+  ];
+  tvIssuesList1: any[] = [
+    {
+      issue: 'Forgot my TV admin PIN',
+      route: '',
+      customEvent: 'openResetTvDialog',
     },
     {
       issue: 'Transfer channel to another TV box',
@@ -144,7 +165,8 @@ export class IssueListDialog implements OnInit {
     if (this.flow === EIssueFlow.internetIssue) {
       this.issuesList = this.internetIssuesList;
     } else if (this.flow === EIssueFlow.tvIssue) {
-      this.issuesList = this.tvIssuesList;
+      this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
+      this.showViewGuidline = false;
     } else if (this.flow === EIssueFlow.passwordIssue) {
       this.issuesList = this.sharedService.createPasswrodIssuesDynamic(this.passwordIssueList);
       //this.issuesList = this.passwordIssueList;

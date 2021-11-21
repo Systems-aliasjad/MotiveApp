@@ -42,6 +42,7 @@ export class TvDetailComponent implements OnInit {
   // ];
   cardList: any = [];
   eLifeStatus: string = 'Disabled';
+  eLifeGameStatus: boolean;
   eLifegames = [
     { title: 'Call of Duty: Modern Warfare', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
     { title: 'Dangerous driving 2018', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
@@ -58,6 +59,7 @@ export class TvDetailComponent implements OnInit {
     this.getIssueTilesData();
     const data = this.sharedService.getApiResponseData();
     this.eLifeStatus = data.result.responseData.elifeGameStatus;
+    this.eLifeGameStatus = data.result.responseData.elifeGameStatus;
     for (var index = 0; index < data?.result?.responseData?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
         if (!this.connectedDevices[i]?.list) {
@@ -90,6 +92,7 @@ export class TvDetailComponent implements OnInit {
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.tvIssue,
+        eLifeGameStatus: this.eLifeGameStatus,
       },
     });
     return await this.modal.present();
