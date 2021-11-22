@@ -27,9 +27,9 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
     {
       title: 'Call forwarding',
       description: '',
-      title2: 'Call Forwarded to : *****',
-      description2: 'Change',
-      link: true,
+      // title2: 'Call Forwarded to : *****',
+      // description2: 'Change',
+      // link: true,
     },
     {
       title: 'Call waiting',
@@ -118,13 +118,13 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
-    this.cardList[1].description = apiResponse?.accountDetails?.callForwarded ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
-    this.cardList[1].title2 += apiResponse?.accountDetails?.callForwardedTo || '';
-    this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
-    this.cardList[3].description = apiResponse?.accountDetails?.optionToResetPin ? 'MESSAGES.ACTIVE_AND_ENABLED' : 'MESSAGES.NOT_ACTIVE';
+    this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
+    this.cardList[1].description = apiResponse?.accountDetails?.callForwarded && apiResponse?.accountDetails?.callForwardedTo === 'NA'? 'MESSAGES.SUBSCRIBED_AND_NOT_ACTIVATED' : apiResponse?.accountDetails?.callForwarded === false ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED_AND_ACTIVATED';
+    // this.cardList[1].title2 += apiResponse?.accountDetails?.callForwardedTo || '';
+    this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
+    this.cardList[3].description = apiResponse?.accountDetails?.optionToResetPin ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
     this.accountDetails = {
-      landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING',
+      landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED',
     };
   }
 }
