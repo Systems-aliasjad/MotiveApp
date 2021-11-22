@@ -15,7 +15,8 @@ import { SharedService } from 'src/app/shared/shared.service';
   },
 })
 export class QuickLinksComponent implements OnInit {
-  @Input() codeType: string = '3P';
+  @Input()
+  codeType;
   quickLinks: ICard[];
   slideOpts = {
     slidesPerView: 5,
@@ -24,18 +25,13 @@ export class QuickLinksComponent implements OnInit {
 
   width: number = window.innerWidth;
   mobileWidth: number = 760;
-  subscription: Subscription;
-  constructor(private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService, private sharedService: SharedService) {
-    this.subscription = this.actRoute.data.subscribe((data) => {
-      this.initialization();
-    });
+  constructor(private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService, private sharedService: SharedService) {}
+
+  ngOnInit(): void {
+    this.initialization();
   }
 
-  ngOnInit(): void {}
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
+  ngOnDestroy(): void {}
 
   initialization() {
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
@@ -67,8 +63,8 @@ export class QuickLinksComponent implements OnInit {
 
   onCardClick(link) {
     if (link?.isDeepLink) {
-      if(link.body === 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE'){
-        if(this.sharedService.checkIfMobileDevice()){
+      if (link.body === 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE') {
+        if (this.sharedService.checkIfMobileDevice()) {
           window.location.href = 'https://etisalatmobileapp.page.link/elife';
         } else {
         }
@@ -106,7 +102,7 @@ export class QuickLinksComponent implements OnInit {
         if (data?.result?.screenCode === flowCodes.QAIPTVELON) {
           this.router.navigate(['issues/tv/reset-elife-pin-success'], { state: { userID: data?.responseData?.userID } });
         } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-          this.router.navigate(['issues/password/unable-to-process-request'])
+          this.router.navigate(['issues/password/unable-to-process-request']);
         } else {
           //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
           this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
