@@ -9,6 +9,7 @@ import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-d
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
+import { RebootConfirmDialogComponent } from './dialogs/reboot-confirm-dialog/reboot-confirm-dialog.component';
 
 @Component({
   selector: 'app-phone-no-issues',
@@ -92,13 +93,12 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     });
     this.router.navigate(['/thanks']);
   }
-  button2Listener() {
-    // rebootMyDevice
-    this.sharedService.setLoader(true);
-    this.backendService.rebootMyDevice('ONT').subscribe(() => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
+  async button2Listener() {
+    this.modal = await this.modalCtrl.create({
+      component: RebootConfirmDialogComponent,
     });
+    return await this.modal.present();
+    // rebootMyDevice
   }
 
   button3Listener() {

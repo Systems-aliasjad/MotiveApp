@@ -40,6 +40,7 @@ import { PhoneNotReachableComponent } from './routes/phone-not-reachable.compone
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-error.component';
 import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-reset-ccb-try-again-error.component';
+import { RebootConfirmDialogComponent } from './routes/dialogs/reboot-confirm-dialog/reboot-confirm-dialog.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-res
     AccountTemporarilyDisconnectedMessageComponent,
     ResetCcbTryAgainErrorComponent,
     UnableProcessResetCcbErrorComponent,
+    RebootConfirmDialogComponent,
   ],
   imports: [
     CommonModule,
