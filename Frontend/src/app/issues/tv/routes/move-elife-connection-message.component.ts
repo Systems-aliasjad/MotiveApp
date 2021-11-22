@@ -64,7 +64,7 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
       reqNo: temp?.referenceNo ?? '-',
       reqType: temp?.requestType ?? '-',
       dateVisit: temp?.dateOfVisit ?? '-',
-      status: temp?.status ?? '-',
+      // status: temp?.status ?? '-',
     };
   }
 

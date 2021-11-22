@@ -460,18 +460,18 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.REQUEST_TYPE',
       type: 'text',
-      objKeyNameEN: 'requestType',
+      objKeyNameEN: 'reqType',
     },
     // {
     //   title: 'MESSAGES.DATE_VISIT',
     //   type: 'date',
     //   objKeyNameEN: 'dateOfVisit',
     // },
-    {
-      title: 'MESSAGES.STATUS',
-      type: 'text',
-      objKeyNameEN: 'status',
-    },
+    // {
+    //   title: 'MESSAGES.STATUS',
+    //   type: 'text',
+    //   objKeyNameEN: 'status',
+    // },
   ];
 
   public static openServiceRequestTemplateCompliant: ISection2Template[] = [

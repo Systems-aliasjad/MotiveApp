@@ -144,10 +144,10 @@ export class IssueListDialog implements OnInit {
       issue: 'No dial tone',
       route: '/issues/phone/no-dail-tone/device-care',
     },
-    {
-      issue: 'Problem with Value-Added Service ',
-      route: 'issues/phone/no-issue-phone-value-added',
-    },
+    // {
+    //   issue: 'Problem with Value-Added Service ',
+    //   route: 'issues/phone/no-issue-phone-value-added',
+    // },
     {
       issue: 'Forgot Code Control Barring (CCB) PIN',
       route: 'issues/phone/forgot-ccb-pin',
@@ -173,6 +173,7 @@ export class IssueListDialog implements OnInit {
       this.showViewGuidline = false;
     } else if (this.flow === EIssueFlow.phoneIssue) {
       this.issuesList = this.phoneIssuesList;
+      this.showViewGuidline = false;
     }
   }
 
