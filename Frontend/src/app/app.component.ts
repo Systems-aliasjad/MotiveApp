@@ -33,8 +33,8 @@ export class AppComponent implements OnInit {
   Initialization(params: Params) {
     localStorage.clear();
     this.subscribeLoaderChanges();
-    this.sharedService.setDefaultLanguage('ara');
-    this.appDirection = 'rtl';
+    this.sharedService.setDefaultLanguage('en');
+    this.appDirection = 'ltr';
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
     if (!params?.token) {
