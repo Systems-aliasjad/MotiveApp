@@ -234,7 +234,7 @@ export class SharedService {
   }
 
   checkIfMobileDevice(): boolean {
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
       return true;
     } else {
       return false;
@@ -278,6 +278,8 @@ export class SharedService {
           case LandingProductCodes.FT:
             newList.push(element);
         }
+      } else if (element?.ProductID === 4 || element?.ProductID === 5) {
+        newList.push(element);
       }
     });
 
