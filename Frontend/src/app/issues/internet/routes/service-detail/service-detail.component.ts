@@ -22,6 +22,9 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   isPartialLoaded: boolean = false;
   devices;
   hsiUploadDownload;
+  internetCallingPlan;
+  internetConnectionStatus;
+  speedTestResult;
   modal: any;
   subscription: Subscription;
   button1: IMotiveButton = {
@@ -62,6 +65,10 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     this.devices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
     this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
+    // Internet Calling Plan response only 1 known 
+    this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED' ;
+    this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
+    this.speedTestResult = apiResponse?.speedTestResult ?? '';
   }
 
   button1Listener() {

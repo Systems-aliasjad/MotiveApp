@@ -864,4 +864,13 @@ motive-button {
     height: 100%;
   }
 }
-
+.active-result{
+  color: $etisalat-color !important;
+}
+.error-result{
+  color: #be1218 !important;
+}
+// --------------------------Arabic Styling Start------------------------------------
+html [dir="rtl"] .page-top-container .back-to-page .icon-left-arrow{
+}
+// --------------------------Arabic Styling End------------------------------------
