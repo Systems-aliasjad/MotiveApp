@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CacheService } from './cache/cache.service';
 import { StorageType } from './cache/storages/storage-type.enum';
 import { environment } from '../environments/environment';
@@ -12,7 +12,7 @@ import { AuthService } from './services/auth.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, AfterViewInit {
   appDirection: string;
   showLoader: boolean = false;
   constructor(
@@ -24,38 +24,45 @@ export class AppComponent implements OnInit {
   ) {
     // this.cacheService.saveData('test', 'test', StorageType.sessionStorage);
   }
-  ngOnInit(): void {
+  ngAfterViewInit(): void {
     this.activatedRoute.queryParams.subscribe((params: Params) => {
       this.Initialization(params);
     });
   }
+  ngOnInit(): void {
+    localStorage.clear();
+  }
 
   Initialization(params: Params) {
-    localStorage.clear();
     this.subscribeLoaderChanges();
-    this.sharedService.setDefaultLanguage('en');
-    this.appDirection = 'ltr';
+    console.log('params 1', params);
+    // this.sharedService.setDefaultLanguage('en');
+    // this.appDirection = 'ltr';
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
     if (!params?.token) {
       return;
     }
-    // TODO: REMOVE THIS
-    this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
+    console.log('params 2', params);
+    this.authService.setAuthorizationToken(params?.token);
+    this.sharedService.setDefaultLanguage(params?.lang || 'ara');
+    this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
+    this.router.navigate(['landing']);
+
+    if (environment.production) {
+      window.console.log = function () {}; // disable any console.log debugging statements in production mode
+    }
 
     //TODO: uncomment This
-    // this.sharedService.setDefaultLanguage(params?.lang || 'ara');
-    // this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
+    // TODO: REMOVE THIS
+    // this.router.navigate(['landing'], { state: { user: { accountId: '123', username: 'hello' } } });
+
     // this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
     //   this.authService.setAuthorizationToken(data?.result?.token);
     //   this.sharedService.setLoader(false);
     //   localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
     //   this.router.navigate(['landing'], { state: { user: data?.result } });
     // });
-
-    if (environment.production) {
-      window.console.log = function () {}; // disable any console.log debugging statements in production mode
-    }
   }
 
   subscribeLoaderChanges() {
