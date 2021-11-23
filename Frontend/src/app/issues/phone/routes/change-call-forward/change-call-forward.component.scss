@@ -158,10 +158,11 @@ ion-input{
       ion-row{
         ion-col{
           &:first-child{
-            -webkit-box-ordinal-group:3;
+            /* -webkit-box-ordinal-group:3;
             -ms-flex-order:2;
-            order:2;
-            @media screen and (max-width: 992px) {
+            order:2; */
+            @media screen and (max-width: 768px) {
+              display: none;
             -webkit-box-ordinal-group:inherit;
             -ms-flex-order:inherit;
             order:inherit;
