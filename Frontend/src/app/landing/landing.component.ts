@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ICard, IPageHeader } from '../shared/constants/types';
@@ -14,7 +14,7 @@ import { Location } from '@angular/common';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss'],
 })
-export class LandingComponent implements OnInit, OnDestroy {
+export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   codeType: string;
   selectedLang: string;
   landingPageCards: ICard[];
@@ -30,6 +30,9 @@ export class LandingComponent implements OnInit, OnDestroy {
     private activcatedRoute: ActivatedRoute,
     private location: Location
   ) {}
+  ngAfterViewInit(): void {
+    this.initialization();
+  }
 
   ngOnInit(): void {
     this.activcatedRoute.params.subscribe(() => {
@@ -47,17 +50,24 @@ export class LandingComponent implements OnInit, OnDestroy {
   }
 
   updateProfileData() {
-    const navigation = this.router.getCurrentNavigation();
-    this.user = navigation?.extras?.state?.user as {
-      accountId: string;
-      username: string;
-    };
+    // const navigation = this.router.getCurrentNavigation();
+    // this.user = navigation?.extras?.state?.user as {
+    //   accountId: string;
+    //   username: string;
+    // };
   }
 
   getProductCode() {
+    console.log('params 3 in landing screen');
     this.sharedService.setLoader(true);
     this.backendService.getLandingPageData().subscribe((data: any) => {
       this.sharedService.setLoader(false);
+
+      localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
+      this.user = {
+        accountId: data?.result?.accountId ?? '',
+        username: data?.result?.username ?? '',
+      };
 
       this.codeType = data?.result?.productCode;
       this.sharedService.setProductCodeLanding(this.codeType ?? '');
