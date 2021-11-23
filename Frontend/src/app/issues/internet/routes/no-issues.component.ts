@@ -120,6 +120,10 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
         hsiUploadDownload: [res?.result?.responseData?.upstream, res?.result?.responseData?.downstream],
         connectedDevices: res?.result?.responseData?.connectedDevices,
         noOfConnectedDevices: res?.result?.responseData?.noOfConnectedDevices,
+        internetCallingPlan: res?.result?.responseData?.internetCallingPlan,
+        internetConnectionStatus: res?.result?.responseData?.internetConnectionStatus,
+        speedTestResult: res?.result?.responseData?.speedTestResult,
+        dataTraffic: res?.result?.responseData?.dataTraffic,
       });
       this.sharedService.setLoader(false);
       this.router.navigate(['issues/internet/service-detail']);

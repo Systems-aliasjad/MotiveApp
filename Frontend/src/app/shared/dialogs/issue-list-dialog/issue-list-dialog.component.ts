@@ -20,6 +20,8 @@ export enum EIssueFlow {
 export class IssueListDialog implements OnInit {
   @Input()
   showResetCCBPin: boolean = true;
+  @Input()
+  showICB: boolean = true;
 
   @Input()
   flow: number;
@@ -171,7 +173,12 @@ export class IssueListDialog implements OnInit {
 
   ngOnInit() {
     if (this.flow === EIssueFlow.internetIssue) {
-      this.issuesList = this.internetIssuesList;
+      if(!this.showICB){
+        var list = this.internetIssuesList.filter((x) => x.route !== 'issues/internet/unable-video-call');
+        this.issuesList = list;
+      } else {
+        this.issuesList = this.internetIssuesList;
+      }
     } else if (this.flow === EIssueFlow.tvIssue) {
       this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
       this.showViewGuidline = false;

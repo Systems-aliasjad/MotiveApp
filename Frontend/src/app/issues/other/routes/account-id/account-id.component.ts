@@ -54,13 +54,12 @@ export class AccountIdComponent implements OnInit {
     //https://morioh.com/p/bbe2434acaa9
     // this.conversionEncryptOutput = CryptoJS.AES.encrypt(this.formGroup.controls['AccountID'].value, this.plainText);
     // this.sharedService.setEncryptedID(this.conversionEncryptOutput);
-
-    this.sharedService.setLoader(true);
-    this.backendService.getUserDetailFromAccountId(this.formGroup.controls['AccountID'].value).subscribe((data: any) => {
-      this.authService.setAuthorizationToken(data?.result?.token);
-      this.sharedService.setLoader(false);
-      localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
-      this.router.navigate(['landing'], { state: { user: data?.result } });
-    });
+    // this.sharedService.setLoader(true);
+    // this.backendService.getUserDetailFromAccountId(this.formGroup.controls['AccountID'].value).subscribe((data: any) => {
+    //   this.authService.setAuthorizationToken(data?.result?.token);
+    //   this.sharedService.setLoader(false);
+    //   localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
+    //   this.router.navigate(['landing'], { state: { user: data?.result } });
+    // });
   }
 }

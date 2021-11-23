@@ -39,7 +39,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
       description2: '',
     },
     {
-      title: 'CBB',
+      title: 'Code Control Barring',
       description: '',
       title2: '',
       description2: 'Reset pin',
@@ -133,7 +133,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
 
     this.showResetCCBPin = apiResponse?.accountDetails?.optionToResetPin;
     this.accountDetails = {
-      landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED',
+      landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING',
     };
   }
 }

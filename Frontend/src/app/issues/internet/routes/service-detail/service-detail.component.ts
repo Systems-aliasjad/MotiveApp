@@ -23,8 +23,9 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   devices;
   hsiUploadDownload;
   internetCallingPlan;
-  internetConnectionStatus;
+  internetConnectionStatus = 'Connected';
   speedTestResult;
+  dataTraffic;
   modal: any;
   subscription: Subscription;
   button1: IMotiveButton = {
@@ -69,6 +70,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED' ;
     this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
     this.speedTestResult = apiResponse?.speedTestResult ?? '';
+    this.dataTraffic = apiResponse?.dataTraffic ?? '';
   }
 
   button1Listener() {
@@ -84,6 +86,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.internetIssue,
+        showICB: this.internetCallingPlan === 'MESSAGES.NOT_SUBSCRIBED' ? false : true,
       },
     });
     return await this.modal.present();

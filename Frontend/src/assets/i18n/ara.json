@@ -178,6 +178,7 @@
   },
 
   "MESSAGES": {
+    "BANDWIDTH": "Bandwidth",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
     "FIBER_BOX_WILL_BE_REBOOTED_ARE_YOU_SURE_YOU_WANT_TO_CONTINUE": "Fiber box will be rebooted.",
     "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX": "Follow these steps to restart your TV box:",
