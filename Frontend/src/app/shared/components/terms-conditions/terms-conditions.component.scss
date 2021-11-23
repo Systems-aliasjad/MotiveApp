@@ -151,13 +151,13 @@ ion-header{
   .footer-btns-container{
     .lg-btn{
       display: block;
-      @media  screen and (max-width:992px) {
+      @media  screen and (max-width:768px) {
         display: none;
       }
     }
     .sm-btn{
       display: none;
-      @media  screen and (max-width:992px) {
+      @media  screen and (max-width:768px) {
         display: block;
       }
     }

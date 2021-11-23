@@ -56,6 +56,27 @@ ion-input{
     font-size:14px;
    }
 }
+.footer{
+  .footer-btns-container{
+    ion-col{
+      ion-row{
+        ion-col{
+          &:first-child{
+            /* -webkit-box-ordinal-group:3;
+            -ms-flex-order:2;
+            order:2; */
+            @media screen and (max-width: 768px) {
+              display: none;
+            -webkit-box-ordinal-group:inherit;
+            -ms-flex-order:inherit;
+            order:inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
 /* .text-error {
   padding-top: 0.2rem;
   position: absolute;
