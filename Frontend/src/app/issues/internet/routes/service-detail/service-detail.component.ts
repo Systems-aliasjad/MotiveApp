@@ -86,6 +86,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.internetIssue,
+        showICB: this.internetCallingPlan === 'MESSAGES.NOT_SUBSCRIBED' ? false : true,
       },
     });
     return await this.modal.present();
