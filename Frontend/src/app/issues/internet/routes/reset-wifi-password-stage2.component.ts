@@ -75,7 +75,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           this.sharedService.setApiResponseHomeZoneCall({ homeZoneAPs: data?.result?.responseData?.homeZoneAPs });
           ////Home Zone Scenario
           this.router.navigate(['/issues/internet/quick-home-zone-reset-wifi']);
-        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+        } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
           this.router.navigate(['/issues/internet/password-update-success']);
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
           this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
@@ -102,7 +102,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
             this.sharedService.setApiResponseHomeZoneCall({ homeZoneAPs: data?.result?.responseData?.homeZoneAPs });
             ////Home Zone Scenario
             this.router.navigate(['/issues/internet/quick-home-zone-reset-wifi']);
-          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
             this.router.navigate(['/issues/internet/password-update-success']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
             this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
@@ -145,7 +145,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         this.sharedService.setLoader(false);
         this.sharedService.clearApiResponseHomeZoneCall();
         this.fromhomeZones = undefined;
-        if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+        if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
           this.router.navigate(['/issues/internet/password-update-success']);
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
           this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
@@ -157,7 +157,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
       this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
-        if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+        if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
           this.router.navigate(['/issues/internet/password-update-success']);
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
           this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
@@ -172,7 +172,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         this.sharedService.setApiResponseData(res?.result?.responseData);
         this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
           this.sharedService.setLoader(false);
-          if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+          if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
             this.router.navigate(['/issues/internet/password-update-success']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
             this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);

@@ -1,0 +1,30 @@
+<ion-content
+  ><ion-grid class="form-main-container">
+    <!-- Dialog Heading -->
+    <ion-row>
+      <ion-col size="12">
+        <div>
+          <h2>{{ 'MESSAGES.REBOOT_MY_DEVICES' | translate }}</h2>
+        </div>
+        <div>
+          <p>{{ 'MESSAGES.FIBER_BOX_WILL_BE_REBOOTED_ARE_YOU_SURE_YOU_WANT_TO_CONTINUE' | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<div class="footer">
+  <ion-row class="footer-btns-container">
+    <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
+      <ion-row>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'primary'" [title]="'BUTTONS.OK'" (clickHandler)="callapi()"></motive-button>
+        </ion-col>
+        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding ion-text-center">
+          <motive-button [type]="'link'" [title]="'BUTTONS.CANCEL'" (clickHandler)="dismiss()"></motive-button>
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</div>

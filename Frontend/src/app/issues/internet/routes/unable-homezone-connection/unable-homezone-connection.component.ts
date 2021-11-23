@@ -51,7 +51,7 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
         this.sharedService.setLoader(false);
-        if (res?.result?.screenCode === flowCodes.QAHSIWIFI) {
+        if (res?.result?.screenCode === flowCodes.QAHSIWIFI || res?.result?.screenCode === flowCodes.CI11) {
           this.router.navigate(['issues/internet/stage2/reset-wifi-password']);
         } else if (res?.result?.screenCode === flowCodes.QAHSIWIFI5) {
           this.router.navigate(['/issues/internet/error-occur-try-again-later']);

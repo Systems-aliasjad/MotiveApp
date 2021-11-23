@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
@@ -14,9 +14,8 @@ import { SharedService } from 'src/app/shared/shared.service';
     '(window:resize)': 'onWindowResize($event)',
   },
 })
-export class QuickLinksComponent implements OnInit {
-  @Input()
-  codeType;
+export class QuickLinksComponent implements OnInit, OnChanges {
+  @Input() codeType: string = '3P';
   quickLinks: ICard[];
   slideOpts = {
     slidesPerView: 5,
@@ -25,13 +24,25 @@ export class QuickLinksComponent implements OnInit {
 
   width: number = window.innerWidth;
   mobileWidth: number = 760;
-  constructor(private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService, private sharedService: SharedService) {}
-
-  ngOnInit(): void {
-    this.initialization();
+  subscription: Subscription;
+  constructor(private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService, private sharedService: SharedService) {
+    // this.subscription = this.actRoute.data.subscribe((data) => {
+    //   if (this.codeType != undefined) {
+    //     this.initialization();
+    //   }
+    // });
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.codeType != undefined) {
+      this.initialization();
+    }
   }
 
-  ngOnDestroy(): void {}
+  ngOnInit(): void {}
+
+  ngOnDestroy(): void {
+    // this.subscription.unsubscribe();
+  }
 
   initialization() {
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;

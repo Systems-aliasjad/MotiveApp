@@ -17,6 +17,7 @@ import { SharedService } from '../../../../shared/shared.service';
 export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy {
   codeType;
   subscription: Subscription;
+  showResetCCBPin: boolean = true;
   cardList = [
     {
       title: 'Clip',
@@ -111,6 +112,7 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.phoneIssue,
+        showResetCCBPin: this.showResetCCBPin,
       },
     });
     return await this.modal.present();
@@ -119,10 +121,17 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
-    this.cardList[1].description = apiResponse?.accountDetails?.callForwarded && apiResponse?.accountDetails?.callForwardedTo === 'NA'? 'MESSAGES.SUBSCRIBED_AND_NOT_ACTIVATED' : apiResponse?.accountDetails?.callForwarded === false ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED_AND_ACTIVATED';
+    this.cardList[1].description =
+      apiResponse?.accountDetails?.callForwarded && apiResponse?.accountDetails?.callForwardedTo === 'NA'
+        ? 'MESSAGES.SUBSCRIBED_AND_NOT_ACTIVATED'
+        : apiResponse?.accountDetails?.callForwarded === false
+        ? 'MESSAGES.NOT_SUBSCRIBED'
+        : 'MESSAGES.SUBSCRIBED_AND_ACTIVATED';
     // this.cardList[1].title2 += apiResponse?.accountDetails?.callForwardedTo || '';
     this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
     this.cardList[3].description = apiResponse?.accountDetails?.optionToResetPin ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
+
+    this.showResetCCBPin = apiResponse?.accountDetails?.optionToResetPin;
     this.accountDetails = {
       landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED',
     };
