@@ -71,7 +71,7 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.resetRouter({ data: { ..._event }, signal: 'Factory_Reset_Agreed' }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QAHSIWIFI) {
+      if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
         this.router.navigate(['/issues/internet/password-update-success']);
       } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
         this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);

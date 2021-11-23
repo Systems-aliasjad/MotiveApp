@@ -19,6 +19,9 @@ export enum EIssueFlow {
 })
 export class IssueListDialog implements OnInit {
   @Input()
+  showResetCCBPin: boolean = true;
+
+  @Input()
   flow: number;
   @Input()
   eLifeGameStatus: boolean = false;
@@ -139,22 +142,27 @@ export class IssueListDialog implements OnInit {
     {
       issue: 'Unable to make/receive calls',
       route: '/issues/phone/unable-to-call/device-care',
+      ID: 1,
     },
     {
       issue: 'No dial tone',
       route: '/issues/phone/no-dail-tone/device-care',
+      ID: 2,
     },
     // {
     //   issue: 'Problem with Value-Added Service ',
     //   route: 'issues/phone/no-issue-phone-value-added',
+    //  ID: 3,
     // },
     {
       issue: 'Forgot Code Control Barring (CCB) PIN',
       route: 'issues/phone/forgot-ccb-pin',
+      ID: 4,
     },
     // {
     //   issue: 'Change call forwarding number',
     //   route: 'issues/phone/no-issue-phone-phone-Change-call-forward',
+    //   ID: 5,
     // },
   ];
   issuesList: any[];
@@ -172,7 +180,13 @@ export class IssueListDialog implements OnInit {
       //this.issuesList = this.passwordIssueList;
       this.showViewGuidline = false;
     } else if (this.flow === EIssueFlow.phoneIssue) {
-      this.issuesList = this.phoneIssuesList;
+      if (!this.showResetCCBPin) {
+        var list = this.phoneIssuesList.filter((x) => x.ID != 4);
+        this.issuesList = list;
+      } else {
+        this.issuesList = this.phoneIssuesList;
+      }
+
       this.showViewGuidline = false;
     }
   }

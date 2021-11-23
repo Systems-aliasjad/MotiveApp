@@ -99,6 +99,8 @@ export const flowCodes = {
 
   QASRFU2: 'QA_SR_FU2', // SR Followup success
   //QACOMFU1: 'QA_COM_FU1', //SR followup failure
+
+  CI11: 'CI11',
 };
 
 export const ETISALAT = 'Etisalat';

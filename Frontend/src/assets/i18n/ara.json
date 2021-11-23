@@ -178,6 +178,8 @@
   },
 
   "MESSAGES": {
+    "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
+    "FIBER_BOX_WILL_BE_REBOOTED_ARE_YOU_SURE_YOU_WANT_TO_CONTINUE": "Fiber box will be rebooted.",
     "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX": "Follow these steps to restart your TV box:",
     "FIBER_BOX": "FIBER BOX",
     "INTERNET_CONNECTION_STATUS": "Internet Connection Status",
@@ -211,7 +213,7 @@
     "WORKING": "Working",
     "NOT_WORKING": "Not Working",
     "ACTIVE_AND_ENABLED": "Active & Enabled",
-    "CALL_FORWARDING_SUBSCRIBED_AND_ENABLED":" Call Forwarding : Subscribed & Enabled",
+    "CALL_FORWARDING_SUBSCRIBED_AND_ENABLED": " Call Forwarding : Subscribed & Enabled",
     "NOT_ACTIVE": "Not Active",
     "SUBSCRIBED": "Subscribed",
     "NOT_SUBSCRIBED": "Not Subscribed",
