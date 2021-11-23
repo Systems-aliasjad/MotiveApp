@@ -123,6 +123,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
         internetCallingPlan: res?.result?.responseData?.internetCallingPlan,
         internetConnectionStatus: res?.result?.responseData?.internetConnectionStatus,
         speedTestResult: res?.result?.responseData?.speedTestResult,
+        dataTraffic: res?.result?.responseData?.dataTraffic,
       });
       this.sharedService.setLoader(false);
       this.router.navigate(['issues/internet/service-detail']);

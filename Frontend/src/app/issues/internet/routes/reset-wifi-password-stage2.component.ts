@@ -138,7 +138,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
 
   button2Listener(_event) {
     if (this.fromhomeZones) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
       var array: any = [];
       array.push(this.fromhomeZones);
       this.backendService.quickActionsResetWifiPasswordHomeZone(_event, array).subscribe((data: any) => {
@@ -166,7 +166,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         }
       });
     } else if (this?.quickLinkNextSignal) {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
@@ -182,7 +182,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         });
       });
     } else {
-      this.sharedService.setLoader(true);
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
       this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         this.router.navigate(['/issues/internet/password-update-success']);

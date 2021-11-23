@@ -641,11 +641,11 @@ export class ApplicableCodes {
     //   type: 'date',
     //   objKeyNameEN: 'dateOfVisit',
     // },
-    {
-      title: 'MESSAGES.LOCATION',
-      type: 'text',
-      objKeyNameEN: 'location',
-    },
+    // {
+    //   title: 'MESSAGES.LOCATION',
+    //   type: 'text',
+    //   objKeyNameEN: 'location',
+    // },
   ];
 
   public static packageUpgradeTemplate: ISection2Template[] = [

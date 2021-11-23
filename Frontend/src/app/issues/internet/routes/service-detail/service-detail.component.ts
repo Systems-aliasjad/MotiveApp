@@ -25,6 +25,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   internetCallingPlan;
   internetConnectionStatus = 'Connected';
   speedTestResult;
+  dataTraffic;
   modal: any;
   subscription: Subscription;
   button1: IMotiveButton = {
@@ -69,6 +70,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED' ;
     this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
     this.speedTestResult = apiResponse?.speedTestResult ?? '';
+    this.dataTraffic = apiResponse?.dataTraffic ?? '';
   }
 
   button1Listener() {
