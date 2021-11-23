@@ -23,7 +23,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   devices;
   hsiUploadDownload;
   internetCallingPlan;
-  internetConnectionStatus;
+  internetConnectionStatus = 'Connected';
   speedTestResult;
   modal: any;
   subscription: Subscription;

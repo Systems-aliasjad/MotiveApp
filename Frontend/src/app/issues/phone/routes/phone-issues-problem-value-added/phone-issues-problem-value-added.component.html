@@ -24,7 +24,7 @@
             <div class="data-traffic ion-text-left">
               <div class="devices-network">
                 <h6 class="sub-title letter-space-none">{{ 'MESSAGES.LANDLINE_STATUS' | translate }}</h6>
-                <h6 class="sub-title grey letter-space-none">{{ accountDetails?.landLineConnectionStatus | translate }}</h6>
+                <h6 [className]="accountDetails?.landLineConnectionStatus === 'MESSAGES.WORKING'? 'sub-title letter-space-none active-result' : 'sub-title letter-space-none error-result'">{{ accountDetails?.landLineConnectionStatus | translate }}</h6>
               </div>
             </div>
           </div>
