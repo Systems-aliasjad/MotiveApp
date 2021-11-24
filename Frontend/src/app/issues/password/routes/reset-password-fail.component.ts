@@ -5,6 +5,7 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Unable To Reset Password
@@ -37,7 +38,7 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -62,6 +63,10 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
   }
 
   button2Listener() {
+    // this.router.navigate(['/thanks']);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      //   this.sharedService.setLoader(false);
+    });
     this.router.navigate(['/thanks']);
   }
 }
