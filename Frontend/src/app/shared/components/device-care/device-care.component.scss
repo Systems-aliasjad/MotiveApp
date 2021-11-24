@@ -44,6 +44,14 @@ ion-grid {
       display:none;
     }
   } */
+  .content{
+    div{
+      ~ div{
+        margin-top: 2rem;
+      }
+    }
+  }
+  
 }
 .device-care-sm {
   @media screen and (min-width: 992px) {
@@ -63,12 +71,13 @@ ion-grid {
       margin-bottom: 0.5rem;
     }
     @media screen and (max-width: 768px) {
-      font-size: 0.9375rem;
+      font-size: 1rem;
     }
   }
   .image {
     max-width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2.8rem;
   }
   p {
     margin: 0;
@@ -142,6 +151,32 @@ p {
     }
   }
 }
+.decimal-list,
+.small-alpha-bullets{
+  padding-left: 1rem;
+  color:$secondary-color;
+  li{
+    line-height: 1.4;
+    @media screen and (max-width: 768px) {
+      font-size: 0.875rem;
+    }
+  }
+}
+.footer {
+  .footer-btns-container {
+    ion-col {
+      ion-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .footer {
     .footer-btns-container {
@@ -149,6 +184,9 @@ p {
         width: 100%;
       }
       ion-col {
+        ion-row{
+
+        }
         &:first-child {
           ion-col {
             -webkit-box-flex: 0 !important;
