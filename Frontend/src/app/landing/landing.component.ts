@@ -38,7 +38,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
     this.activcatedRoute.params.subscribe(() => {
       this.sharedService.setDefaultValues();
     });
-    this.initialization();
+    //this.initialization();
   }
 
   ngOnDestroy(): void {}

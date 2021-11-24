@@ -90,6 +90,7 @@ export class UnableToMaleVideoCallComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['issues/internet/book-complaint']);
+    // this.router.navigate(['issues/internet/book-complaint']);
+    this.router.navigate(['/issues/internet/unable-to-browse-internet/issue-not-fixed']);
   }
 }

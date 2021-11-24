@@ -178,6 +178,8 @@
   },
 
   "MESSAGES": {
+    "RUN_SMART_DIAGNOSIS_ON_YOUR_PRODUCT_AND_SERVICE": "Run Smart Diagnosis on your product and service",
+    "AN_AUTOMATED_SELFDIAGNOSIS_WILL_BE_INITIATED_ONCE_YOU_SELECT_ONE_OF_THE_FOLLOWING_OPTIONS": "An automated self-diagnosis will be initiated once you select one of the following options.",
     "BANDWIDTH": "Bandwidth",
     "REBOOT_MY_DEVICES": "REBOOT MY DEVICES",
     "FIBER_BOX_WILL_BE_REBOOTED_ARE_YOU_SURE_YOU_WANT_TO_CONTINUE": "Fiber box will be rebooted.",
