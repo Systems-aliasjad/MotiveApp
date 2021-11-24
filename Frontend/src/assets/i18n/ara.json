@@ -197,6 +197,8 @@
     "PLEASE_SELECT_THE_ROUTER": "Please select the router",
     "CHOOSE_THE_STB_YOU_WANT_TO_REBOOT": "Choose the STB you want to reboot",
     "REBOOT_TV_BOX": "Reboot TV Box",
+    "FORGOT_WIFI_PASSWORD": "Forgot Wi-Fi Password",
+    "WE_CAN_HELP_YOU_RESET_YOUR_WIFI_PASSWORD_IF_YOU_FORGOT_YOUR_PASSWORD": "We can help you to reset your Wi-Fi password if you forgot your Wi-Fi password",
     "PLEASE_WAIT_FOR_A_FEW_MINUTES": "Please wait for a few minutes",
     "WE_ARE_RESETTING_YOUR_WIFI_PASSWORD": "We are resetting your Wi-Fi password",
     "YOUR_TV_ADMIN_PIN_IS_BEING_RESET": "Your TV admin PIN is being reset.",

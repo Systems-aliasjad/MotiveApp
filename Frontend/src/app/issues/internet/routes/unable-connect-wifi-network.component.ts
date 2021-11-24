@@ -27,6 +27,7 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
   Section1Data;
   Section2Template;
   Section2Data;
+  value;
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
@@ -51,15 +52,22 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    this.value = this.router.getCurrentNavigation()?.extras?.state?.value;
+  }
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.unableToConnectWifiNetwork;
+    this.Section1Data = this.value === 'forgotPassword' ? CustomerJourneyConstants.forgotWifiPassword :CustomerJourneyConstants.unableToConnectWifiNetwork;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/reset-wifi-password']);
+    if(this.value === 'connectWifiFail' || this.value === 'forgotPassword')
+    {
+      this.router.navigate(['/issues/internet/stage2/reset-wifi-password']);
+    } else {
+      this.router.navigate(['/issues/internet/reset-wifi-password']);
+    }
   }
 
   button2Listener() {

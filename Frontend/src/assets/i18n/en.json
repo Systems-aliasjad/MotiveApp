@@ -236,6 +236,8 @@
     "WE_ARE_FACING_SOME_ISSUES": "We are facing some issues",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "We have fixed the technical issues.  Please reset the router and TV box and then try using the internet again.",
     "UNABLE_TO_CONNECT_TO_WIFI_NETWORK": "Unable to connect to Wi-Fi network",
+    "FORGOT_WIFI_PASSWORD": "Forgot Wi-Fi Password",
+    "WE_CAN_HELP_YOU_RESET_YOUR_WIFI_PASSWORD_IF_YOU_FORGOT_YOUR_PASSWORD": "We can help you to reset your Wi-Fi password if you forgot your Wi-Fi password",
     "YOU_CAN_NOW_ENABLE_DISABLE_CALL_BARRING_USING_THE_NEW_PIN": "You can now enable/disable Call Barring using the new PIN.",
     "CALL_FORWARDING_NUMBER_CHANGE_FAILED": "Call forwarding number change failed",
     "PLEASE_TRY_AGAIN_LATER": "Please try again later",
