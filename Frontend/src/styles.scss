@@ -502,11 +502,15 @@ ul.bullet-list{
     cursor: pointer;
   }
 }
-ul.small-alpha-bullets {
+.decimal-list {
   li{
-    list-style-type: lower-alpha !important;
+    list-style-type: decimal;
   }
- 
+}
+.small-alpha-bullets{
+  li{
+    list-style-type:lower-alpha;
+  }
 }
 .quick-links_all,
 .arrow-link,
