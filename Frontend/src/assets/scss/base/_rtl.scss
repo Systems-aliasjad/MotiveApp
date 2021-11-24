@@ -1,0 +1,48 @@
+html {
+  [dir="rtl"] {
+    direction: rtl;
+    letter-spacing: 0;
+    text-align: right;
+    .header-wrapper-wave{
+      left: 0;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    }
+    .technical-support_card {
+      .technical-support_content{
+        margin-right: 1rem;
+        margin-left: 0 !important;
+      }
+    }
+    .technical-support-title {
+      h2{
+        margin-right: 0.5rem;
+        margin-left: 0 !important; 
+      }
+    } 
+    .quick-links-container{
+      .quick-links-card {
+        ion-col {
+          a{
+            ion-card{
+              p{
+                text-align: right;
+              }
+            } 
+          } 
+        } 
+      } 
+    } 
+    .sub-title{
+      letter-spacing: 0;
+    }
+    .quick-links_all,
+    .arrow-link,
+    .arrow-btn,
+    .transparent-btn {
+      a { 
+        letter-spacing: 0 !important;
+      }
+    }
+  }
+}

@@ -29,6 +29,7 @@
 @import './assets/scss/base/style-icomoon';
 @import './assets/scss/base/buttons';
 @import './assets/scss/base/layout';
+@import './assets/scss/base/rtl';
 // @import'../src/assets/fonts/'
 // --------------------------------------------------------------
 :host {
@@ -873,7 +874,3 @@ motive-button {
 .error-result{
   color: #be1218 !important;
 }
-// --------------------------Arabic Styling Start------------------------------------
-html [dir="rtl"] .page-top-container .back-to-page .icon-left-arrow{
-}
-// --------------------------Arabic Styling End------------------------------------
