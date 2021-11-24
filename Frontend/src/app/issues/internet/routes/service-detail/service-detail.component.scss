@@ -413,9 +413,9 @@ ion-item::part(native) {
                 @media screen and (max-width: 992px) {
                   font-size: 0.9375rem;
                 }
-                @media screen and (max-width: 376px) {
+                /* @media screen and (max-width: 376px) {
                   margin-top: 0;
-                }
+                } */
                 @media screen and (max-width: 281px) {
                   margin-top: 0.3rem;
                   font-size: 0.85rem;
@@ -521,7 +521,7 @@ ion-item::part(native) {
           @media screen and (max-width: 767px) {
             font-size: 0.75rem;
           }
-          @media screen and (max-width: 321px) {
+          @media screen and (max-width: 376px) {
             letter-spacing: .05rem;
           }
          
