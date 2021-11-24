@@ -43,8 +43,8 @@ export class AuthInterceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         this.logRequest(started, req, 'error');
-
-        if (error.status === 500 || error.status === 0) {
+        if (this.router.url.match('thanks')) {
+        } else if (error.status === 500 || error.status === 0) {
           this.router.navigate(['/unknown-issue']);
         } else {
           this.router.navigate(['/unknown-error']);

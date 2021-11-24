@@ -8,7 +8,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 @Component({
   selector: 'app-no-dail-tone-care',
   template:
-    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [IsBulletList]="true" [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
 export class NoDailToneCareComponent implements OnInit {
   subscription: Subscription;

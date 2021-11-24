@@ -7,6 +7,9 @@ import { IDeviceCareContent, IMotiveButton, IPageHeader } from '../../constants/
   styleUrls: ['./device-care.component.scss'],
 })
 export class DeviceCareComponent implements OnInit {
+  @Input()
+  IsBulletList: boolean = false;
+
   selectedLang: string;
   codeType;
   myBtnSize: string;

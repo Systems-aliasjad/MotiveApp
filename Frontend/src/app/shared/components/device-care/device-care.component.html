@@ -23,7 +23,15 @@
             <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header1 | translate }}</h3>
           </div>
           <p>{{ deviceCareContent?.body1 | translate }}</p>
-          <ion-list *ngIf="deviceCareContent?.bullet1" class="bullet-list mb-2">
+
+          <!-- ///For Alphabets bullets -->
+          <ul no-lines *ngIf="deviceCareContent?.bullet1 && IsBulletList" class="bullet-list small-alpha-bullets">
+            <li *ngFor="let bullet of deviceCareContent?.bullet1">
+              {{ bullet | translate }}
+            </li>
+          </ul>
+          <!-- //For Just Rounded bullets -->
+          <ion-list *ngIf="deviceCareContent?.bullet1 && !IsBulletList" class="bullet-list mb-2">
             <ion-item *ngFor="let bullet of deviceCareContent?.bullet1">
               <ion-label> {{ bullet | translate }}</ion-label>
             </ion-item>
@@ -33,7 +41,16 @@
             <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header2 | translate }}</h3>
           </div>
           <p *ngIf="deviceCareContent.body2">{{ deviceCareContent?.body2 | translate }}</p>
-          <ion-list *ngIf="deviceCareContent?.bullet2" class="bullet-list">
+
+          <!-- ///For Alphabets bullets -->
+          <ul no-lines *ngIf="deviceCareContent?.bullet2 && IsBulletList" class="bullet-list small-alpha-bullets">
+            <li *ngFor="let bullet of deviceCareContent?.bullet2">
+              {{ bullet | translate }}
+            </li>
+          </ul>
+
+          <!-- //For Just Rounded bullets -->
+          <ion-list *ngIf="deviceCareContent?.bullet2 && !IsBulletList" class="bullet-list">
             <ion-item *ngFor="let bullet of deviceCareContent?.bullet2">
               <ion-label> {{ bullet | translate }}</ion-label>
             </ion-item>
@@ -52,7 +69,15 @@
             <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header1 | translate }}</h3>
           </div>
           <p>{{ deviceCareContent?.body1 | translate }}</p>
-          <ion-list *ngIf="deviceCareContent?.bullet1" class="bullet-list">
+
+          <!-- ///For Alphabets bullets -->
+          <ul no-lines *ngIf="deviceCareContent?.bullet1 && IsBulletList" class="bullet-list small-alpha-bullets">
+            <li *ngFor="let bullet of deviceCareContent?.bullet1">
+              {{ bullet | translate }}
+            </li>
+          </ul>
+          <!-- //For Just Rounded bullets -->
+          <ion-list *ngIf="deviceCareContent?.bullet1 && !IsBulletList" class="bullet-list">
             <ion-item *ngFor="let bullet of deviceCareContent?.bullet1">
               <ion-label> {{ bullet | translate }}</ion-label>
             </ion-item>
@@ -67,7 +92,16 @@
           <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header2 | translate }}</h3>
         </div>
         <p *ngIf="deviceCareContent.body2">{{ deviceCareContent?.body2 | translate }}</p>
-        <ion-list *ngIf="deviceCareContent?.bullet2" class="bullet-list">
+
+        <!-- ///For Alphabets bullets -->
+        <ul no-lines *ngIf="deviceCareContent?.bullet2 && IsBulletList" class="bullet-list small-alpha-bullets">
+          <li *ngFor="let bullet of deviceCareContent?.bullet2">
+            {{ bullet | translate }}
+          </li>
+        </ul>
+
+        <!-- //For Just Rounded bullets -->
+        <ion-list *ngIf="deviceCareContent?.bullet2 && !IsBulletList" class="bullet-list">
           <ion-item *ngFor="let bullet of deviceCareContent?.bullet2">
             <ion-label> {{ bullet | translate }}</ion-label>
           </ion-item>
