@@ -40,6 +40,7 @@ export class SharedService {
 
   apiResponseDataNoIssuesSTB;
   apiResponseDataContinueSTB;
+  apiInternetGenericResponse;
 
   apiResponseHomeZoneCall;
 
@@ -155,6 +156,15 @@ export class SharedService {
   setApiResponseDataSTBContinue(data: any) {
     this.apiResponseDataContinueSTB = data;
   }
+
+  setInternetGenericResponse(data: any) {
+    this.apiInternetGenericResponse = data;
+  }
+
+  getInternetGenericResponse() {
+    return this.apiInternetGenericResponse;
+  }
+
 
   getApiResponseDataSTBContinue(): any {
     if (this.apiResponseDataContinueSTB) {

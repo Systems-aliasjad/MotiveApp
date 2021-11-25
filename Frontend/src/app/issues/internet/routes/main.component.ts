@@ -39,6 +39,7 @@ export class MainComponent implements OnInit {
       this.shareService.setLoader(true);
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data: any) => {
         this.shareService.setLoader(false);
+        this.shareService.setInternetGenericResponse(data?.result?.responseData);
         //data = this.newHardData;
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
