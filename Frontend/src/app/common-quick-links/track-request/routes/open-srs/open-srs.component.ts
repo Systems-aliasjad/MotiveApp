@@ -38,7 +38,8 @@ export class OpenSrsComponent implements OnInit {
       if (data?.result?.screenCode === flowCodes.QASRFU2) {
         this.router.navigate(['track-request/request-detail']);
       } else {
-        this.router.navigate(['issues/internet/install-new-router']);
+        this.router.navigate(['track-request/request-detail']);
+        // this.router.navigate(['issues/internet/install-new-router']);
       }
     });
   }
