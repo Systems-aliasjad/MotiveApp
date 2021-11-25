@@ -320,11 +320,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
     landingPageCards: [TV_ISSUES, RESET_PIN],
     quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  VO: {
+  'VO': {
     landingPageCards: [PHONE_ISSUES, RESET_PIN],
     quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  H1: {
+  'HI': {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -338,7 +338,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  B1: {
+  'B1': {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -352,7 +352,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  FD: {
+  'FD': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -366,7 +366,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  FH: {
+  'FH': {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -380,7 +380,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  FT: {
+  'FT': {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -397,15 +397,15 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  FV: {
+  'FV': {
     landingPageCards: [PHONE_ISSUES, RESET_PIN],
     quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  BSP: {
+  'BSP': {
     landingPageCards: [TV_ISSUES, RESET_PIN],
     quickLinkCard: [FACTORY_RESET_TV, FORGOT_PASSWORD_TV, TRANSFER_PACKAGE_TV, CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  BTP: {
+  'BTP': {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -422,7 +422,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  BDP: {
+  'BDP': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -436,7 +436,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
       UPGRADE_PACKAGE,
     ],
   },
-  BFXI: {
+  'BFXI': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
