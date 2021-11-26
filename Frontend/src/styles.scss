@@ -614,9 +614,20 @@ html {
     width: 134px;
     height: 138px;
     position: $absolute;
-    top: 0;
     right: 0;
+    top: 0;
     z-index: 0;
+   /*  @include lang('en') {
+      right: 0;
+      -webkit-transform: scaleX(1);
+      transform: scaleX(1);
+    }
+    @include lang('ara') {
+      left: 0;
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+    } */
+   
   }
 }
 .page-title {
@@ -874,3 +885,11 @@ motive-button {
 .error-result{
   color: #be1218 !important;
 }
+//-------------------RTL Start-------------------
+.app-container[dir="rtl"] {
+  .header-wrapper-wave {
+    @include scaleX(-1); 
+    left:0;
+  }
+}
+//-------------------RTL End-------------------

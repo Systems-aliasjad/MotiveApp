@@ -33,6 +33,7 @@ ion-item::part(native){
   --inner-padding-end: 0;
   padding-inline-start: 0;
 }
+
 /* --------------------------------------------------------------*/
 .page-title {
   margin-bottom: 0;
@@ -142,7 +143,7 @@ ion-item::part(native){
       .password-field{    
         --padding-end: 24px;   
       }
-      .show-icon{
+      .field-arrow{
         position: absolute;
         bottom: 8px;
         cursor: pointer;

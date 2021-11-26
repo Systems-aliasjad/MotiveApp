@@ -40,7 +40,7 @@
           <ion-row>
             <!-- Data Traffic Start -->
             <ion-col size="12" class="shadow-box">
-              <div class="data-traffic ion-text-left">
+              <div class="data-traffic">
                 <h5 class="sub-title">{{ 'MESSAGES.BANDWIDTH' | translate }}</h5>
                 <div class="data_upload_download">
                   <div class="data-icon">
@@ -67,14 +67,14 @@
             <!-- Parental Control End -->
 
             <ion-col size="12" class="shadow-box">
-              <div class="parental-control ion-text-left">
+              <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.DATA_TRAFFIC_LAST_1_HOUR' | translate }}</h5>
                 <p>{{ dataTraffic }}</p>
               </div>
             </ion-col>
 
             <ion-col size="12" class="shadow-box">
-              <div class="parental-control ion-text-left">
+              <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.INTERNET_CONNECTION_STATUS' | translate }}</h5>
                 <p [className]="internetConnectionStatus === 'Connected' ? 'active-result' : 'error-result'">
                   <strong>{{ internetConnectionStatus }}</strong>
@@ -83,7 +83,7 @@
             </ion-col>
 
             <ion-col size="12" class="shadow-box" *ngIf = "speedTestResult !== ''">
-              <div class="parental-control ion-text-left">
+              <div class="parental-control ">
                 <h5 class="sub-title">{{ 'MESSAGES.SPEED_TEST_RESULT' | translate }}</h5>
                 <p class="error-result">
                   <strong>{{ speedTestResult }}</strong>
@@ -92,7 +92,7 @@
             </ion-col>
 
             <ion-col size="12" class="shadow-box">
-              <div class="parental-control ion-text-left">
+              <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.INTERNET_CALLING_PLAN' | translate }}</h5>
                 <p [className] = "internetCallingPlan === 'MESSAGES.NOT_SUBSCRIBED' ? 'error-result' : 'active-result'">
                   <strong>{{ internetCallingPlan | translate }}</strong></p>
