@@ -67,6 +67,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       this.user = {
         accountId: data?.result?.accountId ?? '',
         username: data?.result?.username ?? '',
+        productName: data?.result?.productName ?? '',
       };
 
       this.codeType = data?.result?.productCode;

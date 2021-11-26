@@ -26,6 +26,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   internetConnectionStatus = 'Connected';
   speedTestResult;
   dataTraffic;
+  routerName;
   modal: any;
   subscription: Subscription;
   button1: IMotiveButton = {
@@ -64,6 +65,8 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     const apiResponse = this.sharedService.getApiResponseData();
+    const internetGenericResponse = this.sharedService.getInternetGenericResponse();
+    this.routerName = internetGenericResponse?.routerDetails?.routerManufacturer + ' ' + internetGenericResponse?.routerDetails?.routerModel;
     this.devices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
     this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
     // Internet Calling Plan response only 1 known 

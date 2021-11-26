@@ -32,7 +32,8 @@ export class IssueListDialog implements OnInit {
   internetIssuesList: any[] = [
     {
       issue: 'Unable to connect Wi-Fi',
-      route: 'issues/internet/stage2/reset-wifi-password',
+      route: 'issues/internet/unable-to-connnect-wifi-network',
+      value: 'connectWifiFail',
     },
     {
       issue: 'Unable to browse the internet',
@@ -40,7 +41,8 @@ export class IssueListDialog implements OnInit {
     },
     {
       issue: 'Forgot my Wi-Fi password',
-      route: 'issues/internet/stage2/reset-wifi-password',
+      route: 'issues/internet/unable-to-connnect-wifi-network',
+      value: 'forgotPassword',
     },
     {
       issue: 'Unable to connect to home zone',
@@ -210,7 +212,7 @@ export class IssueListDialog implements OnInit {
       this.callDirectCallAPIs(item);
     } else if (item.route != '') {
       this.dismiss();
-      this.router.navigate([item?.route], { state: { quickLinkNextSignal: item?.nextSignal } });
+      this.router.navigate([item?.route], { state: { quickLinkNextSignal: item?.nextSignal, value: item?.value } });
       //
     } else if (item.customEvent) {
       this[item.customEvent]();

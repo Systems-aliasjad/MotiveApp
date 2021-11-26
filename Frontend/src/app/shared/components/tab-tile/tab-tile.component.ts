@@ -15,7 +15,7 @@ export class TabTileComponent implements OnInit {
   ngOnInit() {}
 
   onImgError(event) {
-    event.target.src = './assets/images/ont/2424.jpg';
+    event.target.src = 'assets/images/ont/2424.jpg';
   }
 }
 

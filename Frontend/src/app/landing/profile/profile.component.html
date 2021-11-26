@@ -17,7 +17,7 @@
               <h5 class="user-profile_name">{{ user?.username }}</h5>
               <div class="user-number_package">
                 <span class="user-number">{{ user?.accountId }}</span>
-                <span class="user-package">Freedom Postpaid 500</span>
+                <span class="user-package" *ngIf="user?.productName">{{ user?.productName }}</span>
               </div>
             </div>
           </div>
