@@ -77,22 +77,23 @@ export class ForgotCcbPinComponent implements OnInit, AfterViewInit, OnDestroy {
   };
 
   button1Listener(event) {
-    if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
-      this.backendService.updateCCBPinQuickLinks(event?.value?.NewPassword).subscribe((data: any) => {
-        this.sharedService.setLoader(false);
-        if (data?.result?.screenCode === flowCodes.QAVOICECCB1 || data?.result?.screenCode === flowCodes.QAVOICECCB2) {
-          //  this.router.navigate(['/issues/phone/forgot-ccb-pin-failed-message']);
-          this.router.navigate(['/issues/phone/unable-process-reset-ccb']);
-        } else if (data?.result?.screenCode === flowCodes.QAVOICECCB4) {
-          this.router.navigate(['/issues/phone/reset-ccb-error-occur-try-again-later']);
-        } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
-          this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
-        } else {
-          this.router.navigate(['/unknown-issue']);
-        }
-      });
-    } else if (this?.quickLinkNextSignal) {
+    // if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
+    //   this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
+    //   this.backendService.updateCCBPinQuickLinks(event?.value?.NewPassword).subscribe((data: any) => {
+    //     this.sharedService.setLoader(false);
+    //     if (data?.result?.screenCode === flowCodes.QAVOICECCB1 || data?.result?.screenCode === flowCodes.QAVOICECCB2) {
+    //       //  this.router.navigate(['/issues/phone/forgot-ccb-pin-failed-message']);
+    //       this.router.navigate(['/issues/phone/unable-process-reset-ccb']);
+    //     } else if (data?.result?.screenCode === flowCodes.QAVOICECCB4) {
+    //       this.router.navigate(['/issues/phone/reset-ccb-error-occur-try-again-later']);
+    //     } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
+    //       this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
+    //     } else {
+    //       this.router.navigate(['/unknown-issue']);
+    //     }
+    //   });
+    // } else
+    if (this?.quickLinkNextSignal) {
       this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);

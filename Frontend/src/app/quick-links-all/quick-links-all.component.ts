@@ -49,13 +49,15 @@ export class QuickLinksAllComponent implements OnInit {
       }
     } else if (link?.isDeviceCare) {
       this.router.navigate(['/issues/internet/router-not-restarted/device-care']);
-    } else if (this.sharedService.getQuickLinksData()) {
-      if (link.directCall) {
-        this.callDirectCallAPIs(link);
-      } else {
-        this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
-      }
-    } else {
+    }
+    //  else if (this.sharedService.getQuickLinksData()) {
+    //   if (link.directCall) {
+    //     this.callDirectCallAPIs(link);
+    //   } else {
+    //     this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
+    //   }
+    // }
+    else {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
