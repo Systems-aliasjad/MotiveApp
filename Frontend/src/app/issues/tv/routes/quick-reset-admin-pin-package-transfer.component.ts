@@ -22,6 +22,7 @@ import { ModalController } from '@ionic/angular';
 })
 export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDestroy {
   pageContent: string;
+  fromPasswordDialog: boolean = false;
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.CONTINUE',
@@ -47,7 +48,10 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
 
   ngOnInit() {
     this.updateHeader();
-    if (!this.sharedService.getQuickLinksData()) {
+
+    const navigation = this.router.getCurrentNavigation();
+    this.fromPasswordDialog = navigation?.extras?.state?.fromPasswordDialog ?? false;
+    if (!this.sharedService.getQuickLinksData() || this.fromPasswordDialog) {
       try {
         this.modalCtr.dismiss();
       } catch (ex) {}
