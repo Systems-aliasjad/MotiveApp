@@ -85,7 +85,7 @@
             <ion-col size="12" class="shadow-box" *ngIf = "speedTestResult !== ''">
               <div class="parental-control ">
                 <h5 class="sub-title">{{ 'MESSAGES.SPEED_TEST_RESULT' | translate }}</h5>
-                <p class="error-result">
+                <p [className]="speedTestResult === 'BAD' ? 'error-result' : 'active-result'">
                   <strong>{{ speedTestResult }}</strong>
                 </p>
               </div>

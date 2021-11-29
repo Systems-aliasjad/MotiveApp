@@ -634,6 +634,13 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static resetWifiSuccessfullyCase1 = {
+    header: 'MESSAGES.ROUTERS_WIFI_PASSWORD_RESET_SUCCESSFULLY',
+    paragraphs: [
+      'MESSAGES.PLEASE_WAIT_FOR_2_MINUTES_AND_THEN_TRY_CONNECTING_TO_THE_WIFI_NETWORK_WITH_THE_NEW_PASSWORD'
+    ],
+  };
+
   public static troubleshootComplete = {
     header: 'MESSAGES.TROUBLESHOOTING_COMPLETE',
     paragraphs: [

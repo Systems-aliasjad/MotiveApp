@@ -73,6 +73,13 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED' ;
     this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
     this.speedTestResult = apiResponse?.speedTestResult ?? '';
+    if(this.speedTestResult !== ''){
+      this.speedTestResult = 'Upload Speed 450Mbps ,Download Speed 400Mbps';
+      const speed = this.speedTestResult.match(/\d+/g);
+      const download = this.hsiUploadDownload[1].match(/\d+/g);
+      const speedTest = (speed [1]/download)*100;
+      this.speedTestResult =  speedTest > 90 || speedTest === 90 ? 'Good' : 'Bad';
+    }
     this.dataTraffic = apiResponse?.dataTraffic ?? '';
   }
 
