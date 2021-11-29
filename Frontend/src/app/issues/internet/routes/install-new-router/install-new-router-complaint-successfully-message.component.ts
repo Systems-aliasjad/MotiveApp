@@ -64,7 +64,7 @@ export class InstallNewRouterComplaintSuccessfullyMessageComponent implements On
     this.Section2Data = {
       referenceNo: temp?.referenceNo ?? '-',
       dateOfVisit: temp?.dateOfVisit ?? '-',
-      status: temp?.status ?? '-',
+      status: 'Open', //temp?.status ?? '-',
     };
   }
 

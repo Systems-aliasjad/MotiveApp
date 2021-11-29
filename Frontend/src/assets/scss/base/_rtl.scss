@@ -4,7 +4,11 @@
 html {
   .app-container[dir=rtl] {
     direction: rtl;
-   
+    ion-modal,
+    .sc-ion-modal-md-h,
+    .sc-ion-modal-ios-h{
+      direction: rtl;
+    }
     .page-top_title{
       h2{
         margin-right: 0.3rem;

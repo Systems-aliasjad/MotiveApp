@@ -579,3 +579,18 @@ ion-item::part(native) {
     
   }
 }
+.footer {
+  .footer-btns-container {
+    ion-col {
+      ion-row{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
