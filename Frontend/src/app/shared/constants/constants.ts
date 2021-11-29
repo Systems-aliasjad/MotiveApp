@@ -93,6 +93,7 @@ export const flowCodes = {
   QANRINST12: 'QA-NR-INST12', //		DCSS invokation for manual router installation    App.MotiveH&S.5.1.3
 
   QACOMFU2: 'QA-COM-FU2', //Track a recent complaint SuCcess
+  QACOMFU4: 'QA-COM-FU4',
   QACOMFU1: 'QA-COM-FU1', //Track a recent complaint failure
   QACOMFU: 'QA-COM-FU',
   OPENED: 'OPENED', //Complain status opened

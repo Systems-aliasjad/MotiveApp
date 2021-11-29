@@ -97,7 +97,7 @@ export class CustomerJourneyConstants {
 
   public static tvBoxRestartssuccessfullyCase = {
     header: 'MESSAGES.TV_BOX_RESTARTED_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN'],
+    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_TV_AGAIN'],
   };
 
   public static ontRestartssuccessfullyCase = {

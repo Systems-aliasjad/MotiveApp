@@ -210,6 +210,7 @@
     "PACKAGE_TRANSFER_IN_PROGRESS": "Package transfer in progress",
     "YOUR_TV_BOX_IS_BEING_RESET": "Your tv box is being reset",
     "WE_ARE_RESETTING_YOUR_CCB_PIN": "We are resetting your ccb pin",
+    "PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_TV_AGAIN": "Please wait for 5 minutes and then try using the tv again.",
     "PLEASE_WAIT_WHILE_WE_TRY_TO_RESET_IT_AGAIN": "Please wait while we try to reset it again.",
     "WE_ARE_EXPERIENCING_A_DELAY_IN_RESETTING_YOUR_INTERNET_PASSWORD": "We are experiencing a delay in resetting your internet password.",
     "ISSUE_FIXED": "ISSUE FIXED",

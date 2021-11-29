@@ -100,7 +100,7 @@ export class ForgotCcbPinComponent implements OnInit, AfterViewInit, OnDestroy {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
-        this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+        this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_CCB_PIN');
         this.backendService.updateCCBPinQuickLinks(event?.value?.NewPassword).subscribe((data) => {
           this.sharedService.setLoader(false);
           if (data?.result?.screenCode === flowCodes.QAVOICECCB1 || data?.result?.screenCode === flowCodes.QAVOICECCB2) {
