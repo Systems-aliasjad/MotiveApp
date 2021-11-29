@@ -64,11 +64,22 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   }
 
   updatePageContent() {
-    const apiResponse = this.sharedService.getApiResponseData();
-    const internetGenericResponse = this.sharedService.getInternetGenericResponse();
+    var apiResponse = null;
+    var internetGenericResponse = null;
+    if (this.isPartialLoaded) {
+      apiResponse = this.sharedService.getOtherApiResponseData();
+      apiResponse = apiResponse?.hsiServiceDetail;
+      this.hsiUploadDownload = [apiResponse.upstream, apiResponse.downstream];
+      internetGenericResponse = this.sharedService.getApiResponseData();
+    } else {
+      apiResponse = this.sharedService.getApiResponseData();
+      internetGenericResponse = this.sharedService.getInternetGenericResponse();
+      this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
+    }
+
     this.routerName = internetGenericResponse?.routerDetails?.routerManufacturer + ' ' + internetGenericResponse?.routerDetails?.routerModel;
     this.devices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
-    this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
+
     // Internet Calling Plan response only 1 known
     this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED';
     this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
