@@ -60,7 +60,7 @@ export class OutageMessageComponent implements OnInit, OnDestroy {
     this.Section2Data = {
       referenceNo: temp?.referenceNo ?? '-',
       dateOfVisit: temp?.dateOfVisit ?? '-',
-      status: temp?.status ?? '-',
+      status: 'Open', // temp?.status ?? '-',
     };
   }
 

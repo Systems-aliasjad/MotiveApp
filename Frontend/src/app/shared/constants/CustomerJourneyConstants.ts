@@ -97,7 +97,7 @@ export class CustomerJourneyConstants {
 
   public static tvBoxRestartssuccessfullyCase = {
     header: 'MESSAGES.TV_BOX_RESTARTED_SUCCESSFULLY',
-    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN'],
+    paragraphs: ['MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_TV_AGAIN'],
   };
 
   public static ontRestartssuccessfullyCase = {
@@ -631,6 +631,13 @@ export class CustomerJourneyConstants {
     paragraphs: [
       'MESSAGES.PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN_YOUR_NEW_PASSWORD_IS_XXXX_MAKE_SURE_TO_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER',
       'MESSAGES.PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER',
+    ],
+  };
+
+  public static resetWifiSuccessfullyCase1 = {
+    header: 'MESSAGES.ROUTERS_WIFI_PASSWORD_RESET_SUCCESSFULLY',
+    paragraphs: [
+      'MESSAGES.PLEASE_WAIT_FOR_2_MINUTES_AND_THEN_TRY_CONNECTING_TO_THE_WIFI_NETWORK_WITH_THE_NEW_PASSWORD'
     ],
   };
 

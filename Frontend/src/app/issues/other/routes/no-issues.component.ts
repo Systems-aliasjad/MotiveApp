@@ -114,6 +114,9 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   async button3Listener() {
     this.sharedService.setLoader(true);
     this.backendService.getIssueDiagnositic('continue').subscribe((res) => {
+      debugger;
+      console.log('data in others section', res);
+
       this.sharedService.setApiResponseData({ hsiUploadDownload: [res?.result?.responseData?.upstream, res?.result?.responseData?.downstream] });
       this.sharedService.setLoader(false);
       this.router.navigate(['issues/other/service-detail']);

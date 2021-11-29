@@ -64,7 +64,7 @@ export class ComplaintRaisedSuccessfullyMessageComponent implements OnInit, OnDe
     this.Section2Data = {
       referenceNo: temp?.referenceNo ?? '-',
       dateOfVisit: temp?.dateOfVisit ?? '-',
-      status: temp?.status ?? '-',
+      status: 'Open', // temp?.status ?? '-',
     };
   }
 

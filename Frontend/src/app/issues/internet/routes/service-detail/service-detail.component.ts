@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { SVGs } from 'src/app/shared/constants/constants';
+import { QUICK_ACTION, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -69,10 +69,17 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     this.routerName = internetGenericResponse?.routerDetails?.routerManufacturer + ' ' + internetGenericResponse?.routerDetails?.routerModel;
     this.devices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
     this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
-    // Internet Calling Plan response only 1 known 
-    this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED' ;
+    // Internet Calling Plan response only 1 known
+    this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED';
     this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
     this.speedTestResult = apiResponse?.speedTestResult ?? '';
+    if (this.speedTestResult !== '') {
+      this.speedTestResult = 'Upload Speed 450Mbps ,Download Speed 400Mbps';
+      const speed = this.speedTestResult.match(/\d+/g);
+      const download = this.hsiUploadDownload[1].match(/\d+/g);
+      const speedTest = (speed[1] / download) * 100;
+      this.speedTestResult = speedTest > 90 || speedTest === 90 ? 'Good' : 'Bad';
+    }
     this.dataTraffic = apiResponse?.dataTraffic ?? '';
   }
 
@@ -93,5 +100,22 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
       },
     });
     return await this.modal.present();
+  }
+
+  CallQuickAction() {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+      //  this.sharedService.setLoader(false);
+    });
+
+    this.sharedService.setLoader(true);
+    this.backendService.quickActionsInitialData().subscribe((res) => {
+      this.sharedService.setLoader(false);
+      this.sharedService.setQuickLinksData(res?.result?.responseData);
+      this.sharedService.setApiResponseData(res?.result?.responseData);
+
+      this.router.navigate(['issues/internet/stage2/reset-wifi-password'], {
+        state: { quickLinkNextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION, fromPasswordDialog: true },
+      });
+    });
   }
 }
