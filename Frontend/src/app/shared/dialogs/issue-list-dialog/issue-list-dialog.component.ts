@@ -175,7 +175,7 @@ export class IssueListDialog implements OnInit {
 
   ngOnInit() {
     if (this.flow === EIssueFlow.internetIssue) {
-      if(!this.showICB){
+      if (!this.showICB) {
         var list = this.internetIssuesList.filter((x) => x.route !== 'issues/internet/unable-video-call');
         this.issuesList = list;
       } else {
@@ -212,7 +212,7 @@ export class IssueListDialog implements OnInit {
       this.callDirectCallAPIs(item);
     } else if (item.route != '') {
       this.dismiss();
-      this.router.navigate([item?.route], { state: { quickLinkNextSignal: item?.nextSignal, value: item?.value } });
+      this.router.navigate([item?.route], { state: { quickLinkNextSignal: item?.nextSignal, value: item?.value, fromPasswordDialog: true } });
       //
     } else if (item.customEvent) {
       this[item.customEvent]();

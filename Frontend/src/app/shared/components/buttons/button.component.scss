@@ -61,7 +61,7 @@ ion-button,
       height: 100%;
     }
     @media screen and (max-width: 992px)  {
-      margin-bottom: .8rem;
+      margin-bottom: 0.8rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -82,11 +82,11 @@ ion-button,
         transform:none;
         margin-top: 0;
         margin-right: 0;
-        margin-left: .8rem;
+        margin-left: 0.8rem;
         margin-bottom: 0;
         color: $secondary-color;
         @media screen and (max-width: 992px)  {
-          font-size:14px;
+          font-size:0.875rem;
         }      
         a{
           color: $etisalat-color;

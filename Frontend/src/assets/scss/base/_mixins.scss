@@ -47,3 +47,35 @@
     transition: transform .2s ease-in-out;
   }
 }
+@mixin scaleX ($ratio) {
+  -webkit-transform: scaleX($ratio);
+  -moz-transform: scaleX($ratio);
+  -ms-transform: scaleX($ratio);
+  -o-transform: scaleX($ratio);
+  transform: scaleX($ratio);
+}
+@mixin pause ($pause) {
+  .app-container[dir=#{$pause}] & {
+      @content;
+  }
+}
+
+@mixin lang ($lang) {
+  html[lang=#{$lang}] & {
+      @content;
+  }
+}
+/*
+$isRTL: false !default;
+@mixin rtl {
+  @if $isRTL {
+    @if & {
+      & {
+        @content;
+      }
+    }
+    @else {
+      @content;
+    }
+  }
+} */

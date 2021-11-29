@@ -1,6 +1,5 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
-
 //----------------------------------------------------
 :host {
    --ion-font-family:Lato,Roboto,Arial,sans-serif;
@@ -14,9 +13,6 @@
 			padding-bottom: 0;
 		}
 	}
-  /* @media screen and (max-width: 768px) {
-    margin-top: 0;
-  } */
   .quick-links_title_all {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -74,6 +70,15 @@
             color:$etisalat-gray-color;
             font-size: 1rem;
             text-align: left;
+            /* @include pause('ltr') {
+              text-align: left;
+            }
+            @include pause('rtl') {
+              text-align: right;
+            } 
+            @include rtl {
+              text-align: right;
+            }*/
             @media screen and (max-width: 992px) {
               color: $primary-color;
               width: 112px;
@@ -123,7 +128,7 @@
 }
 .quick-links_all, 
 .arrow-link{
-  font-size:0.875rem; //14px
+  font-size:0.875rem;
   @media screen and (max-width: 767px) {
     font-size: 0.82rem;
   }
@@ -139,3 +144,15 @@
     }
   }
 }
+/* .app-container[dir="rtl"] {
+  .quick-links-container {
+    .quick-links-card {
+      ion-col {
+        @media screen and (max-width: 768px) {
+          padding-right: .1rem;
+          padding-left: 0;
+        }
+      }
+    }
+  }
+} */

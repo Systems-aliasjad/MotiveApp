@@ -46,7 +46,12 @@ export class SingleSTBFoundComponent implements OnInit, OnDestroy {
     this.Section1Data = CustomerJourneyConstants.singleSTBFountError;
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
+      // this.sharedService.setLoader(false);
+    });
+    this.router.navigate(['/thanks']);
+  }
 
   button2Listener() {
     // this.sharedService.setLoader(true);
