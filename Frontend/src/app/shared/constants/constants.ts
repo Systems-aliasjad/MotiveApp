@@ -83,8 +83,8 @@ export const flowCodes = {
   QAVOICECCB4: 'QA-VOICE-CCB4', // for ccb pin failed TRY AGAIN
   QAVOICECCB: 'QA-VOICE-CCB', //for ccb pin success
 
-  QASTBR: 'QA_STBR', //FOR stb rebbot success
-  QASTBR1: 'QA_STBR1', //FOR stb rebbot success
+  QASTBR: 'QA-STBR', //FOR stb rebbot success
+  QASTBR1: 'QA-STBR1', //FOR stb rebbot success
 
   QANRINST: 'QA-NR-INST', //Install new router  Success
   QANRINST1: 'QA-NR-INST1', //Install new router failer
