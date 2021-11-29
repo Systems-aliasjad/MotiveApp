@@ -224,7 +224,25 @@ html {
           }
         } 
       }
+    }
+    .bullet-list {
+      .item {
+        ion-label {
+          padding-right: 1rem;
+          padding-left: 0 !important;
+          &:before {
+            right: 0;
+          }
+        }
+      }
     } 
+    .inline-ion-list {
+      ion-item {
+        .inline-list_value {
+          text-align: left;
+        }
+      }
+    }
     .footer{
       @media screen and (max-width: 992px){
         padding-right: 0.3rem;

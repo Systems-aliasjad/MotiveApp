@@ -36,7 +36,7 @@ export class AppComponent implements OnInit, AfterViewInit {
   Initialization(params: Params) {
     this.subscribeLoaderChanges();
     console.log('params 1', params);
-   /* this.sharedService.setDefaultLanguage('ara');
+  /*  this.sharedService.setDefaultLanguage('ara');
     this.appDirection = 'rtl'; */
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
