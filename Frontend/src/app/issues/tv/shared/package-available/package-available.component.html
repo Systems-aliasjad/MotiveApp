@@ -12,7 +12,7 @@
 
     <ion-row>
       <!-- Package list Start -->
-      <ion-col sizeLg="5" sizeMd="12" size="12">
+      <ion-col sizeLg="5" sizeMd="12" size="12" *ngIf="packages && packages?.length != 0">
         <ion-card *ngFor="let card of packages">
           <ion-card-header>
             <ion-card-title>
@@ -28,6 +28,19 @@
           </ion-card-content>
         </ion-card>
       </ion-col>
+
+      <ion-col sizeLg="5" sizeMd="12" size="12" *ngIf="!packages || packages?.length === 0">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>
+              <h5 class="sub-title">{{ 'Error' }}</h5>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>{{ 'Error description' }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
       <!-- Package Card list End -->
     </ion-row>
   </ion-grid>
@@ -37,9 +50,9 @@
   <ion-row class="footer-btns-container">
     <ion-col [sizeLg]="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
-        <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+        <!-- <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
           <motive-button [type]="'primary'" [title]="'BUTTONS.SKIP_TO_NEXT_STEP'" (clickHandler)="button1Listener()"></motive-button>
-        </ion-col>
+        </ion-col> -->
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
           <motive-button [type]="'link'" [title]="'BUTTONS.CANCEL'" (clickHandler)="button2Listener()"></motive-button>
         </ion-col>
