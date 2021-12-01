@@ -40,14 +40,20 @@ export class InstallNewRouterComponent implements OnInit {
       this.backendService.installNewRouterRequest(this.selectedRadioItem).subscribe((data: any) => {
         this.sharedService.setLoader(false);
 
-        var screenCode = data?.result?.screenCode;
+         var screenCode = data?.result?.screenCode;
 
-        if (screenCode === flowCodes.QANRINST) {
-          this.router.navigate(['issues/internet/router-install-successfully']);
-        } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2 || screenCode === flowCodes.QANRINST12) {
+        if (screenCode === flowCodes.QANRINST || screenCode === flowCodes.QANRINST9) {
+          this.router.navigate(['issues/internet/router-install-successfully'], { state: { component: 'quickLinks'}});
+        } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2) {
           this.router.navigate(['issues/internet/install-new-router-care']);
-        } else {
+        } else if (screenCode === flowCodes.QANRINST8) {
+          this.router.navigate(['unknown-issue']);
+        } else if (screenCode === flowCodes.QANRINST10){
+          this.router.navigate(['issues/internet/install-new-router'])
+        } else if(screenCode === flowCodes.QANRINST11 || screenCode === flowCodes.QANRINST16){
           this.router.navigate(['issues/internet/router-installation-failed']);
+        } else {
+          this.router.navigate(['unknown-issue']);
         }
       });
     }

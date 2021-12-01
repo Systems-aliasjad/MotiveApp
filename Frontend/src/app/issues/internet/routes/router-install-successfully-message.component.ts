@@ -27,6 +27,7 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   Section2Template;
   Section2Data;
   imgSrc;
+  component = '';
 
   button1: IMotiveButton = {
     type: 'link',
@@ -50,6 +51,7 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    this.component = this.router.getCurrentNavigation()?.extras?.state?.component;
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
@@ -57,8 +59,10 @@ export class RouterInstallSuccessfullyMessageComponent implements OnInit, OnDest
 
     ////TO Remove This
     ////When we get the clear picture of App.MotiveH&S.5.1.2
-    this.button1 = null;
-    this.button2 = null;
+    if(!this.component){
+      this.button1 = null;
+      this.button2 = null;
+    }
   }
 
   ngOnDestroy(): void {
