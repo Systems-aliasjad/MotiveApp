@@ -82,8 +82,8 @@
               </div>
             </ion-col>
 
-            <ion-col size="12" class="shadow-box" *ngIf = "speedTestResult !== ''">
-              <div class="parental-control ">
+            <ion-col size="12" class="shadow-box" *ngIf="speedTestResult !== ''">
+              <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.SPEED_TEST_RESULT' | translate }}</h5>
                 <p [className]="speedTestResult === 'BAD' ? 'error-result' : 'active-result'">
                   <strong>{{ speedTestResult }}</strong>
@@ -94,8 +94,9 @@
             <ion-col size="12" class="shadow-box">
               <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.INTERNET_CALLING_PLAN' | translate }}</h5>
-                <p [className] = "internetCallingPlan === 'MESSAGES.NOT_SUBSCRIBED' ? 'error-result' : 'active-result'">
-                  <strong>{{ internetCallingPlan | translate }}</strong></p>
+                <p [className]="internetCallingPlan === 'MESSAGES.NOT_SUBSCRIBED' ? 'error-result' : 'active-result'">
+                  <strong>{{ internetCallingPlan | translate }}</strong>
+                </p>
               </div>
             </ion-col>
 
@@ -141,7 +142,7 @@
                       </a> -->
                     </ion-col>
                     <ion-col size="6" class="ion-no-padding">
-                      <a href="javascript:void(0)" class="arrow-link">
+                      <a (click)="CallQuickAction()" class="arrow-link">
                         <span>{{ 'BUTTONS.CHANGE_WIFI_PIN' | translate }}</span>
                         <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" /> </a
                     ></ion-col>
@@ -175,7 +176,7 @@
                         <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
                       </a>
                     </ion-col> -->
-                   <!--  <ion-col size="6" class="ion-no-padding">
+                    <!--  <ion-col size="6" class="ion-no-padding">
                       <a href="javascript:void(0)" class="arrow-link">
                         <span>{{ 'BUTTONS.CHANGE_WIFI_PIN' | translate }}</span>
                         <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" /> </a

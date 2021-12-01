@@ -278,7 +278,7 @@ export class BackendService {
 
   complaintFollowupRemarks(remakrs) {
     if (environment.shouldCallAPI) {
-      return this.http.get(`motive/troubleshoot/complaint-followup?remarks=/${remakrs}`);
+      return this.http.get(`motive/troubleshoot/complaint-followup?remarks=${remakrs}`);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);
@@ -287,7 +287,7 @@ export class BackendService {
 
   srFollowupRemarks(remakrs) {
     if (environment.shouldCallAPI) {
-      return this.http.get(`motive/troubleshoot/sr-followup?srNo=/${remakrs}`);
+      return this.http.get(`motive/troubleshoot/sr-followup?srNo=${remakrs}`);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

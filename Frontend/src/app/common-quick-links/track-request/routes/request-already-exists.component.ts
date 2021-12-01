@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Request Already Exists
@@ -17,8 +18,6 @@ import { SharedService } from 'src/app/shared/shared.service';
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
   ></motive-message>`,
@@ -41,7 +40,7 @@ export class RequestAlreadyExistsComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -62,8 +61,9 @@ export class RequestAlreadyExistsComponent implements OnInit, OnDestroy {
     this.imgSrc = infoImgSrc;
     this.Section1Data = CustomerJourneyConstants.requestAlreadyExists;
     this.Section2Template = ApplicableCodes.requestAlreadyExistsTemplate;
+    var apiResponse = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      appointmentDate: 'Jul 10 2019',
+      appointmentDate: apiResponse?.dateOfVisit ?? '-',
       appointmentTime: '10:30 AM',
     };
   }
@@ -72,6 +72,7 @@ export class RequestAlreadyExistsComponent implements OnInit, OnDestroy {
     //this.router.navigate(['/']);
   }
   button2Listener() {
-    //this.router.navigate(['/']);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
   }
 }

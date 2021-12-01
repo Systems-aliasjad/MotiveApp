@@ -12,6 +12,7 @@ import { LandingProductCodes } from './constants/constants';
 })
 export class SharedService {
   apiResponseData: any;
+  OtherApiResponseData: any;
   upsellOpportunity: string;
   headerConfigSubject: BehaviorSubject<IPageHeader>;
   headerConfig$: Observable<IPageHeader>;
@@ -54,6 +55,14 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setOtherApiResponseData(data) {
+    this.OtherApiResponseData = data;
+  }
+
+  getOtherApiResponseData() {
+    return this.OtherApiResponseData;
   }
 
   setApiResponseHomeZoneCall(data) {
@@ -164,7 +173,6 @@ export class SharedService {
   getInternetGenericResponse() {
     return this.apiInternetGenericResponse;
   }
-
 
   getApiResponseDataSTBContinue(): any {
     if (this.apiResponseDataContinueSTB) {

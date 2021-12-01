@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Request Details
@@ -17,8 +18,6 @@ import { SharedService } from 'src/app/shared/shared.service';
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
     [button3]="button3"
     (button3Click)="button3Listener()"
   ></motive-message>`,
@@ -46,7 +45,7 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -65,11 +64,12 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
+    var apiResponse = this.sharedService.getApiResponseData();
     this.Section1Data = CustomerJourneyConstants.requestDetails;
     this.Section2Template = ApplicableCodes.requestDetailsTemplate;
     this.Section2Data = {
-      referenceNo: '436529873',
-      dateCreated: 'Jul 10 2019, 10:30 AM',
+      referenceNo: apiResponse?.referenceNo ?? '-',
+      // dateCreated: 'Jul 10 2019, 10:30 AM',
     };
   }
 
@@ -80,6 +80,7 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
     //this.router.navigate(['/']);
   }
   button3Listener() {
-    this.router.navigate(['/landing']);
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
   }
 }

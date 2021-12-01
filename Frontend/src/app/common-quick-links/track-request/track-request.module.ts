@@ -18,6 +18,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { createTranslateLoader } from 'src/app/app.module';
 import { HttpClient } from '@angular/common/http';
 import { IonicModule } from '@ionic/angular';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { IonicModule } from '@ionic/angular';
     ActionRequiredComponent,
     BookComplaintComponent,
     OpenSrsComponent,
+    TryAgainErrorComponent,
   ],
   imports: [
     CommonModule,
