@@ -114,7 +114,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   }
 
   CallQuickAction() {
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
       //  this.sharedService.setLoader(false);
     });
 
