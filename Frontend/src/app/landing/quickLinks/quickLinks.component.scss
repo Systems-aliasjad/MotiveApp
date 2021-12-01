@@ -70,15 +70,16 @@
             color:$etisalat-gray-color;
             font-size: 1rem;
             text-align: left;
-            /* @include pause('ltr') {
+          /*   @include direction('ltr') {
               text-align: left;
             }
-            @include pause('rtl') {
+            @include direction('rtl') {
               text-align: right;
             } 
+            
             @include rtl {
               text-align: right;
-            }*/
+            } */
             @media screen and (max-width: 992px) {
               color: $primary-color;
               width: 112px;
@@ -156,3 +157,4 @@
     }
   }
 } */
+

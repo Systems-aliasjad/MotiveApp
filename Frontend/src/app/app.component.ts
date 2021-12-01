@@ -30,6 +30,9 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   Initialization(params: Params) {
+    /* this.sharedService.setDefaultLanguage(params?.lang || 'ara');
+
+    this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl'; */
     this.subscribeLoaderChanges();
    /* this.sharedService.setDefaultLanguage('ara');
     this.appDirection = 'rtl'; */

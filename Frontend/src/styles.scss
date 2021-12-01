@@ -30,6 +30,7 @@
 @import './assets/scss/base/buttons';
 @import './assets/scss/base/layout';
 @import './assets/scss/base/rtl';
+$isRTL: true;
 // @import'../src/assets/fonts/'
 // --------------------------------------------------------------
 :host {
@@ -853,8 +854,8 @@ app-header-single-line {
       }
       motive-button {
         @media screen and (min-width: 769px) and (max-width: 1024px) {
-          min-width: 100%;
-          width: 100%;
+          min-width: 350px;
+          /* width: 100%; */
         }
       }
     }
@@ -886,10 +887,15 @@ motive-button {
   color: #be1218 !important;
 }
 //-------------------RTL Start-------------------
-.app-container[dir="rtl"] {
+html[dir=rtl] {
   .header-wrapper-wave {
-    @include scaleX(-1); 
+    @include scaleX(-1);
+    right: auto; 
     left:0;
+  }
+  ion-radio{
+    margin-right: 0;
+    margin-left: 1.2rem;
   }
 }
 //-------------------RTL End-------------------
