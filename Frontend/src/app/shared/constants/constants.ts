@@ -82,7 +82,7 @@ export const flowCodes = {
   QAVOICECCB2: 'QA-VOICE-CCB2', // for ccb pin failed
   QAVOICECCB4: 'QA-VOICE-CCB4', // for ccb pin failed TRY AGAIN
   QAVOICECCB: 'QA-VOICE-CCB', //for ccb pin success
-
+  CI11: 'CI11',
   QASTBR: 'QA-STBR', //FOR stb rebbot success
   QASTBR1: 'QA-STBR1', //FOR stb rebbot success
 
@@ -98,10 +98,34 @@ export const flowCodes = {
   QACOMFU: 'QA-COM-FU',
   OPENED: 'OPENED', //Complain status opened
 
-  QASRFU2: 'QA_SR_FU2', // SR Followup success
+  QASRFU2: 'QA-SR-FU2', // SR Followup success
   //QACOMFU1: 'QA_COM_FU1', //SR followup failure
 
-  CI11: 'CI11',
+  ////motive/troubleshoot/sr-followup?srNo returned cases
+  E2ECRM31: 'E2ECRM31',
+  E2ECRM32: 'E2ECRM32',
+  E2ECRM33: 'E2ECRM33',
+  E2ECRM34: 'E2ECRM34',
+  E2ECRM35: 'E2ECRM35',
+  E2ECRM36: 'E2ECRM36',
+  E2ECRM37: 'E2ECRM37',
+  E2ECRM38: 'E2ECRM38',
+  E2ECRM39: 'E2ECRM39',
+  E2ECRM310: 'E2ECRM310',
+  E2ECRM311: 'E2ECRM311',
+  E2ECRM312: 'E2ECRM312',
+  E2ECRM313: 'E2ECRM313',
+  E2ECRM314: 'E2ECRM314',
+  E2ECRM315: 'E2ECRM315',
+  E2ECRM316: 'E2ECRM316',
+  E2ECRM317: 'E2ECRM317',
+  E2ECRM318: 'E2ECRM318',
+  E2ECRM319: 'E2ECRM319',
+  E2ECRM320: 'E2ECRM320',
+  E2ECRM321: 'E2ECRM321',
+  E2ECRM322: 'E2ECRM322',
+  E2ECRM323: 'E2ECRM323',
+  E2ECRM324: 'E2ECRM324',
 };
 
 export const ETISALAT = 'Etisalat';
@@ -238,8 +262,9 @@ const FORGOT_PASSWORD_INTERNET = {
 };
 const CONNECTION_ISSUE_ROUTER = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
-  linkTo: 'unable-connect-newDevice',
-  isDeviceCare: true,
+  linkTo: '/issues/internet/unable-to-connnect-wifi-network',
+  nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
+  value: 'quickLinkUnableToConnect',
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
@@ -295,8 +320,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   '2P': {
@@ -309,8 +334,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   '1P': {
@@ -321,11 +346,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
     landingPageCards: [TV_ISSUES, RESET_PIN],
     quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  'VO': {
+  VO: {
     landingPageCards: [PHONE_ISSUES, RESET_PIN],
     quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  'HI': {
+  HI: {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -335,11 +360,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'B1': {
+  B1: {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -349,11 +374,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'FD': {
+  FD: {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -363,11 +388,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'FH': {
+  FH: {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -377,11 +402,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'FT': {
+  FT: {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -394,19 +419,19 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'FV': {
+  FV: {
     landingPageCards: [PHONE_ISSUES, RESET_PIN],
     quickLinkCard: [CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  'BSP': {
+  BSP: {
     landingPageCards: [TV_ISSUES, RESET_PIN],
     quickLinkCard: [FACTORY_RESET_TV, FORGOT_PASSWORD_TV, TRANSFER_PACKAGE_TV, CONNECT_HOME_ZONE, TRACK_COMPLAINT, TRACK_REQUEST],
   },
-  'BTP': {
+  BTP: {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -419,11 +444,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'BDP': {
+  BDP: {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -433,11 +458,11 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
-  'BFXI': {
+  BFXI: {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
       INSTALL_NEW_ROUTER,
@@ -447,8 +472,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
 };
@@ -515,11 +540,11 @@ export class ApplicableCodes {
       type: 'text',
       objKeyNameEN: 'appointmentDate',
     },
-    {
-      title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
-      type: 'text',
-      objKeyNameEN: 'appointmentTimeSlot',
-    },
+    // {
+    //   title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
+    //   type: 'text',
+    //   objKeyNameEN: 'appointmentTimeSlot',
+    // },
   ];
 
   public static complaintDetailsResolvedTarckComplaintTemplate: ISection2Template[] = [
@@ -599,16 +624,16 @@ export class ApplicableCodes {
   ];
 
   public static requestAlreadyExistsTemplate: ISection2Template[] = [
-    // {
-    //   title: 'MESSAGES.APPOINTMENT_DATE',
-    //   type: 'date',
-    //   objKeyNameEN: 'appointmentDate',
-    // },
     {
-      title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
-      type: 'time',
-      objKeyNameEN: 'appointmentTime',
+      title: 'MESSAGES.APPOINTMENT_DATE',
+      type: 'date',
+      objKeyNameEN: 'appointmentDate',
     },
+    // {
+    //   title: 'MESSAGES.APPOINTMENT_TIME_SLOT',
+    //   type: 'time',
+    //   objKeyNameEN: 'appointmentTime',
+    // },
   ];
 
   public static appointmentChangedSuccessTemplate: ISection2Template[] = [
@@ -625,11 +650,11 @@ export class ApplicableCodes {
   ];
 
   public static serviceUnavailableTemplate: ISection2Template[] = [
-    {
-      title: 'MESSAGES.EXPECTED_DATE_OF_COMPLETION',
-      type: 'date',
-      objKeyNameEN: 'expecDateOfCompletion',
-    },
+    // {
+    //   title: 'MESSAGES.EXPECTED_DATE_OF_COMPLETION',
+    //   type: 'date',
+    //   objKeyNameEN: 'expecDateOfCompletion',
+    // },
   ];
   public static OpenServiceRequestTemplate: ISection2Template[] = [
     {

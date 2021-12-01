@@ -31,11 +31,6 @@ export class AppComponent implements OnInit, AfterViewInit {
 
   Initialization(params: Params) {
     this.subscribeLoaderChanges();
-
-
-
-
-
    /* this.sharedService.setDefaultLanguage('ara');
     this.appDirection = 'rtl'; */
     //TODO: uncomment This

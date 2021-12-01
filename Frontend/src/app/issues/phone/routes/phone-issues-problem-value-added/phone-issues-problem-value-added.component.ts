@@ -119,21 +119,29 @@ export class PhoneIssuesProblemValueAddedComponent implements OnInit, OnDestroy 
   }
 
   getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseData();
-    this.cardList[0].description = apiResponse?.accountDetails?.clip ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
+    var apiResponse = null;
+    if (this.isPartialLoaded) {
+      apiResponse = this.sharedService.getOtherApiResponseData();
+      apiResponse = apiResponse?.voiceServiceDetail;
+    } else {
+      apiResponse = this.sharedService.getApiResponseData();
+      apiResponse = apiResponse?.accountDetails;
+    }
+
+    this.cardList[0].description = apiResponse?.clip ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
     this.cardList[1].description =
-      apiResponse?.accountDetails?.callForwarded && apiResponse?.accountDetails?.callForwardedTo === 'NA'
+      apiResponse?.callForwarded && apiResponse?.callForwardedTo === 'NA'
         ? 'MESSAGES.SUBSCRIBED_AND_NOT_ACTIVATED'
-        : apiResponse?.accountDetails?.callForwarded === false
+        : apiResponse?.callForwarded === false
         ? 'MESSAGES.NOT_SUBSCRIBED'
         : 'MESSAGES.SUBSCRIBED_AND_ACTIVATED';
     // this.cardList[1].title2 += apiResponse?.accountDetails?.callForwardedTo || '';
-    this.cardList[2].description = apiResponse?.accountDetails?.callWaiting ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
-    this.cardList[3].description = apiResponse?.accountDetails?.optionToResetPin ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
+    this.cardList[2].description = apiResponse?.callWaiting ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
+    this.cardList[3].description = apiResponse?.codeControlBarring ? 'MESSAGES.SUBSCRIBED' : 'MESSAGES.NOT_SUBSCRIBED';
 
-    this.showResetCCBPin = apiResponse?.accountDetails?.optionToResetPin;
+    this.showResetCCBPin = apiResponse?.optionToResetPin;
     this.accountDetails = {
-      landLineConnectionStatus: apiResponse?.accountDetails?.landLineConnectionStatus ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING',
+      landLineConnectionStatus: apiResponse?.landLineConnectionStatus ? 'MESSAGES.WORKING' : 'MESSAGES.NOT_WORKING',
     };
   }
 }

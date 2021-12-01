@@ -5,6 +5,7 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 /**
  * Unable To Process Request
@@ -28,6 +29,7 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   value;
+  quickLinkNextSignal;
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
@@ -39,12 +41,18 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
+    if(this.value === 'quickLinkUnableToConnect') {
+      const apiResponse = this.sharedService.getApiResponseData();
+      if(!apiResponse?.managed){
+        this.router.navigate(['/issues/password/unable-to-reset-password']);
+      }
+    }
     this.updatePageContent();
   }
 
@@ -54,6 +62,7 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
 
   updateHeader() {
     this.value = this.router.getCurrentNavigation()?.extras?.state?.value;
+    this.quickLinkNextSignal = this.router.getCurrentNavigation()?.extras?.state?.quickLinkNextSignal;
   }
 
   updatePageContent() {
@@ -62,9 +71,9 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    if(this.value === 'connectWifiFail' || this.value === 'forgotPassword')
+    if(this.value === 'connectWifiFail' || this.value === 'forgotPassword' || this.value === 'quickLinkUnableToConnect')
     {
-      this.router.navigate(['/issues/internet/stage2/reset-wifi-password']);
+      this.router.navigate(['/issues/internet/stage2/reset-wifi-password'],  { state: { quickLinkNextSignal: this?.quickLinkNextSignal } } );
     } else {
       this.router.navigate(['/issues/internet/reset-wifi-password']);
     }

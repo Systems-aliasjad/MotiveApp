@@ -57,22 +57,32 @@ export class TvDetailComponent implements OnInit {
   ) {}
   ngOnInit() {
     this.getIssueTilesData();
-    const data = this.sharedService.getApiResponseData();
-    this.eLifeStatus = data.result.responseData.elifeGameStatus;
-    this.eLifeGameStatus = data.result.responseData.elifeGameStatus;
-    for (var index = 0; index < data?.result?.responseData?.sharedPackages?.length; index++) {
+
+    var data = null;
+
+    if (this.isPartialLoaded) {
+      data = this.sharedService.getOtherApiResponseData();
+      data = data?.iptvServiceDetail;
+    } else {
+      data = this.sharedService.getApiResponseData();
+      data = data.result.responseData;
+    }
+
+    this.eLifeStatus = data?.elifeGameStatus;
+    this.eLifeGameStatus = data?.elifeGameStatus;
+    for (var index = 0; index < data?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
         if (!this.connectedDevices[i]?.list) {
           this.connectedDevices[i].list = [];
         }
-        this.connectedDevices[i].list.push(data?.result?.responseData?.sharedPackages[index]?.packageName);
+        this.connectedDevices[i].list.push(data?.sharedPackages[index]?.packageName);
       }
     }
-    for (var index = 0; index < data.result.responseData.stbList.length; index++) {
-      var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.result?.responseData?.stbList[index]?.stbSerialNumber);
+    for (var index = 0; index < data.stbList.length; index++) {
+      var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.stbList[index]?.stbSerialNumber);
       if (selectedStb != null) {
-        for (var i = 0; i < data?.result?.responseData?.stbList[index]?.packages?.length; i++) {
-          selectedStb.list.push(data?.result?.responseData?.stbList[index]?.packages[i]?.packageName);
+        for (var i = 0; i < data?.stbList[index]?.packages?.length; i++) {
+          selectedStb.list.push(data?.stbList[index]?.packages[i]?.packageName);
         }
       }
     }
@@ -108,7 +118,13 @@ export class TvDetailComponent implements OnInit {
   }
 
   getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseDataNoIssuesSTB();
+    var apiResponse = null;
+    if (this.isPartialLoaded) {
+      apiResponse = this.sharedService.getApiResponseData();
+    } else {
+      apiResponse = this.sharedService.getApiResponseDataNoIssuesSTB();
+    }
+
     const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
     this.ontConfig = temp?.ontConfig;
     // this.routerConfig = temp?.stbConfig;

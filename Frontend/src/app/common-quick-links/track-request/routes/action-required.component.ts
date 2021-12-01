@@ -61,7 +61,7 @@ export class ActionRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    //this.router.navigate(['/']);
+    this.router.navigate(['/issues/internet/book-appointment']);
   }
 
   button2Listener() {

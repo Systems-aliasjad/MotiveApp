@@ -13,6 +13,7 @@ import { RequestDetailComponent } from './routes/request-detail.component';
 import { RequestUnderProcessComponent } from './routes/request-under-process.component';
 import { ServiceUnavailableComponent } from './routes/service-unavailable.component';
 import { OpenSrsComponent } from './routes/open-srs/open-srs.component';
+import { TryAgainErrorComponent } from './routes/try-again-error.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'open-srs',
     component: OpenSrsComponent,
+  },
+  {
+    path: 'try-again-error',
+    component: TryAgainErrorComponent,
   },
 ];
 
