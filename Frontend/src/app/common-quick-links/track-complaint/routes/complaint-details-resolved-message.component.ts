@@ -5,6 +5,7 @@ import { ApplicableCodes, infoImgSrc } from 'src/app/shared/constants/constants'
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'complaint-details-resolved-message',
@@ -14,8 +15,6 @@ import { Subscription } from 'rxjs';
     [Section2Data]="Section2Data"
     [Section2Template]="Section2Template"
     [Section3Data]="Section3Data"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
   ></motive-message>`,
@@ -37,7 +36,7 @@ export class ComplaintDetailsResolvedMessageComponent implements OnInit, OnDestr
     type: 'secondary',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -56,8 +55,9 @@ export class ComplaintDetailsResolvedMessageComponent implements OnInit, OnDestr
     this.imgSrc = infoImgSrc;
     this.Section1Data = CustomerJourneyConstants.compliantDetailsResolvedTrackComplaint;
     this.Section2Template = ApplicableCodes.complaintDetailsResolvedTarckComplaintTemplate;
+    var apiResponse = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      referecneNo: '436529873',
+      referecneNo: apiResponse?.referecneNo ?? '-', // '436529873',
       resolvedDetails: 'Jul 10 2019, 10:30 AM',
     };
     this.Section3Data = CustomerJourneyConstants.compliantDetailsResolvedSection3TrackComplaint;

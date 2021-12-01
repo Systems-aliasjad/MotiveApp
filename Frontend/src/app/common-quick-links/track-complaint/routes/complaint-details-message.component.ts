@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'complaint-details-message',
@@ -40,7 +41,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
     type: 'link',
     title: 'BUTTONS.CANCEL_COMPLAINT',
   };
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -75,7 +76,8 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.router.navigate(['thanks']);
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
     // this.router.navigate(['/bookComplaint']);
   }
 }
