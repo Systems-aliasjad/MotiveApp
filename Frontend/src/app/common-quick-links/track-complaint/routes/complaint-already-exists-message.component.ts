@@ -62,7 +62,7 @@ export class ComplaintAlreadyExistsMessageComponent implements OnInit, OnDestroy
     this.sharedService.setLoader(true);
     this.backendService.complaintFollowupRemarks(this.formValue).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QACOMFU2) {
+      if (data?.result?.screenCode === flowCodes.QACOMFU4) {
         this.router.navigate(['thanks']);
       } else {
         //if (data?.result?.screenCode === flowCodes.QACOMFU1) {
