@@ -1,6 +1,4 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { CacheService } from './cache/cache.service';
-import { StorageType } from './cache/storages/storage-type.enum';
 import { environment } from '../environments/environment';
 import { SharedService } from './shared/shared.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
@@ -29,25 +27,39 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.Initialization(params);
     });
   }
-  ngOnInit(): void {
-    localStorage.clear();
-  }
+  ngOnInit(): void {}
 
   Initialization(params: Params) {
     this.subscribeLoaderChanges();
-    console.log('params 1', params);
+
+
+
+
+
    /* this.sharedService.setDefaultLanguage('ara');
     this.appDirection = 'rtl'; */
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
     if (!params?.token) {
-      return;
+     return;
     }
-    console.log('params 2', params);
-    this.authService.setAuthorizationToken(params?.token);
-    this.sharedService.setDefaultLanguage(params?.lang || 'ara');
-    this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
-    this.router.navigate(['landing']);
+    try {
+      this.sharedService.setDefaultLanguage(params?.lang || 'ara');
+      this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
+    } catch (error) {
+    }
+      this.sharedService.setLoader(true);
+      this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
+
+          this.sharedService.setLoader(false);
+          if(data?.code === 200){
+            //this.sharedService.setLocalStorage(MOTIVE_TOKEN, data?.result?.token);
+            this.authService.setAuthorizationToken(data?.result?.token);
+            this.router.navigate(['landing']);
+          } else {
+            this.router.navigate(['unknown-issue']);
+          }
+        });
 
     if (environment.production) {
       window.console.log = function () {}; // disable any console.log debugging statements in production mode
@@ -60,7 +72,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     // this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
     //   this.authService.setAuthorizationToken(data?.result?.token);
     //   this.sharedService.setLoader(false);
-    //   localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
+    //   this.sharedService.setLocalStorage('CUS_MOBILE_NO', data?.result?.accountId);
     //   this.router.navigate(['landing'], { state: { user: data?.result } });
     // });
   }

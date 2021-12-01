@@ -63,7 +63,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
     this.backendService.getLandingPageData().subscribe((data: any) => {
       this.sharedService.setLoader(false);
 
-      localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
+      this.sharedService.setLocalStorage('CUS_MOBILE_NO', data?.result?.accountId);
       this.user = {
         accountId: data?.result?.accountId ?? '',
         username: data?.result?.username ?? '',

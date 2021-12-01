@@ -58,7 +58,7 @@ export class AccountIdComponent implements OnInit {
     // this.backendService.getUserDetailFromAccountId(this.formGroup.controls['AccountID'].value).subscribe((data: any) => {
     //   this.authService.setAuthorizationToken(data?.result?.token);
     //   this.sharedService.setLoader(false);
-    //   localStorage.setItem('CUS_MOBILE_NO', data?.result?.accountId);
+    //   this.sharedService.setLocalStorage('CUS_MOBILE_NO', data?.result?.accountId);
     //   this.router.navigate(['landing'], { state: { user: data?.result } });
     // });
   }

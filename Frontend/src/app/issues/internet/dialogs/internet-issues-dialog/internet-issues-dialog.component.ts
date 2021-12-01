@@ -64,7 +64,7 @@ export class InternetIssuesDialog implements OnInit {
     this.modalCtrl.dismiss();
     this.sharedService.setTryAgainRouterNotReachableFlag();
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false }).subscribe(() => {
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
         this.sharedService.setLoader(false);
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

@@ -67,7 +67,7 @@ export class GameSessionComponent implements OnInit, OnDestroy {
 
   goToThanks() {
     // this.sharedService.setLoader(true);
-    // this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
     //   this.sharedService.setLoader(false);
     //   this.router.navigate(['/thanks']);
     // });

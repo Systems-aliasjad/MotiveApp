@@ -37,7 +37,7 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     let url;
-    const accountNo = localStorage.getItem('CUS_MOBILE_NO');
+    const accountNo = this.sharedService.getLocalStorage('CUS_MOBILE_NO');
     const lang: string = this.sharedService.getDefaultLanguage();
     if(this.sharedService.checkIfMobileDevice()){
       url = 'https://etisalatmobileapp.page.link/ebill';

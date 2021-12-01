@@ -21,6 +21,7 @@ export class SharedService {
 
   loaderSubject: BehaviorSubject<boolean>;
   loader$: Observable<boolean>;
+  storage: any[]=[];
 
   encryptedID: string = '';
 
@@ -197,20 +198,20 @@ export class SharedService {
   }
 
   setDefaultLanguage(language: string): void {
-    localStorage.setItem('lang', language);
+    this.setLocalStorage('lang', language);
     this.translate.use(language);
   }
 
   getQuickLinksData() {
-    return localStorage.getItem('quickLinks') ? JSON.parse(localStorage.getItem('quickLinks')) : null;
+    return this.getLocalStorage('quickLinks') ? JSON.parse(this.getLocalStorage('quickLinks')) : null;
   }
 
   setQuickLinksData(data: any): void {
-    localStorage.setItem('quickLinks', JSON.stringify(data));
+    this.setLocalStorage('quickLinks', JSON.stringify(data));
   }
 
   getDefaultLanguage(): string {
-    return localStorage.getItem('lang') ? localStorage.getItem('lang') : 'en';
+    return this.getLocalStorage('lang') ? this.getLocalStorage('lang') : 'en';
   }
 
   setLoader(loaderState: boolean, messageMain?: String): void {
@@ -259,6 +260,26 @@ export class SharedService {
     return this.productCodeLanding;
   }
 
+  getLocalStorage(key) {
+   return this.storage.find(x=>x.key===key).value;
+  }
+
+  setLocalStorage(key, value) {
+    if(this.storage.length===0)
+    this.storage.push({key:key,value:value})
+
+else{
+ var index= this.storage.find((x) => x.key == key);
+
+ if(index===undefined){
+  this.storage.push({key:key,value:value})
+ }
+ else{
+   this.storage = this.storage.filter(x=>x.key!=key);
+   this.storage.push({key:key,value:value})
+ }
+}
+}
   createPasswrodIssuesDynamic(passwordIssueList: any[]) {
     var newList = [];
     passwordIssueList.forEach((element) => {

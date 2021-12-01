@@ -76,7 +76,7 @@ export class UnableElifeTryAgainErrorComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
       this.sharedService.setTryAgainUnableElifeFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
         this.sharedService.setLoader(false);
@@ -90,7 +90,7 @@ export class UnableElifeTryAgainErrorComponent implements OnInit, OnDestroy {
       this.router.navigate(['/thanks']);
     } else {
       // this.sharedService.setLoader(true);
-      this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+      this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
         // this.sharedService.setLoader(false);
       });
       this.router.navigate(['/thanks']);

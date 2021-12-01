@@ -89,7 +89,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '' }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '' }).subscribe(() => {
       //   this.sharedService.setLoader(false);
     });    
     this.router.navigate(['/thanks']);

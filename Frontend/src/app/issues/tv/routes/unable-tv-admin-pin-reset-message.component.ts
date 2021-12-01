@@ -60,7 +60,7 @@ export class UnableTvAdminPinResetMessageComponent implements OnInit, OnDestroy 
       this.router.navigate(['/thanks']);
     } else {
       // this.sharedService.setLoader(true);
-      this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
+      this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
         // this.sharedService.setLoader(false);
       });
       this.router.navigate(['/thanks']);

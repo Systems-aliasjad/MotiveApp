@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'router-reset-successful',
@@ -30,7 +31,7 @@ export class RouterResetSuccessfulComponent implements OnInit, OnDestroy {
     explanatoryNote: '',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService:SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -51,7 +52,7 @@ export class RouterResetSuccessfulComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
     this.router.navigate(['/thanks']);
   }
 }
