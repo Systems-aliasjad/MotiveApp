@@ -66,7 +66,7 @@ export class QuickLinksAllComponent implements OnInit {
         if (link.directCall) {
           this.callDirectCallAPIs(link);
         } else {
-          this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal } });
+          this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal,  value: link?.value } });
         }
       });
     }

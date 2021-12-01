@@ -238,8 +238,9 @@ const FORGOT_PASSWORD_INTERNET = {
 };
 const CONNECTION_ISSUE_ROUTER = {
   body: 'QUICK_LINKS.I_AM_UNABLE_TO_CONNECT_DEVICES_TO_MY_ROUTERS_WIFI',
-  linkTo: 'unable-connect-newDevice',
-  isDeviceCare: true,
+  linkTo: '/issues/internet/unable-to-connnect-wifi-network',
+  nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
+  value: 'quickLinkUnableToConnect',
 };
 const FORGOT_PASSWORD_TV = {
   body: 'QUICK_LINKS.I_FORGOT_MY_TV_BOX_PIN',
@@ -295,8 +296,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   '2P': {
@@ -309,8 +310,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   '1P': {
@@ -335,8 +336,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'B1': {
@@ -349,8 +350,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'FD': {
@@ -363,8 +364,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'FH': {
@@ -377,8 +378,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'FT': {
@@ -394,8 +395,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'FV': {
@@ -419,8 +420,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'BDP': {
@@ -433,8 +434,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
   'BFXI': {
@@ -447,8 +448,8 @@ export const motiveSubscriptions: IMotvieSubscription = {
       CONNECT_HOME_ZONE,
       TRACK_COMPLAINT,
       TRACK_REQUEST,
-      UPGRADE_ROUTER,
-      UPGRADE_PACKAGE,
+      // UPGRADE_ROUTER,
+      // UPGRADE_PACKAGE,
     ],
   },
 };
