@@ -1,8 +1,10 @@
-<div  [dir]="appDirection" class="app-container">
+<div class="app-container">
   <span class="header-wrapper-wave"></span>
   <!-- <app-header></app-header> -->
   <ion-content class="body-wrapper export-wrapper">
     <app-loader></app-loader>
     <ion-router-outlet [animated]="false"></ion-router-outlet>
   </ion-content>
+
+  <input type="hidden" id="In_Direction" [value]="appDirection" />
 </div>

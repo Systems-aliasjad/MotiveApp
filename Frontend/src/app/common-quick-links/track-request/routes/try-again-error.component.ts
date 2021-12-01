@@ -5,10 +5,15 @@ import { warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
+/**
+ * Try Again Error
+ */
 @Component({
-  selector: 'request-in-process-message',
+  selector: 'try-again-error',
   template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
@@ -20,25 +25,29 @@ import { BackendService } from 'src/app/services/backend.service';
     (button2Click)="button2Listener()"
   ></motive-message>`,
 })
-export class RequestInProcessMessageComponent implements OnInit, OnDestroy {
+export class TryAgainErrorComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   Section1Data;
   Section2Template;
   Section2Data;
   imgSrc;
-
+  quickLinkNextSignal;
   button1: IMotiveButton = {
+    title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
-    title: 'BUTTONS.BOOK_COMPLAINT',
   };
-
   button2: IMotiveButton = {
     type: 'link',
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute) {}
-
+  constructor(
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private backendService: BackendService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
@@ -50,15 +59,27 @@ export class RequestInProcessMessageComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+    // if (this.sharedService.getTryAgainResetSTBFlag() > 3) {
+    //   this.button1.disable = true;
+    //   this.router.navigate(['issues/tv/unable-tv-admin-pin']);
+    // }
+  }
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.requestInProcessTrackRequest;
+    this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/book-complaint']);
+    // this.sharedService.setLoader(true);
+    // this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    //   this.sharedService.setTryAgainResetSTBFlag(); ///for try again button 3 times
+    //   this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
+    //     this.sharedService.setLoader(false);
+    //     this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   });
+    // });
   }
 
   button2Listener() {

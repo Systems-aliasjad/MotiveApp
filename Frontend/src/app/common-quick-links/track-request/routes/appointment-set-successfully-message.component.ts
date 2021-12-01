@@ -5,6 +5,8 @@ import { ApplicableCodes, infoImgSrc } from 'src/app/shared/constants/constants'
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { BackendService } from 'src/app/services/backend.service';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'appointment-set-successfully-message',
@@ -28,7 +30,7 @@ export class AppointmentSetSuccessfullyMessageComponent implements OnInit, OnDes
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -47,13 +49,15 @@ export class AppointmentSetSuccessfullyMessageComponent implements OnInit, OnDes
     this.imgSrc = infoImgSrc;
     this.Section1Data = CustomerJourneyConstants.appointmentSetSuccessfullyTrackRequest;
     this.Section2Template = ApplicableCodes.appointmentSetSuccessfullyTarckRequestTemplate;
+    var apiResponse = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      appointmentDate: 'Jul 10 2019',
+      appointmentDate: apiResponse?.dateOfVisit, //'Jul 10 2019',
       appointmentTimeSlot: '10.30 AM',
     };
   }
 
   button1Listener() {
+    this.backendService.bookComplaint({ mobileNo: localStorage.getItem('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
     this.router.navigate(['/thanks']);
   }
 }
