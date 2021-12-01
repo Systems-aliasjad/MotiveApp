@@ -79,7 +79,12 @@ export class BackendService {
   };
 
   getUserDetail(token: string, lang: string) {
-    return this.http.get(`token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
+    if (environment.shouldCallAPI) {
+      return this.http.get(`token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
+    } else {
+      const response = { result: { productCode: '3P' } };
+      return this.hardCoadedResponse(response);
+    }
   }
 
   getUserDetailFromAccountId(accountId) {
