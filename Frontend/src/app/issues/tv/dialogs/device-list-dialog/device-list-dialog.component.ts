@@ -34,7 +34,7 @@ export class DeviceListDialog implements OnInit {
     }
     const apiResponse = this.sharedService.getApiResponseData();
 
-    this.StbList = apiResponse.stbDetails;
+    this.StbList = apiResponse?.stbDetails;
     if (this.StbList) {
       this.StbList.forEach((element) => {
         var index = {
