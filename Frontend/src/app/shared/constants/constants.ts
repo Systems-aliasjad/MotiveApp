@@ -91,14 +91,15 @@ export const flowCodes = {
   QANRINST8: 'QA-NR-INST8', //Unknown Issue / Error
   QANRINST9: 'QA-NR-INST9', //Install new router  Success
   QANRINST10: 'QA-NR-INST10', //Installing new Router / Had a pending request
-  QANRINST11: 'QA-NR-INST11',//Router Installation failed
-  QANRINST16: 'QA-NR-INST16',//Router Installation failed
+  QANRINST11: 'QA-NR-INST11', //Router Installation failed
+  QANRINST16: 'QA-NR-INST16', //Router Installation failed
   DCSS1: 'DCSS1', //Install new router Device care
   DCSS2: 'DCSS2', //Install new router Device care
   QANRINST12: 'QA-NR-INST12', //		DCSS invokation for manual router installation    App.MotiveH&S.5.1.3
 
   QACOMFU2: 'QA-COM-FU2', //Track a recent complaint SuCcess
   QACOMFU4: 'QA-COM-FU4',
+  QACOMFU3: 'QA-COM-FU3',
   QACOMFU1: 'QA-COM-FU1', //Track a recent complaint failure
   QACOMFU: 'QA-COM-FU',
   OPENED: 'OPENED', //Complain status opened

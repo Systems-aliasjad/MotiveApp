@@ -8,6 +8,8 @@ import { ComplaintAlreadyExistsMessageComponent } from './routes/complaint-alrea
 import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-process-messaage.component';
 import { ComplaintDetailsResolvedMessageComponent } from './routes/complaint-details-resolved-message.component';
 import { ComplaintNotFoundMessageComponent } from './routes/complaint-not-found-message.component';
+import { FeebbackSubmittedSuccessfullyMessageComponent } from './routes/feedback-submitted-successfully.component';
+import { FeedbackTryAgainErrorComponent } from './routes/feedback-try-again-error.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ComplaintNotFoundMessageComponent } from './routes/complaint-not-found-
     ComplaintUnderProcessMessageComponent,
     ComplaintDetailsResolvedMessageComponent,
     ComplaintNotFoundMessageComponent,
+    FeebbackSubmittedSuccessfullyMessageComponent,
+    FeedbackTryAgainErrorComponent,
   ],
   imports: [CommonModule, SharedModule, trackComplaintRoutingModule],
 })

@@ -178,6 +178,8 @@
   },
 
   "MESSAGES": {
+    "SORRY_THE_OPERATION_HAS_TIMED_OUT_PLEASE_TRY_AGAIN": "Sorry, the operation has timed out. Please try again.",
+    "FEEDBACK_SUBMITTED_SUCCESSFULLY": "Feedback submitted successfully",
     "RUN_SMART_DIAGNOSIS_ON_YOUR_PRODUCT_AND_SERVICE": "Run Smart Diagnosis on your product and service",
     "AN_AUTOMATED_SELFDIAGNOSIS_WILL_BE_INITIATED_ONCE_YOU_SELECT_ONE_OF_THE_FOLLOWING_OPTIONS": "An automated self-diagnosis will be initiated once you select one of the following options.",
     "BANDWIDTH": "Bandwidth",
@@ -213,7 +215,7 @@
     "PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_TV_AGAIN": "Please wait for 5 minutes and then try using the tv again.",
     "PLEASE_WAIT_WHILE_WE_TRY_TO_RESET_IT_AGAIN": "Please wait while we try to reset it again.",
     "WE_ARE_EXPERIENCING_A_DELAY_IN_RESETTING_YOUR_INTERNET_PASSWORD": "We are experiencing a delay in resetting your internet password.",
-    "PLEASE_WAIT_FOR_2_MINUTES_AND_THEN_TRY_CONNECTING_TO_THE_WIFI_NETWORK_WITH_THE_NEW_PASSWORD":"Please wait for 2 minutes and then try connecting to the Wi-Fi network with the new password.",
+    "PLEASE_WAIT_FOR_2_MINUTES_AND_THEN_TRY_CONNECTING_TO_THE_WIFI_NETWORK_WITH_THE_NEW_PASSWORD": "Please wait for 2 minutes and then try connecting to the Wi-Fi network with the new password.",
     "ISSUE_FIXED": "ISSUE FIXED",
     "ISSUE_NOT_FIXED": "ISSUE NOT FIXED",
     "VALUE_ADDED_SERVICES": "Value added services",

@@ -5,6 +5,8 @@ import { ComplaintDetailsMessageComponent } from './routes/complaint-details-mes
 import { ComplaintDetailsResolvedMessageComponent } from './routes/complaint-details-resolved-message.component';
 import { ComplaintNotFoundMessageComponent } from './routes/complaint-not-found-message.component';
 import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-process-messaage.component';
+import { FeebbackSubmittedSuccessfullyMessageComponent } from './routes/feedback-submitted-successfully.component';
+import { FeedbackTryAgainErrorComponent } from './routes/feedback-try-again-error.component';
 
 import { TrackComplaintMainComponent } from './routes/main.component';
 
@@ -33,6 +35,14 @@ const routes: Routes = [
   {
     path: 'complaint-not-found-message',
     component: ComplaintNotFoundMessageComponent,
+  },
+  {
+    path: 'feedback-submitted-successfully',
+    component: FeebbackSubmittedSuccessfullyMessageComponent,
+  },
+  {
+    path: 'feedback-try-again',
+    component: FeedbackTryAgainErrorComponent,
   },
 ];
 

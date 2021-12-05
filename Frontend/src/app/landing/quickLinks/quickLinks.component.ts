@@ -156,7 +156,7 @@ export class QuickLinksComponent implements OnInit, OnChanges {
       this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
         this.sharedService.setApiResponseData({ openSrs: data?.result?.responseData?.openSrs, data: data });
         this.sharedService.setLoader(false);
-        if (data?.result?.screenCode === flowCodes.QACOMFU2) {
+        if (data?.result?.screenCode === flowCodes.QASRFU2) {
           this.router.navigate(['/track-request/open-srs']);
         } else {
           this.router.navigate(['/track-request/work-not-completed']);

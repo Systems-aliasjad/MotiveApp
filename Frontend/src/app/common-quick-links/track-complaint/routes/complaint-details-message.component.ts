@@ -72,7 +72,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/track-complaint/complaint-already-message']);
+    this.router.navigate(['/track-complaint/complaint-under-process-message']);
   }
 
   button3Listener() {
