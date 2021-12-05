@@ -43,6 +43,7 @@ export class TvDetailComponent implements OnInit {
   cardList: any = [];
   eLifeStatus: string = 'Disabled';
   eLifeGameStatus: boolean;
+  nonSharedPackages: any = [];
   eLifegames = [
     { title: 'Call of Duty: Modern Warfare', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
     { title: 'Dangerous driving 2018', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
@@ -74,19 +75,50 @@ export class TvDetailComponent implements OnInit {
       for (var i = 0; i < this.connectedDevices.length; i++) {
         if (!this.connectedDevices[i]?.list) {
           this.connectedDevices[i].list = [];
+          this.connectedDevices[i].list.push('Shared Packages:');
         }
         this.connectedDevices[i].list.push(data?.sharedPackages[index]?.packageName);
       }
     }
-    for (var index = 0; index < data.stbList.length; index++) {
-      var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.stbList[index]?.stbSerialNumber);
-      if (selectedStb != null) {
-        for (var i = 0; i < data?.stbList[index]?.packages?.length; i++) {
-          selectedStb.list.push(data?.stbList[index]?.packages[i]?.packageName);
-        }
-      }
-    }
 
+    // data.stbList = [
+    //   {
+    //     stbSerialNumber: '111130703135',
+    //     packages: [
+    //       {
+    //         packageId: '3',
+    //         packageName: 'Asiana Lite',
+    //       },
+    //       {
+    //         packageId: '602',
+    //         packageName: 'ICC Cricket World Cup 2019',
+    //       },
+    //     ],
+    //   },
+    // ];
+
+    // debugger;
+    data?.stbList.forEach((element) => {
+      // this.connectedDevices[i].list.push('Non Shared Packages:');
+
+      var filter = this.connectedDevices.findIndex((x) => x.stbSerialNumber === element.stbSerialNumber);
+
+      if (filter !== -1) {
+        this.connectedDevices[filter].list.push('Non Shared Packages:');
+        element?.packages.forEach((data) => {
+          this.connectedDevices[filter].list.push(data.packageName);
+        });
+      }
+    });
+
+    // for (var index = 0; index < data.stbList.length; index++) {
+    //   var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.stbList[index]?.stbSerialNumber);
+    //   if (selectedStb != null) {
+    //     for (var i = 0; i < data?.stbList[index]?.packages?.length; i++) {
+    //       selectedStb.list.push(data?.stbList[index]?.packages[i]?.packageName);
+    //     }
+    //   }
+    // }
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
