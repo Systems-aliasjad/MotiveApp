@@ -530,7 +530,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
-      objKeyNameEN: 'referecneNo',
+      objKeyNameEN: 'referenceNo',
     },
 
     {
@@ -557,7 +557,7 @@ export class ApplicableCodes {
     {
       title: 'MESSAGES.REFERENCE_NO',
       type: 'number',
-      objKeyNameEN: 'referecneNo',
+      objKeyNameEN: 'referenceNo',
     },
 
     // {

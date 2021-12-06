@@ -62,7 +62,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
     this.Section2Template = ApplicableCodes.complaintDetailsTarckComplaintTemplate;
 
     this.Section2Data = {
-      referecneNo: temp?.referecneNo || '-',
+      referenceNo: temp?.referenceNo || '-',
       appointmentDetails: temp?.complaintNature || '-',
     };
   }

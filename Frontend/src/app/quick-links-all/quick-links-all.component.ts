@@ -108,7 +108,7 @@ export class QuickLinksAllComponent implements OnInit {
         //   result: {
         //     responseData: {
         //       status: flowCodes.OPENED,
-        //       referecneNo: 'hello moto',
+        //       referenceNo: 'hello moto',
         //     },
         //     screenCode: flowCodes.QACOMFU2,
         //   },
