@@ -74,15 +74,15 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     } else {
       apiResponse = this.sharedService.getApiResponseData();
       internetGenericResponse = this.sharedService.getInternetGenericResponse();
-      this.hsiUploadDownload = apiResponse?.hsiUploadDownload;
+      this.hsiUploadDownload = apiResponse?.hsiUploadDownload ? apiResponse?.hsiUploadDownload : ['3.2 Mb', '4.6Mb'];
     }
 
-    this.routerName = internetGenericResponse?.routerDetails?.routerManufacturer + ' ' + internetGenericResponse?.routerDetails?.routerModel;
+    this.routerName = internetGenericResponse?.routerDetails?.routerManufacturer ?? 'Router' + ' ' + internetGenericResponse?.routerDetails?.routerModel;
     this.devices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
 
     // Internet Calling Plan response only 1 known
     this.internetCallingPlan = apiResponse?.internetCallingPlan === 'No_Voip_rate_plan' ? 'MESSAGES.NOT_SUBSCRIBED' : 'MESSAGES.SUBSCRIBED';
-    this.internetConnectionStatus = apiResponse?.internetConnectionStatus;
+    this.internetConnectionStatus = apiResponse?.internetConnectionStatus ?? 'Connected';
     this.speedTestResult = apiResponse?.speedTestResult ?? '';
     if (this.speedTestResult !== '') {
       this.speedTestResult = 'Upload Speed 450Mbps ,Download Speed 400Mbps';
@@ -91,7 +91,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
       const speedTest = (speed[1] / download) * 100;
       this.speedTestResult = speedTest > 90 || speedTest === 90 ? 'Good' : 'Bad';
     }
-    this.dataTraffic = apiResponse?.dataTraffic ?? '';
+    this.dataTraffic = apiResponse?.dataTraffic ?? 'Received 0.01 Mb, Sent 1.2 Mb';
   }
 
   button1Listener() {

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -129,10 +129,15 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     const routerConfig = temp?.routerConfig;
+    let phoneConfig;
     this.ontConfig = temp?.ontConfig;
+    if(apiResponse?.phoneDetails?.isReachable)
+    {
+      phoneConfig =  { ...apiResponse?.phoneDetails, url: SVGs.phone.default, title: PHONE,  className: networkDiagramClasses.okay}
+    }
     this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
     if (this.connectedDevices) {
-      this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
+      this.connectedDevices = apiResponse?.phoneDetails?.isReachable ? [{ ...routerConfig }, ...this.connectedDevices, {...phoneConfig}] : [{ ...routerConfig }, ...this.connectedDevices] ;
     } else {
       this.connectedDevices = [
         {

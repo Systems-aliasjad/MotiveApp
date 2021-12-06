@@ -39,7 +39,7 @@
     <!-- One Box End -->
 
     <!-- Left Arrow Start -->
-    <div class="arrow left-arrow" *ngIf="connectedDevices">
+    <div class="arrow left-arrow" *ngIf="connectedDevices && !disableLeft" (click)="clickLeft()">
       <img src="assets/images/action-icons/icon_networkmap_arrow_left.svg" alt="" (error)="onImgError($event)" />
     </div>
     <!-- Left Arrow End -->
@@ -49,33 +49,33 @@
       <div class="boxes left-box">
         <div class="box-curve-lines curve-lines-left">
           <div class="box-big">
-            <div class="box-curve-line" *ngIf="connectedDevices[0]">
-              <div [class]="connectedDevices[0]?.className + '-curve-line curve-line'"></div>
-              <div [class]="connectedDevices[0]?.className + '-horizontal-line horizontal-line'"></div>
+            <div class="box-curve-line" *ngIf="connectedDevices[flag]">
+              <div [class]="connectedDevices[flag]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[flag]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
-            <div class="box-small" *ngIf="connectedDevices[1]">
-              <div [class]="connectedDevices[1]?.className + '-curve-line curve-line'"></div>
-              <div [class]="connectedDevices[1]?.className + '-horizontal-line horizontal-line'"></div>
+            <div class="box-small" *ngIf="connectedDevices[flag + 1]">
+              <div [class]="connectedDevices[flag + 1]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[flag + 1]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
           </div>
         </div>
         <div class="image-text-boxes-container">
-          <div class="image-text-boxes left-box-one" *ngIf="connectedDevices[0]">
+          <div class="image-text-boxes left-box-one" *ngIf="connectedDevices[flag]">
             <div class="image-text-box">
-              <div [class]="connectedDevices[0]?.className + '-state state'">
-                <img [src]="connectedDevices[0]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
+              <div [class]="connectedDevices[flag]?.className + '-state state'">
+                <img [src]="connectedDevices[flag]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">{{ connectedDevices[0]?.title }}</span>
-              <span class="image_label">{{ connectedDevices[0]?.subTitle }}</span>
+              <span class="image_label">{{ connectedDevices[flag]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[flag]?.subTitle }}</span>
             </div>
           </div>
-          <div class="image-text-boxes left-box-two" *ngIf="connectedDevices[1]">
+          <div class="image-text-boxes left-box-two" *ngIf="connectedDevices[flag + 1]">
             <div class="image-text-box">
-              <div [class]="connectedDevices[1]?.className + '-state state'">
-                <img [src]="connectedDevices[1]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
+              <div [class]="connectedDevices[flag + 1]?.className + '-state state'">
+                <img [src]="connectedDevices[flag + 1]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">{{ connectedDevices[1]?.title }}</span>
-              <span class="image_label">{{ connectedDevices[1]?.subTitle }}</span>
+              <span class="image_label">{{ connectedDevices[flag + 1]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[flag + 1]?.subTitle }}</span>
             </div>
           </div>
         </div>
@@ -83,33 +83,33 @@
       <div class="boxes right-box">
         <div class="box-curve-lines curve-lines-right">
           <div class="box-big">
-            <div class="box-curve-line" *ngIf="connectedDevices[3]">
-              <div [class]="connectedDevices[3]?.className + '-curve-line curve-line'"></div>
-              <div [class]="connectedDevices[3]?.className + '-horizontal-line horizontal-line'"></div>
+            <div class="box-curve-line" *ngIf="connectedDevices[flag + 3]">
+              <div [class]="connectedDevices[flag + 3]?.className + '-curve-line curve-line'"></div>
+              <div [class]="connectedDevices[flag + 3]?.className + '-horizontal-line horizontal-line'"></div>
             </div>
-            <div class="box-small" *ngIf="connectedDevices[2]">
-              <div [class]="connectedDevices[2]?.className + '-horizontal-line horizontal-line'"></div>
-              <div [class]="connectedDevices[2]?.className + '-curve-line curve-line'"></div>
+            <div class="box-small" *ngIf="connectedDevices[flag + 2]">
+              <div [class]="connectedDevices[flag + 2]?.className + '-horizontal-line horizontal-line'"></div>
+              <div [class]="connectedDevices[flag + 2]?.className + '-curve-line curve-line'"></div>
             </div>
           </div>
         </div>
         <div class="image-text-boxes-container">
-          <div class="image-text-boxes right-box-one" *ngIf="connectedDevices[2]">
+          <div class="image-text-boxes right-box-one" *ngIf="connectedDevices[flag + 2]">
             <div class="image-text-box">
-              <div [class]="connectedDevices[2]?.className + '-state state'">
-                <img [src]="connectedDevices[2]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
+              <div [class]="connectedDevices[flag + 2]?.className + '-state state'">
+                <img [src]="connectedDevices[flag + 2]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">{{ connectedDevices[2]?.title }}</span>
-              <span class="image_label">{{ connectedDevices[2]?.subTitle }}</span>
+              <span class="image_label">{{ connectedDevices[flag + 2]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[flag + 2]?.subTitle }}</span>
             </div>
           </div>
-          <div class="image-text-boxes right-box-two" *ngIf="connectedDevices[3]">
+          <div class="image-text-boxes right-box-two" *ngIf="connectedDevices[flag + 3]">
             <div class="image-text-box">
-              <div [class]="connectedDevices[3]?.className + '-state state'">
-                <img [src]="connectedDevices[3]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
+              <div [class]="connectedDevices[flag + 3]?.className + '-state state'">
+                <img [src]="connectedDevices[flag + 3]?.url" alt="Smart Phone okay State" (error)="onImgError($event)" />
               </div>
-              <span class="image_label">{{ connectedDevices[3]?.title }}</span>
-              <span class="image_label">{{ connectedDevices[3]?.subTitle }}</span>
+              <span class="image_label">{{ connectedDevices[flag + 3]?.title }}</span>
+              <span class="image_label">{{ connectedDevices[flag + 3]?.subTitle }}</span>
             </div>
           </div>
         </div>
@@ -118,7 +118,7 @@
     <!-- Five Boxes End -->
 
     <!-- Right Arrow Start -->
-    <div class="arrow right-arrow" *ngIf="connectedDevices">
+    <div class="arrow right-arrow" *ngIf="connectedDevices && !disableRight" (click)="clickRight()">
       <img src="assets/images/action-icons/icon_networkmap_arrow_right.svg" alt="" (error)="onImgError($event)" />
     </div>
     <!-- Right Arrow End -->
