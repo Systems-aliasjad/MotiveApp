@@ -131,17 +131,17 @@ export class QuickLinksAllComponent implements OnInit {
     } else if (item?.nextSignal === QUICK_ACTION.SR_FOLLOWUP) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
-        this.sharedService.setApiResponseData({ openSrs: data?.result?.responseData?.openSrs, data: data });
+        this.sharedService.setApiResponseData(data?.result?.responseData);
+        this.sharedService.setApiResponseOpenSrs({ openSrs: data?.result?.responseData?.openSrs, data: data });
 
         //Hard Coaded Screens
         //  data.result.screenCode = flowCodes.QASRFU2;
         //   this.sharedService.setApiResponseData({ openSrs: ['123', '456', '789', '101112'], data: data });
         this.sharedService.setLoader(false);
-        if (data?.result?.screenCode === flowCodes.QASRFU2) {
-          this.router.navigate(['/track-request/open-srs']);
-        } else {
-          this.router.navigate(['/track-request/work-not-completed']);
-        }
+
+        var screenCode = data?.result?.screenCode;
+
+        this.sharedService.TrackRecentComplaintByCode(screenCode);
       });
     } else if (item?.nextSignal === QUICK_ACTION.PNP_FACTORY_RESET) {
       const quickLinksData = this.sharedService.getQuickLinksData();

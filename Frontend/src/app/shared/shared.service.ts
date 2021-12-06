@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { LandingProductCodes } from './constants/constants';
+import { flowCodes, LandingProductCodes } from './constants/constants';
 
 @Injectable({
   providedIn: 'root',
@@ -22,7 +22,7 @@ export class SharedService {
 
   loaderSubject: BehaviorSubject<boolean>;
   loader$: Observable<boolean>;
-  storage: any[]=[];
+  storage: any[] = [];
 
   encryptedID: string = '';
 
@@ -45,6 +45,7 @@ export class SharedService {
   apiInternetGenericResponse;
 
   apiResponseHomeZoneCall;
+  apiResponseOpenSrs;
 
   productCodeLanding: string = '';
 
@@ -56,6 +57,14 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  setApiResponseOpenSrs(data) {
+    this.apiResponseOpenSrs = data;
+  }
+
+  getApiResponseOpenSrs() {
+    return this.apiResponseOpenSrs;
   }
 
   setOtherApiResponseData(data) {
@@ -269,25 +278,24 @@ export class SharedService {
   }
 
   getLocalStorage(key) {
-   return this.storage.find(x=>x.key===key).value;
+    if (this.storage.length === 0) return '';
+
+    return this.storage.find((x) => x.key === key)?.value ?? '';
   }
 
   setLocalStorage(key, value) {
-    if(this.storage.length===0)
-    this.storage.push({key:key,value:value})
+    if (this.storage.length === 0) this.storage.push({ key: key, value: value });
+    else {
+      var index = this.storage.find((x) => x.key == key);
 
-else{
- var index= this.storage.find((x) => x.key == key);
-
- if(index===undefined){
-  this.storage.push({key:key,value:value})
- }
- else{
-   this.storage = this.storage.filter(x=>x.key!=key);
-   this.storage.push({key:key,value:value})
- }
-}
-}
+      if (index === undefined) {
+        this.storage.push({ key: key, value: value });
+      } else {
+        this.storage = this.storage.filter((x) => x.key != key);
+        this.storage.push({ key: key, value: value });
+      }
+    }
+  }
   createPasswrodIssuesDynamic(passwordIssueList: any[]) {
     var newList = [];
     passwordIssueList.forEach((element) => {
@@ -323,5 +331,66 @@ else{
     });
 
     return newList;
+  }
+
+  TrackRecentComplaintByCode(screenCode) {
+    switch (screenCode) {
+      case flowCodes.E2ECRM31:
+        this.router.navigate(['track-request/try-again-error']);
+        break;
+      case flowCodes.E2ECRM33:
+        this.router.navigate(['track-request/request-detail']);
+        break;
+      case flowCodes.E2ECRM35:
+        this.router.navigate(['track-request/request-already-exists']);
+        break;
+      case flowCodes.E2ECRM36:
+        this.router.navigate(['track-request/request-under-process']);
+        break;
+      case flowCodes.E2ECRM37:
+        this.router.navigate(['track-request/request-in-process']);
+        break;
+      case flowCodes.E2ECRM38:
+        this.router.navigate(['track-request/service-unavailable']);
+        break;
+      case flowCodes.E2ECRM39:
+        this.router.navigate(['track-request/action-required']);
+        break;
+      case flowCodes.E2ECRM310:
+      case flowCodes.E2ECRM311:
+        this.router.navigate(['track-request/appointment-set-successfully']);
+        break;
+      case flowCodes.E2ECRM312:
+        this.router.navigate(['track-request/work-not-completed']);
+        break;
+      case flowCodes.E2ECRM313:
+        this.router.navigate(['track-request/request-already-exists']);
+        break;
+      case flowCodes.E2ECRM314:
+      case flowCodes.E2ECRM315:
+        this.router.navigate(['track-request/request-detail']);
+        break;
+      case flowCodes.E2ECRM316:
+      case flowCodes.E2ECRM317:
+      case flowCodes.E2ECRM318:
+      case flowCodes.E2ECRM319:
+      case flowCodes.E2ECRM320:
+      case flowCodes.E2ECRM321:
+      case flowCodes.E2ECRM322:
+      case flowCodes.E2ECRM324:
+        this.router.navigate(['track-request/request-in-process']);
+        break;
+
+      case flowCodes.QASRFU2:
+        this.router.navigate(['/track-request/open-srs']);
+        break;
+      default:
+        this.router.navigate(['/track-request/work-not-completed']);
+        break;
+
+      // case flowCodes.E2ECRM323:
+      //   this.router.navigate(['track-request/action-required']);
+      //   break;
+    }
   }
 }
