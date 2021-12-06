@@ -86,6 +86,7 @@ import { ResetWifiTryAgainErrorComponent } from './routes/reset-wifi-try-again-e
 import { PasswordResetFaliureComponent } from './routes/password-reset-failure.component';
 import { ResetInternetPasswordTryAgainErrorComponent } from './routes/reset-internet-password-try-again-error.component';
 import { QuickHomeZoneResetWifiComponent } from './routes/quick-home-zone-reset-wifi/quick-home-zone-reset-wifi.component';
+import { ResetWifiPasswrodScreenDialogComponent } from './routes/reset-wifi-password-screen-dialog.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 const routes: Routes = [
@@ -523,6 +524,10 @@ const routes: Routes = [
   {
     path: 'quick-home-zone-reset-wifi',
     component: QuickHomeZoneResetWifiComponent,
+  },
+  {
+    path: 'reset-wifi-password-screen-dialog',
+    component: ResetWifiPasswrodScreenDialogComponent,
   },
 ];
 

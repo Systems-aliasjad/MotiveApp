@@ -222,7 +222,8 @@ export class HelperService {
       }
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
-      this.router.navigate(['issues/internet/reset-wifi-password']);
+      this.router.navigate(['issues/internet/reset-wifi-password-screen-dialog']);
+      // this.router.navigate(['issues/internet/reset-wifi-password']);
       // if (data?.routerConfigRequired) {
       //   this.router.navigate(['issues/internet/router-reset-successfull-message']);
       // } else {
@@ -395,6 +396,7 @@ export class HelperService {
       if (!routerDetails?.isReachable) {
         this.router.navigate(['issues/internet/router-not-reachable']);
       } else if (routerDetails?.isRebootRequired) {
+        ///Needs to be changed
         this.router.navigate(['issues/internet/router-reboot-required']);
       } else if (routerDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/internet/router-upgrade-recommended']);

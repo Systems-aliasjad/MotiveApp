@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes, successImgSrc } from 'src/app/shared/constants/constants';
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
@@ -22,9 +23,21 @@ export class RebootConfirmDialogComponent implements OnInit {
   callapi() {
     this.dismiss();
     this.sharedService.setLoader(true);
-    this.backendService.rebootMyDevice('ONT').subscribe(() => {
+    this.backendService.rebootMyDevice('ONT').subscribe((data) => {
       this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
+
+      if (data?.result?.screenCode === flowCodes.genericError) {
+        this.router.navigate(['/unknown-error']);
+      } else if (data?.result?.screenCode === flowCodes.routerRebootSuccess) {
+        this.router.navigate(['/issues/phone/ont-reboot-message']);
+      } else if (data?.result?.screenCode === flowCodes.routerRebootFaliure) {
+        this.router.navigate(['/issues/phone/ont-not-restart-instructions']);
+      }
+
+      // CI12:Success
+      // CI22  //failure
+
+      // this.router.navigate(['/issues/phone/no-issue-phone-value-added']);
     });
   }
 }

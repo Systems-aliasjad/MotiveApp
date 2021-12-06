@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'complaint-details-message',
@@ -40,7 +41,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
     type: 'link',
     title: 'BUTTONS.CANCEL_COMPLAINT',
   };
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -61,7 +62,7 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
     this.Section2Template = ApplicableCodes.complaintDetailsTarckComplaintTemplate;
 
     this.Section2Data = {
-      referecneNo: temp?.referecneNo || '-',
+      referenceNo: temp?.referenceNo || '-',
       appointmentDetails: temp?.complaintNature || '-',
     };
   }
@@ -71,11 +72,12 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/track-complaint/complaint-already-message']);
+    this.router.navigate(['/track-complaint/complaint-under-process-message']);
   }
 
   button3Listener() {
-    this.router.navigate(['thanks']);
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
     // this.router.navigate(['/bookComplaint']);
   }
 }

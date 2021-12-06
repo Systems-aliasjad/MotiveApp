@@ -54,8 +54,8 @@
   -o-transform: scaleX($ratio);
   transform: scaleX($ratio);
 }
-@mixin pause ($pause) {
-  .app-container[dir=#{$pause}] & {
+@mixin direction ($direction) {
+  html[dir=#{$direction}] & {
       @content;
   }
 }
@@ -65,7 +65,7 @@
       @content;
   }
 }
-/*
+
 $isRTL: false !default;
 @mixin rtl {
   @if $isRTL {
@@ -78,4 +78,4 @@ $isRTL: false !default;
       @content;
     }
   }
-} */
+}

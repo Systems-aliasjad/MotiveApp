@@ -57,7 +57,7 @@ export class ComplaintDetailsResolvedMessageComponent implements OnInit, OnDestr
     this.Section2Template = ApplicableCodes.complaintDetailsResolvedTarckComplaintTemplate;
     var apiResponse = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      referecneNo: apiResponse?.referecneNo ?? '-', // '436529873',
+      referenceNo: apiResponse?.referenceNo ?? '-', // '436529873',
       resolvedDetails: 'Jul 10 2019, 10:30 AM',
     };
     this.Section3Data = CustomerJourneyConstants.compliantDetailsResolvedSection3TrackComplaint;
