@@ -30,6 +30,14 @@ export class QuickLinksAllComponent implements OnInit {
   initialization() {
     this.codeType = this.sharedService.getproductCodeLanding();
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
+    if(!this.sharedService.getHomeZoneFlag()){
+      const links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
+      this.quickLinks = links;
+    }
+    if(!this.sharedService.getElifeOnFlag()){
+      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed' && x.linkTo !== 'issues/tv/quick-transfer-channel-to-another-tvBox')
+      this.quickLinks = links;
+    }   
     // this.sharedService.setHeaderConfig('HEADER.QUICK_LINKS', false);
   }
 

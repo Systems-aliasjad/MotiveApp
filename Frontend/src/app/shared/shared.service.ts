@@ -39,6 +39,9 @@ export class SharedService {
     singleLine: false,
     showBackBtn: true,
   };
+  homeZoneFlag;
+  eLifeOnFlag ;
+  ccbPinFlag;
 
   apiResponseDataNoIssuesSTB;
   apiResponseDataContinueSTB;
@@ -329,7 +332,12 @@ export class SharedService {
         newList.push(element);
       }
     });
-
+    if(!this.getElifeOnFlag()){
+      newList = newList.filter((data) => data.ProductID !== 4)
+    }
+    if(!this.getCcbPinFlag()){
+      newList = newList.filter((data) => data.ProductID !== 5)
+    }
     return newList;
   }
 
@@ -392,5 +400,25 @@ export class SharedService {
       //   this.router.navigate(['track-request/action-required']);
       //   break;
     }
+  }
+
+  setHomeZoneFlag(homeZone){
+      this.homeZoneFlag = homeZone;
+  }
+
+  getHomeZoneFlag(){
+    return this.homeZoneFlag;
+  }
+  setElifeOnFlag(eLifeOn){
+    this.eLifeOnFlag = eLifeOn;
+  }
+  getElifeOnFlag(){
+    return this.eLifeOnFlag;
+  }
+  setCcbPinFlag(ccbPin){
+    this.ccbPinFlag = ccbPin;
+  }
+  getCcbPinFlag(){
+    return this.ccbPinFlag;
   }
 }

@@ -181,6 +181,10 @@ export class IssueListDialog implements OnInit {
       } else {
         this.issuesList = this.internetIssuesList;
       }
+      if(!this.sharedService.getHomeZoneFlag()){
+        var list = this.internetIssuesList.filter((x) => x.route !== 'issues/internet/unable-to-connect-to-homezone');
+        this.issuesList = list;
+      }
     } else if (this.flow === EIssueFlow.tvIssue) {
       this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
       this.showViewGuidline = false;
