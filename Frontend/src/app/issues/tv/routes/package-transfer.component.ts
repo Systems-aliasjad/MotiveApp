@@ -68,28 +68,31 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       const navigation = this.router.getCurrentNavigation();
       this.selectedCard = navigation?.extras?.state?.selectedCard;
       var apiResponse = this.sharedService.getApiResponseData();
+
       var ListStbDetails: any[] = apiResponse?.result?.responseData;
       var listFinal = ListStbDetails.filter((x) => x.stbSerialNumber != this.selectedCard.ID);
-      listFinal.forEach((element) => {
-        element?.packages.forEach((packages) => {
-          var index = {
-            title: 'STB SR#' + element?.stbSerialNumber,
-            description: packages?.packageName,
-            ID: element?.stbSerialNumber,
-            PackageID: packages?.packageId,
-          };
+      // listFinal?.forEach((element) => {
+      //   element?.packages?.forEach((packages) => {
+      //     var index = {
+      //       title: 'STB SR#' + element?.stbSerialNumber,
+      //       description: packages?.packageName,
+      //       ID: element?.stbSerialNumber,
+      //       PackageID: packages?.packageId,
+      //     };
 
-          this.filteredList.push(index);
+      //     this.filteredList.push(index);
 
-          // if (this.filteredList.length === 0) {
-          //   this.filteredList.push(index);
-          // } else {
-          //   var alreadyAdded = this.filteredList.find((x) => x.ID === index.ID);
-          //   if (alreadyAdded === undefined) {
-          //     this.filteredList.push(index);
-          //   }
-          // }
-        });
+      //   });
+      // });
+
+      listFinal?.forEach((element) => {
+        var index = {
+          title: 'STB SR#' + element?.stbSerialNumber,
+          // description: element?.stbSerialNumber,
+          ID: element?.stbSerialNumber,
+        };
+
+        this.filteredList.push(index);
       });
 
       this.cardList = this.filteredList;
@@ -115,15 +118,14 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
   button1Listener(_event) {
     this.formGroup = _event;
     var data = {
-      sourceSTB: this.selectedCard.ID,
-      destSTB: this.formGroup.controls['radioButton'].value,
-      pkgID: this.selectedCard.PackageID,
-      signal: 'next',
+      sourceSTB: this.selectedCard.ID, ///Soruce STB
+      destSTB: this.formGroup.controls['radioButton'].value, ///Selected STB
+      pkgID: this.selectedCard.PackageID, ////Soure Sellected Package
     };
 
     if (this.sharedService.getQuickLinksData()) {
       this.sharedService.setLoader(true, 'MESSAGES.PACKAGE_TRANSFER_IN_PROGRESS');
-      this.backendService.quickTransferPackage(data).subscribe((data: any) => {
+      this.backendService.transferPackageNextStep(data).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
           this.router.navigate(['issues/tv/package-transfer-success']);
@@ -134,7 +136,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
       });
     } else {
       this.sharedService.setLoader(true, 'MESSAGES.PACKAGE_TRANSFER_IN_PROGRESS');
-      this.backendService.transferPackage(data).subscribe((data: any) => {
+      this.backendService.transferPackageNextStep(data).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
           this.router.navigate(['issues/tv/package-transfer-success']);

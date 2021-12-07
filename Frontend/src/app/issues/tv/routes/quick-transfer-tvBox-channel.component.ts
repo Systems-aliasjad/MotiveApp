@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
@@ -18,44 +18,25 @@ import { SharedService } from 'src/app/shared/shared.service';
     (cardClicked)="getCardClickedValue($event)"
   ></app-package-available>`,
 })
-export class QuickTransferTvboxChannelComponent implements OnInit, OnDestroy {
+export class QuickTransferTvboxChannelComponent implements OnInit, OnDestroy, AfterViewInit {
   subscription: Subscription;
   subHeader;
   quickLinkNextSignal;
   packages: any = [];
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  ngAfterViewInit(): void {
+    this.sharedService.setLoader(true);
+    this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((data) => {
+      this.sharedService.setLoader(false);
+      if (data?.result?.screenCode === flowCodes.QAIPTVPT3) {
+        this.sharedService.setApiResponseData(data);
+        var packagesResponse: any[] = data?.result?.responseData;
+        if (packagesResponse.length === 1) {
+          this.router.navigate(['issues/tv/single-stb-found']);
+        }
 
-  ngOnInit() {
-    this.subscription = this.activatedRoute.data.subscribe(() => {
-      this.updateHeader();
-    });
-    this.updatePageContent();
-  }
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-  updateHeader() {
-    //  this.sharedService.setHeaderConfig('HEADER.AVAILABLE_PACKAGES', false, true);
-  }
-
-  headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.AVAILABLE_PACKAGES',
-    showBackBtn: true,
-  };
-
-  updatePageContent() {
-    this.subHeader = 'SUBHEADER.CHOOSE_THE_PLAN_PACKAGE_YOU_LIKE_TO_TRANSFER_TO_ANOTHER_TV_BOX';
-
-    if (this.sharedService.getQuickLinksData()) {
-      let apiResponse = this.sharedService.getApiResponseData();
-      var packagesResponse: any[] = apiResponse?.stbList;
-      if (packagesResponse.length === 1) {
-        this.router.navigate(['issues/tv/single-stb-found']);
-      } else {
-        packagesResponse.forEach((element) => {
-          element?.packages.forEach((packages) => {
+        packagesResponse?.forEach((element) => {
+          element?.packages?.forEach((packages) => {
             var index = {
               title: packages?.packageName,
               description: 'STB SR#' + element?.stbSerialNumber,
@@ -74,7 +55,61 @@ export class QuickTransferTvboxChannelComponent implements OnInit, OnDestroy {
           });
         });
       }
-    }
+    });
+  }
+
+  ngOnInit() {
+    this.subscription = this.activatedRoute.data.subscribe(() => {
+      this.updateHeader();
+    });
+    this.updatePageContent();
+    const navigation = this.router.getCurrentNavigation();
+    this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+
+  updateHeader() {
+    //  this.sharedService.setHeaderConfig('HEADER.AVAILABLE_PACKAGES', false, true);
+  }
+
+  headerConfig: IPageHeader = {
+    pageTitle: 'HEADER.AVAILABLE_PACKAGES',
+    showBackBtn: true,
+  };
+
+  updatePageContent() {
+    this.subHeader = 'SUBHEADER.CHOOSE_THE_PLAN_PACKAGE_YOU_LIKE_TO_TRANSFER_TO_ANOTHER_TV_BOX';
+
+    // if (this.sharedService.getQuickLinksData()) {
+    //   let apiResponse = this.sharedService.getApiResponseData();
+    //   var packagesResponse: any[] = apiResponse?.stbList;
+    //   if (packagesResponse.length === 1) {
+    //     this.router.navigate(['issues/tv/single-stb-found']);
+    //   } else {
+    //     packagesResponse?.forEach((element) => {
+    //       element?.packages?.forEach((packages) => {
+    //         var index = {
+    //           title: packages?.packageName,
+    //           description: 'STB SR#' + element?.stbSerialNumber,
+    //           ID: element?.stbSerialNumber,
+    //           PackageID: packages?.packageId,
+    //         };
+
+    //         if (this.packages.length === 0) {
+    //           this.packages.push(index);
+    //         } else {
+    //           var alreadyAdded = this.packages.find((x) => x.title == index.title && x.ID == index.ID);
+    //           if (alreadyAdded === undefined) {
+    //             this.packages.push(index);
+    //           }
+    //         }
+    //       });
+    //     });
+    //   }
+    // }
 
     ///ToDO Uncomment this
 

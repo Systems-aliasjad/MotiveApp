@@ -74,8 +74,8 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
           this.router.navigate(['issues/tv/single-stb-found']);
         }
 
-        packagesResponse.forEach((element) => {
-          element?.packages.forEach((packages) => {
+        packagesResponse?.forEach((element) => {
+          element?.packages?.forEach((packages) => {
             var index = {
               title: packages?.packageName,
               description: 'STB SR#' + element?.stbSerialNumber,

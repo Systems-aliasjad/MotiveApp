@@ -207,7 +207,12 @@ export class HelperService {
       this.router.navigate(['issues/internet/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
-      this.router.navigate(['issues/internet/issue-not-fixed']);
+
+      if (data?.hsiPasswordReset) {
+        this.router.navigate([`issues/internet/internet-password-reset`]);
+      } else {
+        this.router.navigate(['issues/internet/issue-not-fixed']);
+      }
     } else if (CodeId === flowCodes.CI72) {
       if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         this.sharedService.setApiResponseData({
@@ -222,8 +227,8 @@ export class HelperService {
       }
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
-      this.router.navigate(['issues/internet/reset-wifi-password-screen-dialog']);
-      // this.router.navigate(['issues/internet/reset-wifi-password']);
+      //this.router.navigate(['issues/internet/reset-wifi-password-screen-dialog']);
+      this.router.navigate(['issues/internet/reset-wifi-password']);
       // if (data?.routerConfigRequired) {
       //   this.router.navigate(['issues/internet/router-reset-successfull-message']);
       // } else {
@@ -395,13 +400,13 @@ export class HelperService {
     if (routerDetails?.isManaged) {
       if (!routerDetails?.isReachable) {
         this.router.navigate(['issues/internet/router-not-reachable']);
+      } else if (routerDetails.isResetRequired) {
+        this.router.navigate(['issues/internet/router-reset-required']);
       } else if (routerDetails?.isRebootRequired) {
         ///Needs to be changed
         this.router.navigate(['issues/internet/router-reboot-required']);
       } else if (routerDetails?.isUpgradeRequired) {
         this.router.navigate(['issues/internet/router-upgrade-recommended']);
-      } else if (routerDetails.isResetRequired) {
-        this.router.navigate(['issues/internet/router-reset-required']);
       }
     } else {
       this.router.navigate(['issues/internet/third-party-router']);
