@@ -5,6 +5,8 @@ import { ApplicableCodes, warningImgSrc } from 'src/app/shared/constants/constan
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'open-service-request-message',
@@ -36,7 +38,7 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -55,17 +57,29 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
     this.imgSrc = warningImgSrc;
     this.Section1Data = CustomerJourneyConstants.OpenTechnicalSR;
     this.Section2Template = ApplicableCodes.openServiceRequestTemplate;
+    // this.Section2Data = {
+    //   reqNo: '436529873',
+    //   reqType: 'Xxxxx xxxxx xxxx',
+    //   dateVisit: 'Jul 10 2019, 10:30 AM',
+    //   status: 'Xxxxx xxxxx xxxx',
+    // };
+
+    const temp = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      reqNo: '436529873',
-      reqType: 'Xxxxx xxxxx xxxx',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      status: 'Xxxxx xxxxx xxxx',
+      reqNo: temp?.referenceNo ?? '-',
+      reqType: temp?.requestType ?? '-',
+      dateVisit: temp?.dateOfVisit ?? '-',
+      status: temp?.status ?? '-',
     };
   }
 
   button1Listener() {
-    this.router.navigate(['/track-request/request-detail']);
+    this.sharedService.CallApiTrackRecentRequest();
+    // this.router.navigate(['/track-request/request-detail']);
   }
 
-  button2Listener() {}
+  button2Listener() {
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
+  }
 }

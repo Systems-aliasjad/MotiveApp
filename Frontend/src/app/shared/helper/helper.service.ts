@@ -198,8 +198,20 @@ export class HelperService {
         this.handleCI9RouterCases(data?.routerDetails);
       }
     } else if (CodeId === flowCodes.movingElifeConnection) {
+      this.sharedService.setApiResponseData({
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
+        status: data?.status,
+      });
       this.router.navigate(['issues/internet/osrp/move-elife-connection']);
     } else if (CodeId === flowCodes.ElifeCancellationRequest) {
+      this.sharedService.setApiResponseData({
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
+        status: data?.status,
+      });
       this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
@@ -286,10 +298,22 @@ export class HelperService {
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/tv/account-not-active']);
     } else if (CodeId === flowCodes.movingElifeConnection) {
-      this.sharedService.setApiResponseData(data);
+      this.sharedService.setApiResponseData({
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
+        status: data?.status,
+      });
+      //this.sharedService.setApiResponseData(data);
       this.router.navigate(['issues/tv/osrp/move-elife-connection']); ///////OS
     } else if (CodeId === flowCodes.ElifeCancellationRequest) {
-      this.sharedService.setApiResponseData(data?.result?.responseData);
+      this.sharedService.setApiResponseData({
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
+        status: data?.status,
+      });
+      //this.sharedService.setApiResponseData(data?.result?.responseData);
       this.router.navigate(['issues/tv/osrp/cancel-elife-connection']);
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/tv/osrp/account-temporarily-disconnected']);

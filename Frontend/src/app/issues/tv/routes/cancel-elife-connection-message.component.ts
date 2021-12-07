@@ -71,7 +71,9 @@ export class CancelElifeConnectionMessageComponent implements OnInit, OnDestroy 
     };
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.sharedService.CallApiTrackRecentRequest();
+  }
 
   button2Listener() {
     // this.router.navigate(['/thanks']);
