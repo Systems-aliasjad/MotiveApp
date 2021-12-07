@@ -71,6 +71,9 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       };
 
       this.codeType = data?.result?.productCode;
+      this.sharedService.setHomeZoneFlag(data?.result?.menuFlags?.HOME_ZONE ?? true);
+      this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true)
+      this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true)
       this.sharedService.setProductCodeLanding(this.codeType ?? '');
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });

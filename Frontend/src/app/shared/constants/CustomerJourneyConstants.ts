@@ -598,9 +598,9 @@ export class CustomerJourneyConstants {
 
   public static accountNotActive = {
     header: 'MESSAGES.YOUR_ACCOUNT_IS_DISCONNECTED_TEMPORARILY',
-    span: 'MESSAGES.CLICK_HERE',
-    spanListener: () => {},
-    paragraphs: ['MESSAGES.IF_YOU_WISH_TO_GET_BILL_DETAILS_MAKE_PAYMENT'],
+    // span: 'MESSAGES.CLICK_HERE',
+    // spanListener: () => {},
+    // paragraphs: ['MESSAGES.IF_YOU_WISH_TO_GET_BILL_DETAILS_MAKE_PAYMENT'],
   };
 
   public static thirdPartyRoutersuccessfullyCase = {

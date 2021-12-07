@@ -49,9 +49,9 @@ export class AccountNotActiveMessageComponent implements OnInit, OnDestroy {
       }  
     }
     this.Section1Data = CustomerJourneyConstants.accountNotActive;
-    this.Section1Data.spanListener = () => {
-      window.location.href = url;
-    };
+    // this.Section1Data.spanListener = () => {
+    //   window.location.href = url;
+    // };
     this.imgSrc = warningImgSrc;
   }
 
