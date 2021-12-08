@@ -69,6 +69,7 @@ export class MoveElifeConnectionMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
+    this.sharedService.CallApiTrackRecentRequest();
     //   this.router.navigate(['/thanks']);
   }
 

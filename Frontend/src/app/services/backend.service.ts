@@ -265,7 +265,7 @@ export class BackendService {
 
   stbDetails() {
     if (environment.shouldCallAPI) {
-      return this.http.get(`motive/troubleshoot/stb-details`);
+      return this.http.get(`motive/troubleshoot/stb-detail`);
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);
@@ -299,6 +299,19 @@ export class BackendService {
     }
   }
 
+  transferPackageNextStep(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, {
+        data: {
+          ...data,
+        },
+        signal: 'next',
+      });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
   transferPackage(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/transfer-pkg`, data);

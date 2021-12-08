@@ -5,7 +5,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { flowCodes, LandingProductCodes } from './constants/constants';
+import { flowCodes, LandingProductCodes, QUICK_ACTION } from './constants/constants';
+import { BackendService } from '../services/backend.service';
 
 @Injectable({
   providedIn: 'root',
@@ -40,7 +41,7 @@ export class SharedService {
     showBackBtn: true,
   };
   homeZoneFlag;
-  eLifeOnFlag ;
+  eLifeOnFlag;
   ccbPinFlag;
 
   apiResponseDataNoIssuesSTB;
@@ -52,7 +53,7 @@ export class SharedService {
 
   productCodeLanding: string = '';
 
-  constructor(private translate: TranslateService, private router: Router) {
+  constructor(private translate: TranslateService, private router: Router, private backendService: BackendService) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
@@ -332,11 +333,11 @@ export class SharedService {
         newList.push(element);
       }
     });
-    if(!this.getElifeOnFlag()){
-      newList = newList.filter((data) => data.ProductID !== 4)
+    if (!this.getElifeOnFlag()) {
+      newList = newList.filter((data) => data.ProductID !== 4);
     }
-    if(!this.getCcbPinFlag()){
-      newList = newList.filter((data) => data.ProductID !== 5)
+    if (!this.getCcbPinFlag()) {
+      newList = newList.filter((data) => data.ProductID !== 5);
     }
     return newList;
   }
@@ -402,23 +403,39 @@ export class SharedService {
     }
   }
 
-  setHomeZoneFlag(homeZone){
-      this.homeZoneFlag = homeZone;
+  setHomeZoneFlag(homeZone) {
+    this.homeZoneFlag = homeZone;
   }
 
-  getHomeZoneFlag(){
+  getHomeZoneFlag() {
     return this.homeZoneFlag;
   }
-  setElifeOnFlag(eLifeOn){
+  setElifeOnFlag(eLifeOn) {
     this.eLifeOnFlag = eLifeOn;
   }
-  getElifeOnFlag(){
+  getElifeOnFlag() {
     return this.eLifeOnFlag;
   }
-  setCcbPinFlag(ccbPin){
+  setCcbPinFlag(ccbPin) {
     this.ccbPinFlag = ccbPin;
   }
-  getCcbPinFlag(){
+  getCcbPinFlag() {
     return this.ccbPinFlag;
+  }
+
+  CallApiTrackRecentRequest() {
+    this.setLoader(true);
+    this.backendService.quickActionsInitialData().subscribe((res) => {
+      this.setQuickLinksData(res?.result?.responseData);
+      this.setApiResponseData(res?.result?.responseData);
+
+      this.backendService.quickActionsNextStep(QUICK_ACTION.SR_FOLLOWUP).subscribe((data) => {
+        this.setApiResponseData(data?.result?.responseData);
+        this.setApiResponseOpenSrs({ openSrs: data?.result?.responseData?.openSrs, data: data });
+        this.setLoader(false);
+        var screenCode = data?.result?.screenCode;
+        this.TrackRecentComplaintByCode(screenCode);
+      });
+    });
   }
 }
