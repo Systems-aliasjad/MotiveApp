@@ -8,6 +8,7 @@ import { QuickLinksAllComponent } from './quick-links-all/quick-links-all.compon
 import { GenericErrorComponent } from './shared/components/generic-error/generic-error.component';
 import { GenericErrorIssuesComponent } from './shared/components/generic-error-issues/generic-error-issues.component';
 import { InstallNewRouterComponent } from './common-quick-links/install-new-router/install-new-router.component';
+import { UnknownErrorComesComponent } from './shared/components/unknown-error-comes/unknown-error-comes.component';
 
 const routes: Routes = [
   {
@@ -72,6 +73,10 @@ const routes: Routes = [
   {
     path: 'thanks',
     component: ThankyouScreenComponent,
+  },
+  {
+    path: 'error-comes',
+    component: UnknownErrorComesComponent,
   },
   // {
   //   path: 'issues/other/account-id',

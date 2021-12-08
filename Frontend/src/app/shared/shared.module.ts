@@ -38,6 +38,7 @@ import { GenericErrorIssuesComponent } from './components/generic-error-issues/g
 import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { SafePipe } from './pipe/safePipe';
 import { SixLayerComponent } from './components/network-diagrams/six-layer/six-layer.component';
+import { UnknownErrorComesComponent } from './components/unknown-error-comes/unknown-error-comes.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { SixLayerComponent } from './components/network-diagrams/six-layer/six-l
     TransferPackageComponent,
     GenericErrorIssuesComponent,
     SafePipe,
+    UnknownErrorComesComponent,
   ],
   imports: [
     CommonModule,
