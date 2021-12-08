@@ -35,7 +35,7 @@ export class QuickLinksAllComponent implements OnInit {
       this.quickLinks = links;
     }
     if(!this.sharedService.getElifeOnFlag()){
-      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed' && x.linkTo !== 'issues/tv/quick-transfer-channel-to-another-tvBox')
+      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed')
       this.quickLinks = links;
     }   
     // this.sharedService.setHeaderConfig('HEADER.QUICK_LINKS', false);
