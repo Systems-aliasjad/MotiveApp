@@ -69,7 +69,7 @@ export class TvDetailComponent implements OnInit {
       data = data.result.responseData;
     }
 
-    this.eLifeStatus = data?.elifeGameStatus;
+    this.eLifeStatus = data?.elifeResetPswd;
     this.eLifeGameStatus = data?.elifeGameStatus;
     for (var index = 0; index < data?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
