@@ -7,6 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Router Upgrade Success
@@ -37,7 +38,13 @@ export class RouterUpgradeSuccessComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private backendService: BackendService,
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -62,6 +69,7 @@ export class RouterUpgradeSuccessComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     // this.router.navigate(['issues/internet/no-issue']);
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
     this.router.navigate(['/thanks']);
   }
 }

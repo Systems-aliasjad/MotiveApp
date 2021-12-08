@@ -65,7 +65,7 @@ export class RouterUpgradeRecommendedFormComponent implements OnInit, OnDestroy 
     this.sharedService.setLoader(true);
     this.backendService.upsellRequest({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/internet/router-upgrade-success'], { state: { referenceNo: data?.result?.referenceNo } });
+      this.router.navigate(['/issues/internet/router-upgrade-success'], { state: { referenceNo: data?.result?.responseData?.referenceNo } });
     });
   }
 

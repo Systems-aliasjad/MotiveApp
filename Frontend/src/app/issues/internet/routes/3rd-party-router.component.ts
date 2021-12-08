@@ -25,8 +25,6 @@ import { SharedService } from '../../../shared/shared.service';
     (button2Click)="button2Listener()"
     [button3]="button3"
     (button3Click)="button3Listener()"
-    [button4]="button4"
-    (button4Click)="button4Listener()"
   >
   </app-diagnose-issue>`,
 })

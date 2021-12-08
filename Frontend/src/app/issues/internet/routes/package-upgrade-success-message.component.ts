@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'package-upgrade-success-message',
@@ -29,7 +30,7 @@ export class PackageUpgradeSuccessMessageComponent implements OnInit, OnDestroy 
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,6 +55,7 @@ export class PackageUpgradeSuccessMessageComponent implements OnInit, OnDestroy 
 
   button1Listener() {
     // this.router.navigate(['issues/internet/no-issue']);
-    this.router.navigate(['thanks']);
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
+    this.router.navigate(['/thanks']);
   }
 }
