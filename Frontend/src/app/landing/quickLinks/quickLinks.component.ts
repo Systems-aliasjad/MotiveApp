@@ -1,6 +1,8 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
+import { ResetFactoryDefaultDialog } from 'src/app/issues/internet/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { BackendService } from 'src/app/services/backend.service';
 import { flowCodes, motiveSubscriptions, QUICK_ACTION } from 'src/app/shared/constants/constants';
 import { ICard } from 'src/app/shared/constants/types';
@@ -25,7 +27,13 @@ export class QuickLinksComponent implements OnInit, OnChanges {
   width: number = window.innerWidth;
   mobileWidth: number = 760;
   subscription: Subscription;
-  constructor(private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService, private sharedService: SharedService) {
+  constructor(
+    private modalCtrl: ModalController,
+    private router: Router,
+    private actRoute: ActivatedRoute,
+    private backendService: BackendService,
+    private sharedService: SharedService
+  ) {
     // this.subscription = this.actRoute.data.subscribe((data) => {
     //   if (this.codeType != undefined) {
     //     this.initialization();
@@ -46,14 +54,14 @@ export class QuickLinksComponent implements OnInit, OnChanges {
 
   initialization() {
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
-    if(!this.sharedService.getHomeZoneFlag()){
+    if (!this.sharedService.getHomeZoneFlag()) {
       var links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
       this.quickLinks = links;
     }
-    if(!this.sharedService.getElifeOnFlag()){
-      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed')
+    if (!this.sharedService.getElifeOnFlag()) {
+      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
       this.quickLinks = links;
-    }   
+    }
     this.setSlideOpts();
   }
 
@@ -116,7 +124,7 @@ export class QuickLinksComponent implements OnInit, OnChanges {
     }
   }
 
-  callDirectCallAPIs(item) {
+  async callDirectCallAPIs(item) {
     if (item?.nextSignal === QUICK_ACTION.RESET_ELIFEON_PASSWORD) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
@@ -173,19 +181,27 @@ export class QuickLinksComponent implements OnInit, OnChanges {
     } else if (item?.nextSignal === QUICK_ACTION.PNP_FACTORY_RESET) {
       const quickLinksData = this.sharedService.getQuickLinksData();
       if (quickLinksData?.pnpRouter) {
-        this.sharedService.setLoader(true);
-        this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((res) => {
-          this.sharedService.setLoader(false);
-          if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
-            this.router.navigate(['/thanks']);
-          } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
-            this.router.navigate(['/issues/internet/router-reset-successful']);
-          } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
-            this.router.navigate(['/issues/internet/server-timeout']);
-          } else {
-            this.router.navigate(['/unknown-issue']);
-          }
+        const modal = await this.modalCtrl.create({
+          component: ResetFactoryDefaultDialog,
+          componentProps: {
+            factoryResetQACase: true,
+          },
         });
+        return await modal.present();
+
+        // this.sharedService.setLoader(true);
+        // this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((res) => {
+        //   this.sharedService.setLoader(false);
+        //   if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
+        //     this.router.navigate(['/thanks']);
+        //   } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
+        //     this.router.navigate(['/issues/internet/router-reset-successful']);
+        //   } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
+        //     this.router.navigate(['/issues/internet/server-timeout']);
+        //   } else {
+        //     this.router.navigate(['/unknown-issue']);
+        //   }
+        // });
       } else {
         this.router.navigate(['issues/internet/router-restart/device-care']);
       }

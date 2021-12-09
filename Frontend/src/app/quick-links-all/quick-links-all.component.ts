@@ -1,8 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { flowCodes, motiveSubscriptions, QUICK_ACTION } from 'src/app/shared/constants/constants';
 import { ICard, IPageHeader } from 'src/app/shared/constants/types';
+import { ResetFactoryDefaultDialog } from '../issues/internet/dialogs/reset-factory-default-dialog/reset-factory-default-dialog.component';
 import { BackendService } from '../services/backend.service';
 import { SharedService } from '../shared/shared.service';
 
@@ -19,7 +21,13 @@ export class QuickLinksAllComponent implements OnInit {
   mobileWidth: number = 760;
 
   subscription: Subscription;
-  constructor(private sharedService: SharedService, private router: Router, private actRoute: ActivatedRoute, private backendService: BackendService) {}
+  constructor(
+    private modalCtrl: ModalController,
+    private sharedService: SharedService,
+    private router: Router,
+    private actRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit(): void {
     this.initialization();
@@ -30,14 +38,14 @@ export class QuickLinksAllComponent implements OnInit {
   initialization() {
     this.codeType = this.sharedService.getproductCodeLanding();
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
-    if(!this.sharedService.getHomeZoneFlag()){
+    if (!this.sharedService.getHomeZoneFlag()) {
       const links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
       this.quickLinks = links;
     }
-    if(!this.sharedService.getElifeOnFlag()){
-      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed')
+    if (!this.sharedService.getElifeOnFlag()) {
+      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
       this.quickLinks = links;
-    }   
+    }
     // this.sharedService.setHeaderConfig('HEADER.QUICK_LINKS', false);
   }
 
@@ -80,7 +88,7 @@ export class QuickLinksAllComponent implements OnInit {
     }
   }
 
-  callDirectCallAPIs(item) {
+  async callDirectCallAPIs(item) {
     if (item?.nextSignal === QUICK_ACTION.RESET_ELIFEON_PASSWORD) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((data) => {
@@ -154,19 +162,13 @@ export class QuickLinksAllComponent implements OnInit {
     } else if (item?.nextSignal === QUICK_ACTION.PNP_FACTORY_RESET) {
       const quickLinksData = this.sharedService.getQuickLinksData();
       if (quickLinksData?.pnpRouter) {
-        this.sharedService.setLoader(true);
-        this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((res) => {
-          this.sharedService.setLoader(false);
-          if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
-            this.router.navigate(['/thanks']);
-          } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
-            this.router.navigate(['/issues/internet/router-reset-successful']);
-          } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
-            this.router.navigate(['/issues/internet/server-timeout']);
-          } else {
-            this.router.navigate(['/unknown-issue']);
-          }
+        const modal = await this.modalCtrl.create({
+          component: ResetFactoryDefaultDialog,
+          componentProps: {
+            factoryResetQACase: true,
+          },
         });
+        return await modal.present();
       } else {
         this.router.navigate(['issues/internet/router-restart/device-care']);
       }
