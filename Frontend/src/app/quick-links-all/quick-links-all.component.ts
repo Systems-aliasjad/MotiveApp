@@ -161,16 +161,20 @@ export class QuickLinksAllComponent implements OnInit {
       });
     } else if (item?.nextSignal === QUICK_ACTION.PNP_FACTORY_RESET) {
       const quickLinksData = this.sharedService.getQuickLinksData();
-      if (quickLinksData?.pnpRouter) {
-        const modal = await this.modalCtrl.create({
-          component: ResetFactoryDefaultDialog,
-          componentProps: {
-            factoryResetQACase: true,
-          },
-        });
-        return await modal.present();
+      if (quickLinksData?.managed) {
+        if (quickLinksData?.pnpRouter) {
+          const modal = await this.modalCtrl.create({
+            component: ResetFactoryDefaultDialog,
+            componentProps: {
+              factoryResetQACase: true,
+            },
+          });
+          return await modal.present();
+        } else {
+          this.router.navigate(['issues/internet/router-restart/device-care']);
+        }
       } else {
-        this.router.navigate(['issues/internet/router-restart/device-care']);
+        this.router.navigate(['issues/password/unable-to-reset-password']);
       }
     }
   }

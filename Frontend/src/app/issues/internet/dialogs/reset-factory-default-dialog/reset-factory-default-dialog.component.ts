@@ -33,23 +33,27 @@ export class ResetFactoryDefaultDialog implements OnInit {
       this.backendService.quickActionsNextStep(QUICK_ACTION.PNP_FACTORY_RESET).subscribe((res) => {
         this.sharedService.setLoader(false);
         if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
-          this.router.navigate(['/thanks']);
-        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
+          // this.router.navigate(['/thanks']);
           this.router.navigate(['/issues/internet/router-reset-successful']);
-        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
-          this.router.navigate(['/issues/internet/server-timeout']);
+        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
+          this.router.navigate(['issues/internet/stage2/reset-wifi-password'], { state: { factoryResetBypass: true } });
+          // this.router.navigate(['/issues/internet/router-reset-successful']);
         } else {
-          this.router.navigate(['/error-comes']);
+          // if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
+          this.router.navigate(['issues/internet/server-timeout']);
         }
+        // else {
+        //   this.router.navigate(['/error-comes']);
+        // }
       });
     } else if (this?.quickLinkNextSignal) {
       this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING');
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
         this.sharedService.setLoader(false);
         if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
-          this.router.navigate(['/thanks']);
-        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
           this.router.navigate(['/issues/internet/router-reset-successful']);
+        } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
+          this.router.navigate(['issues/internet/stage2/reset-wifi-password'], { state: { factoryResetBypass: true } });
         } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
           this.router.navigate(['/issues/internet/server-timeout']);
         } else {

@@ -23,6 +23,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   subscription: Subscription;
   quickLinkNextSignal;
   dualBandRequired: boolean = true;
+  factoryResetBypass: boolean = false;
   fromhomeZones: string = '';
   button1: IMotiveButton = {
     type: 'terms',
@@ -47,6 +48,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
     this.subscription = this.activatedRoute.data.subscribe(() => {
       const navigation = this.router.getCurrentNavigation();
       this.fromhomeZones = navigation?.extras?.state?.fromhomeZones;
+      this.factoryResetBypass = navigation?.extras?.state?.factoryResetBypass;
+
       if (this.fromhomeZones) {
         this.callNextStepApi();
       }
@@ -67,7 +70,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   }
 
   callNextStepApi() {
-    if (this.fromhomeZones) {
+    if (this.factoryResetBypass) {
+    } else if (this.fromhomeZones) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsJustNextStep().subscribe((data) => {
         this.sharedService.setLoader(false);
@@ -137,7 +141,17 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   button1Listener() {}
 
   button2Listener(_event) {
-    if (this.fromhomeZones) {
+    if (this.factoryResetBypass) {
+      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        if (data?.result?.screenCode === flowCodes.QAHSIPnPFR || data?.result?.screenCode === flowCodes.CI11) {
+          this.router.navigate(['/issues/internet/password-update-success']);
+        } else {
+          this.router.navigate(['/error-comes']);
+        }
+      });
+    } else if (this.fromhomeZones) {
       this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
       var array: any = [];
       array.push(this.fromhomeZones);

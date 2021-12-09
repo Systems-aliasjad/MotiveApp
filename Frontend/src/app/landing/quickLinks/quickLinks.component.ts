@@ -180,30 +180,20 @@ export class QuickLinksComponent implements OnInit, OnChanges {
       });
     } else if (item?.nextSignal === QUICK_ACTION.PNP_FACTORY_RESET) {
       const quickLinksData = this.sharedService.getQuickLinksData();
-      if (quickLinksData?.pnpRouter) {
-        const modal = await this.modalCtrl.create({
-          component: ResetFactoryDefaultDialog,
-          componentProps: {
-            factoryResetQACase: true,
-          },
-        });
-        return await modal.present();
-
-        // this.sharedService.setLoader(true);
-        // this.backendService.quickActionsNextStep(item?.nextSignal).subscribe((res) => {
-        //   this.sharedService.setLoader(false);
-        //   if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
-        //     this.router.navigate(['/thanks']);
-        //   } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
-        //     this.router.navigate(['/issues/internet/router-reset-successful']);
-        //   } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
-        //     this.router.navigate(['/issues/internet/server-timeout']);
-        //   } else {
-        //     this.router.navigate(['/unknown-issue']);
-        //   }
-        // });
+      if (quickLinksData?.managed) {
+        if (quickLinksData?.pnpRouter) {
+          const modal = await this.modalCtrl.create({
+            component: ResetFactoryDefaultDialog,
+            componentProps: {
+              factoryResetQACase: true,
+            },
+          });
+          return await modal.present();
+        } else {
+          this.router.navigate(['issues/internet/router-restart/device-care']);
+        }
       } else {
-        this.router.navigate(['issues/internet/router-restart/device-care']);
+        this.router.navigate(['issues/password/unable-to-reset-password']);
       }
     }
   }
