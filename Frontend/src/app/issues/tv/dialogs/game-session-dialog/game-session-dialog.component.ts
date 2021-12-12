@@ -28,11 +28,8 @@ export class GameSessionDialog implements OnInit {
       } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
         this.router.navigate(['issues/password/unable-to-process-request']);
       } else {
-        //this.sharedService.setLoader(true);
-        this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-          // this.sharedService.setLoader(false);
-        });
-        this.router.navigate(['/unknown-issue']);
+        this.sharedService.TicketCloseAPICallWithURL('unknown-issue');
+        // this.router.navigate(['/unknown-issue']);
       }
     });
 

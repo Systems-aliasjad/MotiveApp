@@ -299,8 +299,7 @@ export class QuickTransferTvboxChannelComponent implements OnInit, OnDestroy, Af
   }
 
   button2Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 
   getCardClickedValue(card) {

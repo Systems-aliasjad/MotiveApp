@@ -94,11 +94,7 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
           });
         });
       } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
-        //this.sharedService.setLoader(true);
-        this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-          // this.sharedService.setLoader(false);
-        });
-        this.router.navigate(['/unknown-error']);
+        this.sharedService.TicketCloseAPICallWithURL('unknown-error');
       }
     });
 
@@ -272,8 +268,7 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 
   getCardClickedValue(card) {

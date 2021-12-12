@@ -87,11 +87,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    // this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      // this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
   async button2Listener() {
     this.modal = await this.modalCtrl.create({

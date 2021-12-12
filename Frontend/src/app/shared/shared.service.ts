@@ -438,4 +438,9 @@ export class SharedService {
       });
     });
   }
+
+  TicketCloseAPICallWithURL(link) {
+    this.backendService.bookComplaint({ mobileNo: this.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: true }).subscribe(() => {});
+    this.router.navigate([link]);
+  }
 }

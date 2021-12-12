@@ -64,7 +64,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
   button1Listener(_event) {
     this.formGroup = _event;
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: this.CI7check === true ? false : true }).subscribe((data: any) => {
+    this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData({ ...data?.result?.responseData, status: 'open' });
       this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);

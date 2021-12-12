@@ -175,14 +175,15 @@ export class IssueListDialog implements OnInit {
 
   ngOnInit() {
     if (this.flow === EIssueFlow.internetIssue) {
+      var list = this.internetIssuesList;
       if (!this.showICB) {
-        var list = this.internetIssuesList.filter((x) => x.route !== 'issues/internet/unable-video-call');
+        list = list.filter((x) => x.route !== 'issues/internet/unable-video-call');
         this.issuesList = list;
       } else {
         this.issuesList = this.internetIssuesList;
       }
-      if(!this.sharedService.getHomeZoneFlag()){
-        var list = this.internetIssuesList.filter((x) => x.route !== 'issues/internet/unable-to-connect-to-homezone');
+      if (!this.sharedService.getHomeZoneFlag()) {
+        list = list.filter((x) => x.route !== 'issues/internet/unable-to-connect-to-homezone');
         this.issuesList = list;
       }
     } else if (this.flow === EIssueFlow.tvIssue) {

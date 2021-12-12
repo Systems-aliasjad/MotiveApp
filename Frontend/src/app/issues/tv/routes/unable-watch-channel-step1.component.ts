@@ -62,17 +62,13 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true, "MESSAGES.YOUR_TV_BOX_IS_BEING_RESET");
+    this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_BOX_IS_BEING_RESET');
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.code === 200) {
         this.router.navigate(['issues/tv/tvBox-reset-successfull']);
       } else {
-        //  this.sharedService.setLoader(true);
-        this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {
-          //  this.sharedService.setLoader(false);
-        });
-        this.router.navigate(['/unknown-error']);
+        this.sharedService.TicketCloseAPICallWithURL('unknown-error');
       }
       // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });

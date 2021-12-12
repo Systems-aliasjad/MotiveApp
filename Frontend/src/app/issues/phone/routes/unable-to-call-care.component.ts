@@ -55,20 +55,15 @@ export class UnableToCallCareComponent implements OnInit, OnDestroy {
       'MESSAGES.MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)',
       'MESSAGES.CHECK_THE_BATTERY_OF_THE_CORDLESS_PHONE',
     ];
-    if(data?.accountDetails?.callForwarded)
-    {
+    if (data?.accountDetails?.callForwarded) {
       this.careContent.header2 = 'SUBHEADER.CALL_DETAILS';
-      this.careContent.bullet2 = [ 'MESSAGES.CALL_FORWARDING_SUBSCRIBED_AND_ENABLED'];
+      this.careContent.bullet2 = ['MESSAGES.CALL_FORWARDING_SUBSCRIBED_AND_ENABLED'];
     }
-   // this.careContent.bullet2 = ['MESSAGES.LAST_INCOMING_OUTGOING_CALLS', 'MESSAGES.CALL_FORWARDING_ENABLED_OR_DISABLED', 'MESSAGES.OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING'];
+    // this.careContent.bullet2 = ['MESSAGES.LAST_INCOMING_OUTGOING_CALLS', 'MESSAGES.CALL_FORWARDING_ENABLED_OR_DISABLED', 'MESSAGES.OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING'];
   }
 
   button1Listener() {
-    //   this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      //   this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 
   button2Listener() {

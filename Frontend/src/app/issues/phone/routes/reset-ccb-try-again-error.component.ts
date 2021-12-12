@@ -75,7 +75,7 @@ export class ResetCcbTryAgainErrorComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
+    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
       this.sharedService.setTryAgainResetCCBFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('VOICE').subscribe((data) => {
         this.sharedService.setLoader(false);

@@ -30,7 +30,7 @@ export class PasswordUpdateSuccessfulMessageComponent implements OnInit, OnDestr
     title: 'BUTTONS.OK',
   };
 
-  constructor(private router: Router, private backendService: BackendService, private sharedService:SharedService, private activatedRoute: ActivatedRoute) {}
+  constructor(private router: Router, private backendService: BackendService, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -52,9 +52,6 @@ export class PasswordUpdateSuccessfulMessageComponent implements OnInit, OnDestr
   }
 
   button1Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
-      // this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 }

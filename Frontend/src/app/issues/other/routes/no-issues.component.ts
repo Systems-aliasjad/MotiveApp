@@ -94,11 +94,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    //  this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      //  this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 
   async button2Listener() {
@@ -131,13 +127,14 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
     const routerConfig = temp?.routerConfig;
     let phoneConfig;
     this.ontConfig = temp?.ontConfig;
-    if(apiResponse?.phoneDetails?.isReachable)
-    {
-      phoneConfig =  { ...apiResponse?.phoneDetails, url: SVGs.phone.default, title: PHONE,  className: networkDiagramClasses.okay}
+    if (apiResponse?.phoneDetails?.isReachable) {
+      phoneConfig = { ...apiResponse?.phoneDetails, url: SVGs.phone.default, title: PHONE, className: networkDiagramClasses.okay };
     }
     this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
     if (this.connectedDevices) {
-      this.connectedDevices = apiResponse?.phoneDetails?.isReachable ? [{ ...routerConfig }, ...this.connectedDevices, {...phoneConfig}] : [{ ...routerConfig }, ...this.connectedDevices] ;
+      this.connectedDevices = apiResponse?.phoneDetails?.isReachable
+        ? [{ ...routerConfig }, ...this.connectedDevices, { ...phoneConfig }]
+        : [{ ...routerConfig }, ...this.connectedDevices];
     } else {
       this.connectedDevices = [
         {

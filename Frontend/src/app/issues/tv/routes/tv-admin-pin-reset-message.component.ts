@@ -60,10 +60,6 @@ export class TvAdminPinResetSuccessfullyMessageComponent implements OnInit, OnDe
   }
 
   button1Listener() {
-    // this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: true }).subscribe(() => {
-      // this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 }

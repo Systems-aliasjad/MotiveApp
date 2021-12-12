@@ -76,8 +76,6 @@ export class ComplaintDetailsMessageComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
-    this.router.navigate(['/thanks']);
-    // this.router.navigate(['/bookComplaint']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 }

@@ -55,7 +55,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
     private router: Router,
     private modalCtrl: ModalController,
     private activatedRoute: ActivatedRoute,
-    private backendService: BackendService,
+    private backendService: BackendService
   ) {}
 
   ngOnInit() {
@@ -89,10 +89,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '' }).subscribe(() => {
-      //   this.sharedService.setLoader(false);
-    });    
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 
   button3Listener() {

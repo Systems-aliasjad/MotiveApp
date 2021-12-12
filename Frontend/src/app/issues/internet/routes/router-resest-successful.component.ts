@@ -31,7 +31,7 @@ export class RouterResetSuccessfulComponent implements OnInit, OnDestroy {
     explanatoryNote: '',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService:SharedService, private backendService: BackendService) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -52,7 +52,6 @@ export class RouterResetSuccessfulComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 }

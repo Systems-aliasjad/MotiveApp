@@ -67,8 +67,7 @@ export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {});
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
   button2Listener() {
     //this.router.navigate(['/issues/internet/install-new-router/install-new-thirdparty-router']);

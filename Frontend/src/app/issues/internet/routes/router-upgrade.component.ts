@@ -63,11 +63,10 @@ export class RouterUpgradeComponent implements OnInit, OnDestroy {
     this.formGroup = _event;
     // console.log(this.formGroup.valid);
     this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
+    this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.router.navigate(['/issues/internet/router-upgrade-success']);
     });
-
-    this.router.navigate(['/issues/internet/router-upgrade-success']);
   }
 
   button2Listener() {

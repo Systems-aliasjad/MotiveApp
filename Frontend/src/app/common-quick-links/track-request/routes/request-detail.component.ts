@@ -80,7 +80,6 @@ export class RequestDetailComponent implements OnInit, OnDestroy {
     //this.router.navigate(['/']);
   }
   button3Listener() {
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: false, issueResolved: false }).subscribe(() => {});
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 }

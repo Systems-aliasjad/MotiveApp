@@ -39,7 +39,7 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
     title: 'BUTTONS.CLOSE',
   };
 
-  constructor(private backendService: BackendService, private router: Router, private sharedService:SharedService, private activatedRoute: ActivatedRoute) {}
+  constructor(private backendService: BackendService, private router: Router, private sharedService: SharedService, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -64,10 +64,6 @@ export class ResetPasswordFailComponenet implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    // this.router.navigate(['/thanks']);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
-      //   this.sharedService.setLoader(false);
-    });
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 }
