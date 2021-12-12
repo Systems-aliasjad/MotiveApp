@@ -139,10 +139,10 @@ export class HelperService {
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/other/outage']);
     } else if (CodeId === flowCodes.issueNotFixed) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails});
       this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI9) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails });
       this.AllSevicesCI9RouterCases(data?.routerDetails);
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
@@ -154,11 +154,12 @@ export class HelperService {
           routerDetails: data?.routerDetails,
           stbDetails: data?.stbDetails,
           hsiUploadDownload: data?.hsiUploadDownload?.split(','),
+          phoneDetails: data?.phoneDetails,
         });
         this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'other');
         // this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
       } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
-        this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails });
+        this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails });
         this.router.navigate(['issues/other/issue-not-fixed']);
       }
     }
