@@ -178,6 +178,7 @@
   },
 
   "MESSAGES": {
+    "REQUEST_FOLLOW_UP": "Request follow up",
     "SORRY_THE_OPERATION_HAS_TIMED_OUT_PLEASE_TRY_AGAIN": "Sorry, the operation has timed out. Please try again.",
     "FEEDBACK_SUBMITTED_SUCCESSFULLY": "Feedback submitted successfully",
     "RUN_SMART_DIAGNOSIS_ON_YOUR_PRODUCT_AND_SERVICE": "Run Smart Diagnosis on your product and service",

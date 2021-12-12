@@ -13,7 +13,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class OpenSrsComponent implements OnInit {
   openSrsList: any = [];
   headerConfig: IPageHeader = {
-    pageTitle: 'MESSAGES.SR_FOLLOW_UP',
+    pageTitle: 'MESSAGES.REQUEST_FOLLOW_UP',
     showBackBtn: true,
   };
   selectedRadioItem: string = '';
