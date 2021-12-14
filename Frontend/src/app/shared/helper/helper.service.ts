@@ -233,7 +233,17 @@ export class HelperService {
           hsiUploadDownload: data?.hsiUploadDownload?.split(','),
         });
         this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-        this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
+        if(data?.routerResetSuccessful !== null && data?.routerResetSuccessful){
+             //sucess case
+            // OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
+            this.router.navigate(['issues/internet/router-reset-successful'],{state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
+        } else if(data?.routerResetSuccessful !== null && !data?.routerResetSuccessful) {
+            // failure case
+            //OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
+            this.router.navigate(['error-comes'], {state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
+        } else {
+          this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
+        }
       } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
         this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
         this.router.navigate(['issues/internet/issue-not-fixed']);

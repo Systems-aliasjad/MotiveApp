@@ -14,6 +14,7 @@ import { RequestUnderProcessComponent } from './routes/request-under-process.com
 import { ServiceUnavailableComponent } from './routes/service-unavailable.component';
 import { OpenSrsComponent } from './routes/open-srs/open-srs.component';
 import { TryAgainErrorComponent } from './routes/try-again-error.component';
+import { RequestNotFoundMessageComponent } from './routes/request-not-found-message.component';
 
 const routes: Routes = [
   {
@@ -59,6 +60,10 @@ const routes: Routes = [
   {
     path: 'book-complaint',
     component: BookComplaintComponent,
+  },
+  {
+    path: 'request-not-found-message',
+    component: RequestNotFoundMessageComponent,
   },
   {
     path: 'open-srs',

@@ -10,6 +10,7 @@ import { RequestDetailComponent } from './routes/request-detail.component';
 import { RequestUnderProcessComponent } from './routes/request-under-process.component';
 import { RequestAlreadyExistsComponent } from './routes/request-already-exists.component';
 import { AppointmentChangeSuccessComponent } from './routes/appointment-change-success.component';
+import { RequestNotFoundMessageComponent } from './routes/request-not-found-message.component';
 import { ServiceUnavailableComponent } from './routes/service-unavailable.component';
 import { ActionRequiredComponent } from './routes/action-required.component';
 import { BookComplaintComponent } from './routes/book-complaint.component';
@@ -27,6 +28,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
     RequestInProcessMessageComponent,
     RequestDetailComponent,
     RequestUnderProcessComponent,
+    RequestNotFoundMessageComponent,
     RequestAlreadyExistsComponent,
     AppointmentChangeSuccessComponent,
     ServiceUnavailableComponent,

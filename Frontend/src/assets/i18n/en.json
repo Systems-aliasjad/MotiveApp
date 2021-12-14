@@ -172,6 +172,9 @@
   },
 
   "MESSAGES": {
+    "REQUEST_NOT_FOUND":"Request not found",
+    "SORRY_WE_COULDNT_FIND_THE_REQUEST_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING":"Sorry, we couldn’t find the request you requested. If you need help with a technical issue, tap ‘Continue to troubleshooting’.",
+    "ROUTER_RESTART_UNSUCCESSFUL":"Router restart successful",
     "REQUEST_FOLLOW_UP": "Request follow up",
     "SORRY_THE_OPERATION_HAS_TIMED_OUT_PLEASE_TRY_AGAIN": "Sorry, the operation has timed out. Please try again.",
     "FEEDBACK_SUBMITTED_SUCCESSFULLY": "Feedback submitted successfully",

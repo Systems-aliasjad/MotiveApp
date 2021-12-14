@@ -424,7 +424,7 @@ export class SharedService {
         this.router.navigate(['/track-request/open-srs']);
         break;
       default:
-        this.router.navigate(['/track-request/work-not-completed']);
+        this.router.navigate(['/track-request/request-not-found-message']);
         break;
 
       // case flowCodes.E2ECRM323:

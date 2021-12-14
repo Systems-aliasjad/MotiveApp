@@ -96,6 +96,7 @@ export const flowCodes = {
   QANRINST10: 'QA-NR-INST10', //Installing new Router / Had a pending request
   QANRINST11: 'QA-NR-INST11', //Router Installation failed
   QANRINST16: 'QA-NR-INST16', //Router Installation failed
+  QANRINST17: 'QA-NR-INST17', //Router Installation Success
   DCSS1: 'DCSS1', //Install new router Device care
   DCSS2: 'DCSS2', //Install new router Device care
   QANRINST12: 'QA-NR-INST12', //		DCSS invokation for manual router installation    App.MotiveH&S.5.1.3
