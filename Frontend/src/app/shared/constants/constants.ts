@@ -78,14 +78,16 @@ export const flowCodes = {
   QAHSIPnPFR1: 'QA-HSI-PnPFR1', // reset factory router (Failure)
   QAHSIPR: 'QA-HSI-PR', // Internet Password Reset (Success)
   QAHSIPR1: 'QA-HSI-PR1', // Internet Password Reset (Failure)
-
   QAVOICECCB1: 'QA-VOICE-CCB1', // for ccb pin failed
   QAVOICECCB2: 'QA-VOICE-CCB2', // for ccb pin failed
   QAVOICECCB4: 'QA-VOICE-CCB4', // for ccb pin failed TRY AGAIN
   QAVOICECCB: 'QA-VOICE-CCB', //for ccb pin success
   CI11: 'CI11',
+  
   QASTBR: 'QA-STBR', //FOR stb rebbot success
   QASTBR1: 'QA-STBR1', //FOR stb rebbot success
+  QASTBSR3: 'QA-STBSR3', //STB soft reset successfull
+  QASTBSR4: 'QA-STBSR4', //STB soft reset successfull
 
   QANRINST: 'QA-NR-INST', //Install new router  Success
   QANRINST1: 'QA-NR-INST1', //Install new router failer

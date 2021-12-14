@@ -18,4 +18,5 @@ export const environment = {
     publishDate: '09/28/2021',
   },
   shouldCallAPI: true,
+  localEnv: false,
 };

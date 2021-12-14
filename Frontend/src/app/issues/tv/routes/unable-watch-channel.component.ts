@@ -59,7 +59,7 @@ export class UnableWatchChannelComponent implements OnInit {
   };
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+   this.sharedService.TicketCloseAPICallWithURL('thanks');
     // this.sharedService.setLoader(true);
     // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
     //   this.sharedService.setLoader(false);
@@ -68,6 +68,12 @@ export class UnableWatchChannelComponent implements OnInit {
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/tv/unable-watch-channel/step1']);
+    this.sharedService.setLoader(true);
+    this.backendService.serviceDetailsSTB().subscribe((data)=>{
+      this.sharedService.setLoader(false);
+      if(data?.code === 200){
+        this.router.navigate(['/issues/tv/unable-watch-channel/step1']);
+      }
+    })
   }
 }
