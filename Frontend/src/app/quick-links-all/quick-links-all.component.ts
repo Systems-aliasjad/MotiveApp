@@ -79,9 +79,26 @@ export class QuickLinksAllComponent implements OnInit {
         this.sharedService.setLoader(false);
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
+
+
+          if(link?.nextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION){
+           if(!res?.result?.responseData?.managed ){
+                 this.router.navigate(['issues/password/unable-to-reset-password']);
+              }
+            }
+
+
         if (link.directCall) {
           this.callDirectCallAPIs(link);
         } else {
+
+         
+          //  if(link?.nextSignal===QUICK_ACTION.PNP_FACTORY_RESET){
+          //  if(!res?.result?.responseData?.pnpRouter ){
+          //        this.router.navigate(['issues/password/unable-to-reset-password']);
+          //     }
+          //   }
+
           this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal, value: link?.value } });
         }
       });

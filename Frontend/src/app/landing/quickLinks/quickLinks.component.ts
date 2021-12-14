@@ -115,6 +115,13 @@ export class QuickLinksComponent implements OnInit, OnChanges {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
+
+          if(link?.nextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION){
+           if(!res?.result?.responseData?.managed ){
+                 this.router.navigate(['issues/password/unable-to-reset-password']);
+              }
+            }
+
         if (link.directCall) {
           this.callDirectCallAPIs(link);
         } else {
