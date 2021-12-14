@@ -95,7 +95,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
       }
 
       if (this.flagInterval >= this.loaderarray?.length) {
-        //this.showOrangeLoader();
+        this.showOrangeLoader();
       }
       if (this.flagInterval < this.loaderarray?.length) {
         this.messages.push(this.loaderarray[this.flagInterval]?.message);
