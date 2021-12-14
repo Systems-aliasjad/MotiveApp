@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
+import { flowCodes } from 'src/app/shared/constants/constants';
 import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -63,9 +64,9 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
 
   button1Listener() {
     this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_BOX_IS_BEING_RESET');
-    this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
+    this.backendService.nextSignal('Reset STB').subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      if (data?.code === 200) {
+      if (data?.result?.screenCode === flowCodes.QASTBSR3 || data?.result?.screenCode === flowCodes.QASTBSR4) {
         this.router.navigate(['issues/tv/tvBox-reset-successfull']);
       } else {
         this.sharedService.TicketCloseAPICallWithURL('unknown-error');
@@ -77,11 +78,12 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
   }
 
   button2Listener() {
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
     // this.sharedService.setLoader(true);
     // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', ci7: true }).subscribe(() => {
     //   this.sharedService.setLoader(false);
     //   this.router.navigate(['/thanks']);
     // });
-    this.router.navigate(['/thanks']);
+    // this.router.navigate(['/thanks']);
   }
 }

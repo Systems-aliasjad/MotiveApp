@@ -46,6 +46,10 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
     } catch (error) {
     }
+    if(environment.localEnv){
+      this.authService.setAuthorizationToken(params?.token);
+      this.router.navigate(['landing']);
+    }else{
       this.sharedService.setLoader(true);
       this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
 
@@ -58,7 +62,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.router.navigate(['unknown-issue']);
           }
         });
-
+    }
     if (environment.production) {
       window.console.log = function () {}; // disable any console.log debugging statements in production mode
     }
