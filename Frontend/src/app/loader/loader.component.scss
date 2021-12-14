@@ -1,24 +1,23 @@
-
 @import 'src/assets/scss/base/variables';
 @import 'src/assets/scss/base/mixins';
 
 // --------------------------------------------------------------
 :host {
-   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: Lato, Roboto, Arial, sans-serif;
 }
 // --------------------------------------------------------------
-.header-wrapper-wave{
-  z-index:3;
+.header-wrapper-wave {
+  z-index: 3;
 }
-.loader-main-container{
-  height: 100%;
+.loader-main-container {
   width: 100%;
+  min-height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   margin: auto;
- /*  background-color: rgb(244 247 235 / 66%);
+  /*  background-color: rgb(244 247 235 / 66%);
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(15%, rgb(255 255 255 / 66%)), to(#f4f7eb99));
   background-image: -o-linear-gradient(top, rgb(255 255 255 / 66%) 15%, #f4f7eb99 100%);
   background-image: linear-gradient(to bottom, rgb(255 255 255 / 66%) 15%, #f4f7eb99 100%); */
@@ -47,25 +46,25 @@
   -ms-flex-align: center;
   align-items: center;
   text-align: center;
-  .content{
+  .content {
     h4 {
       font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
       text-align: center;
-      margin-top:0;
-      @media screen and (max-width: 767px){
-        font-size:16px;
+      margin-top: 0;
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
       }
     }
     .content_detail {
       max-width: 275px;
-      p{
-        @media screen and (max-width: 767px){
-          font-size:14px;
+      p {
+        @media screen and (max-width: 767px) {
+          font-size: 14px;
         }
       }
     }
   }
-  
+
   .loader-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -82,24 +81,24 @@
     flex-direction: column;
     position: relative;
     margin-top: 5rem;
-    @media screen and (max-width: 1024px){
-      margin-top:6rem;
+    @media screen and (max-width: 1024px) {
+      margin-top: 6rem;
     }
     ng-lottie {
-      width:218px;
-      @media screen and (max-width: 767px){
-        width:245px;
+      width: 218px;
+      @media screen and (max-width: 767px) {
+        width: 245px;
       }
     }
-    .loader_count{
-      color:#606060;
+    .loader_count {
+      color: #606060;
       display: inline-block;
       font-weight: 600;
       font-size: 1.5rem;
       position: absolute;
       top: 50%;
       right: 50%;
-      transform: translate(50%,-50%);
+      transform: translate(50%, -50%);
     }
   }
 }

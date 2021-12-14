@@ -636,5 +636,38 @@
     "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must be a 12 digit number",
     "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "Password & Confirm Password Must Be Matched",
     "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "Password must match the crietaria as per given below"
+  },
+
+  "Loader": {
+    "Landing": [
+      {
+        "message": "Account checks are getting performed",
+        "time": 15000
+      },
+      {
+        "message": "Network inventory checkes are getting performed",
+        "time": 20000
+      },
+      {
+        "message": "Service checks are getting performed",
+        "time": 20000
+      },
+      {
+        "message": "Device backend configuration checks are getting performed",
+        "time": 15000
+      },
+      {
+        "message": "Device reachability check is getting performed",
+        "time": 25000
+      },
+      {
+        "message": "Checking for any open technical tickets/requests",
+        "time": 15000
+      },
+      {
+        "message": "Analyzing the troubleshooting outcome",
+        "time": 20000
+      }
+    ]
   }
 }

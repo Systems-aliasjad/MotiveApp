@@ -44,6 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     try {
       this.sharedService.setDefaultLanguage(params?.lang || 'ara');
       this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
+      this.sharedService.GetJsonFile();
     } catch (error) {
     }
       this.sharedService.setLoader(true);

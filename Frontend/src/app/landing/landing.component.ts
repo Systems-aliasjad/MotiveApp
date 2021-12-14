@@ -1,14 +1,12 @@
-import { AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { ICard, IPageHeader } from '../shared/constants/types';
 import { SharedService } from '../shared/shared.service';
-import { motiveSubscriptions } from '../shared/constants/constants';
-import { Subscription } from 'rxjs';
+import { LoaderScriptsEnum, motiveSubscriptions } from '../shared/constants/constants';
 import { ModalController } from '@ionic/angular';
 import { EIssueFlow, IssueListDialog } from '../shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { BackendService } from '../services/backend.service';
-import { Location } from '@angular/common';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing.component.html',
@@ -21,14 +19,12 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   showLoader: boolean = false;
   modal: any;
   user: any;
-
   constructor(
     private sharedService: SharedService,
     public router: Router,
     private modalCtrl: ModalController,
     private backendService: BackendService,
-    private activcatedRoute: ActivatedRoute,
-    private location: Location
+    private activcatedRoute: ActivatedRoute
   ) {}
   ngAfterViewInit(): void {
     this.initialization();
@@ -72,8 +68,8 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
 
       this.codeType = data?.result?.productCode;
       this.sharedService.setHomeZoneFlag(data?.result?.menuFlags?.HOME_ZONE ?? true);
-      this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true)
-      this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true)
+      this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true);
+      this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true);
       this.sharedService.setProductCodeLanding(this.codeType ?? '');
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
@@ -119,5 +115,10 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       },
     });
     return await this.modal.present();
+  }
+
+  hello() {
+    var data = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.Landing);
+    this.sharedService.setLoader(true, data);
   }
 }

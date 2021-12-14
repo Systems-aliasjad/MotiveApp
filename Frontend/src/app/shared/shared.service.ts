@@ -5,8 +5,9 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { flowCodes, LandingProductCodes, QUICK_ACTION } from './constants/constants';
+import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION } from './constants/constants';
 import { BackendService } from '../services/backend.service';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
@@ -53,7 +54,9 @@ export class SharedService {
 
   productCodeLanding: string = '';
 
-  constructor(private translate: TranslateService, private router: Router, private backendService: BackendService) {
+  LoaderData: any;
+
+  constructor(private http: HttpClient, private translate: TranslateService, private router: Router, private backendService: BackendService) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
@@ -61,6 +64,33 @@ export class SharedService {
     this.loader$ = this.loaderSubject.asObservable();
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
+  }
+
+  GetJsonFile() {
+    var lang = this.getLocalStorage('lang');
+    if (!lang) {
+      lang = 'en';
+    }
+    var obj = this.http.get(`assets/i18n/${lang}.json`);
+    obj.subscribe((data: any) => {
+      this.LoaderData = data?.Loader;
+    });
+    // return obj;
+  }
+
+  GetLoaderData() {
+    return this.LoaderData;
+  }
+
+  GetLoaderDataByID(ID) {
+    switch (ID) {
+      case LoaderScriptsEnum.Landing:
+        return this.LoaderData?.Landing;
+    }
+
+    var array = this.LoaderData;
+
+    return this.LoaderData;
   }
 
   setApiResponseOpenSrs(data) {
@@ -235,7 +265,7 @@ export class SharedService {
     return this.getLocalStorage('lang') ? this.getLocalStorage('lang') : 'en';
   }
 
-  setLoader(loaderState: boolean, messageMain?: String): void {
+  setLoader(loaderState: boolean, messageMain?: any): void {
     const loaderObject: any = {
       loaderState,
       messageMain: messageMain || null,
