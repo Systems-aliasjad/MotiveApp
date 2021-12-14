@@ -35,6 +35,7 @@ export const flowCodes = {
   QAHSIWIFI8: 'QA-HSI-WIFI8', //update wi fi configuration is input required
   QAHSIWIFI1: 'QA-HSI-WIFI1',
   QAHSIWIFI2: 'QA-HSI-WIFI2', // update wi fi configuration  Home zone
+  STAGE2IR: 'Stage2 - IR',
   genericError: 'G11E24',
   accountNotActive: 'E2ECRM141',
   CI9: 'CI9',
