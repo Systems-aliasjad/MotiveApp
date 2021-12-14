@@ -69,7 +69,9 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
       if (data?.result?.screenCode === flowCodes.QASTBSR3 || data?.result?.screenCode === flowCodes.QASTBSR4) {
         this.router.navigate(['issues/tv/tvBox-reset-successfull']);
       } else {
-        this.sharedService.TicketCloseAPICallWithURL('unknown-error');
+        // this.sharedService.TicketCloseAPICallWithURL('error-comes');
+        this.router.navigate(['issues/tv/tvBox-reset-successfull']);
+
       }
       // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
