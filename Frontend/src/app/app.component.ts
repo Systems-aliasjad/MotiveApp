@@ -30,6 +30,12 @@ export class AppComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {}
 
   Initialization(params: Params) {
+
+    var lang='ara';
+    if(params?.lang==='en'){
+        lang='en'
+    }
+
     /* this.sharedService.setDefaultLanguage(params?.lang || 'ara');
 
     this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl'; */
@@ -42,8 +48,8 @@ export class AppComponent implements OnInit, AfterViewInit {
      return;
     }
     try {
-      this.sharedService.setDefaultLanguage(params?.lang || 'ara');
-      this.appDirection = params?.lang === 'en' ? 'ltr' : 'rtl';
+      this.sharedService.setDefaultLanguage(lang);
+      this.appDirection = lang === 'en' ? 'ltr' : 'rtl';
       this.sharedService.GetJsonFile();
     } catch (error) {
     }
@@ -52,7 +58,7 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.router.navigate(['landing']);
     }else{
       this.sharedService.setLoader(true);
-      this.backendService.getUserDetail(params?.token, params?.lang).subscribe((data: any) => {
+      this.backendService.getUserDetail(params?.token, lang).subscribe((data: any) => {
 
           this.sharedService.setLoader(false);
           if(data?.code === 200){
