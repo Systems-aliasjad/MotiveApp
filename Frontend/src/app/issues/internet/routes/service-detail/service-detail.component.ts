@@ -41,7 +41,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
 
   headerConfig: IPageHeader = {
     pageTitle: 'HEADER.SERVICE_DEATAIL',
-    showBackBtn: true,
+    showBackBtn: false,
   };
 
   constructor(
