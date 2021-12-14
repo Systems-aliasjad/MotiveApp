@@ -126,7 +126,7 @@ export class TvDetailComponent implements OnInit {
 
   headerConfig: IPageHeader = {
     pageTitle: 'HEADER.TV_DETAILS',
-    showBackBtn: true,
+    showBackBtn: false,
   };
 
   async openInternetIssueDialog() {

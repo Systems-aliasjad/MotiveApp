@@ -771,3 +771,8 @@ export class LandingProductCodes {
   public static readonly _1P = '1P';
   public static readonly BSP = 'BSP';
 }
+
+
+export enum LoaderScriptsEnum {
+  Landing,
+}

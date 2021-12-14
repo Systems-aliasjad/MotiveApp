@@ -56,6 +56,6 @@ export class NoIssuesServiceDetailsComponent implements OnInit {
 
   headerConfig: IPageHeader = {
     pageTitle: 'HEADER.SERVICE_DETAILS',
-    showBackBtn: true,
+    showBackBtn: false,
   };
 }

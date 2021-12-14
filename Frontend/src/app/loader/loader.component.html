@@ -14,10 +14,13 @@
       <ion-row class="content">
         <ion-col size="12">
           <h4>{{ 'HEADER.ALMOST_THERE' | translate }}</h4>
-          <div class="content_detail">
-            <P *ngFor="let message of messages"> {{ message | translate }}</P>
+          <div class="content_detail" *ngFor="let message of messages; first as isFirst; last as isLast">
+            <P>
+              {{ message | translate }}
+              <img *ngIf="!isFirst && !isLast" src="assets/images/tick.png" class="small-screen icon-back-arrow" alt="tick image" />
+            </P>
           </div>
-         </ion-col>
+        </ion-col>
       </ion-row>
     </ion-grid>
   </div>
