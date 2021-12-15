@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -74,7 +74,8 @@ export class OntRebootComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS_BEING_RESTARTED');
+     var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ONT_REBOOT_REQUIRED);
+    this.sharedService.setLoader(true, scriptArray);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.voiceFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

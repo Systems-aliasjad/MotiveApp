@@ -6,7 +6,7 @@ import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJour
 import { SharedService } from '../../../shared/shared.service';
 import { BackendService } from '../../../services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { ETISALAT_DEFAULT_CONFIG, flowCodes, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, flowCodes, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-password-reset',
@@ -77,13 +77,17 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   button1Listener() {
     // this.helperService.InternetFlowIdentifier(this.sharedService.getUpsellOpportunity());
     if (this.quickLinkNextSignal) {
-      this.sharedService.setLoader(true);
+       var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_PASSWORD_RESET_REQUIRED);
+
+      this.sharedService.setLoader(true,scriptArray);
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
         this.sharedService.setLoader(false);
         this.verifyResetResponse(res);
       });
     } else {
-      this.sharedService.setLoader(true);
+      var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_PASSWORD_RESET_REQUIRED);
+
+      this.sharedService.setLoader(true,scriptArray);
       this.backendService.resetInternetPassword().subscribe((data: any) => {
         this.sharedService.setLoader(false);
         this.verifyResetResponse(data);

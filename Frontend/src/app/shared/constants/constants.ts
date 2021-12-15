@@ -30,6 +30,7 @@ export const QUICK_ACTION = {
 };
 
 export const flowCodes = {
+  CI14:'CI14',
   QAHSIWIFI: 'QA-HSI-WIFI', //Update Wi Fi Configuration (Success)
   QAHSIWIFI5: 'QA-HSI-WIFI5', //Update Wi Fi Configuration (Failure)
   QAHSIWIFI8: 'QA-HSI-WIFI8', //update wi fi configuration is input required
@@ -774,6 +775,18 @@ export class LandingProductCodes {
 }
 
 
-export enum LoaderScriptsEnum {
-  Landing,
+export class LoaderScriptsEnum {
+  public static readonly Landing='Landing';
+ public static readonly I_WANT_TO_FACTORY_RESET_MY_TV_BOX='I_WANT_TO_FACTORY_RESET_MY_TV_BOX'; //I want to factory reset my TV box  ///App.MotiveH&S.5.2.6
+ public static readonly I_WANTO_TO_FACTORY_RESET_MY_ROUTER='I_WANTO_TO_FACTORY_RESET_MY_ROUTER'; //I wanto to factory reset my router  ///App.MotiveH&S.5.3.6
+ public static readonly ONT_REBOOT_REQUIRED='ONT_REBOOT_REQUIRED'; //ONT reboot required  ///App.MotiveH&S.3.5.2
+ public static readonly TV_SET_TOP_BOX_RESTART_REQUIRED='TV_SET_TOP_BOX_RESTART_REQUIRED'; //TV set top box restart required  ///App.MotiveH&S.2.5.2
+ public static readonly ALL_SERVICES_E2E_TROUBLESHOOTING='ALL_SERVICES_E2E_TROUBLESHOOTING'; //All services : Result 1 – Outage  ///App.MotiveH&S.6.0.1
+ public static readonly INTERNET_E2E_TROUBLESHOOTING='INTERNET_E2E_TROUBLESHOOTING'; //Internet Open service request presente  ///App.MotiveH&S.1.1.1App.MotiveH&S.1.1.1A
+ public static readonly ROUTER_REBOOT_REQUIRED='ROUTER_REBOOT_REQUIRED'; //Internet Router Reboot Required  ///App.MotiveH&S.1.5.3
+ public static readonly ROUTER_RESET_REQUIRED='ROUTER_RESET_REQUIRED'; //Internet Router Reset Required  ///App.MotiveH&S.1.6.3
+ public static readonly INTERNET_PASSWORD_RESET_REQUIRED='INTERNET_PASSWORD_RESET_REQUIRED'; //Internet Internet password reset required  ///App.MotiveH&S.1.7.3
+ public static readonly WIFI_PASSWORD_RESET='WIFI_PASSWORD_RESET'; //Internet No issues   ///App.MotiveH&S.1.10.10
+ public static readonly TV_E2E_TROUBLESHOOTING='TV_E2E_TROUBLESHOOTING'; //TV Main   ///App.MotiveH&S.2.1.1
+ public static readonly TELEPHONE_E2E_TROUBLESHOOTING='TELEPHONE_E2E_TROUBLESHOOTING'; //Phone Main   ///App.MotiveH&S.3.1.1
 }

@@ -67,7 +67,8 @@ export class LoaderComponent implements OnInit, OnDestroy {
           this.percentageLoaded = 0;
         }
       }, 2000);
-
+      this.messages=[];
+      this.messages.push('MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE');
       this.messages.push(this.loaderarray[this.flagInterval]?.message);
       this.DynamicScripts();
     } else {
@@ -112,6 +113,9 @@ export class LoaderComponent implements OnInit, OnDestroy {
     this.minuteInterval = 0;
     this.percentInterval = 0;
     this.percentageLoaded = 0;
+    this.loaderarray=null;
+    this.messages=null;
+
   }
 
   ngOnDestroy() {

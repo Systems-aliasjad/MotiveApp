@@ -162,6 +162,15 @@ export class HelperService {
         this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails });
         this.router.navigate(['issues/other/issue-not-fixed']);
       }
+
+      
+    }
+
+
+      else if (CodeId === flowCodes.CI14) {
+      this.sharedService.setApiResponseData(data);
+        this.router.navigate(['issues/other/complaint-already-exists']);
+      
     }
   }
 
@@ -233,11 +242,11 @@ export class HelperService {
           hsiUploadDownload: data?.hsiUploadDownload?.split(','),
         });
         this.sharedService.setUpsellOpportunity(data?.upsellingOpportunity);
-        if(data?.routerResetSuccessful !== null && data?.routerResetSuccessful){
+        if(data?.routerResetSuccessful && data?.routerResetSuccessful){
              //sucess case
             // OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
             this.router.navigate(['issues/internet/router-reset-successful'],{state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
-        } else if(data?.routerResetSuccessful !== null && !data?.routerResetSuccessful) {
+        } else if(data?.routerResetSuccessful && !data?.routerResetSuccessful) {
             // failure case
             //OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
             this.router.navigate(['error-comes'], {state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
@@ -261,6 +270,14 @@ export class HelperService {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
     }
+
+     else if (CodeId === flowCodes.CI14) {
+      this.sharedService.setApiResponseData(data);
+      this.router.navigate(['issues/internet/complaint-already-exists']);
+      
+    }
+
+
   }
 
   public voiceFlowIdentifier(codeId: string, data?: any) {
@@ -300,6 +317,12 @@ export class HelperService {
       } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
         this.router.navigate(['issues/phone/issue-not-fixed']);
       }
+    }
+
+    else if (codeId === flowCodes.CI14) {
+      this.sharedService.setApiResponseData(data);
+    this.router.navigate(['issues/phone/complaint-already-exists']);
+      
     }
   }
 
@@ -416,6 +439,12 @@ export class HelperService {
     } else if (CodeId === flowCodes.UPSEL2 || CodeId === flowCodes.UPSEL8) {
       // Upselling Identified for New Router /Router  Out of Warranty
       this.router.navigate(['issues/internet/third-party-router']);
+    }
+
+    else if (CodeId === flowCodes.CI14) {
+      this.sharedService.setApiResponseData(data);
+      this.router.navigate(['issues/tv/complaint-exists']);
+      
     }
   }
 

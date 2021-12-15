@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
-import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IRouterDetail, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
@@ -75,7 +75,8 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS_BEING_RESTARTED');
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_REBOOT_REQUIRED);
+    this.sharedService.setLoader(true, scriptArray);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

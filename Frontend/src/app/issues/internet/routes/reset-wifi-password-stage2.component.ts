@@ -6,7 +6,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
-import { flowCodes, QUICK_ACTION } from 'src/app/shared/constants/constants';
+import { flowCodes, LoaderScriptsEnum, QUICK_ACTION } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'reset-wifi-password-stage2',
@@ -168,8 +168,10 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   button1Listener() {}
 
   button2Listener(_event) {
+  var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.WIFI_PASSWORD_RESET);
+
     if (this.factoryResetBypass) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAHSIPnPFR || data?.result?.screenCode === flowCodes.CI11) {
@@ -187,7 +189,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         }
       });
     } else if (this.fromhomeZones) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, scriptArray);
       var array: any = [];
       array.push(this.fromhomeZones);
       this.backendService.quickActionsResetWifiPasswordHomeZone(_event, array).subscribe((data: any) => {
@@ -210,7 +212,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         }
       });
     } else if (this?.quickLinkNextSignal && this.sharedService.getQuickLinksData()) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
 
@@ -230,7 +232,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         }
       });
     } else if (this?.quickLinkNextSignal) {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
@@ -252,7 +254,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         });
       });
     } else {
-      this.sharedService.setLoader(true, 'MESSAGES.WE_ARE_RESETTING_YOUR_WIFI_PASSWORD');
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11 || data?.result?.screenCode === flowCodes.STAGE2IR) {

@@ -7,6 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'complaint-exists-message',
@@ -35,7 +36,7 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
     type: 'link',
     title: 'BUTTONS.NO_I_WANT_TO_REPORT_ANOTHER_ISSUE',
   };
-  constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private helperService:HelperService, private backendService: BackendService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -67,8 +68,14 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.TicketCloseAPICallWithURL('thanks');
+  this.router.navigate(['issues/internet/complaint-under-process-message']);
   }
 
-  button2Listener() {}
+  button2Listener() {
+      this.sharedService.setLoader(true);
+      this.backendService.nextSignal('Continue Troubleshooting').subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      });
+  }
 }

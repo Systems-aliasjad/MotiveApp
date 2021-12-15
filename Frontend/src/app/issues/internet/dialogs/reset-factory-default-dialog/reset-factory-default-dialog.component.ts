@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { BackendService } from 'src/app/services/backend.service';
-import { flowCodes, QUICK_ACTION } from 'src/app/shared/constants/constants';
+import { flowCodes, LoaderScriptsEnum, QUICK_ACTION } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -29,7 +29,8 @@ export class ResetFactoryDefaultDialog implements OnInit {
   CloseModal() {
     this.dismiss();
     if (this.factoryResetQACase) {
-      this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING');
+      var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.I_WANTO_TO_FACTORY_RESET_MY_ROUTER);
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.quickActionsNextStep(QUICK_ACTION.PNP_FACTORY_RESET).subscribe((res) => {
         this.sharedService.setLoader(false);
         if (res?.result?.screenCode === flowCodes.QAHSIPnPFR || res?.result?.screenCode === flowCodes.CI11) {
@@ -47,7 +48,8 @@ export class ResetFactoryDefaultDialog implements OnInit {
         // }
       });
     } else if (this?.quickLinkNextSignal) {
-      this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING');
+       var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.I_WANTO_TO_FACTORY_RESET_MY_ROUTER);
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.quickActionsNextStep(this.quickLinkNextSignal).subscribe((res) => {
         this.sharedService.setLoader(false);
         if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
@@ -61,7 +63,8 @@ export class ResetFactoryDefaultDialog implements OnInit {
         }
       });
     } else {
-      this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING');
+       var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_RESET_REQUIRED);
+      this.sharedService.setLoader(true, scriptArray);
       this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
         this.sharedService.setLoader(false);
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);

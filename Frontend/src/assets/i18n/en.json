@@ -642,35 +642,320 @@
   },
 
   "Loader": {
-    "Landing": [
-      {
-        "message": "Account checks are getting performed",
-        "time": 15000
-      },
-      {
-        "message": "Network inventory checkes are getting performed",
-        "time": 20000
-      },
-      {
-        "message": "Service checks are getting performed",
-        "time": 20000
-      },
-      {
-        "message": "Device backend configuration checks are getting performed",
-        "time": 15000
-      },
-      {
-        "message": "Device reachability check is getting performed",
-        "time": 25000
-      },
-      {
-        "message": "Checking for any open technical tickets/requests",
-        "time": 15000
-      },
-      {
-        "message": "Analyzing the troubleshooting outcome",
-        "time": 20000
-      }
-    ]
+    
+     "Landing": [
+            {
+                "message": "Account checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Network inventory checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Service checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Checking for any open technical tickets/requests",
+                "time": 15000
+            },
+            {
+                "message": "Analyzing the troubleshooting outcome",
+                "time": 20000
+            }
+        ],
+        "I_WANT_TO_FACTORY_RESET_MY_TV_BOX": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "STB rest is getting performed",
+                "time": 50000
+            },
+            {
+                "message": "Post STB reset check is getting performed",
+                "time": 30000
+            }
+        ],
+        "I_WANTO_TO_FACTORY_RESET_MY_ROUTER": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Router reset is getting performed",
+                "time": 50000
+            },
+            {
+                "message": "Post router reset check is getting performed",
+                "time": 45000
+            },
+            {
+                "message": "Pushing the configuration",
+                "time": 20000
+            },
+            {
+                "message": "Checking the Internet connection status",
+                "time": 30000
+            }
+        ],
+        "ONT_REBOOT_REQUIRED": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Fiber Box reboot is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Post Fiber Box reboot check is getting performed ",
+                "time": 30000
+            },
+            {
+                "message": "Checking the telephone connection status",
+                "time": 30000
+            }
+        ],
+        "TV_SET_TOP_BOX_RESTART_REQUIRED": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "STB reboot is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Post STB reboot check is getting performed",
+                "time": 30000
+            }
+        ],
+        "ALL_SERVICES_E2E_TROUBLESHOOTING": [
+            {
+                "message": "Account checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Network inventory checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Service checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Checking for any open technical tickets/requests",
+                "time": 15000
+            },
+            {
+                "message": "Analyzing the troubleshooting outcome",
+                "time": 20000
+            }
+        ],
+        "INTERNET_E2E_TROUBLESHOOTING": [
+            {
+                "message": "Account checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Network inventory checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Service checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Checking for any open technical tickets/requests",
+                "time": 15000
+            },
+            {
+                "message": "Analyzing the troubleshooting outcome",
+                "time": 20000
+            }
+        ],
+        "ROUTER_REBOOT_REQUIRED": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Router reboot is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Post router reboot check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Checking the Internet connection status",
+                "time": 30000
+            }
+        ],
+        "ROUTER_RESET_REQUIRED": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Router reset is getting performed",
+                "time": 50000
+            },
+            {
+                "message": "Post router reset check is getting performed",
+                "time": 45000
+            },
+            {
+                "message": "Pushing the configuration",
+                "time": 20000
+            },
+            {
+                "message": "Checking the Internet connection status",
+                "time": 30000
+            }
+        ],
+        "INTERNET_PASSWORD_RESET_REQUIRED": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Internet Access Password is getting reset",
+                "time": 30000
+            },
+            {
+                "message": "Post Internet Access Password reest checks are getting performed",
+                "time": 60000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "Checking the Internet connection status",
+                "time": 60000
+            }
+        ],
+        "WIFI_PASSWORD_RESET": [
+            {
+                "message": "Pushing new Wi-Fi settings",
+                "time": 20000
+            },
+            {
+                "message": "Post configuration settings check is getting performed",
+                "time": 25000
+            }
+        ],
+        "TV_E2E_TROUBLESHOOTING": [
+            {
+                "message": "Account checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Network inventory checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Service checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Checking for any open technical tickets/requests",
+                "time": 15000
+            },
+            {
+                "message": "Analyzing the troubleshooting outcome",
+                "time": 20000
+            }
+        ],
+        "TELEPHONE_E2E_TROUBLESHOOTING": [
+            {
+                "message": "Account checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Network inventory checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Service checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 15000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 25000
+            },
+            {
+                "message": "Checking for any open technical tickets/requests",
+                "time": 15000
+            },
+            {
+                "message": "Analyzing the troubleshooting outcome",
+                "time": 20000
+            }
+        ]
   }
 }

@@ -24,6 +24,7 @@ import { NoIssuesComponent } from './routes/no-issues.component';
 import { RouterResetRequiredComponent } from './routes/router-reset-required.component';
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
 import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { RouterNotReachableComponent } from './routes/router-not-reachable.compo
     InternetPasswordResetComponent,
     CustomerNotSameRouterComponent,
     NoIssuesServiceDetailsComponent,
+    ComplaintExistsMessageComponent
   ],
   imports: [
     CommonModule,

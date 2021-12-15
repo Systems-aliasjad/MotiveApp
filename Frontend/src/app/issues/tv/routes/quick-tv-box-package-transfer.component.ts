@@ -4,7 +4,7 @@ import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { SharedService } from 'src/app/shared/shared.service';
 import { FormGroup } from '@angular/forms';
 import { BackendService } from 'src/app/services/backend.service';
-import { flowCodes } from 'src/app/shared/constants/constants';
+import { flowCodes, LoaderScriptsEnum } from 'src/app/shared/constants/constants';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -94,19 +94,16 @@ export class QuickTvBoxPackageTransferComponent implements OnInit, OnDestroy {
   };
 
   button1Listener(_event) {
-    // 130857101318;
-    // console.log('evet', _event);
+    
     this.formGroup = _event;
 
     const dataApi = {
       deviceType: 'STB', //  STB
       stbList: [this.formGroup.controls['radioButton'].value],
     };
-    // debugger;
-    //For api testing
-    //const data = '130857101318';
-
-    this.sharedService.setLoader(true);
+   
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.I_WANT_TO_FACTORY_RESET_MY_TV_BOX);
+    this.sharedService.setLoader(true,scriptArray);
     this.backendService.stbRebootQuickLinks(dataApi).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.result?.screenCode === flowCodes.QASTBR) {

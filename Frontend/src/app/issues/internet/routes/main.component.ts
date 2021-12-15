@@ -4,6 +4,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { ActivatedRoute } from '@angular/router';
+import { LoaderScriptsEnum } from 'src/app/shared/constants/constants';
 
 @Component({
   selector: 'app-main',
@@ -36,7 +37,8 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     // this.helperService.InternetFlowIdentifier('CI72', this.hardData);
     this.activatedRoute.params.subscribe(() => {
-      this.shareService.setLoader(true);
+      var scriptArray = this.shareService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_E2E_TROUBLESHOOTING);
+      this.shareService.setLoader(true,scriptArray);
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data: any) => {
         this.shareService.setLoader(false);
         this.shareService.setInternetGenericResponse(data?.result?.responseData);

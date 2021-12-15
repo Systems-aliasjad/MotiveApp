@@ -44,7 +44,7 @@ export class UnknownErrorComesComponent implements OnInit {
   updateHeader() {}
 
   button1Listener() {
-    if(!this.routerResetSuccessful){
+    if(!this.routerResetSuccessful && this.routerResetSuccessful!==undefined){
       this.helperService.handleInternetPasswordResetCase(this.hsiPasswordReset, 'internet');
     } else {
       this.sharedService.TicketCloseAPICallWithURL('thanks');
@@ -53,7 +53,7 @@ export class UnknownErrorComesComponent implements OnInit {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    if(!this.routerResetSuccessful){
+    if(!this.routerResetSuccessful && this.routerResetSuccessful!==undefined){
       this.Section1Data = {
         header: 'MESSAGES.ROUTER_RESTART_UNSUCCESSFUL',
         paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],

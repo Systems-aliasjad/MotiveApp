@@ -35,6 +35,7 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
 import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-error.component';
 import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-reset-ccb-try-again-error.component';
 import { RebootConfirmDialogComponent } from './routes/dialogs/reboot-confirm-dialog/reboot-confirm-dialog.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 
 const routes: Routes = [
   {
@@ -181,6 +182,10 @@ const routes: Routes = [
   {
     path: 'reboot-devices-confirm',
     component: RebootConfirmDialogComponent,
+  },
+  {
+    path: 'complaint-already-exists',
+    component: ComplaintExistsMessageComponent,
   },
 ];
 

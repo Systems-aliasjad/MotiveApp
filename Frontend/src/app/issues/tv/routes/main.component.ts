@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from 'src/app/services/backend.service';
+import { LoaderScriptsEnum } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
 
@@ -143,7 +144,9 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     // this.shareService.setApiResponseData(this.hardData);
     //  this.helperService.IptvFlowIdentifier('CI9', this.hardData?.responseData);
-    this.shareService.setLoader(true);
+    var scriptArray = this.shareService.GetLoaderDataByID(LoaderScriptsEnum.TV_E2E_TROUBLESHOOTING);
+
+    this.shareService.setLoader(true,scriptArray);
     this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
       this.shareService.setLoader(false);
 

@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountIdComponent } from './routes/account-id/account-id.component';
+import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-message.component';
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
@@ -67,6 +68,11 @@ const routes: Routes = [
   {
     path: 'router-not-reachable',
     component: RouterNotReachableComponent,
+  },
+
+  {
+    path: 'complaint-already-exists',
+    component: ComplaintExistsMessageComponent,
   },
 ];
 

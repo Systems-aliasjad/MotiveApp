@@ -83,14 +83,8 @@ export class SharedService {
   }
 
   GetLoaderDataByID(ID) {
-    switch (ID) {
-      case LoaderScriptsEnum.Landing:
-        return this.LoaderData?.Landing;
-    }
-
-    var array = this.LoaderData;
-
-    return this.LoaderData;
+    return this.LoaderData[ID];
+   
   }
 
   setApiResponseOpenSrs(data) {
@@ -266,6 +260,7 @@ export class SharedService {
   }
 
   setLoader(loaderState: boolean, messageMain?: any): void {
+     messageMain= messageMain==undefined? '': messageMain;
     const loaderObject: any = {
       loaderState,
       messageMain: messageMain || null,
