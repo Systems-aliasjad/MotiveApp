@@ -32,7 +32,7 @@ export class ResetFactoryDefaultDialog implements OnInit {
       this.sharedService.setLoader(true, 'MESSAGES.YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING');
       this.backendService.quickActionsNextStep(QUICK_ACTION.PNP_FACTORY_RESET).subscribe((res) => {
         this.sharedService.setLoader(false);
-        if (res?.result?.screenCode === flowCodes.QAHSIPnPFR) {
+        if (res?.result?.screenCode === flowCodes.QAHSIPnPFR || res?.result?.screenCode === flowCodes.CI11) {
           // this.router.navigate(['/thanks']);
           this.router.navigate(['/issues/internet/router-reset-successful']);
         } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR5) {
