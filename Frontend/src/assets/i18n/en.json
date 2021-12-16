@@ -641,9 +641,8 @@
     "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "Password must match the crietaria as per given below"
   },
 
-  "Loader": {
-    
-     "Landing": [
+ "Loader": {
+        "Landing": [
             {
                 "message": "Account checks are getting performed",
                 "time": 15000
@@ -956,6 +955,78 @@
                 "message": "Analyzing the troubleshooting outcome",
                 "time": 20000
             }
+        ],
+        "ROUTER_MANAGED_BUT_NOT_REACHABLE": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            }
+        ],
+        "ONT_NOT_REACHABLE": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            }
+        ],
+        "INTERNET_SERVICE_DETAIL": [
+            {
+                "message": "Susbcribed service checks are getting perfromed ",
+                "time": 20000
+            },
+            {
+                "message": "Checking for connected devices and data traffic",
+                "time": 30000
+            }
+        ],
+        "STB_NOT_REACHABLE": [
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            }
+        ],
+        "IPTV_SERVICE_DETAIL": [
+            {
+                "message": "Susbcribed service checks are getting perfromed ",
+                "time": 20000
+            },
+            {
+                "message": "Checking for connected devices",
+                "time": 20000
+            },
+            {
+                "message": "Checking for the subscribed pacakges",
+                "time": 20000
+            }
+        ],
+        "RESET_TV_BOX":[
+            {
+                "message": "Device backend configuration checks are getting performed",
+                "time": 20000
+            },
+            {
+                "message": "Device reachability check is getting performed",
+                "time": 30000
+            },
+            {
+                "message": "STB rest is getting perfromed",
+                "time": 50000
+            },
+            {
+                "message": "Post  STB reset check is getting perfromed",
+                "time": 30000
+            }
         ]
-  }
+    }
 }

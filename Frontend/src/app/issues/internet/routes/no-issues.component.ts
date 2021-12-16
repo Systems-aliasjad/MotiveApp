@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -110,7 +110,8 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   async button3Listener() {
-    this.sharedService.setLoader(true);
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_SERVICE_DETAIL);
+    this.sharedService.setLoader(true,scriptArray);
     this.backendService.getIssueDiagnositic('continue').subscribe((res) => {
       this.sharedService.setApiResponseData({
         hsiUploadDownload: [res?.result?.responseData?.upstream, res?.result?.responseData?.downstream],

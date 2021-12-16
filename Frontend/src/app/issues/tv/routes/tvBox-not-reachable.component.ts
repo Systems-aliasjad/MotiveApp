@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail, IStbDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -85,7 +85,8 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true);
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.STB_NOT_REACHABLE);
+    this.sharedService.setLoader(true,scriptArray);
     this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
       this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
@@ -97,7 +98,8 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
+   // this.router.navigate(['/thanks']);
   }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();

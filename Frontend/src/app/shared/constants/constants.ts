@@ -790,4 +790,7 @@ export class LoaderScriptsEnum {
  public static readonly TV_E2E_TROUBLESHOOTING='TV_E2E_TROUBLESHOOTING'; //TV Main   ///App.MotiveH&S.2.1.1
  public static readonly TELEPHONE_E2E_TROUBLESHOOTING='TELEPHONE_E2E_TROUBLESHOOTING'; //Phone Main   ///App.MotiveH&S.3.1.1
  public static readonly ROUTER_MANAGED_BUT_NOT_REACHABLE ='ROUTER_MANAGED_BUT_NOT_REACHABLE'; //Internet Router managed but not reachable  ///App.MotiveH&S.1.8.1A
+ public static readonly INTERNET_SERVICE_DETAIL ='INTERNET_SERVICE_DETAIL'; //Internet no issues service detail  ///DD.MotiveH&S.1.10.2
+ public static readonly STB_NOT_REACHABLE ='STB_NOT_REACHABLE'; //TV  TV set top box bot reachable  ///dd.MotiveH&S.2.6.1
+ public static readonly IPTV_SERVICE_DETAIL ='IPTV_SERVICE_DETAIL'; //TV  no issues continue troubleshoot  ///dd.MotiveH&S.2.7.2
 }

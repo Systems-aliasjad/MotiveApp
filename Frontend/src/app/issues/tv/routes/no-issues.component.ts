@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IStbDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -112,7 +112,8 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   async button3Listener() {
-    this.sharedService.setLoader(true);
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.IPTV_SERVICE_DETAIL);
+    this.sharedService.setLoader(true,scriptArray);
     this.backendService.serviceDetailsSTB().subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData(data);
