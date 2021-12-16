@@ -25,6 +25,7 @@ export class ComplaintUnderProcessMessageComponent implements OnInit, OnDestroy 
   Section1Data;
   Section2Template;
   Section2Data;
+  referenceNo;
   imgSrc;
   button1: IMotiveButton = {
     type: 'primary',
@@ -40,6 +41,8 @@ export class ComplaintUnderProcessMessageComponent implements OnInit, OnDestroy 
   constructor(private sharedService: SharedService, private backendService: BackendService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
+    const navigation = this.router.getCurrentNavigation();
+    this.referenceNo = navigation?.extras?.state?.referenceNo
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
     });
@@ -61,9 +64,7 @@ export class ComplaintUnderProcessMessageComponent implements OnInit, OnDestroy 
     console.log(this.formValue);
     this.sharedService.setLoader(true);
 
-      const navigation = this.router.getCurrentNavigation();
-      var referenceNo = navigation?.extras?.state?.referenceNo
-      this.backendService.complaintUnderProcessRemarks(this.formValue,referenceNo).subscribe((data: any) => {
+      this.backendService.complaintUnderProcessRemarks(this.formValue,this.referenceNo).subscribe((data: any) => {
         this.sharedService.setLoader(false);
            if (data?.result?.screenCode === flowCodes.QACOMFU4) {
         this.router.navigate(['track-complaint/feedback-submitted-successfully']);
