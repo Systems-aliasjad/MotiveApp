@@ -77,9 +77,11 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
     this.router.navigate(['/issues/internet/device-care']);
   }
 
-  button2Listener() {}
+  button2Listener() {this.sharedService.TicketCloseAPICallWithURL('thanks');}
 
-  button3Listener() {}
+  button3Listener() {
+    this.router.navigate(['issues/internet/book-complaint']);
+  }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
