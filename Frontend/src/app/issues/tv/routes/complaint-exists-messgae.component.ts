@@ -28,6 +28,7 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
+  referenceNo:any;
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.YES',
@@ -56,6 +57,8 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
     this.Section2Template = ApplicableCodes.openServiceRequestTemplateCompliant;
     this.Section1Data = CustomerJourneyConstants.complaintExistsCase1;
     const temp = this.sharedService.getApiResponseData();
+
+   this.referenceNo= temp?.referenceNo;
     this.Section2Data = {
       // complaintNo: '436529873',
       // dateVisit: 'Jul 10 2019, 10:30 AM',
@@ -68,7 +71,7 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-  this.router.navigate(['issues/internet/complaint-under-process-message']);
+ this.router.navigate(['issues/internet/complaint-under-process-message'], { state: { referenceNo: this.referenceNo } });
   }
 
   button2Listener() {

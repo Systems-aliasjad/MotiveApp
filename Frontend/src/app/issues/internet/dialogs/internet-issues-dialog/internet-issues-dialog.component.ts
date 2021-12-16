@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { SharedService } from 'src/app/shared/shared.service';
-import { ERoutingIds } from '../../../../shared/constants/constants';
+import { ERoutingIds, LoaderScriptsEnum } from '../../../../shared/constants/constants';
 import { InternetIssuesDialogSecondComponent } from '../internet-issues-dialog-second/internet-issues-dialog-second.component';
 
 @Component({
@@ -63,6 +63,8 @@ export class InternetIssuesDialog implements OnInit {
   async SubmitForm() {
     this.modalCtrl.dismiss();
     this.sharedService.setTryAgainRouterNotReachableFlag();
+
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_MANAGED_BUT_NOT_REACHABLE);
     this.sharedService.setLoader(true);
     this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {

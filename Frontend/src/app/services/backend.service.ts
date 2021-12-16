@@ -290,6 +290,18 @@ export class BackendService {
     }
   }
 
+ complaintUnderProcessRemarks(remakrs,referenceNo) {
+    if (environment.shouldCallAPI) {
+      return this.http.get(`motive/troubleshoot/complaint-followup/${referenceNo}?remarks=${remakrs}`);
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+
+
+
   srFollowupRemarks(remakrs) {
     if (environment.shouldCallAPI) {
       return this.http.get(`motive/troubleshoot/sr-followup?srNo=${remakrs}`);
@@ -312,6 +324,22 @@ export class BackendService {
       return this.hardCoadedResponse(response);
     }
   }
+
+  complaintUnderProcess(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, {
+        data: {
+          qaComFolUpRemarks:data
+        },
+        signal: 'next',
+      });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
+
   transferPackage(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/transfer-pkg`, data);

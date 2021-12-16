@@ -789,4 +789,5 @@ export class LoaderScriptsEnum {
  public static readonly WIFI_PASSWORD_RESET='WIFI_PASSWORD_RESET'; //Internet No issues   ///App.MotiveH&S.1.10.10
  public static readonly TV_E2E_TROUBLESHOOTING='TV_E2E_TROUBLESHOOTING'; //TV Main   ///App.MotiveH&S.2.1.1
  public static readonly TELEPHONE_E2E_TROUBLESHOOTING='TELEPHONE_E2E_TROUBLESHOOTING'; //Phone Main   ///App.MotiveH&S.3.1.1
+ public static readonly ROUTER_MANAGED_BUT_NOT_REACHABLE ='ROUTER_MANAGED_BUT_NOT_REACHABLE'; //Internet Router managed but not reachable  ///App.MotiveH&S.1.8.1A
 }

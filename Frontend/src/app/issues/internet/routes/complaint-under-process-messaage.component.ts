@@ -61,9 +61,9 @@ export class ComplaintUnderProcessMessageComponent implements OnInit, OnDestroy 
     console.log(this.formValue);
     this.sharedService.setLoader(true);
 
-
-  this.sharedService.setLoader(true);
-      this.backendService.transferPackageNextStep(this.formValue).subscribe((data: any) => {
+      const navigation = this.router.getCurrentNavigation();
+      var referenceNo = navigation?.extras?.state?.referenceNo
+      this.backendService.complaintUnderProcessRemarks(this.formValue,referenceNo).subscribe((data: any) => {
         this.sharedService.setLoader(false);
            if (data?.result?.screenCode === flowCodes.QACOMFU4) {
         this.router.navigate(['track-complaint/feedback-submitted-successfully']);
