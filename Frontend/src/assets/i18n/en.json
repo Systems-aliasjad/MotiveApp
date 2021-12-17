@@ -546,7 +546,7 @@
     "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": "The TV box SR No. {{stbSerialNumber}} couldn’t be found.",
     "PLEASE_CHECK_IF": "Please check if:",
     "THE_TV_BOX_IS_TURNED_ON": "The TV box is turned on",
-    "THE_CABLE_FROM_THE_TV_BOX_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "The cable from the TV box is connected to the 'X' port of the wall mounted fiber box",
+    "THE_CABLE_FROM_THE_TV_BOX_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "The cable from the TV box is connected to the {{ iptvPortNumbers }} port of the wall mounted fiber box",
     "THE_TV_BOX_IS_NOT_SWITCHED_ON": "The TV box is not switched on",
     "THE_TV_BOX_IS_FAULTY": "The TV box is faulty",
     "PLEASE_RESTART_THE_TV_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": "Please restart the TV box and then try using the TV again.",

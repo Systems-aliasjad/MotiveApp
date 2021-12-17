@@ -228,7 +228,7 @@ export class HelperService {
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/internet/account-not-active']);
     } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, hsiPortNumber: data?.hsiPortNumber });
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/internet/fiber-box-not-reachable']);
       } else if (data?.ontDetails?.isRebootRequired) {
@@ -404,7 +404,7 @@ export class HelperService {
       // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
     } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, stbDetails: data?.stbDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, stbDetails: data?.stbDetails, iptvPortNumbers: data?.iptvPortNumbers });
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/tv/fiber-box-not-reachable']);
       } else if (data?.ontDetails?.isRebootRequired) {

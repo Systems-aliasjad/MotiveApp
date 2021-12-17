@@ -12,6 +12,8 @@ import { NetWorkDiagramIds } from '../../constants/constants';
 export class IssueTabsComponent implements OnInit, OnDestroy {
   @Input()
   stbSerialNumber: string;
+  @Input()
+  iptvPortNumbers:string;
 
   @Input()
   networkDiagram: NetWorkDiagramIds;

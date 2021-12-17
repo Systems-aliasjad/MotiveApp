@@ -36,7 +36,7 @@
         <p>{{ message?.title | translate: { stbSerialNumber: stbSerialNumber } }}</p>
         <ion-list *ngIf="message.children" class="bullet-list">
           <ion-item *ngFor="let item of message.children">
-            <ion-label> {{ item | translate }}</ion-label>
+            <ion-label> {{ item | translate: {iptvPortNumbers: iptvPortNumbers } }}</ion-label>
           </ion-item>
         </ion-list>
       </div>

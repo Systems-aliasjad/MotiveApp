@@ -36,6 +36,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   messageSection;
   section1Template;
   section1Data;
+  apiResponse: any;
   button1: IMotiveButton = {
     title: 'BUTTONS.YES_I_AM',
     type: 'primary',
@@ -85,6 +86,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
       component: InternetIssuesDialog,
       componentProps: {
         id: ERoutingIds.routerNotReachable,
+        portNumber: this.apiResponse?.hsiPortNumber,
       },
     });
     return await modal.present();
@@ -95,8 +97,8 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   }
 
   getIssueTilesData() {
-    const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    this.apiResponse = this.sharedService.getApiResponseData();
+    const temp = this.helperService.networkDiagramStylingWrapper(this.apiResponse?.ontDetails, this.apiResponse?.routerDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
     this.section1Data = {

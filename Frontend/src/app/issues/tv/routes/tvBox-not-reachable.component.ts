@@ -13,6 +13,7 @@ import { SharedService } from '../../../shared/shared.service';
   template: `<app-diagnose-issue
     [networkDiagram]="networkDiagram"
     [stbSerialNumber]="stbSerialNumber"
+    [iptvPortNumbers]="iptvPortNumbers"
     [etisalatConfig]="etisalatConfig"
     [ontConfig]="ontConfig"
     [connectedDevices]="connectedDevices"
@@ -33,6 +34,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices;
   stbSerialNumber: string = '';
+  iptvPortNumbers: string = '';
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
@@ -75,7 +77,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     const apiResponse = this.sharedService.getApiResponseData();
-
+    this.iptvPortNumbers = apiResponse?.iptvPortNumbers
     apiResponse?.stbDetails.forEach((element) => {
       if (!element.isReachable) {
         this.stbSerialNumber = this.stbSerialNumber + element?.stbSerialNumber + ',';

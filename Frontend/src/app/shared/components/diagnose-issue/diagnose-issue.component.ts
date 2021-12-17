@@ -12,6 +12,9 @@ export class DiagnoseIssueComponent implements OnInit {
   stbSerialNumber: string;
 
   @Input()
+  iptvPortNumbers:string;
+
+  @Input()
   networkDiagram: NetWorkDiagramIds;
 
   @Input()

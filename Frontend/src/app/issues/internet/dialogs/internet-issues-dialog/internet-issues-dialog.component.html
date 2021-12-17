@@ -21,7 +21,7 @@
           <p>Please check if:</p>
           <ion-list class="bullet-list">
             <ion-item *ngFor="let ins of instructionList; let i = index">
-              <ion-label> {{ ins | translate }}</ion-label>
+              <ion-label> {{ ins | translate: { portNumber: portNumber } }}</ion-label>
             </ion-item>
           </ion-list>
           <!-- <p *ngFor="let ins of instructionList; let i = index"><b>.</b> {{ ins | translate }}</p> -->

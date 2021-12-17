@@ -517,7 +517,7 @@
     "THERE_IS_ALREADY_AN_APPOINTMENT_SCHEDULED_FOR_PROVIDING_THE_SERVICE": "هناك بالفعل موعد محدد لتقديم الخدمة",
     "THERE_IS_SOME_WORK_PENDING_FROM_YOUR_SIDE_PLEASE_TAP_SET_AN_APPOINTMENT_IF_YOU_HAVE_ALREADY_COMPLETED_IT": "هناك بعض الإجراءات المعلقة من جانبك. لو سمحت انقر على 'تحديد موعد' إذا كان لديك بالفعل..",
     "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBRE_BOX": "توصيل الكابل من الراوتر إلى منفذ X بصندوق الألياف المركّب على الحائط",
-    "THE_CABLE_FROM_THE_TV_BOX_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ × بصندوق الألياف المركّب على الحائط",
+    "THE_CABLE_FROM_THE_TV_BOX_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": "توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ {{iptvPortNumbers}} بصندوق الألياف المركّب على الحائط",
     "THE_CABLE_ISNT_CONNECTED_PROPERLY": " لم يتم توصيل الكابل بشكل صحيح",
     "THE_CHANNEL_IS_NOT_AVAILABLE_AS_PART_OF_THE_TV_PACKAGE_YOU_HAVE_SUBSCRIBED": "القناة غير متوفرة كجزء من الباقة التي اشتركت فيها",
     "THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "القناة <xxx> متاحة على جهاز الاستقبال التلفزيوني أدناه.",

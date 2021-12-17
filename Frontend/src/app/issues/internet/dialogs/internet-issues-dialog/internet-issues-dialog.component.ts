@@ -16,7 +16,9 @@ import { InternetIssuesDialogSecondComponent } from '../internet-issues-dialog-s
 export class InternetIssuesDialog implements OnInit {
   @Input()
   id: number;
-  instructionList: string[] = ['Router is switched on', "The cable from the router is connected to the 'X' port of the wall mounted fibre works"];
+  @Input()
+  portNumber: any;
+  instructionList: string[] = ['Router is switched on', "The cable from the router is connected to the {{ portNumber}} port of the wall mounted fibre works"];
   instructionListDialog2: string[] = [
     'We are still unable to reach your router.',
     'It looks like any one of these could be the issue:',
