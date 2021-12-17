@@ -141,9 +141,26 @@ export class HelperService {
     } else if (CodeId === flowCodes.issueNotFixed) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails});
       this.router.navigate(['issues/other/issue-not-fixed']);
-    } else if (CodeId === flowCodes.CI9) {
+    } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails });
-      this.AllSevicesCI9RouterCases(data?.routerDetails);
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/other/fiber-box-not-reachable']);
+      } else if(!data?.routerDetails?.isReachable){
+        // router not reachable
+        this.router.navigate(['issues/other/router-not-reachable']);
+      } else if (data?.stbDetails?.length > 0){
+        data.stbDetails.forEach(element => {
+          if(!element.isReachable){
+            //stb not reachable
+          }
+        });
+      }
+      // else if (data?.ontDetails?.isRebootRequired) {
+      //   this.router.navigate(['issues/other/router-reboot-required']);
+      // } 
+      else {
+        this.AllSevicesCI9RouterCases(data);
+      }
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
       this.router.navigate(['issues/other/router-reset-required']);
@@ -164,9 +181,21 @@ export class HelperService {
       }
 
       
+    } else if( CodeId === flowCodes.CI13) {
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/other/common/fiber-box-not-reachable-try-again']);
+      } else if(!data?.routerDetails?.isReachable){
+        // router not reachable
+        this.router.navigate(['issues/other/router-not-reachable']);
+      } else if (data?.stbDetails?.length > 0){
+        data.stbDetails.forEach(element => {
+          if(!element.isReachable){
+            //stb not reachable
+          }
+        });
+      }
     }
-
-
       else if (CodeId === flowCodes.CI14) {
       this.sharedService.setApiResponseData(data);
         this.router.navigate(['issues/other/complaint-already-exists']);
@@ -198,11 +227,11 @@ export class HelperService {
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/internet/account-not-active']);
-    } else if (CodeId === flowCodes.CI9) {
+    } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/internet/fiber-box-not-reachable']);
-      } else if (data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+      } else if (data?.ontDetails?.isRebootRequired) {
         this.router.navigate(['issues/internet/ont-reboot-required']);
       } else {
         this.handleCI9RouterCases(data?.routerDetails);
@@ -269,12 +298,16 @@ export class HelperService {
     } else if (CodeId === flowCodes.openComplaint) {
       this.router.navigate(['issues/internet/complaint-already-exists']);
       this.sharedService.setApiResponseData({ complaintDetails: data?.complaintDetails });
-    }
-
-     else if (CodeId === flowCodes.CI14) {
+    } else if (CodeId === flowCodes.CI14) {
       this.sharedService.setApiResponseData(data);
       this.router.navigate(['issues/internet/complaint-already-exists']);
-      
+    } else if (CodeId === flowCodes.CI13){
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/internet/common/fiber-box-not-reachable-try-again']);
+      } else {
+        this.handleCI9RouterCases(data?.routerDetails);
+      }
     }
 
 
@@ -304,11 +337,13 @@ export class HelperService {
       this.router.navigate(['issues/phone/outage']);
     } else if (codeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/phone/issue-not-fixed']);
-    } else if (codeId === flowCodes.CI9) {
+    } else if (codeId === flowCodes.CI9 || codeId === flowCodes.CI4) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/phone/fiber-box-not-reachable']);
-      } else if (data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+      } else if(!data?.phoneDetails?.isReachable){
+        this.router.navigate(['issues/phone/phone-not-reachable-first-time'])
+      } else if (data?.ontDetails?.isRebootRequired) {
         this.router.navigate(['issues/phone/ont-reboot']);
       }
     } else if (codeId === flowCodes.CI72) {
@@ -317,8 +352,14 @@ export class HelperService {
       } else if (data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_NOT_FIXED) {
         this.router.navigate(['issues/phone/issue-not-fixed']);
       }
+    } else if(codeId == flowCodes.CI13){
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/phone/common/fiber-box-not-reachable-try-again']);
+      }  else if(!data?.phoneDetails?.isReachable){
+        this.router.navigate(['issues/phone/phone-not-reachable'])
+      }
     }
-
     else if (codeId === flowCodes.CI14) {
       this.sharedService.setApiResponseData(data);
     this.router.navigate(['issues/phone/complaint-already-exists']);
@@ -361,20 +402,31 @@ export class HelperService {
       this.router.navigate(['issues/tv/complaint-already-exists']);
 
       // this.sharedService.setApiResponseData({ complaintDetails: temp3 });
-    } else if (CodeId === flowCodes.CI9) {
+    } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, stbDetails: data?.stbDetails });
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/tv/fiber-box-not-reachable']);
-      } else if (data?.ontDetails?.isRebootRequired || data?.ontDetails?.isUpgradeRequired) {
+      } else if (data?.ontDetails?.isRebootRequired) {
         this.router.navigate(['issues/tv/ont-reboot-required']);
       } else if (data?.stbDetails?.length > 0) {
-        this.handleCI9RouterCasesIPTV(data?.stbDetails[0]);
+        data.stbDetails.forEach(element => {
+          this.handleCI9RouterCasesIPTV(element);
+        });
       }
-
       // this.handleCI9RouterCasesIPTV(data?.stbDetails);
+    } else if(CodeId === flowCodes.CI13){
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.stbDetails, stbDetails: data?.stbDetails });
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/tv/common/fiber-box-not-reachable-try-again']);
+      } else if(data?.stbDetails?.length > 0){
+        data.stbDetails.forEach(element => {
+          if(!element?.isReachable){
+            this.router.navigate(['issues/tv/box-not-reachable-try-again'])
+          }
+        });
+      }
     }
-
     //////////////////First Check
     // else if (CodeId === flowCodes.CI72) {
     //   this.router.navigate(['issues/tv/tvBox-restart-required-successfully']);
@@ -448,13 +500,18 @@ export class HelperService {
     }
   }
 
-  AllSevicesCI9RouterCases(routerDetails: IRouterDetail) {
-    if (routerDetails?.isManaged) {
-      if (!routerDetails?.isReachable) {
-        this.router.navigate(['issues/other/router-not-reachable']);
-      } else {
-        this.router.navigate(['issues/other/router-reboot-required']);
-      }
+  AllSevicesCI9RouterCases(data ) {
+    if (data?.routerDetails?.isManaged) {
+      this.router.navigate(['issues/other/router-reboot-required']);
+    //  if(data?.routerDetails?.isRebootRequired || data?.ontDetails?.isRebootRequired){
+    //   this.router.navigate(['issues/other/router-reboot-required']);
+    //  } else if(data?.stbDetails?.length > 0) {
+    //    data.stbDetails.forEach(element => {
+    //      if(!element.isRebootRequired){
+    //       this.router.navigate(['issues/other/router-reboot-required']);
+    //      }
+    //    });
+    //  }
     } else {
       this.router.navigate(['issues/other/third-party-router']);
     }

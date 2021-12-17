@@ -78,7 +78,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
 
   getIssueTilesData() {
@@ -88,5 +88,7 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
     this.routerConfig = temp?.routerConfig;
   }
 
-  button3Listener() {}
+  button3Listener() {
+    this.router.navigate(['issues/internet/book-complaint']);
+  }
 }

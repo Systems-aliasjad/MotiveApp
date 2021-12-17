@@ -6,6 +6,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { SharedService } from 'src/app/shared/shared.service';
 import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
   selector: 'all-services-fiber-box-not-reachable',
@@ -20,8 +21,6 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
   >
   </app-diagnose-issue>`,
 })
@@ -33,17 +32,12 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
-    title: 'BUTTONS.DEVICE_CARE',
-    type: 'link',
-  };
-  button2: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_FIXED',
+    title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
-  };
-
-  button3: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_STILL_NOT_RESOLVED',
-    type: 'secondary',
+   };
+  button2: IMotiveButton = {
+    title: 'BUTTONS.ISSUE_RESOLVED',
+    type: 'link',
   };
 
   headerConfig: IPageHeader = {
@@ -51,7 +45,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
     showBackBtn: true,
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService:BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -74,14 +68,14 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/issues/internet/device-care']);
+    this.sharedService.setLoader(true, ['Checking Ont Reachability']);
+    this.backendService.nextSignal('next').subscribe((data) => {
+      this.sharedService.setLoader(false);
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    })
   }
 
   button2Listener() {this.sharedService.TicketCloseAPICallWithURL('thanks');}
-
-  button3Listener() {
-    this.router.navigate(['issues/internet/book-complaint']);
-  }
 
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();

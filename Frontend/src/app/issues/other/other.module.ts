@@ -15,6 +15,7 @@ import { FiberBoxNotReachableComponent } from './routes/fiber-box-not-reachable-
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
 import { OutageComponent } from './routes/outage.component';
 import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
+import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
 import { RouterRebootRequiredComponent } from './routes/router-reboot-required.component';
 import { InternetModule } from '../internet/internet.module';
@@ -41,7 +42,8 @@ import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messg
     InternetPasswordResetComponent,
     CustomerNotSameRouterComponent,
     NoIssuesServiceDetailsComponent,
-    ComplaintExistsMessageComponent
+    ComplaintExistsMessageComponent,
+    FiberBoxNotReachableTryAgainComponent
   ],
   imports: [
     CommonModule,

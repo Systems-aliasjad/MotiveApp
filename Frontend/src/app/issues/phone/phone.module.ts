@@ -42,6 +42,7 @@ import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-err
 import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-reset-ccb-try-again-error.component';
 import { RebootConfirmDialogComponent } from './routes/dialogs/reboot-confirm-dialog/reboot-confirm-dialog.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { PhoneNotReachableFirstTimeComponent } from './routes/phone-not-reachable-first-time.component';
 
 @NgModule({
   declarations: [
@@ -76,6 +77,7 @@ import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messg
     PhoneIssuesProblemValueAddedComponent,
     CancelElifeConnectionMessageComponent,
     AccountTemporarilyDisconnectedMessageComponent,
+    PhoneNotReachableFirstTimeComponent,
     ResetCcbTryAgainErrorComponent,
     UnableProcessResetCcbErrorComponent,
     RebootConfirmDialogComponent,

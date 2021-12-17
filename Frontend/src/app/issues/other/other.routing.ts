@@ -1,5 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { AccountIdComponent } from './routes/account-id/account-id.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { CustomerNotSameRouterComponent } from './routes/customer-not-same-router.component';
@@ -74,6 +75,14 @@ const routes: Routes = [
     path: 'complaint-already-exists',
     component: ComplaintExistsMessageComponent,
   },
+  {
+    path: 'fiber-box-not-reachable',
+    component: FiberBoxNotReachableComponent,
+  },
+  {
+    path:'common/fiber-box-not-reachable-try-again',
+    component: FiberBoxNotReachableTryAgainComponent,
+  }
 ];
 
 @NgModule({

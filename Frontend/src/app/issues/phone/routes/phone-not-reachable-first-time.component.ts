@@ -1,17 +1,17 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { SharedService } from 'src/app/shared/shared.service';
-import { ETISALAT_DEFAULT_CONFIG, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
 import { HelperService } from 'src/app/shared/helper/helper.service';
+import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
 import { BackendService } from 'src/app/services/backend.service';
 
 @Component({
-  selector: 'all-services-fiber-box-not-reachable',
+  selector: 'phone-not-reachable',
   template: `<app-diagnose-issue
-    [networkDiagram]="networkDiagram"
     [ontConfig]="ontConfig"
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
@@ -24,23 +24,30 @@ import { BackendService } from 'src/app/services/backend.service';
   >
   </app-diagnose-issue>`,
 })
-export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
+export class PhoneNotReachableFirstTimeComponent implements OnInit, OnDestroy {
   subscription: Subscription;
-  networkDiagram = NetWorkDiagramIds.ThreeLayer;
   messageSection;
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN',
     type: 'primary',
-   };
+  };
   button2: IMotiveButton = {
-    title: 'BUTTONS.ISSUE_RESOLVED',
-    type: 'link',
+    title: 'BUTTONS.CLOSE',
+    type: 'secondary',
   };
 
-  constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
+  constructor(
+    private helperService: HelperService,
+    private sharedService: SharedService,
+    private router: Router,
+    private modalCtrl: ModalController,
+    private activatedRoute: ActivatedRoute,
+    private backendService: BackendService
+  ) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -55,31 +62,29 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
-    // this.sharedService.setHeaderConfig('HEADER.ISSUES', false);
+    //this.sharedService.setHeaderConfig('HEADER.PHONE_ISSUES', false);
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.ISSUES',
+    pageTitle: 'HEADER.PHONE_ISSUES',
     showBackBtn: true,
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.fiberBoxNotReachableBuilderSection;
+    this.messageSection = CustomerJourneyConstants.phoneNotReachableAllServicesSection;
   }
 
-  button1Listener() {
-    this.sharedService.setLoader(true, ['Checking Ont Reachability']);
+  async button1Listener() {
+    this.sharedService.setLoader(true, ['Phone not Reachable']);
     this.backendService.nextSignal('next').subscribe((data) => {
       this.sharedService.setLoader(false);
       this.helperService.voiceFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     })
-    //this.router.navigate(['/thanks']);
   }
 
   button2Listener() {
     this.sharedService.TicketCloseAPICallWithURL('thanks');
   }
-
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);

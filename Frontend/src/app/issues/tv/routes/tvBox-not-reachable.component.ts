@@ -86,14 +86,18 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
 
   button1Listener() {
     var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.STB_NOT_REACHABLE);
-    this.sharedService.setLoader(true,scriptArray);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
-      this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
-      this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
-        this.sharedService.setLoader(false);
-        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
-    });
+    this.sharedService.setLoader(true, scriptArray);
+    this.backendService.nextSignal('next').subscribe((data) => {
+      this.sharedService.setLoader(false);
+      this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    })
+    // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
+    //   this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+    //   this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
+    //     this.sharedService.setLoader(false);
+    //     this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   });
+    // });
     // this.router.navigate(['/issues/tv/box-not-reachable-try-again']);
   }
 

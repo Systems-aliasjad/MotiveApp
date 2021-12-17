@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { ApplicableCodes, warningImgSrc } from 'src/app/shared/constants/constants';
+import { ApplicableCodes, LoaderScriptsEnum, warningImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
@@ -75,10 +75,10 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-      this.sharedService.setLoader(true);
-      this.backendService.nextSignal('Continue Troubleshooting').subscribe((data: any) => {
-        this.sharedService.setLoader(false);
-        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.TV_E2E_TROUBLESHOOTING);
+    this.sharedService.setLoader(true, scriptArray); this.backendService.nextSignal('Continue Troubleshooting').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
   }
 }

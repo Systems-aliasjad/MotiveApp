@@ -76,7 +76,9 @@ export class PhoneNotReachableComponent implements OnInit, OnDestroy {
     this.router.navigate(['/issues/internet/book-appointment']);
   }
 
-  button2Listener() {}
+  button2Listener() {  
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
+  }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);

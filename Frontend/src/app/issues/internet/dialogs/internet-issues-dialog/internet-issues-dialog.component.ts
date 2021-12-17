@@ -40,7 +40,7 @@ export class InternetIssuesDialog implements OnInit {
   ) {}
 
   ngOnInit() {
-    if (this.sharedService.getTryAgainRouterNotReachableFlag() != 0) {
+    if (this.sharedService.getTryAgainRouterNotReachableFlag() !== 0) {
       this.openSecondPopup();
     }
   }
@@ -65,13 +65,17 @@ export class InternetIssuesDialog implements OnInit {
     this.sharedService.setTryAgainRouterNotReachableFlag();
 
     var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_MANAGED_BUT_NOT_REACHABLE);
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
-      this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
+    this.sharedService.setLoader(true, scriptArray);
+    this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
     });
+    // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
+    //   this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
+    //     this.sharedService.setLoader(false);
+    //     this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   });
+    // });
   }
 
   ExitTroubleshoot() {

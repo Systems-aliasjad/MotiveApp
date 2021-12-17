@@ -36,6 +36,8 @@ import { ResetCcbTryAgainErrorComponent } from './routes/reset-ccb-try-again-err
 import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-reset-ccb-try-again-error.component';
 import { RebootConfirmDialogComponent } from './routes/dialogs/reboot-confirm-dialog/reboot-confirm-dialog.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
+import { PhoneNotReachableFirstTimeComponent } from './routes/phone-not-reachable-first-time.component';
 
 const routes: Routes = [
   {
@@ -187,6 +189,14 @@ const routes: Routes = [
     path: 'complaint-already-exists',
     component: ComplaintExistsMessageComponent,
   },
+  {
+    path: 'common/fiber-box-not-reachable-try-again',
+    component: FiberBoxNotReachableTryAgainComponent,
+  },
+  {
+    path:'phone-not-reachable-first-time',
+    component:PhoneNotReachableFirstTimeComponent,
+  }
 ];
 
 @NgModule({
