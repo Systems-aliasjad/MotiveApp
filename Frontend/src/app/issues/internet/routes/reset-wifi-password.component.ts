@@ -76,7 +76,7 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
       } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
         this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
       } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
-        this.router.navigate(['/issues/password/unable-to-reset-password']);
+        this.router.navigate(['/common/router-unreachable']);
       }
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });

@@ -39,6 +39,7 @@ import { MalihuScrollbarModule } from 'ngx-malihu-scrollbar';
 import { SafePipe } from './pipe/safePipe';
 import { SixLayerComponent } from './components/network-diagrams/six-layer/six-layer.component';
 import { UnknownErrorComesComponent } from './components/unknown-error-comes/unknown-error-comes.component';
+import { RouterUnreachableComponent } from './components/router-unreachable.component';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { UnknownErrorComesComponent } from './components/unknown-error-comes/unk
     GenericErrorIssuesComponent,
     SafePipe,
     UnknownErrorComesComponent,
+    RouterUnreachableComponent,
   ],
   imports: [
     CommonModule,
@@ -112,6 +114,7 @@ import { UnknownErrorComesComponent } from './components/unknown-error-comes/unk
     MultiLayerComponent,
     ThreeLayersComponent,
     SevenLayerComponent,
+    RouterUnreachableComponent,
   ],
 
   entryComponents: [],

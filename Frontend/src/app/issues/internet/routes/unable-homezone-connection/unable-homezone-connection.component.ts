@@ -56,7 +56,7 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
         } else if (res?.result?.screenCode === flowCodes.QAHSIWIFI5) {
           this.router.navigate(['/issues/internet/error-occur-try-again-later']);
         } else if (res?.result?.screenCode === flowCodes.QAHSIWIFI1) {
-          this.router.navigate(['/issues/password/unable-to-reset-password']);
+          this.router.navigate(['/common/router-unreachable']);
         } else {
           this.router.navigate(['/unknown-issue']);
         }

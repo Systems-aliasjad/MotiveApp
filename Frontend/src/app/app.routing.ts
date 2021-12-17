@@ -9,6 +9,7 @@ import { GenericErrorComponent } from './shared/components/generic-error/generic
 import { GenericErrorIssuesComponent } from './shared/components/generic-error-issues/generic-error-issues.component';
 import { InstallNewRouterComponent } from './common-quick-links/install-new-router/install-new-router.component';
 import { UnknownErrorComesComponent } from './shared/components/unknown-error-comes/unknown-error-comes.component';
+import { RouterUnreachableComponent } from './shared/components/router-unreachable.component';
 
 const routes: Routes = [
   {
@@ -86,6 +87,10 @@ const routes: Routes = [
     path: 'loader',
     component: LoaderComponent,
   },
+  {
+    path: 'common/router-unreachable',
+    component: RouterUnreachableComponent,
+  }
   // {
   //   path: '**',
   //   redirectTo: 'issues/other/account-id',

@@ -86,7 +86,7 @@ export class ResetWifiTryAgainErrorComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
     // if (this?.sharedService.getQuickLinksData()) {
     //   this.router.navigate(['landing']);
     // } else {

@@ -90,7 +90,7 @@ export class UnableToConnnectWifiNetwork implements OnInit, OnDestroy {
             // this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
             this.router.navigate(['/issues/internet/stage2/reset-wifi-password'],  { state: { quickLinkNextSignal: this?.quickLinkNextSignal } } );
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
-            this.router.navigate(['/issues/password/unable-to-reset-password']);
+            this.router.navigate(['/common/router-unreachable']);
           } else {
             this.router.navigate(['/unknown-issue']);
           }
