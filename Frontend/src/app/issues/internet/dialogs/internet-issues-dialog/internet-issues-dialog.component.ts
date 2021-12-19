@@ -18,7 +18,7 @@ export class InternetIssuesDialog implements OnInit {
   id: number;
   @Input()
   portNumber: any;
-  instructionList: string[] = ['Router is switched on', "The cable from the router is connected to the {{ portNumber}} port of the wall mounted fibre works"];
+  instructionList: string[] = ['Router is switched on'];
   instructionListDialog2: string[] = [
     'We are still unable to reach your router.',
     'It looks like any one of these could be the issue:',
@@ -42,6 +42,7 @@ export class InternetIssuesDialog implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.instructionList.push(`The cable from the router is connected to the ${this.portNumber} port of the wall mounted fibre works`)
     if (this.sharedService.getTryAgainRouterNotReachableFlag() !== 0) {
       this.openSecondPopup();
     }

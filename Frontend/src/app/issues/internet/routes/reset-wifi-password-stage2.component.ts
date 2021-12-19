@@ -254,7 +254,6 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         });
       });
     } else {
-      debugger;
       this.sharedService.setLoader(true, scriptArray);
       this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);

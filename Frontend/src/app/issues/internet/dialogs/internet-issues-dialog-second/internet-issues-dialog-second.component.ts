@@ -63,13 +63,15 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
   }
 
   TryAgain() {
-    this.sharedService.setTryAgainRouterNotReachableFlag();
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
-      this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
-        this.sharedService.setLoader(false);
-        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
-    });
+   
+   this.sharedService.TicketCloseAPICallWithURL('thanks');
+    // this.sharedService.setTryAgainRouterNotReachableFlag();
+    // this.sharedService.setLoader(true);
+    // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
+    //   this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
+    //     this.sharedService.setLoader(false);
+    //     this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   });
+    // });
   }
 }
