@@ -36,6 +36,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   messageSection;
   section1Template;
   section1Data;
+  Ci9Flag;
   apiResponse: any;
   button1: IMotiveButton = {
     title: 'BUTTONS.YES_I_AM',
@@ -56,6 +57,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -87,6 +89,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
       componentProps: {
         id: ERoutingIds.routerNotReachable,
         portNumber: this.apiResponse?.hsiPortNumber,
+        Ci9Flag: this.Ci9Flag,
       },
     });
     return await modal.present();
