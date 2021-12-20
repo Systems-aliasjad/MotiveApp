@@ -74,11 +74,6 @@ export class InternetIssuesDialog implements OnInit {
       const data = this.sharedService.getApiResponseData();
       data.routerDetails.isReachable = true;
       if(this.otherFlow) {
-        if(data?.stbDetails.length > 0){
-          data.stbDetails.forEach(element => {
-            element.isReachable = true;
-          });
-        }
         this.helperService.otherFlowIdentifier('CI9', data);
       } else {
         this.helperService.InternetFlowIdentifier('CI9', data);
