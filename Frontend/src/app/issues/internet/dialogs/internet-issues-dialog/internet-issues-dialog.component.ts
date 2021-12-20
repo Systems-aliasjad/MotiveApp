@@ -18,6 +18,8 @@ export class InternetIssuesDialog implements OnInit {
   id: number;
   @Input()
   portNumber: any;
+  @Input()
+  Ci9Flag = false;
   instructionList: string[] = ['Router is switched on'];
   instructionListDialog2: string[] = [
     'We are still unable to reach your router.',
@@ -66,13 +68,18 @@ export class InternetIssuesDialog implements OnInit {
   async SubmitForm() {
     this.modalCtrl.dismiss();
     this.sharedService.setTryAgainRouterNotReachableFlag();
-
-    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_MANAGED_BUT_NOT_REACHABLE);
-    this.sharedService.setLoader(true, scriptArray);
-    this.backendService.nextSignal('next').subscribe((data) => {
+    if (this?.Ci9Flag) {
+      const data = this.sharedService.getApiResponseData();
+      data.routerDetails.isReachable = true;
+      this.helperService.InternetFlowIdentifier('CI9', data);
+    } else {
+      var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_MANAGED_BUT_NOT_REACHABLE);
+      this.sharedService.setLoader(true, scriptArray);
+      this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    });
+      });
+    }
     // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
     //   this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
     //     this.sharedService.setLoader(false);

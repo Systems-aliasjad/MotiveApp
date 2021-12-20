@@ -40,6 +40,7 @@ const temp7 = {
   providedIn: 'root',
 })
 export class HelperService {
+  Ci9Flag = false;
   constructor(private router: Router, private sharedService: SharedService) {}
 
   connectedDeviceModifier(devices) {
@@ -229,11 +230,18 @@ export class HelperService {
       this.router.navigate(['issues/internet/account-not-active']);
     } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, hsiPortNumber: data?.hsiPortNumber });
-      if (!data?.ontDetails?.isReachable) {
-        this.router.navigate(['issues/internet/fiber-box-not-reachable']);
-      } else if (data?.ontDetails?.isRebootRequired) {
-        this.router.navigate(['issues/internet/ont-reboot-required']);
+      if (CodeId === flowCodes.CI9) {
+        this.Ci9Flag = true;
       } else {
+        this.Ci9Flag = false;
+      }
+      if (!data?.ontDetails?.isReachable) {
+        this.router.navigate(['issues/internet/fiber-box-not-reachable'], { state: { Ci9Flag: this.Ci9Flag } });
+      }
+      // else if (data?.ontDetails?.isRebootRequired) {
+      //   this.router.navigate(['issues/internet/ont-reboot-required']);
+      // } 
+      else {
         this.handleCI9RouterCases(data?.routerDetails);
       }
     } else if (CodeId === flowCodes.movingElifeConnection) {
@@ -520,7 +528,7 @@ export class HelperService {
   handleCI9RouterCases(routerDetails: IRouterDetail) {
     if (routerDetails?.isManaged) {
       if (!routerDetails?.isReachable) {
-        this.router.navigate(['issues/internet/router-not-reachable']);
+        this.router.navigate(['issues/internet/router-not-reachable'], {state: { Ci9Flag: this.Ci9Flag }});
       } else if (routerDetails.isResetRequired) {
         this.router.navigate(['issues/internet/router-reset-required']);
       } else if (routerDetails?.isRebootRequired) {
