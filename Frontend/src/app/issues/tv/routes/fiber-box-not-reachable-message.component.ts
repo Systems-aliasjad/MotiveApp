@@ -33,6 +33,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
   button1: IMotiveButton;
   button2: IMotiveButton;
+  Ci9Flag;
 
 
   constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
@@ -46,6 +47,12 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
         title: 'BUTTONS.ISSUE_RESOLVED',
         type: 'link',
       };
+      this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+      if(this.Ci9Flag){
+        this.button1.title = 'BUTTONS.CONTINUE';
+      } else {
+        this.button1.title = 'BUTTONS.TRY_AGAIN';
+      }
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -71,11 +78,23 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
+    if (this?.Ci9Flag) {
+      const data = this.sharedService.getApiResponseData();
+      data.ontDetails.isReachable = true;
+      if(data.stbDetails.length > 0)
+      {
+        data.stbDetails.forEach(element => {
+          element.isReachable = true;
+        });
+      }
+      this.helperService.IptvFlowIdentifier('CI9', data);
+    } else {
       this.sharedService.setLoader(true, ['Checking Ont Reachability']);
       this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
         this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       })
+    }
     //this.router.navigate(['/thanks']);
   }
 

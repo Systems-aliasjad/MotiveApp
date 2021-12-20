@@ -43,6 +43,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.ISSUE_RESOLVED',
     type: 'link',
   };
+  Ci9Flag;
 
   constructor(
     private router: Router,
@@ -53,6 +54,12 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+    if(this.Ci9Flag){
+      this.button1.title = 'BUTTONS.CONTINUE';
+    } else {
+      this.button1.title = 'BUTTONS.TRY_AGAIN';
+    }
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -87,12 +94,22 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.STB_NOT_REACHABLE);
-    this.sharedService.setLoader(true, scriptArray);
-    this.backendService.nextSignal('next').subscribe((data) => {
-      this.sharedService.setLoader(false);
-      this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    })
+    if (this?.Ci9Flag) {
+      const data = this.sharedService.getApiResponseData();
+      if (data.stbDetails.length > 0) {
+        data.stbDetails.forEach(element => {
+          element.isReachable = true;
+        });
+      }
+      this.helperService.IptvFlowIdentifier('CI9', data);
+    } else {
+      var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.STB_NOT_REACHABLE);
+      this.sharedService.setLoader(true, scriptArray);
+      this.backendService.nextSignal('next').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      })
+    }
     // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
     //   this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
     //   this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {

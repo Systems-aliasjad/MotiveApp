@@ -237,10 +237,9 @@ export class HelperService {
       }
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/internet/fiber-box-not-reachable'], { state: { Ci9Flag: this.Ci9Flag } });
-      }
-      // else if (data?.ontDetails?.isRebootRequired) {
-      //   this.router.navigate(['issues/internet/ont-reboot-required']);
-      // } 
+      } else if (data?.ontDetails?.isRebootRequired) {
+        this.router.navigate(['issues/internet/ont-reboot-required']);
+      } 
       else {
         this.handleCI9RouterCases(data?.routerDetails);
       }
@@ -413,8 +412,13 @@ export class HelperService {
     } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
       // this.sharedService.setApiResponseData({ ontDetails: temp1, routerDetails: temp2, connectedDevices: temp6 });
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, stbDetails: data?.stbDetails, iptvPortNumbers: data?.iptvPortNumbers });
+      if (CodeId === flowCodes.CI9) {
+        this.Ci9Flag = true;
+      } else {
+        this.Ci9Flag = false;
+      }
       if (!data?.ontDetails?.isReachable) {
-        this.router.navigate(['issues/tv/fiber-box-not-reachable']);
+        this.router.navigate(['issues/tv/fiber-box-not-reachable'], { state: { Ci9Flag: this.Ci9Flag } });
       } else if (data?.ontDetails?.isRebootRequired) {
         this.router.navigate(['issues/tv/ont-reboot-required']);
       } else if (data?.stbDetails?.length > 0) {
@@ -543,11 +547,11 @@ export class HelperService {
   }
 
   handleCI9RouterCasesIPTV(stbDetails: IStbDetail) {
-    if (stbDetails?.isRebootRequired) {
-      this.router.navigate(['issues/tv/box-restart-required']);
-    } else if (!stbDetails?.isReachable) {
+    if (!stbDetails?.isReachable) {
       // (!stbDetails?.isReachable) {
-      this.router.navigate(['issues/tv/box-not-reachable']);
+      this.router.navigate(['issues/tv/box-not-reachable'], {state: { Ci9Flag: this.Ci9Flag }});
+    }else if (stbDetails?.isRebootRequired) {
+      this.router.navigate(['issues/tv/box-restart-required']);
     }
   }
 
