@@ -40,6 +40,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
   constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
+  
     this.sharedService.getLoader().subscribe((shouldShow: any) => {
       this.shouldShow = shouldShow.loaderState;
       if (shouldShow.loaderState) {
@@ -60,6 +61,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
 
   initialize() {
     if (this.loaderarray) {
+      this.showGreenLoader();
       this.clearGreenPercentage = setInterval(() => {
         this.percentageLoaded++;
 
@@ -70,6 +72,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
       this.messages=[];
       this.messages.push('MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE');
       this.messages.push(this.loaderarray[this.flagInterval]?.message);
+      this.flagInterval++;
       this.DynamicScripts();
     } else {
       if (this.percentInterval === undefined || this.percentInterval === 0) {
@@ -95,7 +98,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
         this.DynamicScripts();
       }
 
-      if (this.flagInterval >= this.loaderarray?.length) {
+      if (this.flagInterval > this.loaderarray?.length) {
         this.showOrangeLoader();
       }
       if (this.flagInterval < this.loaderarray?.length) {
@@ -115,6 +118,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
     this.percentageLoaded = 0;
     this.loaderarray=null;
     this.messages=null;
+    this.flagInterval=0;
 
   }
 

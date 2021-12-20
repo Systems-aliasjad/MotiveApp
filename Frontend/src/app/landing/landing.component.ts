@@ -118,7 +118,14 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   hello() {
-    var data = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.Landing);
-    this.sharedService.setLoader(true, data);
+ 
+ this.sharedService.setLoader(true)
+    //   var data = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_E2E_TROUBLESHOOTING);
+//    this.sharedService.setLoader(true, data);
+
+
+//     setTimeout(()=>{                           //<<<---using ()=> syntax
+//      this.sharedService.setLoader(false);
+//  }, 145000);
   }
 }
