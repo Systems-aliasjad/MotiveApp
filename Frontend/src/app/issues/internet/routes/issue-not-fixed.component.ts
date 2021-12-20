@@ -66,7 +66,9 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
     this.messageSection = CustomerJourneyConstants.issueNotFixedMessageSection;
   }
 
-  button1Listener() {}
+  button1Listener() {
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
+  }
 
   button2Listener() {
     this.router.navigate(['issues/internet/book-complaint']);

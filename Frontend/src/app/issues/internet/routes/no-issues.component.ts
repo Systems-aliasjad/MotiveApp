@@ -22,12 +22,16 @@ import { SharedService } from '../../../shared/shared.service';
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
-    [button2]="button2"
-    (button2Click)="button2Listener()"
+    
     [button3]="button3"
     (button3Click)="button3Listener()"
   >
   </app-diagnose-issue>`,
+
+// [button2]="button2"
+//     (button2Click)="button2Listener()"
+
+
 })
 export class NoIssuesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
