@@ -32,6 +32,8 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   ontConfig: IOntDetail = { url: SVGs.ont.default, className: networkDiagramClasses.okay, title: ONT };
   connectedDevices = [];
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  Ci9Flag = false;
+  otherFlow = false;
 
   subscription: Subscription;
   messageSection;
@@ -56,6 +58,8 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+    this.otherFlow = this.router.getCurrentNavigation()?.extras?.state?.otherFlow;
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -86,6 +90,8 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
       component: InternetIssuesDialog,
       componentProps: {
         id: ERoutingIds.routerNotReachable,
+        Ci9Flag: this.Ci9Flag,
+        otherFlow: this.otherFlow,
       },
     });
     return await modal.present();

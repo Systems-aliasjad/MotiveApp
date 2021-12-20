@@ -143,16 +143,21 @@ export class HelperService {
       this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails});
       this.router.navigate(['issues/other/issue-not-fixed']);
     } else if (CodeId === flowCodes.CI9 || CodeId === flowCodes.CI4) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails,  hsiPortNumber: data?.hsiPortNumber, iptvPortNumbers: data?.iptvPortNumbers });
+      if (CodeId === flowCodes.CI9) {
+        this.Ci9Flag = true;
+      } else {
+        this.Ci9Flag = false;
+      }
       if (!data?.ontDetails?.isReachable) {
-        this.router.navigate(['issues/other/fiber-box-not-reachable']);
+        this.router.navigate(['issues/other/fiber-box-not-reachable'], { state: { Ci9Flag: this.Ci9Flag } });
       } else if(!data?.routerDetails?.isReachable){
         // router not reachable
-        this.router.navigate(['issues/other/router-not-reachable']);
+        this.router.navigate(['issues/other/router-not-reachable'], { state: { Ci9Flag: this.Ci9Flag, otherFlow: true } });
       } else if (data?.stbDetails?.length > 0){
         data.stbDetails.forEach(element => {
           if(!element.isReachable){
-            //stb not reachable
+            this.router.navigate(['issues/tv/box-not-reachable'], { state: { Ci9Flag: this.Ci9Flag, otherFlow: true }})
           }
         });
       }
@@ -345,11 +350,16 @@ export class HelperService {
     } else if (codeId === flowCodes.issueNotFixed) {
       this.router.navigate(['issues/phone/issue-not-fixed']);
     } else if (codeId === flowCodes.CI9 || codeId === flowCodes.CI4) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.phoneDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, phoneDetails: data?.phoneDetails });
+      if(codeId === flowCodes.CI9){
+        this.Ci9Flag = true
+      } else {
+        this.Ci9Flag = false
+      }
       if (!data?.ontDetails?.isReachable) {
-        this.router.navigate(['issues/phone/fiber-box-not-reachable']);
+        this.router.navigate(['issues/phone/fiber-box-not-reachable'], {state: {Ci9Flag: this.Ci9Flag}});
       } else if(!data?.phoneDetails?.isReachable){
-        this.router.navigate(['issues/phone/phone-not-reachable-first-time'])
+        this.router.navigate(['issues/phone/phone-not-reachable-first-time'], {state: {Ci9Flag: this.Ci9Flag}})
       } else if (data?.ontDetails?.isRebootRequired) {
         this.router.navigate(['issues/phone/ont-reboot']);
       }

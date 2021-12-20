@@ -29,6 +29,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   messageSection;
   ontConfig;
+  Ci9Flag;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   button1: IMotiveButton = {
@@ -43,6 +44,12 @@ button2: IMotiveButton = {
   constructor(private helperService: HelperService, private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
 
   ngOnInit() {
+    this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+    if(this.Ci9Flag){
+      this.button1.title = 'BUTTONS.CONTINUE';
+    } else {
+      this.button1.title = 'BUTTONS.TRY_AGAIN';
+    }
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -68,11 +75,25 @@ button2: IMotiveButton = {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true, ['Checking Ont Reachability']);
-    this.backendService.nextSignal('next').subscribe((data) => {
-      this.sharedService.setLoader(false);
-      this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    })    //this.router.navigate(['/thanks']);
+    if (this?.Ci9Flag) {
+      const data = this.sharedService.getApiResponseData();
+      data.ontDetails.isReachable = true;
+      if(data?.routerDetails?.isManaged){
+        data.routerDetails.isReachable = true;
+      }
+      if(data?.stbDetails.length > 0){
+        data.stbDetails.forEach(element => {
+           element.isReachable = true;
+        });
+      }
+      this.helperService.otherFlowIdentifier('CI9', data);
+    } else {
+      this.sharedService.setLoader(true, ['Checking Ont Reachability']);
+      this.backendService.nextSignal('next').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      })    //this.router.navigate(['/thanks']);
+    }
   }
 
   button2Listener() {

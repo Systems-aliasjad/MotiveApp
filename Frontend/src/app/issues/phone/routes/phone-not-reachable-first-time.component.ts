@@ -30,6 +30,7 @@ export class PhoneNotReachableFirstTimeComponent implements OnInit, OnDestroy {
   ontConfig;
   routerConfig;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
+  Ci9Flag;
 
   button1: IMotiveButton = {
     title: 'BUTTONS.TRY_AGAIN',
@@ -50,6 +51,12 @@ export class PhoneNotReachableFirstTimeComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+    if(this.Ci9Flag){
+      this.button1.title = 'BUTTONS.CONTINUE';
+    } else {
+      this.button1.title = 'BUTTONS.TRY_AGAIN';
+    }
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -75,11 +82,17 @@ export class PhoneNotReachableFirstTimeComponent implements OnInit, OnDestroy {
   }
 
   async button1Listener() {
-    this.sharedService.setLoader(true, ['Phone not Reachable']);
-    this.backendService.nextSignal('next').subscribe((data) => {
-      this.sharedService.setLoader(false);
-      this.helperService.voiceFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    })
+    if (this?.Ci9Flag) {
+      const data = this.sharedService.getApiResponseData();
+      data.phoneDetails.isReachable = true;
+      this.helperService.voiceFlowIdentifier('CI9', data);
+    } else {
+      this.sharedService.setLoader(true, ['Phone not Reachable']);
+      this.backendService.nextSignal('next').subscribe((data) => {
+        this.sharedService.setLoader(false);
+        this.helperService.voiceFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+      })
+    }
   }
 
   button2Listener() {
@@ -87,7 +100,7 @@ export class PhoneNotReachableFirstTimeComponent implements OnInit, OnDestroy {
   }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+    const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.phoneDetails);
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
   }

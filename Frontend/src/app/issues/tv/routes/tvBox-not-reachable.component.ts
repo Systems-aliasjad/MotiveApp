@@ -44,6 +44,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
     type: 'link',
   };
   Ci9Flag;
+  otherFlow = false;
 
   constructor(
     private router: Router,
@@ -55,11 +56,13 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+    this.otherFlow = this.router.getCurrentNavigation()?.extras?.state?.otherFlow;
     if(this.Ci9Flag){
       this.button1.title = 'BUTTONS.CONTINUE';
     } else {
       this.button1.title = 'BUTTONS.TRY_AGAIN';
     }
+    this.networkDiagram = this.otherFlow ? NetWorkDiagramIds.sixLayer : NetWorkDiagramIds.FiveLayer;
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -101,7 +104,11 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
           element.isReachable = true;
         });
       }
-      this.helperService.IptvFlowIdentifier('CI9', data);
+      if(this.otherFlow){
+        this.helperService.otherFlowIdentifier('CI9', data);
+      } else {
+        this.helperService.IptvFlowIdentifier('CI9', data);
+      }
     } else {
       var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.STB_NOT_REACHABLE);
       this.sharedService.setLoader(true, scriptArray);
@@ -126,9 +133,21 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
-    this.ontConfig = temp?.ontConfig;
-    // this.routerConfig = temp?.stbConfig;
-    this.connectedDevices = temp?.stbConfig;
+    if(this.otherFlow) {
+      const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
+      const routerConfig = temp?.routerConfig;
+      this.ontConfig = temp?.ontConfig;
+      this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
+      if (this.connectedDevices) {
+        this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
+      } else {
+        this.connectedDevices = [{ ...routerConfig }];
+      }
+    } else {
+      const temp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
+      this.ontConfig = temp?.ontConfig;
+      // this.routerConfig = temp?.stbConfig;
+      this.connectedDevices = temp?.stbConfig;
+    }
   }
 }

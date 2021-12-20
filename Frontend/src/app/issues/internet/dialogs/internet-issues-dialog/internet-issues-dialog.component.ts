@@ -20,6 +20,8 @@ export class InternetIssuesDialog implements OnInit {
   portNumber: any;
   @Input()
   Ci9Flag = false;
+  @Input()
+  otherFlow = false;
   instructionList: string[] = ['Router is switched on'];
   instructionListDialog2: string[] = [
     'We are still unable to reach your router.',
@@ -71,7 +73,16 @@ export class InternetIssuesDialog implements OnInit {
     if (this?.Ci9Flag) {
       const data = this.sharedService.getApiResponseData();
       data.routerDetails.isReachable = true;
-      this.helperService.InternetFlowIdentifier('CI9', data);
+      if(this.otherFlow) {
+        if(data?.stbDetails.length > 0){
+          data.stbDetails.forEach(element => {
+            element.isReachable = true;
+          });
+        }
+        this.helperService.otherFlowIdentifier('CI9', data);
+      } else {
+        this.helperService.InternetFlowIdentifier('CI9', data);
+      }
     } else {
       var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.ROUTER_MANAGED_BUT_NOT_REACHABLE);
       this.sharedService.setLoader(true, scriptArray);

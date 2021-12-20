@@ -78,6 +78,10 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
     if (this?.Ci9Flag) {
       const data = this.sharedService.getApiResponseData();
       data.ontDetails.isReachable = true;
+      if(data?.routerDetails?.isManaged)
+      {
+        data.routerDetails.isReachable = true;
+      }
       this.helperService.InternetFlowIdentifier('CI9', data);
     } else {
       this.sharedService.setLoader(true, ['Checking Ont Reachability']);
