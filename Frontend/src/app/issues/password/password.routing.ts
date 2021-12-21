@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
+import { HomeZoneNotSubscribeComponent } from './routes/home-zome-not-subscribe.component';
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
 
 import { MainComponent } from './routes/main.component';
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'forgot-ccb-pin-message',
     component: ForgotCcbPinMessageComponent,
+  },
+  {
+    path: 'home-zone-not-subscribe',
+    component: HomeZoneNotSubscribeComponent,
   },
   {
     path: '',

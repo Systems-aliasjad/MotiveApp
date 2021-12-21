@@ -34,7 +34,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
     this.activcatedRoute.params.subscribe(() => {
       this.sharedService.setDefaultValues();
     });
-    //this.initialization();
+
   }
 
   ngOnDestroy(): void {}
@@ -46,11 +46,6 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   updateProfileData() {
-    // const navigation = this.router.getCurrentNavigation();
-    // this.user = navigation?.extras?.state?.user as {
-    //   accountId: string;
-    //   username: string;
-    // };
   }
 
   getProductCode() {
@@ -67,15 +62,23 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       };
 
       this.codeType = data?.result?.productCode;
-      this.sharedService.setHomeZoneFlag(data?.result?.menuFlags?.HOME_ZONE ?? true);
-      this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true);
-      this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true);
+     
+
+      ///TOTo Remove this if flag comes from motive
+      this.sharedService.setHomeZoneFlag(true);
+      this.sharedService.setElifeOnFlag(true);
+      this.sharedService.setCcbPinFlag(true);
+     
+     
+
+      ///ToDO Uncommment this if flag comes from motive 
+      // this.sharedService.setHomeZoneFlag(data?.result?.menuFlags?.HOME_ZONE ?? true);
+      // this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true);
+      // this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true);
       this.sharedService.setProductCodeLanding(this.codeType ?? '');
       this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
     });
-    //TODO: Remove This
-    // this.codeType = '3P';
-    //  this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+
   }
 
   headerConfig: IPageHeader = {
@@ -84,7 +87,6 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   };
 
   handleClick = (route) => {
-    // this.router.navigate([route]);
   };
 
   onCardClick(card) {

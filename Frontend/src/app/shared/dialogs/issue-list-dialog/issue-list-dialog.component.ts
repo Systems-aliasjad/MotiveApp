@@ -67,10 +67,10 @@ export class IssueListDialog implements OnInit {
       issue: 'Unable to log in to eLifeON',
       route: 'issues/tv/unable-to-login-elife',
     },
-    {
-      issue: 'Facing problems while playing a game',
-      route: 'issues/tv/game-session',
-    },
+    // {
+    //   issue: 'Facing problems while playing a game',
+    //   route: 'issues/tv/game-session',
+    // },
     {
       issue: 'Transfer channel to another TV box',
       route: 'issues/tv/transfer-channel-to-another-tvBox',
@@ -187,7 +187,8 @@ export class IssueListDialog implements OnInit {
         this.issuesList = list;
       }
     } else if (this.flow === EIssueFlow.tvIssue) {
-      this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
+      // this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
+       this.issuesList = this.tvIssuesList;
       this.showViewGuidline = false;
     } else if (this.flow === EIssueFlow.passwordIssue) {
       this.issuesList = this.sharedService.createPasswrodIssuesDynamic(this.passwordIssueList);

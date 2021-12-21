@@ -172,6 +172,8 @@
   },
 
   "MESSAGES": {
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",
+      
     "WE_CANNOT_REACH_YOUR_ROUTER":"We can’t reach your router",
     "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX":"Make sure that the router is turned on and is connected to wall-mounted fiber box.",
     "REQUEST_NOT_FOUND":"Request not found",
