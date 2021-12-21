@@ -147,6 +147,10 @@ export class SharedService {
     this.tryAgainRouterNotReachableFlag++;
   }
 
+  resetTryAgainRouterNotReachableFlag() {
+    this.tryAgainRouterNotReachableFlag = 0;
+  }
+
   getTryAgainRouterNotReachableFlag() {
     return this.tryAgainRouterNotReachableFlag;
   }

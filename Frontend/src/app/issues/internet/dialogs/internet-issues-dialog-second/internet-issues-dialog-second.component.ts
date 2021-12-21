@@ -37,9 +37,10 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
     public router: Router
   ) {}
   ngOnInit() {
-    if (this.sharedService.getTryAgainRouterNotReachableFlag() > 3) {
-      this.disable = true;
-    }
+    // if (this.sharedService.getTryAgainRouterNotReachableFlag() > 3) {
+    //   this.disable = true;
+    // }
+    this.sharedService.resetTryAgainRouterNotReachableFlag();
   }
 
   dismiss() {
