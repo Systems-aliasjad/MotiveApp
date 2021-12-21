@@ -20,6 +20,7 @@ import { ResetRouterPasswordComponent } from './routes/reset-router-password.com
 import { ResetCcbPinComponent } from './routes/reset-ccb-pin.component';
 import { ResetElifePinSuccessMessageComponent } from './routes/reset-elife-pin-success-message.component';
 import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-component';
+import { HomeZoneNotSubscribeComponent } from './routes/home-zome-not-subscribe.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ForgotCcbPinMessageComponent } from './routes/forgot-ccb-pin-message-co
     ResetCcbPinComponent,
     ResetElifePinSuccessMessageComponent,
     ForgotCcbPinMessageComponent,
+    HomeZoneNotSubscribeComponent
   ],
   imports: [CommonModule, PasswordRoutingModule, SharedModule],
 })
