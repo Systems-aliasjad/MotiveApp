@@ -17,11 +17,37 @@ export class SevenLayerComponent implements OnInit {
   @Input()
   etisalatConfig;
 
+  flag = 0;
+  disableLeft:boolean=true
+  disableRight:boolean=false
+
   constructor() {}
 
   ngOnInit() {}
 
   onImgError(event) {
     event.target.src = SVGs.ont.default;
+  }
+
+  clickLeft() {
+    if (this.flag > 0) {this.flag--;
+      if(this.flag===0){
+        this.disableLeft=true;
+      }
+    this.disableRight=false;
+    }
+    else { 
+      this.disableLeft=true;
+      this.disableRight=false;
+
+    }
+  }
+
+  clickRight() {
+    if (this.flag < this.connectedDevices.length - 4) {this.flag++;
+    this.disableLeft=false;
+    }
+    else{   this.disableLeft=false;
+      this.disableRight=true;}
   }
 }

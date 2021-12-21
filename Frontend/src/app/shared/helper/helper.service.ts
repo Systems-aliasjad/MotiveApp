@@ -155,18 +155,23 @@ export class HelperService {
         // router not reachable
         this.router.navigate(['issues/other/router-not-reachable'], { state: { Ci9Flag: this.Ci9Flag, otherFlow: true } });
       } else if (data?.stbDetails?.length > 0){
+        let stbNotReachableCount = 0;
         data.stbDetails.forEach(element => {
           if(!element.isReachable){
+            stbNotReachableCount++;
             this.router.navigate(['issues/tv/box-not-reachable'], { state: { Ci9Flag: this.Ci9Flag, otherFlow: true }})
           }
         });
+        if(stbNotReachableCount === 0)
+        {
+          this.AllSevicesCI9RouterCases(data);
+        }
+      } else {
+        this.AllSevicesCI9RouterCases(data);
       }
       // else if (data?.ontDetails?.isRebootRequired) {
       //   this.router.navigate(['issues/other/router-reboot-required']);
       // } 
-      else {
-        this.AllSevicesCI9RouterCases(data);
-      }
     } else if (CodeId === flowCodes.CI73) {
       this.sharedService.setApiResponseData({ dualBandRouter: data?.dualBandRouter, routerConfigRequired: data?.routerConfigRequired });
       this.router.navigate(['issues/other/router-reset-required']);
@@ -188,7 +193,7 @@ export class HelperService {
 
       
     } else if( CodeId === flowCodes.CI13) {
-      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails });
+      this.sharedService.setApiResponseData({ ontDetails: data?.ontDetails, routerDetails: data?.routerDetails, stbDetails: data?.stbDetails, phoneDetails: data?.phoneDetails,  hsiPortNumber: data?.hsiPortNumber, iptvPortNumbers: data?.iptvPortNumbers });
       if (!data?.ontDetails?.isReachable) {
         this.router.navigate(['issues/other/common/fiber-box-not-reachable-try-again']);
       } else if(!data?.routerDetails?.isReachable){
@@ -198,6 +203,7 @@ export class HelperService {
         data.stbDetails.forEach(element => {
           if(!element.isReachable){
             //stb not reachable
+            this.router.navigate(['issues/tv/box-not-reachable-try-again'], { state: { otherFlow : true }})
           }
         });
       }

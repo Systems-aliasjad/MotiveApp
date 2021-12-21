@@ -60,6 +60,9 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
     this.otherFlow = this.router.getCurrentNavigation()?.extras?.state?.otherFlow;
+    if(this.otherFlow === undefined){
+      this.otherFlow = false
+    }
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
