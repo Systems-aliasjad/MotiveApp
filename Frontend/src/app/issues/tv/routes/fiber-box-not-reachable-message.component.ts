@@ -48,7 +48,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
         type: 'link',
       };
       this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
-      if(this.Ci9Flag){
+      if(this?.Ci9Flag){
         this.button1.title = 'BUTTONS.CONTINUE';
       } else {
         this.button1.title = 'BUTTONS.TRY_AGAIN';

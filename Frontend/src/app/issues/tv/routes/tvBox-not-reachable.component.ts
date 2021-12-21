@@ -57,7 +57,10 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
     this.otherFlow = this.router.getCurrentNavigation()?.extras?.state?.otherFlow;
-    if(this.Ci9Flag){
+    if(this.otherFlow === undefined){
+      this.otherFlow = false
+    }
+    if(this?.Ci9Flag){
       this.button1.title = 'BUTTONS.CONTINUE';
     } else {
       this.button1.title = 'BUTTONS.TRY_AGAIN';
@@ -104,7 +107,7 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
           element.isReachable = true;
         });
       }
-      if(this.otherFlow){
+      if(this?.otherFlow){
         this.helperService.otherFlowIdentifier('CI9', data);
       } else {
         this.helperService.IptvFlowIdentifier('CI9', data);
@@ -114,7 +117,11 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true, scriptArray);
       this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
+        if(this?.otherFlow){
+          this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        } else {
         this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        }
       })
     }
     // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
@@ -133,11 +140,12 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
   }
   getIssueTilesData() {
     const apiResponse = this.sharedService.getApiResponseData();
-    if(this.otherFlow) {
+    if(this?.otherFlow) {
       const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
       const routerConfig = temp?.routerConfig;
       this.ontConfig = temp?.ontConfig;
-      this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
+      const stbTemp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
+      this.connectedDevices = stbTemp?.stbConfig;
       if (this.connectedDevices) {
         this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
       } else {
