@@ -50,7 +50,13 @@
             (click)="button2Listener()"
             [disable]="button2.disable"
           ></motive-button>
+          <ion-button class="btn primary-btn follow-up green-box-shadow" *ngIf="button5" [disabled]="button5.disable" (click)="button5Listener()">{{ button5.title | translate }}</ion-button>
         </ion-col>
+        <!-- <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
+          <div *ngIf="button5.type === 'primary'">
+            <p *ngIf="button5.explanatoryNote">{{ button5.explanatoryNote | translate }}</p>
+          </div>
+        </ion-col> -->
       </ion-row>
     </ion-col>
     <ion-col sizeLg="6" sizeMd="12" size="12" class="pt-0 pb-0" *ngIf="button3">

@@ -38,6 +38,11 @@ export class DiagnoseIssueComponent implements OnInit {
   button4Click = new EventEmitter();
 
   @Input()
+  button5: IMotiveButton;
+  @Output()
+  button5Click = new EventEmitter();
+
+  @Input()
   messageSection;
 
   @Input()
@@ -77,5 +82,9 @@ export class DiagnoseIssueComponent implements OnInit {
 
   button4Listener() {
     this.button4Click.emit();
+  }
+
+  button5Listener() {
+    this.button5Click.emit();
   }
 }

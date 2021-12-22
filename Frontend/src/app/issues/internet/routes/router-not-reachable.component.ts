@@ -24,6 +24,8 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
+    [button5]="button5"
+    (button5Click)="button5Listener()"
   >
   </app-diagnose-issue>`,
 })
@@ -47,7 +49,10 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.NO_I_M_USING_MY_OWN_ROUTER',
     type: 'link',
   };
-
+  button5: IMotiveButton = {
+    title: 'BUTTONS.YES_I_AM',
+    type: 'primary',
+  };
   constructor(
     private helperService: HelperService,
     private sharedService: SharedService,
@@ -84,6 +89,18 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
   }
 
   async button1Listener() {
+    const modal = await this.modalCtrl.create({
+      component: InternetIssuesDialog,
+      componentProps: {
+        id: ERoutingIds.routerNotReachable,
+        portNumber: this.apiResponse?.hsiPortNumber,
+        Ci9Flag: this.Ci9Flag,
+      },
+    });
+    return await modal.present();
+  }
+
+  async button5Listener() {
     const modal = await this.modalCtrl.create({
       component: InternetIssuesDialog,
       componentProps: {
