@@ -41,7 +41,7 @@ export class TvDetailComponent implements OnInit {
   //   },
   // ];
   cardList: any = [];
-  eLifeStatus: string = 'Disabled';
+  eLifeStatus;
   eLifeGameStatus: boolean;
   nonSharedPackages: any = [];
   eLifegames = [
@@ -68,8 +68,8 @@ export class TvDetailComponent implements OnInit {
       data = this.sharedService.getApiResponseData();
       data = data.result.responseData;
     }
-
-    this.eLifeStatus = data?.elifeResetPswd;
+    console.log('Data from IPTV', data);
+    this.eLifeStatus = data?.elifeResetPswd ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
     this.eLifeGameStatus = data?.elifeGameStatus;
     for (var index = 0; index < data?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
