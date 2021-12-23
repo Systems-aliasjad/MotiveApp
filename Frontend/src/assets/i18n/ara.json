@@ -91,6 +91,7 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "أريد إعادة ضبط رمز التعريف الشخصي  "
   },
   "BUTTONS": {
+    "NO_EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
     "REBOOT_FIBER_BOX": "REBOOT FIBER BOX",
     "REBOOT_ROUTER": "REBOOT ROUTER",
     "CHANGE_WIFI_PIN": "رمز التعريف الشخصي لشبكة الواي فاي",
@@ -377,9 +378,6 @@
     "I_WANT_TO_RESET_MY_PIN": "I want to reset my PIN",
     "LAST_INCOMING_OUTGOING_CALLS": "آخر مكالمات واردة / صادرة",
     "LIVING_ROOM_TV_KIDS_ROOM_TV": "Living Room TV, Kids Room TV",
-
-
-
     "LOCATION": "الموقع",
     "LOREM_IPSUM": "Lorem Ipsum",
     "MAKE_SURE_THAT_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": " الخاص بصندوق الألياف المثبت على الحائط 'X' متصل بالمنفذ . تأكد من تشغيل جهاز الراوتر وأنه قيد التشغيل ",
@@ -440,7 +438,6 @@
     "PLEASE_RESTART_ALL_YOUR_TV_BOXES_TO_ACTIVATE_THE_NEW_PIN": " .يرجى إعادة تشغيل كل أجهزة الاستقبال التلفزيوني لديك لتفعيل رقم التعريف الشخصي الجديد",
     "PLEASE_RESTART_THE_TV_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": ".يرجى إعادة تشغيل جهاز الاستقبال التلفزيوني قبل استخدام التلفاز",
    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_PHONE_AGAIN": " يرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم إعادة استخدام الهاتف مرة أخرى. ", 
-
     "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": " ُرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم المحاولةباستخدام خدمة التلفزيون مرة أخرى  ", 
     "PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW": ":الرجاء تحديد القناة التي لا تستطيع للمشاهدة من القائمة أدناه",
     "PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER": "يرجى تحديد نوع الجهاز واتباع التعليمات لتهيئة الراوتر الخاص بك. تأكد من معرفة اسم المستخدم وكلمة المرور الصحيحين أثناء تهيئة الراوتر",
@@ -470,7 +467,6 @@
     "RESET_TO_FACTORY_DEFAULT": "إعادة تعيين إلى إعدادات المصنع الافتراضية",
     "RESET_TV_ADMIN_PIN": "ة تعيين رقم التعريف الشخصي لحساب التلفاز",
     "RESET_TV_SET_TOP_BOX_TO_FACTORY_DEFAULT": "إعادة تهيئة جهاز الاستقبال التلفزيوني إلى الإعدادات الإفتراضية ",
-
     "RESET_YOUR_PASSWORD": "إعادة تعيين كلمة المرور",
     "RESOLVED_DATE": ":التاريخ الذي تم حله",
     "RESTART_FIBER_BOX_MANUALLY": "إعادة تشغيل صندوق الألياف يدويًا",
@@ -531,14 +527,12 @@
     "THE_CHANNEL_IS_NOT_AVAILABLE_AS_PART_OF_THE_TV_PACKAGE_YOU_HAVE_SUBSCRIBED": "القناة غير متوفرة كجزء من الباقة التي اشتركت فيها",
     "THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "القناة <xxx> متاحة على جهاز الاستقبال التلفزيوني أدناه.",
     "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": " خدمة eLife معطلة. نحن آسفون لذلك. يرجى المحاولة مرة أخرى لاحقاً أو حجز موعد لزيارة فني بدلاً من ذلك. ", 
-
     "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": " عذرًا، لا يوجد اتصال بشبكة الإنترنت. يرجى إعادة المحاولة لاحقًا أو يمكنك حجز موعدًا لزيارة الفني المختص إلى منزلك. ", 
     "THE_PHONE_IS_FAULTY": " الهاتف معيب ", 
     "THE_PHONE_IS_NOT_SWITCHED_ON": " الهاتف ليس قيد التشغيل ", 
     "THE_ROUTER_IS_SWITCHED_ON": "تشغيل الراوتر", 
     "THE_ROUTERS_WIFI_WILL_BE_RESET_TO_DEFAULT_FACTORY_SETTINGS": "سوف تتم إعادة ضبط إعدادات ",
   "THE_ROUTER_NEEDS_TO_BE_CONFIGURED_WITH_THE_NEW_PASSWORD_VISIT_DEVICE_CARE_TO_FIND_MORE_DETAILS_ON_HOW_TO_RECONFIGURE_YOUR_ROUTER": "يحتاج جهاز الراوتر إلى تهيئة باستخدام ملف كلمه السر.. لمزيد من التفاصيل حول كيفية إعادة ضبط الراوتر، يرجى زيارة صفحة دعم الأجهزة.", 
-
     "THE_ROUTER_WILL_BE_CONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY": "سوف تتم إعادة ضبط الراوتر تلقائيًا باستخدام كلمة المرور الجديدة.", 
     "THE_SERVICE_WILL_BE_DISCONTINUED_WHILE_THE_TRANSFER_IS_UNDER_PROCESS": ".سيتم إيقاف الخدمة أثناء عملية النقل",
     "THE_SERVICE_WONT_WORK_AS_YOUR_ACCOUNT_HAS_BEEN_DISCONNECTED_TEMPORARILY_BASED_UPON_YOUR_REQUEST_THE_SERVICE_WILL_BE_BACK_ON_XXX_CLICK_HERE_IF_YOU_WANT_TO_RECONNECT_YOUR_SERVICE": "هذه الخدمة غير متوفرة، حيث أنه قد تم تعليق حسابك مؤقتًا بحسب طلبك. وستعود الخدمة يوم (التاريخ)لإعادة تفعيل الخدمة، يرجى الضغط هنا",
@@ -552,7 +546,6 @@
     "THE_TV_BOX_IS_TURNED_ON": " تشغيل جهاز الاستقبال التلفزيوني", 
     "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": " ر الوصول إلى الرقم التسلسلي {{stbSerialNumber}} لجهاز الاستقبال التلفزيوني.", 
     "THIS_ACTION_CANNOT_BE_UNDONE": "This action cannot be undone.",
-
     "THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON_OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE": " هذه الخدمة قادمة لمنطقتك قريباسيتصل بك فريقنا بمجرد توفره. ", 
     "THIS_WILL_TAKE_UP_TO_1_MINUTE": "يستغرق الأمر ما يصل إلى دقيقة واحدة", 
     "TIME": "Time", 
@@ -563,8 +556,7 @@
     "TV_BOX_RESTARTED_SUCCESSFULLY": " تمت إعادة تشغيل جهاز الاستقبال بنجاح! ", 
     "TV_BOX_TROUBLESHOOTING_GUIDELINES": " رشادات إصلاح الأخطاء لجهاز الاستقبال التلفزيوني:", 
     "TV_ISSUES": "مشاكل التلفاز", 
-    "TV_SERVICE_IS_DOWN": " خدمة التلفاز لا تعمل ", 
-    
+    "TV_SERVICE_IS_DOWN": " خدمة التلفاز لا تعمل ",    
     "UNABLE_TO_LOGIN": "تعذر تسجيل الدخول",
     "UNABLE_TO_PROCESS_REQUEST": "غير قادر على اكمال الطلب",
     "UNABLE_TO_REACH_ROUTER_BODY": "Make sure that router is turned on and is connected to the 'X' port of the wall-mounted fiber box.",
@@ -587,7 +579,6 @@
     "WE_CANT_REACH_YOUR_TV_BOX": "تعذر الوصول إلى جهاز الاستقبال التلفزيوني",
     "WE_CANT_RESET_YOUR_WIFI_PASSWORD_BECAUSE_YOU_DONT_HAVE_AN_ETISALAT_ROUTER": " لا يمكننا إعادة تعيين كلمة مرور Wi-Fi الخاصة بكلأنك لا تملك جهاز الراوتر من اتصالات. ",
     "WE_CAN_HELP_YOU_TO_RESET_WIFI_SETTINGS_IF_YOU_FORGOT_YOUR_WIFI_PASSWORD": " يمكننا مساعدتك في إعادة تعيين الاعدادات Wi-Fi إذا كنت نسيت كلمة مرور Wi-Fi الخاصة بك ",
-
     "WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_INSTALL_AN_ETISALAT_ROUTER": "يمكننا تقديم الدعم عن بعد إذا قمت بالتثبيت راوتر اتصالات",
     "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_WITH_THE_SERVICE_YOU_CAN_BOOK_AN_APPOINTMENT_WITH_A_TECHNICIAN_IF_YOURE_STILL_FACING_AN_ISSUE_PLEASE_NOTE_THAT_YOU_MIGHT_GET_CHARGED_AED_150_FOR_THE_TECHNICIAN_VISIT_IF_THE_ISSUE_ISNT_FROM_OUR_SIDE": "لم نتمكن من العثور على أي مشكلة فنية في الخدمة. يمكنك حجز موعد مع فني إذا كنت لا تزال تواجه مشكلة. لو سمحت لاحظ أنه قد يتم تحصيل 150 درهمًا إماراتيًا مقابلها زيارة الفني إذا لم تكن المشكلة من قبلنا",
     "WE_DIDNT_FIND_ANY_TECHNICAL_ISSUES": "لم يتم تحديد أي مشكلة تقنية",
@@ -607,7 +598,7 @@
     "WE_NOTICED_THAT_YOU_ARE_FACING_A_CONTINUE_ISSUES_WITH_THE_INTERNET_WHILE_USING_A_NON": "لاحظنا أن جهاز التوجيه الخاص بك غير قادر على التعامل مع سرعة الإنترنت العالية.",
     "WE_RECOMMEND_USING_AN_ETISALAT_ROUTER_SO_THAT_WE_CAN_PROVIDE_REMOTE_SUPPORT": " نوصي باستخدام جهاز راوتر اتصالات بحيث يمكننا تقديم الدعم عن بعد. ",
     "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_ROUTER": "أين يمكنك العثور على مزيد من التفاصيل حول كيفية.أعادة تشغيل جهاز الراوتر الخاص بك",
-        "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_TV_BOX": " أين يمكنك العثور لى مزيد من التفاصيل حول كيفية.أعادة تشغيل جهاز ال جهاز الاستقبال التلفزيوني ",
+    "WHERE_YOU_CAN_FIND_MORE_DETAILS_ON_HOW_TO_RESTART_YOUR_TV_BOX": " أين يمكنك العثور لى مزيد من التفاصيل حول كيفية.أعادة تشغيل جهاز ال جهاز الاستقبال التلفزيوني ",
     "WIFI_NAME": "Wi-fi اسم",
     "WIFI_PASSWORD_UPDATED_SUCCESSFULLY": "تم تغيير كلمة المرور بنجاح! ",
     "WORK_NOT_COMPLETED": "لم يكتمل الطلب",
@@ -631,7 +622,7 @@
     "YOU_ARE_CURRENTLY_USING_A_THIRD_PARTY_ROUTER": ".أنت تستخدم حاليًا جهاز راوتر تابعًا لجهة خارجية",
     "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS":" أنت مشترك في باقات التلفزيون المشتركة التي يمكن مشاهدتها من جميع أجهزة الاستقبال الخاصة بك",
     "YOU_CAN_ALSO_RESTART_YOUR_ROUTER_MANUALLY": "كما يمكنك إعادة تشغيل الراوتر يدويًا",
-        "YOU_CAN_ALSO_RESTART_YOUR_TV_BOX_MANUALLY": " يمكنك إعادة تشغيل جهاز الاستقبال يدويًا.",
+    "YOU_CAN_ALSO_RESTART_YOUR_TV_BOX_MANUALLY": " يمكنك إعادة تشغيل جهاز الاستقبال يدويًا.",
     "YOU_CAN_CANCEL_ANY_GAME_SESSION_THAT_ISNT_WORKING_PROPERLY": "يمكنك إلغاء جلسة الألعاب التي لا تعمل على النحو الصحيح",
     "YOU_CAN_CONTACT_US_IF_THE_ROUTER_DOES_NOT_START_WORKING_AFTER_DATE_TIME": "يمكنك الاتصال بنا إذا لم يبدأ جهاز الراوتر بالعمل بعد التاريخ / الوقت",
     "YOU_CAN_FOLLOW_THESE_STEPS_TO_REBOOT_YOUR_ROUTER": "يرجى اتباع الخطوات التالية لإعادة تشغيل الراوتر",
@@ -646,8 +637,7 @@
     "FACING_SOME_ISSUE": "Facing some issue",
     "TRY_AGAIN_LATER": "Try again later",
     "CCB_PIN_RULES": "CCB PIN rules",
-
-     "UNABLE_TO_CONNECT_WIFI":"تعذر الاتصال بشبكة Wi-Fi",
+   "UNABLE_TO_CONNECT_WIFI":"تعذر الاتصال بشبكة Wi-Fi",
    "UNABLE_TO_BROWSE_THE_INTERNET":"تعذر تصفح الإنترنت",
    "FORGOT_MY_WIFI_PASSWORD":"نسيت كلمة المرور لشبكة Wi-Fi",
    "UNABLE_TO_CONNECT_TO_HOME_ZONE":"تعذر الاتصال بخدمة Home Zone",
@@ -671,7 +661,30 @@
    "FORGOT_CODE_CONTROL_BARRING_CCB_PIN":"نسيت رقم التعريف الشخصي ",
    "PROBLEM_WITH_VALUE_ADDED_SERVICE":"مشكلة مع خدمة القيمة المضافة",
    "CHANGE_CALL_FORWARDING_NUMBER":"تغيير رقم الهاتف لخاصية إعادة توجيه المكالمات",
-   "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL":"تعذر مشاهدة قناة محددة"
+   "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL":"تعذر مشاهدة قناة محددة",
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",  
+    "SINGLE_STB_FOUND": "Single STB found",
+    "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "We couldn’t find any technical problem. Your phone should be working normally.",
+    "PASSWORD_STRENGTH": "Password strength:",
+    "COMPLAINT_BOOKING_FAILED": "Complaint booking failed",
+    "YOUR_COMPLAINT_COULDN'T_BE_BOOKED_BECAUSE_THE_CONTACT_NUMBER_YOU_ENTERED_WAS_INCORRECT": "Your complaint couldn't be booked because the contact number you entered was incorrect.",
+    "PLEASE_ENTER_A_VALID_CONTACT_NUMBER": "Please enter a valid contact number.",
+    "THERE_WAS_A_PROBLEM_IN_COMPLETING_YOUR_REQUEST": "There was a problem in completing your request.",
+    "WE_WILL_BOOK_AN_COMPLAINT_AND_SEND_YOU_THE_DETAILS_VIS_SMS_SOON": "We will book an complaint and send you the details vis SMS soon.",
+    "ROUTER_REBOOT_SUCCESSFUL": "Router reboot successful",
+    "SERVER_TIMEOUT": "Server timeout!",
+    "WE_WILL_TRY_TO_RESET_THE_ROUTER_AGAIN_PLEASE_MAKE_SURE_THAT_THE_ROUTER_IS_SWITHCED_ON": "We will try to reset the router again. Please make sure that the router is swithced on.",
+    "TO_SEE_HOW_TO_RESET_THE_ROUTER_MANUALLY": "<a class='__clickhere'>click here</a> to see how to reset the router manually",
+    "PASSWORD_RESET_SUCCESSFULLY": "Password reset successfully",
+    "YOUR_INTERNET_PASSWORD_HAS_BEEN_RESET_SUCCESSFULLY_THE_ROUTER_WILL_BE_RECONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY": "Your internet password has been reset successfully. The router will be reconfigured with the new password automatically.",
+    "RESTART_YOUR_ROUTER_AFTER_A_FEW_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Restart your router after a few minutes and then try using the internet again.",
+  
+"MAKE_SURE_THAT_YOU_CAN_SEE_YOUR_WIFI_NETWORK_TRY_TO_STAND_CLOSER_TO_THE_ROUTER":  "· تأكد من إمكانية التقاط شبكة Wi-Fi الخاصة بك (حاول الوقوف بالقرب من الراوتر)",
+"MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD":"· تأكد من إدخال كلمة المرور الصحيحة لشبكة Wi-Fi ",
+"SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE":"· ابحث عن شبكات Wi-Fi المتوفرة من جهازك",
+"CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD":"· اتصل بشبكة Wi-Fi الخاصة بك عن طريق التحقق من الاسم وإدخال كلمة المرور الصحيحة",
+"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"حدّد نوع الجهاز ونظام التشغيل لمعرفة كيفية توصيل جهازك بشبكة Wi-Fi."
+
   },
   "Errors": {
     "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must be a 12 digit number",
