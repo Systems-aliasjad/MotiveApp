@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, PHONE, SVGs } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail, IStbDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -144,10 +144,16 @@ export class TvBoxNotReachableComponent implements OnInit, OnDestroy {
       const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
       const routerConfig = temp?.routerConfig;
       this.ontConfig = temp?.ontConfig;
+      let phoneConfig;
       const stbTemp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
       this.connectedDevices = stbTemp?.stbConfig;
+      if (apiResponse?.phoneDetails?.isReachable) {
+        phoneConfig = { ...apiResponse?.phoneDetails, url: SVGs.phone.default, title: PHONE, className: networkDiagramClasses.okay };
+      }
       if (this.connectedDevices) {
-        this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
+        this.connectedDevices = apiResponse?.phoneDetails?.isReachable
+        ? [{ ...routerConfig }, ...this.connectedDevices, { ...phoneConfig }]
+        : [{ ...routerConfig }, ...this.connectedDevices];
       } else {
         this.connectedDevices = [{ ...routerConfig }];
       }
