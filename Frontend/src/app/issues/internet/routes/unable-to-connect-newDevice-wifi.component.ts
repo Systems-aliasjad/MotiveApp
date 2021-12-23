@@ -56,11 +56,11 @@ export class UnableToConnectNewDeviceWiFiComponent implements OnInit, OnDestroy 
   updatePageContent() {
     this.content.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
     this.content.listItems = [
-      { text: 'Make sure that you can see your Wi-Fi network (try to stand closer to the router)', children: [] },
-      { text: 'Make sure that you have the correct Wi-Fi password', children: [] },
-      { text: 'Search for available Wi-Fi networks from your device', children: [] },
-      { text: 'Connect to your Wi-Fi network by verifying the name and entering the correct password', children: [] },
-      { text: 'Select the device type and operating system to learn how to connect your device to the Wifi network', children: [] },
+      { text: 'MESSAGES.MAKE_SURE_THAT_YOU_CAN_SEE_YOUR_WIFI_NETWORK_TRY_TO_STAND_CLOSER_TO_THE_ROUTER', children: [] },
+      { text: 'MESSAGES.MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD', children: [] },
+      { text: 'MESSAGES.SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE', children: [] },
+      { text: 'MESSAGES.CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD', children: [] },
+      { text: 'MESSAGES.SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK', children: [] },
     ];
   }
 

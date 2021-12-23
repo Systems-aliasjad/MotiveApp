@@ -130,4 +130,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
 //      this.sharedService.setLoader(false);
 //  }, 145000);
   }
+  hello2(){
+    this.router.navigate(['issues/internet/unable-connect-newDevice']);
+  }
 }

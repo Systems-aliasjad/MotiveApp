@@ -172,8 +172,7 @@
   },
 
   "MESSAGES": {
-    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",
-      
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",  
     "WE_CANNOT_REACH_YOUR_ROUTER":"We can’t reach your router",
     "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX":"Make sure that the router is turned on and is connected to wall-mounted fiber box.",
     "REQUEST_NOT_FOUND":"Request not found",
@@ -662,7 +661,12 @@
      "FORGOT_CODE_CONTROL_BARRING_CCB_PIN":"Forgot Code Control Barring (CCB) PIN",
      "PROBLEM_WITH_VALUE_ADDED_SERVICE":"Problem with Value-Added Service",
      "CHANGE_CALL_FORWARDING_NUMBER":"Change call forwarding number",
-     "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL":"Unable to watch a specific channel"
+     "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL":"Unable to watch a specific channel",
+"MAKE_SURE_THAT_YOU_CAN_SEE_YOUR_WIFI_NETWORK_TRY_TO_STAND_CLOSER_TO_THE_ROUTER": "Make sure that you can see your Wi-Fi network (try to stand closer to the router)",
+"MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD":"Make sure that you have the correct Wi-Fi password",
+"SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE":"Search for available Wi-Fi networks from your device",
+"CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD":"Connect to your Wi-Fi network by verifying the name and entering the correct password",
+"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"Select the device type and operating system to learn how to connect your device to the Wifi network"
 
 },
 
