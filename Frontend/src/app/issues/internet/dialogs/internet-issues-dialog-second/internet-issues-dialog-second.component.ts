@@ -18,6 +18,8 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
   codeType;
   @Input()
   id: number;
+  @Input()
+  otherFlow;
   disable: boolean = false;
   instructionList: string[] = ['Router is switched on', "The cable from the router is connected to the 'X' port of the wall mounted fibre works"];
   instructionListDialog2: string[] = [
@@ -53,13 +55,17 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
 
   GoToMainForm() {
     this.modalCtrl.dismiss();
-
-    if (this.id === ERoutingIds.routerNotReachable) {
-      this.router.navigate(['/issues/internet/router-not-reachable-form']);
-    } else if (this.id === ERoutingIds.routerNotReachableOwnRouter) {
-      this.router.navigate(['/issues/internet/router-not-reachable-form']);
+    if(this.otherFlow) {
+      const data = this.sharedService.getSecondInternetIssueDialogFromOtherApiResponse();
+      this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     } else {
-      this.router.navigate(['/issues/internet/book-complaint']);
+      if (this.id === ERoutingIds.routerNotReachable) {
+        this.router.navigate(['/issues/internet/router-not-reachable-form']);
+      } else if (this.id === ERoutingIds.routerNotReachableOwnRouter) {
+        this.router.navigate(['/issues/internet/router-not-reachable-form']);
+      } else {
+        this.router.navigate(['/issues/internet/book-complaint']);
+      }
     }
   }
 

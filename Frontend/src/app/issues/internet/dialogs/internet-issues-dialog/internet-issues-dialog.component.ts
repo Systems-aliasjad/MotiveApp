@@ -58,6 +58,7 @@ export class InternetIssuesDialog implements OnInit {
       component: InternetIssuesDialogSecondComponent,
       componentProps: {
         id: ERoutingIds.routerNotReachable,
+        otherFlow: this.otherFlow,
       },
     });
     return await modal.present();
@@ -83,7 +84,12 @@ export class InternetIssuesDialog implements OnInit {
       this.sharedService.setLoader(true, scriptArray);
       this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
-        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        if(this.otherFlow){
+          this.sharedService.setSecondInternetIssueDialogFromOtherApiResponse(data);
+          this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        } else {
+          this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        }
       });
     }
     // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
