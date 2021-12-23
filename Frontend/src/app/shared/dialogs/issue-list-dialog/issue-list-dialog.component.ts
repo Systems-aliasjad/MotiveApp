@@ -31,40 +31,40 @@ export class IssueListDialog implements OnInit {
   modal;
   internetIssuesList: any[] = [
     {
-      issue: 'Unable to connect Wi-Fi',
+      issue: 'MESSAGES.UNABLE_TO_CONNECT_WIFI',
       route: 'issues/internet/unable-to-connnect-wifi-network',
       value: 'connectWifiFail',
     },
     {
-      issue: 'Unable to browse the internet',
+      issue: 'MESSAGES.UNABLE_TO_BROWSE_THE_INTERNET',
       route: 'issues/internet/unable-to-browse-internet/step1',
     },
     {
-      issue: 'Forgot my Wi-Fi password',
+      issue: 'MESSAGES.FORGOT_MY_WIFI_PASSWORD',
       route: 'issues/internet/unable-to-connnect-wifi-network',
       value: 'forgotPassword',
     },
     {
-      issue: 'Unable to connect to home zone',
+      issue: 'MESSAGES.UNABLE_TO_CONNECT_TO_HOME_ZONE',
       route: 'issues/internet/unable-to-connect-to-homezone', //device-connected-homezone',
     },
     {
-      issue: 'Unable to make video calls',
+      issue: 'MESSAGES.UNABLE_TO_MAKE_VIDEO_CALLS',
       route: 'issues/internet/unable-video-call',
     },
     {
-      issue: 'Unable to connect new device to Wi-Fi',
+      issue: 'MESSAGES.UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI',
       route: 'issues/internet/unable-connect-newDevice',
     },
   ];
   tvIssuesList: any[] = [
     {
-      issue: 'Forgot my TV admin PIN',
+      issue: 'MESSAGES.FORGOT_MY_TV_ADMIN_PIN',
       route: '',
       customEvent: 'openResetTvDialog',
     },
     {
-      issue: 'Unable to log in to eLifeON',
+      issue: 'MESSAGES.UNABLE_TO_LOG_IN_TO_ELIFEON',
       route: 'issues/tv/unable-to-login-elife',
     },
     // {
@@ -72,71 +72,71 @@ export class IssueListDialog implements OnInit {
     //   route: 'issues/tv/game-session',
     // },
     {
-      issue: 'Transfer channel to another TV box',
+      issue: 'MESSAGES.TRANSFER_CHANNEL_TO_ANOTHER_TV_BOX',
       route: 'issues/tv/transfer-channel-to-another-tvBox',
     },
     // {
-    //   issue: 'Unable to watch a specific channel',
+    //   issue: 'MESSAGES.UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL',
     //   route: 'issues/tv/unable-to-watch-specific-channel',
     // },
     {
-      issue: 'Unable to watch any channel',
+      issue: 'MESSAGES.UNABLE_TO_WATCH_ANY_CHANNEL',
       route: 'issues/tv/unable-watch-channel',
     },
   ];
   tvIssuesList1: any[] = [
     {
-      issue: 'Forgot my TV admin PIN',
+      issue: 'MESSAGES.FORGOT_MY_TV_ADMIN_PIN',
       route: '',
       customEvent: 'openResetTvDialog',
     },
     {
-      issue: 'Transfer channel to another TV box',
+      issue: 'MESSAGES.TRANSFER_CHANNEL_TO_ANOTHER_TV_BOX',
       route: 'issues/tv/transfer-channel-to-another-tvBox',
     },
     // {
-    //   issue: 'Unable to watch a specific channel',
+    //   issue: 'MESSAGES.UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL',
     //   route: 'issues/tv/unable-to-watch-specific-channel',
     // },
     {
-      issue: 'Unable to watch any channel',
+      issue: 'MESSAGES.UNABLE_TO_WATCH_ANY_CHANNEL',
       route: 'issues/tv/unable-watch-channel',
     },
   ];
   passwordIssueList: any[] = [
     {
-      issue: 'Reset internet password',
-      description: 'Find our how to change your password',
+      issue: 'MESSAGES.RESET_INTERNET_PASSWORD',
+      description: 'MESSAGES.FIND_OUR_HOW_TO_CHANGE_YOUR_PASSWORD',
       route: '/issues/internet/internet-password-reset',
       nextSignal: QUICK_ACTION.RESET_INTERNET_PASSWORD,
       directCall: true,
       ProductID: 1,
     },
     {
-      issue: "Reset router's Wi-Fi password",
-      description: "Tap here if you forgot your router's Wi-Fi password",
+      issue: "MESSAGES.RESET_ROUTERS_WIFI_PASSWORD",
+      description: "MESSAGES.TAP_HERE_IF_YOU_FORGOT_YOUR_ROUTERS_WIFI_PASSWORD",
       route: '/issues/internet/stage2/reset-wifi-password',
       nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
       ProductID: 2,
     },
     {
-      issue: 'Reset TV admin PIN',
-      description: 'Find out how to reset your TV box PIN',
+      issue: 'MESSAGES.RESET_TV_ADMIN_PIN',
+      description: 'MESSAGES.FIND_OUT_HOW_TO_RESET_YOUR_TV_BOX_PIN',
       route: '/issues/tv/quick-reset-admin-pin-package-transfer',
       nextSignal: QUICK_ACTION.RESET_STB_ADMIN_PIN,
       ProductID: 3,
     },
     {
-      issue: 'Reset eLifeON PIN',
-      description: "Tap here if you're unable to log in to eLifeON",
+      issue: 'MESSAGES.RESET_ELIFEON_PIN',
+      description: "MESSAGES.TAP_HERE_IF_YOURE_UNABLE_TO_LOG_IN_TO_ELIFEON",
       route: '/issues/tv/unable-to-login-elife',
       nextSignal: QUICK_ACTION.RESET_ELIFEON_PASSWORD,
       directCall: true,
       ProductID: 4,
     },
     {
-      issue: 'Reset CCB PIN',
-      description: 'Find out how to reset your Code Control Barring PIN',
+      issue: 'MESSAGES.RESET_CCB_PIN',
+      description: 'MESSAGES.FIND_OUT_HOW_TO_RESET_YOUR_CODE_CONTROL_BARRING_PIN',
       route: 'issues/phone/forgot-ccb-pin',
       nextSignal: QUICK_ACTION.RESET_CCP_PIN_CODE,
       ProductID: 5,
@@ -144,27 +144,27 @@ export class IssueListDialog implements OnInit {
   ];
   phoneIssuesList: any[] = [
     {
-      issue: 'Unable to make/receive calls',
+      issue: 'MESSAGES.UNABLE_TO_MAKE_RECEIVE_CALLS',
       route: '/issues/phone/unable-to-call/device-care',
       ID: 1,
     },
     {
-      issue: 'No dial tone',
+      issue: 'MESSAGES.NO_DIAL_TONE',
       route: '/issues/phone/no-dail-tone/device-care',
       ID: 2,
     },
     // {
-    //   issue: 'Problem with Value-Added Service ',
+    //   issue: 'MESSAGES.PROBLEM_WITH_VALUE_ADDED_SERVICE ',
     //   route: 'issues/phone/no-issue-phone-value-added',
     //  ID: 3,
     // },
     {
-      issue: 'Forgot Code Control Barring (CCB) PIN',
+      issue: 'MESSAGES.FORGOT_CODE_CONTROL_BARRING_CCB_PIN',
       route: 'issues/phone/forgot-ccb-pin',
       ID: 4,
     },
     // {
-    //   issue: 'Change call forwarding number',
+    //   issue: 'MESSAGES.CHANGE_CALL_FORWARDING_NUMBER',
     //   route: 'issues/phone/no-issue-phone-phone-Change-call-forward',
     //   ID: 5,
     // },
