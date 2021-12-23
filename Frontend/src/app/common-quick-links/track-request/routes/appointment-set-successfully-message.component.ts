@@ -51,8 +51,8 @@ export class AppointmentSetSuccessfullyMessageComponent implements OnInit, OnDes
     this.Section2Template = ApplicableCodes.appointmentSetSuccessfullyTarckRequestTemplate;
     var apiResponse = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      appointmentDate: apiResponse?.dateOfVisit, //'Jul 10 2019',
-      appointmentTimeSlot: '10.30 AM',
+      // appointmentDate: apiResponse?.dateOfVisit, //'Jul 10 2019',
+      // appointmentTimeSlot: '10.30 AM',
     };
   }
 

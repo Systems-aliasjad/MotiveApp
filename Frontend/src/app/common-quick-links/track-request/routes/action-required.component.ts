@@ -6,6 +6,7 @@ import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
+import { BackendService } from 'src/app/services/backend.service';
 
 /**
  * Action Required
@@ -38,7 +39,7 @@ export class ActionRequiredComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.WORK_NOT_COMPLETED',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -61,10 +62,14 @@ export class ActionRequiredComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
+    this.backendService.nextSignal('Yes').subscribe(()=>{});
+    this.router.navigate(['track-request/appointment-set-successfully']);
     // this.router.navigate(['/issues/internet/book-appointment']);
   }
 
   button2Listener() {
+    this.backendService.nextSignal('No').subscribe(()=>{});
+    this.router.navigate(['track-request/work-not-completed']);
     //this.router.navigate(['/']);
   }
 }

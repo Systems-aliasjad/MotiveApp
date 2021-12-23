@@ -109,7 +109,7 @@ export class BackendService {
     }
   }
 
-  nextSignal(signal: 'MandatoryOnly' | 'DontReboot' | 'Agree' | 'Reset STB' | 'Continue Troubleshooting' | 'Complaint FollowUp' | 'next') {
+  nextSignal(signal: 'MandatoryOnly' | 'DontReboot' | 'Agree' | 'Reset STB' | 'Continue Troubleshooting' | 'Complaint FollowUp' | 'next' | 'Yes' | 'No') {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/next-step`, { signal: signal });
     } else {
