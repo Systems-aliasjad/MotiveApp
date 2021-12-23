@@ -26,7 +26,7 @@ export class IssueListDialog implements OnInit {
   @Input()
   flow: number;
   @Input()
-  eLifeGameStatus: boolean = false;
+  eLifeGameStatus;
   showViewGuidline: boolean = true;
   modal;
   internetIssuesList: any[] = [
@@ -187,7 +187,7 @@ export class IssueListDialog implements OnInit {
         this.issuesList = list;
       }
     } else if (this.flow === EIssueFlow.tvIssue) {
-      // this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
+      this.issuesList = this.eLifeGameStatus === true ? this.tvIssuesList : this.tvIssuesList1;
        this.issuesList = this.tvIssuesList;
       this.showViewGuidline = false;
     } else if (this.flow === EIssueFlow.passwordIssue) {

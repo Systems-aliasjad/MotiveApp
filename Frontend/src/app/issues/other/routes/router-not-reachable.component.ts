@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
-import { ApplicableCodes, ERoutingIds, ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, SVGs } from 'src/app/shared/constants/constants';
+import { ApplicableCodes, ERoutingIds, ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, SVGs } from 'src/app/shared/constants/constants';
 import { InternetIssuesDialog } from 'src/app/issues/internet/dialogs/internet-issues-dialog/internet-issues-dialog.component';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
 import { SharedService } from '../../../shared/shared.service';
@@ -108,14 +108,21 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
     const apiResponse = this.sharedService.getApiResponseData();
     const temp = this.helperService.networkDiagramStylingWrapper(apiResponse?.ontDetails, apiResponse?.routerDetails);
     const routerConfig = temp?.routerConfig;
+    let phoneConfig;
     this.section1Data = {
       routerModel: routerConfig?.routerModel,
-      routerName: routerConfig?.routerSerial,
+      routerName: routerConfig?.routerManufacturer,
     };
     this.ontConfig = temp?.ontConfig;
-    this.connectedDevices = this.helperService.connectedDeviceModifierSTB(apiResponse?.stbDetails, true);
+    const stbTemp = this.helperService.networkDiagramStylingWrapperSTB(apiResponse?.ontDetails, apiResponse?.stbDetails);
+    this.connectedDevices = stbTemp?.stbConfig;
+    if (apiResponse?.phoneDetails?.isReachable) {
+      phoneConfig = { ...apiResponse?.phoneDetails, url: SVGs.phone.default, title: PHONE, className: networkDiagramClasses.okay };
+    }
     if (this.connectedDevices) {
-      this.connectedDevices = [{ ...routerConfig }, ...this.connectedDevices];
+      this.connectedDevices = apiResponse?.phoneDetails?.isReachable
+      ? [{ ...routerConfig }, ...this.connectedDevices, { ...phoneConfig }]
+      : [{ ...routerConfig }, ...this.connectedDevices];
     } else {
       this.connectedDevices = [{ ...routerConfig }];
     }

@@ -69,7 +69,7 @@ export class TvDetailComponent implements OnInit {
       data = data.result.responseData;
     }
     console.log('Data from IPTV', data);
-    this.eLifeStatus = data?.elifeResetPswd ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
+    this.eLifeStatus = data?.elifeResetPswd === "true" ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
     this.eLifeGameStatus = data?.elifeGameStatus;
     for (var index = 0; index < data?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
@@ -134,7 +134,7 @@ export class TvDetailComponent implements OnInit {
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.tvIssue,
-        eLifeGameStatus: this.eLifeGameStatus,
+        eLifeGameStatus: this.eLifeStatus === 'true' ? true : false,
       },
     });
     return await this.modal.present();

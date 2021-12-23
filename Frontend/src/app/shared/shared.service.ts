@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SharedService {
   apiResponseData: any;
+  secondDialogApiResponseFromOtherFlow: any;
   OtherApiResponseData: any;
   upsellOpportunity: string;
   headerConfigSubject: BehaviorSubject<IPageHeader>;
@@ -471,5 +472,11 @@ export class SharedService {
   TicketCloseAPICallWithURL(link) {
     this.backendService.bookComplaint({ mobileNo: this.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: true }).subscribe(() => {});
     this.router.navigate([link]);
+  }
+  setSecondInternetIssueDialogFromOtherApiResponse(data){
+    this.secondDialogApiResponseFromOtherFlow = data;
+  }
+  getSecondInternetIssueDialogFromOtherApiResponse(){
+    return this.secondDialogApiResponseFromOtherFlow;
   }
 }
