@@ -22,16 +22,8 @@ export class InternetIssuesDialog implements OnInit {
   Ci9Flag = false;
   @Input()
   otherFlow = false;
-  instructionList: string[] = ['Router is switched on'];
-  instructionListDialog2: string[] = [
-    'We are still unable to reach your router.',
-    'It looks like any one of these could be the issue:',
-    '1. The router is not switched on',
-    '2. The cable isnt connected properly ',
-    '3. The router is faulty',
-    'Tap Try again later if you want to check the problem later.',
-    'Tap Book an appointment if you want to book a technician visit.',
-  ];
+  instructionList: string[] = ['MESSAGES.ROUTER_IS_SWITCHED_ON'];
+
 
   showDialog1 = true;
   subscription: Subscription = new Subscription();
@@ -46,7 +38,7 @@ export class InternetIssuesDialog implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.instructionList.push(`The cable from the router is connected to the ${this.portNumber} port of the wall mounted fibre works`)
+    this.instructionList.push('MESSAGES.THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS')
     if (this.sharedService.getTryAgainRouterNotReachableFlag() !== 0) {
       this.openSecondPopup();
     }
@@ -58,6 +50,7 @@ export class InternetIssuesDialog implements OnInit {
       component: InternetIssuesDialogSecondComponent,
       componentProps: {
         id: ERoutingIds.routerNotReachable,
+        portNumber: this.portNumber
       },
     });
     return await modal.present();

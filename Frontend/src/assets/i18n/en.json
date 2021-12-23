@@ -667,7 +667,16 @@
 "MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD":"Make sure that you have the correct Wi-Fi password",
 "SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE":"Search for available Wi-Fi networks from your device",
 "CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD":"Connect to your Wi-Fi network by verifying the name and entering the correct password",
-"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"Select the device type and operating system to learn how to connect your device to the Wifi network"
+"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"Select the device type and operating system to learn how to connect your device to the Wifi network",
+
+"ROUTER_IS_SWITCHED_ON":"Router is switched on",
+"WE_ARE_STILL_UNABLE_TO_REACH_YOUR_ROUTER":"We are still unable to reach your router",
+"IT_LOOKS_LIKE_ANY_ONE_OF_THESE_COULD_BE_THE_ISSUE":"It looks like any one of these could be the issue:",
+"THE_ROUTER_IS_NOT_SWITCHED_ON":"1. The router is not switched on",
+"THE_ROUTER_IS_FAULTY":"3. The router is faulty",
+"THE_CABLE_ISNT_CONNECTED_PROPERLY_NUMBER": "2. The cable isn't connected properly",
+"THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS":"The cable from the router is connected to the {{portNumber}} port of the wall mounted fibre works"
+
 
 },
 

@@ -19,15 +19,17 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
   @Input()
   id: number;
   disable: boolean = false;
-  instructionList: string[] = ['Router is switched on', "The cable from the router is connected to the 'X' port of the wall mounted fibre works"];
+  @Input()
+  portNumber:any;
+  instructionList: string[] = ['MESSAGES.ROUTER_IS_SWITCHED_ON', "MESSAGES.THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS"];
   instructionListDialog2: string[] = [
-    'We are still unable to reach your router.',
-    'It looks like any one of these could be the issue:',
-    '1. The router is not switched on',
-    '2. The cable isnt connected properly ',
-    '3. The router is faulty',
-    'Tap Try again later if you want to check the problem later.',
-    'Tap Book an appointment if you want to book a technician visit.',
+    'MESSAGES.WE_ARE_STILL_UNABLE_TO_REACH_YOUR_ROUTER',
+    'MESSAGES.IT_LOOKS_LIKE_ANY_ONE_OF_THESE_COULD_BE_THE_ISSUE',
+    'MESSAGES.THE_ROUTER_IS_NOT_SWITCHED_ON',
+    'MESSAGES.THE_CABLE_ISNT_CONNECTED_PROPERLY_NUMBER',
+    'MESSAGES.THE_ROUTER_IS_FAULTY',
+    'MESSAGES.TAP_TRY_AGAIN_LATER_IF_YOU_WANT_TO_CHECK_THE_PROBLEM_LATER',
+    'MESSAGES.TAP_BOOK_AN_APPOINTMENT_IF_YOU_WANT_TO_BOOK_A_TECHNICIAN_VISIT',
   ];
   constructor(
     private helperService: HelperService,

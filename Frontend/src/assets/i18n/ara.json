@@ -683,7 +683,17 @@
 "MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD":"· تأكد من إدخال كلمة المرور الصحيحة لشبكة Wi-Fi ",
 "SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE":"· ابحث عن شبكات Wi-Fi المتوفرة من جهازك",
 "CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD":"· اتصل بشبكة Wi-Fi الخاصة بك عن طريق التحقق من الاسم وإدخال كلمة المرور الصحيحة",
-"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"حدّد نوع الجهاز ونظام التشغيل لمعرفة كيفية توصيل جهازك بشبكة Wi-Fi."
+"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"حدّد نوع الجهاز ونظام التشغيل لمعرفة كيفية توصيل جهازك بشبكة Wi-Fi.",
+  "ROUTER_IS_SWITCHED_ON": "تشغيل الراوتر",
+  "WE_ARE_STILL_UNABLE_TO_REACH_YOUR_ROUTER": "لم نتمكن من الوصول إلى جهازك. ",
+  "IT_LOOKS_LIKE_ANY_ONE_OF_THESE_COULD_BE_THE_ISSUE": "يبدو أن أيًا من الأسباب التالية قد تكون هي المشكلة:",
+  "THE_ROUTER_IS_NOT_SWITCHED_ON": "1. لم يتم تشغيل الراوتر",
+  "THE_ROUTER_IS_FAULTY": "3. هناك عيب في الراوتر",
+  "THE_CABLE_ISNT_CONNECTED_PROPERLY_NUMBER": "2. لم يتم توصيل الكابل بشكل صحيح",
+  "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS": "توصيل الكابل من الراوتر إلى منفذ {{portNumber}} صندوق الألياف المركّب على الحائط "
+
+
+
 
   },
   "Errors": {

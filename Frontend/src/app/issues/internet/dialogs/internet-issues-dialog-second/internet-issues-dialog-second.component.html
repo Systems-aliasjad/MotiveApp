@@ -19,7 +19,7 @@
           <h4 class="sub-title modal-sub-title">{{ 'MESSAGES.ROUTER_IS_NOT_ACCESSIBLE' | translate }}</h4>
           <ion-list>
             <ion-item *ngFor="let ins of instructionListDialog2; let i = index">
-              <ion-label> {{ ins | translate }}</ion-label>
+              <ion-label> {{ ins | translate: { portNumber: portNumber } }}</ion-label>
             </ion-item>
           </ion-list>
         </div>
