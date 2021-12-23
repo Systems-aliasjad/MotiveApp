@@ -228,6 +228,7 @@
     "LANDLINE_STATUS": "حالة الخط الارضي",
     "WORKING": "يعمل",
     "NOT_WORKING": "لا يعمل",
+    "ACTIVE": "يعمل",
     "ACTIVE_AND_ENABLED": "يعمل و مفعل",
     "CALL_FORWARDING_SUBSCRIBED_AND_ENABLED": "خدمة توجيه المكالمات، الاشتراك موجود والخدمة مفعلة",
     "NOT_ACTIVE": "غير مفعل",

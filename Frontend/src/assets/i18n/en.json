@@ -208,6 +208,7 @@
     "LANDLINE_STATUS": "Landline status",
     "WORKING": "Working",
     "NOT_WORKING": "Not Working",
+    "ACTIVE": "Active",
     "ACTIVE_AND_ENABLED": "Active & Enabled",
     "SUBSCRIBED": "Subscribed",
     "NOT_SUBSCRIBED": "Not Subscribed",
