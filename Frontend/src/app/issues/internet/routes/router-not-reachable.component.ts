@@ -105,7 +105,7 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
     this.ontConfig = temp?.ontConfig;
     this.routerConfig = temp?.routerConfig;
     this.section1Data = {
-      routerName: temp?.routerConfig?.routerSerial,
+      routerName: temp?.routerConfig?.routerManufacturer,
       routerModel: temp?.routerConfig?.routerModel,
     };
   }
