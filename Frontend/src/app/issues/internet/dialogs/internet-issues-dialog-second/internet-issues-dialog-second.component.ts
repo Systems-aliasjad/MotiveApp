@@ -72,7 +72,9 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
   }
 
   TryAgain() {
-   
+   try {
+    this.modalCtrl.dismiss();
+   } catch (error) {}
    this.sharedService.TicketCloseAPICallWithURL('thanks');
     // this.sharedService.setTryAgainRouterNotReachableFlag();
     // this.sharedService.setLoader(true);
