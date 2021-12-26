@@ -1,7 +1,7 @@
 {
   "HEADER": {
     "ACCOUNT_DETAILS": "ACCOUNT DETAILS",
-    "TV_DETAILS": "TV details",
+    "TV_DETAILS": "تفاصيل التلفاز",
     "ALMOST_THERE": "قاربت على الانتهاء!",
     "SERVICE_DETAILS": "تفاصيل الخدمة",
     "ALL_SERVICES": "كافة الخدمات",
@@ -47,7 +47,6 @@
     "BUY_NEW_ROUTER": "ترقية جهاز التوجيه",
     "RESET_WIFI_PASSWORD": "إعادة تعيين كلمة مرور WiFi"
   },
-
   "SUBHEADER": {
     "THE_CHANNEL_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "متاحة على جهاز الاستقبال التلفزيوني أدناه <xxx> القناة",
     "CALL_DETAILS": "تفاصيل المكالمات",
@@ -73,7 +72,6 @@
     "SSID_2_4_GHZ": "SSID 2.4 جيجا هرتز",
     "SSID_5_0_GHZ": "SSID 5.0 ​​جيجاهرتز"
   },
-
   "QUICK_LINKS": {
     "SEE_ALL": "انظر الكل",
     "I_WANT_TO_INSTALL_MY_NEW_ROUTER": "أريد تثبيت جهاز الراوترالجديد الخاص بي",
@@ -148,9 +146,7 @@
     "RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي",
     "RESET_WIFI_PASSWORD_SUCCESS": "تابع إلى إعدادات شبكة Wi-Fi.",
     "RESTART_NOW": "إعادة التشغيل",
-
     "RESTART_STB_NOW": "إعادة تشغيل جهاز استقبال خدمة التلفاز",
-
     "RESTART_NOW_STB": "إعادة التشغيل جهاز الاستقبال  ",
     "RESTART_ONT_STB": "إعادة التشغيل ",
     "SELECT": "اختر",
@@ -177,15 +173,14 @@
     "YES_I_AM": "، استخدم نفس الراوتر",
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
-
   "MESSAGES": {
-    "WE_CANNOT_REACH_YOUR_ROUTER":"We can’t reach your router",
-    "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX":"Make sure that the router is turned on and is connected to wall-mounted fiber box.",
-    "REQUEST_NOT_FOUND":"Request not found",
-    "SORRY_WE_COULDNT_FIND_THE_REQUEST_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING":"Sorry, we couldn’t find the request you requested. If you need help with a technical issue, tap ‘Continue to troubleshooting’.",
-    "ROUTER_RESTART_UNSUCCESSFUL":"Router restart successful",
-    "REQUEST_FOLLOW_UP": "Request follow up",
-    "SORRY_THE_OPERATION_HAS_TIMED_OUT_PLEASE_TRY_AGAIN": "Sorry, the operation has timed out. Please try again.",
+    "WE_CANNOT_REACH_YOUR_ROUTER": "لا يمكننا الوصول إلى جهاز الراوتر الخاص بك",
+    "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX": "Make sure that the router is turned on and is connected to wall-mounted fiber box.",
+    "REQUEST_NOT_FOUND": "Request not found",
+    "SORRY_WE_COULDNT_FIND_THE_REQUEST_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING": "عذرا ، لم نتمكن من العثور على الطلب. إذا كنت بحاجة إلى مساعدة في مشكلة فنية ، انقر على الدعم الفني.",
+    "ROUTER_RESTART_UNSUCCESSFUL": "لم تتم إعادة تشغيل الراوتر",
+    "REQUEST_FOLLOW_UP": " متابع الطلب",
+    "SORRY_THE_OPERATION_HAS_TIMED_OUT_PLEASE_TRY_AGAIN": "عذرًا ، انقضت مهلة الإجراء. حاول مرة اخرى.",
     "FEEDBACK_SUBMITTED_SUCCESSFULLY": "Feedback submitted successfully",
     "RUN_SMART_DIAGNOSIS_ON_YOUR_PRODUCT_AND_SERVICE": "بدء التشخيص الذكي لمشاكل الخدمات",
     "AN_AUTOMATED_SELFDIAGNOSIS_WILL_BE_INITIATED_ONCE_YOU_SELECT_ONE_OF_THE_FOLLOWING_OPTIONS": "سيبدأ التشخيص الذاتي تلقائياً بمجرد تحديد أحد الخيارات التالية ",
@@ -193,7 +188,7 @@
     "REBOOT_MY_DEVICES": "اعد تشغيل الأجهزة",
     "FIBER_BOX_WILL_BE_REBOOTED_ARE_YOU_SURE_YOU_WANT_TO_CONTINUE": "سيتم إعادة تشغيل جهاز الخدمة الرئيسي",
     "FOLLOW_THESE_STEPS_TO_RESTART_YOUR_TV_BOX": "الجهاز الفايبر الرئيسي الخاص بخدمة",
-    "FIBER_BOX": "FIBER BOX",
+    "FIBER_BOX": "صندوق الألياف:",
     "INTERNET_CONNECTION_STATUS": "حالة الاتصال بالانترنت",
     "SPEED_TEST_RESULT": "نتيجة اختبار السرعة",
     "INTERNET_CALLING_PLAN": "باقة المكالمات عبر الانترنت",
@@ -202,17 +197,17 @@
     "SR_FOLLOW_UP": "متابعة الطلب",
     "PLEASE_SELECT_THE_SR_NO_TO_CONTUNUE": "اختر رقم الطلب للمتابعة",
     "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_CODE_CONTROL_BARRING_SERVICE": "تكن مشترك في خدمة منع المكالمات",
-  "TV_BOX_WILL_BE_RESTARTED": "سيتم إعادة تشغيل جهاز الاستقبال الخاص بخدمة التلفاز",
+    "TV_BOX_WILL_BE_RESTARTED": "سيتم إعادة تشغيل جهاز الاستقبال الخاص بخدمة التلفاز",
     "PLEASE_SELECT_THE_ROUTER": " إعادة تشغيل جهاز الراوتر",
-    "CHOOSE_THE_STB_YOU_WANT_TO_REBOOT":"هل تريد إعادة تشغيل جهاز الاستقبال الخاص بخدمة التلفاز",
+    "CHOOSE_THE_STB_YOU_WANT_TO_REBOOT": "هل تريد إعادة تشغيل جهاز الاستقبال الخاص بخدمة التلفاز",
     "REBOOT_TV_BOX": "إعادة تشغيل الاستقبال الخاص بخدمة التلفاز",
     "FORGOT_WIFI_PASSWORD": "نسيت كلمة المرور الخاصة بال واي فاي",
-    "WE_CAN_HELP_YOU_RESET_YOUR_WIFI_PASSWORD_IF_YOU_FORGOT_YOUR_PASSWORD":  "يمكننا مساعدتك لإعادة تعيين كلمة المرور لل واي فاي اذا كنت قد نسيتها",
+    "WE_CAN_HELP_YOU_RESET_YOUR_WIFI_PASSWORD_IF_YOU_FORGOT_YOUR_PASSWORD": "يمكننا مساعدتك لإعادة تعيين كلمة المرور لل واي فاي اذا كنت قد نسيتها",
     "PLEASE_WAIT_FOR_A_FEW_MINUTES": "انتظر من فضلك لبضع دقائق",
     "WE_ARE_RESETTING_YOUR_WIFI_PASSWORD": "نقوم بإعادة تعيين كلمة المرور الخاصة بال واي فاي",
     "YOUR_TV_ADMIN_PIN_IS_BEING_RESET": "رمز الدخول للحساب الرئيسي الخاص بخدمة التلفاز",
-    "WE_ARE_RESETTING_YOUR_ELIFEON_PIN":  "نقوم بإعادة تعيين رمز المرور الخاص بخدمة eLifeON",
-    "YOUR_ROUTER_IS_BEING_RESTARTED":"يتم الان إعادة التشغيل لجهاز الراوتر",
+    "WE_ARE_RESETTING_YOUR_ELIFEON_PIN": "نقوم بإعادة تعيين رمز المرور الخاص بخدمة eLifeON",
+    "YOUR_ROUTER_IS_BEING_RESTARTED": "يتم الان إعادة التشغيل لجهاز الراوتر",
     "YOUR_ROUTER_IS RESETTING_TO_DEFAULT_FACTORY_SETTING": "سيتم إعادة تعيين الراوتر الى اعدادات ضبط المصنع",
     "WE_ARE_RESETTING_YOUR_INTERNET_PASSWORD": "يتم الان إعادة تعيين كلمة المرور الخاصة بحساب الانترنت",
     "YOUR_ELIFEON_PIN_IS_BEING_RESET": "يتم الان إعادة تعيين رمز المرور الخاص بخدمة eLifeON",
@@ -221,8 +216,8 @@
     "WE_ARE_RESETTING_YOUR_CCB_PIN": "سنقوم بإعادة تعيين الرمز الامن لخدمة منع المكالمات",
     "PLEASE_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_TV_AGAIN": "يرجى الانتظار لمدة 5 دقائق ثم اعد استخدام خدمة التلفاز مرة اخرى",
     "PLEASE_WAIT_WHILE_WE_TRY_TO_RESET_IT_AGAIN": " يرجى الانتظار، سنحاول إعادة تعيينها مرة اخرى",
-    "WE_ARE_EXPERIENCING_A_DELAY_IN_RESETTING_YOUR_INTERNET_PASSWORD":" نوجه بعض التأخير في إعادة تعيين كلمة المرور الخاصة بحساب الانترنت",
-    "PLEASE_WAIT_FOR_2_MINUTES_AND_THEN_TRY_CONNECTING_TO_THE_WIFI_NETWORK_WITH_THE_NEW_PASSWORD":"يرجى الانتظار لمدة دقيقتين ثم حاول الاتصال مرة أخرى الى شبكة ال واي فاي باستخدام كلمة السر الجديدة",
+    "WE_ARE_EXPERIENCING_A_DELAY_IN_RESETTING_YOUR_INTERNET_PASSWORD": " نوجه بعض التأخير في إعادة تعيين كلمة المرور الخاصة بحساب الانترنت",
+    "PLEASE_WAIT_FOR_2_MINUTES_AND_THEN_TRY_CONNECTING_TO_THE_WIFI_NETWORK_WITH_THE_NEW_PASSWORD": "يرجى الانتظار لمدة دقيقتين ثم حاول الاتصال مرة أخرى الى شبكة ال واي فاي باستخدام كلمة السر الجديدة",
     "ISSUE_FIXED": "تم حل المشكلة",
     "ISSUE_NOT_FIXED": "لم يتم حل المشكلة",
     "VALUE_ADDED_SERVICES": "خدمات القيمة المضافة",
@@ -237,38 +232,38 @@
     "NOT_SUBSCRIBED": "لا يوجد اشتراك",
     "SUBSCRIBED_AND_ACTIVATED": "الاشتراك موجود، و الخدمة مفعلة",
     "SUBSCRIBED_AND_NOT_ACTIVATED": "الاشتراك موجود، و الخدمة غير مفعلة",
-    "RESET_STB_PIN":"إعادة تعيين الرمز المروري الخاص بجهاز استقبال خدمة التلفاز",
+    "RESET_STB_PIN": "إعادة تعيين الرمز المروري الخاص بجهاز استقبال خدمة التلفاز",
     "CHOOSE_THE_STB_YOU_WANT_TO_RESET": "اختر جهاز الاستقبال الخاص الذي تود إعادة تعيينه",
-    "UNABLE_TO_RESET_ELFIE_ON_PIN":"لم نتمكن من إعادة تعيين الرمز المرزري الخاص بخدمة تلفاز ال eLife",
+    "UNABLE_TO_RESET_ELFIE_ON_PIN": "لم نتمكن من إعادة تعيين الرمز المرزري الخاص بخدمة تلفاز ال eLife",
     "UNABLE_TO_RESET_TV_ADMIN_PIN": " لن نتمكن من إعادة تعيين بإعادة تعيين الرمز المروري للحساب الرئيسي الخاص بخدمة التلفاز ",
     "MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_FIBER_BOX": "يرجى استخدام الرمز التعريفي وكلمة المرور الصحيحة عن إعادة تعيين الجهاز الرئيسي الخاص بخدمات اتصالات.",
-    "PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCIONS_TO_CONFIGURE_YOUR_FIBER_BOX":" يرجى اختيار نوع الجهاز و الموديل الصحيح ثم اتبغ التعليمات لاعادة تعيين الاعدادات الخاصة بجهاز اتصالات الرئيسي",
+    "PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCIONS_TO_CONFIGURE_YOUR_FIBER_BOX": " يرجى اختيار نوع الجهاز و الموديل الصحيح ثم اتبغ التعليمات لاعادة تعيين الاعدادات الخاصة بجهاز اتصالات الرئيسي",
     "MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER": "تأكد من معرفة اسم المستخدم وكلمة المرور الصحيحين أثناء تهيئة الراوتر",
     "PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCIONS_TO_CONFIGURE_YOUR_ROUTER": ".يرجى تحديد نوع الجهاز واتباع التعليمات لتهيئة الراوتر الخاص بك",
     "PLEASE_ENTER_BELOW_DETAILS_TO_CHANGE": "يرجى ادخال البيانات التالية للتغيير",
-    "CALL_FORWARDING_NUMBER":"الرقم المسجل لخدمة توجيه المكالمات",
+    "CALL_FORWARDING_NUMBER": "الرقم المسجل لخدمة توجيه المكالمات",
     "PLEASE_ENTER_BELOW_DETAILS_TO_RESET_YOUR": "Please enter below details to reset your",
-   "WIFI_PASSWORD": "كلمة المرور لخدمة ال واي فاي",
+    "WIFI_PASSWORD": "كلمة المرور لخدمة ال واي فاي",
     "ACCOUNT_ID": "الرقم التعريفي للحساب",
     "PLEASE_FILL_THE_BELOW_INFORMATION": "يرجى ادخال البيانات التالية ",
     "THANK_YOU_FOR_USING_SELF_CARE": "شكرا لاستخدامك الخدمة الذاتية",
     "HOPE_WE_COULD_MAKE_YOUR_EXPERIENCE_BETTER": "نتمنى ان نجعل تجربتك مع الخدمة هي الأفضل دائماً",
     "WE_ARE_FACING_SOME_ISSUES": "نواجه بعض الصعوبات",
-   "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN":" لقد قمنا بإصلاح العطل الفني، من فضلك قم بإعادة تشغيل جهاز الراوتر و جهاز استقبال خدمة التلفاز، ثم حاول استخدام الانترنت مرة اخرى",
+    "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": " لقد قمنا بإصلاح العطل الفني، من فضلك قم بإعادة تشغيل جهاز الراوتر و جهاز استقبال خدمة التلفاز، ثم حاول استخدام الانترنت مرة اخرى",
     "UNABLE_TO_CONNECT_TO_WIFI_NETWORK": "تعذر الاتصال بشبكة ال واي فاي",
     "YOU_CAN_NOW_ENABLE_DISABLE_CALL_BARRING_USING_THE_NEW_PIN": "يمكنك الان تمكين و الغاء خدمة منع المكالمات باستخدام الرمز السري",
     "CALL_FORWARDING_NUMBER_CHANGE_FAILED": "تعذر تغيير الرقم المسجل لخدمة توجيه المكالمات",
     "PLEASE_TRY_AGAIN_LATER": " يرجى المحاولة مرة أخرى في ما بعد",
-    "CCB_PIN_RESET_FAILED":" تعذر إعادة تعيين الرمز اسري لخدمة منع المكالمات",
-    "HOWEVER_WE_NOTICED_THAT_YOUR_ROUTER_IS_OUT_OF_WARRANTY_WE_RECOMMEND_YOU_TO_PLEASE_UPGRADE_YOUR_ROUTER_FOR_BETTER_EXPERIENCE":" لقد لاحظنا ان جهاز الراوتر الخاص بك خارج فترة الضمان، نرشح لك ترقية جهاز الراوتر لضمان خدمة افضل",
+    "CCB_PIN_RESET_FAILED": " تعذر إعادة تعيين الرمز اسري لخدمة منع المكالمات",
+    "HOWEVER_WE_NOTICED_THAT_YOUR_ROUTER_IS_OUT_OF_WARRANTY_WE_RECOMMEND_YOU_TO_PLEASE_UPGRADE_YOUR_ROUTER_FOR_BETTER_EXPERIENCE": " لقد لاحظنا ان جهاز الراوتر الخاص بك خارج فترة الضمان، نرشح لك ترقية جهاز الراوتر لضمان خدمة افضل",
     "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_TV_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": "اضغط على عرض التفاصيل للتعرف على تفاصيل خدمة التلفاز أو اضغط على استمرار إلى صفحة إصلاح الأخطاء في حال وجود أي خطأ تقني",
     "WE_COULD_NOT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY": "لم يتم تحديد أي مشكلة تقنية. خدمة التلفاز تعمل لديك بشكل طبيعي.",
     "WIFI_PASSWORD_CHANGED_SUCCESSFULLY": "تم تغيير كلمة المرور بنجاح!",
-    "PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER": "Please use the new Wi-Fi password to connect to the router.",
-"PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "يرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم المحاولةباستخدام خدمة الإنترنت مرة أخرى.",
+    "PLEASE_USE_THE_NEW_WIFI_PASSWORD_TO_CONNECT_TO_THE_ROUTER": "يرجى استخدام كلمة مرور  ال واي فاي الجديدة للاتصال بجهاز الراوتر",
+    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "يرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم المحاولةباستخدام خدمة الإنترنت مرة أخرى.",
     "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW_UP_ON_THE_SAME_COMPLAINT": " يعمل فريقنا التقني على إصلاح المشكلة. هل ترغب بالاستعلام عن نفس الشكوى؟",
     "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY.": "لم يتم تحديد أي مشكلة تقنية. خدمة الهاتف تعمل لديك بشكل طبيعي.",
-       "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_PHONE_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": " اضغط على  عرض التفاصيل  أو للاطلاع على كافة تفاصيل خدمة الهاتف لديك. اضغط على  استمرار إلى صفحة إصلاح الأخطاء  في حال وجود أي مشكلة محددة",
+    "TAP_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_PHONE_SERVICE_OR_TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE": " اضغط على  عرض التفاصيل  أو للاطلاع على كافة تفاصيل خدمة الهاتف لديك. اضغط على  استمرار إلى صفحة إصلاح الأخطاء  في حال وجود أي مشكلة محددة",
     "ACCOUNT_TEMPORARILY_DISCONNECTED": "تم تعليق الحساب مؤقتًا",
     "ACTION_REQUIRED": "الإجراء المطلوب",
     "ALTERNATE_CONTACT_NO": "رقم الاتصال البديل",
@@ -283,7 +278,7 @@
     "APPOINTMENT_TIME_SLOT": "خانة وقت الموعد:",
     "ARE_YOU_SURE_YOU_WANT_TO_QUIT_ELIFE_TV_GAME_NAME_ANY_UNSAVED_CHANGES_WILL_BE_LOST": "هل أنت متأكد من رغبتك في الخروج من (اسم اللعبة)؟  الخروج بدون حفظ التغييرات سيؤدي إلى ضياعها. يمكنك البدء في جلسة لعب جديدة من خلال القائمة الرئيسية بخدمة eLife TV Gaming.",
     "ARE_YOU_USING_THE_SAME_ROUTER": "هل ما زلت تستخدم نفس الراوتر؟",
-    "BOOK_COMPLAINT_TO_FIX_THE_ISSUE": "Book complaint to fix the issue",
+    "BOOK_COMPLAINT_TO_FIX_THE_ISSUE": "تقديم طلب لإصلاح المشكلة",
     "BY_ACCEPTING_THE_TC_YOU_CONFIRM_THAT_ALL_INFORMATION_BY_YOU_IS_CORRECT_AND_YOU_BEAR_RESPONSIBILITY_IF_THERE_WILL_BE_ANY_DISCREPANCY_IN_THE_DOCUMENTS_AND_WILL_LIABLE_FOR_THE_ACTION": "By accepting the T&C, you confirm that all information by you is correct and you bear responsibility if there will be any discrepancy in the documents and will liable for the action.",
     "CALL_FORWARDING_ENABLED_OR_DISABLED": "تمكين أو تعطيل إعادة توجيه المكالمات ",
     "CALL_FORWARDING_NUMBER_CHANGED_SUCCESSFULLY": "Call forwarding number changed successfully",
@@ -292,14 +287,14 @@
     "CHANNEL_IS_NOT_ON_THE_LIST": "القناة ليست في القائمة",
     "CHANNEL_LIST": "قائمة القنوات",
     "CHECK_THE_BATTERY_OF_THE_CORDLESS_PHONE": "تأكد من وجود بطارية الجهاز اللاسلكي",
-    "CHECK_WIFI_COVERAGE_GUIDLINES_TO_SOLVE_CONNECTIVITY_ISSUES": "Check wi-fi coverage guidlines to solve connectivity issues.",
+    "CHECK_WIFI_COVERAGE_GUIDLINES_TO_SOLVE_CONNECTIVITY_ISSUES": "تحقق من اتباع التعليمات الصحيحة للحصول على تغطية ال واي فاي  كي تحل مشاكل الاتصال",
     "CHILD_LOCK": "Child lock",
     "CHOOSE_THE_TV_BOX_YOUD_LIKE_TO_TRANSFER_THE_PACKAGE_TO": "اختر جهاز الاستقبال التلفزيوني الذي تريد نقل الباقة إليه.",
     "CLICK_HERE": "انقر هنا",
     "COMPLAINT_ALREADY_EXISTS": " تم تقديم هذه الشكوى بالفعل",
     "COMPLAINT_BOOK_SUCCESSFULLY": "!تم تقديم شكوتك بنجاح",
     "COMPLAINT_DETAILS": "تفاصيل الشكوى",
-    "COMPLAINT_NO": "Complain No",
+    "COMPLAINT_NO": "رقم الشكوى",
     "COMPLAINT_NOT_FOUND": "لم يتم العثور على الشكوى",
     "COMPLAINT_RAISED_SUCCESSFULLY": "تم تقديم شكوتك بنجاح",
     "COMPLAINT_UNDER_PROCESS": "الشكوى قيد المعالجة",
@@ -316,7 +311,7 @@
     "DATE_CREATED": ":تاريخ الإنشاء",
     "DATE_OF_VISIT": "موعد الزيارة:",
     "DATE_VISIT": ":موعد زيارة",
-    "DEVICES_IS_NOT_ACCESSIBLE": "Devices is not accessible!",
+    "DEVICES_IS_NOT_ACCESSIBLE": "تعذّر الوصول إلى الراوتر",
     "DONT_FORGET_TO_CHECK_THE_BATTERY_LEVEL_IN_YOUR_PHONE_HEADSET": "تأكد من وجود بطارية الجهاز اللاسلكي",
     "DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST": "هل تريد متابعة الطلب؟",
     "DO_YOU_WANT_TO_RESET_THE_ROUTER_TO_THE_FACTORY_DEFAULT": "هل تريد إعادة ضبط جهاز الراوتر على إعدادات المصنع الافتراضية؟",
@@ -327,11 +322,11 @@
     "ELIFE_TV_GAME": "eLife TV game",
     "ELIFE_TV_GAME_NAME_HAS_BEEN_RESTARTED_SUCCESSFULLY_YOU_CAN_NOW_LAUNCH_A_NEW_GAME_SESSION_FROM_THE_MAIN_MENU_OF_ELIFE_TV_GAMING": "eLife TV Gaming تم إعادة تشغيل جلسة لعبة (اسم اللعب) بنجاح. يمكنك البدء في جلسة لعب جديدة من خلال القائمة الرئيسية بخدمة ",
     "ENTER_CCB_PIN_AGAIN": "أدخل رقم التعريف الشخصي لكود حظر المكالمات مجددًا",
-    "ENTER_NEW_NUMBER": "Enter new number",
-    "ENTER_NEW_NUMBER_AGAIN": "Enter new number again",
+    "ENTER_NEW_NUMBER": " ادخل رقم جديد",
+    "ENTER_NEW_NUMBER_AGAIN": "ادخل رقم جديد مرة أخرى",
     "ENTER_YOUR_MOBILE_NUMBER_TO_RECEIVE_THE_NEW_PIN_VIA_SMS": "أدخل رقم هاتفك المحمول ليصلك رقم التعريف الشخصي الجديد عبر رسالة نصية قصيرة",
     "ENTER_YOUR_MOBILE_NUMBER_TO_RECIVE_THE_NEW_PIN_VIA_SMS": "أدخل رقم هاتفك المحمول ليصلك رقم التعريف الشخصي الجديد عبر رسالة نصية قصيرة",
-    "ETISALAT_DEVICE_CARE_GIVES_YOU": "Etisalat device care gives you.....",
+    "ETISALAT_DEVICE_CARE_GIVES_YOU": "الدعم الفني للأجهزة يقدم لك.....",
     "ETISALAT_DEVICE_CARE_GIVES_YOU_PRECISE_INSTRUCTIONS_SPECIFIC_FOR_YOUR_DEVICE": "الدعم الفني للأجهزة يقدم لك تعليمات دقيقة خاص بجهازك",
     "EXPECTED_DATE_OF_COMPLETION": "التاريخ المتوقع للاكتمال الطلب",
     "FIBER_BOX_NOT_REACHABLE": "لا يمكن الوصل الى صندوق الألياف",
@@ -347,12 +342,9 @@
     "HOWEVER_THIS_SERVICE_WILL_NOT_BE_AVAILABLE_IF_YOU_INSTALL_A_THIRD_PARTY_ROUTER": "لن تكون هذه الخدمة متاحة إذا تقوم بتثبيت جهاز راوتر تابع لجهة خارجية",
     "IF_ISSUE_IS_STILL_NOT_FIXED_PLEASE_RECONFIGURE_YOUR_ROUTER_WITH_THE_CORRECT_SETTINGS": "في حال لم يتم حل المشكلة، يرجى إعادة ضبط الراوتر باستخدام الإعدادات الصحيح",
     "IF_TV_BOX_WORKS_BUT_YOU_ARE_UNABLE_TO_WATCH_A_CHANNEL_CHECK_WHETHER_THE_CABLE_FROM_TV_BOX_IS_CONNECTED_TO_X_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_ONT": "إذا كان جهاز الاستقبال التلفزيوني يعمل ولكنك غير قادر على مشاهدة قناة محددة، تحقق من توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ × بصندوق الألياف المركّب على الحائط ",
-
     "IF_YOU_ARE_STILL_UNABLE_TO_WATCH_TAP_RESET_TV_BOX_SO_THAT_WE_CAN_RESET_IT_REMOTELY": "إذا كنت لا تزال غير قادر على مشاهدة (اسم القناة) اضغط على إعادة ضبط جهاز الاستقبال التلفزيوني حتى نتمكن من إعادة ضبطه عن بُعد",
-
     "IF_YOU_ARE_UNABLE_TO_TURN_THE_TV_BOX_ON_CHECK_THE_BATTERY_OF_THE_REMOTE_CONTROL": " إذا لم تتمكن من تشغيل جهاز الاستقبال التلفزيوني، تحقق من بطارية جهاز التحكم عن بُعد",
     "IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD": "إذا اخترت الخيار الثاني ، فستحتاج للانتظار 30 دقيقة ثم إعادة تعيين كلمة مرور الإنترنت",
-
     "IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIST_TROUBLESHOOTING": "إذا كنت ترغب بإكمال هذه الخطوات في وقت لاحق، اضغط على الخروج من صفحة إصلاح الأخطاء",
     "IF_YOU_WISH_TO_GET_BILL_DETAILS_MAKE_PAYMENT": " إذا كنت ترغب في الحصول على تفاصيل الفاتورة / إجراء الدفع",
     "IF_YOU_WISH_TO_SUBSCRIBE_MORE_CHANNELS_PLEASE": ".إذا كنت ترغب في الاشتراك في المزيد من القنوات ، يرجى النقر هنا",
@@ -367,7 +359,6 @@
     "INTERNET_PASSWORD_RESET_SUCCESSFULLY": "!تم تغيير الرقم السري بنجاح",
     "ISSUE_FIXED_SUCCESSFULLY": "!تم حل المشكلة بنجاح",
     "ITS_HIGHLY_RECOMMENDED_TO_USE_AN_ETISALAT_ROUTER_FOR_BETTER_EXPERIENCE_AND_ELIMINATION_OF_REPEATED_INTERNET_ISSUES": "لذلك يوصى بترقية الراوتر الخاص بك للحصول على تجربة أفضل والتخلص من مشكلات الإنترنت المتكررة",
-
     "IT_IS_TAKING_LONGER_THAN_EXPECTED_KINDLY_WAIT": "قد يستغرق وقتا أطول مما كان متوقعا. يرجى الانتظار",
     "IT_LOOKS_LIKE_THIS_COMPLAINT_HAS_ALREADY_BEEN_RESOLVED_BY_OUR_TECHNICIAN_YOU_CAN_REOPEN_THE_COMPLAINT_IF_YOURE_STILL_FACING_AN_ISSUE": ".يبدو أنه تم حل هذه الشكوى بالفعل بواسطة الفني. يمكنك إعادة فتح الشكوى إذا كنت كذلك لا تزال تواجه مشكلة ",
     "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_ELIFEON": ".eLifeON يبدو أنك غير مشترك في خدمة",
@@ -387,7 +378,7 @@
     "MINIMUM_8_CHARACTERS": "8 حروف",
     "MOBILE_NO": "رقم الهاتف المحمول",
     "MOBILE_NUMBER": "رقم الهاتف المحمول",
-    "YOUR_OLD_SESSION_IS_CURRENTLY_IN_PROGRESS": "Your old session is currently in progress",
+    "YOUR_OLD_SESSION_IS_CURRENTLY_IN_PROGRESS": "ان دورة الفحص السابقة لاتزال قيد الاجراء",
     "MY_TV_ISNT_WORKING_PROPERLY": "التلفاز لا يعمل بشكل صحيح",
     "MY_WIFI_IS_SLOW_OR_CAUSING_PROBLEMS": "سرعة شبكة Wi-Fi بطيئة أو تسبب مشاكل في الخدمة",
     "NEW_CCB_PIN": "رقم تعريف شخصي جديد لكود حظر المكالمات",
@@ -405,8 +396,8 @@
     "ONCE_YOU_RESTART_YOUR_TV_BOX_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": " بمجرد إعادة تشغيل جهاز الاستقبال، يرجى الانتظار لمدة 5 دقائق قبل استخدام الإنترنت",
     "ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE": "One of these options could be causing the issue:",
     "OPEN_SERVICE_REQUEST": "طلب خدمة مفتوح",
-    "OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING": "Option to enable/disable call forwarding",
-    "OR": "OR",
+    "OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING": "خيار لتمكين / تعطيل إعادة توجيه المكالمات",
+    "OR": " أو",
     "OTHER_ISSUES": "مشاكل أخرى",
     "OUR_TEAM_IS_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE": ".يعمل فريقنا بالفعل على حل المشكلة",
     "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW": " يعمل فريقنا التقني على إصلاح المشكلة. هل ترغب بالاستعلام عن نفس الشكوى؟",
@@ -424,7 +415,7 @@
     "PLEASE_CHECK_IF": ":يرجى التأكد من",
     "PLEASE_CHECK_IF_ROUTER_IS_SWITCHED_ON_THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBRE_BOX_ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE_IF_YOU_WANT_TO_COMPLETE_THESE_STEPS_LATER_TAP_EXIT_TROUBLESHOOTING": ":يرجى التأكد من تشغيل الراوتر توصيل الكابل من الراوتر إلى منفذ X بصندوق الألياف المركّب على الحائط بمجرد إنهاء هذه الخطوات، اضغط على استمرار إذا كنت ترغب بإكمال هذه الخطوات في وقت لاحق، اضغط على الخروج من صفحة إصلاح الأخطاء",
     "PLEASE_ENTER_A_VALID_MOBILE_NUMBER": ".يرجى إدخال رقم هاتف متحرك صالح.",
-    "PLEASE_MAKE_SURE_THAT": "Please make sure that",
+    "PLEASE_MAKE_SURE_THAT": "يرجى التأكد من:",
     "PLEASE_MAKE_SURE_THAT_THE_POWER_CABLE_FOR_WALL_MOUNTED_FIBER_BOX_IS_CONNECTED_PROPERLY_AND_POWER_IS_ON": " يرجى التأكد من توصيل كبل الطاقة الخاص بـصندوق الالياف المثبت على الحائط بشكل صحيح وتشغيل الطاقة ",
     "PLEASE_MAKE_SURE_THAT_YOUR_PC_LAPTOP_BROWSER_IS_CONFIGURED_WITH_THE_CORRECT_DNS_SETTINGS": "يرجى التأكد من ضبط متصفح الحاسب الآلي أو الحاسب الآلي المحمول مع الإعدادات الصحيحة لنظام اسماء النطاقات",
     "PLEASE_MAKE_SURE_THAT_YOUR_PC_LAPTOP_BROWSER_IS_CONFIGURED_WITH_THE_CORRECT_PROXY_SETTINGS": "يرجى التأكد من ضبط متصفح الحاسب الآلي أو الحاسب الآلي المحمول مع إعدادات الوكيل الصحيحة",
@@ -437,8 +428,8 @@
     "PLEASE_RESET_YOUR_ELIFEON_PIN_TO_FIX_THE_ISSUE_IT_WILL_BE_RESET_TO_THE_DEFAULT_PIN_1111_ELIFE": " رجى إعادة تعيين رقم التعريف الشخصي لخدمة eLifeON لإصلاح المشكلة.سيتم إعادة تعيين رقم التعريف الشخصي إلى 1111@elife ",
     "PLEASE_RESTART_ALL_YOUR_TV_BOXES_TO_ACTIVATE_THE_NEW_PIN": " .يرجى إعادة تشغيل كل أجهزة الاستقبال التلفزيوني لديك لتفعيل رقم التعريف الشخصي الجديد",
     "PLEASE_RESTART_THE_TV_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": ".يرجى إعادة تشغيل جهاز الاستقبال التلفزيوني قبل استخدام التلفاز",
-   "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_PHONE_AGAIN": " يرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم إعادة استخدام الهاتف مرة أخرى. ", 
-    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": " ُرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم المحاولةباستخدام خدمة التلفزيون مرة أخرى  ", 
+    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_PHONE_AGAIN": " يرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم إعادة استخدام الهاتف مرة أخرى. ",
+    "PLEASE_RESTART_THE_WALL_MOUNTED_FIBER_BOX_AND_THEN_TRY_USING_THE_TV_AGAIN": " ُرجى إعادة تشغيل صندوق الألياف المثبت على الحائط ثم المحاولةباستخدام خدمة التلفزيون مرة أخرى  ",
     "PLEASE_SELECT_THE_CHANNEL_YOU_ARE_NOT_ABLE_TO_WATCH_FROM_THE_LIST_BELOW": ":الرجاء تحديد القناة التي لا تستطيع للمشاهدة من القائمة أدناه",
     "PLEASE_SELECT_THE_DEVICE_MAKE_AND_MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER": "يرجى تحديد نوع الجهاز واتباع التعليمات لتهيئة الراوتر الخاص بك. تأكد من معرفة اسم المستخدم وكلمة المرور الصحيحين أثناء تهيئة الراوتر",
     "PLEASE_SELECT_YOUR_ISSUE": "حدّد الخيار الذي يصف مشكلتك.",
@@ -498,7 +489,7 @@
     "SORRY_THE_OPERATION_HAS_TIMEOUT_PLEASE_TRY_AGAIN": "عذرًا ، انقضت مهلة  الإجراء من فضلك حاول مرة أخرى بعد بعض من الوقت.",
     "SORRY_THE_OPERATION_HAS_TIMEOUT_PLEASE_TRY_AGAIN_AFTER_SOME_TIME": "عذرًا ، انقضت مهلة  الإجراء من فضلك حاول مرة أخرى بعد بعض من الوقت.",
     "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_INSTEAD": "عذرًا، خدمة التلفاز لا تعمل بشكل صحيح. يرجى إعادة المحاولة لاحقًا أو يمكنك حجز موعدًا لزيارة الفني المختص",
-    "SORRY_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DONT_HAVE_ADDITIONAL_STB": "Sorry, transfer of package is not applicable as you don't have additional STB",
+    "SORRY_TRANSFER_OF_PACKAGE_IS_NOT_APPLICABLE_AS_YOU_DONT_HAVE_ADDITIONAL_STB": "عذراً ، غير قابل على نقل الباقة أنه ليس لديك جهاز الاستقبال ",
     "SORRY_WE_COULDNT_FIND_THE_COMPLAINT_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING": "عذرا ، لم نتمكن من العثور على طلب شكواك. إذا كنت بحاجة إلى مساعدة في مشكلة فنية ، انقر على الدعم الفني",
     "STATUS": "الحالة:",
     "STB_SR039838920": "STB SR#039838920",
@@ -510,7 +501,7 @@
     "TAP_CONTINUE_TO_TROUBLESHOOTING_IF_YOU_THINK_THIS_IS_RELATED_TO_A_TECHNICAL_ISSUE": "انقر على 'استمرار في الدعم الفني' إذا كنت تعتقد أن هذا مرتبط بمشكلة فنية.",
     "TAP_TRY_AGAIN_LATER_IF_YOU_WANT_TO_CHECK_THE_PROBLEM_LATER": ".اضغط على 'حاول مرة أخرى لاحقًا' إذا كنت ترغب بالتحقق من المشكلة لاحقًا.",
     "TAP_UPGRADE_PACKAGE_IF_YOU_WISH_TO_UPGRADE_THE_ROUTER": "إذا كنت ترغب في ترقية الباقة اضغط ترقية",
-       "TAP_UPGRADE_ROUTER_AND_PACKAGE_IF_YOU_WISH_TO_UPGRADE_THE_ROUTER": " إذا كنت ترغب في ترقية الباقة اضغط ترقية",
+    "TAP_UPGRADE_ROUTER_AND_PACKAGE_IF_YOU_WISH_TO_UPGRADE_THE_ROUTER": " إذا كنت ترغب في ترقية الباقة اضغط ترقية",
     "TAP_UPGRADE_ROUTER_IF_YOU_WISH_TO_UPGRADE_THE_ROUTER": "إذا كنت ترغب في ترقية جهاز الراوتر اضغط فوق ترقية",
     "TELEPHONE": " الهاتف",
     "TELEVISION": " التلفاز",
@@ -526,40 +517,40 @@
     "THE_CABLE_ISNT_CONNECTED_PROPERLY": " لم يتم توصيل الكابل بشكل صحيح",
     "THE_CHANNEL_IS_NOT_AVAILABLE_AS_PART_OF_THE_TV_PACKAGE_YOU_HAVE_SUBSCRIBED": "القناة غير متوفرة كجزء من الباقة التي اشتركت فيها",
     "THE_CHANNEL_XXX_IS_AVAILABLE_ON_THE_BELOW_TV_BOX": "القناة <xxx> متاحة على جهاز الاستقبال التلفزيوني أدناه.",
-    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": " خدمة eLife معطلة. نحن آسفون لذلك. يرجى المحاولة مرة أخرى لاحقاً أو حجز موعد لزيارة فني بدلاً من ذلك. ", 
-    "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": " عذرًا، لا يوجد اتصال بشبكة الإنترنت. يرجى إعادة المحاولة لاحقًا أو يمكنك حجز موعدًا لزيارة الفني المختص إلى منزلك. ", 
-    "THE_PHONE_IS_FAULTY": " الهاتف معيب ", 
-    "THE_PHONE_IS_NOT_SWITCHED_ON": " الهاتف ليس قيد التشغيل ", 
-    "THE_ROUTER_IS_SWITCHED_ON": "تشغيل الراوتر", 
+    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": " خدمة eLife معطلة. نحن آسفون لذلك. يرجى المحاولة مرة أخرى لاحقاً أو حجز موعد لزيارة فني بدلاً من ذلك. ",
+    "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_TRY_AGAIN_LATER_OR_BOOK_AN_APPOINTMENT_FOR_A_TECHNICIAN_VISIT_INSTEAD": " عذرًا، لا يوجد اتصال بشبكة الإنترنت. يرجى إعادة المحاولة لاحقًا أو يمكنك حجز موعدًا لزيارة الفني المختص إلى منزلك. ",
+    "THE_PHONE_IS_FAULTY": " الهاتف معيب ",
+    "THE_PHONE_IS_NOT_SWITCHED_ON": " الهاتف ليس قيد التشغيل ",
+    "THE_ROUTER_IS_SWITCHED_ON": "تشغيل الراوتر",
     "THE_ROUTERS_WIFI_WILL_BE_RESET_TO_DEFAULT_FACTORY_SETTINGS": "سوف تتم إعادة ضبط إعدادات ",
-  "THE_ROUTER_NEEDS_TO_BE_CONFIGURED_WITH_THE_NEW_PASSWORD_VISIT_DEVICE_CARE_TO_FIND_MORE_DETAILS_ON_HOW_TO_RECONFIGURE_YOUR_ROUTER": "يحتاج جهاز الراوتر إلى تهيئة باستخدام ملف كلمه السر.. لمزيد من التفاصيل حول كيفية إعادة ضبط الراوتر، يرجى زيارة صفحة دعم الأجهزة.", 
-    "THE_ROUTER_WILL_BE_CONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY": "سوف تتم إعادة ضبط الراوتر تلقائيًا باستخدام كلمة المرور الجديدة.", 
+    "THE_ROUTER_NEEDS_TO_BE_CONFIGURED_WITH_THE_NEW_PASSWORD_VISIT_DEVICE_CARE_TO_FIND_MORE_DETAILS_ON_HOW_TO_RECONFIGURE_YOUR_ROUTER": "يحتاج جهاز الراوتر إلى تهيئة باستخدام ملف كلمه السر.. لمزيد من التفاصيل حول كيفية إعادة ضبط الراوتر، يرجى زيارة صفحة دعم الأجهزة.",
+    "THE_ROUTER_WILL_BE_CONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY": "سوف تتم إعادة ضبط الراوتر تلقائيًا باستخدام كلمة المرور الجديدة.",
     "THE_SERVICE_WILL_BE_DISCONTINUED_WHILE_THE_TRANSFER_IS_UNDER_PROCESS": ".سيتم إيقاف الخدمة أثناء عملية النقل",
     "THE_SERVICE_WONT_WORK_AS_YOUR_ACCOUNT_HAS_BEEN_DISCONNECTED_TEMPORARILY_BASED_UPON_YOUR_REQUEST_THE_SERVICE_WILL_BE_BACK_ON_XXX_CLICK_HERE_IF_YOU_WANT_TO_RECONNECT_YOUR_SERVICE": "هذه الخدمة غير متوفرة، حيث أنه قد تم تعليق حسابك مؤقتًا بحسب طلبك. وستعود الخدمة يوم (التاريخ)لإعادة تفعيل الخدمة، يرجى الضغط هنا",
     "THE_SERVICE_WONT_WORK_AS_YOUR_ACCOUNT_IS_BEING_CANCELLED_BASED_UPON_YOUR_REQUEST": "هذه الخدمة غير متوفرة، حيث أنه قد تم إلغاء حسابك بحسب طلبك",
-    "THE_TELEPHONE_DEVICE_IS_SWITCHED_ON": " جهاز الهاتف في وضع التشغيل", 
-    "THE_TELEPHONE_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": " الهاتف متصل بالمنفذ X الخاص بصندوق الألياف", 
-    "THE_TV_BOX_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": " توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ × بصندوق الألياف المركّب على الحائط", 
-    "THE_TV_BOX_IS_FAULTY": "المركّب على الحائط", 
-    "THE_TV_BOX_IS_NOT_SWITCHED_ON": "تشغيل جهاز الاستقبال التلفزيوني", 
-    "THE_TV_BOX_IS_SWITCHED_ON": " تشغيل جهاز الاستقبال التلفزيوني", 
-    "THE_TV_BOX_IS_TURNED_ON": " تشغيل جهاز الاستقبال التلفزيوني", 
-    "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": " ر الوصول إلى الرقم التسلسلي {{stbSerialNumber}} لجهاز الاستقبال التلفزيوني.", 
-    "THIS_ACTION_CANNOT_BE_UNDONE": "This action cannot be undone.",
-    "THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON_OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE": " هذه الخدمة قادمة لمنطقتك قريباسيتصل بك فريقنا بمجرد توفره. ", 
-    "THIS_WILL_TAKE_UP_TO_1_MINUTE": "يستغرق الأمر ما يصل إلى دقيقة واحدة", 
-    "TIME": "Time", 
-    "TROUBLESHOOTING_COMPLETE": " اكتمال خطوات الدعم الفني ", 
-    "TRY_USING_IT_ONCE_YOUR_ELIFE_CONNECTION_HAS_BEEN_MOVED_SUCCESSFULLY": "يمكنك معاودة الاستخدام بمجرد تنفيذ عملية نقل خدمة eLife بنجاح", 
-    "TV_AMDIN_PIN_RESET_SUCCESSFULLY": " تمت إعادة تعيين رقم التعريف الشخصي لخدمة التلفاز بنجاح! ", 
-    "TV_BOX_RESET_SUCCESSFULL": " تمت إعادة ضبط جهاز الاستقبال التلفزيوني بنجاح! ", 
-    "TV_BOX_RESTARTED_SUCCESSFULLY": " تمت إعادة تشغيل جهاز الاستقبال بنجاح! ", 
-    "TV_BOX_TROUBLESHOOTING_GUIDELINES": " رشادات إصلاح الأخطاء لجهاز الاستقبال التلفزيوني:", 
-    "TV_ISSUES": "مشاكل التلفاز", 
-    "TV_SERVICE_IS_DOWN": " خدمة التلفاز لا تعمل ",    
+    "THE_TELEPHONE_DEVICE_IS_SWITCHED_ON": " جهاز الهاتف في وضع التشغيل",
+    "THE_TELEPHONE_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": " الهاتف متصل بالمنفذ X الخاص بصندوق الألياف",
+    "THE_TV_BOX_IS_CONNECTED_TO_X_PORT_ON_THE_FIBER_BOX": " توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ × بصندوق الألياف المركّب على الحائط",
+    "THE_TV_BOX_IS_FAULTY": "المركّب على الحائط",
+    "THE_TV_BOX_IS_NOT_SWITCHED_ON": "تشغيل جهاز الاستقبال التلفزيوني",
+    "THE_TV_BOX_IS_SWITCHED_ON": " تشغيل جهاز الاستقبال التلفزيوني",
+    "THE_TV_BOX_IS_TURNED_ON": " تشغيل جهاز الاستقبال التلفزيوني",
+    "THE_TV_BOX_SR_NO_53454534_COULDNT_BE_FOUND": " ر الوصول إلى الرقم التسلسلي {{stbSerialNumber}} لجهاز الاستقبال التلفزيوني.",
+    "THIS_ACTION_CANNOT_BE_UNDONE": "لا يمكن الرجوع في هذا الامر",
+    "THIS_SERVICE_IS_COMING_TO_YOUR_AREA_SOON_OUR_TEAM_WILL_CONTACT_YOU_ONCE_IT_IS_AVAILABLE": " هذه الخدمة قادمة لمنطقتك قريباسيتصل بك فريقنا بمجرد توفره. ",
+    "THIS_WILL_TAKE_UP_TO_1_MINUTE": "يستغرق الأمر ما يصل إلى دقيقة واحدة",
+    "TIME": "Time",
+    "TROUBLESHOOTING_COMPLETE": " اكتمال خطوات الدعم الفني ",
+    "TRY_USING_IT_ONCE_YOUR_ELIFE_CONNECTION_HAS_BEEN_MOVED_SUCCESSFULLY": "يمكنك معاودة الاستخدام بمجرد تنفيذ عملية نقل خدمة eLife بنجاح",
+    "TV_AMDIN_PIN_RESET_SUCCESSFULLY": " تمت إعادة تعيين رقم التعريف الشخصي لخدمة التلفاز بنجاح! ",
+    "TV_BOX_RESET_SUCCESSFULL": " تمت إعادة ضبط جهاز الاستقبال التلفزيوني بنجاح! ",
+    "TV_BOX_RESTARTED_SUCCESSFULLY": " تمت إعادة تشغيل جهاز الاستقبال بنجاح! ",
+    "TV_BOX_TROUBLESHOOTING_GUIDELINES": " رشادات إصلاح الأخطاء لجهاز الاستقبال التلفزيوني:",
+    "TV_ISSUES": "مشاكل التلفاز",
+    "TV_SERVICE_IS_DOWN": " خدمة التلفاز لا تعمل ",
     "UNABLE_TO_LOGIN": "تعذر تسجيل الدخول",
     "UNABLE_TO_PROCESS_REQUEST": "غير قادر على اكمال الطلب",
-    "UNABLE_TO_REACH_ROUTER_BODY": "Make sure that router is turned on and is connected to the 'X' port of the wall-mounted fiber box.",
+    "UNABLE_TO_REACH_ROUTER_BODY": "لم نتمكن من الوصول إلى جهازك. ",
     "UNABLE_TO_REACH_ROUTER_FAILED_BODY": "Tانقر على 'استمرار في الدعم الفني' إذا كنت تعتقد أن هذا مرتبط بمشكلة فنية",
     "UNABLE_TO_RESET_PASSWORD": "غير قادر على إعادة تعيين كلمة المرور",
     "UNALBE_TO_WATCH_CHANNELS": "تعذر مشاهدة أي قناة",
@@ -575,7 +566,7 @@
     "WE_ARE_MOVING_YOUR_ELIFE_CONNECTION": "جاري نقل خدمة eLife الخاصة بك",
     "WE_ARE_UNABLE_TO_REACH_YOUR_DEVICE": ".لم نتمكن من الوصول إلى جهازك.",
     "WE_CANT_REACH_YOUR_PHONE": "We can’t reach your Phone",
-    "WE_CANT_REACH_YOUR_ROUTER": "We can't reach your router",
+    "WE_CANT_REACH_YOUR_ROUTER": "لم نتمكن من الوصول إلى جهازك. ",
     "WE_CANT_REACH_YOUR_TV_BOX": "تعذر الوصول إلى جهاز الاستقبال التلفزيوني",
     "WE_CANT_RESET_YOUR_WIFI_PASSWORD_BECAUSE_YOU_DONT_HAVE_AN_ETISALAT_ROUTER": " لا يمكننا إعادة تعيين كلمة مرور Wi-Fi الخاصة بكلأنك لا تملك جهاز الراوتر من اتصالات. ",
     "WE_CAN_HELP_YOU_TO_RESET_WIFI_SETTINGS_IF_YOU_FORGOT_YOUR_WIFI_PASSWORD": " يمكننا مساعدتك في إعادة تعيين الاعدادات Wi-Fi إذا كنت نسيت كلمة مرور Wi-Fi الخاصة بك ",
@@ -620,7 +611,7 @@
     "YOUR_TV_BOX_DIDNT_RESTART": "لم تتم إعادة تشغيل جهاز الاستقبال التلفزيوني",
     "YOU_ARE_CURRENTLY_USING_AN_ETISALAT_ROUTER_WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_CONTINUE_USING_THIS_ROUTER": "يمكننا تقديم الدعم عن بعد إذا واصلت استخدام هذا الجهاز.أنت تستخدم حاليًا جهاز راوتر من اتصالات",
     "YOU_ARE_CURRENTLY_USING_A_THIRD_PARTY_ROUTER": ".أنت تستخدم حاليًا جهاز راوتر تابعًا لجهة خارجية",
-    "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS":" أنت مشترك في باقات التلفزيون المشتركة التي يمكن مشاهدتها من جميع أجهزة الاستقبال الخاصة بك",
+    "YOU_ARE_SUBSCRIBED_FOR_SHARED_TV_PACKAGES_THAT_CAN_BE_VIEWED_FROM_ALL_YOUR_STBS": " أنت مشترك في باقات التلفزيون المشتركة التي يمكن مشاهدتها من جميع أجهزة الاستقبال الخاصة بك",
     "YOU_CAN_ALSO_RESTART_YOUR_ROUTER_MANUALLY": "كما يمكنك إعادة تشغيل الراوتر يدويًا",
     "YOU_CAN_ALSO_RESTART_YOUR_TV_BOX_MANUALLY": " يمكنك إعادة تشغيل جهاز الاستقبال يدويًا.",
     "YOU_CAN_CANCEL_ANY_GAME_SESSION_THAT_ISNT_WORKING_PROPERLY": "يمكنك إلغاء جلسة الألعاب التي لا تعمل على النحو الصحيح",
@@ -628,468 +619,460 @@
     "YOU_CAN_FOLLOW_THESE_STEPS_TO_REBOOT_YOUR_ROUTER": "يرجى اتباع الخطوات التالية لإعادة تشغيل الراوتر",
     "YOU_CAN_LAUNCH_A_NEW_GAME_SESSION_FROM_THE_MAIN_MENU_OF_ELIFE_TV_GAMING": ".eLife TV Gaming يمكنك البدء في جلسة لعب جديدة من خلال القائمة الرئيسية بخدمة",
     "YOU_CAN_NOW_ENABLE_CALL_BARRING_USING_THE_NEW_PIN": "يرجى إعادة تشغيل جهاز التلفزيون الخاص بك ، وستتمكن من الاستمتاع بالخدمة.<SLيمكنك الآن مشاهدة جميع القنوات في<اسم الباقة> على جهاز التلفزيون <رقم ",
-    "YOU_CAN_NOW_WATCH_ALL_THE_CHANNELS_IN_PACKAGE_NAME_ON_TV_BOX_SL_NO": "You can now watch all the channels in <package name> on TV box <SL no.>. ",
+    "YOU_CAN_NOW_WATCH_ALL_THE_CHANNELS_IN_PACKAGE_NAME_ON_TV_BOX_SL_NO": "<يمكنك الآن مشاهدة جميع القنوات في <اسم الباقة> على جهاز التلفزيون <رقم SL>.",
     "YOU_ELIFE_SERVICE_CANCELLATION_REQUEST_IS_IN_PROGRESS": "جاري إلغاء خدمة eLife الخاصة بك",
     "YOU_MAY_VIEW_OUR_GUIDELINES_ON_HOW_TO_REMOVE_THE_CHANNEL_FILTER": "يمكنك الاطلاع على إرشاداتنا حول كيفية إلغاء تصنيف القناة.",
     "YOU_NEED_TO_RESET_YOUR_INTERNET_PASSWORD_TO_INSTALL_THE_THIRD_PARTY_ROUTER": "تحتاج إلى إعادة تعيين كلمة مرور الإنترنت لتثبيت جهاز اراوتر من جهة خارجية ",
     "YOU_SHOULD_BE_ABLE_TO_WATCH_THE_CHANNEL_NOW_PLEASE_CONFIRM_WHETHER_THE_ISSUE_HAS_BEEN_FIXED_OR_NOT": "يمكنك الآن مشاهدة القناة. يرجى تأكيد ما إذا تم حل المشكلة أم لا",
     "YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON": "سيتصل بك الفني قريبًا",
     "FACING_SOME_ISSUE": "Facing some issue",
-    "TRY_AGAIN_LATER": "Try again later",
-    "CCB_PIN_RULES": "CCB PIN rules",
-   "UNABLE_TO_CONNECT_WIFI":"تعذر الاتصال بشبكة Wi-Fi",
-   "UNABLE_TO_BROWSE_THE_INTERNET":"تعذر تصفح الإنترنت",
-   "FORGOT_MY_WIFI_PASSWORD":"نسيت كلمة المرور لشبكة Wi-Fi",
-   "UNABLE_TO_CONNECT_TO_HOME_ZONE":"تعذر الاتصال بخدمة Home Zone",
-   "UNABLE_TO_MAKE_VIDEO_CALLS":"تعذر إجراء مكالمات مرئية",
-   "UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI":"تعذر الاتصال الجهاز الجديد بشبكة Wi-Fi",
-   "FORGOT_MY_TV_ADMIN_PIN":"نسيت رقم التعريف الشخصي لحساب التلفاز",
-   "UNABLE_TO_LOG_IN_TO_ELIFEON":"تعذر تسجيل الدخول إلى خدمة eLifeON",
-   "TRANSFER_CHANNEL_TO_ANOTHER_TV_BOX":"نقل قناة إلى جهاز استقبال تلفزيوني آخر",
-   "UNABLE_TO_WATCH_ANY_CHANNEL":"تعذر مشاهدة أي قناة",
-   "RESET_INTERNET_PASSWORD":"إعادة تعيين كلمة مرور الإنترنت",
-   "FIND_OUR_HOW_TO_CHANGE_YOUR_PASSWORD":"تعرف على كيفية تغيير كلمة مرور الإنترنت الخاصة بك",
-   "RESET_ROUTERS_WIFI_PASSWORD":"إعادة تعيين كلمة مرور Wi-Fi لجهاز الراوتر",
-   "TAP_HERE_IF_YOU_FORGOT_YOUR_ROUTERS_WIFI_PASSWORD":"انقر هنا إذا نسيت كلمة مرور Wi-Fi لجهاز الراوتر",
-   "FIND_OUT_HOW_TO_RESET_YOUR_TV_BOX_PIN":"تعرف على كيفية إعادة تعيين رقم التعريف الشخصي الخاص بجهاز TV Box",
-   "RESET_ELIFEON_PIN":"إعادة تعيين رقم التعريف الشخصي لخدمة eLifeON",
-   "TAP_HERE_IF_YOURE_UNABLE_TO_LOG_IN_TO_ELIFEON":"انقر هنا إذا كنت غير قادر على تسجيل الدخول إلى eLifeON",
-   "RESET_CCB_PIN":"إعادة تعيين رقم التعريف الشخصي في خدمة تقييد المكالمات.",
-   "FIND_OUT_HOW_TO_RESET_YOUR_CODE_CONTROL_BARRING_PIN":"تعرف على كيفية إعادة تعيين رمز في خدمة تقييد المكالمات.",
-   "UNABLE_TO_MAKE_RECEIVE_CALLS":"لا يمكن إجراء/ استقبال مكالمات",
-   "NO_DIAL_TONE":"عدم وجود رنة اتصال",
-   "FORGOT_CODE_CONTROL_BARRING_CCB_PIN":"نسيت رقم التعريف الشخصي ",
-   "PROBLEM_WITH_VALUE_ADDED_SERVICE":"مشكلة مع خدمة القيمة المضافة",
-   "CHANGE_CALL_FORWARDING_NUMBER":"تغيير رقم الهاتف لخاصية إعادة توجيه المكالمات",
-   "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL":"تعذر مشاهدة قناة محددة",
-    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",  
+    "TRY_AGAIN_LATER": "يرجى إعادة المحاولة لاحقًا",
+    "CCB_PIN_RULES": "رقم التعريف الشخصي لكود حظر المكالمات:",
+    "UNABLE_TO_CONNECT_WIFI": "تعذر الاتصال بشبكة Wi-Fi",
+    "UNABLE_TO_BROWSE_THE_INTERNET": "تعذر تصفح الإنترنت",
+    "FORGOT_MY_WIFI_PASSWORD": "نسيت كلمة المرور لشبكة Wi-Fi",
+    "UNABLE_TO_CONNECT_TO_HOME_ZONE": "تعذر الاتصال بخدمة Home Zone",
+    "UNABLE_TO_MAKE_VIDEO_CALLS": "تعذر إجراء مكالمات مرئية",
+    "UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI": "تعذر الاتصال الجهاز الجديد بشبكة Wi-Fi",
+    "FORGOT_MY_TV_ADMIN_PIN": "نسيت رقم التعريف الشخصي لحساب التلفاز",
+    "UNABLE_TO_LOG_IN_TO_ELIFEON": "تعذر تسجيل الدخول إلى خدمة eLifeON",
+    "TRANSFER_CHANNEL_TO_ANOTHER_TV_BOX": "نقل قناة إلى جهاز استقبال تلفزيوني آخر",
+    "UNABLE_TO_WATCH_ANY_CHANNEL": "تعذر مشاهدة أي قناة",
+    "RESET_INTERNET_PASSWORD": "إعادة تعيين كلمة مرور الإنترنت",
+    "FIND_OUR_HOW_TO_CHANGE_YOUR_PASSWORD": "تعرف على كيفية تغيير كلمة مرور الإنترنت الخاصة بك",
+    "RESET_ROUTERS_WIFI_PASSWORD": "إعادة تعيين كلمة مرور Wi-Fi لجهاز الراوتر",
+    "TAP_HERE_IF_YOU_FORGOT_YOUR_ROUTERS_WIFI_PASSWORD": "انقر هنا إذا نسيت كلمة مرور Wi-Fi لجهاز الراوتر",
+    "FIND_OUT_HOW_TO_RESET_YOUR_TV_BOX_PIN": "تعرف على كيفية إعادة تعيين رقم التعريف الشخصي الخاص بجهاز TV Box",
+    "RESET_ELIFEON_PIN": "إعادة تعيين رقم التعريف الشخصي لخدمة eLifeON",
+    "TAP_HERE_IF_YOURE_UNABLE_TO_LOG_IN_TO_ELIFEON": "انقر هنا إذا كنت غير قادر على تسجيل الدخول إلى eLifeON",
+    "RESET_CCB_PIN": "إعادة تعيين رقم التعريف الشخصي في خدمة تقييد المكالمات.",
+    "FIND_OUT_HOW_TO_RESET_YOUR_CODE_CONTROL_BARRING_PIN": "تعرف على كيفية إعادة تعيين رمز في خدمة تقييد المكالمات.",
+    "UNABLE_TO_MAKE_RECEIVE_CALLS": "لا يمكن إجراء/ استقبال مكالمات",
+    "NO_DIAL_TONE": "عدم وجود رنة اتصال",
+    "FORGOT_CODE_CONTROL_BARRING_CCB_PIN": "نسيت رقم التعريف الشخصي ",
+    "PROBLEM_WITH_VALUE_ADDED_SERVICE": "مشكلة مع خدمة القيمة المضافة",
+    "CHANGE_CALL_FORWARDING_NUMBER": "تغيير رقم الهاتف لخاصية إعادة توجيه المكالمات",
+    "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL": "تعذر مشاهدة قناة محددة",
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",
     "SINGLE_STB_FOUND": "Single STB found",
-    "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "We couldn’t find any technical problem. Your phone should be working normally.",
-    "PASSWORD_STRENGTH": "Password strength:",
-    "COMPLAINT_BOOKING_FAILED": "Complaint booking failed",
-    "YOUR_COMPLAINT_COULDN'T_BE_BOOKED_BECAUSE_THE_CONTACT_NUMBER_YOU_ENTERED_WAS_INCORRECT": "Your complaint couldn't be booked because the contact number you entered was incorrect.",
-    "PLEASE_ENTER_A_VALID_CONTACT_NUMBER": "Please enter a valid contact number.",
-    "THERE_WAS_A_PROBLEM_IN_COMPLETING_YOUR_REQUEST": "There was a problem in completing your request.",
-    "WE_WILL_BOOK_AN_COMPLAINT_AND_SEND_YOU_THE_DETAILS_VIS_SMS_SOON": "We will book an complaint and send you the details vis SMS soon.",
-    "ROUTER_REBOOT_SUCCESSFUL": "Router reboot successful",
-    "SERVER_TIMEOUT": "Server timeout!",
-    "WE_WILL_TRY_TO_RESET_THE_ROUTER_AGAIN_PLEASE_MAKE_SURE_THAT_THE_ROUTER_IS_SWITHCED_ON": "We will try to reset the router again. Please make sure that the router is swithced on.",
-    "TO_SEE_HOW_TO_RESET_THE_ROUTER_MANUALLY": "<a class='__clickhere'>click here</a> to see how to reset the router manually",
-    "PASSWORD_RESET_SUCCESSFULLY": "Password reset successfully",
-    "YOUR_INTERNET_PASSWORD_HAS_BEEN_RESET_SUCCESSFULLY_THE_ROUTER_WILL_BE_RECONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY": "Your internet password has been reset successfully. The router will be reconfigured with the new password automatically.",
-    "RESTART_YOUR_ROUTER_AFTER_A_FEW_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "Restart your router after a few minutes and then try using the internet again.",
-  
-"MAKE_SURE_THAT_YOU_CAN_SEE_YOUR_WIFI_NETWORK_TRY_TO_STAND_CLOSER_TO_THE_ROUTER":  "· تأكد من إمكانية التقاط شبكة Wi-Fi الخاصة بك (حاول الوقوف بالقرب من الراوتر)",
-"MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD":"· تأكد من إدخال كلمة المرور الصحيحة لشبكة Wi-Fi ",
-"SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE":"· ابحث عن شبكات Wi-Fi المتوفرة من جهازك",
-"CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD":"· اتصل بشبكة Wi-Fi الخاصة بك عن طريق التحقق من الاسم وإدخال كلمة المرور الصحيحة",
-"SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK":"حدّد نوع الجهاز ونظام التشغيل لمعرفة كيفية توصيل جهازك بشبكة Wi-Fi.",
-  "ROUTER_IS_SWITCHED_ON": "تشغيل الراوتر",
-  "WE_ARE_STILL_UNABLE_TO_REACH_YOUR_ROUTER": "لم نتمكن من الوصول إلى جهازك. ",
-  "IT_LOOKS_LIKE_ANY_ONE_OF_THESE_COULD_BE_THE_ISSUE": "يبدو أن أيًا من الأسباب التالية قد تكون هي المشكلة:",
-  "THE_ROUTER_IS_NOT_SWITCHED_ON": "1. لم يتم تشغيل الراوتر",
-  "THE_ROUTER_IS_FAULTY": "3. هناك عيب في الراوتر",
-  "THE_CABLE_ISNT_CONNECTED_PROPERLY_NUMBER": "2. لم يتم توصيل الكابل بشكل صحيح",
-  "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS": "توصيل الكابل من الراوتر إلى منفذ {{portNumber}} صندوق الألياف المركّب على الحائط "
-
-
-
-
+    "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "لم يتم تحديد أي مشكلة تقنية. خدمة الهاتف تعمل لديك بشكل طبيعي.",
+    "PASSWORD_STRENGTH": "قوة كلمة المرور:",
+    "COMPLAINT_BOOKING_FAILED": "تعذّر تقديم الشكوى",
+    "YOUR_COMPLAINT_COULDN'T_BE_BOOKED_BECAUSE_THE_CONTACT_NUMBER_YOU_ENTERED_WAS_INCORRECT": "تعذّر حجز موعدك، حيث أن رقم الهاتف الذي أدخلته غير صحيح. يرجى ",
+    "PLEASE_ENTER_A_VALID_CONTACT_NUMBER": "إدخال رقم هاتف متحرك صحيح.",
+    "THERE_WAS_A_PROBLEM_IN_COMPLETING_YOUR_REQUEST": "تعذر إكمال طلبك",
+    "WE_WILL_BOOK_AN_COMPLAINT_AND_SEND_YOU_THE_DETAILS_VIS_SMS_SOON": " سوف نقوم بحجز موعدًا من أجلك ثم سنرسل لك التفاصيل عبر رسالة نصية قصيرة في أقرب وقتٍ ممكن",
+    "ROUTER_REBOOT_SUCCESSFUL": "تمت إعادة تشغيل الراوتر بنجاح!",
+    "SERVER_TIMEOUT": "انتهت مهلة الاتصال بالخادم!",
+    "WE_WILL_TRY_TO_RESET_THE_ROUTER_AGAIN_PLEASE_MAKE_SURE_THAT_THE_ROUTER_IS_SWITHCED_ON": "سوف نحاول إعادة تشغيل الراوتر. يرجى التأكد من تشغيل الراوتر.",
+    "TO_SEE_HOW_TO_RESET_THE_ROUTER_MANUALLY": " للاطلاع على كيفية يمكنك إعادة تشغيل الراوتر يدويًا.",
+    "PASSWORD_RESET_SUCCESSFULLY": "تم تغيير الرقم السري بنجاح!",
+    "YOUR_INTERNET_PASSWORD_HAS_BEEN_RESET_SUCCESSFULLY_THE_ROUTER_WILL_BE_RECONFIGURED_WITH_THE_NEW_PASSWORD_AUTOMATICALLY": "لقد تمت إعادة تعيين كلمة المرور بنجاح! سوف تتم إعادة ضبط الراوتر تلقائيًا باستخدام كلمة المرور الجديدة.",
+    "RESTART_YOUR_ROUTER_AFTER_A_FEW_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "أعِد تشغيل الراوتر بعد مرور بضع دقائق قبل استخدام الإنترنت.",
+    "MAKE_SURE_THAT_YOU_CAN_SEE_YOUR_WIFI_NETWORK_TRY_TO_STAND_CLOSER_TO_THE_ROUTER": "· تأكد من إمكانية التقاط شبكة Wi-Fi الخاصة بك (حاول الوقوف بالقرب من الراوتر)",
+    "MAKE_SURE_THAT_YOU_HAVE_THE_CORRECT_WIFI_PASSWORD": "· تأكد من إدخال كلمة المرور الصحيحة لشبكة Wi-Fi ",
+    "SEARCH_FOR_AVAILABLE_WIFI_NETWORKS_FROM_YOUR_DEVICE": "· ابحث عن شبكات Wi-Fi المتوفرة من جهازك",
+    "CONNECT_TO_YOUR_WIFI_NETWORK_BY_VERIFYING_THE_NAME_AND_ENTERING_THE_CORRECT_PASSWORD": "· اتصل بشبكة Wi-Fi الخاصة بك عن طريق التحقق من الاسم وإدخال كلمة المرور الصحيحة",
+    "SELECT_THE_DEVICE_TYPE_AND_OPERATING_SYSTEM_TO_LEARN_HOW_TO_CONNECT_YOUR_DEVICE_TO_THE_WIFI_NETWORK": "حدّد نوع الجهاز ونظام التشغيل لمعرفة كيفية توصيل جهازك بشبكة Wi-Fi.",
+    "ROUTER_IS_SWITCHED_ON": "تشغيل الراوتر",
+    "WE_ARE_STILL_UNABLE_TO_REACH_YOUR_ROUTER": "لم نتمكن من الوصول إلى جهازك. ",
+    "IT_LOOKS_LIKE_ANY_ONE_OF_THESE_COULD_BE_THE_ISSUE": "يبدو أن أيًا من الأسباب التالية قد تكون هي المشكلة:",
+    "THE_ROUTER_IS_NOT_SWITCHED_ON": "1. لم يتم تشغيل الراوتر",
+    "THE_ROUTER_IS_FAULTY": "3. هناك عيب في الراوتر",
+    "THE_CABLE_ISNT_CONNECTED_PROPERLY_NUMBER": "2. لم يتم توصيل الكابل بشكل صحيح",
+    "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS": "توصيل الكابل من الراوتر إلى منفذ {{portNumber}} صندوق الألياف المركّب على الحائط "
   },
   "Errors": {
     "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must be a 12 digit number",
     "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "Password & Confirm Password Must Be Matched",
     "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "Password must match the crietaria as per given below"
   },
-
-
-   "Loader": {
-        "Landing": [
-            {
-                "message": "Account checks are getting performed",
-                "time": 15000
-            },
-            {
-                "message": "Network inventory checkes are getting performed",
-                "time": 20000
-            },
-            {
-                "message": "Service checks are getting performed",
-                "time": 20000
-            },
-            {
-                "message": "Device backend configuration checks are getting performed",
-                "time": 15000
-            },
-            {
-                "message": "Device reachability check is getting performed",
-                "time": 25000
-            },
-            {
-                "message": "Checking for any open technical tickets/requests",
-                "time": 15000
-            },
-            {
-                "message": "Analyzing the troubleshooting outcome",
-                "time": 20000
-            }
-        ],
-        "I_WANT_TO_FACTORY_RESET_MY_TV_BOX": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            },
-            {
-                "message": "يتم الانتهاء من بقية  جهاز الاستقبال",
-                "time": 50000
-            },
-            {
-                "message": "إجراء فحص ما بعد إعادة تعيين  جهاز الاستقبال",
-                "time": 30000
-            }
-        ],
-        "I_WANTO_TO_FACTORY_RESET_MY_ROUTER": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            },
-            {
-                "message": "جاري العمل على اعادة ضبط جهاز الراوتر",
-                "time": 50000
-            },
-            {
-                "message": "جارٍ إجراء فحص ما بعد إعادة ضبط جهاز الراوتر",
-                "time": 45000
-            },
-            {
-                "message": " جاري التثبيت",
-                "time": 20000
-            },
-            {
-                "message": "التحقق من حالة الاتصال بالإنترنت",
-                "time": 30000
-            }
-        ],
-        "ONT_REBOOT_REQUIRED": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 25000
-            },
-            {
-                "message": "جارٍ إعادة تشغيل جهاز صندوق الألياف",
-                "time": 30000
-            },
-            {
-                "message": "يتم الانتهاء من فحص إعادة تشغيل صندوق الألياف",
-                "time": 30000
-            },
-            {
-                "message": "التحقق من حالة اتصال الهاتف",
-                "time": 30000
-            }
-        ],
-        "TV_SET_TOP_BOX_RESTART_REQUIRED": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            },
-            {
-                "message": "يتم تنفيذ إعادة تشغيل جهاز الاستقبال",
-                "time": 30000
-            },
-            {
-                "message": "يتم إجراء فحص ما بعد إعادة التشغيل  جهاز الاستقبال",
-                "time": 30000
-            }
-        ],
-        "ALL_SERVICES_E2E_TROUBLESHOOTING": [
-            {
-                "message": "يتم تنفيذ إجراءات التحقق من الحساب",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحوصات جرد الشبكة",
-                "time": 20000
-            },
-            {
-                "message": "يتم تنفيذ فحوصات الخدمة",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 25000
-            },
-            {
-                "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
-                "time": 15000
-            },
-            {
-                "message": "تحليل نتيجة الدعم الفني",
-                "time": 20000
-            }
-        ],
-        "INTERNET_E2E_TROUBLESHOOTING": [
-            {
-                "message": "يتم تنفيذ إجراءات التحقق من الحساب",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحوصات جرد الشبكة",
-                "time": 20000
-            },
-            {
-                "message": "يتم تنفيذ فحوصات الخدمة",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 25000
-            },
-            {
-                "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
-                "time": 15000
-            },
-            {
-                "message": "تحليل نتيجة الدعم الفني",
-                "time": 20000
-            }
-        ],
-        "ROUTER_REBOOT_REQUIRED": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 25000
-            },
-            {
-                "message": "جارٍ إعادة تشغيل جهاز الراوتر",
-                "time": 30000
-            },
-            {
-                "message": "جارٍ إجراء فحص ما بعد إعادة تشغيل جهاز الراوتر",
-                "time": 30000
-            },
-            {
-                "message": "التحقق من حالة الاتصال بالإنترنت",
-                "time": 30000
-            }
-        ],
-        "ROUTER_RESET_REQUIRED": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            },
-            {
-                "message": "جاري العمل على اعادة ضبط جهاز الراوتر",
-                "time": 50000
-            },
-            {
-                "message": "جارٍ إجراء فحص ما بعد إعادة ضبط جهاز الراوتر",
-                "time": 45000
-            },
-            {
-                "message": " جاري التثبيت",
-                "time": 20000
-            },
-            {
-                "message": "التحقق من حالة الاتصال بالإنترنت",
-                "time": 30000
-            }
-        ],
-        "INTERNET_PASSWORD_RESET_REQUIRED": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "تتم إعادة تعيين كلمة مرور الوصول إلى الإنترنت",
-                "time": 30000
-            },
-            {
-                "message": "يتم إجراء عمليات التحقق من إعادة كلمة المرور بعد الوصول إلى الإنترنت",
-                "time": 60000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            },
-            {
-                "message": "التحقق من حالة الاتصال بالإنترنت",
-                "time": 60000
-            }
-        ],
-        "WIFI_PASSWORD_RESET": [
-            {
-                "message": " جاري إعدادات Wi-Fi لجديدة",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحص ما بعد إعدادات التثبيت",
-                "time": 25000
-            }
-        ],
-        "TV_E2E_TROUBLESHOOTING": [
-            {
-                "message": "يتم تنفيذ إجراءات التحقق من الحساب",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحوصات جرد الشبكة",
-                "time": 20000
-            },
-            {
-                "message": "يتم تنفيذ فحوصات الخدمة",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 25000
-            },
-            {
-                "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
-                "time": 15000
-            },
-            {
-                "message": "تحليل نتيجة الدعم الفني",
-                "time": 20000
-            }
-        ],
-        "TELEPHONE_E2E_TROUBLESHOOTING": [
-            {
-                "message": "يتم تنفيذ إجراءات التحقق من الحساب",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحوصات جرد الشبكة",
-                "time": 20000
-            },
-            {
-                "message": "يتم تنفيذ فحوصات الخدمة",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 15000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 25000
-            },
-            {
-                "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
-                "time": 15000
-            },
-            {
-                "message": "تحليل نتيجة الدعم الفني",
-                "time": 20000
-            }
-        ],
-        "ROUTER_MANAGED_BUT_NOT_REACHABLE": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            }
-        ],
-        "ONT_NOT_REACHABLE": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            }
-        ],
-        "INTERNET_SERVICE_DETAIL": [
-            {
-                "message": "يتم إنجاز فحوصات الخدمة المشترَكة",
-                "time": 20000
-            },
-            {
-                "message": "التحقق من الأجهزة المتصلة وحركة البيانات",
-                "time": 30000
-            }
-        ],
-        "STB_NOT_REACHABLE": [
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            }
-        ],
-        "IPTV_SERVICE_DETAIL": [
-            {
-                "message": "يتم إنجاز فحوصات الخدمة المشترَكة ",
-                "time": 20000
-            },
-            {
-                "message": "التحقق من وجود أجهزة متصلة",
-                "time": 20000
-            },
-            {
-                "message": "التحقق من الباقات التي تم الاشتراك بها",
-                "time": 20000
-            }
-        ],
-        "RESET_TV_BOX":[
-            {
-                "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
-                "time": 20000
-            },
-            {
-                "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
-                "time": 30000
-            },
-            {
-                "message": "يتم الانتهاء من بقية  جهاز الاستقبال",
-                "time": 50000
-            },
-            {
-                "message": "إجراء فحص ما بعد إعادة تعيين  جهاز الاستقبال",
-                "time": 30000
-            }
-        ]
-    }
-
+  "Loader": {
+    "Landing": [
+      {
+        "message": "Account checks are getting performed",
+        "time": 15000
+      },
+      {
+        "message": "Network inventory checkes are getting performed",
+        "time": 20000
+      },
+      {
+        "message": "Service checks are getting performed",
+        "time": 20000
+      },
+      {
+        "message": "Device backend configuration checks are getting performed",
+        "time": 15000
+      },
+      {
+        "message": "Device reachability check is getting performed",
+        "time": 25000
+      },
+      {
+        "message": "Checking for any open technical tickets/requests",
+        "time": 15000
+      },
+      {
+        "message": "Analyzing the troubleshooting outcome",
+        "time": 20000
+      }
+    ],
+    "I_WANT_TO_FACTORY_RESET_MY_TV_BOX": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      },
+      {
+        "message": "يتم الانتهاء من بقية  جهاز الاستقبال",
+        "time": 50000
+      },
+      {
+        "message": "إجراء فحص ما بعد إعادة تعيين  جهاز الاستقبال",
+        "time": 30000
+      }
+    ],
+    "I_WANTO_TO_FACTORY_RESET_MY_ROUTER": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      },
+      {
+        "message": "جاري العمل على اعادة ضبط جهاز الراوتر",
+        "time": 50000
+      },
+      {
+        "message": "جارٍ إجراء فحص ما بعد إعادة ضبط جهاز الراوتر",
+        "time": 45000
+      },
+      {
+        "message": " جاري التثبيت",
+        "time": 20000
+      },
+      {
+        "message": "التحقق من حالة الاتصال بالإنترنت",
+        "time": 30000
+      }
+    ],
+    "ONT_REBOOT_REQUIRED": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 25000
+      },
+      {
+        "message": "جارٍ إعادة تشغيل جهاز صندوق الألياف",
+        "time": 30000
+      },
+      {
+        "message": "يتم الانتهاء من فحص إعادة تشغيل صندوق الألياف",
+        "time": 30000
+      },
+      {
+        "message": "التحقق من حالة اتصال الهاتف",
+        "time": 30000
+      }
+    ],
+    "TV_SET_TOP_BOX_RESTART_REQUIRED": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      },
+      {
+        "message": "يتم تنفيذ إعادة تشغيل جهاز الاستقبال",
+        "time": 30000
+      },
+      {
+        "message": "يتم إجراء فحص ما بعد إعادة التشغيل  جهاز الاستقبال",
+        "time": 30000
+      }
+    ],
+    "ALL_SERVICES_E2E_TROUBLESHOOTING": [
+      {
+        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحوصات جرد الشبكة",
+        "time": 20000
+      },
+      {
+        "message": "يتم تنفيذ فحوصات الخدمة",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 25000
+      },
+      {
+        "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
+        "time": 15000
+      },
+      {
+        "message": "تحليل نتيجة الدعم الفني",
+        "time": 20000
+      }
+    ],
+    "INTERNET_E2E_TROUBLESHOOTING": [
+      {
+        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحوصات جرد الشبكة",
+        "time": 20000
+      },
+      {
+        "message": "يتم تنفيذ فحوصات الخدمة",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 25000
+      },
+      {
+        "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
+        "time": 15000
+      },
+      {
+        "message": "تحليل نتيجة الدعم الفني",
+        "time": 20000
+      }
+    ],
+    "ROUTER_REBOOT_REQUIRED": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 25000
+      },
+      {
+        "message": "جارٍ إعادة تشغيل جهاز الراوتر",
+        "time": 30000
+      },
+      {
+        "message": "جارٍ إجراء فحص ما بعد إعادة تشغيل جهاز الراوتر",
+        "time": 30000
+      },
+      {
+        "message": "التحقق من حالة الاتصال بالإنترنت",
+        "time": 30000
+      }
+    ],
+    "ROUTER_RESET_REQUIRED": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      },
+      {
+        "message": "جاري العمل على اعادة ضبط جهاز الراوتر",
+        "time": 50000
+      },
+      {
+        "message": "جارٍ إجراء فحص ما بعد إعادة ضبط جهاز الراوتر",
+        "time": 45000
+      },
+      {
+        "message": " جاري التثبيت",
+        "time": 20000
+      },
+      {
+        "message": "التحقق من حالة الاتصال بالإنترنت",
+        "time": 30000
+      }
+    ],
+    "INTERNET_PASSWORD_RESET_REQUIRED": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "تتم إعادة تعيين كلمة مرور الوصول إلى الإنترنت",
+        "time": 30000
+      },
+      {
+        "message": "يتم إجراء عمليات التحقق من إعادة كلمة المرور بعد الوصول إلى الإنترنت",
+        "time": 60000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      },
+      {
+        "message": "التحقق من حالة الاتصال بالإنترنت",
+        "time": 60000
+      }
+    ],
+    "WIFI_PASSWORD_RESET": [
+      {
+        "message": " جاري إعدادات Wi-Fi لجديدة",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحص ما بعد إعدادات التثبيت",
+        "time": 25000
+      }
+    ],
+    "TV_E2E_TROUBLESHOOTING": [
+      {
+        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحوصات جرد الشبكة",
+        "time": 20000
+      },
+      {
+        "message": "يتم تنفيذ فحوصات الخدمة",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 25000
+      },
+      {
+        "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
+        "time": 15000
+      },
+      {
+        "message": "تحليل نتيجة الدعم الفني",
+        "time": 20000
+      }
+    ],
+    "TELEPHONE_E2E_TROUBLESHOOTING": [
+      {
+        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحوصات جرد الشبكة",
+        "time": 20000
+      },
+      {
+        "message": "يتم تنفيذ فحوصات الخدمة",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 15000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 25000
+      },
+      {
+        "message": "التحقق من وجود أي تذاكر / طلبات فنية مفتوحة",
+        "time": 15000
+      },
+      {
+        "message": "تحليل نتيجة الدعم الفني",
+        "time": 20000
+      }
+    ],
+    "ROUTER_MANAGED_BUT_NOT_REACHABLE": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      }
+    ],
+    "ONT_NOT_REACHABLE": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      }
+    ],
+    "INTERNET_SERVICE_DETAIL": [
+      {
+        "message": "يتم إنجاز فحوصات الخدمة المشترَكة",
+        "time": 20000
+      },
+      {
+        "message": "التحقق من الأجهزة المتصلة وحركة البيانات",
+        "time": 30000
+      }
+    ],
+    "STB_NOT_REACHABLE": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      }
+    ],
+    "IPTV_SERVICE_DETAIL": [
+      {
+        "message": "يتم إنجاز فحوصات الخدمة المشترَكة ",
+        "time": 20000
+      },
+      {
+        "message": "التحقق من وجود أجهزة متصلة",
+        "time": 20000
+      },
+      {
+        "message": "التحقق من الباقات التي تم الاشتراك بها",
+        "time": 20000
+      }
+    ],
+    "RESET_TV_BOX": [
+      {
+        "message": "يتم إجراء فحوصات تثبيت الواجهة الخلفية للجهاز",
+        "time": 20000
+      },
+      {
+        "message": "يتم إجراء فحص إمكانية الوصول إلى الجهاز",
+        "time": 30000
+      },
+      {
+        "message": "يتم الانتهاء من بقية  جهاز الاستقبال",
+        "time": 50000
+      },
+      {
+        "message": "إجراء فحص ما بعد إعادة تعيين  جهاز الاستقبال",
+        "time": 30000
+      }
+    ]
+  }
 }
