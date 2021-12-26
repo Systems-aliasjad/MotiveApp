@@ -98,7 +98,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
         this.DynamicScripts();
       }
 
-      if (this.flagInterval > this.loaderarray?.length) {
+      if (this.flagInterval > this.loaderarray?.length || this.flagInterval === this.loaderarray?.length) {
         this.showOrangeLoader();
       }
       if (this.flagInterval < this.loaderarray?.length) {

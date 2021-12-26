@@ -42,7 +42,7 @@ export class TvDetailComponent implements OnInit {
   // ];
   cardList: any = [];
   eLifeStatus;
-  eLifeGameStatus: boolean;
+  eLifeGameStatus;
   nonSharedPackages: any = [];
   eLifegames = [
     { title: 'Call of Duty: Modern Warfare', imgSrc: 'assets/images/super-icons/icon_supericon_all_warning_warning_consumer_regular.svg' },
@@ -70,7 +70,7 @@ export class TvDetailComponent implements OnInit {
     }
     console.log('Data from IPTV', data);
     this.eLifeStatus = data?.elifeResetPswd === "true" ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
-    this.eLifeGameStatus = data?.elifeGameStatus;
+    this.eLifeGameStatus = data?.elifeGameStatus === "true" ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
     for (var index = 0; index < data?.sharedPackages?.length; index++) {
       for (var i = 0; i < this.connectedDevices.length; i++) {
         if (!this.connectedDevices[i]?.list) {
@@ -134,7 +134,7 @@ export class TvDetailComponent implements OnInit {
       component: IssueListDialog,
       componentProps: {
         flow: EIssueFlow.tvIssue,
-        eLifeGameStatus: this.eLifeStatus === 'true' ? true : false,
+        eLifeGameStatus: this.eLifeStatus === 'MESSAGES.ACTIVE' ? true : false,
       },
     });
     return await this.modal.present();
