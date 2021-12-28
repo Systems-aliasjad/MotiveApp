@@ -173,6 +173,10 @@ export const SVGs = {
   stb: {
     default: './assets/images/STB/DWI211ETI.png', //To do set it to svc as others
   },
+  desktop: {
+    default: './assets/images/network-map-icons/icon_desktop_default.svg',
+    okay: './assets/images/network-map-icons/icon_desktop_all_okay.svg',
+  }
 };
 
 export const ETISALAT_DEFAULT_CONFIG = {

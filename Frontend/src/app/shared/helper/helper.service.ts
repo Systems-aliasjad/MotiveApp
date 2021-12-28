@@ -48,7 +48,7 @@ export class HelperService {
       return {
         ...device,
         className: networkDiagramClasses.okay,
-        url: SVGs.phone.default,
+        url: SVGs.desktop.default,
         title: device.hostName ? device.hostName : 'unnammed',
         subTitle: device?.macAddress,
       };

@@ -33,7 +33,7 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
   subscription: Subscription;
   messageSection = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    header: 'MESSAGES.RESET_YOUR_ROUTER',
     body: [{ title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN' }],
   };
   button1: IMotiveButton = {

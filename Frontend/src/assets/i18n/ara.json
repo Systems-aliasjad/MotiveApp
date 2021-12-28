@@ -94,7 +94,7 @@
     "REBOOT_ROUTER": "REBOOT ROUTER",
     "CHANGE_WIFI_PIN": "رمز التعريف الشخصي لشبكة الواي فاي",
     "CONFIGURE_ROUTER": "Configure router",
-    "RESTART_ONT_NOW": "إعادة التشغيل الجهاز الرئيسي الان",
+    "RESTART_ONT_NOW": " اعادة تشغيل جهاز الالياف الضوئية الان",
     "INSTALL_NEW_THIRD_PARTY_ROUTER": "تركيب جهاز راوتر ليس من اتصالات",
     "BACK": "خلف",
     "BOOK_AN_APPOINTMENT": "حجز موعد",
@@ -174,6 +174,10 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "RESTART_YOUR_TV_BOX":"اعادة تشغيل جهاز استقبال التلفاز",
+    "RESTART_YOUR_FIBER_BOX": "اعادة تشغيل جهاز الالياف الضوئية",
+    "RESET_YOUR_ROUTER": "اعادة تشغيل الراوتر",
+    "RESTART_YOUR_ROUTER": "اعادة ضبط الراوتر",
     "WE_CANNOT_REACH_YOUR_ROUTER": "لا يمكننا الوصول إلى جهاز الراوتر الخاص بك",
     "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX": "Make sure that the router is turned on and is connected to wall-mounted fiber box.",
     "REQUEST_NOT_FOUND": "Request not found",

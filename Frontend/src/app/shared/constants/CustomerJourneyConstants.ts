@@ -197,12 +197,12 @@ export class CustomerJourneyConstants {
   };
 
   public static routerRebootRequiredMessageSection: IMessageIssue = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    header: 'MESSAGES.RESTART_YOUR_ROUTER',
     body: [{ title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESTART_THE_ROUTER_AND_THEN_TRY_USING_THE_INTERNET_AGAIN' }],
   };
 
   public static routerResetRequiredMessageSection: IMessageIssue = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    header: 'MESSAGES.RESET_YOUR_ROUTER',
     body: [{ title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_THEN_TRY_USING_THE_INTERNET_AGAIN' }],
   };
 
@@ -452,7 +452,7 @@ export class CustomerJourneyConstants {
   };
 
   public static tvBoxRestartMessageSection: IMessageIssue = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    header: 'MESSAGES.RESTART_YOUR_TV_BOX',
     body: [
       {
         title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
@@ -473,7 +473,7 @@ export class CustomerJourneyConstants {
   };
 
   public static ontRestartMessageSection: IMessageIssue = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    header: 'MESSAGES.RESTART_YOUR_FIBER_BOX',
     body: [
       {
         title: 'MESSAGES.WE_HAVE_FIXED_ALL_THE_TECHNICAL_ISSUES',
@@ -497,7 +497,7 @@ export class CustomerJourneyConstants {
   };
 
   public static rotuerRebootRequiredAllServices: IMessageIssue = {
-    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    header: 'MESSAGES.RESTART_YOUR_ROUTER',
     body: [
       {
         title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_PLEASE_RESET_THE_ROUTER_AND_TV_BOX_AND_THEN_TRY_USING_THE_INTERNET_AGAIN',

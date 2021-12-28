@@ -27,7 +27,7 @@ export class IssueListDialog implements OnInit {
   flow: number;
   @Input()
   eLifeGameStatus;
-  showViewGuidline: boolean = true;
+  showViewGuidline: boolean = false;
   modal;
   internetIssuesList: any[] = [
     {
