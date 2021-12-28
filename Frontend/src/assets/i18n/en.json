@@ -94,6 +94,8 @@
     "CHANGE_WIFI_PIN": "CHANGE Wi-Fi PIN",
     "CONFIGURE_ROUTER": "Configure router",
     "RESTART_ONT_NOW": "RESTART FIBER BOX NOW",
+    "ETISALAT_ROUTER":"Etisalat Router",
+    "THIRD_PARTY_ROUTER": "Third Party Router",
     "INSTALL_NEW_THIRD_PARTY_ROUTER": "INSTALL NEW THIRD-PARTY ROUTER",
     "BACK": "BACK",
     "BOOK_AN_APPOINTMENT": "BOOK AN APPOINTMENT",
@@ -172,6 +174,7 @@
   },
 
   "MESSAGES": {
+    "NOTE":"Note:",
     "RESTART_YOUR_TV_BOX": "Restart your tv box",
     "RESTART_YOUR_FIBER_BOX": "Restart your fiber box",
     "RESET_YOUR_ROUTER": "Reset your router",

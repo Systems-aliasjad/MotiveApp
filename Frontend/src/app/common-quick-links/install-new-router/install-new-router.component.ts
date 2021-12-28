@@ -13,11 +13,11 @@ import { SharedService } from 'src/app/shared/shared.service';
 export class InstallNewRouterComponent implements OnInit {
   routers = [
     {
-      title: 'Etisalat Router',
+      title: 'BUTTONS.ETISALAT_ROUTER',
       ID: OWN_ROUTER,
     },
     {
-      title: 'Third party Router',
+      title: 'BUTTONS.THIRD_PARTY_ROUTER',
       ID: THIRD_PARTY_ROUTER,
     },
   ];

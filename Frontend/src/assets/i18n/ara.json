@@ -1,6 +1,6 @@
 {
   "HEADER": {
-    "ACCOUNT_DETAILS": "ACCOUNT DETAILS",
+    "ACCOUNT_DETAILS": "تفاصيل الحساب",
     "TV_DETAILS": "تفاصيل التلفاز",
     "ALMOST_THERE": "قاربت على الانتهاء!",
     "SERVICE_DETAILS": "تفاصيل الخدمة",
@@ -89,11 +89,13 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "أريد إعادة ضبط رمز التعريف الشخصي  "
   },
   "BUTTONS": {
+    "ETISALAT_ROUTER":"راوتر اتصالات",
+    "THIRD_PARTY_ROUTER": "راوتر ليس من اتصالات",
     "NO_EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
     "REBOOT_FIBER_BOX": "REBOOT FIBER BOX",
     "REBOOT_ROUTER": "REBOOT ROUTER",
     "CHANGE_WIFI_PIN": "رمز التعريف الشخصي لشبكة الواي فاي",
-    "CONFIGURE_ROUTER": "Configure router",
+    "CONFIGURE_ROUTER": "تعيين اعدادات الراوتر",
     "RESTART_ONT_NOW": " اعادة تشغيل جهاز الالياف الضوئية الان",
     "INSTALL_NEW_THIRD_PARTY_ROUTER": "تركيب جهاز راوتر ليس من اتصالات",
     "BACK": "خلف",
@@ -174,6 +176,7 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "NOTE":"ملحوظة:",
     "RESTART_YOUR_TV_BOX":"اعادة تشغيل جهاز استقبال التلفاز",
     "RESTART_YOUR_FIBER_BOX": "اعادة تشغيل جهاز الالياف الضوئية",
     "RESET_YOUR_ROUTER": "اعادة تشغيل الراوتر",

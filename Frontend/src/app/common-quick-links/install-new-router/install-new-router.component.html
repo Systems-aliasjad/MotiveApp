@@ -22,7 +22,7 @@
               <ion-card>
                 <ion-card-header>
                   <ion-card-title>
-                    <ion-label class="sub-title">{{ d.title }}</ion-label>
+                    <ion-label class="sub-title">{{ d.title | translate}}</ion-label>
                     <ion-radio lot="start" name="{{ d.ID }}" value="{{ d.ID }}"></ion-radio>
                   </ion-card-title>
                 </ion-card-header>
@@ -41,7 +41,7 @@
     <ion-col sizeLg="12" sizeMd="12" size="12" class="pt-0 pb-0">
       <ion-row>
         <ion-col sizeLg="6" sizeMd="12" size="12" class="ion-no-padding">
-          <motive-button [type]="'primary'" [title]="'Continue'" (clickHandler)="button1Listener()" [disable]="selectedRadioItem === ''"></motive-button>
+          <motive-button [type]="'primary'" [title]="'BUTTONS.CONTINUE'" (clickHandler)="button1Listener()" [disable]="selectedRadioItem === ''"></motive-button>
         </ion-col>
       </ion-row>
     </ion-col>
