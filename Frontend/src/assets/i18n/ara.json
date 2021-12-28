@@ -91,9 +91,9 @@
   "BUTTONS": {
     "ETISALAT_ROUTER":"راوتر اتصالات",
     "THIRD_PARTY_ROUTER": "راوتر ليس من اتصالات",
-    "NO_EXIT_TROUBLESHOOTING": "NO, EXIT TROUBLESHOOTING",
-    "REBOOT_FIBER_BOX": "REBOOT FIBER BOX",
-    "REBOOT_ROUTER": "REBOOT ROUTER",
+    "NO_EXIT_TROUBLESHOOTING": "الخروج من صفحة إصلاح الأخطاء",
+    "REBOOT_FIBER_BOX": "صندوق الألياف",
+    "REBOOT_ROUTER": "إعادة تشغيل الراوتر",
     "CHANGE_WIFI_PIN": "رمز التعريف الشخصي لشبكة الواي فاي",
     "CONFIGURE_ROUTER": "تعيين اعدادات الراوتر",
     "RESTART_ONT_NOW": " اعادة تشغيل جهاز الالياف الضوئية الان",
@@ -176,19 +176,20 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
-    "NOTE":"ملحوظة:",
+    
+    "NOTE":":ملاحظة",
     "RESTART_YOUR_TV_BOX":"اعادة تشغيل جهاز استقبال التلفاز",
     "RESTART_YOUR_FIBER_BOX": "اعادة تشغيل جهاز الالياف الضوئية",
     "RESET_YOUR_ROUTER": "اعادة تشغيل الراوتر",
     "RESTART_YOUR_ROUTER": "اعادة ضبط الراوتر",
     "WE_CANNOT_REACH_YOUR_ROUTER": "لا يمكننا الوصول إلى جهاز الراوتر الخاص بك",
-    "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX": "Make sure that the router is turned on and is connected to wall-mounted fiber box.",
-    "REQUEST_NOT_FOUND": "Request not found",
+    "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX": ".تأكد من تشغيل جهاز الراوتر و انه متصل بالجهاز الرئيسي المعلق على الحائط الخاص بخدمات اتصالات",
+    "REQUEST_NOT_FOUND": "تعذر الوصول الى الطلب",
     "SORRY_WE_COULDNT_FIND_THE_REQUEST_YOU_REQUESTED_IF_YOU_NEED_HELP_WITH_A_TECHNICAL_ISSUE_TAP_CONTINUE_TO_TROUBLESHOOTING": "عذرا ، لم نتمكن من العثور على الطلب. إذا كنت بحاجة إلى مساعدة في مشكلة فنية ، انقر على الدعم الفني.",
     "ROUTER_RESTART_UNSUCCESSFUL": "لم تتم إعادة تشغيل الراوتر",
     "REQUEST_FOLLOW_UP": " متابع الطلب",
     "SORRY_THE_OPERATION_HAS_TIMED_OUT_PLEASE_TRY_AGAIN": "عذرًا ، انقضت مهلة الإجراء. حاول مرة اخرى.",
-    "FEEDBACK_SUBMITTED_SUCCESSFULLY": "Feedback submitted successfully",
+    "FEEDBACK_SUBMITTED_SUCCESSFULLY": "تم إرسال الملاحظات بنجاح",
     "RUN_SMART_DIAGNOSIS_ON_YOUR_PRODUCT_AND_SERVICE": "بدء التشخيص الذكي لمشاكل الخدمات",
     "AN_AUTOMATED_SELFDIAGNOSIS_WILL_BE_INITIATED_ONCE_YOU_SELECT_ONE_OF_THE_FOLLOWING_OPTIONS": "سيبدأ التشخيص الذاتي تلقائياً بمجرد تحديد أحد الخيارات التالية ",
     "BANDWIDTH": "السرعة",
@@ -401,7 +402,7 @@
     "ONCE_YOU_COMPLETE_THESE_STEPS_TAP_CONTINUE": "بمجرد إنهاء هذه الخطوات، اضغط على استمرار",
     "ONCE_YOU_RESTART_YOUR_ROUTER_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": "بمجرد إعادة تشغيل الراوتر، يرجى الانتظار لمدة 5 دقائق قبل استخدام الإنترنت.",
     "ONCE_YOU_RESTART_YOUR_TV_BOX_WAIT_FOR_5_MINUTES_AND_THEN_TRY_USING_THE_INTERNET_AGAIN": " بمجرد إعادة تشغيل جهاز الاستقبال، يرجى الانتظار لمدة 5 دقائق قبل استخدام الإنترنت",
-    "ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE": "One of these options could be causing the issue:",
+    "ONE_OF_THESE_OPTIONS_COULD_BE_CAUSING_THE_ISSUE": ":احد هذه الخيارات قد يكون سبب في المشكلة",
     "OPEN_SERVICE_REQUEST": "طلب خدمة مفتوح",
     "OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING": "خيار لتمكين / تعطيل إعادة توجيه المكالمات",
     "OR": " أو",
@@ -572,7 +573,7 @@
     "WE_ARE_FACING_AN_UNPLANNED_INTERRUPTION_OF_HOME_SERVICES_IN_YOUR_AREA_WHICH_IS_BEYOND_OUR_CONTROL_REST_ASSURED_THAT_THAT_OUR_TEAMS_ARE_WORKING_ON_RESOLVING_THE_ISSUE_WE_SHALL_SEND_AN_SMS_TO_YOUR_REGISTERED_CONTACT_NUMBER_ONCE_THE_SERVICE_IS_RESTORED": "نحن نواجه انقطاعًا غير مخطط له في الخدمات المنزلية في منطقتك وهو أمر خارج عن سيطرتنا. كن مطمئنًا أن فرقنا يعمل على إكماله في أسرع وقت ممكن. سنرسل رسالة نصية قصيرة إلى رقم الاتصال المسجل الخاص بك بمجرد استعادة الخدمة ",
     "WE_ARE_MOVING_YOUR_ELIFE_CONNECTION": "جاري نقل خدمة eLife الخاصة بك",
     "WE_ARE_UNABLE_TO_REACH_YOUR_DEVICE": ".لم نتمكن من الوصول إلى جهازك.",
-    "WE_CANT_REACH_YOUR_PHONE": "We can’t reach your Phone",
+    "WE_CANT_REACH_YOUR_PHONE": "تعذر الوصول الى جهاز التليفون",
     "WE_CANT_REACH_YOUR_ROUTER": "لم نتمكن من الوصول إلى جهازك. ",
     "WE_CANT_REACH_YOUR_TV_BOX": "تعذر الوصول إلى جهاز الاستقبال التلفزيوني",
     "WE_CANT_RESET_YOUR_WIFI_PASSWORD_BECAUSE_YOU_DONT_HAVE_AN_ETISALAT_ROUTER": " لا يمكننا إعادة تعيين كلمة مرور Wi-Fi الخاصة بكلأنك لا تملك جهاز الراوتر من اتصالات. ",
@@ -632,7 +633,7 @@
     "YOU_NEED_TO_RESET_YOUR_INTERNET_PASSWORD_TO_INSTALL_THE_THIRD_PARTY_ROUTER": "تحتاج إلى إعادة تعيين كلمة مرور الإنترنت لتثبيت جهاز اراوتر من جهة خارجية ",
     "YOU_SHOULD_BE_ABLE_TO_WATCH_THE_CHANNEL_NOW_PLEASE_CONFIRM_WHETHER_THE_ISSUE_HAS_BEEN_FIXED_OR_NOT": "يمكنك الآن مشاهدة القناة. يرجى تأكيد ما إذا تم حل المشكلة أم لا",
     "YOU_WILL_BE_CONTACTED_BY_OUR_TECHNICIAN_SOON": "سيتصل بك الفني قريبًا",
-    "FACING_SOME_ISSUE": "Facing some issue",
+    "FACING_SOME_ISSUE": "توجه بعض المشكلات",
     "TRY_AGAIN_LATER": "يرجى إعادة المحاولة لاحقًا",
     "CCB_PIN_RULES": "رقم التعريف الشخصي لكود حظر المكالمات:",
     "UNABLE_TO_CONNECT_WIFI": "تعذر الاتصال بشبكة Wi-Fi",
@@ -690,9 +691,9 @@
     "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS": "توصيل الكابل من الراوتر إلى منفذ {{portNumber}} صندوق الألياف المركّب على الحائط "
   },
   "Errors": {
-    "MOBILE_NO_MUST_START_WITH_971": "Mobile No. must be a 12 digit number",
-    "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "Password & Confirm Password Must Be Matched",
-    "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "Password must match the crietaria as per given below"
+    "MOBILE_NO_MUST_START_WITH_971": "يجب ان يبدأ رقم الهاتف المتحرك ب 971",
+    "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "كلمة السر وتأكيدها يجب ان تتطابقا",
+    "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "يجب ان تتوافق كلمة السر مع قواعد كلمة السر المبينة ادناه"
   },
   "Loader": {
     "Landing": [
