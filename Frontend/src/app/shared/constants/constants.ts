@@ -326,7 +326,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   '3P': {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FACTORY_RESET_TV,
       ELIFE_ON_PIN_RESET,
@@ -344,7 +344,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   '2P': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
@@ -370,7 +370,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'HI': {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
@@ -384,7 +384,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'B1': {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
@@ -398,7 +398,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'FD': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
@@ -412,7 +412,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'FH': {
     landingPageCards: [INTERNET_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
@@ -426,7 +426,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'FT': {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FACTORY_RESET_TV,
       FORGOT_PASSWORD_INTERNET,
@@ -451,7 +451,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'BTP': {
     landingPageCards: [INTERNET_ISSUES, TV_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FACTORY_RESET_TV,
       FORGOT_PASSWORD_INTERNET,
@@ -468,7 +468,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'BDP': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
@@ -482,7 +482,7 @@ export const motiveSubscriptions: IMotvieSubscription = {
   'BFXI': {
     landingPageCards: [INTERNET_ISSUES, PHONE_ISSUES, OTHER_ISSUES, PASSWORD_ISSUES],
     quickLinkCard: [
-      INSTALL_NEW_ROUTER,
+      // INSTALL_NEW_ROUTER,
       FACTORY_RESET_ROUTER,
       FORGOT_PASSWORD_INTERNET,
       CONNECTION_ISSUE_ROUTER,
