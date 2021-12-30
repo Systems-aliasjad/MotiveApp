@@ -32,6 +32,8 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   messageSection;
   ontConfig;
   routerConfig;
+  Ci9Flag;
+  otherFlow;
   networkDiagram = NetWorkDiagramIds.ThreeLayer;
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
 
@@ -59,6 +61,11 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit() {
+    this.Ci9Flag = this.router.getCurrentNavigation()?.extras?.state?.Ci9Flag;
+    this.otherFlow = this.router.getCurrentNavigation()?.extras?.state?.otherFlow;
+    if(this.otherFlow === undefined){
+      this.otherFlow = false
+    }
     this.subscription = this.activatedRoute.data.subscribe(() => {
       this.updateHeader();
       this.getIssueTilesData();
@@ -81,6 +88,9 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.messageSection = CustomerJourneyConstants.routerConfig3rdPartyMessageSection;
+    if(this?.Ci9Flag){
+      this.button3.title = 'BUTTONS.CONTINUE';
+    }
   }
 
   button1Listener() {
@@ -93,7 +103,19 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
   }
 
   button3Listener() {
-    this.router.navigate(['/issues/internet/book-complaint']);
+    if(this?.Ci9Flag){
+      this.sharedService.setLoader(true);
+      this.backendService.nextSignal('next').subscribe((data)=>{
+        this.sharedService.setLoader(false);
+        if(this.otherFlow){
+          this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        } else {
+          this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+        }
+      })
+    } else {
+      this.router.navigate(['/issues/internet/unable-to-browse-internet/issue-not-fixed']);
+    }
   }
 
   getIssueTilesData() {

@@ -541,7 +541,7 @@ export class HelperService {
     //    });
     //  }
     } else {
-      this.router.navigate(['issues/other/third-party-router']);
+      this.router.navigate(['issues/internet/3rd-party-router-reset'], {state: { Ci9Flag: this.Ci9Flag , otherFlow: true }});
     }
   }
 
@@ -558,7 +558,7 @@ export class HelperService {
         this.router.navigate(['issues/internet/router-upgrade-recommended']);
       }
     } else {
-      this.router.navigate(['issues/internet/third-party-router']);
+      this.router.navigate(['issues/internet/3rd-party-router-reset'], {state: { Ci9Flag: this.Ci9Flag }});
     }
   }
 
