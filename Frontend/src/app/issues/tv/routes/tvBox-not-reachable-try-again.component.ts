@@ -74,7 +74,7 @@ export class TvBoxNotReachableTryAgainComponent implements OnInit, OnDestroy {
   };
 
   button1Listener() {
-    this.router.navigate(['/issues/tv/tvBox-not-reachable-form']);
+    this.router.navigate(['/issues/tv/troubleshoot-complete']);
   }
 
   button2Listener() {

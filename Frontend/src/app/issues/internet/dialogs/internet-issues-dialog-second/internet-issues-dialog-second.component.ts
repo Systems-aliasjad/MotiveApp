@@ -61,13 +61,15 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
       const data = this.sharedService.getSecondInternetIssueDialogFromOtherApiResponse();
       this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     } else {
-      if (this.id === ERoutingIds.routerNotReachable) {
-        this.router.navigate(['/issues/internet/router-not-reachable-form']);
-      } else if (this.id === ERoutingIds.routerNotReachableOwnRouter) {
-        this.router.navigate(['/issues/internet/router-not-reachable-form']);
-      } else {
-        this.router.navigate(['/issues/internet/book-complaint']);
-      }
+
+       this.router.navigate(['/issues/internet/unable-to-browse-internet/issue-not-fixed']);
+      // if (this.id === ERoutingIds.routerNotReachable) {
+      //   this.router.navigate(['/issues/internet/router-not-reachable-form']);
+      // } else if (this.id === ERoutingIds.routerNotReachableOwnRouter) {
+      //   this.router.navigate(['/issues/internet/router-not-reachable-form']);
+      // } else {
+      //   this.router.navigate(['/issues/internet/book-complaint']);
+      // }
     }
   }
 

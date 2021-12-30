@@ -5,6 +5,7 @@ import { successImgSrc } from 'src/app/shared/constants/constants';
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'troubleshoot-complete-message',
@@ -34,7 +35,7 @@ export class TroubleshootCompleteMessageComponent implements OnInit, OnDestroy {
     type: 'link',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService:SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -59,6 +60,8 @@ export class TroubleshootCompleteMessageComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.router.navigate(['issues/tv/detail']);
+  
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
+    // this.router.navigate(['issues/tv/detail']);
   }
 }
