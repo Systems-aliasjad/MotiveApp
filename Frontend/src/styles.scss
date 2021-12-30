@@ -172,7 +172,7 @@ body {
   font-family: Lato, Roboto, Arial, sans-serif;
   color: $secondary-color;
   font-size: 1rem;
-  overscroll-behavior-y: contain;
+  overscroll-behavior-y: contain !important;
 }
 
 // ------------Removed Ionic Button Styling start-------------------
