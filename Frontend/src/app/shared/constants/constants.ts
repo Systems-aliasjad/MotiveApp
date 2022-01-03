@@ -139,6 +139,17 @@ export const flowCodes = {
   E2ECRM322: 'E2ECRM322',
   E2ECRM323: 'E2ECRM323',
   E2ECRM324: 'E2ECRM324',
+
+
+///For Stage 3 TV REset tv box stb
+STBR1:'STBR1',//soft reset is successful
+STBR2:'STBR2',//soft reset is successful
+STBR3:'STBR3',//soft reset is unsuccessful
+STBR4:'STBR4',//soft reset is unsuccessful
+
+
+
+
 };
 
 export const ETISALAT = 'Etisalat';

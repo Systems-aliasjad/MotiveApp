@@ -63,16 +63,20 @@ export class UnableWatchChannelStep1Component implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_BOX_IS_BEING_RESET');
-    this.backendService.nextSignal('Reset STB').subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QASTBSR3 || data?.result?.screenCode === flowCodes.QASTBSR4) {
-        this.router.navigate(['issues/tv/tvBox-reset-successfull']);
-      } else {
-        this.sharedService.TicketCloseAPICallWithURL('error-comes');
-      }
-      // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    });
+
+    this.router.navigate(['issues/tv/reset-stb-stage3']);
+
+
+    // this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_BOX_IS_BEING_RESET');
+    // this.backendService.nextSignal('Reset STB').subscribe((data: any) => {
+    //   this.sharedService.setLoader(false);
+    //   if (data?.result?.screenCode === flowCodes.QASTBSR3 || data?.result?.screenCode === flowCodes.QASTBSR4) {
+    //     this.router.navigate(['issues/tv/tvBox-reset-successfull']);
+    //   } else {
+    //     this.sharedService.TicketCloseAPICallWithURL('error-comes');
+    //   }
+    //   // this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    // });
 
     // this.router.navigate(['issues/tv/tvBox-reset-successfull']);
   }

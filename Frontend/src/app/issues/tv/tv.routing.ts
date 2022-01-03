@@ -64,6 +64,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { QuickTvBoxPackageTransferComponent } from './routes/quick-tv-box-package-transfer.component';
 import { UnableElifeTryAgainErrorComponent } from './routes/unable-elife-error-occur-try-again-later.component';
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
+import { ResetStbStage3TransferComponent } from './routes/reset-stb-box-stage3-package-transfer.component';
 
 const routes: Routes = [
   {
@@ -327,7 +328,13 @@ const routes: Routes = [
   {
     path: 'common/fiber-box-not-reachable-try-again',
     component: FiberBoxNotReachableTryAgainComponent,
+  },
+  {
+    path: 'reset-stb-stage3',
+    component: ResetStbStage3TransferComponent,
   }
+
+  
 ];
 
 @NgModule({
