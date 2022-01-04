@@ -78,6 +78,7 @@ export class ResetWIFIPasswordComponent implements OnInit, OnDestroy {
       } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
         this.router.navigate(['/common/router-unreachable']);
       }
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }

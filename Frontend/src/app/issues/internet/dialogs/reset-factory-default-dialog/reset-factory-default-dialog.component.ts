@@ -67,6 +67,7 @@ export class ResetFactoryDefaultDialog implements OnInit {
       this.sharedService.setLoader(true, scriptArray);
       this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
         this.sharedService.setLoader(false);
+        this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     }

@@ -77,6 +77,7 @@ export class RouterRebootRequiredComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
     // this.router.navigate(['/issues/internet/router-reboot-successful']);

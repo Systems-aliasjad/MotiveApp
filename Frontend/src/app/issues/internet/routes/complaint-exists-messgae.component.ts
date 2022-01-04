@@ -74,6 +74,7 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true, scriptArray);
       this.backendService.nextSignal('Continue Troubleshooting').subscribe((data: any) => {
         this.sharedService.setLoader(false);
+        this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
   }

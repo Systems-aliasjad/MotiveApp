@@ -152,6 +152,7 @@ export class MainComponent implements OnInit {
 
       // console.log('Response For TV: ' + data);
       //data = this.Ci72Case;
+      this.shareService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }

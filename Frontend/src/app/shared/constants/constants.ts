@@ -811,3 +811,8 @@ export class LoaderScriptsEnum {
  public static readonly STB_NOT_REACHABLE ='STB_NOT_REACHABLE'; //TV  TV set top box bot reachable  ///dd.MotiveH&S.2.6.1
  public static readonly IPTV_SERVICE_DETAIL ='IPTV_SERVICE_DETAIL'; //TV  no issues continue troubleshoot  ///dd.MotiveH&S.2.7.2
 }
+
+export class TsOutcome{
+  public static readonly NoIssues='No Issue found';
+  public static readonly IssueFoundAndFixed='Issue found and fixed';
+}

@@ -80,6 +80,7 @@ export class ResetInternetPasswordTryAgainErrorComponent implements OnInit, OnDe
       this.sharedService.setTryResetInternetPasswordFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('INTERNET').subscribe((data) => {
         this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     });

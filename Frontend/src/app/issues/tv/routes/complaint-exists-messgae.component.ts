@@ -78,6 +78,7 @@ export class ComplaintExistsMessageComponent implements OnInit, OnDestroy {
     var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.TV_E2E_TROUBLESHOOTING);
     this.sharedService.setLoader(true, scriptArray); this.backendService.nextSignal('Continue Troubleshooting').subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }

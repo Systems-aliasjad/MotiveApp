@@ -245,6 +245,14 @@ export class CustomerJourneyConstants {
     ],
   };
 
+  public static issueFoundAndFixedMessageSection: IMessageIssue = {
+    header: 'MESSAGES.ISSUE_FIXED_SUCCESSFULLY',
+    body: [
+      { title: 'MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_INTERNET_SHOULD_WORK_NORMALLY' },
+      { title: 'MESSAGES.TAP_CONTINUE_TO_TROUBLESHOOTING_IF_THERE_IS_A_SPECIFIC_TECHNICAL_ISSUE_OR_VIEW_DETAILS_TO_TAKE_A_CLOSER_LOOK_AT_YOUR_INTERNET_SERVICE' },
+    ],
+  };
+
   public static tvOutageMessageSection: IMessageIssue = {
     header: 'MESSAGES.UNPLANNED_INTERRUPTION',
     body: [

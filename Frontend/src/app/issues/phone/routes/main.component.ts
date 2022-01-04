@@ -19,6 +19,7 @@ export class MainComponent implements OnInit {
       this.shareService.setLoader(true,scriptArray);
       this.backendService.getIssueDiagnositic('VOICE').subscribe((data: any) => {
         this.shareService.setLoader(false);
+      this.shareService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.voiceFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     });

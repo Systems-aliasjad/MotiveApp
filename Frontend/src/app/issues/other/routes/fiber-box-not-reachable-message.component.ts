@@ -86,11 +86,13 @@ button2: IMotiveButton = {
            element.isReachable = true;
         });
       }
+      
       this.helperService.otherFlowIdentifier('CI9', data);
     } else {
       this.sharedService.setLoader(true, ['Checking Ont Reachability']);
       this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       })    //this.router.navigate(['/thanks']);
     }

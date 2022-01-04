@@ -90,6 +90,7 @@ export class PhoneNotReachableFirstTimeComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true, ['Phone not Reachable']);
       this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.voiceFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       })
     }

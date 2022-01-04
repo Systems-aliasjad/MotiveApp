@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION } from './constants/constants';
+import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION, TsOutcome } from './constants/constants';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
 
@@ -57,6 +57,8 @@ export class SharedService {
 
   LoaderData: any;
 
+  tsOutcome:string=''
+
   constructor(private http: HttpClient, private translate: TranslateService, private router: Router, private backendService: BackendService) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
@@ -66,6 +68,17 @@ export class SharedService {
     this.headerConfig$ = this.headerConfigSubject.asObservable();
     this.termsConditionCheck$ = this.termsConditionCheck.asObservable();
   }
+
+
+  GetTsOutCome(){
+    return this.tsOutcome;
+  }
+  SetTsOutCome(value){
+     this.tsOutcome=value;
+  }
+
+
+
 
   GetJsonFile() {
     var lang = this.getLocalStorage('lang');

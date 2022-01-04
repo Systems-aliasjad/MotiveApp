@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -83,7 +83,17 @@ export class PackageUpgradeRecommendedComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
+
+    if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
+      this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
+      this.messageSection.header='MESSAGES.ISSUE_FIXED_SUCCESSFULLY';
+      this.messageSection.body[0].title='MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES';
+    }
+    else{
+       this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
+    }
+
+    // this.messageSection = CustomerJourneyConstants.packageUpdradeRecomendedMessageSection;
   }
 
   button1Listener() {
@@ -115,6 +125,7 @@ export class PackageUpgradeRecommendedComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.nextSignal('MandatoryOnly').subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
   }

@@ -107,6 +107,7 @@ export class ThirdPartyRouterResetComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true);
       this.backendService.nextSignal('next').subscribe((data)=>{
         this.sharedService.setLoader(false);
+        this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         if(this.otherFlow){
           this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
         } else {

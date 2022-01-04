@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { ETISALAT_DEFAULT_CONFIG } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IPageHeader } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -70,7 +70,18 @@ export class WifiAlarmComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
+
+
+if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
+        this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
+        this.messageSection.header='MESSAGES.ISSUE_FIXED_SUCCESSFULLY';
+        this.messageSection.body[0].title='MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES';
+    }
+    else{
+        this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
+    }
+
+    // this.messageSection = CustomerJourneyConstants.wifiAlarmMessageSection;
   }
 
   button1Listener() {

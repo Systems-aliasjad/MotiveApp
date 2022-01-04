@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, SVGs, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { EIssueFlow, IssueListDialog } from 'src/app/shared/dialogs/issue-list-dialog/issue-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -84,7 +84,17 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
+
+  if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
     this.messageSection = CustomerJourneyConstants.phoneIssuesMainMessageSection;
+        this.messageSection.header='MESSAGES.ISSUE_FIXED_SUCCESSFULLY';
+        this.messageSection.body[0].title='MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY';
+    }
+    else{
+        this.messageSection = CustomerJourneyConstants.phoneIssuesMainMessageSection;
+    }
+
+    // this.messageSection = CustomerJourneyConstants.phoneIssuesMainMessageSection;
   }
 
   button1Listener() {

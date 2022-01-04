@@ -43,6 +43,9 @@ export class MainComponent implements OnInit {
         this.shareService.setLoader(false);
         this.shareService.setInternetGenericResponse(data?.result?.responseData);
         //data = this.newHardData;
+
+       this.shareService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
+
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     });

@@ -92,6 +92,7 @@ export class FiberBoxNotReachableComponent implements OnInit, OnDestroy {
       this.sharedService.setLoader(true, ['Checking Ont Reachability']);
       this.backendService.nextSignal('next').subscribe((data) => {
         this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       })
     }

@@ -75,6 +75,7 @@ export class ResetRouterPasswordComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.resetWifiPassword(_event).subscribe((data: any) => {
       this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
     // this.router.navigate(['/issues/password/reset-router-password-success']);

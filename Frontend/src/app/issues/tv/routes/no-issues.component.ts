@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, NetWorkDiagramIds } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, NetWorkDiagramIds, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IStbDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -88,7 +88,20 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   // }
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
+
+if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
+     this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
+        this.messageSection.header='MESSAGES.ISSUE_FIXED_SUCCESSFULLY';
+        this.messageSection.body[0].title='MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY';
+    }
+    else{
+        this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
+    }
+
+    // this.messageSection = CustomerJourneyConstants.noIssuesTVMessageSection;
+    
+    
+    
     const navigation = this.router.getCurrentNavigation();
     const showRebootButton = navigation?.extras?.state?.showRebootButton;
     this.isThirdParty = navigation?.extras?.state?.isThirdParty;

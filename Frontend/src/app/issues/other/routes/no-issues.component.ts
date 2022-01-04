@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, PHONE, ROUTER, SVGs, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -83,7 +83,18 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+
+
+    if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
+        this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+        this.messageSection.header='MESSAGES.ISSUE_FIXED_SUCCESSFULLY';
+        this.messageSection.body[0].title='MESSAGES.WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_INTERNET_SHOULD_WORK_NORMALLY';
+    }
+    else{
+        this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+    }
+
+    // this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
     const navigation = this.router.getCurrentNavigation();
     const showRebootButton = navigation?.extras?.state?.showRebootButton;
     this.isThirdParty = navigation?.extras?.state?.isThirdParty;

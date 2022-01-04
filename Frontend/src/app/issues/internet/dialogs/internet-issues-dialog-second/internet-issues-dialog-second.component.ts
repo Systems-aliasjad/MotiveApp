@@ -59,6 +59,7 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
     this.modalCtrl.dismiss();
     if(this.otherFlow) {
       const data = this.sharedService.getSecondInternetIssueDialogFromOtherApiResponse();
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     } else {
 

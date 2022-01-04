@@ -176,7 +176,10 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
-    
+    "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "We have fixed the technical issues. Your phone should be working normally.",
+    "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY": "We have fixed the technical issues. Your TV service should be working normally.",
+    "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_INTERNET_SHOULD_WORK_NORMALLY": "لقد تم حل المشكلة التقنية.  خدمة الإنترنت تعمل لديك بشكل طبيعي",
+    "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES":"لقد تم حل المشكلة التقنية",
     "NOTE":":ملاحظة",
     "RESTART_YOUR_TV_BOX":"اعادة تشغيل جهاز استقبال التلفاز",
     "RESTART_YOUR_FIBER_BOX": "اعادة تشغيل جهاز الالياف الضوئية",

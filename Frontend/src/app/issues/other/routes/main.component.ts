@@ -18,6 +18,7 @@ export class MainComponent implements OnInit {
       this.shareService.setLoader(true,scriptArray);
       this.backendService.getIssueDiagnositic('ALL').subscribe((data: any) => {
         this.shareService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.otherFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     });

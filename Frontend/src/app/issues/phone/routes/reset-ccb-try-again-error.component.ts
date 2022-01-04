@@ -79,6 +79,7 @@ export class ResetCcbTryAgainErrorComponent implements OnInit, OnDestroy {
       this.sharedService.setTryAgainResetCCBFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('VOICE').subscribe((data) => {
         this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     });

@@ -80,6 +80,7 @@ export class UnableElifeTryAgainErrorComponent implements OnInit, OnDestroy {
       this.sharedService.setTryAgainUnableElifeFlag(); ///for try again button 3 times
       this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
         this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
         this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
       });
     });

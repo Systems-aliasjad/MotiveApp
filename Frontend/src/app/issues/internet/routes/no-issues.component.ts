@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { DeviceListDialog } from 'src/app/shared/dialogs/device-list-dialog/device-list-dialog.component';
 import { HelperService } from 'src/app/shared/helper/helper.service';
@@ -88,7 +88,14 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+
+    if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
+      this.messageSection = CustomerJourneyConstants.issueFoundAndFixedMessageSection;
+    }
+    else{
+       this.messageSection = CustomerJourneyConstants.noIssueMessageSection;
+    }
+    
     const navigation = this.router.getCurrentNavigation();
     const showRebootButton = navigation?.extras?.state?.showRebootButton;
     this.isThirdParty = navigation?.extras?.state?.isThirdParty;
