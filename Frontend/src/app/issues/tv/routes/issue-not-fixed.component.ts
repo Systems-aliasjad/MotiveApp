@@ -77,17 +77,22 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+   
+   
+   this.sharedService.TicketCloseAPICallWithURL('thanks');
 
-    this.updateHeader();
-    this.sharedService.setLoader(true);
-    this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
-      this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
-      this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
-        this.sharedService.setLoader(false);
-        this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
-    });
+    //Comment as requested by shakir
+    // this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+
+    // this.updateHeader();
+    // this.sharedService.setLoader(true);
+    // this.backendService.bookComplaint({ mobileNo: this.sharedService.getLocalStorage('CUS_MOBILE_NO'), remarks: '', issueResolved: false }).subscribe(() => {
+    //   this.sharedService.setTryAgainBoxNotReachableFlag(); ///for try again button 3 times
+    //   this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
+    //     this.sharedService.setLoader(false);
+    //     this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   });
+    // });
   }
 
   button2Listener() {
