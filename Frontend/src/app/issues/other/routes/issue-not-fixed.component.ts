@@ -67,7 +67,8 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.router.navigate(['/thanks']);
+    this.sharedService.TicketCloseAPICallWithURL('thanks');
+    // this.router.navigate(['/thanks']);
   }
 
   button2Listener() {

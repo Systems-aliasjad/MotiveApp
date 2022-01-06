@@ -79,6 +79,11 @@ export class BackendService {
   };
 
   getUserDetail(token: string, lang: string) {
+
+    if(lang==='ara'){
+      lang='ar';
+    }
+
     if (environment.shouldCallAPI) {
       return this.http.get(`token?lang=${lang}`, { headers: { Authorization: `Bearer ${token}` } });
     } else {

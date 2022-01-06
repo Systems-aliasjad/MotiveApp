@@ -28,12 +28,20 @@
   <div class="agree-terms">
     <ion-item>
       <ion-checkbox name="terms" color="primary" [(ngModel)]="terms" slot="start" (ionChange)="termsChange()"></ion-checkbox>
-      <ion-label>
+     
+     
+     <ion-label>
+        {{ 'MESSAGES.I_AGREE_TO_PROCEED' | translate }}
+      </ion-label>
+     
+     
+      <!-- Comment this code as per Mr. Shakir and Jamal as far now they dont have terms and Condition content -->
+      <!-- <ion-label>
         {{ 'MESSAGES.I_AGREE_TO' | translate }}
         <a href="javascript:void(0)" class="back-to-page" (click)="PopupTermsConditions()">
           <span>{{ 'MESSAGES.TERMS_AND_CONDITIONS' | translate }}​</span>
         </a>
-      </ion-label>
+      </ion-label> -->
     </ion-item>
   </div>
 </div>

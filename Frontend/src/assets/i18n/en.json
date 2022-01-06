@@ -174,6 +174,7 @@
   },
 
   "MESSAGES": {
+    "I_AGREE_TO_PROCEED": "I agree to proceed",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "We have fixed the technical issues. Your phone should be working normally.",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY": "We have fixed the technical issues. Your TV service should be working normally.",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_INTERNET_SHOULD_WORK_NORMALLY": "We have fixed the technical issues. Your internet should work normally.",
