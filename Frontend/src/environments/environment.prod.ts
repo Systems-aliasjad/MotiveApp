@@ -5,7 +5,7 @@
 
 export const environment = {
   production: true,
-  API_BASE_URL: 'https://MOTIVE-PRD-TSELFCR-APP2.etisalat.corp.ae/MOTIVE_SELFCARE_APP/api/',
+  API_BASE_URL: 'https://troubleshootapp-motive.etisalat.ae/MOTIVE_SELFCARE_APP/api/',
   appRoot: '',
   enableLog: true,
   disableConsoleLogs: false,
