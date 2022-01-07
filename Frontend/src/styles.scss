@@ -370,7 +370,9 @@ ion-modal,
   align-items: flex-end;
   @media screen and (max-width: 767px) {
     --height: 450px;
-    /* --border-radius: 0; */
+  }
+  @media screen and (max-width: 430px) {
+    --height: 500px;
   }
   @media screen and (max-width: 281px) {
     --height: 100%;

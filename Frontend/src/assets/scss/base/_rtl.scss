@@ -1,6 +1,9 @@
 @import 'src/assets/scss/base/mixins';
 @import 'src/assets/scss/base/variables';
 //----------------------------------------------------
+html[dir=rtl].plt-iphone {
+  direction: rtl;
+}
 html[dir=rtl] {
   ion-modal,
   .sc-ion-modal-md-h,
