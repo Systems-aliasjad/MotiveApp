@@ -68,6 +68,7 @@ export class UnableToMaleVideoCallComponent implements OnInit, OnDestroy {
           { text: 'MESSAGES.HIU_MESSANGER', children: [] },
           { text: 'MESSAGES.VOICE_UAE', children: [] },
           { text: 'MESSAGES.YZER_ANDROID_ONLY', children: [] },
+          { text: 'MESSAGES.GO_CHAT', children: [] },
         ],
       },
       {

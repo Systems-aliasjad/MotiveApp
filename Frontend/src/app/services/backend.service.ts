@@ -330,6 +330,20 @@ export class BackendService {
     }
   }
 
+    resetSTBWithSignal(data,signal) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, {
+        data: {
+          ...data,
+        },
+        signal: signal,
+      });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
   complaintUnderProcess(data) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/next-step`, {

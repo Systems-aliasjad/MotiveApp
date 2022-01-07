@@ -147,7 +147,8 @@ STBR2:'STBR2',//soft reset is successful
 STBR3:'STBR3',//soft reset is unsuccessful
 STBR4:'STBR4',//soft reset is unsuccessful
 
-
+QASTBFR3:'QA-STBFR3',
+QASTBFR4:'QA-STBFR4',
 
 
 };
