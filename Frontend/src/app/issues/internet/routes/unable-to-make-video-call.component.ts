@@ -57,25 +57,25 @@ export class UnableToMaleVideoCallComponent implements OnInit, OnDestroy {
     this.content.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
     this.content.listItems = [
       {
-        text: 'Make sure your connected with your home internet.',
+        text: 'MESSAGES.MAKE_SURE_YOUR_CONNECTED_WITH_YOUR_HOME_INTERNET',
         children: [],
       },
       {
-        text: 'Make sure you are using the one of these authorized apps:',
+        text: 'MESSAGES.MAKE_SURE_YOU_ARE_USING_THE_ONE_OF_THESE_AUTHORIZED_APPS',
         children: [
-          { text: 'Botim', children: [] },
-          { text: "C'ME", children: [] },
-          { text: 'HiU Messanger', children: [] },
-          { text: 'Voice UAE', children: [] },
-          { text: 'Yzer (android only)', children: [] },
+          { text: 'MESSAGES.BOTIM', children: [] },
+          { text: "MESSAGES.CME", children: [] },
+          { text: 'MESSAGES.HIU_MESSANGER', children: [] },
+          { text: 'MESSAGES.VOICE_UAE', children: [] },
+          { text: 'MESSAGES.YZER_ANDROID_ONLY', children: [] },
         ],
       },
       {
-        text: 'Please delete all available VPN.',
+        text: 'MESSAGES.PLEASE_DELETE_ALL_AVAILABLE_VPN',
         children: [],
       },
       {
-        text: 'If issue is still not fixed, install the app again.',
+        text: 'MESSAGES.IF_ISSUE_IS_STILL_NOT_FIXED_INSTALL_THE_APP_AGAIN',
         children: [],
       },
     ];

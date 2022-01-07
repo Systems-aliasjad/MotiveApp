@@ -176,6 +176,15 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "IF_ISSUE_IS_STILL_NOT_FIXED_INSTALL_THE_APP_AGAIN":"If issue is still not fixed, install the app again",
+    "PLEASE_DELETE_ALL_AVAILABLE_VPN":"Please delete all available VPN",
+    "YZER_ANDROID_ONLY":"Yzer (android only)",
+    "VOICE_UAE":"Voice UAE",
+    "HIU_MESSANGER":"HiU Messanger",
+    "CME":"C'ME",
+    "BOTIM":"Botim",
+    "MAKE_SURE_YOUR_CONNECTED_WITH_YOUR_HOME_INTERNET":"Make sure your connected with your home internet.",
+    "MAKE_SURE_YOU_ARE_USING_THE_ONE_OF_THESE_AUTHORIZED_APPS":"Make sure you are using the one of these authorized apps:",
     "I_AGREE_TO_PROCEED": "اوافق على المتابعة",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": ".لقد تم حل المشكلة التقنية.  خدمة الهاتف تعمل لديك بشكل طبيعي",
     "WE_HAVE_FIXED_THE_TECHNICAL_ISSUES_YOUR_TV_SERVICE_SHOULD_BE_WORKING_NORMALLY": ".لقد تم حل المشكلة التقنية. خدمة التلفاز تعمل لديك بشكل طبيعي",
