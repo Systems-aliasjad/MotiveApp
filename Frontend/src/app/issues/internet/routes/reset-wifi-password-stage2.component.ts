@@ -182,8 +182,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
               }
 
 
-
-          this.router.navigate(['/issues/internet/password-update-success']);
+          this.router.navigate(['/issues/internet/router-reset-successful']);
+          // this.router.navigate(['/issues/internet/password-update-success']);
         } else {
           this.router.navigate(['/error-comes']);
         }
