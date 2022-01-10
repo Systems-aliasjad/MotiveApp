@@ -71,9 +71,9 @@ export class ResetStbStage3TransferComponent implements OnInit, OnDestroy {
     };
 
     this.sharedService.setLoader(true, 'MESSAGES.YOUR_TV_BOX_IS_BEING_RESET');
-    this.backendService.resetSTBWithSignal(data,'Reset STB').subscribe((data: any) => {
+    this.backendService.resetSTBWithSignal(data,'Reset STB').subscribe((resp: any) => {
       this.sharedService.setLoader(false);
-      if (data?.result?.screenCode === flowCodes.QASTBFR3 || data?.result?.screenCode === flowCodes.QASTBFR4) {
+      if (resp?.result?.screenCode === flowCodes.QASTBFR3 || resp?.result?.screenCode === flowCodes.QASTBFR4) {
         this.router.navigate(['issues/tv/tvBox-reset-successfull']);
       } else {
         this.sharedService.TicketCloseAPICallWithURL('error-comes');
