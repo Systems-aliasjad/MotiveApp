@@ -28,6 +28,11 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     (button5Click)="button5Listener()"
   >
   </app-diagnose-issue>`,
+  styles: [
+    `:host::ng-deep .yes-i-am-left ion-button.primary-btn { display: none; } @media screen and (max-width: 991px){:host::ng-deep .yes-i-am-left ion-button.primary-btn{display:block;}} @media screen and (min-width: 992px) and (max-width: 1024px){ :host::ng-deep .yes-i-am-left div {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;height:100%;}`
+    
+   
+  ]
 })
 export class RouterNotReachableComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
