@@ -705,7 +705,7 @@
     "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS": "توصيل الكابل من الراوتر إلى منفذ {{portNumber}} صندوق الألياف المركّب على الحائط "
   },
   "Errors": {
-    "MOBILE_NO_MUST_START_WITH_971": "يجب ان يبدأ رقم الهاتف المتحرك ب 971",
+    "MOBILE_NO_MUST_START_WITH_971": "يجب أن يتكون رقم الهاتف المحمول من 10 أرقام وأن يبدأ بـ 05",
     "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "كلمة السر وتأكيدها يجب ان تتطابقا",
     "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "يجب ان تتوافق كلمة السر مع قواعد كلمة السر المبينة ادناه"
   },
