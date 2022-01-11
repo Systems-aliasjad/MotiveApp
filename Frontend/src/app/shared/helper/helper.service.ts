@@ -126,6 +126,7 @@ export class HelperService {
           ...stb,
           url: SVGs.stb.default,
           className: networkDiagramClasses.default,
+          title: 'STB',
         };
       });
     }
@@ -470,6 +471,7 @@ export class HelperService {
         ontDetails: data?.ontDetails,
         stbDetails: data?.stbDetails,
         connectedDevices: data?.responseData?.stbDetails,
+        iptvPortNumbers: data?.iptvPortNumbers,
       });
       if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         if (data?.stbDetails) {

@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { BackendService } from 'src/app/services/backend.service';
-import { ETISALAT_DEFAULT_CONFIG, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs, TsOutcome } from 'src/app/shared/constants/constants';
+import { ETISALAT_DEFAULT_CONFIG, LoaderScriptsEnum, networkDiagramClasses, NetWorkDiagramIds, ONT, ROUTER, SVGs, TsOutcome } from 'src/app/shared/constants/constants';
 import { IMotiveButton, IOntDetail, IPageHeader, IRouterDetail } from 'src/app/shared/constants/types';
 import { HelperService } from 'src/app/shared/helper/helper.service';
 import { CustomerJourneyConstants } from '../../../shared/constants/CustomerJourneyConstants';
@@ -105,7 +105,22 @@ if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
   }
 
   button3Listener() {
-    this.router.navigate(['/issues/internet/no-issue'], { state: { isThirdParty: true } });
+    var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_SERVICE_DETAIL);
+    this.sharedService.setLoader(true,scriptArray);
+    this.backendService.getIssueDiagnositic('continue').subscribe((res) => {
+      this.sharedService.setApiResponseData({
+        hsiUploadDownload: [res?.result?.responseData?.upstream, res?.result?.responseData?.downstream],
+        connectedDevices: res?.result?.responseData?.connectedDevices,
+        noOfConnectedDevices: res?.result?.responseData?.noOfConnectedDevices,
+        internetCallingPlan: res?.result?.responseData?.internetCallingPlan,
+        internetConnectionStatus: res?.result?.responseData?.internetConnectionStatus,
+        speedTestResult: res?.result?.responseData?.speedTestResult,
+        dataTraffic: res?.result?.responseData?.dataTraffic,
+      });
+      this.sharedService.setLoader(false);
+      this.router.navigate(['issues/internet/service-detail']);
+    });
+    // this.router.navigate(['/issues/internet/no-issue'], { state: { isThirdParty: true } });
   }
 
   button4Listener() {
