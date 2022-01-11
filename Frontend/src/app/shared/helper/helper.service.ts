@@ -118,7 +118,7 @@ export class HelperService {
 
     if (ontConfig?.isReachable) {
       stbConfig = stbConfig?.map((stb) => {
-        return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default }, ontConfig.className, true);
+        return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default,  title: 'STB' }, ontConfig.className, true);
       });
     } else {
       stbConfig = stbConfig.map((stb) => {
