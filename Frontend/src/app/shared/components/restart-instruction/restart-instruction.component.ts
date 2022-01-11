@@ -30,6 +30,9 @@ export class RestartInstructionComponent implements OnInit {
   @Input()
   headerConfig: IPageHeader;
 
+  @Input()
+  iptvPort;
+
   button1Listener() {
     this.button1Click.emit();
   }

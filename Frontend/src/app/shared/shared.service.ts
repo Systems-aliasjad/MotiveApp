@@ -14,6 +14,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SharedService {
   apiResponseData: any;
+  iptvPortNumber;
   secondDialogApiResponseFromOtherFlow: any;
   OtherApiResponseData: any;
   upsellOpportunity: string;
@@ -491,5 +492,13 @@ export class SharedService {
   }
   getSecondInternetIssueDialogFromOtherApiResponse(){
     return this.secondDialogApiResponseFromOtherFlow;
+  }
+
+  setIptvPortNumber(data){
+    this.iptvPortNumber = data;
+  }
+
+  getIptvPortNumber(){
+    return this.iptvPortNumber;
   }
 }

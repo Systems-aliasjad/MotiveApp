@@ -16,6 +16,7 @@ import { SharedService } from '../../../shared/shared.service';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
+    [iptvPort] = "iptvPort"
   >
   </app-restart-instruction>`,
 })
@@ -33,10 +34,11 @@ export class UnableWatchChannelComponent implements OnInit {
     title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     type: 'link',
   };
-
+  iptvPort;
   constructor(private backendService: BackendService, private sharedService: SharedService, private router: Router) {}
 
   ngOnInit() {
+    this.iptvPort = this.sharedService.getIptvPortNumber() || 'NA';
     this.updatePageContent();
   }
 

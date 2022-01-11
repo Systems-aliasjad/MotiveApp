@@ -471,8 +471,8 @@ export class HelperService {
         ontDetails: data?.ontDetails,
         stbDetails: data?.stbDetails,
         connectedDevices: data?.responseData?.stbDetails,
-        iptvPortNumbers: data?.iptvPortNumbers,
       });
+      this.sharedService.setIptvPortNumber(data?.iptvPortNumbers);
       if (data?.tsOutcome === TS_OUTCOME_NO_ISSUE || data?.tsOutcome === TS_OUTCOME_ISSUE_FOUND_FIXED) {
         if (data?.stbDetails) {
           let flag = false;

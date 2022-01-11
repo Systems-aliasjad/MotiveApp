@@ -30,7 +30,7 @@
               <p class="tag-title">{{ instruction1.title | translate }}</p>
               <ion-list *ngFor="let ins of instruction1.steps; let i = index">
                 <ion-item>
-                  <ion-label>{{ i + 1 }}. {{ ins | translate }}</ion-label>
+                  <ion-label>{{ i + 1 }}. {{ ins | translate: { iptvPort: iptvPort } }}</ion-label>
                 </ion-item>
               </ion-list>
             </ion-col>

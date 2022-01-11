@@ -578,7 +578,7 @@
     "PLUG_THE_TV_BOX_TO_TURN_IT_ON_AND_WAIT_FOR_THE_LED_TO_TURN_RED": "Plug the TV box to turn it on and wait for the LED to turn red",
     "PRESS_THE_POWER_BUTTON_ON_YOUR_REMOTE_CONTROL": "Press the power button on your remote control",
     "IF_YOU_ARE_UNABLE_TO_TURN_THE_TV_BOX_ON_CHECK_THE_BATTERY_OF_THE_REMOTE_CONTROL": "If you are unable to turn the TV box on, check the battery of the remote control ",
-    "IF_TV_BOX_WORKS_BUT_YOU_ARE_UNABLE_TO_WATCH_A_CHANNEL_CHECK_WHETHER_THE_CABLE_FROM_TV_BOX_IS_CONNECTED_TO_X_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_ONT": "If TV box works but you are unable to watch a channel, check whether the cable from TV box is connected to “X” port of the Optical Network Terminal (ONT)",
+    "IF_TV_BOX_WORKS_BUT_YOU_ARE_UNABLE_TO_WATCH_A_CHANNEL_CHECK_WHETHER_THE_CABLE_FROM_TV_BOX_IS_CONNECTED_TO_X_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_ONT": "If TV box works but you are unable to watch a channel, check whether the cable from TV box is connected to {{ iptvPort }} port of the Optical Network Terminal (ONT)",
     "TV_BOX_RESET_SUCCESSFULL": "TV box reset successful!",
     "YOU_SHOULD_BE_ABLE_TO_WATCH_THE_CHANNEL_NOW_PLEASE_CONFIRM_WHETHER_THE_ISSUE_HAS_BEEN_FIXED_OR_NOT": "You should be able to watch the channel now. Please confirm whether the issue has been fixed or not.",
     "UNPLANNED_INTERRUPTION": "Unplanned Interruption",
