@@ -14,6 +14,7 @@
     ion-label {
       margin-bottom: 0;
       color: $secondary-color;
+      white-space: normal;
       @media screen and (max-width: 992px) {
         font-size: 14px;
       }
@@ -105,7 +106,7 @@ ion-item::part(native) {
       justify-content: flex-start;
     }
     .instruction {
-      width: 450px;
+      width: 480px;
       margin: 0 auto;
       @media screen and (max-width: 992px) {
         width: 100%;

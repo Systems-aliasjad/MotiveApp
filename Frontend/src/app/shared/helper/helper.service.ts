@@ -583,4 +583,13 @@ export class HelperService {
       // this.router.navigate(['issues/internet/no-issue']);
     }
   }
+
+  stbImagesByID(name){
+
+    // switch(name){
+
+    //   case 
+    // }
+  }
+
 }
