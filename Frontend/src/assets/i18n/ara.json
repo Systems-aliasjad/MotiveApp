@@ -363,7 +363,7 @@
     "HERE_ARE_THE_DETAILS_OF_YOUR_REQUEST": ":فيما يلي تفاصيل طلبك",
     "HOWEVER_THIS_SERVICE_WILL_NOT_BE_AVAILABLE_IF_YOU_INSTALL_A_THIRD_PARTY_ROUTER": "لن تكون هذه الخدمة متاحة إذا تقوم بتثبيت جهاز راوتر تابع لجهة خارجية",
     "IF_ISSUE_IS_STILL_NOT_FIXED_PLEASE_RECONFIGURE_YOUR_ROUTER_WITH_THE_CORRECT_SETTINGS": "في حال لم يتم حل المشكلة، يرجى إعادة ضبط الراوتر باستخدام الإعدادات الصحيح",
-    "IF_TV_BOX_WORKS_BUT_YOU_ARE_UNABLE_TO_WATCH_A_CHANNEL_CHECK_WHETHER_THE_CABLE_FROM_TV_BOX_IS_CONNECTED_TO_X_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_ONT": "إذا كان جهاز الاستقبال التلفزيوني يعمل ولكنك غير قادر على مشاهدة قناة محددة، تحقق من توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ × بصندوق الألياف المركّب على الحائط ",
+    "IF_TV_BOX_WORKS_BUT_YOU_ARE_UNABLE_TO_WATCH_A_CHANNEL_CHECK_WHETHER_THE_CABLE_FROM_TV_BOX_IS_CONNECTED_TO_X_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_ONT": "إذا كان جهاز الاستقبال التلفزيوني يعمل ولكنك غير قادر على مشاهدة قناة محددة، تحقق من توصيل الكابل من جهاز الاستقبال التلفزيوني إلى منفذ {{ iptvPort }} بصندوق الألياف المركّب على الحائط ",
     "IF_YOU_ARE_STILL_UNABLE_TO_WATCH_TAP_RESET_TV_BOX_SO_THAT_WE_CAN_RESET_IT_REMOTELY": "إذا كنت لا تزال غير قادر على مشاهدة (اسم القناة) اضغط على إعادة ضبط جهاز الاستقبال التلفزيوني حتى نتمكن من إعادة ضبطه عن بُعد",
     "IF_YOU_ARE_UNABLE_TO_TURN_THE_TV_BOX_ON_CHECK_THE_BATTERY_OF_THE_REMOTE_CONTROL": " إذا لم تتمكن من تشغيل جهاز الاستقبال التلفزيوني، تحقق من بطارية جهاز التحكم عن بُعد",
     "IF_YOU_CHOOSE_THE_SECOND_OPTION_YOU_WILL_NEED_TO_WAIT_30_MINUTES_AND_THEN_RESET_YOUR_INTERNET_PASSWORD": "إذا اخترت الخيار الثاني ، فستحتاج للانتظار 30 دقيقة ثم إعادة تعيين كلمة مرور الإنترنت",

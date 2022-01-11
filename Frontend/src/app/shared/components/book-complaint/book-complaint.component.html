@@ -21,9 +21,9 @@
                 <ion-label position="stacked">{{ 'MESSAGES.MOBILE_NO' | translate }}</ion-label>
                 <ion-input
                   type="text"
-                  maxlength="12"
+                  maxlength="10"
                   appNumberOnly
-                  placeholder="xxxxxxxxxxxx"
+                  placeholder="05xxxxxxxx"
                   formControlName="mobileNo"
                   [ngClass]="{ 'is-invalid': f.mobileNo.errors && f.mobileNo.errors.pattern }"
                 >
