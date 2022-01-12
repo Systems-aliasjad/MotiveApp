@@ -394,7 +394,7 @@
     "LOCATION": "الموقع",
     "LOREM_IPSUM": "Lorem Ipsum",
     "MAKE_SURE_THAT_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX": " الخاص بصندوق الألياف المثبت على الحائط 'X' متصل بالمنفذ . تأكد من تشغيل جهاز الراوتر وأنه قيد التشغيل ",
-    "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "تأكد من توصيل الكابل من جهاز الهاتف بمنفذ X من صندوق الألياف",
+    "MAKE_SURE_THE_CABLE_FROM_THE_PHONE_IS_CONNECTED_TO_“X”_PORT_OF_THE_OPTICAL_NETWORK_TERMINAL_(ONT)": "تحقق من توصيل الكابل بين التليفون الارضي و الجهاز الرئيسي لخدمة اتصالات متصل بشكل سليم",
     "MAKE_SURE_TO_SELECT_YOUR_WIFI_NETWORK_NAME_USE_THE_CORRECT_WIFI_PASSWORD_WHILE_CONNECTING_TO_YOUR_WIFI_NETWORK": "تأكد من تحديد اسم شبكة Wi-Fi الخاصة بكاستخدم كلمة مرور Wi-Fi الصحيحة أثناء الاتصاللشبكة Wi-Fi الخاصة بك",
     "MAKE_SURE_YOU_RESTART_YOUR_ROUTER_AFTER_A_FEW_MINUTES_AND_THEN_TRY_USING_THE_INTERNET": ".أعِد تشغيل الراوتر بعد مرور بضع دقائق قبل استخدام الإنترنت",
     "MINIMUM_8_CHARACTERS": "8 حروف",
@@ -705,7 +705,7 @@
     "THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS": "توصيل الكابل من الراوتر إلى منفذ {{portNumber}} صندوق الألياف المركّب على الحائط "
   },
   "Errors": {
-    "MOBILE_NO_MUST_START_WITH_971": "يجب أن يتكون رقم الهاتف المحمول من 10 أرقام وأن يبدأ بـ 05",
+    "MOBILE_NO_MUST_START_WITH_971": "رقم الموبيال مكون من 10 ارقم يبدأ ب 05",
     "PASSWORD_AND_CONFIRM_PASSWORD_MUST_BE_MATCHED": "كلمة السر وتأكيدها يجب ان تتطابقا",
     "PASSWORD_MUST_MATCH_THE_CRIETARIA_AS_PER_GIVEN_BELOW": "يجب ان تتوافق كلمة السر مع قواعد كلمة السر المبينة ادناه"
   },
