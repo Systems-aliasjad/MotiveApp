@@ -57,7 +57,11 @@ export class UnableToCallCareComponent implements OnInit, OnDestroy {
     ];
     if (data?.accountDetails?.callForwarded) {
       this.careContent.header2 = 'SUBHEADER.CALL_DETAILS';
-      this.careContent.bullet2 = ['MESSAGES.CALL_FORWARDING_SUBSCRIBED_AND_ENABLED'];
+      if( data?.accountDetails?.callForwarded && data?.accountDetails?.callForwardedTo === 'NA'){
+        this.careContent.bullet2 = ['MESSAGES.SUBSCRIBED_AND_NOT_ACTIVATED'];
+      } else{
+        this.careContent.bullet2 = ['MESSAGES.SUBSCRIBED_AND_ACTIVATED'];
+      }
     }
     // this.careContent.bullet2 = ['MESSAGES.LAST_INCOMING_OUTGOING_CALLS', 'MESSAGES.CALL_FORWARDING_ENABLED_OR_DISABLED', 'MESSAGES.OPTION_TO_ENABLE_DISABLE_CALL_FORWARDING'];
   }

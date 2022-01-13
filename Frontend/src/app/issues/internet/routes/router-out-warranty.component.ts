@@ -16,6 +16,7 @@ import { SharedService } from '../../../shared/shared.service';
     [etisalatConfig]="etisalatConfig"
     [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
+    [connectedDevices]="connectedDevices"
     [messageSection]="messageSection"
     [button1]="button1"
     (button1Click)="button1Listener()"
@@ -39,7 +40,7 @@ export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
     type: 'link',
   };
   button2: IMotiveButton = {
-    title: 'BUTTONS.UPGRADE_ROUTER_AND_PACKAGE',
+    title: 'BUTTONS.UPGRADE_ROUTER',
     type: 'primary',
   };
   button3: IMotiveButton = {
