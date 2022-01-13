@@ -83,7 +83,6 @@ export class RouterUpgradeRecommendedComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-debugger
     if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
       this.messageSection = CustomerJourneyConstants.routerUpdradeRecomendedMessageSection;
       this.messageSection.header='MESSAGES.ISSUE_FIXED_SUCCESSFULLY';
