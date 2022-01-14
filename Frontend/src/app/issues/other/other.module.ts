@@ -26,6 +26,7 @@ import { RouterResetRequiredComponent } from './routes/router-reset-required.com
 import { InternetPasswordResetComponent } from './routes/internet-password-reset.component';
 import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messg
     CustomerNotSameRouterComponent,
     NoIssuesServiceDetailsComponent,
     ComplaintExistsMessageComponent,
-    FiberBoxNotReachableTryAgainComponent
+    FiberBoxNotReachableTryAgainComponent,
+    OpenServiceRequestMessageComponent
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,7 @@ import { IssueNotFixedComponent } from './routes/issue-not-fixed.component';
 import { MainComponent } from './routes/main.component';
 import { NoIssuesServiceDetailsComponent } from './routes/no-issues-service-details/no-issues-service-details.component';
 import { NoIssuesComponent } from './routes/no-issues.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
 import { OutageComponent } from './routes/outage.component';
 import { ResetPinFailedMessageComponent } from './routes/reset-pin-failed-message.component';
 import { RouterNotReachableComponent } from './routes/router-not-reachable.component';
@@ -82,7 +83,11 @@ const routes: Routes = [
   {
     path:'common/fiber-box-not-reachable-try-again',
     component: FiberBoxNotReachableTryAgainComponent,
-  }
+  },
+   {
+    path: 'open-technical-request',
+    component: OpenServiceRequestMessageComponent,
+  },
 ];
 
 @NgModule({

@@ -65,6 +65,7 @@ import { QuickTvBoxPackageTransferComponent } from './routes/quick-tv-box-packag
 import { UnableElifeTryAgainErrorComponent } from './routes/unable-elife-error-occur-try-again-later.component';
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { ResetStbStage3TransferComponent } from './routes/reset-stb-box-stage3-package-transfer.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
 
 const routes: Routes = [
   {
@@ -332,7 +333,12 @@ const routes: Routes = [
   {
     path: 'reset-stb-stage3',
     component: ResetStbStage3TransferComponent,
-  }
+  },
+
+   {
+    path: 'open-technical-request',
+    component: OpenServiceRequestMessageComponent,
+  },
 
   
 ];

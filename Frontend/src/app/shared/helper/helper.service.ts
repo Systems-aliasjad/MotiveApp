@@ -359,7 +359,15 @@ export class HelperService {
         reqType: data?.requestType,
         status: data?.status,
       });
+
+
+ if(data?.requestType==='TECHVISIT'){
+      this.router.navigate(['issues/phone/open-technical-request']);
+     }
+
+     else{
       this.router.navigate(['issues/phone/osrp/cancel-elife-connection']);
+     }
     } else if (codeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/phone/osrp/account-temporarily-disconnected']);
     } else if (codeId === flowCodes.outage) {
@@ -422,8 +430,16 @@ export class HelperService {
         dateOfVisit: data?.dateOfVisit,
         status: data?.status,
       });
+
+    if(data?.requestType==='TECHVISIT'){
+      this.router.navigate(['issues/tv/open-technical-request']);
+     }
+
+     else{
+
       //this.sharedService.setApiResponseData(data?.result?.responseData);
       this.router.navigate(['issues/tv/osrp/cancel-elife-connection']);
+     }
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/tv/osrp/account-temporarily-disconnected']);
     } else if (CodeId === flowCodes.outage) {

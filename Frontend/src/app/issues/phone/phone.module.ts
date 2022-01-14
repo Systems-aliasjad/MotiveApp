@@ -43,6 +43,7 @@ import { UnableProcessResetCcbErrorComponent } from './routes/unable-process-res
 import { RebootConfirmDialogComponent } from './routes/dialogs/reboot-confirm-dialog/reboot-confirm-dialog.component';
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { PhoneNotReachableFirstTimeComponent } from './routes/phone-not-reachable-first-time.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { PhoneNotReachableFirstTimeComponent } from './routes/phone-not-reachabl
     ResetCcbTryAgainErrorComponent,
     UnableProcessResetCcbErrorComponent,
     RebootConfirmDialogComponent,
-    ComplaintExistsMessageComponent
+    ComplaintExistsMessageComponent,
+    OpenServiceRequestMessageComponent
   ],
   imports: [
     CommonModule,

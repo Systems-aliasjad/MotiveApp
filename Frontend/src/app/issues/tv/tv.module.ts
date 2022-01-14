@@ -75,6 +75,7 @@ import { TryAgainErrorComponent } from './routes/try-again-error.component';
 import { QuickTvBoxPackageTransferComponent } from './routes/quick-tv-box-package-transfer.component';
 import { UnableElifeTryAgainErrorComponent } from './routes/unable-elife-error-occur-try-again-later.component';
 import { ResetStbStage3TransferComponent } from './routes/reset-stb-box-stage3-package-transfer.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
 
 @NgModule({
   declarations: [
@@ -145,7 +146,8 @@ import { ResetStbStage3TransferComponent } from './routes/reset-stb-box-stage3-p
     QuickTvAdminPinResetSuccessfullyMessageComponent,
     QuickTvBoxPackageTransferComponent,
     UnableElifeTryAgainErrorComponent,
-    ResetStbStage3TransferComponent
+    ResetStbStage3TransferComponent,
+    OpenServiceRequestMessageComponent
   ],
   imports: [
     CommonModule,

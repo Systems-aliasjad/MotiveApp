@@ -38,6 +38,7 @@ import { RebootConfirmDialogComponent } from './routes/dialogs/reboot-confirm-di
 import { ComplaintExistsMessageComponent } from './routes/complaint-exists-messgae.component';
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { PhoneNotReachableFirstTimeComponent } from './routes/phone-not-reachable-first-time.component';
+import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
 
 const routes: Routes = [
   {
@@ -196,7 +197,12 @@ const routes: Routes = [
   {
     path:'phone-not-reachable-first-time',
     component:PhoneNotReachableFirstTimeComponent,
-  }
+  },
+
+   {
+    path: 'open-technical-request',
+    component: OpenServiceRequestMessageComponent,
+  },
 ];
 
 @NgModule({
