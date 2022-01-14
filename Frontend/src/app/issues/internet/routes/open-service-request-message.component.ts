@@ -7,6 +7,7 @@ import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourn
 import { Subscription } from 'rxjs';
 import { SharedService } from 'src/app/shared/shared.service';
 import { BackendService } from 'src/app/services/backend.service';
+import { HelperService } from 'src/app/shared/helper/helper.service';
 
 @Component({
   selector: 'open-service-request-message',
@@ -27,18 +28,18 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
   Section2Template;
   Section2Data;
   imgSrc;
-  button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.YES_FOLLOW_UP',
-    explanatoryNote: 'MESSAGES.DO_YOU_WANT_TO_FOLLOW_UP_THE_REQUEST',
-  };
-
   button2: IMotiveButton = {
-    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
     type: 'link',
+    title: 'BUTTONS.CLOSE',
+   
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService, private backendService: BackendService) {}
+  button1: IMotiveButton = {
+    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    type: 'primary',
+  };
+
+  constructor(private helperService:HelperService, private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService, private backendService: BackendService) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -73,12 +74,16 @@ export class OpenServiceRequestMessageComponent implements OnInit, OnDestroy {
     };
   }
 
-  button1Listener() {
-    this.sharedService.CallApiTrackRecentRequest();
-    // this.router.navigate(['/track-request/request-detail']);
+  button2Listener() {
+    this.router.navigate(['/thanks']);
   }
 
-  button2Listener() {
-    this.sharedService.TicketCloseAPICallWithURL('thanks');
+  button1Listener() {
+     this.sharedService.setLoader(true);
+    this.backendService.nextSignal('Technical').subscribe((data: any) => {
+      this.sharedService.setLoader(false);
+      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
+      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    });
   }
 }

@@ -270,7 +270,17 @@ export class HelperService {
         dateOfVisit: data?.dateOfVisit,
         status: data?.status,
       });
-      this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
+
+     if(data?.requestType==='TECHVISIT'){
+      this.router.navigate(['issues/internet/open-technical-request']);
+     }
+
+     else{
+        this.router.navigate(['issues/internet/osrp/cancel-elife-connection']);
+     }
+
+
+      
     } else if (CodeId === flowCodes.accountTemporarilyDisconnected) {
       this.router.navigate(['issues/internet/osrp/account-temporarily-disconnected']);
     } else if (CodeId === flowCodes.outage) {
