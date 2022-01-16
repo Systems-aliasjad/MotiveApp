@@ -58,7 +58,9 @@ export class AppComponent implements OnInit, AfterViewInit {
       this.router.navigate(['landing']);
     }else{
       this.sharedService.setLoader(true);
-      this.backendService.getUserDetail(params?.token, lang).subscribe((data: any) => {
+      const token = decodeURIComponent(params?.token);
+      var tokenParsed = token.replace(/\s/g, '+');
+      this.backendService.getUserDetail(tokenParsed, lang).subscribe((data: any) => {
 
           this.sharedService.setLoader(false);
           if(data?.code === 200){
