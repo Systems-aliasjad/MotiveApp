@@ -355,8 +355,9 @@ export class HelperService {
       this.router.navigate(['issues/phone/osrp/move-elife-connection']);
     } else if (codeId === flowCodes.ElifeCancellationRequest) {
       this.sharedService.setApiResponseData({
-        reqNo: data?.referenceNo,
-        reqType: data?.requestType,
+        referenceNo: data?.referenceNo,
+        requestType: data?.requestType,
+        dateOfVisit: data?.dateOfVisit,
         status: data?.status,
       });
 
