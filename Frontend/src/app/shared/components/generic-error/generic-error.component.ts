@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { warningImgSrc } from '../../constants/constants';
+import { IMotiveButton } from '../../constants/types';
 import { SharedService } from '../../shared.service';
 
 @Component({
@@ -15,10 +16,10 @@ export class GenericErrorComponent implements OnInit, OnDestroy {
   subHeaderSectionTemplate;
   subHeaderSectionData;
   imgSrc;
-  // button1: IMotiveButton = {
-  //   type: 'primary',
-  //   title: 'BUTTONS.BOOK_A_COMPLAINT',
-  // };
+  button1: IMotiveButton = {
+    type: 'secondary',
+    title: 'BUTTONS.OK',
+  };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
 
@@ -44,7 +45,7 @@ export class GenericErrorComponent implements OnInit, OnDestroy {
     };
   }
 
-  // button1Listener() {
-  //   this.router.navigate(['thanks']);
-  // }
+  button1Listener() {
+    this.router.navigate(['thanks']);
+  }
 }

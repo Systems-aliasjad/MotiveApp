@@ -97,16 +97,15 @@ export class TvDetailComponent implements OnInit {
     //   },
     // ];
 
-    // debugger;
-    data?.stbList.forEach((element) => {
+    data?.stbList?.forEach((element) => {
       // this.connectedDevices[i].list.push('Non Shared Packages:');
 
       var filter = this.connectedDevices.findIndex((x) => x.stbSerialNumber === element.stbSerialNumber);
 
       if (filter !== -1) {
-        this.connectedDevices[filter].list.push('Non Shared Packages:');
-        element?.packages.forEach((data) => {
-          this.connectedDevices[filter].list.push(data.packageName);
+        this.connectedDevices[filter]?.list?.push('Non Shared Packages:');
+        element?.packages?.forEach((data) => {
+          this.connectedDevices[filter]?.list?.push(data.packageName);
         });
       }
     });
