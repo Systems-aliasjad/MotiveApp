@@ -23,23 +23,6 @@ export class TvDetailComponent implements OnInit {
   ontConfig: IOntDetail;
   networkDiagram = NetWorkDiagramIds.FiveLayer;
   connectedDevices: any = [];
-  // cardList = [
-  //   {
-  //     header: 'STB SR#039838920',
-  //     subHeader: 'MAC: ABC12345',
-  //     list: ['Package 1', 'Package 2', 'Package 3'],
-  //   },
-  //   {
-  //     header: 'STB SR#039838920',
-  //     subHeader: 'MAC: ABC12345',
-  //     list: ['Package 1', 'Package 2', 'Package 3'],
-  //   },
-  //   {
-  //     header: 'STB SR#039838920',
-  //     subHeader: 'MAC: ABC12345',
-  //     list: ['Package 1', 'Package 2', 'Package 3'],
-  //   },
-  // ];
   cardList: any = [];
   eLifeStatus;
   eLifeGameStatus;
@@ -68,6 +51,7 @@ export class TvDetailComponent implements OnInit {
       data = this.sharedService.getApiResponseData();
       data = data.result.responseData;
     }
+    
     console.log('Data from IPTV', data);
     this.eLifeStatus = data?.elifeResetPswd === "true" ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
     this.eLifeGameStatus = data?.elifeGameStatus === "true" ? 'MESSAGES.ACTIVE' : 'MESSAGES.NOT_ACTIVE';
@@ -81,25 +65,9 @@ export class TvDetailComponent implements OnInit {
       }
     }
 
-    // data.stbList = [
-    //   {
-    //     stbSerialNumber: '111130703135',
-    //     packages: [
-    //       {
-    //         packageId: '3',
-    //         packageName: 'Asiana Lite',
-    //       },
-    //       {
-    //         packageId: '602',
-    //         packageName: 'ICC Cricket World Cup 2019',
-    //       },
-    //     ],
-    //   },
-    // ];
+ 
 
     data?.stbList?.forEach((element) => {
-      // this.connectedDevices[i].list.push('Non Shared Packages:');
-
       var filter = this.connectedDevices.findIndex((x) => x.stbSerialNumber === element.stbSerialNumber);
 
       if (filter !== -1) {
@@ -110,17 +78,12 @@ export class TvDetailComponent implements OnInit {
       }
     });
 
-    // for (var index = 0; index < data.stbList.length; index++) {
-    //   var selectedStb: any = this.connectedDevices.find((x) => x['sbSerialNumber'] == data?.stbList[index]?.stbSerialNumber);
-    //   if (selectedStb != null) {
-    //     for (var i = 0; i < data?.stbList[index]?.packages?.length; i++) {
-    //       selectedStb.list.push(data?.stbList[index]?.packages[i]?.packageName);
-    //     }
-    //   }
-    // }
     if (!this.isPartialLoaded) {
       // this.sharedService.setHeaderConfig('TV details', false);
     }
+
+
+   // this.showResetWifiOption= data?.
   }
 
   headerConfig: IPageHeader = {

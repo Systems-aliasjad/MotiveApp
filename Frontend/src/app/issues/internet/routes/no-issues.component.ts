@@ -139,28 +139,6 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
   }
 
   getIssueTilesData() {
-    // const temp = this.helperService.networkDiagramStylingWrapper(
-    //   {
-    //     ontSerial: '485754431E91C19B',
-    //     ontType: 'I-240G-A',
-    //     isReachable: true,
-    //     isRebootRequired: false,
-    //     isUpgradeRequired: false,
-    //     url: '',
-    //     className: '',
-    //   },
-    //   {
-    //     routerSerial: '109461043164',
-    //     routerModel: 'DIR850',
-    //     isReachable: true,
-    //     isRebootRequired: false,
-    //     isUpgradeRequired: false,
-    //     isManaged: true,
-    //     isResetRequired: false,
-    //     url: '',
-    //     className: '',
-    //   }
-    // );
     const apiResponse = this.sharedService.getApiResponseData();
     this.connectedDevices = this.helperService.connectedDeviceModifier(apiResponse?.connectedDevices);
   }

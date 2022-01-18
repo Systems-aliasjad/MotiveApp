@@ -153,4 +153,69 @@ if(this.sharedService.GetTsOutCome()===TsOutcome.IssueFoundAndFixed){
     //  this.routerConfig = temp?.stbConfig;
     this.connectedDevices = temp?.stbConfig;
   }
+
+
+  hard2={
+	"code": 200,
+	"message": "Success",
+	"result": {
+		"screenCode": "IPTVSD1",
+		"statusMessage": "IPTV Service Display, 4G/5G flag is disabled",
+		"validSignals": [
+			"QA Package Transfer",
+			"QA eLifeOn Password Reset",
+			"QA STB Admin Pin Reset",
+			"GS Session Release",
+			"no"
+		],
+		"responseData": {
+			"agmaStatus": "",
+			"activeTVGames": "",
+			"stbStatus": "316695150791#true",
+			"packageStatus": "",
+			"elifeResetPswd": "true",
+			"stbList": null,
+			"sharedPackages": [
+				{
+					"packageId": "431",
+					"packageName": "eLife Western - 1st 3 months free",
+					"shared": null,
+					"channels": null
+				},
+				{
+					"packageId": "100",
+					"packageName": "Free TV Channels",
+					"shared": null,
+					"channels": null
+				},
+				{
+					"packageId": "430",
+					"packageName": "Unlimited Basic",
+					"shared": null,
+					"channels": null
+				},
+				{
+					"packageId": "402",
+					"packageName": "eLife TV- Video Pack",
+					"shared": null,
+					"channels": null
+				},
+				{
+					"packageId": "411",
+					"packageName": "Premium Video Packs (Standalone)",
+					"shared": null,
+					"channels": null
+				},
+				{
+					"packageId": "201",
+					"packageName": "STB-PVR",
+					"shared": null,
+					"channels": null
+				}
+			],
+			"username": null,
+			"elifeGameStatus": "false"
+		}
+	}
+}
 }

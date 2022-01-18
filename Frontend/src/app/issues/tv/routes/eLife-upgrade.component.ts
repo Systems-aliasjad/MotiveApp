@@ -63,7 +63,7 @@ export class ELifeUpgradeComponent implements OnInit, OnDestroy {
     this.formGroup = _event;
     // console.log(this.formGroup.valid);
 
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true,'MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT');
     this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/issues/tv/eLife-upgrade-success']);

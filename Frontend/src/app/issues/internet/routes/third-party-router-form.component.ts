@@ -61,7 +61,7 @@ export class ThirdPartyRouterFormComponent implements OnInit, OnDestroy {
 
   button1Listener(_event) {
     this.formGroup = _event;
-    this.sharedService.setLoader(true);
+    this.sharedService.setLoader(true,'MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT');
     this.backendService.upsellRequest({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.router.navigate(['/issues/internet/third-party-upgrade-success'], { state: { referenceNo: data?.result?.referenceNo } });

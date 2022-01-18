@@ -76,7 +76,7 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
 
   TryAgain() {
    try {
-    this.modalCtrl.dismiss();
+    this.CloseModal();
    } catch (error) {}
    this.sharedService.TicketCloseAPICallWithURL('thanks');
     // this.sharedService.setTryAgainRouterNotReachableFlag();
@@ -87,5 +87,10 @@ export class InternetIssuesDialogSecondComponent implements OnInit {
     //     this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     //   });
     // });
+  }
+
+ async CloseModal(){
+   await  this.modalCtrl.dismiss();
+   await  this.modalCtrl.dismiss();
   }
 }

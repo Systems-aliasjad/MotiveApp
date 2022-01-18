@@ -50,7 +50,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
           this.successMessages = [shouldShow.messageMain, 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES'];
         } else {
           // this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
-          this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE'];
+          this.successMessages = ['MESSAGES.THIS_WILL_TAKE_UP_TO_2_MINUTES'];
         }
         this.initialize();
       } else {
@@ -70,7 +70,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
         }
       }, 2000);
       this.messages=[];
-      this.messages.push('MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE');
+      this.messages.push('MESSAGES.THIS_WILL_TAKE_UP_TO_2_MINUTES');
       this.messages.push(this.loaderarray[this.flagInterval]?.message);
       this.flagInterval++;
       this.DynamicScripts();

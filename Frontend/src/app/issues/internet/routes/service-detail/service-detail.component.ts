@@ -29,6 +29,7 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
   routerName;
   modal: any;
   subscription: Subscription;
+  showResetWifiPin:boolean=false;
   button1: IMotiveButton = {
     type: 'primary',
     title: 'BUTTONS.ISSUE_FIXED',
@@ -92,6 +93,12 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
       this.speedTestResult = speedTest > 90 || speedTest === 90 ? 'Good' : 'Bad';
     }
     this.dataTraffic = apiResponse?.dataTraffic ?? 'Received 0.01 Mb, Sent 1.2 Mb';
+
+  var genericInternetResponse= this.sharedService.getInternetGenericResponse();
+  if(genericInternetResponse?.routerDetails?.isManaged){
+    this.showResetWifiPin=true;
+  }
+
   }
 
   button1Listener() {

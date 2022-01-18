@@ -220,7 +220,7 @@ export class HelperService {
     if (codeId === flowCodes.UPSEL3) {
       // Upselling Identified for Router Upgrade
       this.router.navigate(['issues/internet/router-upgrade-recommended']);
-    } else if (codeId === flowCodes.UPSEL4) {
+    } else if (codeId === flowCodes.UPSEL4 || codeId === flowCodes.UPSEL8) {
       // Upselling Identified for Router Upgrade / Router Out of Warranty
       this.router.navigate(['issues/internet/router-out-of-warranty']);
     } else if (codeId === flowCodes.UPSEL5 || codeId === flowCodes.UPSEL6) {
@@ -229,7 +229,7 @@ export class HelperService {
     } else if (codeId === flowCodes.UPSEL7 || codeId === flowCodes.UPSEL9) {
       // Upselling Identified for Bandwidth / Router  Out of Warranty
       this.router.navigate(['issues/internet/package-upgrade-recommended']);
-    } else if (codeId === flowCodes.UPSEL2 || codeId === flowCodes.UPSEL8) {
+    } else if (codeId === flowCodes.UPSEL2 ) {
       // Upselling Identified for New Router /Router  Out of Warranty
       this.router.navigate(['issues/internet/third-party-router']);
     }

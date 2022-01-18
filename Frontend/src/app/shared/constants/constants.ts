@@ -151,6 +151,8 @@ QASTBFR3:'QA-STBFR3',
 QASTBFR4:'QA-STBFR4',
 
 
+
+E2ECRM11:'E2ECRM11', //For Error
 };
 
 export const ETISALAT = 'Etisalat';

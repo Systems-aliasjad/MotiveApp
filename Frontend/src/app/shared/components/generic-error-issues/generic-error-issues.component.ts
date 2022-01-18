@@ -18,7 +18,7 @@ export class GenericErrorIssuesComponent implements OnInit {
   imgSrc;
   button1: IMotiveButton = {
     type: 'secondary',
-    title: 'BUTTONS.OK',
+    title: 'BUTTONS.CLOSE',
   };
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute, private sharedService: SharedService) {}
@@ -40,8 +40,8 @@ export class GenericErrorIssuesComponent implements OnInit {
   updatePageContent() {
     this.imgSrc = warningImgSrc;
     this.Section1Data = {
-      header: 'MESSAGES.WE_ARE_FACING_SOME_ISSUES',
-      paragraphs: ['MESSAGES.PLEASE_TRY_AGAIN_LATER'],
+     header: 'MESSAGES.AN_ERROR_OCCURRED',
+    paragraphs: ['MESSAGES.SORRY_THE_OPERATION_HAS_TIMEOUT_PLEASE_TRY_AGAIN_AFTER_SOME_TIME'],
     };
   }
 

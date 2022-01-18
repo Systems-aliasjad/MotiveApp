@@ -38,6 +38,9 @@ export class InternetIssuesDialog implements OnInit {
   ) {}
 
   ngOnInit() {
+
+   if(!this.portNumber) { this.portNumber='';
+  }
     this.instructionList.push('MESSAGES.THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_PORTNUMBER_PORT_OF_THE_WALL_MOUNTED_FIBRE_WORKS')
     if (this.sharedService.getTryAgainRouterNotReachableFlag() !== 0) {
       this.openSecondPopup();

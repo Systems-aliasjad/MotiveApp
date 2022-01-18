@@ -141,7 +141,7 @@
                         <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" />
                       </a> -->
                     </ion-col>
-                    <ion-col size="6" class="ion-no-padding">
+                    <ion-col size="6" class="ion-no-padding" *ngIf="showResetWifiPin">
                       <a (click)="CallQuickAction()" class="arrow-link">
                         <span>{{ 'BUTTONS.CHANGE_WIFI_PIN' | translate }}</span>
                         <img src="assets/images/action-icons/icon_arrow_right.svg" alt="View Details" /> </a

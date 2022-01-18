@@ -149,9 +149,6 @@ export class MainComponent implements OnInit {
     this.shareService.setLoader(true,scriptArray);
     this.backendService.getIssueDiagnositic('IPTV').subscribe((data) => {
       this.shareService.setLoader(false);
-
-      // console.log('Response For TV: ' + data);
-      //data = this.Ci72Case;
       this.shareService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
       this.helperService.IptvFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
     });
@@ -196,4 +193,142 @@ export class MainComponent implements OnInit {
       },
     },
   };
+
+  hard2={
+	"code": 200,
+	"message": "Success",
+	"result": {
+		"screenCode": "CI72",
+		"statusMessage": "Issue Fixed",
+		"validSignals": [
+			"next"
+		],
+		"responseData": {
+			"ontDetails": {
+				"ontSerial": "48575443E3F5269F",
+				"ontType": "HG8240H5",
+				"routerSerial": null,
+				"routerModel": null,
+				"routerManufacturer": null,
+				"stbSerialNumber": null,
+				"sbSerialNumber": null,
+				"stbModel": null,
+				"stbMac": null,
+				"stbProductClass": null,
+				"packages": null,
+				"isReachable": true,
+				"isRebootRequired": false,
+				"isUpgradeRequired": false,
+				"isManaged": null,
+				"isResetRequired": null,
+				"addressSource": null,
+				"ipAddress": null,
+				"leaseTimeRemaining": null,
+				"hostName": null,
+				"macAddress": null,
+				"interfaceType": null,
+				"isActive": null
+			},
+			"routerDetails": {
+				"ontSerial": null,
+				"ontType": null,
+				"routerSerial": "",
+				"routerModel": "",
+				"routerManufacturer": "",
+				"stbSerialNumber": null,
+				"sbSerialNumber": null,
+				"stbModel": null,
+				"stbMac": null,
+				"stbProductClass": null,
+				"packages": null,
+				"isReachable": true,
+				"isRebootRequired": false,
+				"isUpgradeRequired": false,
+				"isManaged": true,
+				"isResetRequired": false,
+				"addressSource": null,
+				"ipAddress": null,
+				"leaseTimeRemaining": null,
+				"hostName": null,
+				"macAddress": null,
+				"interfaceType": null,
+				"isActive": null
+			},
+			"phoneDetails": {
+				"ontSerial": null,
+				"ontType": null,
+				"routerSerial": null,
+				"routerModel": null,
+				"routerManufacturer": null,
+				"stbSerialNumber": null,
+				"sbSerialNumber": null,
+				"stbModel": null,
+				"stbMac": null,
+				"stbProductClass": null,
+				"packages": null,
+				"isReachable": true,
+				"isRebootRequired": null,
+				"isUpgradeRequired": null,
+				"isManaged": null,
+				"isResetRequired": null,
+				"addressSource": null,
+				"ipAddress": null,
+				"leaseTimeRemaining": null,
+				"hostName": null,
+				"macAddress": null,
+				"interfaceType": null,
+				"isActive": null
+			},
+			"stbDetails": [
+				{
+					"ontSerial": null,
+					"ontType": null,
+					"routerSerial": null,
+					"routerModel": null,
+					"routerManufacturer": null,
+					"stbSerialNumber": "316695150791",
+					"sbSerialNumber": null,
+					"stbModel": "DWI259S",
+					"stbMac": "E03717C81342",
+					"stbProductClass": null,
+					"packages": null,
+					"isReachable": true,
+					"isRebootRequired": false,
+					"isUpgradeRequired": null,
+					"isManaged": null,
+					"isResetRequired": null,
+					"addressSource": null,
+					"ipAddress": null,
+					"leaseTimeRemaining": null,
+					"hostName": null,
+					"macAddress": null,
+					"interfaceType": null,
+					"isActive": null
+				}
+			],
+			"hsiPasswordReset": false,
+			"ppoeConnected": null,
+			"wifiEnabled": null,
+			"hsiuploadDownload": null,
+			"noOfConnectedDevices": null,
+			"connectedDevices": null,
+			"upsellingOpportunity": "UPSEL1",
+			"tsOutcome": "No Issue found",
+			"routerConfigRequired": null,
+			"dualBandRouter": null,
+			"upstream": null,
+			"downstream": null,
+			"dataTraffic": null,
+			"managedWifi": null,
+			"resetInternetPassword": null,
+			"resetWifiPasswordOption": null,
+			"internetConnectionStatus": null,
+			"internetCallingPlan": null,
+			"speedTestResult": null,
+			"routerResetSuccessful": null,
+			"hsiPortNumber": "1",
+			"iptvPortNumbers": "2"
+		}
+	}
+}
 }

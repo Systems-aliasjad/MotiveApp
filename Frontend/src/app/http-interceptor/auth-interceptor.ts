@@ -6,6 +6,7 @@ import { catchError, map } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
 import { environment } from 'src/environments/environment';
 import { MessageService } from '../services/message.service';
+import { flowCodes } from '../shared/constants/constants';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
   constructor(private auth: AuthService, private router: Router, private messenger: MessageService) {}
@@ -38,6 +39,12 @@ export class AuthInterceptor implements HttpInterceptor {
         if (event instanceof HttpResponse) {
           console.log('response--->>>', event);
           this.logRequest(started, req, 'ok');
+          
+          if(event?.body?.result?.screenCode===flowCodes.E2ECRM11)
+          {
+            this.router.navigate(['/unknown-issue']);
+          }
+          
         }
         return event;
       }),
