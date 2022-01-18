@@ -203,6 +203,7 @@ const routes: Routes = [
     path: 'open-technical-request',
     component: OpenServiceRequestMessageComponent,
   },
+  
 ];
 
 @NgModule({
