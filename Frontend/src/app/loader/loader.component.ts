@@ -50,7 +50,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
           this.successMessages = [shouldShow.messageMain, 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES'];
         } else {
           // this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
-          this.successMessages = ['MESSAGES.THIS_WILL_TAKE_UP_TO_2_MINUTES'];
+          this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE'];
         }
         this.initialize();
       } else {
@@ -62,17 +62,20 @@ export class LoaderComponent implements OnInit, OnDestroy {
   initialize() {
     if (this.loaderarray) {
       this.showGreenLoader();
+
+      var scriptLength= this.loaderarray?.length;  
+      const sum = this.loaderarray.reduce((sum, current) => sum + current.time, 0);
+      const PercentageInterval = ((sum-this.loaderarray.length )/100);
       this.clearGreenPercentage = setInterval(() => {
         this.percentageLoaded++;
-
         if (this.percentageLoaded === 100) {
           this.percentageLoaded = 0;
         }
-      }, 2000);
+      }, PercentageInterval);
       this.messages=[];
-      this.messages.push('MESSAGES.THIS_WILL_TAKE_UP_TO_2_MINUTES');
+      this.messages.push('MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE');
       this.messages.push(this.loaderarray[this.flagInterval]?.message);
-      this.flagInterval++;
+   //   this.flagInterval++;
       this.DynamicScripts();
     } else {
       if (this.percentInterval === undefined || this.percentInterval === 0) {

@@ -16,14 +16,14 @@
           <h4>{{ 'HEADER.ALMOST_THERE' | translate }}</h4>
 
 
-          <div class="content_detail">
+          <!-- <div class="content_detail">
             <P>
              {{ 'MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE' | translate }}
             </P>
-          </div>
+          </div> -->
 
           <div class="content_detail" *ngFor="let message of messages; first as isFirst; last as isLast">
-            <P>
+            <P class="new-line">
               {{ message | translate }}
               <img *ngIf="!isFirst && !isLast" src="assets/images/tick.png" class="small-screen icon-back-arrow" alt="tick image" />
             </P>

@@ -827,7 +827,7 @@
         ],
         "ALL_SERVICES_E2E_TROUBLESHOOTING": [
             {
-                "message": "Account checks are getting performed",
+                "message": "This will take upto 2 minutes \n\n Account checks are getting performed",
                 "time": 15000
             },
             {
@@ -857,7 +857,7 @@
         ],
         "INTERNET_E2E_TROUBLESHOOTING": [
             {
-                "message": "Account checks are getting performed",
+                "message": "This will take upto 2 minutes \n\n Account checks are getting performed",
                 "time": 15000
             },
             {
@@ -967,7 +967,7 @@
         ],
         "TV_E2E_TROUBLESHOOTING": [
             {
-                "message": "Account checks are getting performed",
+                "message": "This will take upto 2 minutes \n\n Account checks are getting performed",
                 "time": 15000
             },
             {
@@ -997,7 +997,7 @@
         ],
         "TELEPHONE_E2E_TROUBLESHOOTING": [
             {
-                "message": "Account checks are getting performed",
+                "message": "This will take upto 2 minutes \n\n Account checks are getting performed",
                 "time": 15000
             },
             {

@@ -176,8 +176,8 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
-      "THIS_WILL_TAKE_UP_TO_2_MINUTES":"يستغرق الأمر ما يصل إلى دقيقتين",
-     "PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT":"يجرى الانتظار حتى يتم بتسجيل البلاغ",
+    "THIS_WILL_TAKE_UP_TO_2_MINUTES":"يستغرق الأمر ما يصل إلى دقيقتين",
+    "PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT":"يجرى الانتظار حتى يتم بتسجيل البلاغ",
     "IF_ISSUE_IS_STILL_NOT_FIXED_INSTALL_THE_APP_AGAIN":".قم بإعادة ثبيت البرنامج اذا لم تحل المشكلة",
     "PLEASE_DELETE_ALL_AVAILABLE_VPN":"الرجاء إيقاف او حذف كل ال VPN",
     "GO_CHAT":"Go Chat",
@@ -828,7 +828,7 @@
     ],
     "ALL_SERVICES_E2E_TROUBLESHOOTING": [
       {
-        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "message": "يستغرق الأمر ما يصل إلى دقيقتين\n\nيتم تنفيذ إجراءات التحقق من الحساب",
         "time": 15000
       },
       {
@@ -858,7 +858,7 @@
     ],
     "INTERNET_E2E_TROUBLESHOOTING": [
       {
-        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "message": "يستغرق الأمر ما يصل إلى دقيقتين\n\nيتم تنفيذ إجراءات التحقق من الحساب",
         "time": 15000
       },
       {
@@ -968,7 +968,7 @@
     ],
     "TV_E2E_TROUBLESHOOTING": [
       {
-        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "message": "يستغرق الأمر ما يصل إلى دقيقتين\n\nيتم تنفيذ إجراءات التحقق من الحساب",
         "time": 15000
       },
       {
@@ -998,7 +998,7 @@
     ],
     "TELEPHONE_E2E_TROUBLESHOOTING": [
       {
-        "message": "يتم تنفيذ إجراءات التحقق من الحساب",
+        "message": "يستغرق الأمر ما يصل إلى دقيقتين\n\nيتم تنفيذ إجراءات التحقق من الحساب",
         "time": 15000
       },
       {
