@@ -66,7 +66,15 @@ export class ELifeUpgradeComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true,'MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT');
     this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/tv/eLife-upgrade-success']);
+      this.sharedService.setApiResponseData({ ...data?.result?.responseData });
+       if(data?.result?.responseData?.referenceNo && data?.result?.responseData?.referenceNo!=="NA"){
+        this.router.navigate(['/issues/tv/eLife-upgrade-success']);
+      }
+      else{
+        this.router.navigate(['issues/internet/complaint-exists-just-message']); 
+      }
+
+     
     });
   }
 

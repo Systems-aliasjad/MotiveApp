@@ -66,7 +66,14 @@ export class BookAppointmentComponent implements OnInit, OnDestroy {
     this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData({ ...data?.result?.responseData });
-      this.router.navigate(['/issues/phone/appointment-successful']);
+
+       if(data?.result?.responseData?.referenceNo && data?.result?.responseData?.referenceNo!=="NA"){
+        this.router.navigate(['/issues/phone/appointment-successful']); 
+      }
+      else{
+        this.router.navigate(['issues/internet/complaint-exists-just-message']); 
+      }
+     
     });
   }
 

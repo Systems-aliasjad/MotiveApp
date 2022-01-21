@@ -5,6 +5,7 @@ import { ApplicableCodes, successImgSrc } from 'src/app/shared/constants/constan
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'appointment-successfully-message',
@@ -33,7 +34,7 @@ export class AppointmentSuccessfulMessageComponent implements OnInit, OnDestroy 
     type: 'secondary',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService:SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -52,11 +53,20 @@ export class AppointmentSuccessfulMessageComponent implements OnInit, OnDestroy 
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.appointmentbookssuccessfullyCase;
     this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+    
+    const temp = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      referenceNo: '436529873',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      location: 'Xxxxx xxxxx xxxx',
+      referenceNo: temp?.referenceNo ?? '-',
+      dateVisit: temp?.dateOfVisit ?? '-',
+      status: 'Open', // temp?.status ?? '-',
     };
+
+
+    // this.Section2Data = {
+    //   referenceNo: '436529873',
+    //   dateVisit: 'Jul 10 2019, 10:30 AM',
+    //   location: 'Xxxxx xxxxx xxxx',
+    // };
   }
 
   // button1Listener() {}

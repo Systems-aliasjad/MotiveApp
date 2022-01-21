@@ -67,7 +67,15 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
     this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       this.sharedService.setApiResponseData({ ...data?.result?.responseData, status: 'open' });
-      this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);
+
+      if(data?.result?.responseData?.referenceNo && data?.result?.responseData?.referenceNo!=="NA"){
+         this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);
+      }
+      else{
+        this.router.navigate(['issues/internet/complaint-exists-just-message']); 
+      }
+
+     
     });
   }
 

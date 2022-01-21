@@ -105,6 +105,7 @@ import { QuickHomeZoneResetWifiComponent } from './routes/quick-home-zone-reset-
 import { ResetWifiPasswrodScreenDialogComponent } from './routes/reset-wifi-password-screen-dialog.component';
 import { ResetWifiDialogComponent } from './dialogs/reset-wifi-dialog/reset-wifi-dialog.component';
 import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-process-messaage.component';
+import { ComplaintExistsJustMessageComponent } from './routes/complaint-exists-just-messgae.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 @NgModule({
@@ -202,7 +203,8 @@ import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-
     QuickHomeZoneResetWifiComponent,
     ResetWifiPasswrodScreenDialogComponent,
     ResetWifiDialogComponent,
-    ComplaintUnderProcessMessageComponent
+    ComplaintUnderProcessMessageComponent,
+    ComplaintExistsJustMessageComponent
   ],
   imports: [
     CommonModule,

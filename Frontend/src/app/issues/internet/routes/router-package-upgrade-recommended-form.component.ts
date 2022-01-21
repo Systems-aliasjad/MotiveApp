@@ -65,7 +65,17 @@ export class RouterPackageUpgradeRecommendedFormComponent implements OnInit, OnD
     this.sharedService.setLoader(true,'MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT');
     this.backendService.upsellRequest({ ...this.formGroup.value, ci7: true }).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/internet/router-and-package-upgrade-success'], { state: { referenceNo: data?.result?.referenceNo } });
+
+      this.sharedService.setApiResponseData({ ...data?.result?.responseData });
+      if(data?.result?.responseData?.referenceNo && data?.result?.responseData?.referenceNo!=="NA"){
+       this.router.navigate(['/issues/internet/router-and-package-upgrade-success'], { state: { referenceNo: data?.result?.referenceNo } });
+
+      }
+      else{
+        this.router.navigate(['issues/internet/complaint-exists-just-message']); 
+      }
+	  
+
     });
   }
 

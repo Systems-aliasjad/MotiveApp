@@ -121,7 +121,8 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
 
   hello() {
  
- this.sharedService.setLoader(true)
+ this.sharedService.setLoader(true,'MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT');
+ //this.sharedService.setLoader(true,'MESSAGES.gfgfdgfdg');
     //   var data = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.INTERNET_E2E_TROUBLESHOOTING);
 //    this.sharedService.setLoader(true, data);
 

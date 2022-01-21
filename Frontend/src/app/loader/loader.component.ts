@@ -40,6 +40,7 @@ export class LoaderComponent implements OnInit, OnDestroy {
   constructor(private sharedService: SharedService) {}
 
   ngOnInit(): void {
+
   
     this.sharedService.getLoader().subscribe((shouldShow: any) => {
       this.shouldShow = shouldShow.loaderState;
@@ -47,7 +48,15 @@ export class LoaderComponent implements OnInit, OnDestroy {
         if (Array.isArray(shouldShow?.messageMain)) {
           this.loaderarray = shouldShow?.messageMain;
         } else if (shouldShow.messageMain !== null) {
-          this.successMessages = [shouldShow.messageMain, 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES'];
+
+             if(shouldShow.messageMain==='MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT'){
+                this.successMessages = [shouldShow.messageMain, 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
+             }
+             else{
+                this.successMessages = [shouldShow.messageMain, 'MESSAGES.PLEASE_WAIT_FOR_A_FEW_MINUTES'];
+             }
+
+          
         } else {
           // this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE', 'MESSAGES.THIS_WILL_TAKE_UP_TO_1_MINUTE'];
           this.successMessages = ['MESSAGES.PLEASE_WAIT_WHILE_OUR_AUTOMATED_SYSTEM_IS_DIAGNOSING_THE_SERVICE'];

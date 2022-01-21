@@ -5,6 +5,7 @@ import { ApplicableCodes, successImgSrc, warningImgSrc } from 'src/app/shared/co
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 /**
  * eLife Upgrade Success
@@ -35,7 +36,7 @@ export class ELifeUpgradeSuccessComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService:SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,9 +55,17 @@ export class ELifeUpgradeSuccessComponent implements OnInit, OnDestroy {
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.eLifeUpgradeSuccess;
     this.subheaderSectionTemplate = ApplicableCodes.routerUpgradeTemplate;
+
+    
+
+    const temp = this.sharedService.getApiResponseData();
     this.subheaderSectionData = {
-      referenceNo: '436529873',
+    referenceNo: temp?.referenceNo ?? '-',
+   
     };
+    // this.subheaderSectionData = {
+    //   referenceNo: '436529873',
+    // };
   }
 
   button1Listener() {

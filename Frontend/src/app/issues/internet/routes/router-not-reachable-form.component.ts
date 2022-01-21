@@ -64,8 +64,18 @@ export class RouterNotReachableFormComponent implements OnInit, OnDestroy {
     // console.log(this.formGroup.valid);
     this.sharedService.setLoader(true,'MESSAGES.PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT');
     this.backendService.bookComplaint({ ...this.formGroup.value, issueResolved: false }).subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.router.navigate(['/issues/internet/compalint-successful']);
+    this.sharedService.setLoader(false);
+
+     this.sharedService.setApiResponseData({ ...data?.result?.responseData });
+     
+    if(data?.result?.responseData?.referenceNo && data?.result?.responseData?.referenceNo!=="NA"){
+    this.router.navigate(['/issues/internet/compalint-successful']);
+    }
+    else{
+    this.router.navigate(['issues/internet/complaint-exists-just-message']); 
+    }
+
+     
     });
   }
 

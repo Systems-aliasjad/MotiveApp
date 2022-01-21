@@ -5,6 +5,7 @@ import { ApplicableCodes, successImgSrc, warningImgSrc } from 'src/app/shared/co
 import { IMotiveButton } from 'src/app/shared/constants/types';
 import { CustomerJourneyConstants } from 'src/app/shared/constants/CustomerJourneyConstants';
 import { Subscription } from 'rxjs';
+import { SharedService } from 'src/app/shared/shared.service';
 
 /**
  * Tv Box Not Reachable Success
@@ -35,7 +36,7 @@ export class TvBoxNotReachableSuccessComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.DONE',
   };
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private sharedService:SharedService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
     this.subscription = this.activatedRoute.data.subscribe(() => {
@@ -54,11 +55,19 @@ export class TvBoxNotReachableSuccessComponent implements OnInit, OnDestroy {
     this.imgSrc = successImgSrc;
     this.Section1Data = CustomerJourneyConstants.tvBoxNotReachableFormsuccessfullyCase;
     this.Section2Template = ApplicableCodes.appointBookSuccessfullyTemplate;
+
+    const temp = this.sharedService.getApiResponseData();
     this.Section2Data = {
-      referenceNo: '436529873',
-      dateVisit: 'Jul 10 2019, 10:30 AM',
-      location: 'Xxxxx xxxxx xxxx',
+      referenceNo: temp?.referenceNo ?? '-',
+      dateVisit: temp?.dateOfVisit ?? '-',
+      status: 'Open', // temp?.status ?? '-',
     };
+
+    // this.Section2Data = {
+    //   referenceNo: '436529873',
+    //   dateVisit: 'Jul 10 2019, 10:30 AM',
+    //   location: 'Xxxxx xxxxx xxxx',
+    // };
   }
 
   // button1Listener() {}
