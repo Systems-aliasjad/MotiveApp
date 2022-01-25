@@ -47,7 +47,8 @@ export class NoHomezoneAccountMessageComponent implements OnInit, OnDestroy {
   updatePageContent() {
     this.imgSrc = warningImgSrc;
     this.Section1Data = {
-    header: 'MESSAGES.NO_HOME_ZONE_ACCOUNT',
+      header: 'MESSAGES.UNABLE_TO_PROCESS_REQUEST',
+    paragraphs: ['MESSAGES.IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE'],
    
   };
    
