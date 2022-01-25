@@ -38,10 +38,10 @@ export class QuickLinksAllComponent implements OnInit {
   initialization() {
     this.codeType = this.sharedService.getproductCodeLanding();
     this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
-    if (!this.sharedService.getHomeZoneFlag()) {
-      const links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
-      this.quickLinks = links;
-    }
+    // if (!this.sharedService.getHomeZoneFlag()) {
+    //   const links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
+    //   this.quickLinks = links;
+    // }
     if (!this.sharedService.getElifeOnFlag()) {
       var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
       this.quickLinks = links;
@@ -80,15 +80,18 @@ export class QuickLinksAllComponent implements OnInit {
         this.sharedService.setQuickLinksData(res?.result?.responseData);
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
-
           if(link?.nextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION){
-           if(!res?.result?.responseData?.managed ){
-                 this.router.navigate(['issues/password/unable-to-reset-password']);
-              }
-            }
+
+          if(!res?.result?.responseData?.homeZoneAccount){
+                this.router.navigate(['issues/internet/no-home-zone-account-found']);
+          }
+          else{
+             this.router.navigate([link?.linkTo], { state: { quickLinkNextSignal: link?.nextSignal, value: link?.value } });
+          }
+          }
 
 
-        if (link.directCall) {
+       else if (link.directCall) {
           this.callDirectCallAPIs(link);
         } else {
 

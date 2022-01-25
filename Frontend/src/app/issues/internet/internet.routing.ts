@@ -90,6 +90,7 @@ import { ResetWifiPasswrodScreenDialogComponent } from './routes/reset-wifi-pass
 import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-process-messaage.component';
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { ComplaintExistsJustMessageComponent } from './routes/complaint-exists-just-messgae.component';
+import { NoHomezoneAccountMessageComponent } from './routes/no-home-zone-account.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 const routes: Routes = [
@@ -544,6 +545,10 @@ const routes: Routes = [
   {
     path:'complaint-exists-just-message',
     component:ComplaintExistsJustMessageComponent
+  },
+  {
+    path:'no-home-zone-account-found',
+    component:NoHomezoneAccountMessageComponent
   }
 ];
 

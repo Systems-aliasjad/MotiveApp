@@ -133,6 +133,7 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
         speedTestResult: res?.result?.responseData?.speedTestResult,
         dataTraffic: res?.result?.responseData?.dataTraffic,
       });
+      this.sharedService.setHomeZoneFlag(res?.result?.responseData?.homeZoneAccount);
       this.sharedService.setLoader(false);
       this.router.navigate(['issues/internet/service-detail']);
     });

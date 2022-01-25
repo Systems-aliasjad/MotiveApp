@@ -26,6 +26,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   dualBandRequired: boolean = true;
   factoryResetBypass: boolean = false;
   fromhomeZones: string = '';
+  homeZoneFromStage2: boolean=false;
   button1: IMotiveButton = {
     type: 'terms',
     title: 'BUTTONS.TERMS',
@@ -50,6 +51,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
       const navigation = this.router.getCurrentNavigation();
       this.fromhomeZones = navigation?.extras?.state?.fromhomeZones;
       this.factoryResetBypass = navigation?.extras?.state?.factoryResetBypass;
+      this.homeZoneFromStage2=  navigation?.extras?.state?.homeZoneFromStage2;
 
       if (this.fromhomeZones) {
         this.callNextStepApi();
@@ -72,7 +74,34 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   }
 
   callNextStepApi() {
-    if (this.factoryResetBypass) {
+
+    if(this.homeZoneFromStage2){
+
+    }
+
+ else if (this?.quickLinkNextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION) {
+      this.sharedService.setLoader(true);
+        this.backendService.quickActionsNextStep(QUICK_ACTION.UPDATE_WIFI_CONFIGURATION).subscribe((data) => {
+          this.sharedService.setLoader(false);
+          if (data?.result?.screenCode === flowCodes.QAHSIWIFI2) {
+            this.sharedService.setApiResponseHomeZoneCall({ homeZoneAPs: data?.result?.responseData?.homeZoneAPs });
+            ////Home Zone Scenario
+            this.router.navigate(['/issues/internet/quick-home-zone-reset-wifi']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
+            this.router.navigate(['/issues/internet/password-update-success']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+            this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
+            this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+            this.router.navigate(['/common/router-unreachable']);
+          } else {
+            this.router.navigate(['/unknown-issue']);
+          }
+        });
+    }
+
+   else if (this.factoryResetBypass) {
     } else if (this.fromhomeZones) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsJustNextStep().subscribe((data) => {
@@ -114,7 +143,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           this.router.navigate(['/unknown-issue']);
         }
       });
-    } else if (this?.quickLinkNextSignal) {
+    }
+     else if (this?.quickLinkNextSignal) {
       this.sharedService.setLoader(true);
       this.backendService.quickActionsInitialData().subscribe((res) => {
         this.sharedService.setLoader(false);
@@ -146,7 +176,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           }
         });
       });
-    } else {
+    }
+     else {
     }
   }
 
@@ -170,7 +201,33 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
   button2Listener(_event) {
   var scriptArray = this.sharedService.GetLoaderDataByID(LoaderScriptsEnum.WIFI_PASSWORD_RESET);
 
-    if (this.factoryResetBypass) {
+   
+    if (this?.quickLinkNextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION) {
+      this.sharedService.setLoader(true, scriptArray);
+      this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
+        this.sharedService.setLoader(false);
+       if (data?.result?.screenCode === flowCodes.QAHSIWIFI2) {
+            this.sharedService.setApiResponseHomeZoneCall({ homeZoneAPs: data?.result?.responseData?.homeZoneAPs ,stage2:_event});
+            ////Home Zone Scenario
+            this.router.navigate(['/issues/internet/quick-home-zone-reset-wifi']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
+            this.router.navigate(['/issues/internet/password-update-success']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
+            this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
+            this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
+          } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
+            this.router.navigate(['/common/router-unreachable']);
+          } else {
+            this.router.navigate(['/unknown-issue']);
+          }
+        });
+        
+      
+    }
+  
+  
+ else if (this.factoryResetBypass) {
       this.sharedService.setLoader(true, scriptArray);
       this.backendService.quickActionsResetWifiPassword(_event).subscribe((data: any) => {
         this.sharedService.setLoader(false);
@@ -188,7 +245,8 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           this.router.navigate(['/error-comes']);
         }
       });
-    } else if (this.fromhomeZones) {
+    } 
+    else if (this.fromhomeZones) {
       this.sharedService.setLoader(true, scriptArray);
       var array: any = [];
       array.push(this.fromhomeZones);

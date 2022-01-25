@@ -123,6 +123,7 @@ export class HelperService {
     } else {
       stbConfig = stbConfig.map((stb) => {
         return {
+          
           ...stb,
           url: SVGs.stb.default,
           className: networkDiagramClasses.default,

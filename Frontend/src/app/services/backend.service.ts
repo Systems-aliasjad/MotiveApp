@@ -168,9 +168,10 @@ export class BackendService {
       return this.hardCoadedResponse(response);
     }
   }
-  quickActionsResetWifiPasswordHomeZone(data, value) {
+  quickActionsResetWifiPasswordHomeZone(data, selectedAPs) {
     if (environment.shouldCallAPI) {
-      return this.http.put(`motive/troubleshoot/reset-hz-ap-config`, { ...data, value });
+      return this.http.put(`motive/troubleshoot/reset-hz-ap-config`, { ...data, selectedAPs });
+      //return this.http.put(`motive/troubleshoot/gdfgdfgdfgdfgdfgdfgdfhgfhfghreset-hz-ap-config`, { ...data, selectedAPs });
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

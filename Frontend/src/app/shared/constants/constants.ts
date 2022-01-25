@@ -317,6 +317,7 @@ const CONNECT_HOME_ZONE = {
   // linkTo: 'issues/internet/unable-to-connect-to-homezone',
   linkTo: '/issues/internet/stage2/reset-wifi-password',
   nextSignal: QUICK_ACTION.UPDATE_WIFI_CONFIGURATION,
+  
 };
 const TRACK_COMPLAINT = {
   body: 'QUICK_LINKS.I_WANT_TO_TRACK_A_RECENT_COMPLAINT',
