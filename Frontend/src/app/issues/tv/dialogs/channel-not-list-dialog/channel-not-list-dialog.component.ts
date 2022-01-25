@@ -12,9 +12,9 @@ export class ChannelNotListDialogComponent implements OnInit {
 
   ngOnInit() {}
 
-  endTroubleshoot() {
-    this.modalCtrl.dismiss();
-    this.router.navigate(['/troubleshoot-complete']);
+  async endTroubleshoot() {
+   await this.modalCtrl.dismiss();
+    this.router.navigate(['/thanks']);
   }
 
   getMoreChannels() {
@@ -28,7 +28,7 @@ export class ChannelNotListDialogComponent implements OnInit {
     window.location.href = url;
   }
 
-  closePopup() {
-    this.modalCtrl.dismiss();
+ async closePopup() {
+   await this.modalCtrl.dismiss();
   }
 }

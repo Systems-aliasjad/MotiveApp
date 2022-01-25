@@ -331,6 +331,22 @@ export class BackendService {
     }
   }
 
+
+
+    specificChannelStage3(data) {
+    if (environment.shouldCallAPI) {
+      return this.http.put(`motive/troubleshoot/next-step`, {
+        data: {
+          ...data,
+        },
+        signal: 'Channel Filter',
+      });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
+
     resetSTBWithSignal(data,signal) {
     if (environment.shouldCallAPI) {
       return this.http.put(`motive/troubleshoot/next-step`, {

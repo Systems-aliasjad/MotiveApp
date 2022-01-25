@@ -66,6 +66,7 @@ import { UnableElifeTryAgainErrorComponent } from './routes/unable-elife-error-o
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { ResetStbStage3TransferComponent } from './routes/reset-stb-box-stage3-package-transfer.component';
 import { OpenServiceRequestMessageComponent } from './routes/open-service-request-message.component';
+import { SpecificChannelPackageTransferComponent } from './routes/specific-channel-package-transfer.component';
 
 const routes: Routes = [
   {
@@ -338,6 +339,10 @@ const routes: Routes = [
    {
     path: 'open-technical-request',
     component: OpenServiceRequestMessageComponent,
+  },
+   {
+    path: 'specific-channel-package-transfer',
+    component: SpecificChannelPackageTransferComponent,
   },
 
   

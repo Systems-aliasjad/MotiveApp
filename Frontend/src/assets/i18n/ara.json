@@ -176,6 +176,8 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "PLEASE_SELECT_THE_PACKAGE_YOU_ARE_FACING_ISSUE":" Please select the package you are facing issue",
+    "SELECT_PACKAGE":"Select Package",
      "NO_HOME_ZONE_ACCOUNT":"No Home Zone Account",
     "THIS_WILL_TAKE_UP_TO_2_MINUTES":"يستغرق الأمر ما يصل إلى دقيقتين",
     "PLEASE_WAIT_WHILE_WE_BOOK_THE_COMPLAINT":"يجرى الانتظار حتى يتم بتسجيل البلاغ",

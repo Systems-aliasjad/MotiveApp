@@ -75,10 +75,10 @@ export class IssueListDialog implements OnInit {
       issue: 'MESSAGES.TRANSFER_CHANNEL_TO_ANOTHER_TV_BOX',
       route: 'issues/tv/transfer-channel-to-another-tvBox',
     },
-    // {
-    //   issue: 'MESSAGES.UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL',
-    //   route: 'issues/tv/unable-to-watch-specific-channel',
-    // },
+    {
+      issue: 'MESSAGES.UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL',
+      route: 'issues/tv/specific-channel-package-transfer',
+    },
     {
       issue: 'MESSAGES.UNABLE_TO_WATCH_ANY_CHANNEL',
       route: 'issues/tv/unable-watch-channel',
@@ -94,10 +94,10 @@ export class IssueListDialog implements OnInit {
       issue: 'MESSAGES.TRANSFER_CHANNEL_TO_ANOTHER_TV_BOX',
       route: 'issues/tv/transfer-channel-to-another-tvBox',
     },
-    // {
-    //   issue: 'MESSAGES.UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL',
-    //   route: 'issues/tv/unable-to-watch-specific-channel',
-    // },
+    {
+      issue: 'MESSAGES.UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL',
+      route: 'issues/tv/specific-channel-package-transfer',
+    },
     {
       issue: 'MESSAGES.UNABLE_TO_WATCH_ANY_CHANNEL',
       route: 'issues/tv/unable-watch-channel',
