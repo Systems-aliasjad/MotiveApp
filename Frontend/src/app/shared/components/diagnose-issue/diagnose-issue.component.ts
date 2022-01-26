@@ -57,6 +57,17 @@ export class DiagnoseIssueComponent implements OnInit {
 
   @Input()
   headerConfig: IPageHeader;
+
+
+  @Input()
+
+  button5: IMotiveButton;
+
+  @Output()
+
+  button5Click = new EventEmitter();
+
+
   constructor() {}
 
   ngOnInit() {
@@ -77,5 +88,11 @@ export class DiagnoseIssueComponent implements OnInit {
 
   button4Listener() {
     this.button4Click.emit();
+  }
+
+   button5Listener() {
+
+    this.button5Click.emit();
+
   }
 }

@@ -24,8 +24,14 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
+
+     [button5]="button5"
+    (button5Click)="button5Listener()"
   >
   </app-diagnose-issue>`,
+  styles: [
+    `:host::ng-deep .yes-i-am-left ion-button.primary-btn { display: none; } @media screen and (max-width: 991px){:host::ng-deep .yes-i-am-left ion-button.primary-btn{display:block;}} @media screen and (min-width: 992px) and (max-width: 1024px){ :host::ng-deep .yes-i-am-left div {display: -webkit-box;display: -ms-flexbox;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center;align-items: center;height:100%;}`
+  ]
 })
 export class RouterNotReachableComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
@@ -47,6 +53,14 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
     title: 'BUTTONS.NO_I_M_USING_MY_OWN_ROUTER',
     type: 'link',
   };
+
+
+ button5: IMotiveButton = {
+  title: 'BUTTONS.YES_I_AM',
+  type: 'primary',
+   };
+
+
 
   constructor(
     private helperService: HelperService,
@@ -108,5 +122,27 @@ export class RouterNotReachableComponent implements OnInit, OnDestroy {
       routerName: temp?.routerConfig?.routerManufacturer,
       routerModel: temp?.routerConfig?.routerModel,
     };
+  }
+
+    async button5Listener() {
+
+    const modal = await this.modalCtrl.create({
+
+      component: InternetIssuesDialog,
+
+      componentProps: {
+
+        id: ERoutingIds.routerNotReachable,
+
+        portNumber: this.apiResponse?.hsiPortNumber,
+
+        Ci9Flag: this.Ci9Flag,
+
+      },
+
+    });
+
+    return await modal.present();
+
   }
 }

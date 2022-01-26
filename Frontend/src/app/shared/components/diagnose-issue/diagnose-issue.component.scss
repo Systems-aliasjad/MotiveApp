@@ -55,3 +55,46 @@ ion-grid {
     }
   } 
 } 
+
+
+.yes-i-am-btn {
+
+  min-width: 250px;
+
+  width: auto;
+
+  margin-right: 0.8rem;
+
+  margin-left: 0.8rem;
+
+  @media screen and (min-width: 992px) and (max-width: 1024px) {
+
+
+
+  }
+
+  @media screen and (max-width: 992px) {
+
+    display: none;
+
+   
+
+  }
+
+}
+
+.yes-btn-container{
+
+  motive-button{
+
+    @media screen and (min-width: 992px) and (max-width: 1168px) {
+
+      height: auto;
+
+    }
+
+  }
+
+ 
+
+}
