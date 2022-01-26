@@ -16,12 +16,14 @@ import { HelperService } from 'src/app/shared/helper/helper.service';
     [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
+   
     [button2]="button2"
     (button2Click)="button2Listener()"
   >
   </app-diagnose-issue>`,
+
+  //  [button1]="button1"
+  //   (button1Click)="button1Listener()"
 })
 export class IssueNotFixedComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -63,7 +65,12 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   };
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.issueNotFixedAllServicesSection;
+    this.messageSection = {
+    header: 'MESSAGES.NO_SERVICE',
+    body: [
+      { title: 'MESSAGES.THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT' },
+    ],
+  };
   }
 
   button1Listener() {

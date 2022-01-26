@@ -176,6 +176,10 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The eLife service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
+    "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "Sorry, the service is not working properly. Please proceed to book complaint.",
+    "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The internet service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
+    "PLEASE_PROCEED_TO_BOOK_COMPLAINT":"Please proceed to book complaint.",
     "PLEASE_SELECT_THE_PACKAGE_YOU_ARE_FACING_ISSUE":" Please select the package you are facing issue",
     "SELECT_PACKAGE":"Select Package",
      "NO_HOME_ZONE_ACCOUNT":"No Home Zone Account",

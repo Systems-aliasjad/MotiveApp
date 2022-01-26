@@ -17,12 +17,14 @@ import { SharedService } from '../../../shared/shared.service';
     [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
+  
     [button2]="button2"
     (button2Click)="button2Listener()"
   >
   </app-diagnose-issue>`,
+
+    // [button1]="button1"
+    // (button1Click)="button1Listener()"
 })
 export class IssueNotFixedComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -66,7 +68,10 @@ export class IssueNotFixedComponent implements OnInit, OnDestroy {
   }
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.issueNotFixedPhoneMessageSection;
+    this.messageSection = {
+    header: 'MESSAGES.PHONE_SERVICE_IS_DOWN',
+    body: [{ title: 'MESSAGES.SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT' }],
+  };
   }
 
   headerConfig: IPageHeader = {
