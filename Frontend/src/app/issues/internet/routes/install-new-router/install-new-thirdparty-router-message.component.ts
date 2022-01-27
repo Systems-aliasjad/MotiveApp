@@ -8,7 +8,7 @@ import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-install-new-thirdparty-router-message',
-  template: `<app-motive-message-bullet
+  template: `<motive-message
     [imgSrc]="imgSrc"
     [Section1Data]="Section1Data"
     [Section2Data]="Section2Data"
@@ -17,9 +17,11 @@ import { Subscription } from 'rxjs';
     (button1Click)="button1Listener()"
     [button2]="button2"
     (button2Click)="button2Listener()"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
-  ></app-motive-message-bullet>`,
+   
+  ></motive-message>`,
+
+  //  [button3]="button3"
+  //   (button3Click)="button3Listener()"
 })
 export class InstallNewThirdPartyRouterMessageComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -60,7 +62,14 @@ export class InstallNewThirdPartyRouterMessageComponent implements OnInit, OnDes
 
   updatePageContent() {
     this.imgSrc = infoImgSrc;
-    this.Section1Data = CustomerJourneyConstants.installNewRouterFlow7MessageCase;
+    // this.Section1Data = CustomerJourneyConstants.installNewRouterFlow7MessageCase;
+    this.Section1Data =  {
+    header: 'MESSAGES.INSTALL_NEW_THIRD_PARTY_ROUTER',
+    paragraphs: [
+         'MESSAGES.FOLLOW_THESE_STEPS_TO_COMPLETE_THE_INSTALLATION',
+        'MESSAGES.CONNECT_THE_NEW_ROUTER_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBER_BOX', 'MESSAGES.SET_THE_ROUTER_WITH_A_NEW_PASSWORD'
+    ],
+  }
   }
 
   button1Listener() {
@@ -68,7 +77,7 @@ export class InstallNewThirdPartyRouterMessageComponent implements OnInit, OnDes
   }
 
   button2Listener() {
-    this.router.navigate(['/issues/internet/reset-internet-password']);
+    this.router.navigate(['/thanks']);
   }
 
   button3Listener() {}

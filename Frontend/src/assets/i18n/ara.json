@@ -89,6 +89,8 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "أريد إعادة ضبط رمز التعريف الشخصي  "
   },
   "BUTTONS": {
+    "INSTALL_NEW_ETISALAT_ROUTER":"قم بتثبيت جهاز راوتر جديد من اتصالات",
+
     "ETISALAT_ROUTER":"راوتر اتصالات",
     "THIRD_PARTY_ROUTER": "راوتر ليس من اتصالات",
     "NO_EXIT_TROUBLESHOOTING": "الخروج من صفحة إصلاح الأخطاء",
@@ -176,9 +178,11 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
-    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The eLife service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
-    "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "Sorry, the service is not working properly. Please proceed to book complaint.",
-    "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The internet service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
+    "PLEASE_SELECT_THE_DEVICE_MAKE__MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER":"يرجى تحديد طراز الجهاز واتباع التعليمات لتهيئة جهاز الراوتر الخاص بك. تأكد من معرف اسم المستخدم وكلمة المرور الصحيحين أثناء تهيئة جهاز الراوتر",
+
+    "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "خدمة eLife معطلة. نحن آسفون لذلك. . الرجاء المتابعة لتسجيل الشكوى",
+    "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "عذرا ، خدمة الهاتف لا تعمل بشكل صحيح. الرجاء المتابعة لتسجيل الشكوى",
+    "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "عذرًا، لا يوجد اتصال بشبكة الإنترنت. الرجاء المتابعة لتسجيل الشكوى",
     "PLEASE_PROCEED_TO_BOOK_COMPLAINT":"Please proceed to book complaint.",
     "PLEASE_SELECT_THE_PACKAGE_YOU_ARE_FACING_ISSUE":" Please select the package you are facing issue",
     "SELECT_PACKAGE":"Select Package",
@@ -638,7 +642,7 @@
     "YOUR_PIN_HAS_BEEN_SUCCESSFULLY_RESET_TO_THE_DEFAULT_PIN_1111": "!تمت إعادة تعيين رقم التعريف الشخصي إلى 1111 بنجاح",
     "YOUR_PIN_WILL_BE_RESET_TO_THE_DEFAULT_PIN": " 1111 سيتم إعادة تعيين رقم التعريف الشخصي  إلى",
     "YOUR_ROUTER_DIDNT_RESTART": "إعادة تشغيل الراوتر",
-    "YOUR_ROUTER_SHOULD_NOW_WORK_TAP_CONFIGURE_ROUTER_OR_CONTINUE_TO_TROUBLESHOOTING_IF_YOU_ARE_STILL_FACING_AN_ISSUE": "  يجب أن يعمل جهاز الراوتر الآن. انقر على ضبط الراوتر أو متابعة الدعم الفني. لا تزال تواجه مشكلة",
+    "YOUR_ROUTER_SHOULD_NOW_WORK_TAP_CONFIGURE_ROUTER_OR_CONTINUE_TO_TROUBLESHOOTING_IF_YOU_ARE_STILL_FACING_AN_ISSUE": "يجب أن يعمل جهاز الراوتر الآن",
     "YOUR_TV_BOX_DIDNT_RESTART": "لم تتم إعادة تشغيل جهاز الاستقبال التلفزيوني",
     "YOU_ARE_CURRENTLY_USING_AN_ETISALAT_ROUTER_WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_CONTINUE_USING_THIS_ROUTER": "يمكننا تقديم الدعم عن بعد إذا واصلت استخدام هذا الجهاز.أنت تستخدم حاليًا جهاز راوتر من اتصالات",
     "YOU_ARE_CURRENTLY_USING_A_THIRD_PARTY_ROUTER": ".أنت تستخدم حاليًا جهاز راوتر تابعًا لجهة خارجية",
@@ -684,7 +688,7 @@
     "PROBLEM_WITH_VALUE_ADDED_SERVICE": "مشكلة مع خدمة القيمة المضافة",
     "CHANGE_CALL_FORWARDING_NUMBER": "تغيير رقم الهاتف لخاصية إعادة توجيه المكالمات",
     "UNABLE_TO_WATCH_A_SPECIFIC_CHANNEL": "تعذر مشاهدة قناة محددة",
-    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to Home Zone / Full Home Wi-Fi.",
     "SINGLE_STB_FOUND": "Single STB found",
     "WE_COULDNT_FIND_ANY_TECHNICAL_PROBLEM_YOUR_PHONE_SHOULD_BE_WORKING_NORMALLY": "لم يتم تحديد أي مشكلة تقنية. خدمة الهاتف تعمل لديك بشكل طبيعي.",
     "PASSWORD_STRENGTH": "قوة كلمة المرور:",

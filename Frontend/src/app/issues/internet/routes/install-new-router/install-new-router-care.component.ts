@@ -7,7 +7,7 @@ import { SharedService } from 'src/app/shared/shared.service';
 @Component({
   selector: 'app-install-new-router-care',
   template:
-    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" (button1Click)="button1Listener()"></app-device-care>',
 })
 export class InstallNewRouterCareComponent implements OnInit, OnDestroy {
   subscription: Subscription;
@@ -51,8 +51,8 @@ export class InstallNewRouterCareComponent implements OnInit, OnDestroy {
   updatePageContent() {
     this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
     this.careContent.header1 = 'SUBHEADER.HOW_TO_RECONFIGURE_YOUR_ROUTER';
-    this.careContent.body1 = 'MESSAGES.Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
-    this.careContent.body2 = 'MESSAGES.Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+    this.careContent.body1 = 'MESSAGES.PLEASE_SELECT_THE_DEVICE_MAKE__MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER';
+   // this.careContent.body2 = 'MESSAGES.Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
   }
 
   button1Listener() {

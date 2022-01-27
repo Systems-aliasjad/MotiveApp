@@ -89,6 +89,7 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "I want to reset ELife on pin"
   },
   "BUTTONS": {
+    "INSTALL_NEW_ETISALAT_ROUTER":"Install new Etisalat router",
     "REBOOT_FIBER_BOX": "REBOOT FIBER BOX",
     "REBOOT_ROUTER": "REBOOT ROUTER",
     "CHANGE_WIFI_PIN": "CHANGE Wi-Fi PIN",
@@ -174,6 +175,7 @@
   },
 
   "MESSAGES": {
+    "PLEASE_SELECT_THE_DEVICE_MAKE__MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER":"Please select the device make & model and follow the instructions to configure your router. Make sure to use the correct User Id and Password while configuring the router",
     "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The eLife service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
 
     "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "Sorry, the service is not working properly. Please proceed to book complaint.",
@@ -204,7 +206,7 @@
     "RESTART_YOUR_FIBER_BOX": "Restart your fiber box",
     "RESET_YOUR_ROUTER": "Reset your router",
     "RESTART_YOUR_ROUTER": "Restart your router",
-    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to home zone.",  
+    "IT_LOOKS_LIKE_YOU_ARE_NOT_SUBSCRIBED_TO_HOMEZONE": "It looks like you are not subscribed to Home Zone / Full Home Wi-Fi.",  
     "WE_CANNOT_REACH_YOUR_ROUTER":"We can’t reach your router",
     "MAKE_SURE_THAT_THE_ROUTER_IS_TURNED_ON_AND_IS_CONNECTED_TO_WALL_MOUNTED_FIBER_BOX":"Make sure that the router is turned on and is connected to wall-mounted fiber box.",
     "REQUEST_NOT_FOUND":"Request not found",
@@ -619,7 +621,7 @@
     "PLEASE_WAIT_THIS_MIGHT_TAKE_UP_TO_30_MINUTES": "Please wait… this might take up to 30 minutes.",
     "YOU_CAN_CONTACT_US_IF_THE_ROUTER_DOES_NOT_START_WORKING_AFTER_DATE_TIME": "You can contact us if the router does not start working after date/time.",
     "ROUTER_INSTALLED_SUCCESSFULLY": "Router installed successfully!",
-    "YOUR_ROUTER_SHOULD_NOW_WORK_TAP_CONFIGURE_ROUTER_OR_CONTINUE_TO_TROUBLESHOOTING_IF_YOU_ARE_STILL_FACING_AN_ISSUE": "Your router should now work. Tap ‘Configure router’ or 'Continue to troubleshooting' if you are still facing an issue.",
+    "YOUR_ROUTER_SHOULD_NOW_WORK_TAP_CONFIGURE_ROUTER_OR_CONTINUE_TO_TROUBLESHOOTING_IF_YOU_ARE_STILL_FACING_AN_ISSUE": "Your router should now work.",
     "ROUTER_INSTALLATION_FAILED": "Router Installation Failed",
     "ROUTER_INSTALLATION_FAILED_TAP_BOOK_COMPLAINT_IF_YOU_WISH_TO_BOOK_A_COMPLAINT_OR_PLEASE_TRY_AGAIN_LATER": "Router installation failed. Tap 'Book Complaint' if you wish to book a complaint or please try again later",
     "ELIFE_PACKAGE_UPGRADE_REQUEST_WAS_RAISED_SUCCESSFULLY": "eLife package upgrade request was raised successfully",

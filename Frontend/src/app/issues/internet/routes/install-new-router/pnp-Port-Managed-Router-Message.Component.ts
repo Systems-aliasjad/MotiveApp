@@ -67,7 +67,7 @@ export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
   }
 
   button1Listener() {
-    this.sharedService.TicketCloseAPICallWithURL('thanks');
+    this.router.navigate(['thanks']);
   }
   button2Listener() {
     //this.router.navigate(['/issues/internet/install-new-router/install-new-thirdparty-router']);
@@ -75,16 +75,33 @@ export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
     this.sharedService.setLoader(true);
     this.backendService.installNewRouterRequest(THIRD_PARTY_ROUTER).subscribe((data: any) => {
       this.sharedService.setLoader(false);
-
       var screenCode = data?.result?.screenCode;
 
-      if (screenCode === flowCodes.QANRINST) {
-        this.router.navigate(['issues/internet/router-install-successfully']);
-      } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2 || screenCode === flowCodes.QANRINST12) {
-        this.router.navigate(['issues/internet/install-new-router-care']);
-      } else {
-        this.router.navigate(['issues/internet/router-installation-failed']);
-      }
+        if(screenCode === flowCodes.QANRINST17){
+           this.router.navigate(['issues/internet/install-new-router/continue-installing-thirdparty-router']);
+         
+        }else if (screenCode === flowCodes.QANRINST || screenCode === flowCodes.QANRINST9) {
+          this.router.navigate(['issues/internet/router-install-successfully'], { state: { component: 'quickLinks'}});
+        } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2) {
+
+          this.router.navigate(['issues/internet/install-new-router/install-new-thirdparty-router']);
+       
+        } else if (screenCode === flowCodes.QANRINST10){
+          this.router.navigate(['issues/internet/install-new-router'])
+        } else if(screenCode === flowCodes.QANRINST11 || screenCode === flowCodes.QANRINST16 || screenCode === flowCodes.QANRINST8){
+          this.router.navigate(['issues/internet/router-installation-failed']);
+        } else {
+          this.router.navigate(['unknown-issue']);
+        }
+
+
+
+
+
+
+
+
+
     });
   }
 }

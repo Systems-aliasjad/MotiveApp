@@ -116,7 +116,17 @@ export class QuickLinksComponent implements OnInit, OnChanges {
         this.sharedService.setApiResponseData(res?.result?.responseData);
 
 
-         if(link?.nextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION){
+          if(link?.nextSignal===QUICK_ACTION.PORT_MIGRATION_AND_NEW_ROUTER_INSTALLATION){
+
+                if(res?.result?.responseData?.pnpRouter){
+                   this.router.navigate(['issues/internet/install-new-route/pnp-port-managed-router']);
+                }
+                else{
+                   this.router.navigate(['issues/internet/install-new-router/access-port-thirdparty-router']);
+                }
+          }
+
+        else if(link?.nextSignal===QUICK_ACTION.UPDATE_WIFI_CONFIGURATION){
 
           if(!res?.result?.responseData?.homeZoneAccount){
                 this.router.navigate(['issues/internet/no-home-zone-account-found']);

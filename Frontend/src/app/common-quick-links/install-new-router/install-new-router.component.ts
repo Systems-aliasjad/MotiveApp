@@ -45,7 +45,7 @@ export class InstallNewRouterComponent implements OnInit {
         if (screenCode === flowCodes.QANRINST || screenCode === flowCodes.QANRINST9 || screenCode === flowCodes.QANRINST17) {
           this.router.navigate(['issues/internet/router-install-successfully'], { state: { component: 'quickLinks'}});
         } else if (screenCode === flowCodes.DCSS1 || screenCode === flowCodes.DCSS2) {
-          this.router.navigate(['issues/internet/install-new-router-care']);
+        this.router.navigate(['issues/internet/install-new-router-care']);
         } else if (screenCode === flowCodes.QANRINST10){
           this.router.navigate(['issues/internet/install-new-router'])
         } else if(screenCode === flowCodes.QANRINST11 || screenCode === flowCodes.QANRINST16 || screenCode === flowCodes.QANRINST8){

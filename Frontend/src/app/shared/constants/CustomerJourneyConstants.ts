@@ -799,7 +799,8 @@ export class CustomerJourneyConstants {
   //#region  Quick Links
   public static installNewRouterMessageCase = {
     header: 'MESSAGES.INSTALL_NEW_ROUTER',
-    paragraphs: ['MESSAGES.PLEASE_WAIT_THIS_MIGHT_TAKE_UP_TO_30_MINUTES', 'MESSAGES.YOU_CAN_CONTACT_US_IF_THE_ROUTER_DOES_NOT_START_WORKING_AFTER_DATE_TIME'],
+   // paragraphs: ['MESSAGES.PLEASE_WAIT_THIS_MIGHT_TAKE_UP_TO_30_MINUTES', 'MESSAGES.YOU_CAN_CONTACT_US_IF_THE_ROUTER_DOES_NOT_START_WORKING_AFTER_DATE_TIME'],
+    paragraphs: ['MESSAGES.PLEASE_WAIT_THIS_MIGHT_TAKE_UP_TO_30_MINUTES'],
   };
 
   public static installNewRouterFlow2MessageCase = {
