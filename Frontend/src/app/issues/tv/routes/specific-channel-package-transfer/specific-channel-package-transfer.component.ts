@@ -98,7 +98,7 @@ export class SpecificChannelPackageTransferComponent implements OnInit {
     var trimValue=this.selectedRadioItem.split('#%^&_');
 
     var data = {
-      packageId: trimValue[0]??'', ////Soure Sellected Package
+      packageID: trimValue[0]??'', ////Soure Sellected Package
     };
 
   this.sharedService.setLoader(true);
