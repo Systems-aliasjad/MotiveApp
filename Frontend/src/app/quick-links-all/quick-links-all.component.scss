@@ -218,3 +218,8 @@ ion-toolbar {
     }
   }
 }
+.quick-links_card{
+  @media screen and (max-width: 430px){ 
+    margin-bottom: 2rem;
+  }
+}
