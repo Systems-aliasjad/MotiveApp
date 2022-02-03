@@ -53,13 +53,13 @@ export class QuickLinksComponent implements OnInit, OnChanges {
   }
 
   initialization() {
-    this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
+    this.quickLinks = motiveSubscriptions[this.codeType]?.quickLinkCard;
     // if (!this.sharedService.getHomeZoneFlag()) {
     //   var links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
     //   this.quickLinks = links;
     // }
     if (!this.sharedService.getElifeOnFlag()) {
-      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
+      var links = this.quickLinks?.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
       this.quickLinks = links;
     }
     this.setSlideOpts();

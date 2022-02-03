@@ -38,7 +38,11 @@
     <script>
       window.addEventListener('load', function () {
         var act = document.getElementById('In_Direction').value;
-        document.getElementsByTagName('html')[0].setAttribute('dir', act);
+        if(act)
+        {
+          document.getElementsByTagName('html')[0].setAttribute('dir', act);
+        }
+       
       });
 
       // self executing function here

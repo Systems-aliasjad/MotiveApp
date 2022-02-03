@@ -49,7 +49,6 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   getProductCode() {
-    console.log('params 3 in landing screen');
     this.sharedService.setLoader(true);
     this.backendService.getLandingPageData().subscribe((data: any) => {
       this.sharedService.setLoader(false);
@@ -76,7 +75,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       // this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true);
       // this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true);
       this.sharedService.setProductCodeLanding(this.codeType ?? '');
-      this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+      this.landingPageCards = motiveSubscriptions[this.codeType]?.landingPageCards;
     });
 
   }
