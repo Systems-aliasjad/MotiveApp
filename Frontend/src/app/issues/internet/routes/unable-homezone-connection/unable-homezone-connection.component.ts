@@ -79,7 +79,8 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI || data?.result?.screenCode === flowCodes.CI11) {
             this.router.navigate(['/issues/internet/password-update-success']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
-            this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+           // this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+           this.router.navigate(['/issues/internet/proceed-book-complaint']);
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI8) {
             // this.dualBandRequired = data?.result?.responseData?.dualBandRouter;
             this.router.navigate(['/issues/internet/stage2/reset-wifi-password'],  { state: { quickLinkNextSignal:QUICK_ACTION.UPDATE_WIFI_CONFIGURATION ,homeZoneFromStage2:true} } );

@@ -91,6 +91,7 @@ import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { ComplaintExistsJustMessageComponent } from './routes/complaint-exists-just-messgae.component';
 import { NoHomezoneAccountMessageComponent } from './routes/no-home-zone-account.component';
+import { ProceedToBookComplaintComponent } from './routes/proceed-book-complaint.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 const routes: Routes = [
@@ -549,6 +550,10 @@ const routes: Routes = [
   {
     path:'no-home-zone-account-found',
     component:NoHomezoneAccountMessageComponent
+  },
+  {
+    path:'proceed-book-complaint',
+    component:ProceedToBookComplaintComponent
   }
 ];
 

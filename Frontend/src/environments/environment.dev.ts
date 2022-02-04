@@ -6,7 +6,8 @@
 export const environment = {
   production: false,
   // API_BASE_URL: 'https://10.237.27.145/MOTIVE_SELFCARE_APP/',
-  API_BASE_URL: 'https://10.237.27.145/MOTIVE_SELFCARE_APP/api/',
+  // API_BASE_URL: 'https://10.237.27.145/MOTIVE_SELFCARE_APP/api/',
+  API_BASE_URL: 'https://reporting-motive.etisalat.ae/MOTIVE_SELFCARE_APP/api/',
   // API_BASE_URL: 'https://localhost:82/MOTIVE_SELFCARE_APP/',
   appRoot: '',
   enableLog: true,

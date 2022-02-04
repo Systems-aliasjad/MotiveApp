@@ -77,7 +77,9 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
             this.router.navigate(['issues/password/unable-to-process-request']);
           } else {
             //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-            this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+          
+            // this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+          this.router.navigate(['/issues/internet/proceed-book-complaint']);
           }
         });
       });
@@ -90,7 +92,9 @@ export class UnableElifeLoginMessageComponent implements OnInit, OnDestroy {
         } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
           this.router.navigate(['issues/password/unable-to-process-request']);
         } else {
-          this.sharedService.TicketCloseAPICallWithURL('issues/tv/unable-elife-error-occur-try-again-later');
+
+          //this.sharedService.TicketCloseAPICallWithURL('issues/tv/unable-elife-error-occur-try-again-later');
+          this.router.navigate(['/issues/internet/proceed-book-complaint']);
           // this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
         }
       });

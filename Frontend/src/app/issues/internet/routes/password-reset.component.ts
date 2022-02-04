@@ -102,7 +102,8 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
     } else if (res?.result?.screenCode === flowCodes.QAHSIPR1) {
       this.router.navigate(['/issues/internet/password-reset-faliure']);
     } else {
-      this.router.navigate(['/unknown-issue']);
+      // this.router.navigate(['/unknown-issue']);
+      this.router.navigate(['/issues/internet/proceed-book-complaint']);
     }
   }
 
