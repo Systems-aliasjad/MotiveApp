@@ -501,4 +501,15 @@ export class SharedService {
   getIptvPortNumber(){
     return this.iptvPortNumber;
   }
+
+  LogDataResponse(data){
+
+    var newData={
+      httpStatusCode:500,
+      responseJson:data
+    }
+
+    this.backendService.LogDataResponse(newData).subscribe(() => {});
+
+  }
 }

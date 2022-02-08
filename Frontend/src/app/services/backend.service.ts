@@ -440,4 +440,14 @@ export class BackendService {
   hardCoadedResponse(response) {
     return new Observable<object>((subscriber: Subscriber<object>) => subscriber.next(new Object())).pipe(map((o) => response));
   }
+
+
+    LogDataResponse(data) {
+      if (environment.shouldCallAPI) {
+        return this.http.put(`motive/troubleshoot/reset-wifi-passworddadasdadasds`, { ...data });
+    } else {
+      const response = { result: this.hardData };
+      return this.hardCoadedResponse(response);
+    }
+  }
 }

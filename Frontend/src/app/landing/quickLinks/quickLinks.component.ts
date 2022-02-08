@@ -90,7 +90,7 @@ export class QuickLinksComponent implements OnInit, OnChanges {
 
   onCardClick(link) {
     if (link?.isDeepLink) {
-      if (link.body === 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE') {
+      if (link?.body === 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE') {
         if (this.sharedService.checkIfMobileDevice()) {
           window.location.href = 'https://etisalatmobileapp.page.link/elife';
         } else {

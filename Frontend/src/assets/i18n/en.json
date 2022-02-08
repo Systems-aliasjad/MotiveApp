@@ -753,7 +753,7 @@
         ],
         "I_WANT_TO_FACTORY_RESET_MY_TV_BOX": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 2 minutes\n\nDevice backend configuration checks are getting performed",
                 "time": 20000
             },
             {
@@ -771,7 +771,7 @@
         ],
         "I_WANTO_TO_FACTORY_RESET_MY_ROUTER": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 4 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -797,7 +797,7 @@
         ],
         "ONT_REBOOT_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 2 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -819,7 +819,7 @@
         ],
         "TV_SET_TOP_BOX_RESTART_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 2 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -897,7 +897,7 @@
         ],
         "ROUTER_REBOOT_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 2 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -919,7 +919,7 @@
         ],
         "ROUTER_RESET_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 4 minute\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -945,7 +945,7 @@
         ],
         "INTERNET_PASSWORD_RESET_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 4 minutes\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -967,7 +967,7 @@
         ],
         "WIFI_PASSWORD_RESET": [
             {
-                "message": "Pushing new Wi-Fi settings",
+                "message": "This will take up to 1 minute\n\nPushing new Wi-Fi settings",
                 "time": 20000
             },
             {
@@ -1037,7 +1037,7 @@
         ],
         "ROUTER_MANAGED_BUT_NOT_REACHABLE": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 1 minute.\n\nDevice backend configuration checks are getting performed",
                 "time": 20000
             },
             {
@@ -1057,7 +1057,7 @@
         ],
         "INTERNET_SERVICE_DETAIL": [
             {
-                "message": "Susbcribed service checks are getting perfromed ",
+                "message": "This will take up to 1 minute.\n\nSusbcribed service checks are getting perfromed ",
                 "time": 20000
             },
             {
@@ -1067,7 +1067,7 @@
         ],
         "STB_NOT_REACHABLE": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 1 minute.\n\nDevice backend configuration checks are getting performed",
                 "time": 20000
             },
             {
@@ -1077,7 +1077,7 @@
         ],
         "IPTV_SERVICE_DETAIL": [
             {
-                "message": "Susbcribed service checks are getting perfromed ",
+                "message": "This will take up to 1 minute\n\nSusbcribed service checks are getting perfromed ",
                 "time": 20000
             },
             {

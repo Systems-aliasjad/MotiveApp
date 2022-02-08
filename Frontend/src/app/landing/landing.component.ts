@@ -48,7 +48,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   updateProfileData() {
   }
 
-  getProductCode() {
+ async getProductCode() {
     this.sharedService.setLoader(true);
     this.backendService.getLandingPageData().subscribe((data: any) => {
       this.sharedService.setLoader(false);
@@ -78,7 +78,20 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       this.landingPageCards = motiveSubscriptions[this.codeType]?.landingPageCards;
     });
 
+
+
+     ///Add deley as fragment issue repoted
+     this.sharedService.setLoader(true);
+    await this.delay(3000);
+    this.sharedService.setLoader(false);
+
+
   }
+
+
+   delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
   headerConfig: IPageHeader = {
     pageTitle: 'HEADER.TECHNICAL_SUPPORT',
