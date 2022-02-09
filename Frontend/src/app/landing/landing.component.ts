@@ -82,7 +82,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
 
      ///Add deley as fragment issue repoted
      this.sharedService.setLoader(true);
-    await this.delay(3000);
+    await this.delay(2000);
     this.sharedService.setLoader(false);
 
 

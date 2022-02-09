@@ -59,6 +59,7 @@ export class ResetFactoryDefaultDialog implements OnInit {
         } else if (res?.result?.screenCode === flowCodes.QAHSIPnPFR1) {
           this.router.navigate(['/issues/internet/server-timeout']);
         } else {
+          this.sharedService.LogDataResponse(res);
           this.router.navigate(['/error-comes']);
         }
       });

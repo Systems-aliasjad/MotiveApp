@@ -87,6 +87,7 @@ export class UnableHomezoneConnectionComponent implements OnInit, OnDestroy {
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
             this.router.navigate(['/common/router-unreachable']);
           } else {
+            this.sharedService.LogDataResponse(data);
             this.router.navigate(['/unknown-issue']);
           }
         });

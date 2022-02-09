@@ -97,6 +97,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
             this.router.navigate(['/common/router-unreachable']);
           } else {
+            this.sharedService.LogDataResponse(data);
             this.router.navigate(['/unknown-issue']);
           }
         });
@@ -122,6 +123,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
           this.router.navigate(['/common/router-unreachable']);
         } else {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['/unknown-issue']);
         }
       });
@@ -144,6 +146,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
           this.router.navigate(['/common/router-unreachable']);
         } else {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['/unknown-issue']);
         }
       });
@@ -178,6 +181,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
             this.router.navigate(['/common/router-unreachable']);
           } else {
+            this.sharedService.LogDataResponse(data);
             this.router.navigate(['/unknown-issue']);
           }
         });
@@ -227,6 +231,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
             this.router.navigate(['/common/router-unreachable']);
           } else {
+            this.sharedService.LogDataResponse(data);
             this.router.navigate(['/unknown-issue']);
           }
         });
@@ -250,6 +255,7 @@ export class ResetWIFIPasswordStage2Component implements OnInit, OnDestroy, Afte
           this.router.navigate(['/issues/internet/router-reset-successful']);
           // this.router.navigate(['/issues/internet/password-update-success']);
         } else {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['/error-comes']);
         }
       });

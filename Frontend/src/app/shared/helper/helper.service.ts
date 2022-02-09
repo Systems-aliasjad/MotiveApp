@@ -138,6 +138,7 @@ export class HelperService {
   }
   public otherFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/other/outage']);
@@ -238,6 +239,7 @@ export class HelperService {
 
   public InternetFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/internet/account-not-active']);
@@ -312,6 +314,7 @@ export class HelperService {
             // OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
             this.router.navigate(['issues/internet/router-reset-successful'],{state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
         } else if(data?.routerResetSuccessful && !data?.routerResetSuccessful) {
+          this.sharedService.LogDataResponse(data);
             // failure case
             //OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
             this.router.navigate(['error-comes'], {state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
@@ -381,6 +384,7 @@ export class HelperService {
 
   public voiceFlowIdentifier(codeId: string, data?: any) {
     if (codeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (codeId === flowCodes.movingElifeConnection) {
       this.sharedService.setApiResponseData({
@@ -489,6 +493,7 @@ export class HelperService {
 
   public IptvFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/tv/account-not-active']);

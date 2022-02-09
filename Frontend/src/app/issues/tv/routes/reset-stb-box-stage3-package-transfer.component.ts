@@ -76,6 +76,7 @@ export class ResetStbStage3TransferComponent implements OnInit, OnDestroy {
       if (resp?.result?.screenCode === flowCodes.QASTBFR3 || resp?.result?.screenCode === flowCodes.QASTBFR4) {
         this.router.navigate(['issues/tv/tvBox-reset-successfull']);
       } else {
+        this.sharedService.LogDataResponse(resp);
         this.router.navigate(['error-comes']);
        // this.sharedService.TicketCloseAPICallWithURL('error-comes');
       }

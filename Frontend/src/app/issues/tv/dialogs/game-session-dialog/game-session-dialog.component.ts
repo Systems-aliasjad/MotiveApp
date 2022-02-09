@@ -28,6 +28,7 @@ export class GameSessionDialog implements OnInit {
       } else if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
         this.router.navigate(['issues/password/unable-to-process-request']);
       } else {
+        this.sharedService.LogDataResponse(data);
         this.sharedService.TicketCloseAPICallWithURL('unknown-issue');
         // this.router.navigate(['/unknown-issue']);
       }

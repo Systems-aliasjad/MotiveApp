@@ -85,6 +85,7 @@ export class DeviceListDialog implements OnInit {
     this.backendService.rebootDeviceSTB(apiCall).subscribe((data: any) => {
       this.sharedService.setLoader(false);
       if (data?.result?.screenCode === flowCodes.genericError) {
+        this.sharedService.LogDataResponse(data);
         this.router.navigate(['/unknown-error']);
       } else if (data?.result?.screenCode === flowCodes.routerRebootSuccess && forDevice.API_PARAM === 'ONT') {
         this.router.navigate(['/issues/phone/ont-reboot-message']);

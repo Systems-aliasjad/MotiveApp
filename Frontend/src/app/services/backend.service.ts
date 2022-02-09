@@ -444,7 +444,7 @@ export class BackendService {
 
     LogDataResponse(data) {
       if (environment.shouldCallAPI) {
-        return this.http.put(`motive/troubleshoot/reset-wifi-passworddadasdadasds`, { ...data });
+        return this.http.post(`error `, { ...data });
     } else {
       const response = { result: this.hardData };
       return this.hardCoadedResponse(response);

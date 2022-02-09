@@ -112,6 +112,7 @@ export class ForgotCcbPinComponent implements OnInit, AfterViewInit, OnDestroy {
           } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
             this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
           } else {
+            this.sharedService.LogDataResponse(data);
             this.router.navigate(['/error-comes']);
           }
         });
@@ -126,6 +127,7 @@ export class ForgotCcbPinComponent implements OnInit, AfterViewInit, OnDestroy {
         } else if (data?.result?.screenCode === flowCodes.QAVOICECCB) {
           this.router.navigate(['/issues/phone/no-issue-phone-phone-reset-ccb-pin-successfully']);
         } else {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['/error-comes']);
         }
 

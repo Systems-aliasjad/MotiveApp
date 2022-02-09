@@ -68,6 +68,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.authService.setAuthorizationToken(data?.result?.token);
             this.router.navigate(['landing']);
           } else {
+            this.sharedService.LogDataResponse(data);
             this.router.navigate(['unknown-issue']);
           }
         });

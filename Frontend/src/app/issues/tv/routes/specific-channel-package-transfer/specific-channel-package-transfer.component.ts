@@ -108,6 +108,7 @@ export class SpecificChannelPackageTransferComponent implements OnInit {
        this.sharedService.setApiResponseData(data);
        this.router.navigate(['issues/tv/unable-to-watch-specific-channel']);
     } else {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/error-comes']);
     }
     });

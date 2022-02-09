@@ -131,6 +131,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
           this.router.navigate(['issues/tv/package-transfer-success']);
         } else {
           //if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['/error-comes']);
         }
       });
@@ -141,6 +142,7 @@ export class PackageTransferComponent implements OnInit, OnDestroy {
         if (data?.result?.screenCode === flowCodes.QAIPTVPT) {
           this.router.navigate(['issues/tv/package-transfer-success']);
         } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+          this.sharedService.LogDataResponse(data);
           this.sharedService.TicketCloseAPICallWithURL('error-comes');
           // this.router.navigate(['/unknown-error']);
         }

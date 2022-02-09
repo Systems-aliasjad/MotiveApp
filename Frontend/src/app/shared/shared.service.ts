@@ -8,6 +8,7 @@ import { environment } from 'src/environments/environment';
 import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION, TsOutcome } from './constants/constants';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
+import { HttpResponseService } from '../services/http-response.service';
 
 @Injectable({
   providedIn: 'root',
@@ -37,6 +38,7 @@ export class SharedService {
   tryAgainResetCCBFlag: number = 0;
   tryAgainUnableElifeFlag: number = 0;
   tryResetInternetPasswordFlag: number = 0;
+   httpStatusCode:string='';
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -60,7 +62,7 @@ export class SharedService {
 
   tsOutcome:string=''
 
-  constructor(private http: HttpClient, private translate: TranslateService, private router: Router, private backendService: BackendService) {
+  constructor(private httpResponseCodeService: HttpResponseService, private http: HttpClient, private translate: TranslateService, private router: Router, private backendService: BackendService) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
@@ -502,14 +504,21 @@ export class SharedService {
     return this.iptvPortNumber;
   }
 
+
   LogDataResponse(data){
-
-    var newData={
-      httpStatusCode:500,
-      responseJson:data
+    if(!data)
+    data='';
+  
+    try {
+      var newData={
+      httpStatusCode:this.httpResponseCodeService.getHttpResponseCode(),
+      responseJson: JSON.stringify(data)
     }
-
     this.backendService.LogDataResponse(newData).subscribe(() => {});
-
+      
+    } catch (error) {
+      
+    }
+    
   }
 }
