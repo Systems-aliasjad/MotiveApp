@@ -21,7 +21,7 @@ export class HttpResponseService {
   LogDataResponse(data){
     var newData={
       httpStatusCode:this.getHttpResponseCode(),
-      responseJson:data
+      responseJson: JSON.stringify(data)
     }
     this.backendService.LogDataResponse(newData).subscribe(() => {});
   }
