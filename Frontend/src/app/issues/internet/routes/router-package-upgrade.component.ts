@@ -72,6 +72,11 @@ export class RouterPackageUpgradeRecommendedComponent implements OnInit, OnDestr
   }
 
   updateHeader() {
+
+      var apiInternetGenericResponse = this.sharedService.getInternetGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
     //this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 

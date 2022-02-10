@@ -1,3 +1,4 @@
+import { AotCompiler } from '@angular/compiler';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
@@ -80,6 +81,12 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
 
   updateHeader() {
     // this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
+
+    var apiInternetGenericResponse = this.sharedService.getInternetGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
+    
   }
 
   headerConfig: IPageHeader = {

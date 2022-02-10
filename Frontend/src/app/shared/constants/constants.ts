@@ -182,10 +182,21 @@ export const SVGs = {
     default: './assets/images/network-map-icons/icon_home_default.svg',
   },
   ont: {
-    default: './assets/images/ont/default_ont.PNG',
+   // default: './assets/images/ont/default_ont.PNG',
+    default: './assets/images/ont/Fiber Box.svg',
   },
   router: {
     default: './assets/images/router/default_router.PNG',
+    archer_C9: './assets/images/router/Router SVG/Archer C9.svg',
+    DIR803: './assets/images/router/Router SVG/DIR803.svg',
+    DIR850: './assets/images/router/Router SVG/DIR850.svg',
+    DIR853: './assets/images/router/Router SVG/DIR-853.svg',
+    DLINK_620: './assets/images/router/Router SVG/DLINK_620.svg',
+    DWI259S: './assets/images/router/Router SVG/DWI259S.svg',
+    Etisalat_S3: './assets/images/router/Router SVG/Etisalat_S3.svg',
+    FST2704V2: './assets/images/router/Router SVG/F@ST2704V2.svg',
+    TECHNICOLOR_DGA4231ETI: './assets/images/router/Router SVG/TECHNICOLOR-DGA4231ETI.svg',
+    
   },
   phone: {
     default: './assets/images/network-map-icons/icon_phone_default.svg',
@@ -827,3 +838,5 @@ export class TsOutcome{
   public static readonly NoIssues='No Issue found';
   public static readonly IssueFoundAndFixed='Issue found and fixed';
 }
+
+

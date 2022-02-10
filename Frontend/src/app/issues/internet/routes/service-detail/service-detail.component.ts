@@ -99,6 +99,11 @@ export class ServiceDetailComponent implements OnInit, OnDestroy {
     this.showResetWifiPin=true;
   }
 
+    
+    if(internetGenericResponse?.routerDetails?.routerModel){
+       this.routerDefault= this.sharedService.DynamicSetRouterImages(internetGenericResponse?.routerDetails?.routerModel);
+    }
+
   }
 
   button1Listener() {

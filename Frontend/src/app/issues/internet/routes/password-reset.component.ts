@@ -63,6 +63,11 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   updateHeader() {
     const navigation = this.router.getCurrentNavigation();
     this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+
+      var apiInternetGenericResponse = this.sharedService.getInternetGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
   }
 
   headerConfig: IPageHeader = {

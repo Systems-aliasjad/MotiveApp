@@ -62,6 +62,12 @@ export class OutageComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+
+    var apiInternetGenericResponse = this.sharedService.getOtherGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
+
     //this.sharedService.setHeaderConfig('HEADER.ALL_SERVICES', false);
   }
 

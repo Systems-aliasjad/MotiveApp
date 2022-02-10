@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION, TsOutcome } from './constants/constants';
+import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION, SVGs, TsOutcome } from './constants/constants';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
 import { HttpResponseService } from '../services/http-response.service';
@@ -52,6 +52,7 @@ export class SharedService {
   apiResponseDataNoIssuesSTB;
   apiResponseDataContinueSTB;
   apiInternetGenericResponse;
+  apiOtherGenericResponse;
 
   apiResponseHomeZoneCall;
   apiResponseOpenSrs;
@@ -232,6 +233,18 @@ export class SharedService {
   getInternetGenericResponse() {
     return this.apiInternetGenericResponse;
   }
+
+
+  setOtherGenericResponse(data: any) {
+    this.apiOtherGenericResponse = data;
+  }
+
+  getOtherGenericResponse() {
+    return this.apiOtherGenericResponse;
+  }
+
+
+  
 
   getApiResponseDataSTBContinue(): any {
     if (this.apiResponseDataContinueSTB) {
@@ -521,4 +534,48 @@ export class SharedService {
     }
     
   }
+
+
+  DynamicSetRouterImages(router){
+
+
+    switch(router){
+
+      case 'Archer C9':
+        return SVGs.router.archer_C9;
+
+        case 'DIR803':
+        return SVGs.router.DIR803;
+
+        case 'DIR850':
+        return SVGs.router.DIR850;
+
+        case 'DIR-853':
+        return SVGs.router.DIR853;
+
+        case 'DLINK_620':
+        return SVGs.router.DLINK_620;
+
+        case 'DWI259S':
+        return SVGs.router.DWI259S;
+
+        case 'Etisalat-S3':
+        return SVGs.router.Etisalat_S3;
+
+        case 'F@ST2704V2':
+        return SVGs.router.FST2704V2;
+
+        case 'TECHNICOLOR-DGA4231ETI':
+        return SVGs.router.TECHNICOLOR_DGA4231ETI;
+
+        default:
+          return SVGs.router.default;
+    }
+  }
+
+
+
+
+
+
 }

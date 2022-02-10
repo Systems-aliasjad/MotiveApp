@@ -70,7 +70,11 @@ export class HelperService {
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
-    routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
+     //routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
+    //Now make router image dynamic
+    routerConfig = { ...routerConfig, url: this.sharedService.DynamicSetRouterImages(routerConfig?.routerModel), title: ROUTER };
+
+
     ontConfig = this.networkDiagramStylingMapper(ontConfig, null, true);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
