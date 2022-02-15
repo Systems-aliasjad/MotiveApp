@@ -203,7 +203,29 @@ export const SVGs = {
     okay: './assets/images/network-map-icons/icon_phone_all_okay.svg',
   },
   stb: {
-    default: './assets/images/STB/DWI211ETI.png', //To do set it to svc as others
+    default: './assets/images/STB/STB_SVG/DWI259ETI.svg', //To do set it to svc as others
+    Air7120: './assets/images/STB/STB_SVG/Air7120.svg', 
+    DiP7910_56_3: './assets/images/STB/STB_SVG/DiP7910_56_3.svg', 
+    DiP7911_56_3: './assets/images/STB/STB_SVG/DiP7911_56_3.svg', 
+    DWI211ETI: './assets/images/STB/STB_SVG/DWI211ETI.svg', 
+    DWI259ETI: './assets/images/STB/STB_SVG/DWI259ETI.svg', 
+    DWI259S: './assets/images/STB/STB_SVG/DWI259S.svg', 
+    DWI811ETI: './assets/images/STB/STB_SVG/DWI811ETI.svg', 
+    DWI859ETI: './assets/images/STB/STB_SVG/DWI859ETI.svg', 
+    DWI859S: './assets/images/STB/STB_SVG/DWI859S.svg', 
+    EC2108: './assets/images/STB/STB_SVG/EC2108.svg', 
+    EC2118: './assets/images/STB/STB_SVG/EC2118.svg', 
+    KIPB277XSAH: './assets/images/STB/STB_SVG/KIP-B277XSAH.svg', 
+    KSTB6078: './assets/images/STB/STB_SVG/KSTB6078.svg', 
+    VM1400P: './assets/images/STB/STB_SVG/VM1400P.svg', 
+    VMHD1000: './assets/images/STB/STB_SVG/VM-HD1000.svg', 
+    VMHD3000: './assets/images/STB/STB_SVG/VM-HD3000.svg', 
+    VMHD3000LEME: './assets/images/STB/STB_SVG/VM-HD3000LE ME.svg', 
+    VMHD3000LE: './assets/images/STB/STB_SVG/VM-HD3000LE.svg', 
+    VMHD3000ME: './assets/images/STB/STB_SVG/VM-HD3000ME.svg', 
+    VMHD3000SE: './assets/images/STB/STB_SVG/VM-HD3000SE.svg', 
+    VMHD4000: './assets/images/STB/STB_SVG/VM-HD4000.svg', 
+   
   },
   desktop: {
     default: './assets/images/network-map-icons/icon_desktop_default.svg',

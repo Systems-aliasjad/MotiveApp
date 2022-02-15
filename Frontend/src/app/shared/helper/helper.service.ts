@@ -60,7 +60,7 @@ export class HelperService {
       return {
         ...device,
         className: networkDiagramClasses.okay,
-        url: SVGs.stb.default,
+        url: this.sharedService.DynamicSetStbImages(device?.stbModel),
         title: 'STB',
         subTitle: noSubTitle ? '' : device?.stbMac,
         list: [],
@@ -122,14 +122,14 @@ export class HelperService {
 
     if (ontConfig?.isReachable) {
       stbConfig = stbConfig?.map((stb) => {
-        return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default,  title: 'STB' }, ontConfig.className, true);
+        return this.networkDiagramStylingMapper({ ...stb, url: this.sharedService.DynamicSetStbImages(stb?.stbModel),  title: 'STB' }, ontConfig.className, true);
       });
     } else {
       stbConfig = stbConfig.map((stb) => {
         return {
           
           ...stb,
-          url: SVGs.stb.default,
+          url: this.sharedService.DynamicSetStbImages(stb?.stbModel),
           className: networkDiagramClasses.default,
           title: 'STB',
         };

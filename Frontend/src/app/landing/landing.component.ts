@@ -51,7 +51,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
  async getProductCode() {
     this.sharedService.setLoader(true);
     this.backendService.getLandingPageData().subscribe((data: any) => {
-      this.sharedService.setLoader(false);
+      //this.sharedService.setLoader(false);
 
       this.sharedService.setLocalStorage('CUS_MOBILE_NO', data?.result?.accountId);
       this.user = {
@@ -81,7 +81,7 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
 
 
      ///Add deley as fragment issue repoted
-     this.sharedService.setLoader(true);
+     //this.sharedService.setLoader(true);
     await this.delay(2000);
     this.sharedService.setLoader(false);
 
