@@ -57,7 +57,8 @@ export class InternetTroubleshootCompleteMessageComponent implements OnInit, OnD
   }
 
   button1Listener() {
-    this.router.navigate(['issues/internet/book-complaint']);
+    // this.router.navigate(['issues/internet/book-complaint']);
+    this.router.navigate(['issues/internet/paid-tech-book-complaint']);
   }
 
   button2Listener() {

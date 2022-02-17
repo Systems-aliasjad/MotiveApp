@@ -17,11 +17,11 @@ import { BackendService } from 'src/app/services/backend.service';
     (button2Click)="button2Listener()"
   ></app-book-complaint>`,
 })
-export class BookComplaintComponent implements OnInit, OnDestroy {
+export class PaidTechBookComplaintComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   button1: IMotiveButton = {
     type: 'primary',
-    title: 'BUTTONS.BOOK_A_COMPLAINT',
+    title: 'BUTTONS.REQUEST_PAID_TECHNICIAN_VISIT',
     explanatoryNote: '',
   };
 
@@ -69,7 +69,7 @@ export class BookComplaintComponent implements OnInit, OnDestroy {
       this.sharedService.setApiResponseData({ ...data?.result?.responseData, status: 'open' });
 
       if(data?.result?.responseData?.referenceNo && data?.result?.responseData?.referenceNo!=="NA"){
-         this.router.navigate(['/issues/internet/install-new-router-complaint-successfully']);
+         this.router.navigate(['issues/internet/paid-tech-compalint-successful']);
       }
       else{
         this.router.navigate(['issues/internet/complaint-exists-just-message']); 
