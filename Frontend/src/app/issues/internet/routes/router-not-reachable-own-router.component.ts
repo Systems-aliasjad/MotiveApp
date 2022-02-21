@@ -16,14 +16,19 @@ import { HelperService } from '../../../shared/helper/helper.service';
     [routerConfig]="routerConfig"
     [headerConfig]="headerConfig"
     [messageSection]="messageSection"
-    [button1]="button1"
-    (button1Click)="button1Listener()"
+  
     [button2]="button2"
     (button2Click)="button2Listener()"
-    [button3]="button3"
-    (button3Click)="button3Listener()"
+  
   >
   </app-diagnose-issue>`,
+
+    // [button1]="button1"
+    // (button1Click)="button1Listener()"
+    //   [button3]="button3"
+    // (button3Click)="button3Listener()"
+
+
 })
 export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   etisalatConfig = ETISALAT_DEFAULT_CONFIG;
@@ -70,7 +75,23 @@ export class RouterNotReachableOwnRouterComponent implements OnInit, OnDestroy {
   }
 
   updatePageContent() {
-    this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
+    // this.messageSection = CustomerJourneyConstants.routerNotReachableOwnRouterMessageSection;
+    this.messageSection = {
+    header: 'MESSAGES.ROUTER_IS_NOT_ACCESSIBLE',
+    body: [
+      {
+        title: 'MESSAGES.PLEASE_MAKE_SURE_THAT',
+        children: [
+          'MESSAGES.THE_ROUTER_IS_SWITCHED_ON',
+          'MESSAGES.THE_CABLE_FROM_THE_ROUTER_IS_CONNECTED_TO_THE_X_PORT_OF_THE_WALL_MOUNTED_FIBRE_BOX',
+          'MESSAGES.IF_ISSUE_IS_STILL_NOT_FIXED_PLEASE_RECONFIGURE_YOUR_ROUTER_WITH_THE_CORRECT_SETTINGS',
+        ],
+      },
+      // {
+      //   title: 'MESSAGES.VISIT_DEVICE_CARE_TO_FIND_MORE_DETAILS_ON_HOW_TO_RECONFIGURE_YOUR_ROUTER',
+      // },
+    ],
+  };
   }
 
   button1Listener() {
