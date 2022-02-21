@@ -175,6 +175,7 @@
   },
 
   "MESSAGES": {
+    "SORRY_WE_ARE_UNABLE_TO_PROCESS_YOUR_REQUEST_CURRENTLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT":"Sorry, we are unable to process your request currently.  Please proceed to book complaint",
     "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
     "WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your complain and booked an appointment. Our technician will contact you soon",
     "COMPLAINT_BOOK_SUCCESSFULLY": "Complaint booked successfully!",

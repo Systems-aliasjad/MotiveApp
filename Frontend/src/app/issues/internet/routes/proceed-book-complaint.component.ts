@@ -54,7 +54,11 @@ export class ProceedToBookComplaintComponent implements OnInit, OnDestroy {
 
   updatePageContent() {
     this.imgSrc = warningImgSrc;
-    this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
+ //   this.Section1Data = CustomerJourneyConstants.tryAgainErrorOccured;
+    this.Section1Data = {
+    header: 'MESSAGES.AN_ERROR_OCCURRED',
+    paragraphs: ['MESSAGES.SORRY_WE_ARE_UNABLE_TO_PROCESS_YOUR_REQUEST_CURRENTLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT'],
+  };
   }
 
   button1Listener() {

@@ -178,6 +178,7 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "SORRY_WE_ARE_UNABLE_TO_PROCESS_YOUR_REQUEST_CURRENTLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT":"عذراً، لن نتمكن من إتمام طلبك حالياً. يرجى المتابعة لتسجيل شكوى",
     "APPOINTMENT_BOOK_SUCCESSFULLY": "لقد وصلتنا شكوتك، سوف يتم إبلاغك بمجرد حل المشكلة",
     "WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "لقد وصلتنا شكوتك، سوف يتم إبلاغك بمجرد حل المشكلة",
     "WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "لقد وصلتنا شكوتك، سوف يتم إبلاغك بمجرد حل المشكلة",
