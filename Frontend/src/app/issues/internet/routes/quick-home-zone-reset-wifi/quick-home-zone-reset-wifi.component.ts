@@ -50,7 +50,8 @@ export class QuickHomeZoneResetWifiComponent implements OnInit {
               // }
           this.router.navigate(['/issues/internet/password-update-success']);
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI5) {
-          this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+         // this.router.navigate(['/issues/internet/reset-wifi-error-occur-try-again-later']);
+         this.router.navigate(['/issues/internet/proceed-book-complaint']);
         } else if (data?.result?.screenCode === flowCodes.QAHSIWIFI1) {
           this.router.navigate(['/common/router-unreachable']);
         }

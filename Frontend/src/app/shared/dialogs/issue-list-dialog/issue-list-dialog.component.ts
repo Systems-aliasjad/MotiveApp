@@ -242,7 +242,8 @@ export class IssueListDialog implements OnInit {
             this.router.navigate(['issues/password/unable-to-process-request']);
           } else {
             //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-            this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+            // this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+            this.router.navigate(['/issues/internet/proceed-book-complaint']);
           }
         });
       });
@@ -260,7 +261,9 @@ export class IssueListDialog implements OnInit {
             this.router.navigate(['/issues/internet/password-reset-success']);
           } else {
             //if (data?.result?.screenCode === flowCodes.QAHSIPR1) {
-            this.router.navigate(['/issues/internet/reset-internet-passowrd-error-occur-try-again-later']);
+           // this.router.navigate(['/issues/internet/reset-internet-passowrd-error-occur-try-again-later']);
+          this.router.navigate(['/issues/internet/proceed-book-complaint']);
+          
           }
           // else {
           //   this.router.navigate(['/unknown-issue']);

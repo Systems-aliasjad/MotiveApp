@@ -66,6 +66,7 @@ export class ComplaintAlreadyExistsMessageComponent implements OnInit, OnDestroy
         this.router.navigate(['thanks']);
       } else {
         //if (data?.result?.screenCode === flowCodes.QACOMFU1) {
+        this.sharedService.LogDataResponse(data);
         this.router.navigate(['unknown-issue']);
       }
     });

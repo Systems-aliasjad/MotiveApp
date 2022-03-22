@@ -85,14 +85,14 @@ export class RouterResetRequiredComponent implements OnInit, OnDestroy {
   }
 
   button2Listener() {
-    this.sharedService.setLoader(true);
-    this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
-      this.sharedService.setLoader(false);
-      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
+    // this.sharedService.setLoader(true);
+    // this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
+    //   this.sharedService.setLoader(false);
+    //   this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
 
-      this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-    });
-    // this.router.navigate(['/thanks']);
+    //   this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    // });
+     this.router.navigate(['/thanks']);
   }
 
   getIssueTilesData() {

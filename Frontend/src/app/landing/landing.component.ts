@@ -48,11 +48,10 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
   updateProfileData() {
   }
 
-  getProductCode() {
-    console.log('params 3 in landing screen');
+ async getProductCode() {
     this.sharedService.setLoader(true);
     this.backendService.getLandingPageData().subscribe((data: any) => {
-      this.sharedService.setLoader(false);
+      //this.sharedService.setLoader(false);
 
       this.sharedService.setLocalStorage('CUS_MOBILE_NO', data?.result?.accountId);
       this.user = {
@@ -76,10 +75,23 @@ export class LandingComponent implements OnInit, OnDestroy, AfterViewInit {
       // this.sharedService.setElifeOnFlag(data?.result?.menuFlags?.ELIFE_ON ?? true);
       // this.sharedService.setCcbPinFlag(data?.result?.menuFlags?.CCB ?? true);
       this.sharedService.setProductCodeLanding(this.codeType ?? '');
-      this.landingPageCards = motiveSubscriptions[this.codeType].landingPageCards;
+      this.landingPageCards = motiveSubscriptions[this.codeType]?.landingPageCards;
     });
 
+
+
+     ///Add deley as fragment issue repoted
+     //this.sharedService.setLoader(true);
+    await this.delay(2000);
+    this.sharedService.setLoader(false);
+
+
   }
+
+
+   delay(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
 
   headerConfig: IPageHeader = {
     pageTitle: 'HEADER.TECHNICAL_SUPPORT',

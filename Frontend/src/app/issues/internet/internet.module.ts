@@ -107,6 +107,10 @@ import { ResetWifiDialogComponent } from './dialogs/reset-wifi-dialog/reset-wifi
 import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-process-messaage.component';
 import { ComplaintExistsJustMessageComponent } from './routes/complaint-exists-just-messgae.component';
 import { NoHomezoneAccountMessageComponent } from './routes/no-home-zone-account.component';
+import { ProceedToBookComplaintComponent } from './routes/proceed-book-complaint.component';
+import { SlowBrowsingStep1Component } from './routes/slow-browsing-step1.component';
+import { PaidTechBookComplaintComponent } from './routes/paid-tech-book-complaint.component';
+import { PaidTechComplaintSuccessfulMessageComponent } from './routes/paid-tech-complaint-successful-message.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 @NgModule({
@@ -206,7 +210,11 @@ import { NoHomezoneAccountMessageComponent } from './routes/no-home-zone-account
     ResetWifiDialogComponent,
     ComplaintUnderProcessMessageComponent,
     ComplaintExistsJustMessageComponent,
-    NoHomezoneAccountMessageComponent
+    NoHomezoneAccountMessageComponent,
+    ProceedToBookComplaintComponent,
+    SlowBrowsingStep1Component,
+    PaidTechBookComplaintComponent,
+    PaidTechComplaintSuccessfulMessageComponent
   ],
   imports: [
     CommonModule,

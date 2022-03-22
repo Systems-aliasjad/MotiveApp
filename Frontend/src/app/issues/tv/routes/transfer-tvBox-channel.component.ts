@@ -94,6 +94,7 @@ export class TransferTvboxChannelComponent implements OnInit, OnDestroy {
           });
         });
       } else if (data?.result?.screenCode === flowCodes.QAIPTVPT1) {
+        this.sharedService.LogDataResponse(data);
         this.sharedService.TicketCloseAPICallWithURL('unknown-error');
       }
     });

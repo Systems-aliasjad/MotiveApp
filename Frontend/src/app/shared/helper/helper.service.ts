@@ -60,7 +60,7 @@ export class HelperService {
       return {
         ...device,
         className: networkDiagramClasses.okay,
-        url: SVGs.stb.default,
+        url: this.sharedService.DynamicSetStbImages(device?.stbModel),
         title: 'STB',
         subTitle: noSubTitle ? '' : device?.stbMac,
         list: [],
@@ -70,7 +70,11 @@ export class HelperService {
 
   networkDiagramStylingWrapper(ontConfig?: IOntDetail, routerConfig?: any) {
     ontConfig = { ...ontConfig, url: SVGs.ont.default, title: ONT };
-    routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
+     //routerConfig = { ...routerConfig, url: SVGs.router.default, title: ROUTER };
+    //Now make router image dynamic
+    routerConfig = { ...routerConfig, url: this.sharedService.DynamicSetRouterImages(routerConfig?.routerModel), title: ROUTER };
+
+
     ontConfig = this.networkDiagramStylingMapper(ontConfig, null, true);
     if (ontConfig?.isReachable) {
       routerConfig = this.networkDiagramStylingMapper(routerConfig, ontConfig.className);
@@ -118,14 +122,14 @@ export class HelperService {
 
     if (ontConfig?.isReachable) {
       stbConfig = stbConfig?.map((stb) => {
-        return this.networkDiagramStylingMapper({ ...stb, url: SVGs.stb.default,  title: 'STB' }, ontConfig.className, true);
+        return this.networkDiagramStylingMapper({ ...stb, url: this.sharedService.DynamicSetStbImages(stb?.stbModel),  title: 'STB' }, ontConfig.className, true);
       });
     } else {
       stbConfig = stbConfig.map((stb) => {
         return {
           
           ...stb,
-          url: SVGs.stb.default,
+          url: this.sharedService.DynamicSetStbImages(stb?.stbModel),
           className: networkDiagramClasses.default,
           title: 'STB',
         };
@@ -138,6 +142,7 @@ export class HelperService {
   }
   public otherFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.outage) {
       this.router.navigate(['issues/other/outage']);
@@ -238,6 +243,7 @@ export class HelperService {
 
   public InternetFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/internet/account-not-active']);
@@ -312,6 +318,7 @@ export class HelperService {
             // OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
             this.router.navigate(['issues/internet/router-reset-successful'],{state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
         } else if(data?.routerResetSuccessful && !data?.routerResetSuccessful) {
+          this.sharedService.LogDataResponse(data);
             // failure case
             //OK btn Action: this.handleInternetPasswordResetCase(data?.hsiPasswordReset, 'internet');
             this.router.navigate(['error-comes'], {state: {routerResetSuccessful: data?.routerResetSuccessful, hsiPasswordReset: data?.hsiPasswordReset}});
@@ -381,6 +388,7 @@ export class HelperService {
 
   public voiceFlowIdentifier(codeId: string, data?: any) {
     if (codeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (codeId === flowCodes.movingElifeConnection) {
       this.sharedService.setApiResponseData({
@@ -489,6 +497,7 @@ export class HelperService {
 
   public IptvFlowIdentifier(CodeId: string, data?: any) {
     if (CodeId === flowCodes.genericError) {
+      this.sharedService.LogDataResponse(data);
       this.router.navigate(['/unknown-error']);
     } else if (CodeId === flowCodes.accountNotActive) {
       this.router.navigate(['issues/tv/account-not-active']);

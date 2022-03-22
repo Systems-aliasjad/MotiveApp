@@ -182,17 +182,50 @@ export const SVGs = {
     default: './assets/images/network-map-icons/icon_home_default.svg',
   },
   ont: {
-    default: './assets/images/ont/default_ont.PNG',
+   // default: './assets/images/ont/default_ont.PNG',
+    default: './assets/images/ont/Fiber Box.svg',
   },
   router: {
     default: './assets/images/router/default_router.PNG',
+    archer_C9: './assets/images/router/Router SVG/Archer C9.svg',
+    DIR803: './assets/images/router/Router SVG/DIR803.svg',
+    DIR850: './assets/images/router/Router SVG/DIR850.svg',
+    DIR853: './assets/images/router/Router SVG/DIR-853.svg',
+    DLINK_620: './assets/images/router/Router SVG/DLINK_620.svg',
+    DWI259S: './assets/images/router/Router SVG/DWI259S.svg',
+    Etisalat_S3: './assets/images/router/Router SVG/Etisalat_S3.svg',
+    FST2704V2: './assets/images/router/Router SVG/F@ST2704V2.svg',
+    TECHNICOLOR_DGA4231ETI: './assets/images/router/Router SVG/TECHNICOLOR-DGA4231ETI.svg',
+    
   },
   phone: {
     default: './assets/images/network-map-icons/icon_phone_default.svg',
     okay: './assets/images/network-map-icons/icon_phone_all_okay.svg',
   },
   stb: {
-    default: './assets/images/STB/DWI211ETI.png', //To do set it to svc as others
+    default: './assets/images/STB/STB_SVG/DWI259ETI.svg', //To do set it to svc as others
+    Air7120: './assets/images/STB/STB_SVG/Air7120.svg', 
+    DiP7910_56_3: './assets/images/STB/STB_SVG/DiP7910_56_3.svg', 
+    DiP7911_56_3: './assets/images/STB/STB_SVG/DiP7911_56_3.svg', 
+    DWI211ETI: './assets/images/STB/STB_SVG/DWI211ETI.svg', 
+    DWI259ETI: './assets/images/STB/STB_SVG/DWI259ETI.svg', 
+    DWI259S: './assets/images/STB/STB_SVG/DWI259S.svg', 
+    DWI811ETI: './assets/images/STB/STB_SVG/DWI811ETI.svg', 
+    DWI859ETI: './assets/images/STB/STB_SVG/DWI859ETI.svg', 
+    DWI859S: './assets/images/STB/STB_SVG/DWI859S.svg', 
+    EC2108: './assets/images/STB/STB_SVG/EC2108.svg', 
+    EC2118: './assets/images/STB/STB_SVG/EC2118.svg', 
+    KIPB277XSAH: './assets/images/STB/STB_SVG/KIP-B277XSAH.svg', 
+    KSTB6078: './assets/images/STB/STB_SVG/KSTB6078.svg', 
+    VM1400P: './assets/images/STB/STB_SVG/VM1400P.svg', 
+    VMHD1000: './assets/images/STB/STB_SVG/VM-HD1000.svg', 
+    VMHD3000: './assets/images/STB/STB_SVG/VM-HD3000.svg', 
+    VMHD3000LEME: './assets/images/STB/STB_SVG/VM-HD3000LE ME.svg', 
+    VMHD3000LE: './assets/images/STB/STB_SVG/VM-HD3000LE.svg', 
+    VMHD3000ME: './assets/images/STB/STB_SVG/VM-HD3000ME.svg', 
+    VMHD3000SE: './assets/images/STB/STB_SVG/VM-HD3000SE.svg', 
+    VMHD4000: './assets/images/STB/STB_SVG/VM-HD4000.svg', 
+   
   },
   desktop: {
     default: './assets/images/network-map-icons/icon_desktop_default.svg',
@@ -827,3 +860,5 @@ export class TsOutcome{
   public static readonly NoIssues='No Issue found';
   public static readonly IssueFoundAndFixed='Issue found and fixed';
 }
+
+

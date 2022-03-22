@@ -50,6 +50,7 @@ export class DeviceListDialog implements OnInit {
       this.backendService.rebootMyDevice(forDevice).subscribe((data: any) => {
         this.sharedService.setLoader(false);
         if (data?.result?.screenCode === flowCodes.genericError) {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['/unknown-error']);
         } else if (data?.result?.screenCode === flowCodes.routerRebootSuccess) {
           this.router.navigate(['/issues/internet/router-reboot-successful']);

@@ -91,6 +91,7 @@ export class PnpPortManagedRouterMessageComponent implements OnInit, OnDestroy {
         } else if(screenCode === flowCodes.QANRINST11 || screenCode === flowCodes.QANRINST16 || screenCode === flowCodes.QANRINST8){
           this.router.navigate(['issues/internet/router-installation-failed']);
         } else {
+          this.sharedService.LogDataResponse(data);
           this.router.navigate(['unknown-issue']);
         }
 

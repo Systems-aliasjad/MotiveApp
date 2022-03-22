@@ -72,7 +72,12 @@ export class RouterOutOfWarrantyComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  updateHeader() {}
+  updateHeader() {
+      var apiInternetGenericResponse = this.sharedService.getInternetGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
+  }
 
   headerConfig: IPageHeader = {
     pageTitle: 'MESSAGES.INTERNET_ISSUES',

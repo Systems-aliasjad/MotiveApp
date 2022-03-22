@@ -74,6 +74,11 @@ export class PackageUpgradeRecommendedComponent implements OnInit, OnDestroy {
   }
 
   updateHeader() {
+
+      var apiInternetGenericResponse = this.sharedService.getInternetGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
     // this.sharedService.setHeaderConfig('MESSAGES.INTERNET_ISSUES', false);
   }
 

@@ -5,9 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 import { IPageHeader } from './constants/types';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
-import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION, TsOutcome } from './constants/constants';
+import { flowCodes, LandingProductCodes, LoaderScriptsEnum, QUICK_ACTION, SVGs, TsOutcome } from './constants/constants';
 import { BackendService } from '../services/backend.service';
 import { HttpClient } from '@angular/common/http';
+import { HttpResponseService } from '../services/http-response.service';
 
 @Injectable({
   providedIn: 'root',
@@ -37,6 +38,7 @@ export class SharedService {
   tryAgainResetCCBFlag: number = 0;
   tryAgainUnableElifeFlag: number = 0;
   tryResetInternetPasswordFlag: number = 0;
+   httpStatusCode:string='';
 
   defaultHeaderConfig: IPageHeader = {
     pageTitle: '',
@@ -50,6 +52,7 @@ export class SharedService {
   apiResponseDataNoIssuesSTB;
   apiResponseDataContinueSTB;
   apiInternetGenericResponse;
+  apiOtherGenericResponse;
 
   apiResponseHomeZoneCall;
   apiResponseOpenSrs;
@@ -60,7 +63,7 @@ export class SharedService {
 
   tsOutcome:string=''
 
-  constructor(private http: HttpClient, private translate: TranslateService, private router: Router, private backendService: BackendService) {
+  constructor(private httpResponseCodeService: HttpResponseService, private http: HttpClient, private translate: TranslateService, private router: Router, private backendService: BackendService) {
     this.loaderSubject = new BehaviorSubject(false);
     this.termsConditionCheck = new BehaviorSubject<boolean>(false);
     this.headerConfigSubject = new BehaviorSubject(this.defaultHeaderConfig);
@@ -230,6 +233,18 @@ export class SharedService {
   getInternetGenericResponse() {
     return this.apiInternetGenericResponse;
   }
+
+
+  setOtherGenericResponse(data: any) {
+    this.apiOtherGenericResponse = data;
+  }
+
+  getOtherGenericResponse() {
+    return this.apiOtherGenericResponse;
+  }
+
+
+  
 
   getApiResponseDataSTBContinue(): any {
     if (this.apiResponseDataContinueSTB) {
@@ -501,4 +516,116 @@ export class SharedService {
   getIptvPortNumber(){
     return this.iptvPortNumber;
   }
+
+
+  LogDataResponse(data){
+    if(!data)
+    data='';
+  
+    try {
+      var newData={
+      httpStatusCode:this.httpResponseCodeService.getHttpResponseCode(),
+      responseJson: JSON.stringify(data)
+    }
+    this.backendService.LogDataResponse(newData).subscribe(() => {});
+      
+    } catch (error) {
+      
+    }
+    
+  }
+
+
+  DynamicSetRouterImages(router){
+
+
+    switch(router){
+
+      case 'Archer C9':
+        return SVGs.router.archer_C9;
+
+        case 'DIR803':
+        return SVGs.router.DIR803;
+
+        case 'DIR850':
+        return SVGs.router.DIR850;
+
+        case 'DIR-853':
+        return SVGs.router.DIR853;
+
+        case 'DLINK_620':
+        return SVGs.router.DLINK_620;
+
+        case 'DWI259S':
+        return SVGs.router.DWI259S;
+
+        case 'Etisalat-S3':
+        return SVGs.router.Etisalat_S3;
+
+        case 'F@ST2704V2':
+        return SVGs.router.FST2704V2;
+
+        case 'TECHNICOLOR-DGA4231ETI':
+        return SVGs.router.TECHNICOLOR_DGA4231ETI;
+
+        default:
+          return SVGs.router.default;
+    }
+  }
+
+
+
+ DynamicSetStbImages(router){
+
+
+    switch(router){
+
+      case 'Air7120':
+        return SVGs.stb.Air7120;
+      case 'DiP7910_56_3':
+        return SVGs.stb.DiP7910_56_3;
+      case 'DiP7911_56_3':
+        return SVGs.stb.DiP7911_56_3;
+      case 'DWI211ETI':
+        return SVGs.stb.DWI211ETI;
+      case 'DWI259ETI':
+        return SVGs.stb.DWI259ETI;
+      case 'DWI259S':
+        return SVGs.stb.DWI259S;
+      case 'DWI811ETI':
+        return SVGs.stb.DWI811ETI;
+      case 'DWI859ETI':
+        return SVGs.stb.DWI859ETI;
+      case 'DWI859S':
+        return SVGs.stb.DWI859S;
+      case 'EC2108':
+        return SVGs.stb.EC2108;
+      case 'EC2118':
+        return SVGs.stb.EC2118;
+      case 'KIP-B277XSAH':
+        return SVGs.stb.KIPB277XSAH;
+      case 'KSTB6078':
+        return SVGs.stb.KSTB6078;
+      case 'VM1400P':
+        return SVGs.stb.VM1400P;
+      case 'VM-HD1000':
+        return SVGs.stb.VMHD1000;
+      case 'VM-HD3000':
+        return SVGs.stb.VMHD3000;
+      case 'VM-HD3000LE ME':
+        return SVGs.stb.VMHD3000LEME;
+      case 'VM-HD3000LE':
+        return SVGs.stb.VMHD3000LE;
+      case 'VM-HD3000ME':
+        return SVGs.stb.VMHD3000ME;
+      case 'VM-HD3000SE':
+        return SVGs.stb.VMHD3000SE;
+      case 'VM-HD4000':
+        return SVGs.stb.VMHD4000; 
+        default:
+          return SVGs.stb.default;
+    }
+  }
+
+
 }

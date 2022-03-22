@@ -91,6 +91,10 @@ import { ComplaintUnderProcessMessageComponent } from './routes/complaint-under-
 import { FiberBoxNotReachableTryAgainComponent } from 'src/app/shared/components/fiber-box-not-reachable-try-again.component';
 import { ComplaintExistsJustMessageComponent } from './routes/complaint-exists-just-messgae.component';
 import { NoHomezoneAccountMessageComponent } from './routes/no-home-zone-account.component';
+import { ProceedToBookComplaintComponent } from './routes/proceed-book-complaint.component';
+import { SlowBrowsingStep1Component } from './routes/slow-browsing-step1.component';
+import { PaidTechBookComplaintComponent } from './routes/paid-tech-book-complaint.component';
+import { PaidTechComplaintSuccessfulMessageComponent } from './routes/paid-tech-complaint-successful-message.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 const routes: Routes = [
@@ -549,6 +553,22 @@ const routes: Routes = [
   {
     path:'no-home-zone-account-found',
     component:NoHomezoneAccountMessageComponent
+  },
+  {
+    path:'proceed-book-complaint',
+    component:ProceedToBookComplaintComponent
+  },
+   {
+    path:'slow-browsing-step1',
+    component:SlowBrowsingStep1Component
+  },
+   {
+    path:'paid-tech-book-complaint',
+    component:PaidTechBookComplaintComponent
+  },
+  {
+    path: 'paid-tech-compalint-successful',
+    component: PaidTechComplaintSuccessfulMessageComponent,
   }
 ];
 

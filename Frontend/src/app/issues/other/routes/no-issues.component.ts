@@ -151,7 +151,8 @@ export class NoIssuesComponent implements OnInit, OnDestroy {
       this.connectedDevices = [
         {
           className: networkDiagramClasses.okay,
-          url: SVGs.router.default,
+         // url: SVGs.router.default,
+          url: routerConfig?.url?? SVGs.router.default,
           title: ROUTER,
         },
       ];

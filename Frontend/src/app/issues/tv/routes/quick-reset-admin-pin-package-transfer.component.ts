@@ -123,7 +123,9 @@ export class QuickResetAdminPinPackageTransferComponent implements OnInit, OnDes
         this.router.navigate(['/issues/tv/quick-tv-admin-pin-reset-success'], { state: { screenCode: data?.result?.screenCode } });
       } else {
         // if (data?.result?.screenCode === flowCodes.QAIPTVPIN1) {
-        this.router.navigate(['/issues/tv/error-occur-try-again-later']);
+      //  this.router.navigate(['/issues/tv/error-occur-try-again-later']);
+      this.router.navigate(['/issues/internet/proceed-book-complaint']);
+
       }
     });
   }

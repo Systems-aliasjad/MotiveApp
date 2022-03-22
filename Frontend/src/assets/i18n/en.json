@@ -175,9 +175,16 @@
   },
 
   "MESSAGES": {
+    "SORRY_WE_ARE_UNABLE_TO_PROCESS_YOUR_REQUEST_CURRENTLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT":"Sorry, we are unable to process your request currently.  Please proceed to book complaint",
+    "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
+    "WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your complain and booked an appointment. Our technician will contact you soon",
+    "COMPLAINT_BOOK_SUCCESSFULLY": "Complaint booked successfully!",
+    "WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your complaint and booked an appointment. Our technician will contact you soon.",
+    "COMPLAINT_RAISED_SUCCESSFULLY": "Complaint raised successfully!",
+    "WE_HAVE_RECEIVED_YOUR_TECHNICIAN_VISIT_REQUEST_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your technician visit request and booked an appointment. Our technician will contact you soon.",
+    "TECHNICIAN_VISIT_REQUEST_RAISED_SUCCESSFULLY": "Technician visit request raised successfully",
     "PLEASE_SELECT_THE_DEVICE_MAKE__MODEL_AND_FOLLOW_THE_INSTRUCTIONS_TO_CONFIGURE_YOUR_ROUTER_MAKE_SURE_TO_USE_THE_CORRECT_USER_ID_AND_PASSWORD_WHILE_CONFIGURING_THE_ROUTER":"Please select the device make & model and follow the instructions to configure your router. Make sure to use the correct User Id and Password while configuring the router",
     "THE_ELIFE_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The eLife service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
-
     "SORRY_THE_SERVICE_IS_NOT_WORKING_PROPERLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "Sorry, the service is not working properly. Please proceed to book complaint.",
     "THE_INTERNET_SERVICE_IS_DOWN_WE_ARE_SORRY_TO_BE_HOLDING_YOU_UP_THIS_TIME_PLEASE_PROCEED_TO_BOOK_COMPLAINT": "The internet service is down. We are sorry to be holding you up this time.  Please proceed to book complaint.",
     "PLEASE_PROCEED_TO_BOOK_COMPLAINT":"Please proceed to book complaint",
@@ -498,9 +505,6 @@
     "THE_SERVICE_WONT_WORK_AS_YOUR_ACCOUNT_IS_BEING_CANCELLED_BASED_UPON_YOUR_REQUEST": "The service won’t work as your account is being cancelled based upon your request.",
     "COMPLAINT_ALREADY_EXISTS": "Complaint already exists",
     "OUR_TECHNICIANS_ARE_ALREADY_WORKING_ON_RESOLVING_THE_ISSUE_DO_YOU_WANT_TO_FOLLOW_UP_ON_THE_SAME_COMPLAINT": "Our technicians are already working on resolving the issue. Do you want to follow-up on the same complaint?",
-    "COMPLAINT_BOOK_SUCCESSFULLY": "Technician visit request raised successfully",
-    "APPOINTMENT_BOOK_SUCCESSFULLY": "Appointment booked successfully!",
-    "WE_HAVE_RECEIVED_YOUR_COMPLAIN_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your complain and booked an appointment. Our technician will contact you soon",
     "OPEN_SERVICE_REQUEST": "Open Service Request",
     "WE_NOTICED_THAT_THERE_IS_AN_OPEN_SERVICE_REQUEST": "We noticed that there is an open Service Request",
     "PACKAGE_UPGRADE_REQUEST_WAS_RAISED_SUCCESSFULLY": "Package upgrade request was raised successfully",
@@ -627,8 +631,6 @@
     "ELIFE_PACKAGE_UPGRADE_REQUEST_WAS_RAISED_SUCCESSFULLY": "eLife package upgrade request was raised successfully",
     "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx": "Xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-    "COMPLAINT_RAISED_SUCCESSFULLY": "Complaint raised successfully!",
-    "WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "We have received your technician visit request and booked an appointment. Our technician will contact you soon.",
     "YOU_ARE_CURRENTLY_USING_AN_ETISALAT_ROUTER_WE_CAN_PROVIDE_REMOTE_SUPPORT_IF_YOU_CONTINUE_USING_THIS_ROUTER": "You are currently using an Etisalat router. We can provide remote support if you continue using this router. ",
     "HOWEVER_THIS_SERVICE_WILL_NOT_BE_AVAILABLE_IF_YOU_INSTALL_A_THIRD_PARTY_ROUTER": "However, this service will not be available if you install a third-party router. ",
     "YOU_NEED_TO_RESET_YOUR_INTERNET_PASSWORD_TO_INSTALL_THE_THIRD_PARTY_ROUTER": "You need to reset your internet password to install the third-party router",
@@ -753,7 +755,7 @@
         ],
         "I_WANT_TO_FACTORY_RESET_MY_TV_BOX": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 2 minutes\n\nDevice backend configuration checks are getting performed",
                 "time": 20000
             },
             {
@@ -771,7 +773,7 @@
         ],
         "I_WANTO_TO_FACTORY_RESET_MY_ROUTER": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 4 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -797,7 +799,7 @@
         ],
         "ONT_REBOOT_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 2 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -819,7 +821,7 @@
         ],
         "TV_SET_TOP_BOX_RESTART_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 2 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -897,7 +899,7 @@
         ],
         "ROUTER_REBOOT_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 2 minutes.\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -919,7 +921,7 @@
         ],
         "ROUTER_RESET_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 4 minute\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -945,7 +947,7 @@
         ],
         "INTERNET_PASSWORD_RESET_REQUIRED": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take 4 minutes\n\nDevice backend configuration checks are getting performed",
                 "time": 15000
             },
             {
@@ -967,7 +969,7 @@
         ],
         "WIFI_PASSWORD_RESET": [
             {
-                "message": "Pushing new Wi-Fi settings",
+                "message": "This will take up to 1 minute\n\nPushing new Wi-Fi settings",
                 "time": 20000
             },
             {
@@ -1037,7 +1039,7 @@
         ],
         "ROUTER_MANAGED_BUT_NOT_REACHABLE": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 1 minute.\n\nDevice backend configuration checks are getting performed",
                 "time": 20000
             },
             {
@@ -1057,7 +1059,7 @@
         ],
         "INTERNET_SERVICE_DETAIL": [
             {
-                "message": "Susbcribed service checks are getting perfromed ",
+                "message": "This will take up to 1 minute.\n\nSusbcribed service checks are getting perfromed ",
                 "time": 20000
             },
             {
@@ -1067,7 +1069,7 @@
         ],
         "STB_NOT_REACHABLE": [
             {
-                "message": "Device backend configuration checks are getting performed",
+                "message": "This will take up to 1 minute.\n\nDevice backend configuration checks are getting performed",
                 "time": 20000
             },
             {
@@ -1077,7 +1079,7 @@
         ],
         "IPTV_SERVICE_DETAIL": [
             {
-                "message": "Susbcribed service checks are getting perfromed ",
+                "message": "This will take up to 1 minute\n\nSusbcribed service checks are getting perfromed ",
                 "time": 20000
             },
             {

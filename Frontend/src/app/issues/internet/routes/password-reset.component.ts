@@ -63,6 +63,11 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
   updateHeader() {
     const navigation = this.router.getCurrentNavigation();
     this.quickLinkNextSignal = navigation?.extras?.state?.quickLinkNextSignal;
+
+      var apiInternetGenericResponse = this.sharedService.getInternetGenericResponse();
+    if(apiInternetGenericResponse?.routerDetails?.routerModel){
+       this.routerConfig.url= this.sharedService.DynamicSetRouterImages(apiInternetGenericResponse?.routerDetails?.routerModel);
+    }
   }
 
   headerConfig: IPageHeader = {
@@ -102,20 +107,23 @@ export class PasswordResetComponent implements OnInit, OnDestroy {
     } else if (res?.result?.screenCode === flowCodes.QAHSIPR1) {
       this.router.navigate(['/issues/internet/password-reset-faliure']);
     } else {
-      this.router.navigate(['/unknown-issue']);
+      // this.router.navigate(['/unknown-issue']);
+      this.router.navigate(['/issues/internet/proceed-book-complaint']);
     }
   }
 
   button2Listener() {
-    if (this.quickLinkNextSignal) {
-      this.router.navigate(['landing']);
-    } else {
-      this.sharedService.setLoader(true);
-      this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
-        this.sharedService.setLoader(false);
-      this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
-        this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
-      });
-    }
+   
+    this.router.navigate(['thanks']);
+    // if (this.quickLinkNextSignal) {
+    //   this.router.navigate(['landing']);
+    // } else {
+    //   this.sharedService.setLoader(true);
+    //   this.backendService.nextSignal('DontReboot').subscribe((data: any) => {
+    //     this.sharedService.setLoader(false);
+    //   this.sharedService.SetTsOutCome(data?.result?.responseData?.tsOutcome??'');
+    //     this.helperService.InternetFlowIdentifier(data?.result?.screenCode, data?.result?.responseData);
+    //   });
+    // }
   }
 }

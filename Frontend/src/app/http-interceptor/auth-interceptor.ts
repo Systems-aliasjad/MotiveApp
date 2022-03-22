@@ -5,11 +5,15 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/auth.service';
 import { environment } from 'src/environments/environment';
+import { HttpResponseService } from '../services/http-response.service';
 import { MessageService } from '../services/message.service';
 import { flowCodes } from '../shared/constants/constants';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private auth: AuthService, private router: Router, private messenger: MessageService) {}
+
+ byPassLogResponse:boolean=false;
+
+  constructor(private httpResponseCodeService:HttpResponseService, private auth: AuthService, private router: Router, private messenger: MessageService) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const started = Date.now();
@@ -32,6 +36,10 @@ export class AuthInterceptor implements HttpInterceptor {
        */
       const authToken: string = this.auth.getAuthorizationToken();
       myReq = req.clone({ url: `${baseUrl}${req.url}`, setHeaders: { Authorization: `Bearer ${authToken}` } });
+      
+       if(myReq?.url?.match('motive/troubleshoot/book-complaint') || myReq?.url?.match('error')){
+         this.byPassLogResponse=true;
+       }
     }
 
     return next.handle(myReq).pipe(
@@ -39,9 +47,20 @@ export class AuthInterceptor implements HttpInterceptor {
         if (event instanceof HttpResponse) {
           console.log('response--->>>', event);
           this.logRequest(started, req, 'ok');
+
+           ////Log Http status in shared service
+           if(!this.byPassLogResponse)
+           {
+              this.httpResponseCodeService.setHttpResponseCode(event?.status);
+           }
+          
           
           if(event?.body?.result?.screenCode===flowCodes.E2ECRM11)
           {
+            if(!this.byPassLogResponse)
+           {
+            this.httpResponseCodeService.LogDataResponse(event?.body);
+           }
             this.router.navigate(['/unknown-issue']);
           }
           
@@ -50,10 +69,26 @@ export class AuthInterceptor implements HttpInterceptor {
       }),
       catchError((error: HttpErrorResponse) => {
         this.logRequest(started, req, 'error');
+
+        ////Log Http status in shared service
+        if(!this.byPassLogResponse)
+           {
+              this.httpResponseCodeService.setHttpResponseCode(error?.status);
+           }
+       
+
         if (this.router.url.match('thanks')) {
-        } else if (error.status === 500 || error.status === 0) {
+        } else if (error?.status === 500 || error?.status === 0) {
+           if(!this.byPassLogResponse)
+           {
+           this.httpResponseCodeService.LogDataResponse(error);
+           }
           this.router.navigate(['/unknown-issue']);
         } else {
+           if(!this.byPassLogResponse)
+           {
+          this.httpResponseCodeService.LogDataResponse(error);
+           }
           this.router.navigate(['/unknown-error']);
         }
 

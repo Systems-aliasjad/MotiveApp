@@ -75,7 +75,7 @@ export class UnableWatchSpecificChannelComponent implements OnInit, OnDestroy {
 
   headerConfig: IPageHeader = {
     pageTitle: 'MESSAGES.CHANNEL_LIST',
-    showBackBtn: true,
+    showBackBtn: false,
   };
 
   get f() {

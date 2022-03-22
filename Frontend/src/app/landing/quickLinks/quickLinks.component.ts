@@ -53,13 +53,13 @@ export class QuickLinksComponent implements OnInit, OnChanges {
   }
 
   initialization() {
-    this.quickLinks = motiveSubscriptions[this.codeType].quickLinkCard;
+    this.quickLinks = motiveSubscriptions[this.codeType]?.quickLinkCard;
     // if (!this.sharedService.getHomeZoneFlag()) {
     //   var links = this.quickLinks.filter((x) => x.linkTo !== '/issues/internet/stage2/reset-wifi-password');
     //   this.quickLinks = links;
     // }
     if (!this.sharedService.getElifeOnFlag()) {
-      var links = this.quickLinks.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
+      var links = this.quickLinks?.filter((x) => x.linkTo !== 'issues/tv/pin-reset-failed');
       this.quickLinks = links;
     }
     this.setSlideOpts();
@@ -90,7 +90,7 @@ export class QuickLinksComponent implements OnInit, OnChanges {
 
   onCardClick(link) {
     if (link?.isDeepLink) {
-      if (link.body === 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE') {
+      if (link?.body === 'QUICK_LINKS.I_WANT_TO_UPGRADE_MY_ELIFE_PACKAGE') {
         if (this.sharedService.checkIfMobileDevice()) {
           window.location.href = 'https://etisalatmobileapp.page.link/elife';
         } else {
@@ -157,7 +157,8 @@ export class QuickLinksComponent implements OnInit, OnChanges {
           this.router.navigate(['issues/password/unable-to-process-request']);
         } else {
           //if (data?.result?.screenCode === flowCodes.QAIPTVELON1) {
-          this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+          // this.router.navigate(['issues/tv/unable-elife-error-occur-try-again-later']);
+          this.router.navigate(['/issues/internet/proceed-book-complaint']);
         }
       });
     } else if (item?.nextSignal === QUICK_ACTION.RESET_INTERNET_PASSWORD) {
