@@ -76,7 +76,7 @@
             <ion-col size="12" class="shadow-box">
               <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.INTERNET_CONNECTION_STATUS' | translate }}</h5>
-                <p [className]="internetConnectionStatus === 'Connected' ? 'active-result' : 'error-result'">
+                <p [className]="internetConnectionStatus?.toLowerCase() === 'connected' ? 'active-result' : 'error-result'">
                   <strong>{{ internetConnectionStatus }}</strong>
                 </p>
               </div>
@@ -85,7 +85,7 @@
             <ion-col size="12" class="shadow-box" *ngIf="speedTestResult !== ''">
               <div class="parental-control">
                 <h5 class="sub-title">{{ 'MESSAGES.SPEED_TEST_RESULT' | translate }}</h5>
-                <p [className]="speedTestResult === 'BAD' ? 'error-result' : 'active-result'">
+                <p [className]="speedTestResult?.toLowerCase() === 'bad' ? 'error-result' : 'active-result'">
                   <strong>{{ speedTestResult }}</strong>
                 </p>
               </div>
