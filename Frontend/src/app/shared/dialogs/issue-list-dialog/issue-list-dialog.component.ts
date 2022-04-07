@@ -56,6 +56,16 @@ export class IssueListDialog implements OnInit {
       issue: 'MESSAGES.UNABLE_TO_CONNECT_NEW_DEVICE_TO_WIFI',
       route: 'issues/internet/unable-connect-newDevice',
     },
+
+     {
+      issue: 'MESSAGES.SLOW_BROWSING',
+      route: 'issues/internet/slow-browsing-step1',
+    },
+
+     {
+      issue: 'MESSAGES.FREQUENT_DISCONNECTION',
+      route: 'issues/internet/frequent-disconnection-step1',
+    },
   ];
   tvIssuesList: any[] = [
     {

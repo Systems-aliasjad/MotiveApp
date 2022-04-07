@@ -24,6 +24,17 @@
           </div>
           <p>{{ deviceCareContent?.body1 | translate }}</p>
 
+
+
+           <div *ngFor="let item of deviceCareContent?.titleBody">
+          <div>
+            <h6 class="sub-title letter-space-none ">{{ item?.title | translate }}</h6>
+          </div>
+          <p>{{ item?.body | translate }}</p>
+           </div>
+          
+
+
           <!-- ///For Alphabets bullets -->
           <ul no-lines *ngIf="deviceCareContent?.bullet1 && IsBulletList" class="bullet-list decimal-list">
             <li *ngFor="let bullet of deviceCareContent?.bullet1">
@@ -70,6 +81,9 @@
           </div>
           <p>{{ deviceCareContent?.body1 | translate }}</p>
 
+
+         
+
           <!-- ///For Alphabets bullets -->
           <ul no-lines *ngIf="deviceCareContent?.bullet1 && IsBulletList" class="bullet-list decimal-list">
             <li *ngFor="let bullet of deviceCareContent?.bullet1">
@@ -87,6 +101,19 @@
         <div class="image">
           <iframe src="https://simulator-devicecare.etisalat.ae/WebApp/Main.aspx?locale=en_US" height="100%"></iframe>
         </div>
+
+          <div *ngFor="let item of deviceCareContent?.titleBody">
+          <div>
+            <h6 class="sub-title letter-space-none ">{{ item?.title | translate }}</h6>
+          </div>
+          <p>{{ item?.body | translate }}</p>
+           </div>
+
+
+
+
+
+
         <!-- Content Below Image -->
         <div [ngClass]="selectedLang === 'en' ? 'page-top_title' : ''" *ngIf="deviceCareContent.header2">
           <h3 class="sub-title letter-space-none">{{ deviceCareContent?.header2 | translate }}</h3>

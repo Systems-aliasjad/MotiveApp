@@ -95,6 +95,10 @@ import { ProceedToBookComplaintComponent } from './routes/proceed-book-complaint
 import { SlowBrowsingStep1Component } from './routes/slow-browsing-step1.component';
 import { PaidTechBookComplaintComponent } from './routes/paid-tech-book-complaint.component';
 import { PaidTechComplaintSuccessfulMessageComponent } from './routes/paid-tech-complaint-successful-message.component';
+import { FrequentDisconnectionStep1Component } from './routes/frequent-disconnection-step1.component';
+import { FrequentDisconnectionEthernetStep1Component } from './routes/frequent-disconnection-ethernet-step1.component';
+import { FrequentDisconnectionWifiStep1Component } from './routes/frequent-disconnection-wifi-step1.component';
+import { SlowBrowsingStep2Component } from './routes/slow-browsing-step2.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 const routes: Routes = [
@@ -569,7 +573,24 @@ const routes: Routes = [
   {
     path: 'paid-tech-compalint-successful',
     component: PaidTechComplaintSuccessfulMessageComponent,
-  }
+  },
+  {
+    path: 'frequent-disconnection-step1',
+    component: FrequentDisconnectionStep1Component,
+  },
+  {
+    path: 'frequent-disconnection-ethernet-step1',
+    component: FrequentDisconnectionEthernetStep1Component,
+  },
+  {
+    path: 'frequent-disconnection-wifi-step1',
+    component: FrequentDisconnectionWifiStep1Component,
+  },
+  {
+    path:'slow-browsing-step2',
+    component:SlowBrowsingStep2Component
+  },
+
 ];
 
 @NgModule({

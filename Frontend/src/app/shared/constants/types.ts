@@ -50,6 +50,7 @@ export interface IDeviceCareContent {
   body2?: string;
   bullet1?: string[];
   bullet2?: string[];
+  titleBody?:any;
 }
 
 export interface IMotiveButton {

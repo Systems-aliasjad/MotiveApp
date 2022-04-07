@@ -1,4 +1,3 @@
-
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -7,11 +6,11 @@ import { IDeviceCareContent, IMotiveButton, IPageHeader } from 'src/app/shared/c
 import { SharedService } from 'src/app/shared/shared.service';
 
 @Component({
-  selector: 'app-slow-browsing-step1',
+  selector: 'app-frequent-disconnection-step1',
   template:
-    '<app-device-care  [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
+    '<app-device-care [IsBulletList]="true" [headerConfig]="headerConfig" [deviceCareContent]="careContent" [button1]="button1" [button2]="button2" (button1Click)="button1Listener()" (button2Click)="button2Listener()"></app-device-care>',
 })
-export class SlowBrowsingStep1Component implements OnInit, OnDestroy {
+export class FrequentDisconnectionStep1Component implements OnInit, OnDestroy {
   subscription: Subscription;
   careContent: IDeviceCareContent = {
     imgSrc: '',
@@ -19,12 +18,12 @@ export class SlowBrowsingStep1Component implements OnInit, OnDestroy {
     body1: '',
   };
   button1: IMotiveButton = {
-    type: 'primary',
-    title: 'BUTTONS.ISSUE_FIXED',
+    type: 'link',
+    title: 'BUTTONS.WIFI',
   };
   button2: IMotiveButton = {
     type: 'link',
-    title: 'BUTTONS.CONTINUE_TO_TROUBLESHOOTING',
+    title: 'BUTTONS.ETHERNET_LAN_CABLE',
   };
 
   constructor(private sharedService: SharedService, private router: Router, private activatedRoute: ActivatedRoute, private backendService: BackendService) {}
@@ -45,24 +44,23 @@ export class SlowBrowsingStep1Component implements OnInit, OnDestroy {
   }
 
   headerConfig: IPageHeader = {
-    pageTitle: 'HEADER.STEP_1/2',
+    pageTitle: '',//'HEADER.STEP_1/3',
     showBackBtn: true,
   };
 
   updatePageContent() {
-    this.careContent.imgSrc = '';
-    this.careContent.header1 = 'MESSAGES.GUIDELINES';
-    this.careContent.body1 = 'MESSAGES.IS_YOUR_DEVICE_CONNECTED_TO_THE_ROUTER_VIA_WIFI';
-    this.careContent.body2 = 'MESSAGES.IF_YES_PLEASE_FOLLOW_THESE_GUIDELINES';
-     this.careContent.bullet2 = ['MESSAGES.ENSURE_THAT_YOUR_WIFI_NETWORK_PASSWORD_IS_ENABLED', 'MESSAGES.IF_YOU_ARE_CLOSE_TO_THE_ROUTER_PLEASE_CONNECT_TO_5GHZ_SIGNAL_AS_IT_GIVES_HIGHER_BANDWIDTH_IN_NARROW_RANGE','MESSAGES.IF_YOU_ARE_FAR_FROM_THE_ROUTER_PLEASE_CONNECT_TO_2_4_GHZ_SIGNAL_AS_IT_GIVES_HIGHER_BANDWIDTH_IN_WIDE_RANGEMAKE_SURE_TO_SECURE_YOUR_WIFI_NETWORK'];
+    this.careContent.imgSrc = 'https://www.etisalat.ae/en/images/414x200_tcm313-152995.jpg';
+    //this.careContent.header1 = 'SUBHEADER.CHECK_YOUR_BROWSER_SETTING';
+    this.careContent.body1 = 'MESSAGES.PLEASE_SELECT_THE_CONNECTION_TYPE_YOU_ARE_USING_ON_YOUR_DEVICE';
+     this.careContent.bullet2 = ['MESSAGES.WIFI', 'MESSAGES.ETHERNET_LAN_CABLE'];
   
   }
 
   button1Listener() {
-      this.router.navigate(['thanks']);
+      this.router.navigate(['/issues/internet/frequent-disconnection-wifi-step1']);
   }
 
   button2Listener() {
-    this.router.navigate(['issues/internet/slow-browsing-step2']);
+    this.router.navigate(['/issues/internet/frequent-disconnection-ethernet-step1']);
   }
 }

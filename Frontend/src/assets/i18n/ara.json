@@ -89,8 +89,9 @@
     "I_WANT_TO_RESET_ELIFE_ON_PIN": "أريد إعادة ضبط رمز التعريف الشخصي  "
   },
   "BUTTONS": {
+     "WIFI":"عن طريق Wi-Fi",
+    "ETHERNET_LAN_CABLE":"عن طريق كابل الانترنت",
     "INSTALL_NEW_ETISALAT_ROUTER":"قم بتثبيت جهاز راوتر جديد من اتصالات",
-
     "ETISALAT_ROUTER":"راوتر اتصالات",
     "THIRD_PARTY_ROUTER": "راوتر ليس من اتصالات",
     "NO_EXIT_TROUBLESHOOTING": "الخروج من صفحة إصلاح الأخطاء",
@@ -178,6 +179,30 @@
     "YES_RESET_WIFI_PASSWORD": "نعم، قم باعده تعيين كلمة المرور لخدمة الواي فاي"
   },
   "MESSAGES": {
+    "SLOW_BROWSING":"Slow Browsing",
+    "FREQUENT_DISCONNECTION":"Frequent Disconnection",
+     "IF_YES_PLEASE_CLEAR_BROWSER_CACHE_COOKIES_OF_THAT_DEVICE":"ان كانت الإجابة نعم، اذاً، يرجى اذالة جميع ملفات ذاكرة التخزين المؤقت وملفات تعريف الارتباط للمتصفح لهذا الجهاز",
+    "ARE_YOU_FACING_SPEED_ISSUES_WITH_A_SPECIFIC_DEVICE": "هل تواجه بطء الخدمة على جهاز معين؟",
+    "IF_YES_PLEASE_REMOVE_ALL_UNAUTHORIZED_PUBLIC_VPN_AS_IT_COULD_AFFECT_THE_BROWSING_EXPERIENCE":"ان كانت الإجابة نعم، اذاً، يرجى اذالة أي VPN، فقد يؤثر ذلك بالسلب على تجربة استخدامك للإنترنت.",
+    "ARE_YOU_USING_ANY_PUBLIC_VPN":"هل تستخدم VPN؟",
+    "IF_YES_IT_COULD_BE_FROM_THE_SITE_SOURCE_ITSELF":"ان كانت الإجابة نعم، اذاً، قد يكون هذا البطء من المصدر نفسه للموقع او التطبيق.",
+    "ARE_YOU_FACING_SLOW_BROWSING_WITH_SPECIFIC_WEBSITE_OR_APP":"هل تواجه بطء في موقع او تطبيق معين؟",
+    "IF_YOU_ARE_FAR_FROM_THE_ROUTER_PLEASE_CONNECT_TO_2_4_GHZ_SIGNAL_AS_IT_GIVES_HIGHER_BANDWIDTH_IN_WIDE_RANGEMAKE_SURE_TO_SECURE_YOUR_WIFI_NETWORK":"ذا كنت بعيدا عن جهاز الراوتر، تأكد من اتصالك على شبكة ال wiFi  ذات ال 2.4GHZ لأنها تضمن الاتصال الأفضل على نطاق واسع.",
+    "IF_YES_PLEASE_FOLLOW_THESE_GUIDELINES":"ان كانت الإجابة نعم، يرجى اتباع التالي:",
+    "IS_YOUR_DEVICE_CONNECTED_TO_THE_ROUTER_VIA_WIFI":"هل يتصل جهازك بالراوتر عن طريق ال WiFi؟",
+    "GUIDELINES":"إرشادات:",
+    "IF_YOU_ARE_FAR_FROM_THE_ROUTER_PLEASE_CONNECT_TO_2_4_GHZ_SIGNAL_AS_IT_GIVES_HIGHER_BANDWIDTH_IN_WIDE_RANGE":"اذا كنت بعيدا عن جهاز الراوتر، تأكد من اتصالك على شبكة ال wiFi  ذات ال 2.4GHZ لأنها تضمن الاتصال الأفضل على نطاق واسع.",
+    "IF_YOU_ARE_CLOSE_TO_THE_ROUTER_PLEASE_CONNECT_TO_5GHZ_SIGNAL_AS_IT_GIVES_HIGHER_BANDWIDTH_IN_NARROW_RANGE":"ذا كنت قريب من جهاز الراوتر، تاكد من اتصالك بشبكة ال WiFi  ذات ال 5GHZ لأنها الأسرع على النطاق القريب.",
+    "ENSURE_THAT_YOUR_WIFI_NETWORK_PASSWORD_IS_ENABLED":"تأكد من تمكين كلمة مرور ل WiFi.",
+    "WIFI_GUIDELINES_WIFI_BEST_PRACTICES":"عند اتصالك بال  wi fi  تأكد من التالي:",
+    "ENSURE_THAT_THE_CABLE_BETWEEN_THE_ROUTER_AND_THE_FIBER_BOX_IS_CONNECTED_PROPERLY":"تأكد من توصيل الكابل بشكل جيد ما بين الجهاز الرئيسي و جهاز الراوتر.", 
+    "RESTART_THE_ROUTER":"بعد ذلك، اعد تشغيل جهاز الراوتر مرة اخرى.",
+    "RESTART_THE_WALL_MOUNTED_FIBER_BOX":"قم بإعادة تشغيل الجهاز الرئيسي المعلق على الحائط الخاص بخدمات اتصالات.",
+    "ETHERNET_GUIDELINES_BEST_PRACTICES":"عند اتصالاك بكابل الانترنت، تأكد من التالي:",
+    "WIFI":"عن طريق Wi-Fi",
+    "ETHERNET_LAN_CABLE":"عن طريق كابل الانترنت",
+    "PLEASE_SELECT_THE_CONNECTION_TYPE_YOU_ARE_USING_ON_YOUR_DEVICE":"قم بتحديد باي طريقة انت متصل الان على الانترنت:",  
+
     "SORRY_WE_ARE_UNABLE_TO_PROCESS_YOUR_REQUEST_CURRENTLY_PLEASE_PROCEED_TO_BOOK_COMPLAINT":"عذراً، لن نتمكن من إتمام طلبك حالياً. يرجى المتابعة لتسجيل شكوى",
     "APPOINTMENT_BOOK_SUCCESSFULLY": "لقد وصلتنا شكوتك، سوف يتم إبلاغك بمجرد حل المشكلة",
     "WE_HAVE_RECEIVED_YOUR_COMPLAINT_AND_BOOKED_AN_APPOINTMENT_OUR_TECHNICIAN_WILL_CONTACT_YOU_SOON": "لقد وصلتنا شكوتك، سوف يتم إبلاغك بمجرد حل المشكلة",

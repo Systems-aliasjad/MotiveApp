@@ -111,6 +111,10 @@ import { ProceedToBookComplaintComponent } from './routes/proceed-book-complaint
 import { SlowBrowsingStep1Component } from './routes/slow-browsing-step1.component';
 import { PaidTechBookComplaintComponent } from './routes/paid-tech-book-complaint.component';
 import { PaidTechComplaintSuccessfulMessageComponent } from './routes/paid-tech-complaint-successful-message.component';
+import { FrequentDisconnectionStep1Component } from './routes/frequent-disconnection-step1.component';
+import { FrequentDisconnectionEthernetStep1Component } from './routes/frequent-disconnection-ethernet-step1.component';
+import { FrequentDisconnectionWifiStep1Component } from './routes/frequent-disconnection-wifi-step1.component';
+import { SlowBrowsingStep2Component } from './routes/slow-browsing-step2.component';
 // import { QuickHomeZoneResetWifiComponent } from './routes/home-zone-reset-wifi/home-zone-reset-wifi.component';
 
 @NgModule({
@@ -214,7 +218,11 @@ import { PaidTechComplaintSuccessfulMessageComponent } from './routes/paid-tech-
     ProceedToBookComplaintComponent,
     SlowBrowsingStep1Component,
     PaidTechBookComplaintComponent,
-    PaidTechComplaintSuccessfulMessageComponent
+    PaidTechComplaintSuccessfulMessageComponent,
+    FrequentDisconnectionStep1Component,
+    FrequentDisconnectionEthernetStep1Component,
+    FrequentDisconnectionWifiStep1Component,
+    SlowBrowsingStep2Component
   ],
   imports: [
     CommonModule,
