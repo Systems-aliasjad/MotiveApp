@@ -402,10 +402,10 @@ ion-item::part(native) {
   border: 2px solid #f2f2f2;
 }
 .okay-state {
-  border: 2px solid $etisalat-color;
-  background-color: $white;
+  border: 2px solid $black;
+  background-color: $light-shade;
   position: relative;
-  box-shadow: 0 5px 10px rgb(113 158 25 / 31%);
+  box-shadow: 0 5px 10px rgba(62, 63, 58, 0.31);
   &:after {
     content: '';
     width: 1.1rem;
