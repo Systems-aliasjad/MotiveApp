@@ -32,7 +32,9 @@
         <ion-row class="technical-support-container">
           <ion-col sizeLg="6" sizeMd="4" size="12" class="technical-support" *ngFor="let card of landingPageCards" (click)="handleClick(card.linkTo)">
             <a href="javascript:void(0)" class="technical-support_card" (click)="onCardClick(card)">
-              <img [src]="card.img" alt="" class="" />
+              <div class="technical-support_card-img">
+                <img [src]="card.img" alt="" class="" />
+              </div>
               <div class="technical-support_content">
                 <h6 class="technical-support_title">{{ card.title | translate }}</h6>
                 <p>{{ card.body | translate }}</p>
