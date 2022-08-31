@@ -32,6 +32,10 @@ export class LoaderComponent implements OnInit, OnDestroy {
     path: './assets/images/loader/Orange_Loader_app.json',
   };
 
+  blackLoader: AnimationOptions = {
+    path: './assets/images/loader/Black_Loader_app.json'
+  };
+
   optionsLoader;
 
   clearGreenPercentage;
@@ -143,11 +147,11 @@ export class LoaderComponent implements OnInit, OnDestroy {
     this.percentageLoaded = 0;
     this.lateResponse = true;
     this.messages = this.faliureMessages;
-    this.optionsLoader = this.warningLoader;
+    this.optionsLoader = this.blackLoader;
   }
 
   showGreenLoader() {
     this.messages = this.successMessages;
-    this.optionsLoader = this.successLoader;
+    this.optionsLoader = this.blackLoader;
   }
 }
