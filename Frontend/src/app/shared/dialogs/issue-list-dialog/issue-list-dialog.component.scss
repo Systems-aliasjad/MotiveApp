@@ -27,7 +27,7 @@
         h3{
           font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
           color:$primary-color;
-          font-weight: normal;
+          font-weight:600;
           margin-left: 2rem;
           @media screen and (max-width:992px) {
             margin-left: 0;
@@ -198,6 +198,7 @@ ion-buttons{
   }
   ion-col{
     ion-card {
+      box-shadow: none;
       cursor: pointer;
       margin-right: 0;
       margin-left: 0;
@@ -236,7 +237,7 @@ ion-buttons{
         -ms-flex-direction: row;
         flex-direction: row;
         p{
-          color: $primary-color;
+          color: $etisalat-gray-color;
           font-size: 1rem;
           font-weight: 600;
           font-family:Lato,Roboto,Arial,sans-serif;
