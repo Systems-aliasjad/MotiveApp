@@ -35,6 +35,8 @@
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
     font-weight: 600;
+    color: $etisalat-gray-color;
+
     @media screen and (max-width: 767px){
       font-size: 16px;
     }
@@ -43,7 +45,8 @@
     p{
       line-height: 1.2;
       margin-bottom: 0;
-      color: #848789;
+      color:$black;
+      // color: #848789;
       text-align: center;
       @media screen and (max-width: 767px){
         font-size: 14px;

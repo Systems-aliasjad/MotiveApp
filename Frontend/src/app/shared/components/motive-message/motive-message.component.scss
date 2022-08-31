@@ -61,6 +61,8 @@ ion-item::part(native){
     }
   }
   h4 {
+    font-size: 26px;
+    color: $etisalat-gray-color;
     font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
     text-align: center;
     font-weight: 600;
@@ -68,11 +70,17 @@ ion-item::part(native){
       font-size: 16px;
     }
   }
+
   .content {
     p {
+      
+      font-size: 16px;
+      
+      color:$black;
+      // 
       line-height: 1.5;
       margin-bottom: 0;
-      color: #848789;
+      // color: #848789;
       text-align: center;
       word-break: break-word;
       @media screen and (max-width: 767px){
