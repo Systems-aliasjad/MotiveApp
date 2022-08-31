@@ -76,7 +76,7 @@ ion-item::part(native){
       
       font-size: 16px;
       
-      color:$black;
+      color:$etisalat-gray-color;
       // 
       line-height: 1.5;
       margin-bottom: 0;
@@ -124,7 +124,7 @@ ion-item::part(native){
       flex-direction: column;
       text-align: center;
       p {
-        color: $primary-color;
+        color:$etisalat-gray-color;
         font-weight: 600;
       }
       .follow-up {
