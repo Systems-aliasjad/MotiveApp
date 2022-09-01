@@ -42,6 +42,12 @@ ion-button,
 .transparent-btn{
   margin-top: 0;
   margin-bottom: 0;
+
+  move-elife-connection-message & {
+    a {
+      color: $etisalat-color;
+    }
+  }
 }
 .agree-terms-container{
   @media screen and (min-width: 992px) and (max-width:1025px)  {
