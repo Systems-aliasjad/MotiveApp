@@ -53,7 +53,7 @@ $isRTL: true;
     }
   }
   .segment-button-checked {
-    color: #719e19;
+    color: $etisalat-gray-color;
     --indicator-color: transparent;
     --background-hover: $secondary-color;
     --background-focused: $primary-color;
@@ -321,18 +321,18 @@ ion-checkbox {
   }
   --background: $white;
   --border-radius: 50%;
-  --border-color: #719e19;
+  --border-color:$etisalat-gray-color;
   --border-style: solid;
   --checkmark-color: #ffffff;
-  --background-checked: #719e19;
-  --border-color-checked: #719e19;
+  --background-checked: $etisalat-gray-color;
+  --border-color-checked: $etisalat-gray-color;
 }
 // ------------Checkbox End-------------------
 
 // ------------Radio Button Start-----------------
 ion-radio {
-  --color: #719e19;
-  --color-checked: #719e19;
+  --color: $etisalat-gray-color;
+  --color-checked: $etisalat-gray-color;
   margin-top: 0.5rem;
   margin-right: 1.2rem;
   margin-left: 0;
@@ -341,7 +341,7 @@ ion-radio::part(container) {
   margin: 0;
   border-width: 2px;
   border-style: solid;
-  border-color: #719e19;
+  border-color: $etisalat-gray-color;
   border-radius: 50%;
   width: 24px;
   height: 24px;

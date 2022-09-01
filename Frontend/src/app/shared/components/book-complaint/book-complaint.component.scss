@@ -3,11 +3,6 @@
 //----------------------------------------------------------------
 :host {
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
-  .item-interactive{
-    .ion-valid{
-    //  background-color: black;
-    }
-  }
 }
 :host(.item-interactive.ion-valid) {
   --highlight-background: var(--ion-color, #100f0f) ;
