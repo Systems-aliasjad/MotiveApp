@@ -8,7 +8,7 @@
     --ion-background-color: transparent;
   }
   ion-item {
-    --min-height: 30px;
+    --min-height: 40px;
     @media screen and (max-width: 321px) {
       padding-top:.5rem;
       padding-bottom: .5rem;
@@ -90,14 +90,14 @@ ion-item::part(native){
   }
   .info-container_detail_followup {
     font-family: Lato, Roboto, Arial, sans-serif;
-    width: 350px;
+    width: 450px;
     margin: 0 auto;
     @media screen and (max-width: 767px) {
       width: 100%;
     }
     .info-container_detail_list {
-      margin-top: 1.5rem;
-      margin-bottom: 4rem;
+      margin-top: 1.375rem;
+      margin-bottom: 2rem;
       width: 100%;
       @media screen and (max-width: 376px) {
         margin-bottom: 2rem;

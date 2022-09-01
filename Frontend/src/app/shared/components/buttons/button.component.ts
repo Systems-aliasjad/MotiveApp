@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { EventEmitter } from '@angular/core';
 import { TermsConditionsComponent } from '../terms-conditions/terms-conditions.component';
@@ -9,6 +9,7 @@ import { BackendService } from 'src/app/services/backend.service';
   selector: 'motive-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ButtonComponent implements OnInit {
   @Input()
