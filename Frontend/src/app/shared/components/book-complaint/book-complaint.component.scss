@@ -4,6 +4,9 @@
 :host {
   --ion-font-family:Lato,Roboto,Arial,sans-serif;
 }
+:host(.item-interactive.ion-valid) {
+  --highlight-background: var(--ion-color, #100f0f) ;
+}
 ion-item::part(native){
   --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
   padding-inline-start:0; 
