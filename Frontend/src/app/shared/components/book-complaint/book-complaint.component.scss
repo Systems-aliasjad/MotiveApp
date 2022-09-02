@@ -60,6 +60,12 @@ ion-input{
     font-size:14px;
    }
 }
+
+ion-item {
+  &.ion-valid { 
+    --highlight-color-valid: #{$etisalat-gray-color};
+  }
+}
 /*ion-input{
   @media screen and (max-width: 767px) {
     font-size:14px;
