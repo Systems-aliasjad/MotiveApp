@@ -47,3 +47,9 @@ input {
     line-height: 19px;
   }
 }
+
+ion-item {
+  &.ion-valid { 
+    --highlight-color-valid: #{$etisalat-gray-color};
+  }
+}
