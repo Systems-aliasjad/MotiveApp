@@ -62,7 +62,7 @@ ion-input{
 }
 
 ion-item {
-  &.ion-valid.ion-touched { 
+  &.ion-valid { 
     --highlight-color-valid: #{$etisalat-gray-color};
   }
 }
