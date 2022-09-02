@@ -13,7 +13,7 @@
     --min-height: auto;
     ion-label {
       margin-bottom: 0;
-      color: $secondary-color;
+      color: $etisalat-gray-color;
       white-space: normal;
       @media screen and (max-width: 992px) {
         font-size: 14px;
@@ -118,7 +118,7 @@ ion-item::part(native) {
       }
       .instruction_view {
         p {
-          color: $secondary-color;
+          color: $etisalat-gray-color;
           font-size: 1rem;
           @media screen and  (max-width: 992px) {
             font-size: 14px;
