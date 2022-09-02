@@ -10,7 +10,7 @@
   ion-item {
     --min-height: auto;
     ion-label {
-      color: $secondary-color;
+      color: $etisalat-gray-color;
     }
   }
 }
@@ -136,7 +136,7 @@ ion-grid {
   }
 }
 p {
-  color: $secondary-color;
+  color: $etisalat-gray-color;
   line-height: 1.5;
 }
 .bullet-list{
@@ -154,7 +154,7 @@ p {
 .decimal-list,
 .small-alpha-bullets{
   padding-left: 1rem;
-  color:$secondary-color;
+  color:$etisalat-gray-color;
   li{
     line-height: 1.4;
     @media screen and (max-width: 768px) {

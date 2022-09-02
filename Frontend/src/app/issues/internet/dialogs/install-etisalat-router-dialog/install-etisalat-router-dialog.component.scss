@@ -34,7 +34,7 @@ ion-item::part(native){
 ion-list{
     background: transparent;
     ion-label{
-      color: $secondary-color;   
+      color: $etisalat-gray-color;   
     }
 }
 .header-ios {
@@ -79,8 +79,8 @@ ion-header{
       }
       h3{
         font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-        color:$primary-color;
-        font-weight: normal;
+        color:$etisalat-gray-color;
+        font-weight: 600;
         @media screen and (max-width:992px) {
           font-size: 18px;
         }
