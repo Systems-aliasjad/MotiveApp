@@ -3,7 +3,7 @@
 
 // --------------------------------------------------------------
 :host {
-  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
 }
 // --------------------------------------------------------------
 .header-wrapper-wave {
@@ -48,7 +48,7 @@
   text-align: center;
   .content {
     h4 {
-      font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+      font-family: $font-family-SuisseInt;
       text-align: center;
       margin-top: 0;
       font-weight: 600;

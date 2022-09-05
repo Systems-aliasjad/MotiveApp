@@ -3,7 +3,7 @@
 
 /*-------------------------------------------------*/
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   --background: transparent;
   ion-buttons{
     --min-height:auto;
@@ -78,7 +78,7 @@ ion-header{
         text-align: left;
       }
       h3{
-        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        font-family: $font-family-SuisseInt;
         color:$etisalat-gray-color;
         font-weight: 600;
         @media screen and (max-width:992px) {

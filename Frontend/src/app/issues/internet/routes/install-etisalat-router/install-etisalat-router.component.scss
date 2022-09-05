@@ -3,7 +3,7 @@
 
 /* --------------------------------------------------------------*/
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   ion-list{
     --ion-background-color:transparent;
     padding-bottom: 0;
@@ -39,7 +39,7 @@ ion-item::part(native){
   margin-bottom: 0;
 }
 .form-main-container{
-    font-family:Lato,Roboto,Arial,sans-serif;
+    font-family: $font-family-SuisseInt;
     .form-inner_container{
       @media screen and (max-width: 767px)  {
         margin-top: 1rem;

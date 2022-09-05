@@ -3,7 +3,7 @@
 
 // --------------------------------------------------------------
 :host {
-   --ion-font-family:Lato,Roboto,Arial,sans-serif;
+   --ion-font-family: #{$font-family-SuisseInt};
    ion-card{
     border-radius: 0.5rem;
     background-color: #ffffff;
@@ -42,7 +42,7 @@
       }
       ion-label{
         @media screen and (min-width: 768px) {
-          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+          font-family: $font-family-SuisseInt;
         }
       }
     }

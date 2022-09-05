@@ -3,7 +3,7 @@
 
 // --------------------------------------------------------------
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
 }
 // --------------------------------------------------------------
 
@@ -149,7 +149,7 @@
         flex: 1;
         max-width: 100%;
         padding-left: 1rem;
-        font-family: Lato, Roboto, Arial, sans-serif;
+        font-family: $font-family-SuisseInt;
         color: $secondary-color;
         @media screen and (max-width: 567px) {
           -webkit-box-flex: 0;
@@ -174,7 +174,7 @@
           -ms-flex-direction: column;
           flex-direction: column;
           .user-profile_name {
-            font-family: Lato, Roboto, Arial, sans-serif;
+            font-family: $font-family-SuisseInt;
             font-weight: 600;
             color: $primary-color;
             line-height: 1;

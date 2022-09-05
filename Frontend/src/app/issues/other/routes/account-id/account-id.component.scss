@@ -2,7 +2,7 @@
 @import 'src/assets/scss/base/variables';
 
 :host {
-  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
 }
 ion-item::part(native) {
   --background: var(--ion-item-background, transparent), var(--ion-background-color, transparent);
@@ -10,7 +10,7 @@ ion-item::part(native) {
   --inner-padding-end: 0;
 }
 .form-main-container {
-  font-family: Lato, Roboto, Arial, sans-serif;
+  font-family: $font-family-SuisseInt;
   .form-inner_container {
     ion-item {
       margin-bottom: 1rem;

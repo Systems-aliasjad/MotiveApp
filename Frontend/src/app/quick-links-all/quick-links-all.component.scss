@@ -3,7 +3,7 @@
 
 /*-------------------------------------------------*/
 :host {
-  --ion-font-family: Lato, Roboto, Arial, sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   ion-buttons {
     --min-height: auto;
   }
@@ -14,7 +14,7 @@
         padding-right: 0;
         padding-left: 0;
         h5 {
-          font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+          font-family: $font-family-SuisseInt;
           color: $primary-color;
           @media screen and (max-width: 281px) {
             font-size: 1rem;
