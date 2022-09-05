@@ -3,7 +3,7 @@
 
 // --------------------------------------------------------------
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
 }
 // --------------------------------------------------------------
 
@@ -55,7 +55,7 @@
   }
   .page-top_title {
     h2 {
-      font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+      font-family: $font-family-SuisseInt;
       font-size: 1.8rem;
       margin-top: 0;
       margin-bottom: 0;

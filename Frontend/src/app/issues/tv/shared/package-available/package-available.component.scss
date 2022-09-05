@@ -3,7 +3,7 @@
 
 /*-------------------------------------------------*/
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   ion-list {
     --ion-background-color: transparent;
   }
