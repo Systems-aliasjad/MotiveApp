@@ -28,6 +28,7 @@ ion-checkbox {
 ion-radio.radio-checked::part(mark) {
   width: 11px;
   height: 11px;
+  background-color: $black;
 }
 //-----------------------------------------------------
 

@@ -41,8 +41,8 @@
 }
 .secondary-btn,
 .secondary-btn.button-solid{
-  color: #333333;
-  --color: #333333;
+  color: $etisalat-gray-color;
+  
   border: 2px $black solid;
   background-color: $white;
   &:hover,

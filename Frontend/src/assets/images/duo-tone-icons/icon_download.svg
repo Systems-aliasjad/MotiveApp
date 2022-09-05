@@ -1,17 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>A3A1174B-7957-438E-BD93-5F07AC2B9EDF</title>
-    <g id="📄-Asset-Sheet" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="App.MotiveH&amp;S.A.1" transform="translate(-972.000000, -684.000000)">
-            <g id="icon" transform="translate(972.000000, 684.000000)">
-                <rect id="bound" x="0" y="0" width="16" height="16"></rect>
-                <g transform="translate(2.000000, 1.333333)" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M7.38496296,12.94 L1.48125926,12.94 C0.867925926,12.94 0.370148148,12.442963 0.370148148,11.8288889 L0.370148148,8.30962963" id="Stroke-1" stroke="#777E86"></path>
-                    <path d="M11.459037,8.30962963 L11.459037,11.8288889 C11.459037,12.442963 10.9612593,12.94 10.3479259,12.94" id="Stroke-3" stroke="#777E86"></path>
-                    <line x1="5.834" y1="9.9162963" x2="5.834" y2="0.37037037" id="Stroke-5" stroke="#8BBD29"></line>
-                    <polyline id="Stroke-7" stroke="#8BBD29" points="8.478 7.43214815 5.83503704 9.91585185 3.35059259 7.27214815"></polyline>
-                </g>
-            </g>
-        </g>
-    </g>
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M9.385 14.273H3.48a1.111 1.111 0 0 1-1.11-1.11v-3.52M13.459 9.643v3.52c0 .613-.498 1.11-1.111 1.11" stroke="#0A0A0A" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7.834 11.25V1.704M10.478 8.765 7.835 11.25 5.351 8.605" stroke="#E00800" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

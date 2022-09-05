@@ -423,7 +423,7 @@ ion-item::part(native) {
   }
 }
 .error-state {
-  border: 2px solid #be1218;
+  border: 2px solid $error-shade;
   background-color: #f9e0df;
   position: relative;
   box-shadow: 0 5px 10px rgb(190 18 24 /31%);

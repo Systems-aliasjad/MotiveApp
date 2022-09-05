@@ -113,7 +113,7 @@ ion-item::part(native) {
           background-color:$error-shade;
         }
         .pending-line {
-          background-color: rgb(255 102 49 / 60%);
+          background-color: $error-shade;
         }
       }
     }
