@@ -4,7 +4,7 @@
 /*-------------------------------------------------*/
 
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   ion-buttons{
     --min-height:auto;
   }
@@ -90,7 +90,7 @@ ion-header{
         }
       }
       h3{
-        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        font-family: $font-family-SuisseInt;
         color:$primary-color;
         font-weight: normal;
         margin-left: 2rem;
@@ -139,7 +139,7 @@ ion-grid {
       color:$secondary-color;
       margin-top: 1.5rem;
       margin-bottom: 1rem;
-      font-family: Lato,Roboto,Arial,sans-serif;
+      font-family: $font-family-SuisseInt;
       font-weight: 700;
       text-transform:inherit;
       @media  screen and (max-width:992px) {

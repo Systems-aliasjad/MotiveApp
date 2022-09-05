@@ -3,7 +3,7 @@
 
 // ------------Removed Ionic ion-item Styling start-------------------
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   ion-list {
     --ion-background-color: transparent;
   }
@@ -35,7 +35,7 @@ ion-item::part(native){
 // ------------Removed Ionic ion-item Styling End-------------------
 
 .info-container {
-  font-family: Lato, Roboto, Arial, sans-serif;
+  font-family: $font-family-SuisseInt;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -63,7 +63,7 @@ ion-item::part(native){
   h4 {
     font-size: 26px;
     color: $etisalat-gray-color;
-    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-family: $font-family-SuisseInt;
     text-align: center;
     font-weight: 600;
     @media screen and (max-width: 767px){
@@ -89,7 +89,7 @@ ion-item::part(native){
     }
   }
   .info-container_detail_followup {
-    font-family: Lato, Roboto, Arial, sans-serif;
+    font-family: $font-family-SuisseInt;
     width: 450px;
     margin: 0 auto;
     @media screen and (max-width: 767px) {

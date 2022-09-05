@@ -3,7 +3,7 @@
 
 /*-------------------------------------------------*/
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
   ion-buttons{
     --min-height:auto;
   }
@@ -64,7 +64,7 @@ ion-header{
       padding-left: 0;
       text-align: center;
       h3{
-        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+        font-family: $font-family-SuisseInt;
         color:$primary-color;
         font-weight: normal;
       }
@@ -133,7 +133,7 @@ ion-header{
     }
   }
   h4 {
-    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-family: $font-family-SuisseInt;
     @media  screen and (max-width:768px) {
       margin-top: 0;
       font-size: 1rem;

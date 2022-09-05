@@ -2,7 +2,7 @@
 @import 'src/assets/scss/base/variables';
 //----------------------------------------------------
 :host {
-  --ion-font-family:Lato,Roboto,Arial,sans-serif;
+  --ion-font-family: #{$font-family-SuisseInt};
 }
 ion-item::part(native){
   @media screen and (max-width: 992px)  {

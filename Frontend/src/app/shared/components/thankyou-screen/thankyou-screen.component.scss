@@ -7,7 +7,7 @@
 /*-------------------------------------------------*/
 
 .info-container {
-  font-family:Lato,Roboto,Arial,sans-serif;
+  font-family: $font-family-SuisseInt;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -32,7 +32,7 @@
     }
   } 
   h4{
-    font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
+    font-family: $font-family-SuisseInt;
     text-align: center;
     font-weight: 600;
     color: $etisalat-gray-color;
