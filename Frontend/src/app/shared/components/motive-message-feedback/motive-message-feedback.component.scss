@@ -101,7 +101,7 @@ ion-item::part(native){
     p {
       line-height: 1.5;
       margin-bottom: 0;
-      color: #848789;
+      color:$etisalat-gray-color;
       text-align: center;
       word-break: break-word;
       @media screen and (max-width: 768px){
@@ -170,7 +170,7 @@ ion-item::part(native){
   span{
     display: block;
     font-weight: 800;
-    color: $secondary-color;
+    color: $etisalat-gray-color;
     @media screen and (max-width: 768px) {
       font-size: 0.9375rem;
     }
