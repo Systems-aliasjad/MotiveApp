@@ -26,8 +26,8 @@
         padding-left: 0;
         h3{
           font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-          color:$primary-color;
-          font-weight: normal;
+          color: $etisalat-gray-color;
+          font-weight: 600;
           margin-left: 2rem;
           @media screen and (max-width:992px) {
             margin-left: 0;
@@ -60,7 +60,7 @@
   ion-item {
     --min-height: auto;
     ion-label {
-      color: $secondary-color;
+      color: $etisalat-gray-color;
     }
   } 
 }
@@ -174,7 +174,7 @@ ion-grid {
       text-align: left;
     }
     h4{
-      color:$secondary-color;
+      color:$etisalat-gray-color;
       margin-top: 1.5rem;
       margin-bottom: 1rem;
       font-family: Lato,Roboto,Arial,sans-serif;
