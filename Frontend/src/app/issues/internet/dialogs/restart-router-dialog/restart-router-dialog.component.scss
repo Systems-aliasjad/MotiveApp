@@ -95,15 +95,9 @@ ion-header{
         }
       }
       h3{
-<<<<<<< HEAD
-        font-family: Neotech-regular, GE SS Two, Roboto, Arial, sans-serif;
-        color:$etisalat-gray-color;
-        font-weight: 600;
-=======
         font-family: $font-family-SuisseInt;
         color:$primary-color;
         font-weight: normal;
->>>>>>> 0edec22ea2190e3dc4694f0bbf5997ad0aecfdd3
         margin-left: 2rem;
         @media screen and (max-width:992px) {
           margin-left: 0;
