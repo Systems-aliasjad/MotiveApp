@@ -215,7 +215,7 @@ ion-item::part(native) {
       margin: 2px auto 0;
       width: 100%;
       height: 43.5px;
-      border: 3px solid rgba(190, 18, 24, 0.6);
+      border: 3px solid $error-shade;
       border-top: 3px solid transparent;
       border-left: 0px;
       border-right: 0;
@@ -273,17 +273,17 @@ ion-item::part(native) {
 }
 .okay-vline {
   .line-vcenter {
-    background-color: rgba(113, 158, 25, 70%);
+    background-color: $light-shade;
   }
 }
 .error-vline {
   .line-vcenter {
-    background-color: rgba(190, 18, 24, 0.6);
+    background-color: $error-color;
   }
 }
 .pending-vline {
   .line-vcenter {
-    background-color: rgba(255, 102, 49, 0.6);
+    background-color: $error-shade;
   }
 }
 //-------------------- Box Center End ----------------------
@@ -362,14 +362,14 @@ ion-item::part(native) {
   .error-lines {
     .line-left {
       &:after {
-        border: 3px solid rgba(190, 18, 24, 0.6);
+        border: 3px solid $error-color;
         border-right: transparent;
         border-bottom: transparent;
       }
     }
     .line-right {
       &:after {
-        border: 3px solid rgba(190, 18, 24, 0.6);
+        border: 3px solid $error-shade;
         border-left: transparent;
         border-top: transparent;
       }
@@ -378,7 +378,7 @@ ion-item::part(native) {
   .pending-lines {
     .line-left {
       &:after {
-        border: 3px solid rgba(255, 102, 49, 0.6);
+        border: 3px solid $error-shade;
         border-right: transparent;
         border-bottom: transparent;
       }
@@ -499,14 +499,14 @@ ion-item::part(native) {
   .error-lines {
     .line-right {
       &:after {
-        border: 3px solid rgba(190, 18, 24, 0.6);
+        border: 3px solid $error-shade;
         border-left: transparent;
         border-bottom: transparent;
       }
     }
     .line-left {
       &:after {
-        border: 3px solid rgba(190, 18, 24, 0.6);
+        border: 3px solid $error-shade;
         border-right: transparent;
         border-top: transparent;
       }
@@ -515,14 +515,14 @@ ion-item::part(native) {
   .okay-lines {
     .line-right {
       &:after {
-        border: 3px solid rgba(113, 158, 25, 70%);
+        border: 3px solid $light-shade;
         border-left: transparent;
         border-bottom: transparent;
       }
     }
     .line-left {
       &:after {
-        border: 3px solid rgba(113, 158, 25, 70%);
+        border: 3px solid $light-shade;
         border-right: transparent;
         border-top: transparent;
       }
@@ -592,7 +592,7 @@ ion-item::part(native) {
   border: 2px solid $etisalat-color;
   background-color: $white;
   position: relative;
-  box-shadow: 0 5px 10px rgb(113 158 25 / 31%);
+  box-shadow: 0 5px 10px rgba(67, 70, 61, 0.31);
   &:after {
     content: '';
     width: 1.1rem;
@@ -610,10 +610,10 @@ ion-item::part(native) {
   }
 }
 .error-state {
-  border: 2px solid #be1218;
+  border: 2px solid $error-shade;
   background-color: #f9e0df;
   position: relative;
-  box-shadow: 0 5px 10px rgb(190 18 24 /31%);
+  box-shadow: 0 5px 10px $error-box-shadow;
   &:after {
     content: '';
     width: 1.1rem;
@@ -621,8 +621,8 @@ ion-item::part(native) {
     background: url('../../../../../assets/images/network-map-icons/issue-error-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 1px 1px 4px 2px $error-box-shadow;
+    box-shadow: 1px 1px 4px 2px $error-shade;
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
@@ -631,10 +631,10 @@ ion-item::part(native) {
   }
 }
 .pending-state {
-  border: 2px solid #ff6631;
-  background-color: #ffe0d6;
+  border: 2px solid $error-shade;
+  background-color: $error-background-color;
   position: relative;
-  box-shadow: 0 5px 10px rgb(255 102 49/31%);
+  box-shadow: 0 5px 10px $error-box-shadow;
   &:after {
     content: '';
     width: 1.1rem;
@@ -642,8 +642,8 @@ ion-item::part(native) {
     background: url('../../../../../assets/images/network-map-icons/action-pending-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
+    -webkit-box-shadow: 1px 1px 4px 2px $error-box-shadow;
+    box-shadow: 1px 1px 4px 2px $error-box-shadow;
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
@@ -668,11 +668,11 @@ ion-item::part(native) {
   background-color: #f2f2f2;
 }
 .okay-line {
-  background-color: rgb(113 158 25 / 60%);
+  background-color: $light-shade;
 }
 .error-line {
-  background-color: rgb(190 18 24 / 60%);
+  background-color: $error-shade;
 }
 .pending-line {
-  background-color: rgb(255 102 49 / 60%);
+  background-color: $error-shade;
 }
