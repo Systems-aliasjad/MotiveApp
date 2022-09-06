@@ -405,7 +405,6 @@ ion-item::part(native) {
   border: 2px solid $etisalat-gray-color;
   background-color: $light-shade;
   position: relative;
-  box-shadow: 0 5px 10px rgba(62, 63, 58, 0.31);
   &:after {
     content: '';
     width: 1.1rem;
@@ -413,8 +412,6 @@ ion-item::part(native) {
     background: url('../../../../../assets/images/network-map-icons/all-okay-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
@@ -426,7 +423,6 @@ ion-item::part(native) {
   border: 2px solid $error-shade;
   background-color: #f9e0df;
   position: relative;
-  box-shadow: 0 5px 10px rgb(190 18 24 /31%);
   &:after {
     content: '';
     width: 1.1rem;
@@ -434,8 +430,6 @@ ion-item::part(native) {
     background: url('../../../../../assets/images/network-map-icons/issue-error-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
@@ -447,7 +441,6 @@ ion-item::part(native) {
   border: 2px solid #ff6631;
   background-color: #ffe0d6;
   position: relative;
-  box-shadow: 0 5px 10px rgb(255 102 49/31%);
   &:after {
     content: '';
     width: 1.1rem;
@@ -455,8 +448,6 @@ ion-item::part(native) {
     background: url('../../../../../assets/images/network-map-icons/action-pending-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
