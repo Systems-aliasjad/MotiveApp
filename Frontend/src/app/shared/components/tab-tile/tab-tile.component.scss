@@ -113,13 +113,11 @@ ion-label {
 .default-state {
   background-color: #f2f2f2;
   border: 2px solid #f2f2f2;
-  /* box-shadow: 0 5px 10px rgb(25 0 0 / 16%); */
 }
 .okay-state {
   border: 2px solid $etisalat-gray-color;
   background-color: $white;
   position: relative;
-  box-shadow: 0 5px 10px rgba(75, 76, 74, 0.31);
   &:after {
     content: '';
     width: 1.1rem;
@@ -127,8 +125,6 @@ ion-label {
     background: url('../../../../assets/images/network-map-icons/all-okay-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgba(90, 87, 87, 0.1);
-    box-shadow: 1px 1px 4px 2px rgba(86, 85, 85, 0.1);
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
@@ -140,7 +136,6 @@ ion-label {
   border: 2px solid $error-shade;
   background-color: #f9e0df;
   position: relative;
-  box-shadow: 0 5px 10px rgb(190 18 24 /31%);
   &:after {
     content: '';
     width: 1.1rem;
@@ -148,8 +143,6 @@ ion-label {
     background: url('../../../../assets/images/network-map-icons/issue-error-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
@@ -161,7 +154,6 @@ ion-label {
   border: 2px solid $error-shade;
   background-color: #ffe0d6;
   position: relative;
-  box-shadow: 0 5px 10px rgb(255 102 49/31%);
   &:after {
     content: '';
     width: 1.1rem;
@@ -169,8 +161,6 @@ ion-label {
     background: url('../../../../assets/images/network-map-icons/action-pending-state.svg');
     background-repeat: no-repeat;
     background-size: 1.1rem;
-    -webkit-box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
-    box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 10%);
     border-radius: 1rem;
     display: inline-block;
     position: absolute;
