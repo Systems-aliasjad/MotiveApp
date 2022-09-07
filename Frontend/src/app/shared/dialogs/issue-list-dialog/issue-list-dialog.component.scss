@@ -86,12 +86,21 @@ ion-list{
   padding-top: 0;
   padding-bottom: 0;
   ion-label{
-    color:$primary-color;
+    color:$etisalat-gray-color;
     font-weight: 600;
+
+    > p {
+      color: $etisalat-gray-color;
+    }
     @media screen and (max-width:992px) {
       font-size:0.875rem; //14px
     }
   }
+  // ion-icon{
+  //   color: black;
+  //   font-size: 4px;
+  //   opacity:initial;
+  // }
 }
 ion-buttons{
   padding-right: 0;
