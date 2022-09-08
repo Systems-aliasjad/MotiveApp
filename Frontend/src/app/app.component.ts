@@ -44,9 +44,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.appDirection = 'rtl'; */
     //TODO: uncomment This
     //this.sharedService.setLoader(true);
-    // if (!params?.token) {
-    //  return;
-    // }
+    if (!params?.token) {
+     return;
+    }
     try {
       this.sharedService.setDefaultLanguage(lang);
       this.appDirection = lang === 'en' ? 'ltr' : 'rtl';
